@@ -1,7 +1,7 @@
 TypeChef casestudy SQLite (version 3.7.16.1)
 ============================================
 
-1. no setup necessary simply run ./run.sh in folder sqlite-amalgamation-3071601
+1. no setup necessary simply run ./ifdeftoif.sh
 2. TypeChef folder must be at ".." relative to this file; project TypeChef is available from https://github.com/aJanker/TypeChef/
 
 NOTES:

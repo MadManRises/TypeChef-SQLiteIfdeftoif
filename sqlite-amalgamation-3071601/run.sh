@@ -26,7 +26,7 @@ outTime="$outBase.time"
 	--typeSystemFeatureModelDimacs $ABSPATH/sqlite.dimacs \
 	--include $ABSPATH/partial_configuration.h \
 	--writePI \
-	--ifdeftoifStatistics \
+	--ifdeftoifstatistics \
 	--dumpcfg \
 	$FNAME \
 	2> "$outErr" | tee "$outDbg"

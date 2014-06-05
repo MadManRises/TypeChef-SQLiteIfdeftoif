@@ -1,0 +1,162 @@
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:1:2: warning: Unknown preprocessor directive lexer, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:1:2: warning: Unknown preprocessor directive lexer, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:2:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:2:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:6:2: warning: Unknown preprocessor directive lexer, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:6:2: warning: Unknown preprocessor directive lexer, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:7:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:7:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:10:2: warning: Unknown preprocessor directive lexer, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:10:2: warning: Unknown preprocessor directive lexer, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:11:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:11:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:14:2: warning: Unknown preprocessor directive lexer, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:14:2: warning: Unknown preprocessor directive lexer, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:15:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:15:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:19:2: warning: Unknown preprocessor directive lexer, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:19:2: warning: Unknown preprocessor directive lexer, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:20:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:20:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:24:2: warning: Unknown preprocessor directive type, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:24:2: warning: Unknown preprocessor directive type, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:25:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:25:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:30:2: warning: Unknown preprocessor directive related, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:30:2: warning: Unknown preprocessor directive related, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:35:2: warning: Unknown preprocessor directive type, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:35:2: warning: Unknown preprocessor directive type, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:36:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:36:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:39:2: warning: Unknown preprocessor directive type, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:39:2: warning: Unknown preprocessor directive type, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:40:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:40:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:44:2: warning: Unknown preprocessor directive type, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:44:2: warning: Unknown preprocessor directive type, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:45:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:45:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:49:2: warning: Unknown preprocessor directive several, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:49:2: warning: Unknown preprocessor directive several, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:52:2: warning: Unknown preprocessor directive type, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:52:2: warning: Unknown preprocessor directive type, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:53:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:53:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:56:2: warning: Unknown preprocessor directive type, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:56:2: warning: Unknown preprocessor directive type, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:57:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:57:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:61:2: warning: Unknown preprocessor directive several, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:61:2: warning: Unknown preprocessor directive several, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:62:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:62:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:65:2: warning: Unknown preprocessor directive several, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:65:2: warning: Unknown preprocessor directive several, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:66:2: warning: Unknown preprocessor directive incorrect, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:66:2: warning: Unknown preprocessor directive incorrect, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:67:2: warning: Unknown preprocessor directive Constant, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:67:2: warning: Unknown preprocessor directive Constant, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:68:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:68:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:71:2: warning: Unknown preprocessor directive several, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:71:2: warning: Unknown preprocessor directive several, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:72:2: warning: Unknown preprocessor directive incorrect, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:72:2: warning: Unknown preprocessor directive incorrect, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:73:2: warning: Unknown preprocessor directive sqlite3, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:73:2: warning: Unknown preprocessor directive sqlite3, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:76:2: warning: Unknown preprocessor directive optional, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:76:2: warning: Unknown preprocessor directive optional, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:79:2: warning: Unknown preprocessor directive configuration, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:79:2: warning: Unknown preprocessor directive configuration, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: /local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:84:2: warning: Unknown preprocessor directive causes, skipping line
+/local/janker/dev/buildSQLite/cRefactor-SQLiteEvaluation/partial_configuration.h:84:2: warning: Unknown preprocessor directive causes, skipping line
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:7709:4: warning: expecting value before token, found boolean expression True instead
+sqlite3.c:7709:4: warning: expecting value before token, found boolean expression True instead
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:7709:4: warning: expecting value before token, found boolean expression False instead
+sqlite3.c:7709:4: warning: expecting value before token, found boolean expression False instead
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:7709:4: warning: expecting value before token, found boolean expression False instead
+sqlite3.c:7709:4: warning: expecting value before token, found boolean expression False instead
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:7709:4: warning: expecting value before token, found boolean expression False instead
+sqlite3.c:7709:4: warning: expecting value before token, found boolean expression False instead
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:7718:4: warning: expecting value before token, found boolean expression True instead
+sqlite3.c:7718:4: warning: expecting value before token, found boolean expression True instead
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:7718:4: warning: expecting value before token, found boolean expression False instead
+sqlite3.c:7718:4: warning: expecting value before token, found boolean expression False instead
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:7718:4: warning: expecting value before token, found boolean expression False instead
+sqlite3.c:7718:4: warning: expecting value before token, found boolean expression False instead
+Nov 20, 2013 5:03:20 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:7718:4: warning: expecting value before token, found boolean expression False instead
+sqlite3.c:7718:4: warning: expecting value before token, found boolean expression False instead
+Nov 20, 2013 5:03:21 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:9960:6: warning: inline expansion of macro SQLITE_OS_UNIX is not exaustive. assuming 0 for (def(SQLITE_OS_UNIX)&!def(SQLITE_MUTEX_NOOP))
+sqlite3.c:9960:6: warning: inline expansion of macro SQLITE_OS_UNIX is not exaustive. assuming 0 for (def(SQLITE_OS_UNIX)&!def(SQLITE_MUTEX_NOOP))
+Nov 20, 2013 5:03:22 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:22619:4: warning: inline expansion of macro SQLITE_MALLOC_SOFT_LIMIT is not exaustive. assuming 0 for def(SQLITE_MALLOC_SOFT_LIMIT)
+sqlite3.c:22619:4: warning: inline expansion of macro SQLITE_MALLOC_SOFT_LIMIT is not exaustive. assuming 0 for def(SQLITE_MALLOC_SOFT_LIMIT)
+Nov 20, 2013 5:03:22 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:23004:4: warning: inline expansion of macro SQLITE_OS_UNIX is not exaustive. assuming 0 for def(SQLITE_OS_UNIX)
+sqlite3.c:23004:4: warning: inline expansion of macro SQLITE_OS_UNIX is not exaustive. assuming 0 for def(SQLITE_OS_UNIX)
+Nov 20, 2013 5:03:24 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:94853:4: warning: inline expansion of macro SQLITE_OS_UNIX is not exaustive. assuming 0 for (def(SQLITE_OS_UNIX)&!def(SQLITE_OMIT_LOAD_EXTENSION))
+sqlite3.c:94853:4: warning: inline expansion of macro SQLITE_OS_UNIX is not exaustive. assuming 0 for (def(SQLITE_OS_UNIX)&!def(SQLITE_OMIT_LOAD_EXTENSION))
+Nov 20, 2013 5:03:24 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:95424:43: warning: inline expansion of macro SQLITE_ENABLE_LOCKING_STYLE is not exaustive. assuming 0 for def(SQLITE_ENABLE_LOCKING_STYLE)
+sqlite3.c:95424:43: warning: inline expansion of macro SQLITE_ENABLE_LOCKING_STYLE is not exaustive. assuming 0 for def(SQLITE_ENABLE_LOCKING_STYLE)
+Nov 20, 2013 5:03:24 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:96433:4: warning: inline expansion of macro SQLITE_ENABLE_LOCKING_STYLE is not exaustive. assuming 0 for (!def(SQLITE_OMIT_PAGER_PRAGMAS)&!def(SQLITE_OMIT_PRAGMA)&def(SQLITE_ENABLE_LOCKING_STYLE))
+sqlite3.c:96433:4: warning: inline expansion of macro SQLITE_ENABLE_LOCKING_STYLE is not exaustive. assuming 0 for (!def(SQLITE_OMIT_PAGER_PRAGMAS)&!def(SQLITE_OMIT_PRAGMA)&def(SQLITE_ENABLE_LOCKING_STYLE))
+Nov 20, 2013 5:03:24 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:110718:4: warning: inline expansion of macro WHERETRACE_ENABLED is not exaustive. assuming 0 for (!def(SQLITE_DEBUG)|!def(SQLITE_ENABLE_WHERETRACE))
+sqlite3.c:110718:4: warning: inline expansion of macro WHERETRACE_ENABLED is not exaustive. assuming 0 for (!def(SQLITE_DEBUG)|!def(SQLITE_ENABLE_WHERETRACE))
+Nov 20, 2013 5:03:24 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:110724:4: warning: inline expansion of macro WHERETRACE_ENABLED is not exaustive. assuming 0 for (!def(SQLITE_DEBUG)|!def(SQLITE_ENABLE_WHERETRACE))
+sqlite3.c:110724:4: warning: inline expansion of macro WHERETRACE_ENABLED is not exaustive. assuming 0 for (!def(SQLITE_DEBUG)|!def(SQLITE_ENABLE_WHERETRACE))
+Nov 20, 2013 5:03:24 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:110797:4: warning: inline expansion of macro WHERETRACE_ENABLED is not exaustive. assuming 0 for (!def(SQLITE_DEBUG)|!def(SQLITE_ENABLE_WHERETRACE))
+sqlite3.c:110797:4: warning: inline expansion of macro WHERETRACE_ENABLED is not exaustive. assuming 0 for (!def(SQLITE_DEBUG)|!def(SQLITE_ENABLE_WHERETRACE))
+Nov 20, 2013 5:03:24 PM de.fosd.typechef.lexer.PreprocessorListener print
+WARNING: sqlite3.c:110825:4: warning: inline expansion of macro WHERETRACE_ENABLED is not exaustive. assuming 0 for (!def(SQLITE_DEBUG)|!def(SQLITE_ENABLE_WHERETRACE))
+sqlite3.c:110825:4: warning: inline expansion of macro WHERETRACE_ENABLED is not exaustive. assuming 0 for (!def(SQLITE_DEBUG)|!def(SQLITE_ENABLE_WHERETRACE))

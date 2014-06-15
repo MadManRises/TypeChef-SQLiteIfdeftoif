@@ -13,7 +13,7 @@ outErr="$outBase.err"
 outTime="$outBase.time"
 
 
-../TypeChef/ifdeftoif.sh \
+../Hercules/ifdeftoif.sh \
         --bdd --serializeAST --interface --debugInterface\
         -I /usr/local/include \
         -I /usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed \

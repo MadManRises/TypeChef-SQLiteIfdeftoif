@@ -1,10 +1,11 @@
 TypeChef casestudy SQLite (version 3.7.16.1)
 ============================================
 
-1. no setup necessary simply run ./ifdeftoif.sh
-2. TypeChef folder must be at ".." relative to this file; project TypeChef is available from https://github.com/aJanker/TypeChef/
+1. `TypeChef` and `Hercules` folder must be at ".." relative to this project folder; see project [Hercules](https://github.com/joliebig/Hercules) to install both `TypeChef` and `Hercules`.
+2. Run `./ifdeftoif.sh` in this projects directory to start the transformation process on `SQLite`.
 
-NOTES:
+Notes
+-----------
 - openfeatures.txt has been extracted based on #ifdefs in sqlite3.c
 - several lexer errors have been fixed and are documented in partial_configuration.h
 - several type errors have been fixed and are documented in partial_configuration.h

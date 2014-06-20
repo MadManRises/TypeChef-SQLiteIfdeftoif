@@ -1,4 +1,4 @@
-TypeChef casestudy SQLite (version 3.7.16.1)
+Hercules casestudy SQLite (v 3.7.16.1)
 ============================================
 
 1. `TypeChef` and `Hercules` folder must be at ".." relative to this project folder; see project [Hercules](https://github.com/joliebig/Hercules) to install both `TypeChef` and `Hercules`.

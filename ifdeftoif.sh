@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+START_TIME=$SECONDS
 
 ABSPATH=$(cd "$(dirname "$0")"; pwd)
 
@@ -29,5 +30,8 @@ outTime="$outBase.time"
         --writePI --ifdeftoifstatistics \
 	$FNAME \
 	#-U NDEBUG \
+
+ELAPSED_TIME=$(($SECONDS - $START_TIME))
+echo "$(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
 
 exit

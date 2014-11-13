@@ -28,8 +28,11 @@ outTime="$outBase.time"
         --include $ABSPATH/partial_configuration.h \
         --parserstatistics \
         --writePI --ifdeftoifstatistics \
+        -U WIN32 -U _WIN32 \
 	$FNAME \
 	#-U NDEBUG \
+	
+	#undefined WIN32 and _WIN32 because i cannot compile/test them here anyway
 
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 echo "$(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"

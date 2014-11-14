@@ -25,6 +25,7 @@ outTime="$outBase.time"
         --openFeat $ABSPATH/openfeatures.txt \
         --featureModelFExpr $ABSPATH/fm.txt \
         --typeSystemFeatureModelDimacs $ABSPATH/sqlite.dimacs \
+        --featureModelFExpr ifdeftoif_helpers/custom_limitations.txt \
         --include $ABSPATH/partial_configuration.h \
         --parserstatistics \
         --writePI --ifdeftoifstatistics \
@@ -32,6 +33,7 @@ outTime="$outBase.time"
 	$FNAME \
 	#-U NDEBUG \
 	
+	#option --featureModelDimacs must be before option --featureModelFExpr
 	#undefined WIN32 and _WIN32 because i cannot compile/test them here anyway
 
 ELAPSED_TIME=$(($SECONDS - $START_TIME))

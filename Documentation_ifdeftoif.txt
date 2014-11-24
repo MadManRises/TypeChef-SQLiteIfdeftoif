@@ -1,0 +1,33 @@
+Documentation of ifdeftoif on sqlite3
+
+24.11.2014 -- Problem with SQLITE_DEFAULT_MEMSTATUS
+	SQLITE_DEFAULT_MEMSTATUS is not replaced. It is used as first element in struct sqlite3Config.
+	After ifdeftoif, the struct is duplicated, but the first element is still "SQLITE_DEFAULT_MEMSTATUS".
+	According to documentation it is a "0 or 1" option, so it should be a feature.
+		/*
+		** The SQLITE_DEFAULT_MEMSTATUS macro must be defined as either 0 or 1.
+		** It determines whether or not the features related to 
+		** SQLITE_CONFIG_MEMSTATUS are available by default or not. This value can
+		** be overridden at runtime using the sqlite3_config() API.
+		*/
+	Perhaps this initialization is the key to why it does not work.
+		#if !defined(SQLITE_DEFAULT_MEMSTATUS)
+		# define SQLITE_DEFAULT_MEMSTATUS 1
+		#endif
+	I did an experiment. In the rest of the code SQLITE_DEFAULT_MEMSTATUS seems to be defined.
+	Perhaps typeChef does not support using #if options as macros?
+	Replaced 
+		SQLITE_PRIVATE SQLITE_WSD struct Sqlite3Config sqlite3Config = {
+			SQLITE_DEFAULT_MEMSTATUS,  /* bMemstat */ ...
+	with 
+		SQLITE_PRIVATE SQLITE_WSD struct Sqlite3Config sqlite3Config = {
+			#if SQLITE_DEFAULT_MEMSTATUS==1
+			1
+			#else
+			0
+			#endif
+			, ...
+	Effect: We duplicate the struct. 
+	def(SQLITE_DEFAULT_MEMSTATUS) means that SQLITE_DEFAULT_MEMSTATUS was set by the user (assuming to 0)
+	!def(SQLITE_DEFAULT_MEMSTATUS) means that it was not set by the user and initialized to 1 by the above default initialization.
+	(We are lucky that the value is not used before the default initialization. Otherwise the case where a user defined value 1 would be interpreted wrong.

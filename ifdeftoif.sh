@@ -34,6 +34,7 @@ outTime="$outBase.time"
         --parserstatistics \
         --writePI --ifdeftoifstatistics \
         -U WIN32 -U _WIN32 \
+        --assumeNoSwitchFallThroughs \
 	$FNAME \
 	#-U NDEBUG \
 	

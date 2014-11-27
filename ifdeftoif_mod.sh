@@ -9,8 +9,7 @@ ABSPATH=$(cd "$(dirname "$0")"; pwd)
 
 # only one single file in sqlite amalgamation version
 FNAME=sqlite3.c
-
-cp sqlite3_original.c sqlite3.c
+cp sqlite3_modified.c sqlite3.c
 
 # set output files
 outBase="$(dirname $FNAME)/$(basename $FNAME .c)"
@@ -45,5 +44,6 @@ outTime="$outBase.time"
 
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 echo "$(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
+
 
 exit

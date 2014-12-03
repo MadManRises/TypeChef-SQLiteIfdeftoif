@@ -1,1 +1,12 @@
+// if we add this file with --featureModelFExpr it will only be used for parsing (not for typechecking)
+// the idea behind --featureModelFExpr is that the expr is a subset of the fullFeatureModel
+// so we should not use this option for our *additional* limitations
+
+// instead, we use the presence condition option (sqlite uses no presence condition so far)
+// We copy this file to sqlite3.pc before each typechef call
+
+//my custom limitations
+
 !defined(SQLITE_HAS_CODEC)
+
+

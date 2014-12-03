@@ -18,6 +18,9 @@ outPartialPreproc="$outBase.pi"
 outErr="$outBase.err"
 outTime="$outBase.time"
 
+#copy our custom limitations to sqlite3.pc (sqlite3 has no pc file normally)
+# this causes the limitations to be used in parsing _and_ typechecking/fullFM (--featureModelFExpr influences only parsing/smallFM)
+cp $ABSPATH/ifdeftoif_helpers/custom_limitations.txt $ABSPATH/sqlite3.pc
 
 ../Hercules/ifdeftoif.sh \
         --bdd --serializeAST --interface --debugInterface\
@@ -30,7 +33,6 @@ outTime="$outBase.time"
         --openFeat $ABSPATH/openfeatures.txt \
         --featureModelFExpr $ABSPATH/fm.txt \
         --typeSystemFeatureModelDimacs $ABSPATH/sqlite.dimacs \
-        --featureModelFExpr ifdeftoif_helpers/custom_limitations.txt \
         --include $ABSPATH/partial_configuration.h \
         --parserstatistics \
         --writePI --ifdeftoifstatistics \

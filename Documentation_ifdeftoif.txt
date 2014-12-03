@@ -40,3 +40,12 @@ Linker problem with allocateBtreePage
 		allocateBtreePage@52995 -> _701_allocateBtreePage if !def(SQLITE_OMIT_AUTOVACUUM)
 	So it does not need to be renamed?
 
+2.12.
+SQLITE_HAS_CODEC causes problems, undefined extern functions (optional user-defined functions?); adding it to limitations. Occurs only in function "attachFunc".
+	Problem: Adding it !defined(SQLITE_HAS_CODEC) with --featureModelFExpr is not enough. 
+	The condition defined(SQLITE_HAS_CODEC) || defined(SQLITE_ENABLE_CEROD) will not be simplified by the Preprocessor.
+	And the limitation will only be used during parsing, not during type checking
+	So we copy the limitations file to sqlite3.pc before starting Hercules. PCs are used during parsing AND typechecking.
+
+
+

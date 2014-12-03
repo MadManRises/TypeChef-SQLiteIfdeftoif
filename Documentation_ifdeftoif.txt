@@ -51,5 +51,14 @@ SQLITE_HAS_CODEC causes problems, undefined extern functions (optional user-defi
 	The azCompileOpt struct caused problems again.
 	SQLITE_HAS_CODEC is now switched off in the parser, so the struct is different (misses one entry).
 	I could not get it working with the replacement parts. Replaced the part directly in sqlite3_modified.c
+	
+3.12 Fix SQLITE_THREADSAFE=0 in partialConfiguration.h (cannot assign values in pc). From the documentation:
+	"The pthreads library is needed to make SQLite threadsafe. 
+	But since the CLI is single threaded, we could instruct SQLite to build in a non-threadsafe mode and thereby omit the pthreads library:
+	gcc -DSQLITE_THREADSAFE=0 shell.c sqlite3.c -ldl"
 
-
+3.12. Activate the SQLITE_OMIT_LOAD_EXTENSION option in custom limitations. From the documentation:
+	"The -ldl library is needed to support dynamic loading, the sqlite3_load_extension() interface and the load_extension() SQL function. 
+	If these features are not required, then they can be omitted using SQLITE_OMIT_LOAD_EXTENSION compile-time option:"
+3.12.
+	Added !defined(SQLITE_ENABLE_SQLLOG) and !defined(SQLITE_ENABLE_CEROD) to custom_limitations.txt to avoid linker errors

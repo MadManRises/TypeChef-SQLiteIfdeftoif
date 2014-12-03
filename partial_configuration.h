@@ -92,3 +92,10 @@
 #undef NDEBUG
 
 #undef SQLITE_DEBUG
+
+//03.12. Fix SQLITE_THREADSAFE=0 in partialConfiguration.h (cannot assign values in pc). From the documentation:
+//	"The pthreads library is needed to make SQLite threadsafe. 
+//	But since the CLI is single threaded, we could instruct SQLite to build in a non-threadsafe mode and thereby omit the pthreads library:
+//	gcc -DSQLITE_THREADSAFE=0 shell.c sqlite3.c -ldl"
+
+#define SQLITE_THREADSAFE 0

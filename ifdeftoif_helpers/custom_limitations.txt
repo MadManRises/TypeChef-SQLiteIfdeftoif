@@ -9,4 +9,18 @@
 
 !defined(SQLITE_HAS_CODEC)
 
+// is only used in special cases (custom extensions) according to documentation
+defined(SQLITE_OMIT_LOAD_EXTENSION)
+
+//avoid error
+// ./.libs/libsqlite3.so: undefined reference to `sqlite3_init_sqllog'
+// /tmp/ccWnmRRE.o: In Funktion `sqlite3_initialize':
+// sqlite3.c:(.text+0xbfa32): Nicht definierter Verweis auf `sqlite3_init_sqllog'
+!defined(SQLITE_ENABLE_SQLLOG)
+
+//avoid error
+// ./.libs/libsqlite3.so: undefined reference to `sqlite3_activate_cerod'
+// /tmp/ccWnmRRE.o: In Funktion `_1299_sqlite3Pragma':
+// sqlite3.c:(.text+0x94de0): Nicht definierter Verweis auf `sqlite3_activate_cerod'
+!defined(SQLITE_ENABLE_CEROD)
 

@@ -47,5 +47,9 @@ SQLITE_HAS_CODEC causes problems, undefined extern functions (optional user-defi
 	And the limitation will only be used during parsing, not during type checking
 	So we copy the limitations file to sqlite3.pc before starting Hercules. PCs are used during parsing AND typechecking.
 
+3.12.
+	The azCompileOpt struct caused problems again.
+	SQLITE_HAS_CODEC is now switched off in the parser, so the struct is different (misses one entry).
+	I could not get it working with the replacement parts. Replaced the part directly in sqlite3_modified.c
 
 

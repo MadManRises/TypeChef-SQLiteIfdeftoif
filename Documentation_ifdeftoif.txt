@@ -31,7 +31,13 @@ Documentation of ifdeftoif on sqlite3
 	def(SQLITE_DEFAULT_MEMSTATUS) means that SQLITE_DEFAULT_MEMSTATUS was set by the user (assuming to 0)
 	!def(SQLITE_DEFAULT_MEMSTATUS) means that it was not set by the user and initialized to 1 by the above default initialization.
 	(We are lucky that the value is not used before the default initialization. Otherwise the case where a user defined value 1 would be interpreted wrong.
-
+09.12.2014 Above solution for SQLITE_DEFAULT_MEMSTATUS does not work with TypeChef. It cannot process the SQLITE_DEFAULT_MEMSTATUS==1.
+	Solution: #if defined(SQLITE_DEFAULT_MEMSTATUS)
+			1
+			#else
+			0
+			#endif
+		It is equivialent as long as no user defines SQLITE_DEFAULT_MEMSTATUS to 0.
 24.11.2014
 Linker problem with allocateBtreePage
 	/usr/bin/ld: .libs/sqlite3.o: relocation R_X86_64_PC32 against undefined symbol `_701_allocateBtreePage' can not be used when making a shared object; recompile with -fPIC
@@ -62,3 +68,27 @@ SQLITE_HAS_CODEC causes problems, undefined extern functions (optional user-defi
 	If these features are not required, then they can be omitted using SQLITE_OMIT_LOAD_EXTENSION compile-time option:"
 3.12.
 	Added !defined(SQLITE_ENABLE_SQLLOG) and !defined(SQLITE_ENABLE_CEROD) to custom_limitations.txt to avoid linker errors
+9.12. TypeChef has Problems with the SQLITE_MALLOC_SOFT_LIMIT macro.
+		warning: inline expansion of macro SQLITE_MALLOC_SOFT_LIMIT is not exaustive. assuming 0 for def(SQLITE_MALLOC_SOFT_LIMIT)
+		sqlite3.c:22446:4: warning: inline expansion of macro SQLITE_MALLOC_SOFT_LIMIT is not exaustive. assuming 0 for def(SQLITE_MALLOC_SOFT_LIMIT)
+		Default value for this macro is 1024 (set in source code). To avoid problems i initialize the macro to this value in partial configuration. 
+9.12. TypeChef warnings with SQLITE_ENABLE_LOCKING_STYLE macro. Same warning as above with different macro.
+		SQLITE_ENABLE_LOCKING_STYLE sets different styles of file locking such that multiple processes can access the same database file.
+		We are not interested in multi-process setups. Therefore we can define it to 0 in partial configuration.
+9.12. TypeChef cannot handle full expressions in #if. Problem with different MALLOC variants:
+			#if defined(SQLITE_SYSTEM_MALLOC) \
+			  + defined(SQLITE_WIN32_MALLOC) \
+			  + defined(SQLITE_ZERO_MALLOC) \
+			  + defined(SQLITE_MEMDEBUG)>1
+		Only one of the options may be active. The different options mean this:
+			**     SQLITE_SYSTEM_MALLOC          // Use normal system malloc()
+			**     SQLITE_WIN32_MALLOC           // Use Win32 native heap API
+			**     SQLITE_ZERO_MALLOC            // Use a stub allocator that always fails
+			**     SQLITE_MEMDEBUG               // Debugging version of system malloc()
+		We don't use Win32 and we don't debug or want to implement a stub. So we use SQLITE_SYSTEM_MALLOC and deactivate the others in partial configuration.
+		#define SQLITE_SYSTEM_MALLOC
+		#undef SQLITE_WIN32_MALLOC
+		#undef SQLITE_ZERO_MALLOC
+		#undef SQLITE_MEMDEBUG
+9.12. SQLITE_ENABLE_UPDATE_DELETE_LIMIT: Online documentation says that this option must not be used when building from amalgation because it must also be used during generation of a pre-packaged file.
+		partial configuration: #undef SQLITE_ENABLE_UPDATE_DELETE_LIMIT

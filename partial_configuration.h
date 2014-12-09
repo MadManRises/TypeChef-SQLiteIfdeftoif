@@ -99,3 +99,16 @@
 //	gcc -DSQLITE_THREADSAFE=0 shell.c sqlite3.c -ldl"
 
 #define SQLITE_THREADSAFE 0
+
+// 9.12. Fix a warning in TypeChef
+#define SQLITE_MALLOC_SOFT_LIMIT 1024
+// 9.12. Fix a warning in TypeChef, only one process per file db possible with this.
+#define SQLITE_ENABLE_LOCKING_STYLE 0
+//9.12. Choose exactly one MALLOC strategy. TypeChef lexer cannot process an #if otherwise (#if .. + .. > 1).
+#define SQLITE_SYSTEM_MALLOC 1
+#undef SQLITE_WIN32_MALLOC
+#undef SQLITE_ZERO_MALLOC
+#undef SQLITE_MEMDEBUG
+
+// 9.12. Online doc says we cannot use this option. http://www.sqlite.org/compile.html
+#undef SQLITE_ENABLE_UPDATE_DELETE_LIMIT

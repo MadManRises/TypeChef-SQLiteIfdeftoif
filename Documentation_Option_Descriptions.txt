@@ -1,0 +1,50 @@
+HAVE_STDINT_H
+NO_GETTOD
+SQLITE_CHECK_PAGES					If SQLITE_CHECK_PAGES is defined then we do some sanity checking on the cache using a hash function.  This is used for testing and debugging only.
+SQLITE_COVERAGE_TEST
+SQLITE_DEFAULT_MEMSTATUS			determines whether or not the features related to SQLITE_CONFIG_MEMSTATUS are available by default or not. Can also be set at runtime.
+SQLITE_EBCDIC						Machine uses old encoding EBCDIC. Otherwise SQLITE_ASCII.
+SQLITE_ENABLE_COLUMN_METADATA	X	Metadata for columns, enables some API functions and datastructures.
+SQLITE_ENABLE_EXPENSIVE_ASSERT	X	Enable some expensive assert statements in the code.
+SQLITE_ENABLE_FTS3				X	Enable support for creating special tables with a built-in full-text index (hereafter "FTS tables"). 
+SQLITE_ENABLE_FTS4					SQLITE_ENABLE_FTS4 is an alias for SQLITE_ENABLE_FTS3
+SQLITE_ENABLE_FTS4_UNICODE61	X	Unicode for FTS4 ?
+SQLITE_ENABLE_IOTRACE			X	If the SQLITE_ENABLE IOTRACE exists then the global variable sqlite3IoTrace is a pointer to a printf-like routine used to print I/O tracing messages. 
+SQLITE_ENABLE_MEMORY_MANAGEMENT		adds extra logic to SQLite that allows it to release unused memory upon request. This option must be enabled in order for the sqlite3_release_memory() interface to work. If this compile-time option is not used, the sqlite3_release_memory() interface is a no-op. 
+SQLITE_ENABLE_MEMSYS3			X	This option includes code in SQLite that implements an alternative memory allocator. This alternative memory allocator is only engaged when the SQLITE_CONFIG_HEAP option to sqlite3_config() is used to supply a large chunk of memory from which all memory allocations are taken. The MEMSYS3 memory allocator uses a hybrid allocation algorithm patterned after dlmalloc(). Only one of SQLITE_ENABLE_MEMSYS3 and SQLITE_ENABLE_MEMSYS5 may be enabled at once. 
+SQLITE_ENABLE_MEMSYS5			X	This option includes code in SQLite that implements an alternative memory allocator. This alternative memory allocator is only engaged when the SQLITE_CONFIG_HEAP option to sqlite3_config() is used to supply a large chunk of memory from which all memory allocations are taken. The MEMSYS5 module rounds all allocations up to the next power of two and uses a first-fit, buddy-allocator algorithm that provides strong guarantees against fragmentation and breakdown subject to certain operating constraints.
+SQLITE_ENABLE_OVERSIZE_CELL_CHECK
+SQLITE_ENABLE_TREE_EXPLAIN		X	If compiled with SQLITE_ENABLE_TREE_EXPLAIN, each sqlite3_stmt holds a string that describes the optimized parse tree. Online doc says this option is no longer used !?
+SQLITE_HAS_CODEC					Encryption. Requires adding the SEE encryption library. http://www.sqlite.org/see/doc/trunk/www/readme.wiki
+SQLITE_HAVE_ISNAN				X	If this option is present, then SQLite will use the isnan() function from the system math library. Without this option (the default behavior) SQLite uses its own internal implementation of isnan().
+SQLITE_HOMEGROWN_RECURSIVE_MUTEX	Probably irrelevant as we do not use threads.
+SQLITE_NO_SYNC					X	The SQLITE_NO_SYNC macro disables all fsync()s.  This is useful for testing when we want to run through the test suite quickly. Might lead to corruption on power failures etc.
+SQLITE_OMIT_ANALYZE				X	When this option is defined, the ANALYZE command is omitted from the build. 
+SQLITE_OMIT_ATTACH				X	When this option is defined, the ATTACH and DETACH commands are omitted from the build. 
+SQLITE_OMIT_AUTOVACUUM			X	If this option is defined, the library cannot create or write to databases that support auto_vacuum. Executing a PRAGMA auto_vacuum statement is not an error (since unknown PRAGMAs are silently ignored), but does not return a value or modify the auto-vacuum flag in the database file. If a database that supports auto-vacuum is opened by a library compiled with this option, it is automatically opened in read-only mode.
+SQLITE_OMIT_BLOB_LITERAL		X	When this option is defined, it is not possible to specify a blob in an SQL statement using the X'ABCD' syntax. 
+SQLITE_OMIT_BUILTIN_TEST		X	A standard SQLite build includes a small amount of logic controlled by the sqlite3_test_control() interface that is used to exercise parts of the SQLite core that are difficult to control and measure using the standard API. This option omits that built-in test logic. 
+SQLITE_OMIT_CAST				X	This option causes SQLite to omit support for the CAST operator. 
+SQLITE_OMIT_DECLTYPE			X	This option causes SQLite to omit support for the sqlite3_column_decltype() and sqlite3_column_decltype16() interfaces. 
+SQLITE_OMIT_DEPRECATED			X	This option causes SQLite to omit support for interfaces marked as deprecated. This includes sqlite3_aggregate_count(), sqlite3_expired(), sqlite3_transfer_bindings(), sqlite3_global_recover(), sqlite3_thread_cleanup() and sqlite3_memory_alarm() interfaces.
+SQLITE_OMIT_EXPLAIN				X	Defining this option causes the EXPLAIN command to be omitted from the library. Attempting to execute an EXPLAIN statement will cause a parse error. 
+SQLITE_OMIT_FOREIGN_KEY			X	 If this option is defined, then foreign key constraint syntax is not recognized. 
+SQLITE_OMIT_LOAD_EXTENSION		X	This option omits the entire extension loading mechanism from SQLite, including sqlite3_enable_load_extension() and sqlite3_load_extension() interfaces. 
+SQLITE_OMIT_OR_OPTIMIZATION		X	 This option disables the ability of SQLite to use an index together with terms of a WHERE clause connected by the OR operator. 
+SQLITE_OMIT_PAGER_PRAGMAS		X	Defining this option omits pragmas related to the pager subsystem from the build. 
+SQLITE_OMIT_PRAGMA				X	 This option is used to omit the PRAGMA command from the library. Note that it is useful to define the macros that omit specific pragmas in addition to this, as they may also remove supporting code in other sub-systems. This macro removes the PRAGMA command only. 
+SQLITE_OMIT_SUBQUERY			X	If defined, support for sub-selects and the IN() operator are omitted. 
+SQLITE_OMIT_VACUUM				X	When this option is defined, the VACUUM command is not included in the library. Executing a VACUUM statement causes a parse error. 
+SQLITE_OMIT_VIEW				X	Defining this option omits support for VIEW objects. Neither the CREATE VIEW nor the DROP VIEW commands are available in this case, and attempting to execute either will result in a parse error.
+SQLITE_RTREE_INT_ONLY			X	If this option is used together with SQLITE_ENABLE_RTREE then the R*Tree extension will only store 32-bit signed integer coordinates and all internal computations will be done using integers instead of floating point numbers. 
+SQLITE_SMALL_STACK				X	Controls stack size.
+USE_PREAD							related to pthreads which we don't use
+USE_PREAD64							related to pthreads which we don't use
+VDBE_PROFILE					X	Save profiling information from this VDBE run.
+_M_IX86								Architecture
+_WIN32_WCE							Architecture
+_WRS_KERNEL							Architecture
+__RTP__								Architecture
+__i386__							Architecture
+fdatasync						X	If enabled system function fdatasync() is used otherwise the slower fsync() is used.
+i386								Architecture

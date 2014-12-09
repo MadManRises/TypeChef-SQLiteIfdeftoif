@@ -31,6 +31,15 @@ Documentation of ifdeftoif on sqlite3
 	def(SQLITE_DEFAULT_MEMSTATUS) means that SQLITE_DEFAULT_MEMSTATUS was set by the user (assuming to 0)
 	!def(SQLITE_DEFAULT_MEMSTATUS) means that it was not set by the user and initialized to 1 by the above default initialization.
 	(We are lucky that the value is not used before the default initialization. Otherwise the case where a user defined value 1 would be interpreted wrong.
+09.12.2014 Above solution for SQLITE_DEFAULT_MEMSTATUS does not work with TypeChef. It cannot process the option due to the comparison with 1 (SQLITE_DEFAULT_MEMSTATUS==1).
+	Solution: #if defined(SQLITE_DEFAULT_MEMSTATUS)
+			1
+			#else
+			0
+			#endif
+		It is equivialent as long as no user uses "#define SQLITE_DEFAULT_MEMSTATUS 0" .
+		We can model both settings as "#define SQLITE_DEFAULT_MEMSTATUS" and "#undef SQLITE_DEFAULT_MEMSTATUS"
+		sqlite3 has a memory exception with "#undef SQLITE_DEFAULT_MEMSTATUS" or (id2i.sqlite_default_memstatus = 0) but I think this is a real error.
 24.11.2014
 Linker problem with allocateBtreePage
 	/usr/bin/ld: .libs/sqlite3.o: relocation R_X86_64_PC32 against undefined symbol `_701_allocateBtreePage' can not be used when making a shared object; recompile with -fPIC

@@ -94,3 +94,21 @@ SQLITE_HAS_CODEC causes problems, undefined extern functions (optional user-defi
 		#undef SQLITE_MEMDEBUG
 9.12. SQLITE_ENABLE_UPDATE_DELETE_LIMIT: Online documentation says that this option must not be used when building from amalgation because it must also be used during generation of a pre-packaged file.
 		partial configuration: #undef SQLITE_ENABLE_UPDATE_DELETE_LIMIT
+
+12.12. The generated TH3 testsuite file has 24000 lines, even if only one .test and one .cfg is included.
+		ifdeftoif seems to have scalability problems with this. 
+			with shell.c: .pi file has 210782 lines and 4.9MB.
+			with th3_generated_test.c: 223853 lines and 5.4MB. Seems not much?
+12.12. This works: ifdeftoif on sqlite3_modified.c only link the testsuite in GCC call
+		gcc -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_ifdeftoif.c th3_generated_test.c
+		Must add /* Alex: added initialization of our version of the azCompileOpt array */ init_azCompileOpt();
+		in the th3 main function first.
+		Workflow with two tests and two cfgs:
+			#gen testsuite
+			tclsh mkth3.tcl bugs/2012-11-02.test bugs/2012-04-20.test cfg/c1.cfg cfg/c2.cfg > ../TypeChef-SQLiteIfdeftoif/th3_generated_test.c
+			# insert init_azCompileOpt();
+			#compile and execute
+			gcc -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_ifdeftoif.c th3_generated_test.c; ./a.out ; echo $?
+			Result: "0 errors out of 40 tests in 2 configurations"
+		Workflow with bug/*.test and cfg/*.cfg:
+			tclsh mkth3.tcl bugs/2012-11-02.test bugs/2012-04-20.test cfg/c1.cfg cfg/c2.cfg > ../TypeChef-SQLiteIfdeftoif/th3_generated_test.c

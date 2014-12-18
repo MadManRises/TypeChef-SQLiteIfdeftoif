@@ -1,2 +1,14 @@
-ifdeftoif
-_ifdeftoif.c
+ifdeftoif_progress.txt
+libsqlite3.la
+renamings_Functions.txt
+renamings_StructsAndVars.txt
+res.txt
+shell.o
+sqlite.test
+sqlite3.lo
+sqlite3.o
+sqlite3.pc
+sqlite3.tunit
+sqlite3_ifdeftoif.c
+sqlite3_result.txt
+th3_generated_test.c

@@ -166,7 +166,7 @@ struct  ifdef_options {
   int f_i386 ;
 }  idi2;
 extern struct  ifdef_options   id2i;
-void idi2.init()  {
+void idi2_init()  {
   (idi2.f_have_strerror_r = 0);
   (idi2.f_config_killall = 0);
   (idi2.f_config_feature_getopt_long = 0);

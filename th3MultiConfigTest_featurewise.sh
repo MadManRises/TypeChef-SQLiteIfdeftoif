@@ -28,7 +28,12 @@ do
 			sqlite3_ifdeftoif.c th3_generated_test.c
 		#disabled all warnings! -w
 		./a.out
-		echo $?
+		echo "TH3 test result: $?\n"
+		if ($? == $expectedOutputValue) then
+			echo "Test successful\n"
+		else 
+			echo "Test result differs\n"
+		fi
 		rm -f a.out
 	done
 done

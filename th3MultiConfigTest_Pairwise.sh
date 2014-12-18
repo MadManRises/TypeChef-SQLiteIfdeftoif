@@ -17,6 +17,17 @@ do
 	
 	for f in ./optionstructs_ifdeftoif/pairwise/generated/id2i_optionstruct_*.h;
 	do
+	
+	
+		gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+			-include "./optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
+			sqlite3_original.c th3_generated_test.c
+		#disabled all warnings! -w
+		./a.out
+		expectedOutputValue=$?
+		echo "TH3 test result: $?"
+		rm -f a.out
+		
 		#sed filters everything but the number of the configuration
 		configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
 		
@@ -24,11 +35,16 @@ do
 		cp $f ../ifdeftoif/id2i_optionstruct.h
 		rm -f a.out
 		gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-			-include "./optionstructs_ifdeftoif/feature-wise/Prod$configID.h" \
+			-include "./optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
 			sqlite3_ifdeftoif.c th3_generated_test.c
 		#disabled all warnings! -w
 		./a.out
-		echo $?
+		echo "TH3 test result: $?\n"
+		if ($? == $expectedOutputValue) then
+			echo "Test successful\n"
+		else 
+			echo "Test result differs\n"
+		fi
 		rm -f a.out
 	done
 done

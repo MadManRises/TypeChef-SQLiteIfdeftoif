@@ -47,5 +47,8 @@ cp $ABSPATH/ifdeftoif_helpers/custom_limitations.txt $ABSPATH/sqlite3.pc
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 echo "$(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
 
+# Assign values inside the id2i_optionstruct
+./../Hercules/ifdeftoif.sh --featureConfig SQLiteDefConfig.config
+
 
 exit

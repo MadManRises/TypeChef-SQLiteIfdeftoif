@@ -17,6 +17,15 @@ do
 	
 	for f in ./optionstructs_ifdeftoif/feature-wise/id2i_optionstruct*.h;
 	do
+		gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+			-include "./optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
+			sqlite3_original.c th3_generated_test.c
+		#disabled all warnings! -w
+		./a.out
+		expectedOutputValue=$?
+		echo "TH3 test result: $?"
+		rm -f a.out
+
 		#sed filters everything but the number of the configuration
 		configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
 		

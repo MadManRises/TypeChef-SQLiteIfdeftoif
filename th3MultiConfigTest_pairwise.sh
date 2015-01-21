@@ -17,8 +17,6 @@ do
 	
 	for f in ./optionstructs_ifdeftoif/pairwise/generated/id2i_optionstruct_*.h;
 	do
-	
-	
 		gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
 			-include "./optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
 			sqlite3_original.c th3_generated_test.c

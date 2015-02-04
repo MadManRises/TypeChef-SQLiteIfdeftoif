@@ -1,6 +1,8 @@
 #!/bin/bash
 
+if [ ! -f sqlite3_ifdeftoif.c ]; then
 ./ifdeftoif_mod.sh
+fi
 
 for th3configFile in ../TH3/cfg/*.cfg;
 do

@@ -9,9 +9,9 @@ do
 	#generate test
 	cd ../TH3
 	./mkth3.tcl bugs/*.test "$th3configFile" > ../TypeChef-SQLiteIfdeftoif/th3_generated_test.c
-	./mkth3.tcl bugs/*.test "$th3configFile" > ../TypeChef-SQLiteIfdeftoif/th3_generated_test_ifdeftoif.c
 	cd ../TypeChef-SQLiteIfdeftoif
 	
+	cp th3_generated_test.c th3_generated_test_ifdeftoif.c
 	#insert /* Alex: added initialization of our version of the azCompileOpt array */ init_azCompileOpt();
 	sed -i \
 		's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\/* Alex: added initialization of our version of the azCompileOpt array *\/ init_azCompileOpt()\;/' \

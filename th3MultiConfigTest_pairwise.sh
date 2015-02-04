@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#./ifdeftoif_mod.sh
+./ifdeftoif_mod.sh
 
 for th3configFile in ../TH3/cfg/*.cfg;
 do
@@ -17,6 +17,9 @@ do
 	
 	for f in ./optionstructs_ifdeftoif/pairwise/generated/id2i_optionstruct_*.h;
 	do
+		#sed filters everything but the number of the configuration
+		configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
+		
 		gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
 			-include "./optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
 			sqlite3_original.c th3_generated_test.c
@@ -25,9 +28,6 @@ do
 		expectedOutputValue=$?
 		echo "TH3 test result: $?"
 		rm -f a.out
-		
-		#sed filters everything but the number of the configuration
-		configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
 		
 		echo "testing pairwise #ifConfig $f on th3Config $th3configFile"
 		cp $f ../ifdeftoif/id2i_optionstruct.h

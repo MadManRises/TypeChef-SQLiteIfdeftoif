@@ -22,6 +22,7 @@ do
 	do
 		#sed filters everything but the number of the configuration
 		configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
+		echo "testing #ifConfig $f on th3Config $th3configFile"
 		
 		gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
 			-include "./optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
@@ -29,10 +30,10 @@ do
 		#disabled all warnings! -w
 		./a.out
 		expectedOutputValue=$?
-		echo "TH3 test result: $?"
+		echo "TH3 non-ifdeftoif test result: $expectedOutputValue"
 		rm -f a.out
 		
-		echo "testing #ifConfig $f on th3Config $th3configFile"
+		
 		cp $f ../ifdeftoif/id2i_optionstruct.h
 		rm -f a.out
 		gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
@@ -40,8 +41,9 @@ do
 			sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c
 		#disabled all warnings! -w
 		./a.out
-		echo -e "TH3 test result: $?\n"
-		if ($? == $expectedOutputValue) then
+		testOutputValue=$?
+		echo -e "TH3 test result: $testOutputValue ; expected: $expectedOutputValue\n"
+		if [ $testOutputValue -eq $expectedOutputValue ] ; then
 			echo -e "Test successful\n"
 		else 
 			echo -e "Test result differs\n"

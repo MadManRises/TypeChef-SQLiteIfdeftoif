@@ -134,3 +134,5 @@ SQLITE_HAS_CODEC causes problems, undefined extern functions (optional user-defi
 				}else if( (id2i.f_sqlite_default_memstatus) && _3777_sqlite3Config.bMemstat ){
 					...
 			Wrote a Hercules unit test for this issue (variable_condition_test_1).
+
+9.2.15		Removed #define SQLITE_OS_UNIX from all pairwise configs. It seems the code compiles better when the option is not defined from the beginning (is defined in the code itself).

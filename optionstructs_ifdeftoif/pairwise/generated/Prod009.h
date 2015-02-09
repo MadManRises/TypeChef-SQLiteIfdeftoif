@@ -15,7 +15,6 @@
 #define SQLITE_OMIT_LOAD_EXTENSION
 #define SQLITE_OMIT_PRAGMA
 #define SQLITE_OMIT_WAL
-#define SQLITE_OS_UNIX
 #define SQLITE_RTREE_INT_ONLY
 #define SQLITE_SMALL_STACK
 #define fdatasync

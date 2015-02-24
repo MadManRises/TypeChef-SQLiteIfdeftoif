@@ -13,3 +13,5 @@ sqlite3_ifdeftoif.c
 sqlite3_result.txt
 th3_generated_test.c
 th3_generated_test_ifdeftoif.c
+th3_featurewise.txt
+th3_pairwise.txt

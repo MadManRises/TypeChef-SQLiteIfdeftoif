@@ -136,3 +136,11 @@ SQLITE_HAS_CODEC causes problems, undefined extern functions (optional user-defi
 			Wrote a Hercules unit test for this issue (variable_condition_test_1).
 
 9.2.15		Removed #define SQLITE_OS_UNIX from all pairwise configs. It seems the code compiles better when the option is not defined from the beginning (is defined in the code itself).
+
+24.2.15		Removed some more options.
+			These options must be deactivated. Actually there should be type errors in the files if they are active (undefined functions).
+			The functions are only defined if option is off, but always used.
+				Added this to ifdeftoif_helpers/custom_limitations.txt
+				!defined(SQLITE_OMIT_PRAGMA)
+				!defined(SQLITE_OMIT_ATTACH)
+				!defined(SQLITE_OMIT_VACUUM)

@@ -24,3 +24,8 @@ defined(SQLITE_OMIT_LOAD_EXTENSION)
 // sqlite3.c:(.text+0x94de0): Nicht definierter Verweis auf `sqlite3_activate_cerod'
 !defined(SQLITE_ENABLE_CEROD)
 
+// These options must be deactivated. Actually there should be type errors in the files if they are active (undefined functions).
+// The functions are only defined if option is off, but always used.
+!defined(SQLITE_OMIT_PRAGMA)
+!defined(SQLITE_OMIT_ATTACH)
+!defined(SQLITE_OMIT_VACUUM)

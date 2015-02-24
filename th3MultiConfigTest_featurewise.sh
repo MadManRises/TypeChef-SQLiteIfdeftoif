@@ -42,11 +42,10 @@ do
 		#disabled all warnings! -w
 		./a.out
 		testOutputValue=$?
-		echo -e "TH3 test result: $testOutputValue ; expected: $expectedOutputValue\n"
 		if [ $testOutputValue -eq $expectedOutputValue ] ; then
 			echo -e "Test successful\n"
 		else 
-			echo -e "Test result differs\n"
+			echo -e "TH3 test differs, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\n"
 		fi
 		rm -f a.out
 	done

@@ -17,5 +17,6 @@
 #define SQLITE_OMIT_SUBQUERY
 #define SQLITE_OMIT_VACUUM
 #define SQLITE_OMIT_WAL
+#define SQLITE_OS_UNIX
 #define VDBE_PROFILE
 #define fdatasync

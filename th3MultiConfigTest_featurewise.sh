@@ -58,6 +58,7 @@ do
 				fi
 				rm -f a.out
 			done
+			cd ../TH3
 		fi 
 	done
 done

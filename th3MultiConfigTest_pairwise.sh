@@ -11,6 +11,7 @@ do
 
 	for dir in */;
 	do
+		# Check if current folder contains *.test files
 		count=`ls -1 $dir/*.test 2>/dev/null | wc -l`
 		if [ $count != 0 ]
 		then 
@@ -58,6 +59,7 @@ do
 				fi
 				rm -f a.out
 			done
+			cd ../TH3
 		fi 
 	done
 done

@@ -13,7 +13,7 @@ do
 	do
 		# Check if current folder contains *.test files
 		count=`ls -1 $dir/*.test 2>/dev/null | wc -l`
-		if [ $count != 0 ]
+		if [ $count != 0 -a $dir != "stress/" ]
 		then 
 			./mkth3.tcl $dir/*.test "$th3configFile" > ../TypeChef-SQLiteIfdeftoif/th3_generated_test.c
 			cd ../TypeChef-SQLiteIfdeftoif

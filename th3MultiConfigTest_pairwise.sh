@@ -29,7 +29,7 @@ do
 			do
 				#sed filters everything but the number of the configuration
 				configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
-				echo "testing #ifConfig $f on .test files in $dir on th3Config $th3configFile"
+				echo "testing #ifConfig $f on .test files in $dir with th3Config $th3configFile at $(date +"%T")"
 				
 
 				# Test normal sqlite

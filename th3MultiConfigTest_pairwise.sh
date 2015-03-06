@@ -13,7 +13,7 @@ do
 	do
 		# Check if current folder contains *.test files
 		count=`ls -1 $dir/*.test 2>/dev/null | wc -l`
-		if [ $count != 0 ]
+		if [ $count != 0 -a $dir != "stress/" ]
 		then 
 			./mkth3.tcl $dir/*.test "$th3configFile" > ../TypeChef-SQLiteIfdeftoif/th3_generated_test.c
 			cd ../TypeChef-SQLiteIfdeftoif
@@ -29,7 +29,7 @@ do
 			do
 				#sed filters everything but the number of the configuration
 				configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
-				echo "testing #ifConfig $f in $dir on th3Config $th3configFile"
+				echo "testing #ifConfig $f on .test files in $dir with th3Config $th3configFile at $(date +"%T")"
 				
 
 				# Test normal sqlite

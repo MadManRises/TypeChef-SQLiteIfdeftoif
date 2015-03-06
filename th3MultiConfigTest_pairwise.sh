@@ -17,7 +17,7 @@ do
 		then 
 			./mkth3.tcl $dir/*.test "$th3configFile" > ../TypeChef-SQLiteIfdeftoif/th3_generated_test.c
 			cd ../TypeChef-SQLiteIfdeftoif
-			
+		
 			cp th3_generated_test.c th3_generated_test_ifdeftoif.c
 			#insert /* Alex: added initialization of our version of the azCompileOpt array */ init_azCompileOpt();
 			sed -i \
@@ -31,33 +31,49 @@ do
 				configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
 				echo "testing #ifConfig $f on .test files in $dir with th3Config $th3configFile at $(date +"%T")"
 				
-
 				# Test normal sqlite
-				gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+				originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
 					-include "./optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
-					sqlite3_original.c th3_generated_test.c
-				#disabled all warnings! -w
-				./a.out
-				expectedOutputValue=$?
-				echo "TH3 non-ifdeftoif test result: $expectedOutputValue"
-				rm -f a.out
-				
+					sqlite3_original.c th3_generated_test.c 2>&1)
+				# If gcc returns errors skip the testing
+				if [ $? == 1 ]
+				then
+					echo -e "TH3 test can't compile original, skipping test; original GCC error:\n$originalGCC\n\n"
+				else
+					expectedTestResult=$(./a.out 2>&1)
+					expectedOutputValue=$?
+					# append Segmentation Fault message
+					if [ $expectedOutputValue == 139 ]
+					then
+						expectedTestResult=$expectedTestResult"\nSegmentation Fault"
+					fi
+					rm -f a.out
 
-				# Test ifdeftoif sqlite
-				cp $f ../ifdeftoif/id2i_optionstruct.h
-				gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-					-include "./optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
-					sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c
-				#disabled all warnings! -w
-				./a.out
-				testOutputValue=$?
-				echo "TH3 ifdeftoif test result: $testOutputValue"
-				if [ $testOutputValue -eq $expectedOutputValue ] ; then
-					echo -e "Test successful\n"
-				else 
-					echo -e "TH3 test differs, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\n"
+					# Test ifdeftoif sqlite
+					cp $f ../ifdeftoif/id2i_optionstruct.h
+					ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+						-include "./optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
+						sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c 2>&1)
+					# If gcc returns errors don't start testing the ifdeftoif variant
+					if [ $? == 1 ]
+					then
+						echo -e "TH3 test can't compile ifeftoif; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif GCC error:\n$ifdeftoifGCC\n\n"
+					else
+						ifdeftoifTestResult=$(./a.out 2>&1)
+						testOutputValue=$?
+						# append Segmentation Fault message
+						if [ $testOutputValue == 139 ]
+						then
+							ifdeftoifTestResult=$ifdeftoifTestResult"\nSegmentation Fault"
+						fi
+						if [ $testOutputValue -eq $expectedOutputValue ] ; then
+							echo -e "Test successful, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\n\n"
+						else 
+							echo -e "TH3 test differs, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif:\nIfdeftoif test output:\n$ifdeftoifTestResult\n\n"
+						fi
+						rm -f a.out
+					fi
 				fi
-				rm -f a.out
 			done
 			cd ../TH3
 		fi 

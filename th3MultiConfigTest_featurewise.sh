@@ -32,31 +32,37 @@ do
 				echo "testing #ifConfig $f in $dir on th3Config $th3configFile"
 				
 				# Test normal sqlite
-				gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+				originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
 					-include "./optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
-					sqlite3_original.c th3_generated_test.c
-				#disabled all warnings! -w
-				./a.out
-				expectedOutputValue=$?
-				echo "TH3 non-ifdeftoif test result: $expectedOutputValue"
-				rm -f a.out
-				
+					sqlite3_original.c th3_generated_test.c 2>&1)
+				# disabled all warnings! -w
+				# If gcc returns errors don't start the testing
+				if [ $? == 1 ]
+				then
+					echo -e "TH3 test can't compile original, skipping test on ifdeftoif variant; GCC error:\n$originalGCC\n\n"
+				else
+					expectedTestResult=$(./a.out 2>&1)
+					expectedOutputValue=$?
+					#echo "TH3 non-ifdeftoif test result: $expectedOutputValue"
+					rm -f a.out
+					
 
-				# Test ifdeftoif sqlite
-				cp $f ../ifdeftoif/id2i_optionstruct.h
-				gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-					-include "./optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
-					sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c
-				#disabled all warnings! -w
-				./a.out
-				testOutputValue=$?
-				echo "TH3 ifdeftoif test result: $testOutputValue"
-				if [ $testOutputValue -eq $expectedOutputValue ] ; then
-					echo -e "Test successful\n"
-				else 
-					echo -e "TH3 test differs, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\n"
+					# Test ifdeftoif sqlite
+					cp $f ../ifdeftoif/id2i_optionstruct.h
+					ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+						-include "./optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
+						sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c 2>&1)
+					#disabled all warnings! -w
+					ifdeftoifTestResult=$(./a.out 2>&1)
+					testOutputValue=$?
+					#echo "TH3 ifdeftoif test result: $testOutputValue"
+					if [ $testOutputValue -eq $expectedOutputValue ] ; then
+						echo -e "Test successful\n\n"
+					else 
+						echo -e "TH3 test differs, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected:\n$exptedTestResult\n\nIfdeftoif:\n$ifdeftoifTestResult\n\n"
+					fi
+					rm -f a.out
 				fi
-				rm -f a.out
 			done
 			cd ../TH3
 		fi 

@@ -36,7 +36,7 @@ do
 					-include "./optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
 					sqlite3_original.c th3_generated_test.c 2>&1)
 				# If gcc returns errors skip the testing
-				if [ $? != 1 ]
+				if [ $? != 0 ]
 				then
 					echo -e "TH3 test can't compile original, skipping test; original GCC error:\n$originalGCC\n\n"
 				else
@@ -50,7 +50,7 @@ do
 						-include "./optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
 						sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c 2>&1)
 					# If gcc returns errors don't start testing the ifdeftoif variant
-					if [ $? != 1 ]
+					if [ $? != 0 ]
 					then
 						echo -e "TH3 test can't compile ifeftoif; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif GCC error:\n$ifdeftoifGCC\n\n"
 					else

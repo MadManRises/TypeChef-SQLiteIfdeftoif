@@ -65,6 +65,7 @@ do
 					fi
 				fi
 			done
+			echo -e "Featurewise finished folder $dir at $(date +"%T")"
 			cd ../TH3
 		fi 
 	done

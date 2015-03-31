@@ -59,7 +59,11 @@ do
 						if [ $testOutputValue -eq $expectedOutputValue ] ; then
 							echo -e "Test successful, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\n\n"
 						else 
-							echo -e "TH3 test differs, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif test output:\n$ifdeftoifTestResult\n\n"
+							if [ $testOutputValue -eq 0] ; then
+								echo -e "TH3 succeeds, ifdeftoif does not: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif test output:\n$ifdeftoifTestResult\n\n"
+							else
+								echo -e "TH3 test differs, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif test output:\n$ifdeftoifTestResult\n\n"
+							fi 
 						fi
 						rm -f a.out
 					fi

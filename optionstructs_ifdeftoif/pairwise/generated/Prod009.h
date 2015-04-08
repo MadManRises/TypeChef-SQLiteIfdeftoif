@@ -15,7 +15,7 @@
 #define SQLITE_OMIT_PAGER_PRAGMAS
 #define SQLITE_OMIT_SUBQUERY
 #define SQLITE_OMIT_WAL
-#define SQLITE_OS_UNIX
+#define SQLITE_OS_UNIX 1
 #define SQLITE_RTREE_INT_ONLY
 #define VDBE_PROFILE
 #define fdatasync

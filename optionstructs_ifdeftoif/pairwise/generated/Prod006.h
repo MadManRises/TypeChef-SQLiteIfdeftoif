@@ -12,7 +12,7 @@
 #define SQLITE_OMIT_PAGER_PRAGMAS
 #define SQLITE_OMIT_VIEW
 #define SQLITE_OMIT_WAL
-#define SQLITE_OS_UNIX
+#define SQLITE_OS_UNIX 1
 #define SQLITE_SMALL_STACK
 #define VDBE_PROFILE
 #define fdatasync

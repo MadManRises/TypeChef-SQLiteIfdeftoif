@@ -51,17 +51,21 @@ do
 					# If gcc returns errors don't start testing the ifdeftoif variant
 					if [ $? != 0 ]
 					then
-						echo -e "TH3 test can't compile ifeftoif; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif GCC error:\n$ifdeftoifGCC\n\n"
+						echo -e "TH3 test can't compile ifdeftoif; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif GCC error:\n$ifdeftoifGCC\n\n"
 					else
 						ifdeftoifTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
 						testOutputValue=$?
 						if [ $testOutputValue -eq $expectedOutputValue ] ; then
-							echo -e "Test successful, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\n\n"
+							echo -e "Test successful, exit Codes: $testOutputValue;\n\n"
 						else
 							if [ $expectedOutputValue -eq 0 ] ; then
-								echo -e "TH3 succeeds, ifdeftoif does not: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif test output:\n$ifdeftoifTestResult\n\n"
+								echo -e "TH3 succeeds, ifdeftoif does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif test output:\n$ifdeftoifTestResult\n\n"
 							else
-								echo -e "TH3 test differs, ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif test output:\n$ifdeftoifTestResult\n\n"
+								if [ $testOutputValue -eq 0 ] ; then
+									echo -e "Ifdeftoif succeeds, TH3 does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif test output:\n$ifdeftoifTestResult\n\n"
+								else
+									echo -e "TH3 test differs; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif test output:\n$ifdeftoifTestResult\n\n"
+								fi
 							fi 
 						fi
 						rm -f a.out

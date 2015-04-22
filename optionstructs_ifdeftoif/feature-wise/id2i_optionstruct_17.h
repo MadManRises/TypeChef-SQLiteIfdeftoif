@@ -48,7 +48,7 @@ struct  ifdef_options {
   int f_config_feature_cpio_o ;
   int f_config_printf ;
   int f_config_unlzma ;
-  int f_fdatasync ;
+  int f_have_fdatasync ;
   int f_config_feature_topmem ;
   int f_sqlite_enable_sqllog ;
   int f_config_feature_tar_long_options ;
@@ -271,7 +271,7 @@ void id2i_init()  {
   (id2i.f_sqlite_small_stack = 0);
   (id2i.f_config_feature_find_context = 0);
   (id2i.f_config_dpkg = 0);
-  (id2i.f_fdatasync = 0);
+  (id2i.f_have_fdatasync = 0);
   (id2i.f_sqlite_check_pages = 0);
   (id2i.f_sqlite_omit_cast = 1);
   (id2i.f_config_feature_check_names = 0);

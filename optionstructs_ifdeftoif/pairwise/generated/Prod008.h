@@ -16,4 +16,4 @@
 #define SQLITE_OS_UNIX 1
 #define SQLITE_SMALL_STACK
 #define VDBE_PROFILE
-#define fdatasync
+#define HAVE_FDATASYNC

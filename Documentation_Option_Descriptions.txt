@@ -46,5 +46,5 @@ _WIN32_WCE							Architecture
 _WRS_KERNEL							Architecture
 __RTP__								Architecture
 __i386__							Architecture
-fdatasync						X	If enabled system function fdatasync() is used otherwise the slower fsync() is used.
+HAVE_FDATASYNC					X	If enabled system function fdatasync() is used otherwise the slower fsync() is used.
 i386								Architecture

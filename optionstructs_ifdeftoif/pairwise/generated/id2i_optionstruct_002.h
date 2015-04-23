@@ -732,12 +732,11 @@ struct  ifdef_options {
 }  id2i;
 extern struct  ifdef_options   id2i;
 void id2i_init()  {
+  (id2i.f_sqlite_omit_blob_literal = 1);
   (id2i.f_sqlite_enable_iotrace = 1);
   (id2i.f_sqlite_enable_column_metadata = 1);
   (id2i.f_sqlite_omit_foreign_key = 1);
-  (id2i.f_sqlite_omit_analyze = 1);
   (id2i.f_sqlite_rtree_int_only = 1);
-  (id2i.f_sqlite_omit_explain = 1);
   (id2i.f_sqlite_small_stack = 1);
   (id2i.f_sqlite_omit_deprecated = 1);
   (id2i.f_sqlite_enable_expensive_assert = 1);
@@ -745,7 +744,6 @@ void id2i_init()  {
   (id2i.f_sqlite_no_sync = 1);
   (id2i.f_sqlite_omit_autovacuum = 1);
   (id2i.f_sqlite_have_isnan = 1);
-  (id2i.f_sqlite_omit_or_optimization = 1);
   (id2i.f_config_nc_110_compat = 0);
   (id2i.f_bf_ptr2 = 0);
   (id2i.f_bn_debug = 0);
@@ -784,7 +782,6 @@ void id2i_init()  {
   (id2i.f_config_feature_call_telinit = 0);
   (id2i.f_floatifreslseln_sc = 0);
   (id2i.f_aes_ctr_asm = 0);
-  (id2i.f_sqlite_omit_blob_literal = 0);
   (id2i.f_sqlite_malloc_soft_limit = 0);
   (id2i.f_config_feature_find_regex = 0);
   (id2i.f_config_feature_find_user = 0);
@@ -835,6 +832,7 @@ void id2i_init()  {
   (id2i.f_cbc_handles_truncated_io = 0);
   (id2i.f_config_feature_fast_top = 0);
   (id2i.f_config_feature_hwclock_adjtime_fhs = 0);
+  (id2i.f_sqlite_omit_analyze = 0);
   (id2i.f_config_feature_dc_libm = 0);
   (id2i.f_config_feature_find_type = 0);
   (id2i.f_config_feature_del_user_from_group = 0);
@@ -864,6 +862,7 @@ void id2i_init()  {
   (id2i.f_config_feature_httpd_proxy = 0);
   (id2i.f___tandem = 0);
   (id2i.f_sol_tcp = 0);
+  (id2i.f_sqlite_omit_explain = 0);
   (id2i.f_crypto_mdebug_abort = 0);
   (id2i.f_dnoxctl_dosctrlmod_sc = 0);
   (id2i.f_config_remove_shell = 0);
@@ -1392,6 +1391,7 @@ void id2i_init()  {
   (id2i.f_engine_table_debug = 0);
   (id2i.f_pbe_prf_test = 0);
   (id2i.f_config_feature_unix_local = 0);
+  (id2i.f_sqlite_omit_or_optimization = 0);
   (id2i.f_config_feature_volumeid_romfs = 0);
   (id2i.f_config_feature_editing_savehistory = 0);
   (id2i.f_config_expand = 0);

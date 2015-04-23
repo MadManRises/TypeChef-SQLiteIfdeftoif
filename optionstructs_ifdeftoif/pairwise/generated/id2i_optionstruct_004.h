@@ -733,15 +733,12 @@ struct  ifdef_options {
 extern struct  ifdef_options   id2i;
 void id2i_init()  {
   (id2i.f_sqlite_omit_foreign_key = 1);
-  (id2i.f_sqlite_rtree_int_only = 1);
   (id2i.f_sqlite_small_stack = 1);
   (id2i.f_sqlite_omit_subquery = 1);
-  (id2i.f_sqlite_omit_cast = 1);
-  (id2i.f_sqlite_enable_tree_explain = 1);
   (id2i.f_sqlite_omit_load_extension = 1);
-  (id2i.f_sqlite_no_sync = 1);
   (id2i.f_sqlite_have_isnan = 1);
   (id2i.f_sqlite_omit_decltype = 1);
+  (id2i.f_sqlite_omit_or_optimization = 1);
   (id2i.f_sqlite_omit_pager_pragmas = 1);
   (id2i.f_sqlite_omit_builtin_test = 1);
   (id2i.f_config_nc_110_compat = 0);
@@ -856,6 +853,7 @@ void id2i_init()  {
   (id2i.f_config_feature_setfiles_check_option = 0);
   (id2i.f_sqlite_enable_memsys3 = 0);
   (id2i.f__wrs_kernel = 0);
+  (id2i.f_sqlite_rtree_int_only = 0);
   (id2i.f_openssl_no_x509_verify = 0);
   (id2i.f_config_feature_vi_readonly = 0);
   (id2i.f_config_feature_fancy_sleep = 0);
@@ -1117,6 +1115,7 @@ void id2i_init()  {
   (id2i.f_b_endian = 0);
   (id2i.f_config_freeramdisk = 0);
   (id2i.f_config_feature_fancy_head = 0);
+  (id2i.f_sqlite_omit_cast = 0);
   (id2i.f_ssl_forbid_enull = 0);
   (id2i.f_config_feature_ftpgetput_long_options = 0);
   (id2i.f_openssl_no_cms = 0);
@@ -1132,6 +1131,7 @@ void id2i_init()  {
   (id2i.f_openssl_no_rdrand = 0);
   (id2i.f_config_feature_wget_authentication = 0);
   (id2i.f_openssl_no_chain_verify = 0);
+  (id2i.f_sqlite_enable_tree_explain = 0);
   (id2i.f_config_build_libbusybox = 0);
   (id2i.f_config_feature_shared_busybox = 0);
   (id2i.f_experimental_str_to_strong_key = 0);
@@ -1347,6 +1347,7 @@ void id2i_init()  {
   (id2i.f_sqlite_omit_attach = 0);
   (id2i.f_config_feature_init_sctty = 0);
   (id2i.f_openssl_no_hw_cswift = 0);
+  (id2i.f_sqlite_no_sync = 0);
   (id2i.f_config_feature_less_winch = 0);
   (id2i.f__file_offset_bits = 0);
   (id2i.f_config_feature_awk_libm = 0);
@@ -1393,7 +1394,6 @@ void id2i_init()  {
   (id2i.f_engine_table_debug = 0);
   (id2i.f_pbe_prf_test = 0);
   (id2i.f_config_feature_unix_local = 0);
-  (id2i.f_sqlite_omit_or_optimization = 0);
   (id2i.f_config_feature_volumeid_romfs = 0);
   (id2i.f_config_feature_editing_savehistory = 0);
   (id2i.f_config_expand = 0);

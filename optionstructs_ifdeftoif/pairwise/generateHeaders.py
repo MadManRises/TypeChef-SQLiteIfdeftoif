@@ -1,3 +1,5 @@
+from __future__ import print_function
+import sys
 import csv
 from collections import defaultdict
 
@@ -7,7 +9,10 @@ define = "#define "
 
 with open("generatedConfigs.ca2.csv") as f:
     reader = csv.reader(f,delimiter=';')
-    reader.next()
+    if sys.version > '3':
+        reader.__next__()
+    else:
+        reader.next()
     for row in reader:
         for (i,v) in enumerate(row):
             columns[i].append(v)
@@ -31,4 +36,4 @@ for col in columns:
         exported_files += 1
     i += 1
 
-print "Exported ", exported_files, " Prod.h files from generatedConfigs.ca2.csv file."
+print("Exported", exported_files, "Prod.h files from generatedConfigs.ca2.csv file.")

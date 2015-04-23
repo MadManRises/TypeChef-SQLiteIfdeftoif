@@ -10,13 +10,12 @@ define = "#define "
 with open("generatedConfigs.ca2.csv") as f:
     reader = csv.reader(f,delimiter=';')
     if sys.version > '3':
-        reader.__next__()
+        reader.__next__() ## Python 3.x uses __next__()
     else:
-        reader.next()
+        reader.next() ## Python 2.x uses next
     for row in reader:
         for (i,v) in enumerate(row):
             columns[i].append(v)
-
 i = 0
 j = 0
 exported_files = 0

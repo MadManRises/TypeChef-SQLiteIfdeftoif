@@ -27,12 +27,14 @@ for col in columns:
                 prod = prod + define + columns[0][j] + "\n"
             j += 1
         j = 0
-        final_list.append(prod)
-        current_index = i-1
-        file = open("generated/Prod" + str("%03d" % current_index) + ".h", "w")
-        file.write(prod)
-        file.close
-        exported_files += 1
+        # Check if we actually turned on at least one option in this column
+        if prod != "":
+            final_list.append(prod)
+            current_index = i-1
+            file = open("generated/Prod" + str("%03d" % current_index) + ".h", "w")
+            file.write(prod)
+            file.close
+            exported_files += 1
     i += 1
 
 print("Exported", exported_files, "Prod.h files from generatedConfigs.ca2.csv file.")

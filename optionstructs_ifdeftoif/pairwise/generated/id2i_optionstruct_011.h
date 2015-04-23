@@ -732,18 +732,6 @@ struct  ifdef_options {
 }  id2i;
 extern struct  ifdef_options   id2i;
 void id2i_init()  {
-  (id2i.f_sqlite_enable_iotrace = 1);
-  (id2i.f_sqlite_omit_analyze = 1);
-  (id2i.f_sqlite_rtree_int_only = 1);
-  (id2i.f_sqlite_omit_subquery = 1);
-  (id2i.f_sqlite_omit_cast = 1);
-  (id2i.f_sqlite_omit_load_extension = 1);
-  (id2i.f_sqlite_omit_view = 1);
-  (id2i.f_sqlite_no_sync = 1);
-  (id2i.f_sqlite_have_isnan = 1);
-  (id2i.f_sqlite_omit_decltype = 1);
-  (id2i.f_sqlite_omit_or_optimization = 1);
-  (id2i.f_sqlite_omit_builtin_test = 1);
   (id2i.f_config_nc_110_compat = 0);
   (id2i.f_bf_ptr2 = 0);
   (id2i.f_bn_debug = 0);
@@ -788,6 +776,7 @@ void id2i_init()  {
   (id2i.f_config_feature_find_user = 0);
   (id2i.f_config_feature_grep_context = 0);
   (id2i.f_config_feature_topmem = 0);
+  (id2i.f_sqlite_enable_iotrace = 0);
   (id2i.f_config_header_bn_h = 0);
   (id2i.f_config_feature_volumeid_ocfs2 = 0);
   (id2i.f_string_table_test = 0);
@@ -835,6 +824,7 @@ void id2i_init()  {
   (id2i.f_cbc_handles_truncated_io = 0);
   (id2i.f_config_feature_fast_top = 0);
   (id2i.f_config_feature_hwclock_adjtime_fhs = 0);
+  (id2i.f_sqlite_omit_analyze = 0);
   (id2i.f_config_feature_dc_libm = 0);
   (id2i.f_config_feature_find_type = 0);
   (id2i.f_config_feature_del_user_from_group = 0);
@@ -855,6 +845,7 @@ void id2i_init()  {
   (id2i.f_config_feature_setfiles_check_option = 0);
   (id2i.f_sqlite_enable_memsys3 = 0);
   (id2i.f__wrs_kernel = 0);
+  (id2i.f_sqlite_rtree_int_only = 0);
   (id2i.f_openssl_no_x509_verify = 0);
   (id2i.f_config_feature_vi_readonly = 0);
   (id2i.f_config_feature_fancy_sleep = 0);
@@ -1077,6 +1068,7 @@ void id2i_init()  {
   (id2i.f_config_feature_udhcp_port = 0);
   (id2i.f_config_base64 = 0);
   (id2i.f_i386 = 0);
+  (id2i.f_sqlite_omit_subquery = 0);
   (id2i.f_config_feature_loadfont_psf2 = 0);
   (id2i.f_config_feature_insmod_load_map = 0);
   (id2i.f___ultrix = 0);
@@ -1117,6 +1109,7 @@ void id2i_init()  {
   (id2i.f_b_endian = 0);
   (id2i.f_config_freeramdisk = 0);
   (id2i.f_config_feature_fancy_head = 0);
+  (id2i.f_sqlite_omit_cast = 0);
   (id2i.f_ssl_forbid_enull = 0);
   (id2i.f_config_feature_ftpgetput_long_options = 0);
   (id2i.f_openssl_no_cms = 0);
@@ -1200,6 +1193,7 @@ void id2i_init()  {
   (id2i.f_rsa_debug = 0);
   (id2i.f_header_bn_h = 0);
   (id2i.f_openssl_no_psk = 0);
+  (id2i.f_sqlite_omit_load_extension = 0);
   (id2i.f_config_feature_tar_selinux = 0);
   (id2i.f_cca4758_lib_name = 0);
   (id2i.f_config_feature_less_brackets = 0);
@@ -1267,6 +1261,7 @@ void id2i_init()  {
   (id2i.f_getpid_is_meaningless = 0);
   (id2i.f_no_chmod = 0);
   (id2i.f_config_feature_vi_optimize_cursor = 0);
+  (id2i.f_sqlite_omit_view = 0);
   (id2i.f_config_feature_inetd_support_builtin_daytime = 0);
   (id2i.f_irix_cc_bug = 0);
   (id2i.f_config_ls = 0);
@@ -1347,6 +1342,7 @@ void id2i_init()  {
   (id2i.f_sqlite_omit_attach = 0);
   (id2i.f_config_feature_init_sctty = 0);
   (id2i.f_openssl_no_hw_cswift = 0);
+  (id2i.f_sqlite_no_sync = 0);
   (id2i.f_config_feature_less_winch = 0);
   (id2i.f__file_offset_bits = 0);
   (id2i.f_config_feature_awk_libm = 0);
@@ -1388,11 +1384,14 @@ void id2i_init()  {
   (id2i.f_config_feature_tar_oldsun_compatibility = 0);
   (id2i.f_config_feature_wget_timeout = 0);
   (id2i.f_config_feature_reformime_compat = 0);
+  (id2i.f_sqlite_have_isnan = 0);
   (id2i.f_times = 0);
+  (id2i.f_sqlite_omit_decltype = 0);
   (id2i.f_config_feature_find_maxdepth = 0);
   (id2i.f_engine_table_debug = 0);
   (id2i.f_pbe_prf_test = 0);
   (id2i.f_config_feature_unix_local = 0);
+  (id2i.f_sqlite_omit_or_optimization = 0);
   (id2i.f_config_feature_volumeid_romfs = 0);
   (id2i.f_config_feature_editing_savehistory = 0);
   (id2i.f_config_expand = 0);
@@ -1451,6 +1450,7 @@ void id2i_init()  {
   (id2i.f_config_rpm = 0);
   (id2i.f_config_feature_vi_colon = 0);
   (id2i.f_config_feature_klogd_klogctl = 0);
+  (id2i.f_sqlite_omit_builtin_test = 0);
   (id2i.f_openssl_no_buf_freelists = 0);
   (id2i.f_config_feature_find_not = 0);
   (id2i.f_test_eng_openssl_sha_p_final = 0);

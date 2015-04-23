@@ -127,7 +127,7 @@ c 126 __i486__
 c 127 __ppc__
 c 128 __x86_64
 c 129 __x86_64__
-c 130 fdatasync
+c 130 HAVE_FDATASYNC
 c 131 i386
 p cnf 131 3
 79 74 0

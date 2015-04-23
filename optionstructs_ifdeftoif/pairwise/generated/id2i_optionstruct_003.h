@@ -738,11 +738,11 @@ void id2i_init()  {
   (id2i.f_sqlite_enable_iotrace = 1);
   (id2i.f_vdbe_profile = 1);
   (id2i.f_sqlite_omit_deprecated = 1);
-  (id2i.f_sqlite_omit_analyze = 1);
+  (id2i.f_sqlite_omit_blob_literal = 1);
   (id2i.f_sqlite_omit_decltype = 1);
   (id2i.f_sqlite_omit_or_optimization = 1);
   (id2i.f_sqlite_enable_expensive_assert = 1);
-  (id2i.f_sqlite_omit_explain = 1);
+  (id2i.f_sqlite_omit_pager_pragmas = 1);
   (id2i.f_sqlite_omit_foreign_key = 1);
   (id2i.f_sqlite_enable_tree_explain = 1);
   (id2i.f_config_feature_fancy_sleep = 0);
@@ -963,7 +963,6 @@ void id2i_init()  {
   (id2i.f_config_feature_netstat_wide = 0);
   (id2i.f_config_feature_rmdir_long_options = 0);
   (id2i.f_openssl_no_hw_padlock = 0);
-  (id2i.f_sqlite_omit_blob_literal = 0);
   (id2i.f_config_traceroute6 = 0);
   (id2i.f_config_feature_mtab_support = 0);
   (id2i.f_openssl_no_rsax = 0);
@@ -1027,6 +1026,7 @@ void id2i_init()  {
   (id2i.f_openssl_bn_asm_part_words = 0);
   (id2i.f_crypto_mdebug_time = 0);
   (id2i.f_config_feature_udhcp_port = 0);
+  (id2i.f_sqlite_omit_analyze = 0);
   (id2i.f_test_eng_openssl_rc4_others = 0);
   (id2i.f_config_feature_date_nano = 0);
   (id2i.f_config_feature_xargs_support_quotes = 0);
@@ -1301,6 +1301,7 @@ void id2i_init()  {
   (id2i.f_config_feature_bootchartd_bloated_header = 0);
   (id2i.f_header_bn_h = 0);
   (id2i.f_config_feature_acpid_compat = 0);
+  (id2i.f_sqlite_omit_explain = 0);
   (id2i.f_zlib_shared = 0);
   (id2i.f_sol_tcp = 0);
   (id2i.f_config_feature_dd_ibs_obs = 0);
@@ -1309,7 +1310,6 @@ void id2i_init()  {
   (id2i.f_fdatasync = 0);
   (id2i.f_config_feature_run_parts_fancy = 0);
   (id2i.f__aix = 0);
-  (id2i.f_sqlite_omit_pager_pragmas = 0);
   (id2i.f_header_bn_lcl_h = 0);
   (id2i.f_config_feature_volumeid_fat = 0);
   (id2i.f_lock_debug = 0);

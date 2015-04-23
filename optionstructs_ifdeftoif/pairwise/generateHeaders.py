@@ -28,7 +28,7 @@ for col in columns:
         file = open("generated/Prod" + str("%03d" % current_index) + ".h", "w")
         file.write(prod)
         file.close
-	exported_files += 1
+        exported_files += 1
     i += 1
 
 print "Exported ", exported_files, " Prod.h files from generatedConfigs.ca2.csv file."

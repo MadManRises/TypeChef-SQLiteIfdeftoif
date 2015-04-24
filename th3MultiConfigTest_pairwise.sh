@@ -51,7 +51,11 @@ do
 					# If gcc returns errors don't start testing the ifdeftoif variant
 					if [ $? != 0 ]
 					then
-						echo -e "TH3 test can't compile ifdeftoif; expected: $expectedOutputValue\nExpected test output:\n$expectedTestResult\n\nIfdeftoif GCC error:\n$ifdeftoifGCC\n\n"
+						echo -e "TH3 test can't compile ifdeftoif; expected: $expectedOutputValue\nExpected test output:"
+						echo -e "$expectedTestResult" | tail -n 10
+						echo -e "\nIfdeftoif GCC error:"
+						echo -e "$ifdeftoifGCC"
+						echo -e "\n"
 					else
 						ifdeftoifTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
 						testOutputValue=$?

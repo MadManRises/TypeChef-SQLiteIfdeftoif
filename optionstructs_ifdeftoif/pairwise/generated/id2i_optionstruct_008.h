@@ -733,16 +733,13 @@ struct  ifdef_options {
 extern struct  ifdef_options   id2i;
 void id2i_init()  {
   (id2i.f_sqlite_omit_load_extension = 1);
-  (id2i.f_sqlite_omit_autovacuum = 1);
   (id2i.f_sqlite_omit_cast = 1);
-  (id2i.f_vdbe_profile = 1);
+  (id2i.f_sqlite_have_isnan = 1);
   (id2i.f_sqlite_omit_deprecated = 1);
   (id2i.f_sqlite_no_sync = 1);
   (id2i.f_sqlite_enable_expensive_assert = 1);
   (id2i.f_sqlite_omit_explain = 1);
-  (id2i.f_sqlite_omit_pager_pragmas = 1);
-  (id2i.f_sqlite_enable_column_metadata = 1);
-  (id2i.f_sqlite_enable_tree_explain = 1);
+  (id2i.f_sqlite_small_stack = 1);
   (id2i.f_config_feature_fancy_sleep = 0);
   (id2i.f_config_feature_chat_send_escapes = 0);
   (id2i.f_data_order_is_big_endian = 0);
@@ -791,6 +788,7 @@ void id2i_init()  {
   (id2i.f_config_feature_hdparm_hdio_tristate_hwif = 0);
   (id2i.f_config_feature_volumeid_ext = 0);
   (id2i.f_config_feature_reformime_compat = 0);
+  (id2i.f_sqlite_omit_autovacuum = 0);
   (id2i.f_header_bss_file_c = 0);
   (id2i.f_openssl_no_engine = 0);
   (id2i.f_config_ubiattach = 0);
@@ -817,6 +815,7 @@ void id2i_init()  {
   (id2i.f_openssl_ri_debug = 0);
   (id2i.f_config_ubidetach = 0);
   (id2i.f_sqlite_enable_memsys3 = 0);
+  (id2i.f_vdbe_profile = 0);
   (id2i.f_config_feature_ip_rule = 0);
   (id2i.f_tcp_nodelay = 0);
   (id2i.f_config_feature_ip_tunnel = 0);
@@ -871,7 +870,6 @@ void id2i_init()  {
   (id2i.f_config_desktop = 0);
   (id2i.f_config_sh_math_support_64 = 0);
   (id2i.f_config_feature_editing_savehistory = 0);
-  (id2i.f_sqlite_have_isnan = 0);
   (id2i.f_config_feature_vi_dot_cmd = 0);
   (id2i.f_openssldir = 0);
   (id2i.f_config_feature_tab_completion = 0);
@@ -1310,6 +1308,7 @@ void id2i_init()  {
   (id2i.f_fdatasync = 0);
   (id2i.f_config_feature_run_parts_fancy = 0);
   (id2i.f__aix = 0);
+  (id2i.f_sqlite_omit_pager_pragmas = 0);
   (id2i.f_header_bn_lcl_h = 0);
   (id2i.f_config_feature_volumeid_fat = 0);
   (id2i.f_lock_debug = 0);
@@ -1328,6 +1327,7 @@ void id2i_init()  {
   (id2i.f_crypto_mdebug_thread = 0);
   (id2i.f_config_feature_compress_bbconfig = 0);
   (id2i.f_config_feature_addgroup_long_options = 0);
+  (id2i.f_sqlite_enable_column_metadata = 0);
   (id2i.f_config_feature_seamless_xz = 0);
   (id2i.f_config_feature_telnet_autologin = 0);
   (id2i.f_zlib = 0);
@@ -1382,7 +1382,6 @@ void id2i_init()  {
   (id2i.f_sqlite_has_codec = 0);
   (id2i.f_config_feature_find_context = 0);
   (id2i.f_config_feature_modprobe_small_options_on_cmdline = 0);
-  (id2i.f_sqlite_small_stack = 0);
   (id2i.f_bn_debug = 0);
   (id2i.f_config_feature_su_syslog = 0);
   (id2i.f_openssl_no_hw_chil = 0);
@@ -1417,6 +1416,7 @@ void id2i_init()  {
   (id2i.f_config_feature_find_links = 0);
   (id2i.f_config_feature_ifupdown_ip = 0);
   (id2i.f___i386__ = 0);
+  (id2i.f_sqlite_enable_tree_explain = 0);
   (id2i.f_config_flash_lock = 0);
   (id2i.f_config_feature_mdev_rename = 0);
   (id2i.f_config_feature_makedevs_table = 0);

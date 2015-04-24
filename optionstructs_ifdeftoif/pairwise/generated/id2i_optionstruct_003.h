@@ -732,7 +732,6 @@ struct  ifdef_options {
 }  id2i;
 extern struct  ifdef_options   id2i;
 void id2i_init()  {
-  (id2i.f_sqlite_omit_blob_literal = 1);
   (id2i.f_sqlite_enable_iotrace = 1);
   (id2i.f_sqlite_omit_foreign_key = 1);
   (id2i.f_vdbe_profile = 1);
@@ -742,9 +741,10 @@ void id2i_init()  {
   (id2i.f_sqlite_enable_expensive_assert = 1);
   (id2i.f_sqlite_enable_tree_explain = 1);
   (id2i.f_sqlite_omit_load_extension = 1);
-  (id2i.f_sqlite_omit_decltype = 1);
+  (id2i.f_sqlite_no_sync = 1);
   (id2i.f_sqlite_omit_or_optimization = 1);
   (id2i.f_sqlite_omit_pager_pragmas = 1);
+  (id2i.f_sqlite_omit_builtin_test = 1);
   (id2i.f_config_nc_110_compat = 0);
   (id2i.f_bf_ptr2 = 0);
   (id2i.f_bn_debug = 0);
@@ -783,6 +783,7 @@ void id2i_init()  {
   (id2i.f_config_feature_call_telinit = 0);
   (id2i.f_floatifreslseln_sc = 0);
   (id2i.f_aes_ctr_asm = 0);
+  (id2i.f_sqlite_omit_blob_literal = 0);
   (id2i.f_sqlite_malloc_soft_limit = 0);
   (id2i.f_config_feature_find_regex = 0);
   (id2i.f_config_feature_find_user = 0);
@@ -1345,7 +1346,6 @@ void id2i_init()  {
   (id2i.f_sqlite_omit_attach = 0);
   (id2i.f_config_feature_init_sctty = 0);
   (id2i.f_openssl_no_hw_cswift = 0);
-  (id2i.f_sqlite_no_sync = 0);
   (id2i.f_config_feature_less_winch = 0);
   (id2i.f__file_offset_bits = 0);
   (id2i.f_config_feature_awk_libm = 0);
@@ -1389,6 +1389,7 @@ void id2i_init()  {
   (id2i.f_config_feature_reformime_compat = 0);
   (id2i.f_sqlite_have_isnan = 0);
   (id2i.f_times = 0);
+  (id2i.f_sqlite_omit_decltype = 0);
   (id2i.f_config_feature_find_maxdepth = 0);
   (id2i.f_engine_table_debug = 0);
   (id2i.f_pbe_prf_test = 0);
@@ -1450,7 +1451,6 @@ void id2i_init()  {
   (id2i.f_config_rpm = 0);
   (id2i.f_config_feature_vi_colon = 0);
   (id2i.f_config_feature_klogd_klogctl = 0);
-  (id2i.f_sqlite_omit_builtin_test = 0);
   (id2i.f_openssl_no_buf_freelists = 0);
   (id2i.f_config_feature_find_not = 0);
   (id2i.f_test_eng_openssl_sha_p_final = 0);

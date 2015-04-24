@@ -7,7 +7,7 @@ loading additional constraints: moreConstraints.dimacs
 CNF: Given p and c: 5 and 5
 Successfully loaded and converted the model:
 Features: 131
-Constraints: 130
+Constraints: 131
 Focus on 32 variables.
 Generating 2-wise covering array with algorithm: ICPL
 Running algorithm: ICPL
@@ -15,48 +15,45 @@ Covering 100%
 --- 1-wise ---
 Threads for this task: 4
 Mandatory features: 2
-Dead features: 5
-Total uncovered: 50
-Total uncovered after first removal: 1
-1-wise done, solutions: 3, invalid: 7
+Dead features: 6
+Total uncovered: 48
+Total uncovered after first removal: 0
+1-wise done, solutions: 2, invalid: 8
 --- 2-wise ---
-Uncovered pairs left: 1571, invalid: 413
+Uncovered pairs left: 1516, invalid: 468
 Round complete
 Additionally covered 496
-Uncovered: 1075, progress: 45% with solutions: 1
+Uncovered: 1020, progress: 48% with solutions: 1
 Round complete
-Additionally covered 391
-Uncovered: 684, progress: 65% with solutions: 2
+Additionally covered 405
+Uncovered: 615, progress: 69% with solutions: 2
 Round complete
-Additionally covered 268
-Uncovered: 416, progress: 79% with solutions: 3
+Additionally covered 252
+Uncovered: 363, progress: 81% with solutions: 3
 Round complete
-Additionally covered 191
-Uncovered: 225, progress: 88% with solutions: 4
+Additionally covered 176
+Uncovered: 187, progress: 90% with solutions: 4
 Round complete
-Additionally covered 88
+Additionally covered 63
 Removing invalid
 Threads for this task: 4
-Invalid: 1
-Uncovered: 136, progress: 93% with solutions: 5
+Invalid: 0
+Uncovered: 124, progress: 93% with solutions: 5
 Round complete
-Additionally covered 64
-Uncovered: 72, progress: 96% with solutions: 6
+Additionally covered 57
+Uncovered: 67, progress: 96% with solutions: 6
 Round complete
-Additionally covered 33
-Uncovered: 39, progress: 98% with solutions: 7
+Additionally covered 29
+Uncovered: 38, progress: 98% with solutions: 7
 Round complete
-Additionally covered 20
-Uncovered: 19, progress: 99% with solutions: 8
+Additionally covered 22
+Uncovered: 16, progress: 99% with solutions: 8
 Round complete
-Additionally covered 13
+Additionally covered 10
 Uncovered: 6, progress: 99% with solutions: 9
 Round complete
-Additionally covered 4
-Uncovered: 2, progress: 99% with solutions: 10
-Round complete
-Additionally covered 2
-Uncovered: 0, progress: 100% with solutions: 11
-2-wise done, solutions: 11, invalid: 413
-Done. Size: 11, time: 531 milliseconds
+Additionally covered 6
+Uncovered: 0, progress: 100% with solutions: 10
+2-wise done, solutions: 10, invalid: 468
+Done. Size: 10, time: 558 milliseconds
 Wrote result to generatedConfigs.ca2.csv

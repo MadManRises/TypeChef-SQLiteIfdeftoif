@@ -737,15 +737,14 @@ void id2i_init()  {
   (id2i.f_sqlite_rtree_int_only = 1);
   (id2i.f_vdbe_profile = 1);
   (id2i.f_sqlite_omit_explain = 1);
+  (id2i.f_sqlite_small_stack = 1);
+  (id2i.f_sqlite_omit_deprecated = 1);
   (id2i.f_sqlite_omit_subquery = 1);
-  (id2i.f_sqlite_omit_cast = 1);
-  (id2i.f_sqlite_enable_tree_explain = 1);
   (id2i.f_sqlite_omit_load_extension = 1);
   (id2i.f_sqlite_no_sync = 1);
   (id2i.f_sqlite_omit_autovacuum = 1);
   (id2i.f_sqlite_have_isnan = 1);
   (id2i.f_sqlite_omit_or_optimization = 1);
-  (id2i.f_sqlite_omit_pager_pragmas = 1);
   (id2i.f_sqlite_omit_builtin_test = 1);
   (id2i.f_config_nc_110_compat = 0);
   (id2i.f_bf_ptr2 = 0);
@@ -921,7 +920,6 @@ void id2i_init()  {
   (id2i.f_config_unicode_support = 0);
   (id2i.f_config_feature_ip_rule = 0);
   (id2i.f_efence = 0);
-  (id2i.f_sqlite_small_stack = 0);
   (id2i.f_ndebug = 0);
   (id2i.f_config_feature_find_prune = 0);
   (id2i.f_config_feature_top_smp_process = 0);
@@ -1026,7 +1024,6 @@ void id2i_init()  {
   (id2i.f_tcp_nodelay = 0);
   (id2i.f_sqlite_enable_fts4_unicode61 = 0);
   (id2i.f_config_ping6 = 0);
-  (id2i.f_sqlite_omit_deprecated = 0);
   (id2i.f_bn_recursion = 0);
   (id2i.f_config_feature_wget_statusbar = 0);
   (id2i.f_config_hd = 0);
@@ -1118,6 +1115,7 @@ void id2i_init()  {
   (id2i.f_b_endian = 0);
   (id2i.f_config_freeramdisk = 0);
   (id2i.f_config_feature_fancy_head = 0);
+  (id2i.f_sqlite_omit_cast = 0);
   (id2i.f_ssl_forbid_enull = 0);
   (id2i.f_config_feature_ftpgetput_long_options = 0);
   (id2i.f_openssl_no_cms = 0);
@@ -1133,6 +1131,7 @@ void id2i_init()  {
   (id2i.f_openssl_no_rdrand = 0);
   (id2i.f_config_feature_wget_authentication = 0);
   (id2i.f_openssl_no_chain_verify = 0);
+  (id2i.f_sqlite_enable_tree_explain = 0);
   (id2i.f_config_build_libbusybox = 0);
   (id2i.f_config_feature_shared_busybox = 0);
   (id2i.f_experimental_str_to_strong_key = 0);
@@ -1409,6 +1408,7 @@ void id2i_init()  {
   (id2i.f_netscape_hang_bug = 0);
   (id2i.f_config_swaponoff = 0);
   (id2i.f_config_feature_hdparm_hdio_tristate_hwif = 0);
+  (id2i.f_sqlite_omit_pager_pragmas = 0);
   (id2i.f_config_nanddump = 0);
   (id2i.f_config_selinux = 0);
   (id2i.f_config_feature_modprobe_blacklist = 0);

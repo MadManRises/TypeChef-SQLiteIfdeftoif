@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ ! -f sqlite3_ifdeftoif.c ]; then
 ./ifdeftoif_mod.sh
-fi
+
+echo -e "Featurewise parallel starts at $(date +"%T")"
 
 for th3configFile in ../TH3/cfg/*.cfg;
 do
@@ -84,8 +84,9 @@ do
 					fi
 				fi
 			done
-			echo -e "Featurewise finished folder $dir at $(date +"%T")"
+			# echo -e "Featurewise finished folder $dir at $(date +"%T")"
 			cd ../TH3
 		fi 
 	done
 done
+echo -e "Featurewise finished at $(date +"%T")"

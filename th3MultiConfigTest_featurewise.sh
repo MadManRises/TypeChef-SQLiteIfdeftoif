@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./ifdeftoif_mod.sh
+./ifdeftoif_fixed.sh
 
 echo -e "Featurewise parallel starts at $(date +"%T")"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./ifdeftoif_mod.sh
+./ifdeftoif_fixed.sh
 
 echo -e "Pairwise starts at $(date +"%T")"
 

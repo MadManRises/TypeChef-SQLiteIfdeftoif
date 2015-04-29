@@ -2,7 +2,7 @@
 
 trap "kill 0" SIGINT
 
-./ifdeftoifParallel_mod.sh
+./ifdeftoifParallel_fixed.sh
 
 echo -e "Featurewise parallel starts at $(date +"%T")"
 

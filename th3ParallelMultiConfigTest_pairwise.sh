@@ -2,7 +2,7 @@
 
 trap "kill 0" SIGINT
 
-./ifdeftoifParallel_mod.sh
+./ifdeftoifParallel_fixed.sh
 
 echo -e "Pairwise parallel starts at $(date +"%T")"
 

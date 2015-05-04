@@ -2,6 +2,7 @@
 
 trap "kill 0" SIGINT
 
+rm -f featurewise_*.txt
 ./ifdeftoifParallel_fixed.sh
 
 echo -e "Featurewise parallel starts at $(date +"%T")"
@@ -35,6 +36,11 @@ do
                     mkdir tmp_$configID
                 fi
                 cd tmp_$configID
+                # Copy files used for compilation into temporary directory
+				cp ../TypeChef-SQLiteIfdeftoif/$f id2i_optionstruct.h
+				cp ../TypeChef-SQLiteIfdeftoif/sqlite3_ifdeftoif.c sqlite3_ifdeftoif.c
+				cp ../TypeChef-SQLiteIfdeftoif/th3_generated_test_ifdeftoif.c th3_generated_test_ifdeftoif.c
+				cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
 				echo "testing #ifConfig $f on .test files in $dir with th3Config $th3configFile at $(date +"%T")"
 				
@@ -52,9 +58,8 @@ do
 					rm -f a.out
 
 					# Test ifdeftoif sqlite
-					cp ../TypeChef-SQLiteIfdeftoif/$f id2i_optionstruct.h
 					ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-						../TypeChef-SQLiteIfdeftoif/sqlite3_ifdeftoif.c ../TypeChef-SQLiteIfdeftoif/th3_generated_test_ifdeftoif.c 2>&1)
+						sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c 2>&1)
 					# If gcc returns errors don't start testing the ifdeftoif variant
 					if [ $? != 0 ]
 					then

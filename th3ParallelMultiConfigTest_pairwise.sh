@@ -40,7 +40,7 @@ do
 				
 				# Test normal sqlite
 				originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-					-include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/id2i_include_$configID.h" \
+					-include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
 					../TypeChef-SQLiteIfdeftoif/sqlite3_original.c ../TypeChef-SQLiteIfdeftoif/th3_generated_test.c 2>&1)
 				# If gcc returns errors skip the testing
 				if [ $? != 0 ]
@@ -90,7 +90,7 @@ do
 						fi
 						rm -f a.out
 					fi
-				fi; ) 2>&1 >> featurewise_$configID.txt &
+				fi; ) 2>&1 >> pairwise_$configID.txt &
 			done
             wait
 			rm -f th3_generated_test
@@ -102,8 +102,8 @@ done
 cd ..
 rm -rf tmp_*
 cd TypeChef-SQLiteIfdeftoif/
-rm -f th3_featurewise.txt
-cat featurewise_*.txt > th3_featurewise.txt
-rm -f featurewise_*.txt
+rm -f th3_pairwise.txt
+cat pairwise_*.txt > th3_pairwise.txt
+rm -f pairwise_*.txt
 echo -e "Pairwise parallel finished at $(date +"%T")"
 exit

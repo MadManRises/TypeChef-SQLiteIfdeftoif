@@ -36,6 +36,8 @@ do
                     mkdir tmp_$configID
                 fi
                 cd tmp_$configID
+                # Delete files from previous tests
+                rm -rf *
                 # Copy files used for compilation into temporary directory
 				cp ../TypeChef-SQLiteIfdeftoif/$f id2i_optionstruct.h
 				cp ../TypeChef-SQLiteIfdeftoif/sqlite3_ifdeftoif.c sqlite3_ifdeftoif.c

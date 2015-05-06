@@ -99,7 +99,6 @@ do
 				rm -rf *; ) 2>&1 >> ../TypeChef-SQLiteIfdeftoif/featurewise_$configID.txt &
 			done
             wait
-			cd ..
 		fi
 	done
 done

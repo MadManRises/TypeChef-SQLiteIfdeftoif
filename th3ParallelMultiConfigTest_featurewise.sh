@@ -7,10 +7,10 @@ rm -f featurewise_*.txt
 
 echo -e "Featurewise parallel starts at $(date +"%T")"
 
+cd ..
 for th3configFile in ../TH3/cfg/*.cfg;
 do
 	#generate test
-	cd ..
 	for dir in */;
 	do
 		# Check if current folder contains *.test files
@@ -24,6 +24,7 @@ do
 				( if [ ! -d "tmp_f$configID" ]; then
                     mkdir tmp_f$configID
                 fi
+                #generate TH3 test file
                 cd TH3
                 ./mkth3.tcl $dir/*.test "$th3configFile" > ../tmp_f$configID/th3_generated_test.c
 				cd ../tmp_f$configID
@@ -34,6 +35,7 @@ do
 					's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\/* Alex: added initialization of our version of the azCompileOpt array *\/ init_azCompileOpt()\;/' \
 					th3_generated_test_ifdeftoif.c
 				#better never touch this sed again
+
                 # Copy files used for compilation into temporary directory
 				cp ../TypeChef-SQLiteIfdeftoif/$f id2i_optionstruct.h
 				cp ../TypeChef-SQLiteIfdeftoif/sqlite3_ifdeftoif.c sqlite3_ifdeftoif.c
@@ -92,16 +94,15 @@ do
 						fi
 						rm -f a.out
 					fi
-				fi; ) 2>&1 >> featurewise_$configID.txt &
+				fi
+				#delete all temporary contents
+				rm -rf *; ) 2>&1 >> ../TypeChef-SQLiteIfdeftoif/featurewise_$configID.txt &
 			done
             wait
-			rm -f th3_generated_test
-            rm -f th3_generated_test_ifdeftoif
-			cd ../TH3
+			cd ..
 		fi
 	done
 done
-cd ..
 rm -rf tmp_f*
 cd TypeChef-SQLiteIfdeftoif/
 rm -f th3_featurewise.txt

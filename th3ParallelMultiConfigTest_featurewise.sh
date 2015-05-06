@@ -7,7 +7,7 @@ rm -f featurewise_*.txt
 
 echo -e "Featurewise parallel starts at $(date +"%T")"
 
-cd ..
+cd ../TH3
 for th3configFile in ../TH3/cfg/*.cfg;
 do
 	#generate test
@@ -17,11 +17,12 @@ do
 		count=`ls -1 $dir/*.test 2>/dev/null | wc -l`
 		if [ $count != 0 -a $dir != "stress/" ]
 		then 			
-			for f in ./TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_optionstruct*.h;
+			for f in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_optionstruct*.h;
 			do
 				#sed filters everything but the number of the configuration
                 configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
-				( if [ ! -d "tmp_f$configID" ]; then
+				( cd ..
+				if [ ! -d "tmp_f$configID" ]; then
                     mkdir tmp_f$configID
                 fi
                 #generate TH3 test file
@@ -37,7 +38,7 @@ do
 				#better never touch this sed again
 
                 # Copy files used for compilation into temporary directory
-				cp ../TypeChef-SQLiteIfdeftoif/$f id2i_optionstruct.h
+				cp $f id2i_optionstruct.h
 				cp ../TypeChef-SQLiteIfdeftoif/sqlite3_ifdeftoif.c sqlite3_ifdeftoif.c
 				cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
@@ -46,7 +47,7 @@ do
 				# Test normal sqlite
 				originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
 					-include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
-					../TypeChef-SQLiteIfdeftoif/sqlite3_original.c ../TypeChef-SQLiteIfdeftoif/th3_generated_test.c 2>&1)
+					../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
 				# If gcc returns errors skip the testing
 				if [ $? != 0 ]
 				then
@@ -102,6 +103,7 @@ do
 		fi
 	done
 done
+cd ..
 rm -rf tmp_f*
 cd TypeChef-SQLiteIfdeftoif/
 rm -f th3_featurewise.txt

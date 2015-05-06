@@ -10,36 +10,33 @@ echo -e "Featurewise parallel starts at $(date +"%T")"
 for th3configFile in ../TH3/cfg/*.cfg;
 do
 	#generate test
-	cd ../TH3
+	cd ..
 	for dir in */;
 	do
 		# Check if current folder contains *.test files
 		count=`ls -1 $dir/*.test 2>/dev/null | wc -l`
 		if [ $count != 0 -a $dir != "stress/" ]
-		then 
-			./mkth3.tcl $dir/*.test "$th3configFile" > ../TypeChef-SQLiteIfdeftoif/th3_generated_test.c
-			cd ../TypeChef-SQLiteIfdeftoif
-		    
-			cp th3_generated_test.c th3_generated_test_ifdeftoif.c
-			#insert /* Alex: added initialization of our version of the azCompileOpt array */ init_azCompileOpt();
-			sed -i \
-				's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\/* Alex: added initialization of our version of the azCompileOpt array *\/ init_azCompileOpt()\;/' \
-				th3_generated_test_ifdeftoif.c
-			#better never touch this sed again
-			
+		then 			
 			for f in ./optionstructs_ifdeftoif/feature-wise/id2i_optionstruct*.h;
 			do
 				#sed filters everything but the number of the configuration
                 configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
-				( cd ..
-                if [ ! -d "tmp_$configID" ]; then
-                    mkdir tmp_$configID
+				( if [ ! -d "tmp_f$configID" ]; then
+                    mkdir tmp_f$configID
                 fi
-                cd tmp_$configID
+                cd TH3
+                ./mkth3.tcl $dir/*.test "$th3configFile" > ../tmp_f$configID/th3_generated_test.c
+				cd ../tmp_f$configID
+		    
+				cp th3_generated_test.c th3_generated_test_ifdeftoif.c
+				#insert /* Alex: added initialization of our version of the azCompileOpt array */ init_azCompileOpt();
+				sed -i \
+					's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\/* Alex: added initialization of our version of the azCompileOpt array *\/ init_azCompileOpt()\;/' \
+					th3_generated_test_ifdeftoif.c
+				#better never touch this sed again
                 # Copy files used for compilation into temporary directory
 				cp ../TypeChef-SQLiteIfdeftoif/$f id2i_optionstruct.h
 				cp ../TypeChef-SQLiteIfdeftoif/sqlite3_ifdeftoif.c sqlite3_ifdeftoif.c
-				cp ../TypeChef-SQLiteIfdeftoif/th3_generated_test_ifdeftoif.c th3_generated_test_ifdeftoif.c
 				cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
 				echo "testing #ifConfig $f on .test files in $dir with th3Config $th3configFile at $(date +"%T")"
@@ -105,7 +102,7 @@ do
 	done
 done
 cd ..
-rm -rf tmp_*
+rm -rf tmp_f*
 cd TypeChef-SQLiteIfdeftoif/
 rm -f th3_featurewise.txt
 cat featurewise_*.txt > th3_featurewise.txt

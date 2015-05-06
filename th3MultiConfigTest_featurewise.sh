@@ -2,7 +2,7 @@
 
 ./ifdeftoif_fixed.sh
 
-echo -e "Featurewise parallel starts at $(date +"%T")"
+echo -e "Featurewise starts at $(date +"%T")"
 
 for th3configFile in ../TH3/cfg/*.cfg;
 do

@@ -36,7 +36,7 @@ if mkdir setup.init 2>/dev/null;
     git clone https://github.com/fgarbe/TypeChef-SQLiteIfdeftoif
 
     # get TH3
-    cp -r ~/TH3 ../
+    cp -r ~/TH3 .
     touch setup.done
 fi
 

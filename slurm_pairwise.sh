@@ -14,17 +14,17 @@
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
 ##SBATCH --exclusive        #remove for easier apps experiment
 
-# 6552 different test scenarios
+# 2340 different test scenarios
 
 taskName="hercules-sqlite"
 localDir=/local/garbe
 resultDir=~/sqlite
 
 # Call this script as follows:
-# sbatch slurm_featurewise.sh
+# sbatch slurm_pairwise.sh
 
 echo =================================================================
-echo % HERCULES SQLITE FEATUREWISE\(s\)
+echo % HERCULES SQLITE PAIRWISE\(s\)
 echo % Task ID: ${SLURM_ARRAY_TASK_ID}
 echo =================================================================
 
@@ -45,4 +45,4 @@ while [ ! -f setup.done ]; do sleep 10; done;
 
 cd TypeChef-SQLiteIfdeftoif
 git pull -q
-./chimaira_featurewise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chf_${SLURM_ARRAY_TASK_ID}.txt 2>&1
+./chimaira_pairwise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chf_${SLURM_ARRAY_TASK_ID}.txt 2>&1

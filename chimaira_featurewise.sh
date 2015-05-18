@@ -19,6 +19,7 @@
 taskName="hercules-sqlite"
 localDir=/local/garbe
 resultDir=~/sqlite
+lastJobNo=6551
 
 # Call this script as follows:
 # sbatch slurm_featurewise.sh
@@ -32,8 +33,7 @@ echo =================================================================
 cd $localDir
 
 # Initialize
-if mkdir setup.inits 2>/dev/null;
-  then
+if mkdir setup.inits 2>/dev/null; then
     # get SQLITE
     git clone https://github.com/fgarbe/TypeChef-SQLiteIfdeftoif
 
@@ -58,3 +58,8 @@ while [ ! -f update.done ]; do sleep 10; done;
 
 cd TypeChef-SQLiteIfdeftoif
 ./parallel_featurewise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chf_${SLURM_ARRAY_TASK_ID}.txt 2>&1
+
+# send mail notification for last job
+if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then
+    echo "Stop slacking off." | mail -s "Chimaira job finished." fgarbe@fim.uni-passau.de
+fi

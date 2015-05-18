@@ -19,6 +19,7 @@
 taskName="hercules-sqlite"
 localDir=/local/garbe
 resultDir=~/sqlite
+lastJobNo=2339
 
 # Call this script as follows:
 # sbatch slurm_pairwise.sh
@@ -58,3 +59,8 @@ while [ ! -f update.done ]; do sleep 10; done;
 
 cd TypeChef-SQLiteIfdeftoif
 ./parallel_pairwise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chf_${SLURM_ARRAY_TASK_ID}.txt 2>&1
+
+# send mail notification for last job
+if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then
+    echo "Stop slacking off." | mail -s "Chimaira job finished." fgarbe@fim.uni-passau.de
+fi

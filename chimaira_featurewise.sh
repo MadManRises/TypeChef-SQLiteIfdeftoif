@@ -39,7 +39,7 @@ echo "featurewise testing #ifConfig $IFCONFIG on .test files in $TESTDIR with th
 
 # Copy files used for compilation into temporary directory
 cp $IFCONFIG id2i_optionstruct.h
-cp ../TypeChef-SQLiteIfdeftoif/sqlite3_ifdeftoif.c sqlite3_ifdeftoif.c
+cp ../TypeChef-SQLiteIfdeftoif/sqlite3_ifdeftoif_parallel.c sqlite3_ifdeftoif.c
 cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
 # Test normal sqlite

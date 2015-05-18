@@ -29,8 +29,9 @@ echo % Task ID: ${SLURM_ARRAY_TASK_ID}
 echo % JOB ID: ${SLURM_JOBID}
 echo =================================================================
 
-# Run the experiments
 cd $localDir
+
+# Initialize
 if mkdir setup.inits 2>/dev/null;
   then
     # get SQLITE
@@ -41,9 +42,19 @@ if mkdir setup.inits 2>/dev/null;
     touch setup.done
 fi
 
-# wait until atomic setup is ready
+# wait until initialization is done
 while [ ! -f setup.done ]; do sleep 10; done;
 
+# Update
+if mkdir update.inits 2>/dev/null;
+  then
+    # update SQLITE
+    cd TypeChef-SQLiteIfdeftoif/ && git pull -q && cd -
+    touch update.done
+fi
+
+# wait until update is done
+while [ ! -f update.done ]; do sleep 10; done;
+
 cd TypeChef-SQLiteIfdeftoif
-git pull -q
 ./chimaira_pairwise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chf_${SLURM_ARRAY_TASK_ID}.txt 2>&1

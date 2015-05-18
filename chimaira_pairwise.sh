@@ -56,7 +56,6 @@ else
     rm -f a.out
 
     # Test ifdeftoif sqlite
-    cp $IFCONFIG id2i_optionstruct.h
     ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
         sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c 2>&1)
     # If gcc returns errors don't start testing the ifdeftoif variant

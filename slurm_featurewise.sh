@@ -17,7 +17,8 @@
 #2425 files
 
 taskName="hercules-sqlite"
-
+localDir=/local/garbe
+resultDir=~/sqlite
 
 # Call this script as follows:
 # sbatch slurm.sh
@@ -25,12 +26,11 @@ taskName="hercules-sqlite"
 echo =================================================================
 echo % HERCULES SQLITE Experiment\(s\)
 echo % Task ID: ${SLURM_ARRAY_TASK_ID}
-echo % Nodelist: ${SLURM_NODELIST}
 echo =================================================================
 
 # Run the experiments
-cd /local/garbe
-if mkdir setup.init 2>/dev/null;
+cd $localDir
+if mkdir setup.inits 2>/dev/null;
   then
     # get SQLITE
     git clone https://github.com/fgarbe/TypeChef-SQLiteIfdeftoif
@@ -45,4 +45,4 @@ while [ ! -f setup.done ]; do sleep 10; done;
 
 cd TypeChef-SQLiteIfdeftoif
 git pull -q
-./chimaira_featurewise.sh ${SLURM_ARRAY_TASK_ID} > chf_${SLURM_ARRAY_TASK_ID}.txt 2>&1
+./chimaira_featurewise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chf_${SLURM_ARRAY_TASK_ID}.txt 2>&1

@@ -34,7 +34,7 @@ sed -i \
 
 #sed filters everything but the number of the configuration
 configID=$(basename $IFCONFIG | sed 's/id2i_optionstruct_//' | sed 's/.h//')
-echo "featurewise testing #ifConfig $IFCONFIG on .test files in $TESTDIR with th3Config $TH3CFG at $(date +"%T")"
+echo "featurewise testing: jobid $1 #ifConfig $IFCONFIG on .test files in $TESTDIR with th3Config $TH3CFG at $(date +"%T")"
 
 # Copy files used for compilation into temporary directory
 cp $IFCONFIG id2i_optionstruct.h

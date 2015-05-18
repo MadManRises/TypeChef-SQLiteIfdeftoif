@@ -26,6 +26,7 @@ resultDir=~/sqlite
 echo =================================================================
 echo % HERCULES SQLITE FEATUREWISE\(s\)
 echo % Task ID: ${SLURM_ARRAY_TASK_ID}
+echo % JOB ID: ${SLURM_JOBID}
 echo =================================================================
 
 # Run the experiments

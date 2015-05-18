@@ -7,7 +7,7 @@
 #SBATCH --ntasks 1
 #SBATCH --array=0-4
 
-#SBATCH --time=00:05:00 # 1 hour, 20 minutes max
+#SBATCH --time=00:05:00 # 5 minutes max
 
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 

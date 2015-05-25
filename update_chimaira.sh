@@ -1,15 +1,10 @@
 #!/bin/bash
-#SBATCH -o ~/slurm/logfile_update-%j.txt
-#SBATCH --job-name=hercules-sqlite-update
-#SBATCH -A spl
-
-#SBATCH --time=00:05:00 # 5 minutes max
 
 taskName="hercules-sqlite-update"
 localDir=/local/garbe
 
 # Call this script as follows:
-# sbatch slurm_pairwise.sh
+# chimaira_update.sh
 
 echo =================================================================
 echo % HERCULES SQLITE UPDATE\(s\)

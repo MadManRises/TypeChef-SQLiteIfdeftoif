@@ -13,7 +13,7 @@ echo =================================================================
 cd $localDir
 
 # Initialize
-if [ ! -d Hercules-SQLiteIfdeftoif ]; then
+if [ ! -d TypeChef-SQLiteIfdeftoif ]; then
     # get SQLITE
     git clone https://github.com/fgarbe/TypeChef-SQLiteIfdeftoif
 

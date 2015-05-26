@@ -32,30 +32,6 @@ echo =================================================================
 
 cd $localDir
 
-# Initialize
-if mkdir setup.inits 2>/dev/null; then
-    # get SQLITE
-    git clone https://github.com/fgarbe/TypeChef-SQLiteIfdeftoif
-
-    # get TH3
-    cp -r ~/TH3 .
-    touch setup.done
-fi
-
-# wait until initialization is done
-while [ ! -f setup.done ]; do sleep 10; done;
-
-# Update
-if mkdir update.inits 2>/dev/null;
-  then
-    # update SQLITE
-    cd TypeChef-SQLiteIfdeftoif/ && git pull -q && cd -
-    touch update.done
-fi
-
-# wait until update is done
-while [ ! -f update.done ]; do sleep 10; done;
-
 cd TypeChef-SQLiteIfdeftoif
 ./parallel_featurewise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chf_${SLURM_ARRAY_TASK_ID}.txt 2>&1
 

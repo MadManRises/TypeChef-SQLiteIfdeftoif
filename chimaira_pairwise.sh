@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -o ~/slurm/logfile_pairwise-%j.txt
+#SBATCH -o /home/garbe/chimaira/logfile_pairwise-%j.txt
 #SBATCH --job-name=hercules-sqlite
 #SBATCH -p chimaira
 #SBATCH -A spl

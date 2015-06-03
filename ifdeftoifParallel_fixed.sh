@@ -8,8 +8,8 @@ START_TIME=$SECONDS
 ABSPATH=$(cd "$(dirname "$0")"; pwd)
 
 # only one single file in sqlite amalgamation version
-FNAME=sqlite3.c
-cp sqlite3_fixed.c sqlite3.c
+FNAME=sqlite3_parallel.c
+cp sqlite3_fixed.c sqlite3_parallel.c
 
 # set output files
 outBase="$(dirname $FNAME)/$(basename $FNAME .c)"
@@ -51,5 +51,5 @@ echo "$(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
 ./../Hercules/ifdeftoif.sh --featureConfig SQLiteDefConfig.config
 
 # Change optionstruct path in the first line of the transformed file
-sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_ifdeftoif.c
+sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_parallel_ifdeftoif.c
 exit

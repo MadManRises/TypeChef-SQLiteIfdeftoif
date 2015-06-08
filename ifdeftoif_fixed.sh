@@ -9,6 +9,7 @@ ABSPATH=$(cd "$(dirname "$0")"; pwd)
 
 # only one single file in sqlite amalgamation version
 FNAME=sqlite3.c
+BNAME=sqlite3
 cp sqlite3_fixed.c sqlite3.c
 
 # set output files
@@ -20,7 +21,7 @@ outTime="$outBase.time"
 
 #copy our custom limitations to sqlite3.pc (sqlite3 has no pc file normally)
 # this causes the limitations to be used in parsing _and_ typechecking/fullFM (--featureModelFExpr influences only parsing/smallFM)
-cp $ABSPATH/ifdeftoif_helpers/custom_limitations.txt $ABSPATH/sqlite3.pc
+cp $ABSPATH/ifdeftoif_helpers/custom_limitations.txt $ABSPATH/$BNAME.pc
 
 ../Hercules/ifdeftoif.sh \
         --bdd --serializeAST --interface --debugInterface\

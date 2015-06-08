@@ -51449,6 +51449,26 @@ static  int sqlite3LoadExtension(sqlite3 *db , const  char *zFile , const  char 
     return 1;
   }  
   sqlite3_free(zAltEntry);
+  if ((((! id2i.f_sqlite_enable_column_metadata) && id2i.f_sqlite_omit_decltype && (! id2i.f_sqlite_omit_deprecated)) )) {
+    if (xInit(db, (&zErrmsg), (&_1421_sqlite3Apis))) {
+      if (pzErrMsg) {
+        ((*pzErrMsg) = sqlite3_mprintf("error during initialization: %s", zErrmsg));
+      }  
+      sqlite3_free(zErrmsg);
+      sqlite3OsDlClose(pVfs, handle);
+      return 1;
+    }  
+  }  
+  if (((id2i.f_sqlite_enable_column_metadata && (! id2i.f_sqlite_omit_decltype) && id2i.f_sqlite_omit_deprecated) )) {
+    if (xInit(db, (&zErrmsg), (&_1414_sqlite3Apis))) {
+      if (pzErrMsg) {
+        ((*pzErrMsg) = sqlite3_mprintf("error during initialization: %s", zErrmsg));
+      }  
+      sqlite3_free(zErrmsg);
+      sqlite3OsDlClose(pVfs, handle);
+      return 1;
+    }  
+  }  
   if ((((! id2i.f_sqlite_enable_column_metadata) && id2i.f_sqlite_omit_decltype && id2i.f_sqlite_omit_deprecated) )) {
     if (xInit(db, (&zErrmsg), (&_1417_sqlite3Apis))) {
       if (pzErrMsg) {
@@ -51469,8 +51489,18 @@ static  int sqlite3LoadExtension(sqlite3 *db , const  char *zFile , const  char 
       return 1;
     }  
   }  
-  if ((((! id2i.f_sqlite_enable_column_metadata) && (! id2i.f_sqlite_omit_decltype) && (! id2i.f_sqlite_omit_deprecated)) )) {
-    if (xInit(db, (&zErrmsg), (&_1420_sqlite3Apis))) {
+  if (((id2i.f_sqlite_enable_column_metadata && id2i.f_sqlite_omit_decltype && id2i.f_sqlite_omit_deprecated) )) {
+    if (xInit(db, (&zErrmsg), (&_1415_sqlite3Apis))) {
+      if (pzErrMsg) {
+        ((*pzErrMsg) = sqlite3_mprintf("error during initialization: %s", zErrmsg));
+      }  
+      sqlite3_free(zErrmsg);
+      sqlite3OsDlClose(pVfs, handle);
+      return 1;
+    }  
+  }  
+  if (((id2i.f_sqlite_enable_column_metadata && id2i.f_sqlite_omit_decltype && (! id2i.f_sqlite_omit_deprecated)) )) {
+    if (xInit(db, (&zErrmsg), (&_1419_sqlite3Apis))) {
       if (pzErrMsg) {
         ((*pzErrMsg) = sqlite3_mprintf("error during initialization: %s", zErrmsg));
       }  
@@ -51489,38 +51519,8 @@ static  int sqlite3LoadExtension(sqlite3 *db , const  char *zFile , const  char 
       return 1;
     }  
   }  
-  if (((id2i.f_sqlite_enable_column_metadata && (! id2i.f_sqlite_omit_decltype) && id2i.f_sqlite_omit_deprecated) )) {
-    if (xInit(db, (&zErrmsg), (&_1414_sqlite3Apis))) {
-      if (pzErrMsg) {
-        ((*pzErrMsg) = sqlite3_mprintf("error during initialization: %s", zErrmsg));
-      }  
-      sqlite3_free(zErrmsg);
-      sqlite3OsDlClose(pVfs, handle);
-      return 1;
-    }  
-  }  
-  if (((id2i.f_sqlite_enable_column_metadata && id2i.f_sqlite_omit_decltype && id2i.f_sqlite_omit_deprecated) )) {
-    if (xInit(db, (&zErrmsg), (&_1415_sqlite3Apis))) {
-      if (pzErrMsg) {
-        ((*pzErrMsg) = sqlite3_mprintf("error during initialization: %s", zErrmsg));
-      }  
-      sqlite3_free(zErrmsg);
-      sqlite3OsDlClose(pVfs, handle);
-      return 1;
-    }  
-  }  
-  if ((((! id2i.f_sqlite_enable_column_metadata) && id2i.f_sqlite_omit_decltype && (! id2i.f_sqlite_omit_deprecated)) )) {
-    if (xInit(db, (&zErrmsg), (&_1421_sqlite3Apis))) {
-      if (pzErrMsg) {
-        ((*pzErrMsg) = sqlite3_mprintf("error during initialization: %s", zErrmsg));
-      }  
-      sqlite3_free(zErrmsg);
-      sqlite3OsDlClose(pVfs, handle);
-      return 1;
-    }  
-  }  
-  if (((id2i.f_sqlite_enable_column_metadata && id2i.f_sqlite_omit_decltype && (! id2i.f_sqlite_omit_deprecated)) )) {
-    if (xInit(db, (&zErrmsg), (&_1419_sqlite3Apis))) {
+  if ((((! id2i.f_sqlite_enable_column_metadata) && (! id2i.f_sqlite_omit_decltype) && (! id2i.f_sqlite_omit_deprecated)) )) {
+    if (xInit(db, (&zErrmsg), (&_1420_sqlite3Apis))) {
       if (pzErrMsg) {
         ((*pzErrMsg) = sqlite3_mprintf("error during initialization: %s", zErrmsg));
       }  
@@ -51638,6 +51638,18 @@ static  void sqlite3AutoLoadExtensions(sqlite3 *db )  {
       (xInit = ((int ( *)(sqlite3 * , char ** , const  sqlite3_api_routines * )) sqlite3Autoext.aExt[i]));
     }
     (zErrmsg = 0);
+    if ((((! id2i.f_sqlite_enable_column_metadata) && id2i.f_sqlite_omit_decltype && (! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_load_extension)) )) {
+      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1421_sqlite3Apis))) != 0))) {
+        sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
+        (go = 0);
+      }  
+    }  
+    if (((id2i.f_sqlite_enable_column_metadata && (! id2i.f_sqlite_omit_decltype) && id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_load_extension)) )) {
+      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1414_sqlite3Apis))) != 0))) {
+        sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
+        (go = 0);
+      }  
+    }  
     if ((((! id2i.f_sqlite_enable_column_metadata) && id2i.f_sqlite_omit_decltype && id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_load_extension)) )) {
       if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1417_sqlite3Apis))) != 0))) {
         sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
@@ -51650,26 +51662,8 @@ static  void sqlite3AutoLoadExtensions(sqlite3 *db )  {
         (go = 0);
       }  
     }  
-    if ((((! id2i.f_sqlite_enable_column_metadata) && (! id2i.f_sqlite_omit_decltype) && (! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_load_extension)) )) {
-      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1420_sqlite3Apis))) != 0))) {
-        sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
-        (go = 0);
-      }  
-    }  
     if (((id2i.f_sqlite_omit_load_extension ) )) {
       if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1402_sqlite3Apis))) != 0))) {
-        sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
-        (go = 0);
-      }  
-    }  
-    if ((((! id2i.f_sqlite_enable_column_metadata) && (! id2i.f_sqlite_omit_decltype) && id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_load_extension)) )) {
-      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1416_sqlite3Apis))) != 0))) {
-        sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
-        (go = 0);
-      }  
-    }  
-    if (((id2i.f_sqlite_enable_column_metadata && (! id2i.f_sqlite_omit_decltype) && id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_load_extension)) )) {
-      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1414_sqlite3Apis))) != 0))) {
         sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
         (go = 0);
       }  
@@ -51680,14 +51674,20 @@ static  void sqlite3AutoLoadExtensions(sqlite3 *db )  {
         (go = 0);
       }  
     }  
-    if ((((! id2i.f_sqlite_enable_column_metadata) && id2i.f_sqlite_omit_decltype && (! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_load_extension)) )) {
-      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1421_sqlite3Apis))) != 0))) {
+    if (((id2i.f_sqlite_enable_column_metadata && id2i.f_sqlite_omit_decltype && (! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_load_extension)) )) {
+      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1419_sqlite3Apis))) != 0))) {
         sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
         (go = 0);
       }  
     }  
-    if (((id2i.f_sqlite_enable_column_metadata && id2i.f_sqlite_omit_decltype && (! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_load_extension)) )) {
-      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1419_sqlite3Apis))) != 0))) {
+    if ((((! id2i.f_sqlite_enable_column_metadata) && (! id2i.f_sqlite_omit_decltype) && id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_load_extension)) )) {
+      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1416_sqlite3Apis))) != 0))) {
+        sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
+        (go = 0);
+      }  
+    }  
+    if ((((! id2i.f_sqlite_enable_column_metadata) && (! id2i.f_sqlite_omit_decltype) && (! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_load_extension)) )) {
+      if ((xInit && ((rc = xInit(db, (&zErrmsg), (&_1420_sqlite3Apis))) != 0))) {
         sqlite3Error(db, rc, "automatic extension loading failed: %s", zErrmsg);
         (go = 0);
       }  
@@ -51955,92 +51955,41 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
     goto _1460_pragma_out;
   }  
   (lwr = 0);
-  if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1437_aPragmaNames) / sizeof(_1437_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1453_aPragmaNames) / sizeof(_1453_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1451_aPragmaNames) / sizeof(_1451_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1457_aPragmaNames) / sizeof(_1457_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1436_aPragmaNames) / sizeof(_1436_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1442_aPragmaNames) / sizeof(_1442_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1454_aPragmaNames) / sizeof(_1454_aPragmaNames[0]))) - 1));
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1444_aPragmaNames) / sizeof(_1444_aPragmaNames[0]))) - 1));
   }  
   if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
     (upr = (((int ) (sizeof(_1432_aPragmaNames) / sizeof(_1432_aPragmaNames[0]))) - 1));
   }  
-  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1438_aPragmaNames) / sizeof(_1438_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1440_aPragmaNames) / sizeof(_1440_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1435_aPragmaNames) / sizeof(_1435_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1452_aPragmaNames) / sizeof(_1452_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1447_aPragmaNames) / sizeof(_1447_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1430_aPragmaNames) / sizeof(_1430_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1427_aPragmaNames) / sizeof(_1427_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1449_aPragmaNames) / sizeof(_1449_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1428_aPragmaNames) / sizeof(_1428_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1459_aPragmaNames) / sizeof(_1459_aPragmaNames[0]))) - 1));
-  }  
   if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
     (upr = (((int ) (sizeof(_1431_aPragmaNames) / sizeof(_1431_aPragmaNames[0]))) - 1));
   }  
-  if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1424_aPragmaNames) / sizeof(_1424_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1439_aPragmaNames) / sizeof(_1439_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1446_aPragmaNames) / sizeof(_1446_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1429_aPragmaNames) / sizeof(_1429_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1433_aPragmaNames) / sizeof(_1433_aPragmaNames[0]))) - 1));
+  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1453_aPragmaNames) / sizeof(_1453_aPragmaNames[0]))) - 1));
   }  
   if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
     (upr = (((int ) (sizeof(_1458_aPragmaNames) / sizeof(_1458_aPragmaNames[0]))) - 1));
   }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1441_aPragmaNames) / sizeof(_1441_aPragmaNames[0]))) - 1));
-  }  
   if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
     (upr = (((int ) (sizeof(_1450_aPragmaNames) / sizeof(_1450_aPragmaNames[0]))) - 1));
   }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1443_aPragmaNames) / sizeof(_1443_aPragmaNames[0]))) - 1));
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1433_aPragmaNames) / sizeof(_1433_aPragmaNames[0]))) - 1));
   }  
-  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1448_aPragmaNames) / sizeof(_1448_aPragmaNames[0]))) - 1));
+  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1457_aPragmaNames) / sizeof(_1457_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1456_aPragmaNames) / sizeof(_1456_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1449_aPragmaNames) / sizeof(_1449_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1429_aPragmaNames) / sizeof(_1429_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1434_aPragmaNames) / sizeof(_1434_aPragmaNames[0]))) - 1));
   }  
   if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
     (upr = (((int ) (sizeof(_1445_aPragmaNames) / sizeof(_1445_aPragmaNames[0]))) - 1));
@@ -52048,109 +51997,109 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
   if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
     (upr = (((int ) (sizeof(_1425_aPragmaNames) / sizeof(_1425_aPragmaNames[0]))) - 1));
   }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1455_aPragmaNames) / sizeof(_1455_aPragmaNames[0]))) - 1));
+  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1459_aPragmaNames) / sizeof(_1459_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1437_aPragmaNames) / sizeof(_1437_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1451_aPragmaNames) / sizeof(_1451_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1438_aPragmaNames) / sizeof(_1438_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1436_aPragmaNames) / sizeof(_1436_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1452_aPragmaNames) / sizeof(_1452_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1446_aPragmaNames) / sizeof(_1446_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1454_aPragmaNames) / sizeof(_1454_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1424_aPragmaNames) / sizeof(_1424_aPragmaNames[0]))) - 1));
   }  
   if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
     (upr = (((int ) (sizeof(_1426_aPragmaNames) / sizeof(_1426_aPragmaNames[0]))) - 1));
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1456_aPragmaNames) / sizeof(_1456_aPragmaNames[0]))) - 1));
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1428_aPragmaNames) / sizeof(_1428_aPragmaNames[0]))) - 1));
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1444_aPragmaNames) / sizeof(_1444_aPragmaNames[0]))) - 1));
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1442_aPragmaNames) / sizeof(_1442_aPragmaNames[0]))) - 1));
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1434_aPragmaNames) / sizeof(_1434_aPragmaNames[0]))) - 1));
+  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1443_aPragmaNames) / sizeof(_1443_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1440_aPragmaNames) / sizeof(_1440_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1430_aPragmaNames) / sizeof(_1430_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1448_aPragmaNames) / sizeof(_1448_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1447_aPragmaNames) / sizeof(_1447_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1435_aPragmaNames) / sizeof(_1435_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1441_aPragmaNames) / sizeof(_1441_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1439_aPragmaNames) / sizeof(_1439_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1427_aPragmaNames) / sizeof(_1427_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1455_aPragmaNames) / sizeof(_1455_aPragmaNames[0]))) - 1));
   }  
   while ((lwr <= upr)) {
     (mid = ((lwr + upr) / 2));
-    if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1437_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1453_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1451_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1457_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1436_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1442_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1454_aPragmaNames[mid].zName));
+    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1444_aPragmaNames[mid].zName));
     }  
     if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
       (rc = sqlite3_stricmp(zLeft, _1432_aPragmaNames[mid].zName));
     }  
-    if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1438_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1440_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1435_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1452_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1447_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1430_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1427_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1449_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1428_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1459_aPragmaNames[mid].zName));
-    }  
     if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
       (rc = sqlite3_stricmp(zLeft, _1431_aPragmaNames[mid].zName));
     }  
-    if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1424_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1439_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1446_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1429_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1433_aPragmaNames[mid].zName));
+    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1453_aPragmaNames[mid].zName));
     }  
     if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
       (rc = sqlite3_stricmp(zLeft, _1458_aPragmaNames[mid].zName));
     }  
-    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1441_aPragmaNames[mid].zName));
-    }  
     if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
       (rc = sqlite3_stricmp(zLeft, _1450_aPragmaNames[mid].zName));
     }  
-    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1443_aPragmaNames[mid].zName));
+    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1433_aPragmaNames[mid].zName));
     }  
-    if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1448_aPragmaNames[mid].zName));
+    if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1457_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1456_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1449_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1429_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1434_aPragmaNames[mid].zName));
     }  
     if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
       (rc = sqlite3_stricmp(zLeft, _1445_aPragmaNames[mid].zName));
@@ -52158,20 +52107,71 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
     if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
       (rc = sqlite3_stricmp(zLeft, _1425_aPragmaNames[mid].zName));
     }  
-    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1455_aPragmaNames[mid].zName));
+    if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1459_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1437_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1451_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1438_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1436_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1452_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1446_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1454_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1424_aPragmaNames[mid].zName));
     }  
     if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
       (rc = sqlite3_stricmp(zLeft, _1426_aPragmaNames[mid].zName));
     }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1456_aPragmaNames[mid].zName));
+    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1428_aPragmaNames[mid].zName));
     }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1444_aPragmaNames[mid].zName));
+    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1442_aPragmaNames[mid].zName));
     }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1434_aPragmaNames[mid].zName));
+    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1443_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1440_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1430_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1448_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1447_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1435_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1441_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1439_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1427_aPragmaNames[mid].zName));
+    }  
+    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1455_aPragmaNames[mid].zName));
     }  
     if ((rc == 0)) {
       break;
@@ -52186,50 +52186,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
   if ((lwr > upr)) {
     goto _1460_pragma_out;
   }  
-  if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1437_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1453_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1451_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1457_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1436_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1442_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1454_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1444_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto _1460_pragma_out;
       }  
@@ -52242,76 +52200,6 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1438_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1440_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1435_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1452_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1447_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1430_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1427_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1449_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1428_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1459_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
   if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
     if (((_1431_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
@@ -52319,36 +52207,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1424_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1439_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1446_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1429_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1433_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1453_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto _1460_pragma_out;
       }  
@@ -52361,13 +52221,6 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }  
     }  
   }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1441_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto _1460_pragma_out;
-      }  
-    }  
-  }  
   if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
     if (((_1450_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
@@ -52375,15 +52228,43 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }  
     }  
   }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1443_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1433_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto _1460_pragma_out;
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1448_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1457_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1456_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((_1449_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1429_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1434_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto _1460_pragma_out;
       }  
@@ -52403,8 +52284,64 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }  
     }  
   }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1455_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1459_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((_1437_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((_1451_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((_1438_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((_1436_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1452_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1446_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1454_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((_1424_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto _1460_pragma_out;
       }  
@@ -52417,28 +52354,91 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1456_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1428_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto _1460_pragma_out;
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1444_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1442_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto _1460_pragma_out;
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1434_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1443_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto _1460_pragma_out;
       }  
     }  
   }  
-  switch (((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1434_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1444_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1456_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1426_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1455_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1425_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1445_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1448_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1443_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1450_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1441_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1458_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1433_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1429_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1446_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1439_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1424_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1431_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1459_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1428_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1449_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1427_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1430_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1447_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1452_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1435_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1440_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1438_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1432_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1454_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1442_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1436_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1457_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1451_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1453_aPragmaNames[mid].ePragTyp : _1437_aPragmaNames[mid].ePragTyp)))))))))))))))))))))))))))))))))))) {
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1440_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((_1430_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((_1448_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1447_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1435_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1441_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((_1439_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1427_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((_1455_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto _1460_pragma_out;
+      }  
+    }  
+  }  
+  switch ((((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1455_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1427_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1439_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1441_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1435_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1447_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1448_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1430_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1440_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1443_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1442_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1428_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1426_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1424_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1454_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1446_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1452_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1436_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1438_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1451_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1437_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1459_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1425_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1445_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1434_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1429_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1449_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1456_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1457_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1433_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1450_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1458_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1453_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1431_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1432_aPragmaNames[mid].ePragTyp : _1444_aPragmaNames[mid].ePragTyp)))))))))))))))))))))))))))))))))))) {
     case 10:
     if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
       static const VdbeOpList getCacheSize[] =  { { 4,  0,  0,  0},  { 45,  0,  1,  3},  { 126,  1,  8,  0},  { 21,  0,  2,  0},  { 87,  1,  2,  1},  { 126,  1,  8,  0},  { 21,  0,  1,  0},  { 149,  0,  0,  0},  { 30,  1,  1,  0}};
@@ -52465,38 +52465,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_deprecated ))) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 10)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
@@ -52505,83 +52475,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 10)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
@@ -52590,23 +52490,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 10)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 10)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
@@ -52620,8 +52535,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 10)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
@@ -52630,18 +52585,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 10)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 10)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 10)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
@@ -52669,38 +52669,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 24)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
@@ -52709,83 +52679,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 24)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
@@ -52794,23 +52694,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 24)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 24)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
@@ -52824,8 +52739,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 24)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
@@ -52834,18 +52789,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 24)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 24)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 24)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
@@ -52869,38 +52869,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 25)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
@@ -52909,83 +52879,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 25)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
@@ -52994,23 +52894,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 25)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 25)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
@@ -53024,8 +52939,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 25)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
@@ -53034,18 +52989,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 25)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 25)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 25)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
@@ -53077,38 +53077,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 22)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
@@ -53117,83 +53087,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 22)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
@@ -53202,23 +53102,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 22)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 22)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
@@ -53232,8 +53147,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 22)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
@@ -53242,18 +53197,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 22)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 22)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 22)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
@@ -53290,38 +53290,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 21)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
@@ -53330,83 +53300,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 21)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
@@ -53415,23 +53315,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 21)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 21)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
@@ -53445,8 +53360,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 21)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
@@ -53455,18 +53410,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 21)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 21)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 21)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
@@ -53506,38 +53506,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 18)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
@@ -53546,83 +53516,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 18)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
@@ -53631,23 +53531,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 18)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 18)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
@@ -53661,8 +53576,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 18)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
@@ -53671,18 +53626,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 18)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 18)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 18)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
@@ -53702,38 +53702,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 19)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
@@ -53742,83 +53712,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 19)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
@@ -53827,23 +53727,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 19)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 19)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
@@ -53857,8 +53772,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 19)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
@@ -53867,18 +53822,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 19)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 19)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 19)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
@@ -53910,38 +53910,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_autovacuum ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 1)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
@@ -53950,83 +53920,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 1)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
@@ -54035,23 +53935,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 1)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 1)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
@@ -54065,8 +53980,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 1)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
@@ -54075,18 +54030,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 1)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 1)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 1)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
@@ -54107,38 +54107,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_autovacuum ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 14)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
@@ -54147,83 +54117,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 14)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
@@ -54232,23 +54132,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 14)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 14)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
@@ -54262,8 +54177,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 14)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
@@ -54272,18 +54227,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 14)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 14)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 14)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
@@ -54302,38 +54302,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 4)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
@@ -54342,83 +54312,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 4)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
@@ -54427,23 +54327,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 4)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 4)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
@@ -54457,8 +54372,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 4)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
@@ -54467,18 +54422,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 4)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 4)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 4)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
@@ -54498,38 +54498,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 23)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
@@ -54538,83 +54508,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 23)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
@@ -54623,23 +54523,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 23)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 23)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
@@ -54653,8 +54568,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 23)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
@@ -54663,18 +54618,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 23)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 23)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 23)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
@@ -54690,38 +54690,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 31)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
@@ -54730,83 +54700,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 31)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
@@ -54815,23 +54715,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 31)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 31)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
@@ -54845,8 +54760,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 31)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
@@ -54855,18 +54810,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 31)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 31)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 31)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
@@ -54904,38 +54904,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 32)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
@@ -54944,83 +54914,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 32)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
@@ -55029,23 +54929,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 32)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 32)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
@@ -55059,8 +54974,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 32)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
@@ -55069,18 +55024,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 32)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 32)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 32)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
@@ -55102,38 +55102,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 29)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
@@ -55142,83 +55112,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 29)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
@@ -55227,23 +55127,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 29)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 29)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
@@ -55257,8 +55172,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 29)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
@@ -55267,18 +55222,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 29)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 29)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 29)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
@@ -55286,92 +55286,41 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
     case 2:
     {
       if ((zRight == 0)) {
-        if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1437_aPragmaNames[mid].zName, ((db->flags & _1437_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1453_aPragmaNames[mid].zName, ((db->flags & _1453_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1451_aPragmaNames[mid].zName, ((db->flags & _1451_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1457_aPragmaNames[mid].zName, ((db->flags & _1457_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1436_aPragmaNames[mid].zName, ((db->flags & _1436_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1442_aPragmaNames[mid].zName, ((db->flags & _1442_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1454_aPragmaNames[mid].zName, ((db->flags & _1454_aPragmaNames[mid].iArg) != 0));
+        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1444_aPragmaNames[mid].zName, ((db->flags & _1444_aPragmaNames[mid].iArg) != 0));
         }  
         if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
           returnSingleInt(pParse, _1432_aPragmaNames[mid].zName, ((db->flags & _1432_aPragmaNames[mid].iArg) != 0));
         }  
-        if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1438_aPragmaNames[mid].zName, ((db->flags & _1438_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1440_aPragmaNames[mid].zName, ((db->flags & _1440_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1435_aPragmaNames[mid].zName, ((db->flags & _1435_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1452_aPragmaNames[mid].zName, ((db->flags & _1452_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1447_aPragmaNames[mid].zName, ((db->flags & _1447_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1430_aPragmaNames[mid].zName, ((db->flags & _1430_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1427_aPragmaNames[mid].zName, ((db->flags & _1427_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1449_aPragmaNames[mid].zName, ((db->flags & _1449_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1428_aPragmaNames[mid].zName, ((db->flags & _1428_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1459_aPragmaNames[mid].zName, ((db->flags & _1459_aPragmaNames[mid].iArg) != 0));
-        }  
         if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
           returnSingleInt(pParse, _1431_aPragmaNames[mid].zName, ((db->flags & _1431_aPragmaNames[mid].iArg) != 0));
         }  
-        if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1424_aPragmaNames[mid].zName, ((db->flags & _1424_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1439_aPragmaNames[mid].zName, ((db->flags & _1439_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1446_aPragmaNames[mid].zName, ((db->flags & _1446_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1429_aPragmaNames[mid].zName, ((db->flags & _1429_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1433_aPragmaNames[mid].zName, ((db->flags & _1433_aPragmaNames[mid].iArg) != 0));
+        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1453_aPragmaNames[mid].zName, ((db->flags & _1453_aPragmaNames[mid].iArg) != 0));
         }  
         if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
           returnSingleInt(pParse, _1458_aPragmaNames[mid].zName, ((db->flags & _1458_aPragmaNames[mid].iArg) != 0));
         }  
-        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1441_aPragmaNames[mid].zName, ((db->flags & _1441_aPragmaNames[mid].iArg) != 0));
-        }  
         if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
           returnSingleInt(pParse, _1450_aPragmaNames[mid].zName, ((db->flags & _1450_aPragmaNames[mid].iArg) != 0));
         }  
-        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1443_aPragmaNames[mid].zName, ((db->flags & _1443_aPragmaNames[mid].iArg) != 0));
+        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1433_aPragmaNames[mid].zName, ((db->flags & _1433_aPragmaNames[mid].iArg) != 0));
         }  
-        if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1448_aPragmaNames[mid].zName, ((db->flags & _1448_aPragmaNames[mid].iArg) != 0));
+        if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1457_aPragmaNames[mid].zName, ((db->flags & _1457_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1456_aPragmaNames[mid].zName, ((db->flags & _1456_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1449_aPragmaNames[mid].zName, ((db->flags & _1449_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1429_aPragmaNames[mid].zName, ((db->flags & _1429_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1434_aPragmaNames[mid].zName, ((db->flags & _1434_aPragmaNames[mid].iArg) != 0));
         }  
         if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
           returnSingleInt(pParse, _1445_aPragmaNames[mid].zName, ((db->flags & _1445_aPragmaNames[mid].iArg) != 0));
@@ -55379,24 +55328,75 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
         if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
           returnSingleInt(pParse, _1425_aPragmaNames[mid].zName, ((db->flags & _1425_aPragmaNames[mid].iArg) != 0));
         }  
-        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1455_aPragmaNames[mid].zName, ((db->flags & _1455_aPragmaNames[mid].iArg) != 0));
+        if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1459_aPragmaNames[mid].zName, ((db->flags & _1459_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1437_aPragmaNames[mid].zName, ((db->flags & _1437_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1451_aPragmaNames[mid].zName, ((db->flags & _1451_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1438_aPragmaNames[mid].zName, ((db->flags & _1438_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1436_aPragmaNames[mid].zName, ((db->flags & _1436_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1452_aPragmaNames[mid].zName, ((db->flags & _1452_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1446_aPragmaNames[mid].zName, ((db->flags & _1446_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1454_aPragmaNames[mid].zName, ((db->flags & _1454_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1424_aPragmaNames[mid].zName, ((db->flags & _1424_aPragmaNames[mid].iArg) != 0));
         }  
         if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
           returnSingleInt(pParse, _1426_aPragmaNames[mid].zName, ((db->flags & _1426_aPragmaNames[mid].iArg) != 0));
         }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1456_aPragmaNames[mid].zName, ((db->flags & _1456_aPragmaNames[mid].iArg) != 0));
+        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1428_aPragmaNames[mid].zName, ((db->flags & _1428_aPragmaNames[mid].iArg) != 0));
         }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1444_aPragmaNames[mid].zName, ((db->flags & _1444_aPragmaNames[mid].iArg) != 0));
+        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1442_aPragmaNames[mid].zName, ((db->flags & _1442_aPragmaNames[mid].iArg) != 0));
         }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1434_aPragmaNames[mid].zName, ((db->flags & _1434_aPragmaNames[mid].iArg) != 0));
+        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1443_aPragmaNames[mid].zName, ((db->flags & _1443_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1440_aPragmaNames[mid].zName, ((db->flags & _1440_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1430_aPragmaNames[mid].zName, ((db->flags & _1430_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1448_aPragmaNames[mid].zName, ((db->flags & _1448_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1447_aPragmaNames[mid].zName, ((db->flags & _1447_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1435_aPragmaNames[mid].zName, ((db->flags & _1435_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1441_aPragmaNames[mid].zName, ((db->flags & _1441_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1439_aPragmaNames[mid].zName, ((db->flags & _1439_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1427_aPragmaNames[mid].zName, ((db->flags & _1427_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1455_aPragmaNames[mid].zName, ((db->flags & _1455_aPragmaNames[mid].iArg) != 0));
         }  
       }  
       else {
-        int mask =  ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1434_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1444_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1456_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1426_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1455_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1425_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1445_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1448_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1443_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1450_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1441_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1458_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1433_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1429_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1446_aPragmaNames[mid].iArg : (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1439_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1424_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1431_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1459_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1428_aPragmaNames[mid].iArg : (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1449_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1427_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1430_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1447_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1452_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1435_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1440_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1438_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1432_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1454_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1442_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1436_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1457_aPragmaNames[mid].iArg : (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1451_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1453_aPragmaNames[mid].iArg : _1437_aPragmaNames[mid].iArg)))))))))))))))))))))))))))))))))));
+        int mask =  (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1455_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1427_aPragmaNames[mid].iArg : (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1439_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1441_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1435_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1447_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1448_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1430_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1440_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1443_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1442_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1428_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1426_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1424_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1454_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1446_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1452_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1436_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1438_aPragmaNames[mid].iArg : (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1451_aPragmaNames[mid].iArg : (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1437_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1459_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1425_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1445_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1434_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1429_aPragmaNames[mid].iArg : (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1449_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1456_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1457_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1433_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1450_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1458_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1453_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1431_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1432_aPragmaNames[mid].iArg : _1444_aPragmaNames[mid].iArg)))))))))))))))))))))))))))))))))));
         if ((db->autoCommit == 0)) {
           (mask &= (~ 0x00080000));
         }  
@@ -55638,38 +55638,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_foreign_key ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 13)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
@@ -55678,83 +55648,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 13)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
@@ -55763,23 +55663,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 13)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 13)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
@@ -55793,8 +55708,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 13)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
@@ -55803,18 +55758,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 13)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 13)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 13)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
@@ -55947,38 +55947,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if (((id2i.f_sqlite_omit_foreign_key ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 12)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
@@ -55987,83 +55957,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 12)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
@@ -56072,23 +55972,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 12)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 12)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
@@ -56102,8 +56017,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 12)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
@@ -56112,18 +56067,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 12)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 12)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 12)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
@@ -56395,38 +56395,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if ((((! id2i.f_sqlite_has_codec) ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 37)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
@@ -56435,83 +56405,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 37)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
@@ -56520,23 +56420,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 37)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 37)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 37)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
@@ -56550,8 +56465,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 37)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
@@ -56560,18 +56515,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 37)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 37)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 37)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 37)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 37)) {
           goto id2i_label_1;
         }  
       }  
@@ -56584,38 +56584,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if ((((! id2i.f_sqlite_has_codec) ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 38)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
@@ -56624,83 +56594,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 38)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
@@ -56709,23 +56609,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 38)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 38)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 38)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
@@ -56739,8 +56654,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 38)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
@@ -56749,18 +56704,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 38)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 38)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 38)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 38)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 38)) {
           goto id2i_label_1;
         }  
       }  
@@ -56787,38 +56787,8 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       break;
     }  
     if ((((! id2i.f_sqlite_has_codec) ) )) {
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1437_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1453_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1451_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1457_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1436_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1442_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1454_aPragmaNames[mid].ePragTyp == 36)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1444_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  
@@ -56827,83 +56797,13 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1438_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1440_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1435_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1452_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1447_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1430_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1427_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1449_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1428_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1459_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1431_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1424_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1439_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1446_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1429_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1433_aPragmaNames[mid].ePragTyp == 36)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1453_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  
@@ -56912,23 +56812,38 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1441_aPragmaNames[mid].ePragTyp == 36)) {
-          goto id2i_label_1;
-        }  
-      }  
       if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
         if ((_1450_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1443_aPragmaNames[mid].ePragTyp == 36)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1433_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1448_aPragmaNames[mid].ePragTyp == 36)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1457_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1456_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1449_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1429_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1434_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  
@@ -56942,8 +56857,48 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1455_aPragmaNames[mid].ePragTyp == 36)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1459_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1437_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1451_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1438_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1436_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1452_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1446_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1454_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1424_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  
@@ -56952,18 +56907,63 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1456_aPragmaNames[mid].ePragTyp == 36)) {
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1428_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1444_aPragmaNames[mid].ePragTyp == 36)) {
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1442_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1434_aPragmaNames[mid].ePragTyp == 36)) {
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1443_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1440_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1430_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_has_codec) && id2i.f_sqlite_enable_cerod && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1448_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1447_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1435_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1441_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if ((_1439_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_has_codec) && (! id2i.f_sqlite_enable_cerod) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1427_aPragmaNames[mid].ePragTyp == 36)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_has_codec && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((_1455_aPragmaNames[mid].ePragTyp == 36)) {
           goto id2i_label_1;
         }  
       }  

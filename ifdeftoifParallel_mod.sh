@@ -53,5 +53,5 @@ echo "$(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
 mv sqlite3_modified_ifdeftoif.c sqlite3_parallel_ifdeftoif.c
 
 # Change optionstruct path in the first line of the transformed file
-sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_ifdeftoif.c
+sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_parallel_ifdeftoif.c
 exit

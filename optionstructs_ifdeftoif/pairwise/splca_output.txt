@@ -55,5 +55,5 @@ Round complete
 Additionally covered 6
 Uncovered: 0, progress: 100% with solutions: 10
 2-wise done, solutions: 10, invalid: 468
-Done. Size: 10, time: 558 milliseconds
+Done. Size: 10, time: 464 milliseconds
 Wrote result to generatedConfigs.ca2.csv

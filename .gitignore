@@ -15,3 +15,9 @@ th3_generated_test_ifdeftoif.c
 th3_featurewise.txt
 th3_pairwise.txt
 *.db
+sqlite3_fixed.tunit
+sqlite3_fixed.pc
+sqlite3_fixed.pi
+sqlite3_modified.tunit
+sqlite3_modified.pc
+sqlite3_modified.pi

@@ -21,3 +21,8 @@ sqlite3_fixed.pi
 sqlite3_modified.tunit
 sqlite3_modified.pc
 sqlite3_modified.pi
+sqlite3_parallel.tunit
+sqlite3_parallel.pc
+sqlite3_parallel.pi
+sqlite3.c
+sqlite3.pi

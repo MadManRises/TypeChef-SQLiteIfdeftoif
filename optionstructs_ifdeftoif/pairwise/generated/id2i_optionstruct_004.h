@@ -805,7 +805,7 @@ void id2i_init()  {
   (id2i_openssl_sun_gf2m_div = 0);
   (id2i_ssl3_align_payload = 0);
   (id2i_openssl_no_hw_aep = 0);
-  (id2i_test_eng_openssl_sha_p_update = 0);
+  (id2i_config_tftp = 0);
   (id2i_config_feature_taskset_fancy = 0);
   (id2i_config_feature_tftp_progress_bar = 0);
   (id2i_pbe_prf_test = 0);
@@ -1187,6 +1187,7 @@ void id2i_init()  {
   (id2i_config_feature_ifupdown_mapping = 0);
   (id2i_config_uudecode = 0);
   (id2i_config_feature_readlink_follow = 0);
+  (id2i_test_eng_openssl_sha_p_update = 0);
   (id2i_config_feature_autowidth = 0);
   (id2i_config_feature_resize_print = 0);
   (id2i_config_feature_udhcp_rfc3397 = 0);
@@ -1434,7 +1435,6 @@ void id2i_init()  {
   (id2i_config_tftpd = 0);
   (id2i_config_xz = 0);
   (id2i_config_feature_inetd_support_builtin_daytime = 0);
-  (id2i_config_tftp = 0);
   (id2i_capi_lib_name = 0);
   (id2i_sqlite_omit_autovacuum = 0);
   (id2i_config_feature_volumeid_ntfs = 0);

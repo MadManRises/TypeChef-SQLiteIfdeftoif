@@ -2539,184 +2539,184 @@ char **azCompileOpt;
 void init_azCompileOpt()  {
   int elements =  0;
   (azCompileOpt = ((char **) malloc((39 * sizeof(char *)))));
-  if (((id2i.f_sqlite_check_pages ) )) {
+  if (((id2i_sqlite_check_pages ) )) {
     (azCompileOpt[elements] = "CHECK_PAGES");
   }  
-  if (((id2i.f_sqlite_check_pages ) )) {
+  if (((id2i_sqlite_check_pages ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (azCompileOpt[elements] = "COVERAGE_TEST");
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_enable_column_metadata ) )) {
+  if (((id2i_sqlite_enable_column_metadata ) )) {
     (azCompileOpt[elements] = "ENABLE_COLUMN_METADATA");
   }  
-  if (((id2i.f_sqlite_enable_column_metadata ) )) {
+  if (((id2i_sqlite_enable_column_metadata ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_enable_expensive_assert ) )) {
+  if (((id2i_sqlite_enable_expensive_assert ) )) {
     (azCompileOpt[elements] = "ENABLE_EXPENSIVE_ASSERT");
   }  
-  if (((id2i.f_sqlite_enable_expensive_assert ) )) {
+  if (((id2i_sqlite_enable_expensive_assert ) )) {
     elements++;
   }  
-  if ((((! id2i.f_sqlite_enable_fts4) && id2i.f_sqlite_enable_fts3) || (id2i.f_sqlite_enable_fts4 ))) {
+  if ((((! id2i_sqlite_enable_fts4) && id2i_sqlite_enable_fts3) || (id2i_sqlite_enable_fts4 ))) {
     (azCompileOpt[elements] = "ENABLE_FTS3");
   }  
-  if ((((! id2i.f_sqlite_enable_fts4) && id2i.f_sqlite_enable_fts3) || (id2i.f_sqlite_enable_fts4 ))) {
+  if ((((! id2i_sqlite_enable_fts4) && id2i_sqlite_enable_fts3) || (id2i_sqlite_enable_fts4 ))) {
     elements++;
   }  
-  if (((id2i.f_sqlite_enable_fts4 ) )) {
+  if (((id2i_sqlite_enable_fts4 ) )) {
     (azCompileOpt[elements] = "ENABLE_FTS4");
   }  
-  if (((id2i.f_sqlite_enable_fts4 ) )) {
+  if (((id2i_sqlite_enable_fts4 ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_enable_iotrace ) )) {
+  if (((id2i_sqlite_enable_iotrace ) )) {
     (azCompileOpt[elements] = "ENABLE_IOTRACE");
   }  
-  if (((id2i.f_sqlite_enable_iotrace ) )) {
+  if (((id2i_sqlite_enable_iotrace ) )) {
     elements++;
   }  
   (azCompileOpt[elements] = "ENABLE_LOCKING_STYLE=SQLITE_ENABLE_LOCKING_STYLE");
   elements++;
-  if (((id2i.f_sqlite_enable_memory_management ) )) {
+  if (((id2i_sqlite_enable_memory_management ) )) {
     (azCompileOpt[elements] = "ENABLE_MEMORY_MANAGEMENT");
   }  
-  if (((id2i.f_sqlite_enable_memory_management ) )) {
+  if (((id2i_sqlite_enable_memory_management ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_enable_memsys3 ) )) {
+  if (((id2i_sqlite_enable_memsys3 ) )) {
     (azCompileOpt[elements] = "ENABLE_MEMSYS3");
   }  
-  if (((id2i.f_sqlite_enable_memsys3 ) )) {
+  if (((id2i_sqlite_enable_memsys3 ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_enable_memsys5 ) )) {
+  if (((id2i_sqlite_enable_memsys5 ) )) {
     (azCompileOpt[elements] = "ENABLE_MEMSYS5");
   }  
-  if (((id2i.f_sqlite_enable_memsys5 ) )) {
+  if (((id2i_sqlite_enable_memsys5 ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_enable_oversize_cell_check ) )) {
+  if (((id2i_sqlite_enable_oversize_cell_check ) )) {
     (azCompileOpt[elements] = "ENABLE_OVERSIZE_CELL_CHECK");
   }  
-  if (((id2i.f_sqlite_enable_oversize_cell_check ) )) {
+  if (((id2i_sqlite_enable_oversize_cell_check ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_have_isnan ) )) {
+  if (((id2i_sqlite_have_isnan ) )) {
     (azCompileOpt[elements] = "HAVE_ISNAN");
   }  
-  if (((id2i.f_sqlite_have_isnan ) )) {
+  if (((id2i_sqlite_have_isnan ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_homegrown_recursive_mutex ) )) {
+  if (((id2i_sqlite_homegrown_recursive_mutex ) )) {
     (azCompileOpt[elements] = "HOMEGROWN_RECURSIVE_MUTEX");
   }  
-  if (((id2i.f_sqlite_homegrown_recursive_mutex ) )) {
+  if (((id2i_sqlite_homegrown_recursive_mutex ) )) {
     elements++;
   }  
   (azCompileOpt[elements] = "MAX_MMAP_SIZE=" "0");
   elements++;
-  if (((id2i.f_sqlite_no_sync ) )) {
+  if (((id2i_sqlite_no_sync ) )) {
     (azCompileOpt[elements] = "NO_SYNC");
   }  
-  if (((id2i.f_sqlite_no_sync ) )) {
+  if (((id2i_sqlite_no_sync ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_analyze ) )) {
+  if (((id2i_sqlite_omit_analyze ) )) {
     (azCompileOpt[elements] = "OMIT_ANALYZE");
   }  
-  if (((id2i.f_sqlite_omit_analyze ) )) {
+  if (((id2i_sqlite_omit_analyze ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     (azCompileOpt[elements] = "OMIT_AUTOVACUUM");
   }  
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_blob_literal ) )) {
+  if (((id2i_sqlite_omit_blob_literal ) )) {
     (azCompileOpt[elements] = "OMIT_BLOB_LITERAL");
   }  
-  if (((id2i.f_sqlite_omit_blob_literal ) )) {
+  if (((id2i_sqlite_omit_blob_literal ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     (azCompileOpt[elements] = "OMIT_BUILTIN_TEST");
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_cast ) )) {
+  if (((id2i_sqlite_omit_cast ) )) {
     (azCompileOpt[elements] = "OMIT_CAST");
   }  
-  if (((id2i.f_sqlite_omit_cast ) )) {
+  if (((id2i_sqlite_omit_cast ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_decltype ) )) {
+  if (((id2i_sqlite_omit_decltype ) )) {
     (azCompileOpt[elements] = "OMIT_DECLTYPE");
   }  
-  if (((id2i.f_sqlite_omit_decltype ) )) {
+  if (((id2i_sqlite_omit_decltype ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_deprecated ) )) {
+  if (((id2i_sqlite_omit_deprecated ) )) {
     (azCompileOpt[elements] = "OMIT_DEPRECATED");
   }  
-  if (((id2i.f_sqlite_omit_deprecated ) )) {
+  if (((id2i_sqlite_omit_deprecated ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_explain ) )) {
+  if (((id2i_sqlite_omit_explain ) )) {
     (azCompileOpt[elements] = "OMIT_EXPLAIN");
   }  
-  if (((id2i.f_sqlite_omit_explain ) )) {
+  if (((id2i_sqlite_omit_explain ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_foreign_key ) )) {
+  if (((id2i_sqlite_omit_foreign_key ) )) {
     (azCompileOpt[elements] = "OMIT_FOREIGN_KEY");
   }  
-  if (((id2i.f_sqlite_omit_foreign_key ) )) {
+  if (((id2i_sqlite_omit_foreign_key ) )) {
     elements++;
   }  
   (azCompileOpt[elements] = "OMIT_LOAD_EXTENSION");
   elements++;
-  if (((id2i.f_sqlite_omit_or_optimization ) )) {
+  if (((id2i_sqlite_omit_or_optimization ) )) {
     (azCompileOpt[elements] = "OMIT_OR_OPTIMIZATION");
   }  
-  if (((id2i.f_sqlite_omit_or_optimization ) )) {
+  if (((id2i_sqlite_omit_or_optimization ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
+  if (((id2i_sqlite_omit_pager_pragmas ) )) {
     (azCompileOpt[elements] = "OMIT_PAGER_PRAGMAS");
   }  
-  if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
+  if (((id2i_sqlite_omit_pager_pragmas ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_subquery ) )) {
+  if (((id2i_sqlite_omit_subquery ) )) {
     (azCompileOpt[elements] = "OMIT_SUBQUERY");
   }  
-  if (((id2i.f_sqlite_omit_subquery ) )) {
+  if (((id2i_sqlite_omit_subquery ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_omit_view ) )) {
+  if (((id2i_sqlite_omit_view ) )) {
     (azCompileOpt[elements] = "OMIT_VIEW");
   }  
-  if (((id2i.f_sqlite_omit_view ) )) {
+  if (((id2i_sqlite_omit_view ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_rtree_int_only ) )) {
+  if (((id2i_sqlite_rtree_int_only ) )) {
     (azCompileOpt[elements] = "RTREE_INT_ONLY");
   }  
-  if (((id2i.f_sqlite_rtree_int_only ) )) {
+  if (((id2i_sqlite_rtree_int_only ) )) {
     elements++;
   }  
-  if (((id2i.f_sqlite_small_stack ) )) {
+  if (((id2i_sqlite_small_stack ) )) {
     (azCompileOpt[elements] = "SMALL_STACK");
   }  
-  if (((id2i.f_sqlite_small_stack ) )) {
+  if (((id2i_sqlite_small_stack ) )) {
     elements++;
   }  
   (azCompileOpt[elements] = "THREADSAFE=" "1");
@@ -3011,17 +3011,17 @@ int sqlite3_db_status(sqlite3 *db , int op , int *pCurrent , int *pHighwater , i
     case 5:
     case 6:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 4)) {
           sqlite3Coverage(13698);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 5)) {
           sqlite3Coverage(13699);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 6)) {
           sqlite3Coverage(13700);
         }  
@@ -3059,13 +3059,13 @@ int sqlite3_db_status(sqlite3 *db , int op , int *pCurrent , int *pHighwater , i
       (db->pnBytesFreed = (&nByte));
       for ((i = 0); (i < db->nDb); i++) {
         Schema *pSchema =  db->aDb[i].pSchema;
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             HashElem *p;
-            if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+            if ((((! id2i_sqlite_default_memstatus) ) )) {
               (nByte += (_1283_sqlite3Config.m.xRoundup(sizeof(HashElem )) * (pSchema->tblHash.count + pSchema->trigHash.count + pSchema->idxHash.count + pSchema->fkeyHash.count)));
             }  
-            if (((id2i.f_sqlite_default_memstatus ) )) {
+            if (((id2i_sqlite_default_memstatus ) )) {
               (nByte += (_1284_sqlite3Config.m.xRoundup(sizeof(HashElem )) * (pSchema->tblHash.count + pSchema->trigHash.count + pSchema->idxHash.count + pSchema->fkeyHash.count)));
             }  
             (nByte += sqlite3MallocSize(pSchema->tblHash.ht));
@@ -3080,13 +3080,13 @@ int sqlite3_db_status(sqlite3 *db , int op , int *pCurrent , int *pHighwater , i
             }
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((pSchema != 0)) {
             HashElem *p;
-            if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+            if ((((! id2i_sqlite_default_memstatus) ) )) {
               (nByte += (_1283_sqlite3Config.m.xRoundup(sizeof(HashElem )) * (pSchema->tblHash.count + pSchema->trigHash.count + pSchema->idxHash.count + pSchema->fkeyHash.count)));
             }  
-            if (((id2i.f_sqlite_default_memstatus ) )) {
+            if (((id2i_sqlite_default_memstatus ) )) {
               (nByte += (_1284_sqlite3Config.m.xRoundup(sizeof(HashElem )) * (pSchema->tblHash.count + pSchema->trigHash.count + pSchema->idxHash.count + pSchema->fkeyHash.count)));
             }  
             (nByte += sqlite3MallocSize(pSchema->tblHash.ht));
@@ -3521,13 +3521,13 @@ static  int osLocaltime(time_t *t , struct  tm   *pTm )  {
   int rc;
   struct  tm   *pX;
   (pX = localtime(t));
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       if (_1283_sqlite3Config.bLocaltimeFault) {
         (pX = 0);
       }  
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       if (_1284_sqlite3Config.bLocaltimeFault) {
         (pX = 0);
       }  
@@ -3588,10 +3588,10 @@ static  int parseModifier(sqlite3_context *pCtx , const  char *zMod , DateTime *
   char *z, zBuf[30];
   (z = zBuf);
   for ((n = 0); ((n < (((int ) (sizeof(zBuf) / sizeof(zBuf[0]))) - 1)) && zMod[n]); n++) {
-    if ((((! id2i.f_sqlite_ebcdic) ) )) {
+    if ((((! id2i_sqlite_ebcdic) ) )) {
       (z[n] = ((char ) _1281_sqlite3UpperToLower[((u8 ) zMod[n])]));
     }  
-    if (((id2i.f_sqlite_ebcdic ) )) {
+    if (((id2i_sqlite_ebcdic ) )) {
       (z[n] = ((char ) _1282_sqlite3UpperToLower[((u8 ) zMod[n])]));
     }  
   }
@@ -3890,22 +3890,22 @@ static  void strftimeFunc(sqlite3_context *context , int argc , sqlite3_value **
       i++;
     }  
   }
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((n == (sizeof(zBuf) - 1))) {
       sqlite3Coverage(14775);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((n == sizeof(zBuf))) {
       sqlite3Coverage(14776);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((n == (((u64 ) db->aLimit[0]) + 1))) {
       sqlite3Coverage(14777);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((n == ((u64 ) db->aLimit[0]))) {
       sqlite3Coverage(14778);
     }  
@@ -4284,13 +4284,13 @@ extern void __malloc_check_init(void ) __attribute__((__nothrow__)) __attribute_
 static  void *sqlite3MemMalloc(int nByte )  {
   void *p =  malloc(nByte);
   if ((p == 0)) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         if ((_1283_sqlite3Config.xLog != 0)) {
           sqlite3Coverage(15621);
         }  
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         if ((_1284_sqlite3Config.xLog != 0)) {
           sqlite3Coverage(15621);
         }  
@@ -4309,13 +4309,13 @@ static  int sqlite3MemSize(void *pPrior )  {
 static  void *sqlite3MemRealloc(void *pPrior , int nByte )  {
   void *p =  realloc(pPrior, nByte);
   if ((p == 0)) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         if ((_1283_sqlite3Config.xLog != 0)) {
           sqlite3Coverage(15690);
         }  
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         if ((_1284_sqlite3Config.xLog != 0)) {
           sqlite3Coverage(15690);
         }  
@@ -4422,12 +4422,12 @@ static  void memsys3Link(u32 i )  {
   }
 }
 static  void memsys3Enter(void )  {
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (((_1283_sqlite3Config.bMemstat == 0) && (mem3.mutex == 0))) {
       (mem3.mutex = ((sqlite3_mutex *) 8));
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (((_1284_sqlite3Config.bMemstat == 0) && (mem3.mutex == 0))) {
       (mem3.mutex = ((sqlite3_mutex *) 8));
     }  
@@ -4662,27 +4662,27 @@ static  void *memsys3Realloc(void *pPrior , int nBytes )  {
 }
 static  int memsys3Init(void *NotUsed )  {
   ((void ) NotUsed);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((! _1283_sqlite3Config.pHeap)) {
       return 1;
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((! _1284_sqlite3Config.pHeap)) {
       return 1;
     }  
   }  
   ((void ) 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (mem3.aPool = ((_1274_Mem3Block *) _1283_sqlite3Config.pHeap));
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (mem3.aPool = ((_1274_Mem3Block *) _1284_sqlite3Config.pHeap));
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (mem3.nPool = ((_1283_sqlite3Config.nHeap / sizeof(_1274_Mem3Block )) - 2));
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (mem3.nPool = ((_1284_sqlite3Config.nHeap / sizeof(_1274_Mem3Block )) - 2));
   }  
   (mem3.szMaster = mem3.nPool);
@@ -4806,13 +4806,13 @@ static  void *memsys5MallocUnsafe(int nByte )  {
     
   }
   if ((iBin > 30)) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         if ((_1283_sqlite3Config.xLog != 0)) {
           sqlite3Coverage(17279);
         }  
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         if ((_1284_sqlite3Config.xLog != 0)) {
           sqlite3Coverage(17279);
         }  
@@ -4862,7 +4862,7 @@ static  void memsys5FreeUnsafe(void *pOld )  {
   ((void ) 0);
   ((void ) 0);
   (mem5.aCtrl[iBlock] = (0x20 | iLogsize));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     while (1) {
       int iBuddy;
       if (((iBlock >> iLogsize) & 1)) {
@@ -4892,7 +4892,7 @@ static  void memsys5FreeUnsafe(void *pOld )  {
       (size *= 2);
     }
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     while ((iLogsize < 30)) {
       int iBuddy;
       if (((iBlock >> iLogsize) & 1)) {
@@ -4987,23 +4987,23 @@ static  int memsys5Init(void *NotUsed )  {
   ((void ) NotUsed);
   (mem5.mutex = 0);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (nByte = _1283_sqlite3Config.nHeap);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (nByte = _1284_sqlite3Config.nHeap);
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (zByte = ((u8 *) _1283_sqlite3Config.pHeap));
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (zByte = ((u8 *) _1284_sqlite3Config.pHeap));
   }  
   ((void ) 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (nMinLog = memsys5Log(_1283_sqlite3Config.mnReq));
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (nMinLog = memsys5Log(_1284_sqlite3Config.mnReq));
   }  
   (mem5.szAtom = (1 << nMinLog));
@@ -5026,12 +5026,12 @@ static  int memsys5Init(void *NotUsed )  {
     }  
     ((void ) 0);
   }
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((_1283_sqlite3Config.bMemstat == 0)) {
       (mem5.mutex = ((sqlite3_mutex *) 8));
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((_1284_sqlite3Config.bMemstat == 0)) {
       (mem5.mutex = ((sqlite3_mutex *) 8));
     }  
@@ -5048,13 +5048,13 @@ static  const  sqlite3_mem_methods *sqlite3MemGetMemsys5(void )  {
   return (&memsys5Methods);
 }
 int sqlite3_release_memory(int n )  {
-  if (((id2i.f_sqlite_enable_memory_management ) )) {
+  if (((id2i_sqlite_enable_memory_management ) )) {
     return sqlite3PcacheReleaseMemory(n);
   }  
-  if ((((! id2i.f_sqlite_enable_memory_management) ) )) {
+  if ((((! id2i_sqlite_enable_memory_management) ) )) {
     ((void ) n);
   }  
-  if ((((! id2i.f_sqlite_enable_memory_management) ) )) {
+  if ((((! id2i_sqlite_enable_memory_management) ) )) {
     return 0;
   }  
 }
@@ -5117,28 +5117,28 @@ void sqlite3_soft_heap_limit(int n )  {
   sqlite3_soft_heap_limit64(n);
 }
 static  int sqlite3MallocInit(void )  {
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((_1283_sqlite3Config.m.xMalloc == 0)) {
       sqlite3MemSetDefault();
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((_1284_sqlite3Config.m.xMalloc == 0)) {
       sqlite3MemSetDefault();
     }  
   }  
   memset((&mem0), 0, sizeof(mem0));
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.bCoreMutex) {
       (mem0.mutex = ((sqlite3_mutex *) 8));
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.bCoreMutex) {
       (mem0.mutex = ((sqlite3_mutex *) 8));
     }  
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((_1283_sqlite3Config.pScratch && (_1283_sqlite3Config.szScratch >= 100) && (_1283_sqlite3Config.nScratch > 0))) {
       int i, n, sz;
       ScratchFreeslot *pSlot;
@@ -5162,7 +5162,7 @@ static  int sqlite3MallocInit(void )  {
       (_1283_sqlite3Config.nScratch = 0);
     }
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((_1284_sqlite3Config.pScratch && (_1284_sqlite3Config.szScratch >= 100) && (_1284_sqlite3Config.nScratch > 0))) {
       int i, n, sz;
       ScratchFreeslot *pSlot;
@@ -5186,24 +5186,24 @@ static  int sqlite3MallocInit(void )  {
       (_1284_sqlite3Config.nScratch = 0);
     }
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (((_1283_sqlite3Config.pPage == 0) || (_1283_sqlite3Config.szPage < 512) || (_1283_sqlite3Config.nPage < 1))) {
       (_1283_sqlite3Config.pPage = 0);
       (_1283_sqlite3Config.szPage = 0);
       (_1283_sqlite3Config.nPage = 0);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (((_1284_sqlite3Config.pPage == 0) || (_1284_sqlite3Config.szPage < 512) || (_1284_sqlite3Config.nPage < 1))) {
       (_1284_sqlite3Config.pPage = 0);
       (_1284_sqlite3Config.szPage = 0);
       (_1284_sqlite3Config.nPage = 0);
     }  
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     return _1283_sqlite3Config.m.xInit(_1283_sqlite3Config.m.pAppData);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     return _1284_sqlite3Config.m.xInit(_1284_sqlite3Config.m.pAppData);
   }  
 }
@@ -5211,12 +5211,12 @@ static  int sqlite3HeapNearlyFull(void )  {
   return mem0.nearlyFull;
 }
 static  void sqlite3MallocEnd(void )  {
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.m.xShutdown) {
       _1283_sqlite3Config.m.xShutdown(_1283_sqlite3Config.m.pAppData);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.m.xShutdown) {
       _1284_sqlite3Config.m.xShutdown(_1284_sqlite3Config.m.pAppData);
     }  
@@ -5256,10 +5256,10 @@ static  int mallocWithAlarm(int n , void **pp )  {
   int nFull;
   void *p;
   ((void ) 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (nFull = _1283_sqlite3Config.m.xRoundup(n));
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (nFull = _1284_sqlite3Config.m.xRoundup(n));
   }  
   sqlite3StatusSet(5, n);
@@ -5273,19 +5273,19 @@ static  int mallocWithAlarm(int n , void **pp )  {
       (mem0.nearlyFull = 0);
     }
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (p = _1283_sqlite3Config.m.xMalloc(nFull));
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (p = _1284_sqlite3Config.m.xMalloc(nFull));
   }  
-  if (((id2i.f_sqlite_enable_memory_management ) )) {
+  if (((id2i_sqlite_enable_memory_management ) )) {
     if (((p == 0) && mem0.alarmCallback)) {
       sqlite3MallocAlarm(nFull);
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (p = _1283_sqlite3Config.m.xMalloc(nFull));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (p = _1284_sqlite3Config.m.xMalloc(nFull));
       }  
     }  
@@ -5303,18 +5303,18 @@ static  void *sqlite3Malloc(int n )  {
   if (((n <= 0) || (n >= 0x7fffff00))) {
     (p = 0);
   } 
-  else if (((((! id2i.f_sqlite_default_memstatus) ) ) && _1283_sqlite3Config.bMemstat)) {
+  else if (((((! id2i_sqlite_default_memstatus) ) ) && _1283_sqlite3Config.bMemstat)) {
     mallocWithAlarm(n, (&p));
   }
   
-  else if ((((id2i.f_sqlite_default_memstatus ) ) && _1284_sqlite3Config.bMemstat)) {
+  else if ((((id2i_sqlite_default_memstatus ) ) && _1284_sqlite3Config.bMemstat)) {
     mallocWithAlarm(n, (&p));
   } 
   else {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       (p = _1283_sqlite3Config.m.xMalloc(n));
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       (p = _1284_sqlite3Config.m.xMalloc(n));
     }  
   }
@@ -5330,7 +5330,7 @@ void *sqlite3_malloc(int n )  {
 static  void *sqlite3ScratchMalloc(int n )  {
   void *p;
   ((void ) 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((mem0.nScratchFree && (_1283_sqlite3Config.szScratch >= n))) {
       (p = mem0.pScratchFree);
       (mem0.pScratchFree = mem0.pScratchFree->pNext);
@@ -5351,7 +5351,7 @@ static  void *sqlite3ScratchMalloc(int n )  {
       }
     }
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((mem0.nScratchFree && (_1284_sqlite3Config.szScratch >= n))) {
       (p = mem0.pScratchFree);
       (mem0.pScratchFree = mem0.pScratchFree->pNext);
@@ -5377,7 +5377,7 @@ static  void *sqlite3ScratchMalloc(int n )  {
 }
 static  void sqlite3ScratchFree(void *p )  {
   if (p) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       if (((p >= _1283_sqlite3Config.pScratch) && (p < mem0.pScratchEnd))) {
         ScratchFreeslot *pSlot;
         (pSlot = ((ScratchFreeslot *) p));
@@ -5402,7 +5402,7 @@ static  void sqlite3ScratchFree(void *p )  {
         }
       }
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       if (((p >= _1284_sqlite3Config.pScratch) && (p < mem0.pScratchEnd))) {
         ScratchFreeslot *pSlot;
         (pSlot = ((ScratchFreeslot *) p));
@@ -5435,10 +5435,10 @@ static  int isLookaside(sqlite3 *db , void *p )  {
 static  int sqlite3MallocSize(void *p )  {
   ((void ) 0);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     return _1283_sqlite3Config.m.xSize(p);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     return _1284_sqlite3Config.m.xSize(p);
   }  
 }
@@ -5451,10 +5451,10 @@ static  int sqlite3DbMallocSize(sqlite3 *db , void *p )  {
     ((void ) 0);
     ((void ) 0);
     ((void ) 0);
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       return _1283_sqlite3Config.m.xSize(p);
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       return _1284_sqlite3Config.m.xSize(p);
     }  
   }
@@ -5465,7 +5465,7 @@ void sqlite3_free(void *p )  {
   }  
   ((void ) 0);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.bMemstat) {
       sqlite3StatusAdd(0, (- sqlite3MallocSize(p)));
       sqlite3StatusAdd(9, (- 1));
@@ -5475,7 +5475,7 @@ void sqlite3_free(void *p )  {
       _1283_sqlite3Config.m.xFree(p);
     }
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.bMemstat) {
       sqlite3StatusAdd(0, (- sqlite3MallocSize(p)));
       sqlite3StatusAdd(9, (- 1));
@@ -5523,16 +5523,16 @@ static  void *sqlite3Realloc(void *pOld , int nBytes )  {
     return 0;
   }  
   (nOld = sqlite3MallocSize(pOld));
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (nNew = _1283_sqlite3Config.m.xRoundup(nBytes));
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (nNew = _1284_sqlite3Config.m.xRoundup(nBytes));
   }  
   if ((nOld == nNew)) {
     (pNew = pOld);
   } 
-  else if (((((! id2i.f_sqlite_default_memstatus) ) ) && _1283_sqlite3Config.bMemstat)) {
+  else if (((((! id2i_sqlite_default_memstatus) ) ) && _1283_sqlite3Config.bMemstat)) {
     sqlite3StatusSet(5, nBytes);
     (nDiff = (nNew - nOld));
     if ((sqlite3StatusValue(0) >= (mem0.alarmThreshold - nDiff))) {
@@ -5551,7 +5551,7 @@ static  void *sqlite3Realloc(void *pOld , int nBytes )  {
     }  
   }
   
-  else if ((((id2i.f_sqlite_default_memstatus ) ) && _1284_sqlite3Config.bMemstat)) {
+  else if ((((id2i_sqlite_default_memstatus ) ) && _1284_sqlite3Config.bMemstat)) {
     sqlite3StatusSet(5, nBytes);
     (nDiff = (nNew - nOld));
     if ((sqlite3StatusValue(0) >= (mem0.alarmThreshold - nDiff))) {
@@ -5570,10 +5570,10 @@ static  void *sqlite3Realloc(void *pOld , int nBytes )  {
     }  
   } 
   else {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       (pNew = _1283_sqlite3Config.m.xRealloc(pOld, nNew));
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       (pNew = _1284_sqlite3Config.m.xRealloc(pOld, nNew));
     }  
   }
@@ -6321,12 +6321,12 @@ static  void sqlite3VXPrintf(StrAccum *pAccum , int useExtended , const  char *f
 static  void sqlite3StrAccumAppend(StrAccum *p , const  char *z , int N )  {
   ((void ) 0);
   if (p->accError) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((p->accError == 2)) {
         sqlite3Coverage(20123);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((p->accError == 1)) {
         sqlite3Coverage(20124);
       }  
@@ -6503,23 +6503,23 @@ static  void renderLogMsg(int iErrCode , const  char *zFormat , va_list ap )  {
   sqlite3StrAccumInit((&acc), zMsg, sizeof(zMsg), 0);
   (acc.useMalloc = 0);
   sqlite3VXPrintf((&acc), 0, zFormat, ap);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     _1283_sqlite3Config.xLog(_1283_sqlite3Config.pLogArg, iErrCode, sqlite3StrAccumFinish((&acc)));
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     _1284_sqlite3Config.xLog(_1284_sqlite3Config.pLogArg, iErrCode, sqlite3StrAccumFinish((&acc)));
   }  
 }
 void sqlite3_log(int iErrCode , const  char *zFormat , ...)  {
   va_list ap;
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.xLog) {
       __builtin_va_start(ap, zFormat);
       renderLogMsg(iErrCode, zFormat, ap);
       __builtin_va_end(ap);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.xLog) {
       __builtin_va_start(ap, zFormat);
       renderLogMsg(iErrCode, zFormat, ap);
@@ -7365,13 +7365,13 @@ static  int sqlite3IsNaN(double x )  {
   int rc;
   volatile double _1302_y =  x;
   volatile double _1302_z =  _1302_y;
-  if ((((! id2i.f_sqlite_have_isnan) ) )) {
+  if ((((! id2i_sqlite_have_isnan) ) )) {
     (rc = (_1302_y != _1302_z));
   }  
-  if (((id2i.f_sqlite_have_isnan ) )) {
+  if (((id2i_sqlite_have_isnan ) )) {
     (rc = ((sizeof(x) == sizeof(float )) ? __isnanf(x) : ((sizeof(x) == sizeof(double )) ? __isnan(x) : __isnanl(x))));
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (rc) {
       sqlite3Coverage(21133);
     }  
@@ -7464,14 +7464,14 @@ int sqlite3_stricmp(const  char *zLeft , const  char *zRight )  {
   register unsigned char *a, *b;
   (a = ((unsigned  char *) zLeft));
   (b = ((unsigned  char *) zRight));
-  while ((((id2i.f_sqlite_ebcdic ) ) ? (((*a) != 0) && (_1282_sqlite3UpperToLower[(*a)] == _1282_sqlite3UpperToLower[(*b)])) : (((*a) != 0) && (_1281_sqlite3UpperToLower[(*a)] == _1281_sqlite3UpperToLower[(*b)])))) {
+  while ((((id2i_sqlite_ebcdic ) ) ? (((*a) != 0) && (_1282_sqlite3UpperToLower[(*a)] == _1282_sqlite3UpperToLower[(*b)])) : (((*a) != 0) && (_1281_sqlite3UpperToLower[(*a)] == _1281_sqlite3UpperToLower[(*b)])))) {
     a++;
     b++;
   }
-  if ((((! id2i.f_sqlite_ebcdic) ) )) {
+  if ((((! id2i_sqlite_ebcdic) ) )) {
     return (_1281_sqlite3UpperToLower[(*a)] - _1281_sqlite3UpperToLower[(*b)]);
   }  
-  if (((id2i.f_sqlite_ebcdic ) )) {
+  if (((id2i_sqlite_ebcdic ) )) {
     return (_1282_sqlite3UpperToLower[(*a)] - _1282_sqlite3UpperToLower[(*b)]);
   }  
 }
@@ -7479,14 +7479,14 @@ int sqlite3_strnicmp(const  char *zLeft , const  char *zRight , int N )  {
   register unsigned char *a, *b;
   (a = ((unsigned  char *) zLeft));
   (b = ((unsigned  char *) zRight));
-  while ((((id2i.f_sqlite_ebcdic ) ) ? ((N-- > 0) && ((*a) != 0) && (_1282_sqlite3UpperToLower[(*a)] == _1282_sqlite3UpperToLower[(*b)])) : ((N-- > 0) && ((*a) != 0) && (_1281_sqlite3UpperToLower[(*a)] == _1281_sqlite3UpperToLower[(*b)])))) {
+  while ((((id2i_sqlite_ebcdic ) ) ? ((N-- > 0) && ((*a) != 0) && (_1282_sqlite3UpperToLower[(*a)] == _1282_sqlite3UpperToLower[(*b)])) : ((N-- > 0) && ((*a) != 0) && (_1281_sqlite3UpperToLower[(*a)] == _1281_sqlite3UpperToLower[(*b)])))) {
     a++;
     b++;
   }
-  if ((((! id2i.f_sqlite_ebcdic) ) )) {
+  if ((((! id2i_sqlite_ebcdic) ) )) {
     return ((N < 0) ? 0 : (_1281_sqlite3UpperToLower[(*a)] - _1281_sqlite3UpperToLower[(*b)]));
   }  
-  if (((id2i.f_sqlite_ebcdic ) )) {
+  if (((id2i_sqlite_ebcdic ) )) {
     return ((N < 0) ? 0 : (_1282_sqlite3UpperToLower[(*a)] - _1282_sqlite3UpperToLower[(*b)]));
   }  
 }
@@ -7662,17 +7662,17 @@ static  int compare2pow63(const  char *zNum , int incr )  {
   }
   if ((c == 0)) {
     (c = (zNum[(18 * incr)] - '8'));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((c == (- 1))) {
         sqlite3Coverage(21511);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((c == 0)) {
         sqlite3Coverage(21512);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((c == (+ 1))) {
         sqlite3Coverage(21513);
       }  
@@ -7731,17 +7731,17 @@ static  int sqlite3Atoi64(const  char *zNum , i64 *pNum , int length , u8 enc ) 
   else {
     ((*pNum) = ((i64 ) u));
   }
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((i == 18)) {
       sqlite3Coverage(21578);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((i == 19)) {
       sqlite3Coverage(21579);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((i == 20)) {
       sqlite3Coverage(21580);
     }  
@@ -7786,7 +7786,7 @@ static  int sqlite3GetInt32(const  char *zNum , int *pValue )  {
   for ((i = 0); ((i < 11) && ((c = (zNum[i] - '0')) >= 0) && (c <= 9)); i++) {
     (v = ((v * 10) + c));
   }
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((i == 10)) {
       sqlite3Coverage(21637);
     }  
@@ -7794,7 +7794,7 @@ static  int sqlite3GetInt32(const  char *zNum , int *pValue )  {
   if ((i > 10)) {
     return 0;
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((v - neg) == 2147483647)) {
       sqlite3Coverage(21641);
     }  
@@ -7991,7 +7991,7 @@ static  int sqlite3VarintLen(u64 v )  {
   do {
     i++;
     (v >>= 7);
-  } while ((((id2i.f_sqlite_coverage_test ) ) ? ((v != 0) && 1) : ((v != 0) && (i < 9))));
+  } while ((((id2i_sqlite_coverage_test ) ) ? ((v != 0) && 1) : ((v != 0) && (i < 9))));
   return i;
 }
 static  u32 sqlite3Get4byte(const  u8 *p )  {
@@ -8006,7 +8006,7 @@ static  void sqlite3Put4byte(unsigned  char *p , u32 v )  {
 static  u8 sqlite3HexToInt(int h )  {
   ((void ) 0);
   (h += (9 * (1 & (h >> 6))));
-  if (((id2i.f_sqlite_ebcdic ) )) {
+  if (((id2i_sqlite_ebcdic ) )) {
     (h += (9 * (1 & (~ (h >> 4)))));
   }  
   return ((u8 ) (h & 0xf));
@@ -8036,13 +8036,13 @@ static  int sqlite3SafetyCheckOk(sqlite3 *db )  {
   (magic = db->magic);
   if ((magic != 0xa029a697)) {
     if (sqlite3SafetyCheckSickOrOk(db)) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
-        if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
+        if ((((! id2i_sqlite_default_memstatus) ) )) {
           if ((_1283_sqlite3Config.xLog != 0)) {
             sqlite3Coverage(22148);
           }  
         }  
-        if (((id2i.f_sqlite_default_memstatus ) )) {
+        if (((id2i_sqlite_default_memstatus ) )) {
           if ((_1284_sqlite3Config.xLog != 0)) {
             sqlite3Coverage(22148);
           }  
@@ -8060,13 +8060,13 @@ static  int sqlite3SafetyCheckSickOrOk(sqlite3 *db )  {
   u32 magic;
   (magic = db->magic);
   if (((magic != 0x4b771290) && (magic != 0xa029a697) && (magic != 0xf03b7906))) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         if ((_1283_sqlite3Config.xLog != 0)) {
           sqlite3Coverage(22162);
         }  
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         if ((_1284_sqlite3Config.xLog != 0)) {
           sqlite3Coverage(22162);
         }  
@@ -8081,33 +8081,33 @@ static  int sqlite3SafetyCheckSickOrOk(sqlite3 *db )  {
 }
 static  int sqlite3AddInt64(i64 *pA , i64 iB )  {
   i64 iA =  (*pA);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((iA == 0)) {
       sqlite3Coverage(22178);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((iA == 1)) {
       sqlite3Coverage(22178);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((iB == (- 1))) {
       sqlite3Coverage(22179);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((iB == 0)) {
       sqlite3Coverage(22179);
     }  
   }  
   if ((iB >= 0)) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((iA > 0) && (((0xffffffff | (((i64 ) 0x7fffffff) << 32)) - iA) == iB))) {
         sqlite3Coverage(22181);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((iA > 0) && (((0xffffffff | (((i64 ) 0x7fffffff) << 32)) - iA) == (iB - 1)))) {
         sqlite3Coverage(22182);
       }  
@@ -8118,12 +8118,12 @@ static  int sqlite3AddInt64(i64 *pA , i64 iB )  {
     ((*pA) += iB);
   }  
   else {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((iA < 0) && ((- (iA + (0xffffffff | (((i64 ) 0x7fffffff) << 32)))) == (iB + 1)))) {
         sqlite3Coverage(22186);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((iA < 0) && ((- (iA + (0xffffffff | (((i64 ) 0x7fffffff) << 32)))) == (iB + 2)))) {
         sqlite3Coverage(22187);
       }  
@@ -8136,18 +8136,18 @@ static  int sqlite3AddInt64(i64 *pA , i64 iB )  {
   return 0;
 }
 static  int sqlite3SubInt64(i64 *pA , i64 iB )  {
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((iB == ((((i64 ) (- 1)) - (0xffffffff | (((i64 ) 0x7fffffff) << 32))) + 1))) {
       sqlite3Coverage(22194);
     }  
   }  
   if ((iB == (((i64 ) (- 1)) - (0xffffffff | (((i64 ) 0x7fffffff) << 32))))) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((*pA) == (- 1))) {
         sqlite3Coverage(22196);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((*pA) == 0)) {
         sqlite3Coverage(22196);
       }  
@@ -8174,22 +8174,22 @@ static  int sqlite3MulInt64(i64 *pA , i64 iB )  {
   }  
   ((void ) 0);
   (r = ((iA1 * iB0) + (iA0 * iB1)));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((r == ((- (((i64 ) 1) << 31)) - 1))) {
       sqlite3Coverage(22217);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((r == (- (((i64 ) 1) << 31)))) {
       sqlite3Coverage(22218);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((r == (((i64 ) 1) << 31))) {
       sqlite3Coverage(22219);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((r == ((((i64 ) 1) << 31) - 1))) {
       sqlite3Coverage(22220);
     }  
@@ -8316,10 +8316,10 @@ static  unsigned  int strHash(const  char *z , int nKey )  {
   int h =  0;
   ((void ) 0);
   while ((nKey > 0)) {
-    if ((((! id2i.f_sqlite_ebcdic) ) )) {
+    if ((((! id2i_sqlite_ebcdic) ) )) {
       (h = ((h << 3) ^ h ^ _1281_sqlite3UpperToLower[((unsigned  char ) (*z++))]));
     }  
-    if (((id2i.f_sqlite_ebcdic ) )) {
+    if (((id2i_sqlite_ebcdic ) )) {
       (h = ((h << 3) ^ h ^ _1282_sqlite3UpperToLower[((unsigned  char ) (*z++))]));
     }  
     nKey--;
@@ -8365,11 +8365,11 @@ static  int rehash(Hash *pH , unsigned  int new_size )  {
   if ((new_size == pH->htsize)) {
     return 0;
   }  
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     sqlite3BeginBenignMalloc();
   }  
   (new_ht = ((struct  _ht   *) sqlite3Malloc((new_size * sizeof(struct  _ht   )))));
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     sqlite3EndBenignMalloc();
   }  
   if ((new_ht == 0)) {
@@ -8398,7 +8398,7 @@ static  HashElem *findElementGivenHash(const  Hash *pH , const  char *pKey , int
     (elem = pH->first);
     (count = pH->count);
   }
-  while ((((id2i.f_sqlite_coverage_test ) ) ? (count-- && 1) : (count-- && elem))) {
+  while ((((id2i_sqlite_coverage_test ) ) ? (count-- && 1) : (count-- && elem))) {
     if (((elem->nKey == nKey) && (sqlite3_strnicmp(elem->pKey, pKey, nKey) == 0))) {
       return elem;
     }  
@@ -9152,23 +9152,23 @@ static  int unixSetSystemCall(sqlite3_vfs *pNotUsed , const  char *zName , sqlit
   ((void ) pNotUsed);
   if ((zName == 0)) {
     (rc = 0);
-    for ((i = 0); (((id2i.f_use_pread && id2i.f_use_pread64) ) ? (i < (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0]))) : (((id2i.f_use_pread && (! id2i.f_use_pread64)) ) ? (i < (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0]))) : ((((! id2i.f_use_pread) && id2i.f_use_pread64) ) ? (i < (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0]))) : (i < (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0])))))); i++) {
-      if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    for ((i = 0); (((id2i_use_pread && id2i_use_pread64) ) ? (i < (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0]))) : (((id2i_use_pread && (! id2i_use_pread64)) ) ? (i < (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0]))) : ((((! id2i_use_pread) && id2i_use_pread64) ) ? (i < (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0]))) : (i < (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0])))))); i++) {
+      if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
         if (_1305_aSyscall[i].pDefault) {
           (_1305_aSyscall[i].pCurrent = _1305_aSyscall[i].pDefault);
         }  
       }  
-      if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+      if ((((! id2i_use_pread) && id2i_use_pread64) )) {
         if (_1306_aSyscall[i].pDefault) {
           (_1306_aSyscall[i].pCurrent = _1306_aSyscall[i].pDefault);
         }  
       }  
-      if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+      if (((id2i_use_pread && (! id2i_use_pread64)) )) {
         if (_1307_aSyscall[i].pDefault) {
           (_1307_aSyscall[i].pCurrent = _1307_aSyscall[i].pDefault);
         }  
       }  
-      if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+      if (((id2i_use_pread && id2i_use_pread64) )) {
         if (_1308_aSyscall[i].pDefault) {
           (_1308_aSyscall[i].pCurrent = _1308_aSyscall[i].pDefault);
         }  
@@ -9176,8 +9176,8 @@ static  int unixSetSystemCall(sqlite3_vfs *pNotUsed , const  char *zName , sqlit
     }
   }  
   else {
-    for ((i = 0); (((id2i.f_use_pread && id2i.f_use_pread64) ) ? (i < (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0]))) : (((id2i.f_use_pread && (! id2i.f_use_pread64)) ) ? (i < (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0]))) : ((((! id2i.f_use_pread) && id2i.f_use_pread64) ) ? (i < (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0]))) : (i < (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0])))))); i++) {
-      if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    for ((i = 0); (((id2i_use_pread && id2i_use_pread64) ) ? (i < (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0]))) : (((id2i_use_pread && (! id2i_use_pread64)) ) ? (i < (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0]))) : ((((! id2i_use_pread) && id2i_use_pread64) ) ? (i < (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0]))) : (i < (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0])))))); i++) {
+      if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
         if ((strcmp(zName, _1305_aSyscall[i].zName) == 0)) {
           if ((_1305_aSyscall[i].pDefault == 0)) {
             (_1305_aSyscall[i].pDefault = _1305_aSyscall[i].pCurrent);
@@ -9190,7 +9190,7 @@ static  int unixSetSystemCall(sqlite3_vfs *pNotUsed , const  char *zName , sqlit
           break;
         }  
       }  
-      if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+      if ((((! id2i_use_pread) && id2i_use_pread64) )) {
         if ((strcmp(zName, _1306_aSyscall[i].zName) == 0)) {
           if ((_1306_aSyscall[i].pDefault == 0)) {
             (_1306_aSyscall[i].pDefault = _1306_aSyscall[i].pCurrent);
@@ -9203,7 +9203,7 @@ static  int unixSetSystemCall(sqlite3_vfs *pNotUsed , const  char *zName , sqlit
           break;
         }  
       }  
-      if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+      if (((id2i_use_pread && (! id2i_use_pread64)) )) {
         if ((strcmp(zName, _1307_aSyscall[i].zName) == 0)) {
           if ((_1307_aSyscall[i].pDefault == 0)) {
             (_1307_aSyscall[i].pDefault = _1307_aSyscall[i].pCurrent);
@@ -9216,7 +9216,7 @@ static  int unixSetSystemCall(sqlite3_vfs *pNotUsed , const  char *zName , sqlit
           break;
         }  
       }  
-      if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+      if (((id2i_use_pread && id2i_use_pread64) )) {
         if ((strcmp(zName, _1308_aSyscall[i].zName) == 0)) {
           if ((_1308_aSyscall[i].pDefault == 0)) {
             (_1308_aSyscall[i].pDefault = _1308_aSyscall[i].pCurrent);
@@ -9236,23 +9236,23 @@ static  int unixSetSystemCall(sqlite3_vfs *pNotUsed , const  char *zName , sqlit
 static  sqlite3_syscall_ptr unixGetSystemCall(sqlite3_vfs *pNotUsed , const  char *zName )  {
   unsigned int i;
   ((void ) pNotUsed);
-  for ((i = 0); (((id2i.f_use_pread && id2i.f_use_pread64) ) ? (i < (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0]))) : (((id2i.f_use_pread && (! id2i.f_use_pread64)) ) ? (i < (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0]))) : ((((! id2i.f_use_pread) && id2i.f_use_pread64) ) ? (i < (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0]))) : (i < (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0])))))); i++) {
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  for ((i = 0); (((id2i_use_pread && id2i_use_pread64) ) ? (i < (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0]))) : (((id2i_use_pread && (! id2i_use_pread64)) ) ? (i < (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0]))) : ((((! id2i_use_pread) && id2i_use_pread64) ) ? (i < (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0]))) : (i < (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0])))))); i++) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if ((strcmp(zName, _1305_aSyscall[i].zName) == 0)) {
         return _1305_aSyscall[i].pCurrent;
       }  
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if ((strcmp(zName, _1306_aSyscall[i].zName) == 0)) {
         return _1306_aSyscall[i].pCurrent;
       }  
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if ((strcmp(zName, _1307_aSyscall[i].zName) == 0)) {
         return _1307_aSyscall[i].pCurrent;
       }  
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if ((strcmp(zName, _1308_aSyscall[i].zName) == 0)) {
         return _1308_aSyscall[i].pCurrent;
       }  
@@ -9264,46 +9264,46 @@ static  const  char *unixNextSystemCall(sqlite3_vfs *p , const  char *zName )  {
   int i =  (- 1);
   ((void ) p);
   if (zName) {
-    for ((i = 0); (((id2i.f_use_pread && id2i.f_use_pread64) ) ? (i < (((int ) (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0]))) - 1)) : (((id2i.f_use_pread && (! id2i.f_use_pread64)) ) ? (i < (((int ) (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0]))) - 1)) : ((((! id2i.f_use_pread) && id2i.f_use_pread64) ) ? (i < (((int ) (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0]))) - 1)) : (i < (((int ) (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0]))) - 1))))); i++) {
-      if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    for ((i = 0); (((id2i_use_pread && id2i_use_pread64) ) ? (i < (((int ) (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0]))) - 1)) : (((id2i_use_pread && (! id2i_use_pread64)) ) ? (i < (((int ) (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0]))) - 1)) : ((((! id2i_use_pread) && id2i_use_pread64) ) ? (i < (((int ) (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0]))) - 1)) : (i < (((int ) (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0]))) - 1))))); i++) {
+      if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
         if ((strcmp(zName, _1305_aSyscall[i].zName) == 0)) {
           break;
         }  
       }  
-      if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+      if ((((! id2i_use_pread) && id2i_use_pread64) )) {
         if ((strcmp(zName, _1306_aSyscall[i].zName) == 0)) {
           break;
         }  
       }  
-      if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+      if (((id2i_use_pread && (! id2i_use_pread64)) )) {
         if ((strcmp(zName, _1307_aSyscall[i].zName) == 0)) {
           break;
         }  
       }  
-      if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+      if (((id2i_use_pread && id2i_use_pread64) )) {
         if ((strcmp(zName, _1308_aSyscall[i].zName) == 0)) {
           break;
         }  
       }  
     }
   }  
-  for (i++; (((id2i.f_use_pread && id2i.f_use_pread64) ) ? (i < ((int ) (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0])))) : (((id2i.f_use_pread && (! id2i.f_use_pread64)) ) ? (i < ((int ) (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0])))) : ((((! id2i.f_use_pread) && id2i.f_use_pread64) ) ? (i < ((int ) (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0])))) : (i < ((int ) (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0]))))))); i++) {
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  for (i++; (((id2i_use_pread && id2i_use_pread64) ) ? (i < ((int ) (sizeof(_1308_aSyscall) / sizeof(_1308_aSyscall[0])))) : (((id2i_use_pread && (! id2i_use_pread64)) ) ? (i < ((int ) (sizeof(_1307_aSyscall) / sizeof(_1307_aSyscall[0])))) : ((((! id2i_use_pread) && id2i_use_pread64) ) ? (i < ((int ) (sizeof(_1306_aSyscall) / sizeof(_1306_aSyscall[0])))) : (i < ((int ) (sizeof(_1305_aSyscall) / sizeof(_1305_aSyscall[0]))))))); i++) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if ((_1305_aSyscall[i].pCurrent != 0)) {
         return _1305_aSyscall[i].zName;
       }  
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if ((_1306_aSyscall[i].pCurrent != 0)) {
         return _1306_aSyscall[i].zName;
       }  
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if ((_1307_aSyscall[i].pCurrent != 0)) {
         return _1307_aSyscall[i].zName;
       }  
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if ((_1308_aSyscall[i].pCurrent != 0)) {
         return _1308_aSyscall[i].zName;
       }  
@@ -9315,16 +9315,16 @@ static  int robust_open(const  char *z , int f , mode_t m )  {
   int fd;
   mode_t m2 =  (m ? m : 0644);
   while (1) {
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (fd = ((int ( *)(const  char * , int , int )) _1305_aSyscall[0].pCurrent)(z, (f | 02000000), m2));
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       (fd = ((int ( *)(const  char * , int , int )) _1306_aSyscall[0].pCurrent)(z, (f | 02000000), m2));
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       (fd = ((int ( *)(const  char * , int , int )) _1307_aSyscall[0].pCurrent)(z, (f | 02000000), m2));
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       (fd = ((int ( *)(const  char * , int , int )) _1308_aSyscall[0].pCurrent)(z, (f | 02000000), m2));
     }  
     if ((fd < 0)) {
@@ -9336,36 +9336,36 @@ static  int robust_open(const  char *z , int f , mode_t m )  {
     if ((fd >= 3)) {
       break;
     }  
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       ((int ( *)(int )) _1305_aSyscall[1].pCurrent)(fd);
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       ((int ( *)(int )) _1306_aSyscall[1].pCurrent)(fd);
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       ((int ( *)(int )) _1307_aSyscall[1].pCurrent)(fd);
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       ((int ( *)(int )) _1308_aSyscall[1].pCurrent)(fd);
     }  
     sqlite3_log(28, "attempt to open \"%s\" as file descriptor %d", z, fd);
     (fd = (- 1));
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if ((((int ( *)(const  char * , int , int )) _1305_aSyscall[0].pCurrent)("/dev/null", f, m) < 0)) {
         break;
       }  
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if ((((int ( *)(const  char * , int , int )) _1306_aSyscall[0].pCurrent)("/dev/null", f, m) < 0)) {
         break;
       }  
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if ((((int ( *)(const  char * , int , int )) _1307_aSyscall[0].pCurrent)("/dev/null", f, m) < 0)) {
         break;
       }  
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if ((((int ( *)(const  char * , int , int )) _1308_aSyscall[0].pCurrent)("/dev/null", f, m) < 0)) {
         break;
       }  
@@ -9374,22 +9374,22 @@ static  int robust_open(const  char *z , int f , mode_t m )  {
   if ((fd >= 0)) {
     if ((m != 0)) {
       struct  stat   statbuf;
-      if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+      if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
         if (((((int ( *)(int , struct  stat   * )) _1305_aSyscall[5].pCurrent)(fd, (&statbuf)) == 0) && (statbuf.st_size == 0) && ((statbuf.st_mode & 0777) != m))) {
           ((int ( *)(int , mode_t )) _1305_aSyscall[14].pCurrent)(fd, m);
         }  
       }  
-      if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+      if ((((! id2i_use_pread) && id2i_use_pread64) )) {
         if (((((int ( *)(int , struct  stat   * )) _1306_aSyscall[5].pCurrent)(fd, (&statbuf)) == 0) && (statbuf.st_size == 0) && ((statbuf.st_mode & 0777) != m))) {
           ((int ( *)(int , mode_t )) _1306_aSyscall[14].pCurrent)(fd, m);
         }  
       }  
-      if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+      if (((id2i_use_pread && (! id2i_use_pread64)) )) {
         if (((((int ( *)(int , struct  stat   * )) _1307_aSyscall[5].pCurrent)(fd, (&statbuf)) == 0) && (statbuf.st_size == 0) && ((statbuf.st_mode & 0777) != m))) {
           ((int ( *)(int , mode_t )) _1307_aSyscall[14].pCurrent)(fd, m);
         }  
       }  
-      if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+      if (((id2i_use_pread && id2i_use_pread64) )) {
         if (((((int ( *)(int , struct  stat   * )) _1308_aSyscall[5].pCurrent)(fd, (&statbuf)) == 0) && (statbuf.st_size == 0) && ((statbuf.st_mode & 0777) != m))) {
           ((int ( *)(int , mode_t )) _1308_aSyscall[14].pCurrent)(fd, m);
         }  
@@ -9407,16 +9407,16 @@ static  void unixLeaveMutex(void )  {
 static  int robust_ftruncate(int h , sqlite3_int64 sz )  {
   int rc;
   do {
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(int , off_t )) _1305_aSyscall[6].pCurrent)(h, sz));
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       (rc = ((int ( *)(int , off_t )) _1306_aSyscall[6].pCurrent)(h, sz));
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(int , off_t )) _1307_aSyscall[6].pCurrent)(h, sz));
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       (rc = ((int ( *)(int , off_t )) _1308_aSyscall[6].pCurrent)(h, sz));
     }  
   } while (((rc < 0) && ((*__errno_location()) == 4)));
@@ -9485,22 +9485,22 @@ static  int unixLogErrorAtLine(int errcode , const  char *zFunc , const  char *z
   return errcode;
 }
 static  void robust_close(unixFile *pFile , int h , int lineno )  {
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     if (((int ( *)(int )) _1305_aSyscall[1].pCurrent)(h)) {
       unixLogErrorAtLine((10 | (16 << 8)), "close", (pFile ? pFile->zPath : 0), lineno);
     }  
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     if (((int ( *)(int )) _1306_aSyscall[1].pCurrent)(h)) {
       unixLogErrorAtLine((10 | (16 << 8)), "close", (pFile ? pFile->zPath : 0), lineno);
     }  
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     if (((int ( *)(int )) _1307_aSyscall[1].pCurrent)(h)) {
       unixLogErrorAtLine((10 | (16 << 8)), "close", (pFile ? pFile->zPath : 0), lineno);
     }  
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     if (((int ( *)(int )) _1308_aSyscall[1].pCurrent)(h)) {
       unixLogErrorAtLine((10 | (16 << 8)), "close", (pFile ? pFile->zPath : 0), lineno);
     }  
@@ -9520,7 +9520,7 @@ static  void closePendingFds(unixFile *pFile )  {
 static  void releaseInodeInfo(unixFile *pFile )  {
   unixInodeInfo *pInode =  pFile->pInode;
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       pInode->nRef--;
       if ((pInode->nRef == 0)) {
@@ -9542,7 +9542,7 @@ static  void releaseInodeInfo(unixFile *pFile )  {
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pInode) {
       pInode->nRef--;
       if ((pInode->nRef == 0)) {
@@ -9573,16 +9573,16 @@ static  int findInodeInfo(unixFile *pFile , unixInodeInfo **ppInode )  {
   unixInodeInfo *pInode =  0;
   ((void ) 0);
   (fd = pFile->h);
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1305_aSyscall[5].pCurrent)(fd, (&statbuf)));
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1306_aSyscall[5].pCurrent)(fd, (&statbuf)));
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1307_aSyscall[5].pCurrent)(fd, (&statbuf)));
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1308_aSyscall[5].pCurrent)(fd, (&statbuf)));
   }  
   if ((rc != 0)) {
@@ -9626,16 +9626,16 @@ static  void verifyDbFile(unixFile *pFile )  {
   if ((pFile->ctrlFlags & 0x0100)) {
     return;
   }  
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1305_aSyscall[5].pCurrent)(pFile->h, (&buf)));
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1306_aSyscall[5].pCurrent)(pFile->h, (&buf)));
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1307_aSyscall[5].pCurrent)(pFile->h, (&buf)));
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1308_aSyscall[5].pCurrent)(pFile->h, (&buf)));
   }  
   if ((rc != 0)) {
@@ -9653,28 +9653,28 @@ static  void verifyDbFile(unixFile *pFile )  {
     (pFile->ctrlFlags |= 0x0100);
     return;
   }  
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     if (((pFile->pInode != 0) && (((rc = ((int ( *)(const  char * , struct  stat   * )) _1305_aSyscall[4].pCurrent)(pFile->zPath, (&buf))) != 0) || (buf.st_ino != pFile->pInode->fileId.ino)))) {
       sqlite3_log(28, "file renamed while open: %s", pFile->zPath);
       (pFile->ctrlFlags |= 0x0100);
       return;
     }  
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     if (((pFile->pInode != 0) && (((rc = ((int ( *)(const  char * , struct  stat   * )) _1306_aSyscall[4].pCurrent)(pFile->zPath, (&buf))) != 0) || (buf.st_ino != pFile->pInode->fileId.ino)))) {
       sqlite3_log(28, "file renamed while open: %s", pFile->zPath);
       (pFile->ctrlFlags |= 0x0100);
       return;
     }  
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     if (((pFile->pInode != 0) && (((rc = ((int ( *)(const  char * , struct  stat   * )) _1307_aSyscall[4].pCurrent)(pFile->zPath, (&buf))) != 0) || (buf.st_ino != pFile->pInode->fileId.ino)))) {
       sqlite3_log(28, "file renamed while open: %s", pFile->zPath);
       (pFile->ctrlFlags |= 0x0100);
       return;
     }  
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     if (((pFile->pInode != 0) && (((rc = ((int ( *)(const  char * , struct  stat   * )) _1308_aSyscall[4].pCurrent)(pFile->zPath, (&buf))) != 0) || (buf.st_ino != pFile->pInode->fileId.ino)))) {
       sqlite3_log(28, "file renamed while open: %s", pFile->zPath);
       (pFile->ctrlFlags |= 0x0100);
@@ -9697,7 +9697,7 @@ static  int unixCheckReservedLock(sqlite3_file *id , int *pResOut )  {
     (lock.l_start = (sqlite3PendingByte + 1));
     (lock.l_len = 1);
     (lock.l_type = 1);
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if (((int ( *)(int , int , ...)) _1305_aSyscall[7].pCurrent)(pFile->h, 5, (&lock))) {
         (rc = (10 | (14 << 8)));
         (pFile->lastErrno = (*__errno_location()));
@@ -9706,7 +9706,7 @@ static  int unixCheckReservedLock(sqlite3_file *id , int *pResOut )  {
         (reserved = 1);
       } 
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if (((int ( *)(int , int , ...)) _1306_aSyscall[7].pCurrent)(pFile->h, 5, (&lock))) {
         (rc = (10 | (14 << 8)));
         (pFile->lastErrno = (*__errno_location()));
@@ -9715,7 +9715,7 @@ static  int unixCheckReservedLock(sqlite3_file *id , int *pResOut )  {
         (reserved = 1);
       } 
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if (((int ( *)(int , int , ...)) _1307_aSyscall[7].pCurrent)(pFile->h, 5, (&lock))) {
         (rc = (10 | (14 << 8)));
         (pFile->lastErrno = (*__errno_location()));
@@ -9724,7 +9724,7 @@ static  int unixCheckReservedLock(sqlite3_file *id , int *pResOut )  {
         (reserved = 1);
       } 
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if (((int ( *)(int , int , ...)) _1308_aSyscall[7].pCurrent)(pFile->h, 5, (&lock))) {
         (rc = (10 | (14 << 8)));
         (pFile->lastErrno = (*__errno_location()));
@@ -9751,16 +9751,16 @@ static  int unixFileLock(unixFile *pFile , struct  flock   *pLock )  {
       (lock.l_start = (sqlite3PendingByte + 2));
       (lock.l_len = 510);
       (lock.l_type = 1);
-      if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+      if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
         (rc = ((int ( *)(int , int , ...)) _1305_aSyscall[7].pCurrent)(pFile->h, 6, (&lock)));
       }  
-      if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+      if ((((! id2i_use_pread) && id2i_use_pread64) )) {
         (rc = ((int ( *)(int , int , ...)) _1306_aSyscall[7].pCurrent)(pFile->h, 6, (&lock)));
       }  
-      if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+      if (((id2i_use_pread && (! id2i_use_pread64)) )) {
         (rc = ((int ( *)(int , int , ...)) _1307_aSyscall[7].pCurrent)(pFile->h, 6, (&lock)));
       }  
-      if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+      if (((id2i_use_pread && id2i_use_pread64) )) {
         (rc = ((int ( *)(int , int , ...)) _1308_aSyscall[7].pCurrent)(pFile->h, 6, (&lock)));
       }  
       if ((rc < 0)) {
@@ -9774,16 +9774,16 @@ static  int unixFileLock(unixFile *pFile , struct  flock   *pLock )  {
     }
   }  
   else {
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(int , int , ...)) _1305_aSyscall[7].pCurrent)(pFile->h, 6, pLock));
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       (rc = ((int ( *)(int , int , ...)) _1306_aSyscall[7].pCurrent)(pFile->h, 6, pLock));
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(int , int , ...)) _1307_aSyscall[7].pCurrent)(pFile->h, 6, pLock));
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       (rc = ((int ( *)(int , int , ...)) _1308_aSyscall[7].pCurrent)(pFile->h, 6, pLock));
     }  
   }
@@ -9997,12 +9997,12 @@ static  int unixClose(sqlite3_file *id )  {
   unixUnlock(id, 0);
   unixEnterMutex();
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((1 && pFile->pInode->nLock)) {
       setPendingFd(pFile);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pFile->pInode && pFile->pInode->nLock)) {
       setPendingFd(pFile);
     }  
@@ -10038,16 +10038,16 @@ static  int dotlockCheckReservedLock(sqlite3_file *id , int *pResOut )  {
   }  
   else {
     const char *zLockFile =  ((const  char *) pFile->lockingContext);
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (reserved = (((int ( *)(const  char * , int )) _1305_aSyscall[2].pCurrent)(zLockFile, 0) == 0));
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       (reserved = (((int ( *)(const  char * , int )) _1306_aSyscall[2].pCurrent)(zLockFile, 0) == 0));
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       (reserved = (((int ( *)(const  char * , int )) _1307_aSyscall[2].pCurrent)(zLockFile, 0) == 0));
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       (reserved = (((int ( *)(const  char * , int )) _1308_aSyscall[2].pCurrent)(zLockFile, 0) == 0));
     }  
   }
@@ -10063,16 +10063,16 @@ static  int dotlockLock(sqlite3_file *id , int eFileLock )  {
     utimes(zLockFile, ((void *) 0));
     return 0;
   }  
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(const  char * , mode_t )) _1305_aSyscall[18].pCurrent)(zLockFile, 0777));
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     (rc = ((int ( *)(const  char * , mode_t )) _1306_aSyscall[18].pCurrent)(zLockFile, 0777));
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(const  char * , mode_t )) _1307_aSyscall[18].pCurrent)(zLockFile, 0777));
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     (rc = ((int ( *)(const  char * , mode_t )) _1308_aSyscall[18].pCurrent)(zLockFile, 0777));
   }  
   if ((rc < 0)) {
@@ -10105,29 +10105,29 @@ static  int dotlockUnlock(sqlite3_file *id , int eFileLock )  {
     return 0;
   }  
   ((void ) 0);
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(const  char * )) _1305_aSyscall[19].pCurrent)(zLockFile));
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     (rc = ((int ( *)(const  char * )) _1306_aSyscall[19].pCurrent)(zLockFile));
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(const  char * )) _1307_aSyscall[19].pCurrent)(zLockFile));
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     (rc = ((int ( *)(const  char * )) _1308_aSyscall[19].pCurrent)(zLockFile));
   }  
   if (((rc < 0) && ((*__errno_location()) == 20))) {
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(const  char * )) _1305_aSyscall[16].pCurrent)(zLockFile));
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       (rc = ((int ( *)(const  char * )) _1306_aSyscall[16].pCurrent)(zLockFile));
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(const  char * )) _1307_aSyscall[16].pCurrent)(zLockFile));
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       (rc = ((int ( *)(const  char * )) _1308_aSyscall[16].pCurrent)(zLockFile));
     }  
   }  
@@ -10163,19 +10163,19 @@ static  int seekAndRead(unixFile *id , sqlite3_int64 offset , void *pBuf , int c
   ((void ) 0);
   (cnt &= 0x1ffff);
   do {
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       (got = ((ssize_t ( *)(int , void * , size_t , off_t )) _1307_aSyscall[9].pCurrent)(id->h, pBuf, cnt, offset));
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       (got = ((ssize_t ( *)(int , void * , size_t , off_t )) _1308_aSyscall[9].pCurrent)(id->h, pBuf, cnt, offset));
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       (got = ((ssize_t ( *)(int , void * , size_t , off_t )) _1306_aSyscall[10].pCurrent)(id->h, pBuf, cnt, offset));
     }  
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (newOffset = lseek(id->h, offset, 0));
     }  
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if ((newOffset != offset)) {
         if ((newOffset == (- 1))) {
           (((unixFile *) id)->lastErrno = (*__errno_location()));
@@ -10186,7 +10186,7 @@ static  int seekAndRead(unixFile *id , sqlite3_int64 offset , void *pBuf , int c
         return (- 1);
       }  
     }  
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (got = ((ssize_t ( *)(int , void * , size_t )) _1305_aSyscall[8].pCurrent)(id->h, pBuf, cnt));
     }  
     if ((got == cnt)) {
@@ -10234,22 +10234,22 @@ static  int seekAndWriteFd(int fd , i64 iOff , const  void *pBuf , int nBuf , in
   ((void ) 0);
   ((void ) 0);
   (nBuf &= 0x1ffff);
-  if (((id2i.f_use_pread ) )) {
+  if (((id2i_use_pread ) )) {
     do {
-      if ((((! id2i.f_use_pread64) ) )) {
+      if ((((! id2i_use_pread64) ) )) {
         (rc = ((ssize_t ( *)(int , const  void * , size_t , off_t )) _1307_aSyscall[12].pCurrent)(fd, pBuf, nBuf, iOff));
       }  
-      if (((id2i.f_use_pread64 ) )) {
+      if (((id2i_use_pread64 ) )) {
         (rc = ((ssize_t ( *)(int , const  void * , size_t , off_t )) _1308_aSyscall[12].pCurrent)(fd, pBuf, nBuf, iOff));
       }  
     } while (((rc < 0) && ((*__errno_location()) == 4)));
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     do {
       (rc = ((ssize_t ( *)(int , const  void * , size_t , off_t )) _1306_aSyscall[13].pCurrent)(fd, pBuf, nBuf, iOff));
     } while (((rc < 0) && ((*__errno_location()) == 4)));
   }  
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     do {
       i64 iSeek =  lseek(fd, iOff, 0);
       if ((iSeek != iOff)) {
@@ -10292,25 +10292,25 @@ static  int unixWrite(sqlite3_file *id , const  void *pBuf , int amt , sqlite3_i
 }
 static  int full_fsync(int fd , int fullSync , int dataOnly )  {
   int rc;
-  if (((id2i.f_sqlite_no_sync ) )) {
+  if (((id2i_sqlite_no_sync ) )) {
     ((void ) fd);
   }  
-  if (((id2i.f_sqlite_no_sync ) )) {
+  if (((id2i_sqlite_no_sync ) )) {
     ((void ) fullSync);
   }  
-  if (((id2i.f_sqlite_no_sync ) )) {
+  if (((id2i_sqlite_no_sync ) )) {
     ((void ) dataOnly);
   }  
-  if ((((! id2i.f_sqlite_no_sync) ) )) {
+  if ((((! id2i_sqlite_no_sync) ) )) {
     ((void ) fullSync);
   }  
-  if (((id2i.f_sqlite_no_sync ) )) {
+  if (((id2i_sqlite_no_sync ) )) {
     (rc = 0);
   }  
-  if ((((! id2i.f_sqlite_no_sync) ) )) {
+  if ((((! id2i_sqlite_no_sync) ) )) {
     ((void ) dataOnly);
   }  
-  if ((((! id2i.f_sqlite_no_sync) ) )) {
+  if ((((! id2i_sqlite_no_sync) ) )) {
     (rc = fsync(fd));
   }  
   if ((0 && (rc != (- 1)))) {
@@ -10350,16 +10350,16 @@ static  int unixSync(sqlite3_file *id , int flags )  {
   }  
   if ((pFile->ctrlFlags & 0x08)) {
     int dirfd;
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(const  char * , int * )) _1305_aSyscall[17].pCurrent)(pFile->zPath, (&dirfd)));
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       (rc = ((int ( *)(const  char * , int * )) _1306_aSyscall[17].pCurrent)(pFile->zPath, (&dirfd)));
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(const  char * , int * )) _1307_aSyscall[17].pCurrent)(pFile->zPath, (&dirfd)));
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       (rc = ((int ( *)(const  char * , int * )) _1308_aSyscall[17].pCurrent)(pFile->zPath, (&dirfd)));
     }  
     if (((rc == 0) && (dirfd >= 0))) {
@@ -10393,16 +10393,16 @@ static  int unixFileSize(sqlite3_file *id , i64 *pSize )  {
   int rc;
   struct  stat   buf;
   ((void ) 0);
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1305_aSyscall[5].pCurrent)(((unixFile *) id)->h, (&buf)));
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1306_aSyscall[5].pCurrent)(((unixFile *) id)->h, (&buf)));
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1307_aSyscall[5].pCurrent)(((unixFile *) id)->h, (&buf)));
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     (rc = ((int ( *)(int , struct  stat   * )) _1308_aSyscall[5].pCurrent)(((unixFile *) id)->h, (&buf)));
   }  
   if ((rc != 0)) {
@@ -10419,22 +10419,22 @@ static  int fcntlSizeHint(unixFile *pFile , i64 nByte )  {
   if ((pFile->szChunk > 0)) {
     i64 nSize;
     struct  stat   buf;
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if (((int ( *)(int , struct  stat   * )) _1305_aSyscall[5].pCurrent)(pFile->h, (&buf))) {
         return (10 | (7 << 8));
       }  
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if (((int ( *)(int , struct  stat   * )) _1306_aSyscall[5].pCurrent)(pFile->h, (&buf))) {
         return (10 | (7 << 8));
       }  
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if (((int ( *)(int , struct  stat   * )) _1307_aSyscall[5].pCurrent)(pFile->h, (&buf))) {
         return (10 | (7 << 8));
       }  
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if (((int ( *)(int , struct  stat   * )) _1308_aSyscall[5].pCurrent)(pFile->h, (&buf))) {
         return (10 | (7 << 8));
       }  
@@ -10566,16 +10566,16 @@ static  int unixShmSystemLock(unixShmNode *pShmNode , int lockType , int ofst , 
     (f.l_whence = 0);
     (f.l_start = ofst);
     (f.l_len = n);
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(int , int , ...)) _1305_aSyscall[7].pCurrent)(pShmNode->h, 6, (&f)));
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       (rc = ((int ( *)(int , int , ...)) _1306_aSyscall[7].pCurrent)(pShmNode->h, 6, (&f)));
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(int , int , ...)) _1307_aSyscall[7].pCurrent)(pShmNode->h, 6, (&f)));
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       (rc = ((int ( *)(int , int , ...)) _1308_aSyscall[7].pCurrent)(pShmNode->h, 6, (&f)));
     }  
     (rc = ((rc != (- 1)) ? 0 : 5));
@@ -10590,16 +10590,16 @@ static  void unixShmPurge(unixFile *pFd )  {
     ((void ) 0);
     for ((i = 0); (i < p->nRegion); i++) {
       if ((p->h >= 0)) {
-        if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+        if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
           ((void *( *)(void * , size_t )) _1305_aSyscall[22].pCurrent)(p->apRegion[i], p->szRegion);
         }  
-        if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+        if ((((! id2i_use_pread) && id2i_use_pread64) )) {
           ((void *( *)(void * , size_t )) _1306_aSyscall[22].pCurrent)(p->apRegion[i], p->szRegion);
         }  
-        if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+        if (((id2i_use_pread && (! id2i_use_pread64)) )) {
           ((void *( *)(void * , size_t )) _1307_aSyscall[22].pCurrent)(p->apRegion[i], p->szRegion);
         }  
-        if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+        if (((id2i_use_pread && id2i_use_pread64) )) {
           ((void *( *)(void * , size_t )) _1308_aSyscall[22].pCurrent)(p->apRegion[i], p->szRegion);
         }  
       }  
@@ -10634,25 +10634,25 @@ static  int unixOpenSharedMemory(unixFile *pDbFd )  {
   (pShmNode = pInode->pShmNode);
   if ((pShmNode == 0)) {
     struct  stat   sStat;
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if ((((int ( *)(int , struct  stat   * )) _1305_aSyscall[5].pCurrent)(pDbFd->h, (&sStat)) && (pInode->bProcessLock == 0))) {
         (rc = (10 | (7 << 8)));
         goto shm_open_err;
       }  
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if ((((int ( *)(int , struct  stat   * )) _1306_aSyscall[5].pCurrent)(pDbFd->h, (&sStat)) && (pInode->bProcessLock == 0))) {
         (rc = (10 | (7 << 8)));
         goto shm_open_err;
       }  
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if ((((int ( *)(int , struct  stat   * )) _1307_aSyscall[5].pCurrent)(pDbFd->h, (&sStat)) && (pInode->bProcessLock == 0))) {
         (rc = (10 | (7 << 8)));
         goto shm_open_err;
       }  
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if ((((int ( *)(int , struct  stat   * )) _1308_aSyscall[5].pCurrent)(pDbFd->h, (&sStat)) && (pInode->bProcessLock == 0))) {
         (rc = (10 | (7 << 8)));
         goto shm_open_err;
@@ -10686,16 +10686,16 @@ static  int unixOpenSharedMemory(unixFile *pDbFd )  {
         (rc = unixLogErrorAtLine(sqlite3CantopenError(27251), "open", zShmFilename, 27251));
         goto shm_open_err;
       }  
-      if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+      if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
         ((int ( *)(int , uid_t , gid_t )) _1305_aSyscall[20].pCurrent)(pShmNode->h, sStat.st_uid, sStat.st_gid);
       }  
-      if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+      if ((((! id2i_use_pread) && id2i_use_pread64) )) {
         ((int ( *)(int , uid_t , gid_t )) _1306_aSyscall[20].pCurrent)(pShmNode->h, sStat.st_uid, sStat.st_gid);
       }  
-      if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+      if (((id2i_use_pread && (! id2i_use_pread64)) )) {
         ((int ( *)(int , uid_t , gid_t )) _1307_aSyscall[20].pCurrent)(pShmNode->h, sStat.st_uid, sStat.st_gid);
       }  
-      if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+      if (((id2i_use_pread && id2i_use_pread64) )) {
         ((int ( *)(int , uid_t , gid_t )) _1308_aSyscall[20].pCurrent)(pShmNode->h, sStat.st_uid, sStat.st_gid);
       }  
       (rc = 0);
@@ -10748,25 +10748,25 @@ static  int unixShmMap(sqlite3_file *fd , int iRegion , int szRegion , int bExte
     struct  stat   sStat;
     (pShmNode->szRegion = szRegion);
     if ((pShmNode->h >= 0)) {
-      if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+      if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
         if (((int ( *)(int , struct  stat   * )) _1305_aSyscall[5].pCurrent)(pShmNode->h, (&sStat))) {
           (rc = (10 | (19 << 8)));
           goto shmpage_out;
         }  
       }  
-      if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+      if ((((! id2i_use_pread) && id2i_use_pread64) )) {
         if (((int ( *)(int , struct  stat   * )) _1306_aSyscall[5].pCurrent)(pShmNode->h, (&sStat))) {
           (rc = (10 | (19 << 8)));
           goto shmpage_out;
         }  
       }  
-      if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+      if (((id2i_use_pread && (! id2i_use_pread64)) )) {
         if (((int ( *)(int , struct  stat   * )) _1307_aSyscall[5].pCurrent)(pShmNode->h, (&sStat))) {
           (rc = (10 | (19 << 8)));
           goto shmpage_out;
         }  
       }  
-      if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+      if (((id2i_use_pread && id2i_use_pread64) )) {
         if (((int ( *)(int , struct  stat   * )) _1308_aSyscall[5].pCurrent)(pShmNode->h, (&sStat))) {
           (rc = (10 | (19 << 8)));
           goto shmpage_out;
@@ -10799,16 +10799,16 @@ static  int unixShmMap(sqlite3_file *fd , int iRegion , int szRegion , int bExte
     while ((pShmNode->nRegion <= iRegion)) {
       void *pMem;
       if ((pShmNode->h >= 0)) {
-        if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+        if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
           (pMem = ((void *( *)(void * , size_t , int , int , int , off_t )) _1305_aSyscall[21].pCurrent)(0, szRegion, (pShmNode->isReadonly ? 0x1 : (0x1 | 0x2)), 0x01, pShmNode->h, (szRegion * ((i64 ) pShmNode->nRegion))));
         }  
-        if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+        if ((((! id2i_use_pread) && id2i_use_pread64) )) {
           (pMem = ((void *( *)(void * , size_t , int , int , int , off_t )) _1306_aSyscall[21].pCurrent)(0, szRegion, (pShmNode->isReadonly ? 0x1 : (0x1 | 0x2)), 0x01, pShmNode->h, (szRegion * ((i64 ) pShmNode->nRegion))));
         }  
-        if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+        if (((id2i_use_pread && (! id2i_use_pread64)) )) {
           (pMem = ((void *( *)(void * , size_t , int , int , int , off_t )) _1307_aSyscall[21].pCurrent)(0, szRegion, (pShmNode->isReadonly ? 0x1 : (0x1 | 0x2)), 0x01, pShmNode->h, (szRegion * ((i64 ) pShmNode->nRegion))));
         }  
-        if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+        if (((id2i_use_pread && id2i_use_pread64) )) {
           (pMem = ((void *( *)(void * , size_t , int , int , int , off_t )) _1308_aSyscall[21].pCurrent)(0, szRegion, (pShmNode->isReadonly ? 0x1 : (0x1 | 0x2)), 0x01, pShmNode->h, (szRegion * ((i64 ) pShmNode->nRegion))));
         }  
         if ((pMem == ((void *) (- 1)))) {
@@ -10944,16 +10944,16 @@ static  int unixShmUnmap(sqlite3_file *fd , int deleteFlag )  {
   pShmNode->nRef--;
   if ((pShmNode->nRef == 0)) {
     if ((deleteFlag && (pShmNode->h >= 0))) {
-      if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+      if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
         ((int ( *)(const  char * )) _1305_aSyscall[16].pCurrent)(pShmNode->zFilename);
       }  
-      if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+      if ((((! id2i_use_pread) && id2i_use_pread64) )) {
         ((int ( *)(const  char * )) _1306_aSyscall[16].pCurrent)(pShmNode->zFilename);
       }  
-      if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+      if (((id2i_use_pread && (! id2i_use_pread64)) )) {
         ((int ( *)(const  char * )) _1307_aSyscall[16].pCurrent)(pShmNode->zFilename);
       }  
-      if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+      if (((id2i_use_pread && id2i_use_pread64) )) {
         ((int ( *)(const  char * )) _1308_aSyscall[16].pCurrent)(pShmNode->zFilename);
       }  
     }  
@@ -11067,22 +11067,22 @@ static  const  char *unixTempFileDir(void )  {
     if ((zDir == 0)) {
       continue;
     }  
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if (((int ( *)(const  char * , struct  stat   * )) _1305_aSyscall[4].pCurrent)(zDir, (&buf))) {
         continue;
       }  
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if (((int ( *)(const  char * , struct  stat   * )) _1306_aSyscall[4].pCurrent)(zDir, (&buf))) {
         continue;
       }  
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if (((int ( *)(const  char * , struct  stat   * )) _1307_aSyscall[4].pCurrent)(zDir, (&buf))) {
         continue;
       }  
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if (((int ( *)(const  char * , struct  stat   * )) _1308_aSyscall[4].pCurrent)(zDir, (&buf))) {
         continue;
       }  
@@ -11090,22 +11090,22 @@ static  const  char *unixTempFileDir(void )  {
     if ((! ((buf.st_mode & 0170000) == 0040000))) {
       continue;
     }  
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if (((int ( *)(const  char * , int )) _1305_aSyscall[2].pCurrent)(zDir, 07)) {
         continue;
       }  
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if (((int ( *)(const  char * , int )) _1306_aSyscall[2].pCurrent)(zDir, 07)) {
         continue;
       }  
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if (((int ( *)(const  char * , int )) _1307_aSyscall[2].pCurrent)(zDir, 07)) {
         continue;
       }  
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if (((int ( *)(const  char * , int )) _1308_aSyscall[2].pCurrent)(zDir, 07)) {
         continue;
       }  
@@ -11134,13 +11134,13 @@ static  int unixGetTempname(int nBuf , char *zBuf )  {
     }
     (zBuf[j] = 0);
     (zBuf[(j + 1)] = 0);
-  } while ((((id2i.f_use_pread && id2i.f_use_pread64) ) ? (((int ( *)(const  char * , int )) _1308_aSyscall[2].pCurrent)(zBuf, 0) == 0) : (((id2i.f_use_pread && (! id2i.f_use_pread64)) ) ? (((int ( *)(const  char * , int )) _1307_aSyscall[2].pCurrent)(zBuf, 0) == 0) : ((((! id2i.f_use_pread) && id2i.f_use_pread64) ) ? (((int ( *)(const  char * , int )) _1306_aSyscall[2].pCurrent)(zBuf, 0) == 0) : (((int ( *)(const  char * , int )) _1305_aSyscall[2].pCurrent)(zBuf, 0) == 0)))));
+  } while ((((id2i_use_pread && id2i_use_pread64) ) ? (((int ( *)(const  char * , int )) _1308_aSyscall[2].pCurrent)(zBuf, 0) == 0) : (((id2i_use_pread && (! id2i_use_pread64)) ) ? (((int ( *)(const  char * , int )) _1307_aSyscall[2].pCurrent)(zBuf, 0) == 0) : ((((! id2i_use_pread) && id2i_use_pread64) ) ? (((int ( *)(const  char * , int )) _1306_aSyscall[2].pCurrent)(zBuf, 0) == 0) : (((int ( *)(const  char * , int )) _1305_aSyscall[2].pCurrent)(zBuf, 0) == 0)))));
   return 0;
 }
 static  UnixUnusedFd *findReusableFd(const  char *zPath , int flags )  {
   UnixUnusedFd *pUnused =  0;
   struct  stat   sStat;
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     if ((0 == ((int ( *)(const  char * , struct  stat   * )) _1305_aSyscall[4].pCurrent)(zPath, (&sStat)))) {
       unixInodeInfo *pInode;
       unixEnterMutex();
@@ -11161,7 +11161,7 @@ static  UnixUnusedFd *findReusableFd(const  char *zPath , int flags )  {
       unixLeaveMutex();
     }  
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     if ((0 == ((int ( *)(const  char * , struct  stat   * )) _1306_aSyscall[4].pCurrent)(zPath, (&sStat)))) {
       unixInodeInfo *pInode;
       unixEnterMutex();
@@ -11182,7 +11182,7 @@ static  UnixUnusedFd *findReusableFd(const  char *zPath , int flags )  {
       unixLeaveMutex();
     }  
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     if ((0 == ((int ( *)(const  char * , struct  stat   * )) _1307_aSyscall[4].pCurrent)(zPath, (&sStat)))) {
       unixInodeInfo *pInode;
       unixEnterMutex();
@@ -11203,7 +11203,7 @@ static  UnixUnusedFd *findReusableFd(const  char *zPath , int flags )  {
       unixLeaveMutex();
     }  
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     if ((0 == ((int ( *)(const  char * , struct  stat   * )) _1308_aSyscall[4].pCurrent)(zPath, (&sStat)))) {
       unixInodeInfo *pInode;
       unixEnterMutex();
@@ -11243,7 +11243,7 @@ static  int findCreateFileMode(const  char *zPath , int flags , mode_t *pMode , 
     }
     memcpy(zDb, zPath, nDb);
     (zDb[nDb] = '\0');
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if ((0 == ((int ( *)(const  char * , struct  stat   * )) _1305_aSyscall[4].pCurrent)(zDb, (&sStat)))) {
         ((*pMode) = (sStat.st_mode & 0777));
         ((*pUid) = sStat.st_uid);
@@ -11253,7 +11253,7 @@ static  int findCreateFileMode(const  char *zPath , int flags , mode_t *pMode , 
         (rc = (10 | (7 << 8)));
       }
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if ((0 == ((int ( *)(const  char * , struct  stat   * )) _1306_aSyscall[4].pCurrent)(zDb, (&sStat)))) {
         ((*pMode) = (sStat.st_mode & 0777));
         ((*pUid) = sStat.st_uid);
@@ -11263,7 +11263,7 @@ static  int findCreateFileMode(const  char *zPath , int flags , mode_t *pMode , 
         (rc = (10 | (7 << 8)));
       }
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if ((0 == ((int ( *)(const  char * , struct  stat   * )) _1307_aSyscall[4].pCurrent)(zDb, (&sStat)))) {
         ((*pMode) = (sStat.st_mode & 0777));
         ((*pUid) = sStat.st_uid);
@@ -11273,7 +11273,7 @@ static  int findCreateFileMode(const  char *zPath , int flags , mode_t *pMode , 
         (rc = (10 | (7 << 8)));
       }
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if ((0 == ((int ( *)(const  char * , struct  stat   * )) _1308_aSyscall[4].pCurrent)(zDb, (&sStat)))) {
         ((*pMode) = (sStat.st_mode & 0777));
         ((*pUid) = sStat.st_uid);
@@ -11376,16 +11376,16 @@ static  int unixOpen(sqlite3_vfs *pVfs , const  char *zPath , sqlite3_file *pFil
       goto open_finished;
     }  
     if ((flags & (0x00080000 | 0x00000800))) {
-      if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+      if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
         ((int ( *)(int , uid_t , gid_t )) _1305_aSyscall[20].pCurrent)(fd, uid, gid);
       }  
-      if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+      if ((((! id2i_use_pread) && id2i_use_pread64) )) {
         ((int ( *)(int , uid_t , gid_t )) _1306_aSyscall[20].pCurrent)(fd, uid, gid);
       }  
-      if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+      if (((id2i_use_pread && (! id2i_use_pread64)) )) {
         ((int ( *)(int , uid_t , gid_t )) _1307_aSyscall[20].pCurrent)(fd, uid, gid);
       }  
-      if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+      if (((id2i_use_pread && id2i_use_pread64) )) {
         ((int ( *)(int , uid_t , gid_t )) _1308_aSyscall[20].pCurrent)(fd, uid, gid);
       }  
     }  
@@ -11399,16 +11399,16 @@ static  int unixOpen(sqlite3_vfs *pVfs , const  char *zPath , sqlite3_file *pFil
     (p->pUnused->flags = flags);
   }  
   if (isDelete) {
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       ((int ( *)(const  char * )) _1305_aSyscall[16].pCurrent)(zName);
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       ((int ( *)(const  char * )) _1306_aSyscall[16].pCurrent)(zName);
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       ((int ( *)(const  char * )) _1307_aSyscall[16].pCurrent)(zName);
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       ((int ( *)(const  char * )) _1308_aSyscall[16].pCurrent)(zName);
     }  
   }  
@@ -11438,7 +11438,7 @@ static  int unixOpen(sqlite3_vfs *pVfs , const  char *zPath , sqlite3_file *pFil
 static  int unixDelete(sqlite3_vfs *NotUsed , const  char *zPath , int dirSync )  {
   int rc =  0;
   ((void ) NotUsed);
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     if ((((int ( *)(const  char * )) _1305_aSyscall[16].pCurrent)(zPath) == (- 1))) {
       if (((*__errno_location()) == 2)) {
         (rc = (10 | (23 << 8)));
@@ -11449,7 +11449,7 @@ static  int unixDelete(sqlite3_vfs *NotUsed , const  char *zPath , int dirSync )
       return rc;
     }  
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     if ((((int ( *)(const  char * )) _1306_aSyscall[16].pCurrent)(zPath) == (- 1))) {
       if (((*__errno_location()) == 2)) {
         (rc = (10 | (23 << 8)));
@@ -11460,7 +11460,7 @@ static  int unixDelete(sqlite3_vfs *NotUsed , const  char *zPath , int dirSync )
       return rc;
     }  
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     if ((((int ( *)(const  char * )) _1307_aSyscall[16].pCurrent)(zPath) == (- 1))) {
       if (((*__errno_location()) == 2)) {
         (rc = (10 | (23 << 8)));
@@ -11471,7 +11471,7 @@ static  int unixDelete(sqlite3_vfs *NotUsed , const  char *zPath , int dirSync )
       return rc;
     }  
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     if ((((int ( *)(const  char * )) _1308_aSyscall[16].pCurrent)(zPath) == (- 1))) {
       if (((*__errno_location()) == 2)) {
         (rc = (10 | (23 << 8)));
@@ -11484,16 +11484,16 @@ static  int unixDelete(sqlite3_vfs *NotUsed , const  char *zPath , int dirSync )
   }  
   if (((dirSync & 1) != 0)) {
     int fd;
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(const  char * , int * )) _1305_aSyscall[17].pCurrent)(zPath, (&fd)));
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       (rc = ((int ( *)(const  char * , int * )) _1306_aSyscall[17].pCurrent)(zPath, (&fd)));
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       (rc = ((int ( *)(const  char * , int * )) _1307_aSyscall[17].pCurrent)(zPath, (&fd)));
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       (rc = ((int ( *)(const  char * , int * )) _1308_aSyscall[17].pCurrent)(zPath, (&fd)));
     }  
     if ((rc == 0)) {
@@ -11525,36 +11525,36 @@ static  int unixAccess(sqlite3_vfs *NotUsed , const  char *zPath , int flags , i
     default:
     ((void ) 0);
   }
-  if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+  if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
     ((*pResOut) = (((int ( *)(const  char * , int )) _1305_aSyscall[2].pCurrent)(zPath, amode) == 0));
   }  
-  if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+  if ((((! id2i_use_pread) && id2i_use_pread64) )) {
     ((*pResOut) = (((int ( *)(const  char * , int )) _1306_aSyscall[2].pCurrent)(zPath, amode) == 0));
   }  
-  if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+  if (((id2i_use_pread && (! id2i_use_pread64)) )) {
     ((*pResOut) = (((int ( *)(const  char * , int )) _1307_aSyscall[2].pCurrent)(zPath, amode) == 0));
   }  
-  if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+  if (((id2i_use_pread && id2i_use_pread64) )) {
     ((*pResOut) = (((int ( *)(const  char * , int )) _1308_aSyscall[2].pCurrent)(zPath, amode) == 0));
   }  
   if (((flags == 0) && (*pResOut))) {
     struct  stat   buf;
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if (((0 == ((int ( *)(const  char * , struct  stat   * )) _1305_aSyscall[4].pCurrent)(zPath, (&buf))) && (buf.st_size == 0))) {
         ((*pResOut) = 0);
       }  
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if (((0 == ((int ( *)(const  char * , struct  stat   * )) _1306_aSyscall[4].pCurrent)(zPath, (&buf))) && (buf.st_size == 0))) {
         ((*pResOut) = 0);
       }  
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if (((0 == ((int ( *)(const  char * , struct  stat   * )) _1307_aSyscall[4].pCurrent)(zPath, (&buf))) && (buf.st_size == 0))) {
         ((*pResOut) = 0);
       }  
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if (((0 == ((int ( *)(const  char * , struct  stat   * )) _1308_aSyscall[4].pCurrent)(zPath, (&buf))) && (buf.st_size == 0))) {
         ((*pResOut) = 0);
       }  
@@ -11571,22 +11571,22 @@ static  int unixFullPathname(sqlite3_vfs *pVfs , const  char *zPath , int nOut ,
   }  
   else {
     int nCwd;
-    if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+    if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
       if ((((char *( *)(char * , size_t )) _1305_aSyscall[3].pCurrent)(zOut, (nOut - 1)) == 0)) {
         return unixLogErrorAtLine(sqlite3CantopenError(28938), "getcwd", zPath, 28938);
       }  
     }  
-    if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+    if ((((! id2i_use_pread) && id2i_use_pread64) )) {
       if ((((char *( *)(char * , size_t )) _1306_aSyscall[3].pCurrent)(zOut, (nOut - 1)) == 0)) {
         return unixLogErrorAtLine(sqlite3CantopenError(28938), "getcwd", zPath, 28938);
       }  
     }  
-    if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+    if (((id2i_use_pread && (! id2i_use_pread64)) )) {
       if ((((char *( *)(char * , size_t )) _1307_aSyscall[3].pCurrent)(zOut, (nOut - 1)) == 0)) {
         return unixLogErrorAtLine(sqlite3CantopenError(28938), "getcwd", zPath, 28938);
       }  
     }  
-    if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+    if (((id2i_use_pread && id2i_use_pread64) )) {
       if ((((char *( *)(char * , size_t )) _1308_aSyscall[3].pCurrent)(zOut, (nOut - 1)) == 0)) {
         return unixLogErrorAtLine(sqlite3CantopenError(28938), "getcwd", zPath, 28938);
       }  
@@ -11614,16 +11614,16 @@ static  int unixRandomness(sqlite3_vfs *NotUsed , int nBuf , char *zBuf )  {
     }  
     else {
       do {
-        if ((((! id2i.f_use_pread) && (! id2i.f_use_pread64)) )) {
+        if ((((! id2i_use_pread) && (! id2i_use_pread64)) )) {
           (got = ((ssize_t ( *)(int , void * , size_t )) _1305_aSyscall[8].pCurrent)(fd, zBuf, nBuf));
         }  
-        if ((((! id2i.f_use_pread) && id2i.f_use_pread64) )) {
+        if ((((! id2i_use_pread) && id2i_use_pread64) )) {
           (got = ((ssize_t ( *)(int , void * , size_t )) _1306_aSyscall[8].pCurrent)(fd, zBuf, nBuf));
         }  
-        if (((id2i.f_use_pread && (! id2i.f_use_pread64)) )) {
+        if (((id2i_use_pread && (! id2i_use_pread64)) )) {
           (got = ((ssize_t ( *)(int , void * , size_t )) _1307_aSyscall[8].pCurrent)(fd, zBuf, nBuf));
         }  
-        if (((id2i.f_use_pread && id2i.f_use_pread64) )) {
+        if (((id2i_use_pread && id2i_use_pread64) )) {
           (got = ((ssize_t ( *)(int , void * , size_t )) _1308_aSyscall[8].pCurrent)(fd, zBuf, nBuf));
         }  
       } while (((got < 0) && ((*__errno_location()) == 4)));
@@ -11642,14 +11642,14 @@ static  int unixCurrentTimeInt64(sqlite3_vfs *NotUsed , sqlite3_int64 *piNow )  
   static const sqlite3_int64 unixEpoch =  (24405875 * ((sqlite3_int64 ) 8640000));
   int rc =  0;
   time_t _1310_t;
-  if (((id2i.f_no_gettod ) )) {
+  if (((id2i_no_gettod ) )) {
     time((&_1310_t));
   }  
-  if (((id2i.f_no_gettod ) )) {
+  if (((id2i_no_gettod ) )) {
     ((*piNow) = ((((sqlite3_int64 ) _1310_t) * 1000) + unixEpoch));
   }  
   struct  timeval   sNow;
-  if ((((! id2i.f_no_gettod) ) )) {
+  if ((((! id2i_no_gettod) ) )) {
     if ((gettimeofday((&sNow), 0) == 0)) {
       ((*piNow) = (unixEpoch + (1000 * ((sqlite3_int64 ) sNow.tv_sec)) + (sNow.tv_usec / 1000)));
     }  
@@ -11963,7 +11963,7 @@ static  void pcacheRemoveFromDirtyList(PgHdr *pPage )  {
   }
   (pPage->pDirtyNext = 0);
   (pPage->pDirtyPrev = 0);
-  if (((id2i.f_sqlite_enable_expensive_assert ) )) {
+  if (((id2i_sqlite_enable_expensive_assert ) )) {
     ((void ) 0);
   }  
 }
@@ -11982,7 +11982,7 @@ static  void pcacheAddToDirtyList(PgHdr *pPage )  {
   if (((! p->pSynced) && (0 == (pPage->flags & 0x004)))) {
     (p->pSynced = pPage);
   }  
-  if (((id2i.f_sqlite_enable_expensive_assert ) )) {
+  if (((id2i_sqlite_enable_expensive_assert ) )) {
     ((void ) 0);
   }  
 }
@@ -11992,39 +11992,39 @@ static  void pcacheUnpin(PgHdr *p )  {
     if ((p->pgno == 1)) {
       (pCache->pPage1 = 0);
     }  
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       _1283_sqlite3Config.pcache2.xUnpin(pCache->pCache, p->pPage, 0);
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       _1284_sqlite3Config.pcache2.xUnpin(pCache->pCache, p->pPage, 0);
     }  
   }  
 }
 static  int sqlite3PcacheInitialize(void )  {
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((_1283_sqlite3Config.pcache2.xInit == 0)) {
       sqlite3PCacheSetDefault();
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((_1284_sqlite3Config.pcache2.xInit == 0)) {
       sqlite3PCacheSetDefault();
     }  
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     return _1283_sqlite3Config.pcache2.xInit(_1283_sqlite3Config.pcache2.pArg);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     return _1284_sqlite3Config.pcache2.xInit(_1284_sqlite3Config.pcache2.pArg);
   }  
 }
 static  void sqlite3PcacheShutdown(void )  {
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.pcache2.xShutdown) {
       _1283_sqlite3Config.pcache2.xShutdown(_1283_sqlite3Config.pcache2.pArg);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.pcache2.xShutdown) {
       _1284_sqlite3Config.pcache2.xShutdown(_1284_sqlite3Config.pcache2.pArg);
     }  
@@ -12045,10 +12045,10 @@ static  void sqlite3PcacheOpen(int szPage , int szExtra , int bPurgeable , int (
 static  void sqlite3PcacheSetPageSize(PCache *pCache , int szPage )  {
   ((void ) 0);
   if (pCache->pCache) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       _1283_sqlite3Config.pcache2.xDestroy(pCache->pCache);
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       _1284_sqlite3Config.pcache2.xDestroy(pCache->pCache);
     }  
     (pCache->pCache = 0);
@@ -12073,35 +12073,35 @@ static  int sqlite3PcacheFetch(PCache *pCache , Pgno pgno , int createFlag , PgH
   ((void ) 0);
   if (((! pCache->pCache) && createFlag)) {
     sqlite3_pcache *p;
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       (p = _1283_sqlite3Config.pcache2.xCreate(pCache->szPage, (pCache->szExtra + sizeof(PgHdr )), pCache->bPurgeable));
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       (p = _1284_sqlite3Config.pcache2.xCreate(pCache->szPage, (pCache->szExtra + sizeof(PgHdr )), pCache->bPurgeable));
     }  
     if ((! p)) {
       return 7;
     }  
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       _1283_sqlite3Config.pcache2.xCachesize(p, numberOfCachePages(pCache));
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       _1284_sqlite3Config.pcache2.xCachesize(p, numberOfCachePages(pCache));
     }  
     (pCache->pCache = p);
   }  
   (eCreate = (createFlag * (1 + ((! pCache->bPurgeable) || (! pCache->pDirty)))));
   if (pCache->pCache) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       (pPage = _1283_sqlite3Config.pcache2.xFetch(pCache->pCache, pgno, eCreate));
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       (pPage = _1284_sqlite3Config.pcache2.xFetch(pCache->pCache, pgno, eCreate));
     }  
   }  
   if (((! pPage) && (eCreate == 1))) {
     PgHdr *pPg;
-    if (((id2i.f_sqlite_enable_expensive_assert ) )) {
+    if (((id2i_sqlite_enable_expensive_assert ) )) {
       ((void ) 0);
     }  
     for ((pPg = pCache->pSynced); (pPg && (pPg->nRef || (pPg->flags & 0x004))); (pPg = pPg->pDirtyPrev)) {
@@ -12120,10 +12120,10 @@ static  int sqlite3PcacheFetch(PCache *pCache , Pgno pgno , int createFlag , PgH
         return rc;
       }  
     }  
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       (pPage = _1283_sqlite3Config.pcache2.xFetch(pCache->pCache, pgno, 2));
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       (pPage = _1284_sqlite3Config.pcache2.xFetch(pCache->pCache, pgno, 2));
     }  
   }  
@@ -12183,10 +12183,10 @@ static  void sqlite3PcacheDrop(PgHdr *p )  {
   if ((p->pgno == 1)) {
     (pCache->pPage1 = 0);
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     _1283_sqlite3Config.pcache2.xUnpin(pCache->pCache, p->pPage, 1);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     _1284_sqlite3Config.pcache2.xUnpin(pCache->pCache, p->pPage, 1);
   }  
 }
@@ -12224,10 +12224,10 @@ static  void sqlite3PcacheMove(PgHdr *p , Pgno newPgno )  {
   PCache *pCache =  p->pCache;
   ((void ) 0);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     _1283_sqlite3Config.pcache2.xRekey(pCache->pCache, p->pPage, p->pgno, newPgno);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     _1284_sqlite3Config.pcache2.xRekey(pCache->pCache, p->pPage, p->pgno, newPgno);
   }  
   (p->pgno = newPgno);
@@ -12243,13 +12243,13 @@ static  void sqlite3PcacheTruncate(PCache *pCache , Pgno pgno )  {
     for ((p = pCache->pDirty); p; (p = pNext)) {
       (pNext = p->pDirtyNext);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (1) {
           ((void ) 0);
           sqlite3PcacheMakeClean(p);
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if ((p->pgno > pgno)) {
           ((void ) 0);
           sqlite3PcacheMakeClean(p);
@@ -12260,20 +12260,20 @@ static  void sqlite3PcacheTruncate(PCache *pCache , Pgno pgno )  {
       memset(pCache->pPage1->pData, 0, pCache->szPage);
       (pgno = 1);
     }  
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       _1283_sqlite3Config.pcache2.xTruncate(pCache->pCache, (pgno + 1));
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       _1284_sqlite3Config.pcache2.xTruncate(pCache->pCache, (pgno + 1));
     }  
   }  
 }
 static  void sqlite3PcacheClose(PCache *pCache )  {
   if (pCache->pCache) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       _1283_sqlite3Config.pcache2.xDestroy(pCache->pCache);
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       _1284_sqlite3Config.pcache2.xDestroy(pCache->pCache);
     }  
   }  
@@ -12315,7 +12315,7 @@ static  PgHdr *pcacheSortDirtyList(PgHdr *pIn )  {
     (p = pIn);
     (pIn = p->pDirty);
     (p->pDirty = 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       for ((i = 0); 1; i++) {
         if ((a[i] == 0)) {
           (a[i] = p);
@@ -12327,7 +12327,7 @@ static  PgHdr *pcacheSortDirtyList(PgHdr *pIn )  {
         }
       }
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       for ((i = 0); (i < (32 - 1)); i++) {
         if ((a[i] == 0)) {
           (a[i] = p);
@@ -12339,12 +12339,12 @@ static  PgHdr *pcacheSortDirtyList(PgHdr *pIn )  {
         }
       }
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (0) {
         (a[i] = pcacheMergeDirtyList(a[i], p));
       }  
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if ((i == (32 - 1))) {
         (a[i] = pcacheMergeDirtyList(a[i], p));
       }  
@@ -12372,10 +12372,10 @@ static  int sqlite3PcachePageRefcount(PgHdr *p )  {
 static  int sqlite3PcachePagecount(PCache *pCache )  {
   int nPage =  0;
   if (pCache->pCache) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       (nPage = _1283_sqlite3Config.pcache2.xPagecount(pCache->pCache));
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       (nPage = _1284_sqlite3Config.pcache2.xPagecount(pCache->pCache));
     }  
   }  
@@ -12384,20 +12384,20 @@ static  int sqlite3PcachePagecount(PCache *pCache )  {
 static  void sqlite3PcacheSetCachesize(PCache *pCache , int mxPage )  {
   (pCache->szCache = mxPage);
   if (pCache->pCache) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       _1283_sqlite3Config.pcache2.xCachesize(pCache->pCache, numberOfCachePages(pCache));
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       _1284_sqlite3Config.pcache2.xCachesize(pCache->pCache, numberOfCachePages(pCache));
     }  
   }  
 }
 static  void sqlite3PcacheShrink(PCache *pCache )  {
   if (pCache->pCache) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       _1283_sqlite3Config.pcache2.xShrink(pCache->pCache);
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       _1284_sqlite3Config.pcache2.xShrink(pCache->pCache);
     }  
   }  
@@ -12550,7 +12550,7 @@ static  PgHdr1 *pcache1AllocPage(PCache1 *pCache )  {
   return 0;
 }
 static  void pcache1FreePage(PgHdr1 *p )  {
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       PCache1 *pCache =  p->pCache;
       ((void ) 0);
@@ -12560,7 +12560,7 @@ static  void pcache1FreePage(PgHdr1 *p )  {
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (p) {
       PCache1 *pCache =  p->pCache;
       ((void ) 0);
@@ -12595,13 +12595,13 @@ static  int pcache1ResizeHash(PCache1 *p )  {
     (nNew = 256);
   }  
   if (p->nHash) {
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3BeginBenignMalloc();
     }  
   }  
   (apNew = ((PgHdr1 **) sqlite3MallocZero((sizeof(PgHdr1 *) * nNew))));
   if (p->nHash) {
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3EndBenignMalloc();
     }  
   }  
@@ -12687,7 +12687,7 @@ static  void pcache1TruncateUnsafe(PCache1 *pCache , unsigned  int iLimit )  {
       }  
       else {
         (pp = (&pPage->pNext));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           _1267_nPage++;
         }  
       }
@@ -12699,13 +12699,13 @@ static  int pcache1Init(void *NotUsed )  {
   ((void ) NotUsed);
   ((void ) 0);
   memset((&pcache1_g), 0, sizeof(pcache1_g));
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.bCoreMutex) {
       (pcache1_g.grp.mutex = ((sqlite3_mutex *) 8));
       (pcache1_g.mutex = ((sqlite3_mutex *) 8));
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.bCoreMutex) {
       (pcache1_g.grp.mutex = ((sqlite3_mutex *) 8));
       (pcache1_g.mutex = ((sqlite3_mutex *) 8));
@@ -12827,23 +12827,23 @@ static  sqlite3_pcache_page *pcache1Fetch(sqlite3_pcache *p , unsigned  int iKey
     }
   }  
   if ((! pPage)) {
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       if ((createFlag == 1)) {
         sqlite3BeginBenignMalloc();
       }  
     }  
-    if (((id2i.f_sqlite_omit_builtin_test ) )) {
+    if (((id2i_sqlite_omit_builtin_test ) )) {
       if ((createFlag == 1)) {
         
       }  
     }  
     (pPage = pcache1AllocPage(pCache));
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       if ((createFlag == 1)) {
         sqlite3EndBenignMalloc();
       }  
     }  
-    if (((id2i.f_sqlite_omit_builtin_test ) )) {
+    if (((id2i_sqlite_omit_builtin_test ) )) {
       if ((createFlag == 1)) {
         
       }  
@@ -13357,7 +13357,7 @@ static  int pagerUnlockDb(Pager *pPager , int eLock )  {
     if ((pPager->eLock != (4 + 1))) {
       (pPager->eLock = ((u8 ) eLock));
     }  
-    if (((id2i.f_sqlite_enable_iotrace ) )) {
+    if (((id2i_sqlite_enable_iotrace ) )) {
       if (_1280_sqlite3IoTrace) {
         _1280_sqlite3IoTrace("UNLOCK %p %d\n", pPager, eLock);
       }  
@@ -13372,7 +13372,7 @@ static  int pagerLockDb(Pager *pPager , int eLock )  {
     (rc = sqlite3OsLock(pPager->fd, eLock));
     if (((rc == 0) && ((pPager->eLock != (4 + 1)) || (eLock == 4)))) {
       (pPager->eLock = ((u8 ) eLock));
-      if (((id2i.f_sqlite_enable_iotrace ) )) {
+      if (((id2i_sqlite_enable_iotrace ) )) {
         if (_1280_sqlite3IoTrace) {
           _1280_sqlite3IoTrace("LOCK %p %d\n", pPager, eLock);
         }  
@@ -13436,7 +13436,7 @@ static  int zeroJournalHdr(Pager *pPager , int doTruncate )  {
   ((void ) 0);
   if (pPager->journalOff) {
     const i64 iLimit =  pPager->journalSizeLimit;
-    if (((id2i.f_sqlite_enable_iotrace ) )) {
+    if (((id2i_sqlite_enable_iotrace ) )) {
       if (_1280_sqlite3IoTrace) {
         _1280_sqlite3IoTrace("JZEROHDR %p\n", pPager);
       }  
@@ -13492,7 +13492,7 @@ static  int writeJournalHdr(Pager *pPager )  {
   sqlite3Put4byte(((u8 *) (&zHeader[(sizeof(aJournalMagic) + 16)])), pPager->pageSize);
   memset((&zHeader[(sizeof(aJournalMagic) + 20)]), 0, (nHeader - (sizeof(aJournalMagic) + 20)));
   for ((nWrite = 0); ((rc == 0) && (nWrite < pPager->sectorSize)); (nWrite += nHeader)) {
-    if (((id2i.f_sqlite_enable_iotrace ) )) {
+    if (((id2i_sqlite_enable_iotrace ) )) {
       if (_1280_sqlite3IoTrace) {
         _1280_sqlite3IoTrace("JHDR %p %lld %d\n", pPager, pPager->journalHdr, nHeader);
       }  
@@ -13538,7 +13538,7 @@ static  int readJournalHdr(Pager *pPager , int isHot , i64 journalSize , u32 *pN
       return 101;
     }  
     (rc = sqlite3PagerSetPagesize(pPager, (&iPageSize), (- 1)));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((rc != 0)) {
         sqlite3Coverage(40164);
       }  
@@ -13607,7 +13607,7 @@ static  int addToSavepointBitvecs(Pager *pPager , Pgno pgno )  {
     PagerSavepoint *p =  (&pPager->aSavepoint[ii]);
     if ((pgno <= p->nOrig)) {
       (rc |= sqlite3BitvecSet(p->pInSavepoint, pgno));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((rc == 7)) {
           sqlite3Coverage(40319);
         }  
@@ -13711,10 +13711,10 @@ static  int pager_end_transaction(Pager *pPager , int hasMaster , int bCommit ) 
       }  
     }
   }  
-  if (((id2i.f_sqlite_check_pages ) )) {
+  if (((id2i_sqlite_check_pages ) )) {
     sqlite3PcacheIterateDirty(pPager->pPCache, pager_set_pagehash);
   }  
-  if (((id2i.f_sqlite_check_pages ) )) {
+  if (((id2i_sqlite_check_pages ) )) {
     if (((pPager->dbSize == 0) && (sqlite3PcacheRefCount(pPager->pPCache) > 0))) {
       PgHdr *p =  pager_lookup(pPager, 1);
       if (p) {
@@ -13748,11 +13748,11 @@ static  void pagerUnlockAndRollback(Pager *pPager )  {
   if (((pPager->eState != 6) && (pPager->eState != 0))) {
     ((void ) 0);
     if ((pPager->eState >= 2)) {
-      if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+      if ((((! id2i_sqlite_omit_builtin_test) ) )) {
         sqlite3BeginBenignMalloc();
       }  
       sqlite3PagerRollback(pPager);
-      if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+      if ((((! id2i_sqlite_omit_builtin_test) ) )) {
         sqlite3EndBenignMalloc();
       }  
     } 
@@ -13837,7 +13837,7 @@ static  int pager_playback_one_page(Pager *pPager , i64 *pOffset , Bitvec *pDone
   }
   if ((pPager->fd->pMethods && ((pPager->eState >= 4) || (pPager->eState == 0)) && isSynced)) {
     i64 ofst =  ((pgno - 1) * ((i64 ) pPager->pageSize));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((! isSavepnt) && (pPg != 0) && ((pPg->flags & 0x004) != 0))) {
         sqlite3Coverage(40863);
       }  
@@ -13874,7 +13874,7 @@ static  int pager_playback_one_page(Pager *pPager , i64 *pOffset , Bitvec *pDone
       ((void ) 0);
       sqlite3PcacheMakeClean(pPg);
     }  
-    if (((id2i.f_sqlite_check_pages ) )) {
+    if (((id2i_sqlite_check_pages ) )) {
       pager_set_pagehash(pPg);
     }  
     if ((pgno == 1)) {
@@ -13976,12 +13976,12 @@ static  int pager_truncate(Pager *pPager , Pgno nPage )  {
       else if (((currentSize + szPage) <= newSize)) {
         char *pTmp =  pPager->pTmpSpace;
         memset(pTmp, 0, szPage);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (((newSize - szPage) == currentSize)) {
             sqlite3Coverage(41123);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (((newSize - szPage) > currentSize)) {
             sqlite3Coverage(41124);
           }  
@@ -14094,7 +14094,7 @@ static  int pager_playback(Pager *pPager , int isHot )  {
   if ((rc == 0)) {
     (zMaster = pPager->pTmpSpace);
     (rc = readMasterJournal(pPager->jfd, zMaster, (pPager->pVfs->mxPathname + 1)));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((rc != 0)) {
         sqlite3Coverage(41411);
       }  
@@ -14105,7 +14105,7 @@ static  int pager_playback(Pager *pPager , int isHot )  {
   }  
   if ((rc == 0)) {
     (rc = pager_end_transaction(pPager, (zMaster[0] != '\0'), 0));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((rc != 0)) {
         sqlite3Coverage(41420);
       }  
@@ -14113,7 +14113,7 @@ static  int pager_playback(Pager *pPager , int isHot )  {
   }  
   if (((rc == 0) && zMaster[0] && res)) {
     (rc = pager_delmaster(pPager, zMaster));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((rc != 0)) {
         sqlite3Coverage(41427);
       }  
@@ -14151,7 +14151,7 @@ static  int readDbPage(PgHdr *pPg , u32 iFrame )  {
       memcpy((&pPager->dbFileVers), dbFileVers, sizeof(pPager->dbFileVers));
     }
   }  
-  if (((id2i.f_sqlite_enable_iotrace ) )) {
+  if (((id2i_sqlite_enable_iotrace ) )) {
     if (_1280_sqlite3IoTrace) {
       _1280_sqlite3IoTrace("PGIN %p %d\n", pPager, pgno);
     }  
@@ -14236,10 +14236,10 @@ static  int pagerWalFrames(Pager *pPager , PgHdr *pList , Pgno nTruncate , int i
       sqlite3BackupUpdate(pPager->pBackup, p->pgno, ((u8 *) p->pData));
     }
   }  
-  if (((id2i.f_sqlite_check_pages ) )) {
+  if (((id2i_sqlite_check_pages ) )) {
     (pList = sqlite3PcacheDirtyList(pPager->pPCache));
   }  
-  if (((id2i.f_sqlite_check_pages ) )) {
+  if (((id2i_sqlite_check_pages ) )) {
     for ((_1270_p = pList); _1270_p; (_1270_p = _1270_p->pDirty)) {
       pager_set_pagehash(_1270_p);
     }
@@ -14306,7 +14306,7 @@ static  int pagerOpenWalIfPresent(Pager *pPager )  {
     }
     if ((rc == 0)) {
       if (isWal) {
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((sqlite3PcachePagecount(pPager->pPCache) == 0)) {
             sqlite3Coverage(41802);
           }  
@@ -14500,7 +14500,7 @@ static  int sqlite3PagerReadFileheader(Pager *pPager , int N , unsigned  char *p
   ((void ) 0);
   ((void ) 0);
   if (pPager->fd->pMethods) {
-    if (((id2i.f_sqlite_enable_iotrace ) )) {
+    if (((id2i_sqlite_enable_iotrace ) )) {
       if (_1280_sqlite3IoTrace) {
         _1280_sqlite3IoTrace("DBHDR %p 0 %d\n", pPager, N);
       }  
@@ -14588,7 +14588,7 @@ static  void pagerFreeMapHdrs(Pager *pPager )  {
 static  int sqlite3PagerClose(Pager *pPager )  {
   u8 *pTmp =  ((u8 *) pPager->pTmpSpace);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     sqlite3BeginBenignMalloc();
   }  
   pagerFreeMapHdrs(pPager);
@@ -14605,10 +14605,10 @@ static  int sqlite3PagerClose(Pager *pPager )  {
     }  
     pagerUnlockAndRollback(pPager);
   }
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     sqlite3EndBenignMalloc();
   }  
-  if (((id2i.f_sqlite_enable_iotrace ) )) {
+  if (((id2i_sqlite_enable_iotrace ) )) {
     if (_1280_sqlite3IoTrace) {
       _1280_sqlite3IoTrace("CLOSE %p\n", pPager);
     }  
@@ -14655,7 +14655,7 @@ static  int syncJournal(Pager *pPager , int newHdr )  {
           return rc;
         }  
         if ((pPager->fullSync && (0 == (iDc & 0x00000400)))) {
-          if (((id2i.f_sqlite_enable_iotrace ) )) {
+          if (((id2i_sqlite_enable_iotrace ) )) {
             if (_1280_sqlite3IoTrace) {
               _1280_sqlite3IoTrace("JSYNC %p\n", pPager);
             }  
@@ -14665,7 +14665,7 @@ static  int syncJournal(Pager *pPager , int newHdr )  {
             return rc;
           }  
         }  
-        if (((id2i.f_sqlite_enable_iotrace ) )) {
+        if (((id2i_sqlite_enable_iotrace ) )) {
           if (_1280_sqlite3IoTrace) {
             _1280_sqlite3IoTrace("JHDR %p %lld\n", pPager, pPager->journalHdr);
           }  
@@ -14676,7 +14676,7 @@ static  int syncJournal(Pager *pPager , int newHdr )  {
         }  
       }  
       if ((0 == (iDc & 0x00000400))) {
-        if (((id2i.f_sqlite_enable_iotrace ) )) {
+        if (((id2i_sqlite_enable_iotrace ) )) {
           if (_1280_sqlite3IoTrace) {
             _1280_sqlite3IoTrace("JSYNC %p\n", pPager);
           }  
@@ -14738,7 +14738,7 @@ static  int pager_write_pagelist(Pager *pPager , PgHdr *pList )  {
       }  
       pPager->aStat[2]++;
       sqlite3BackupUpdate(pPager->pBackup, pgno, ((u8 *) pList->pData));
-      if (((id2i.f_sqlite_enable_iotrace ) )) {
+      if (((id2i_sqlite_enable_iotrace ) )) {
         if (_1280_sqlite3IoTrace) {
           _1280_sqlite3IoTrace("PGOUT %p %d\n", pPager, pgno);
         }  
@@ -14747,7 +14747,7 @@ static  int pager_write_pagelist(Pager *pPager , PgHdr *pList )  {
     else {
       
     }
-    if (((id2i.f_sqlite_check_pages ) )) {
+    if (((id2i_sqlite_check_pages ) )) {
       pager_set_pagehash(pList);
     }  
     (pList = pList->pDirty);
@@ -14798,27 +14798,27 @@ static  int pagerStress(void *p , PgHdr *pPg )  {
   int rc =  0;
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pPager->errCode) {
       return 0;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pPager->doNotSpill & 0x02)) {
       sqlite3Coverage(42988);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pPager->doNotSpill & 0x01)) {
       sqlite3Coverage(42989);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pPager->doNotSpill & 0x04)) {
       sqlite3Coverage(42990);
     }  
@@ -14839,12 +14839,12 @@ static  int pagerStress(void *p , PgHdr *pPg )  {
     if (((pPg->flags & 0x004) || (pPager->eState == 3))) {
       (rc = syncJournal(pPager, 1));
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (0) {
         (rc = subjournalPage(pPg));
       }  
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if (((rc == 0) && (pPg->pgno > pPager->dbSize) && subjRequiresPage(pPg))) {
         (rc = subjournalPage(pPg));
       }  
@@ -14973,7 +14973,7 @@ static  int sqlite3PagerOpen(sqlite3_vfs *pVfs , Pager **ppPager , const  char *
   if ((rc == 0)) {
     ((void ) 0);
     (rc = sqlite3PagerSetPagesize(pPager, (&szPageDflt), (- 1)));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((rc != 0)) {
         sqlite3Coverage(43303);
       }  
@@ -14988,7 +14988,7 @@ static  int sqlite3PagerOpen(sqlite3_vfs *pVfs , Pager **ppPager , const  char *
   ((void ) 0);
   (nExtra = ((nExtra + 7) & (~ 7)));
   sqlite3PcacheOpen(szPageDflt, nExtra, (! memDb), ((! memDb) ? pagerStress : 0), ((void *) pPager), pPager->pPCache);
-  if (((id2i.f_sqlite_enable_iotrace ) )) {
+  if (((id2i_sqlite_enable_iotrace ) )) {
     if (_1280_sqlite3IoTrace) {
       _1280_sqlite3IoTrace("OPEN %p %s\n", pPager, pPager->zFilename);
     }  
@@ -15051,7 +15051,7 @@ static  int hasHotJournal(Pager *pPager , int *pExists )  {
       (rc = pagerPagecount(pPager, (&nPage)));
       if ((rc == 0)) {
         if ((nPage == 0)) {
-          if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+          if ((((! id2i_sqlite_omit_builtin_test) ) )) {
             sqlite3BeginBenignMalloc();
           }  
           if ((pagerLockDb(pPager, 2) == 0)) {
@@ -15060,7 +15060,7 @@ static  int hasHotJournal(Pager *pPager , int *pExists )  {
               pagerUnlockDb(pPager, 1);
             }  
           }  
-          if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+          if ((((! id2i_sqlite_omit_builtin_test) ) )) {
             sqlite3EndBenignMalloc();
           }  
         }  
@@ -15095,12 +15095,12 @@ static  int sqlite3PagerSharedLock(Pager *pPager )  {
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return pPager->errCode;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pPager->memDb && pPager->errCode)) {
       return pPager->errCode;
     }  
@@ -15170,7 +15170,7 @@ static  int sqlite3PagerSharedLock(Pager *pPager )  {
         goto failed;
       }  
       if ((nPage > 0)) {
-        if (((id2i.f_sqlite_enable_iotrace ) )) {
+        if (((id2i_sqlite_enable_iotrace ) )) {
           if (_1280_sqlite3IoTrace) {
             _1280_sqlite3IoTrace("CKVERS %p %d\n", pPager, sizeof(dbFileVers));
           }  
@@ -15287,39 +15287,39 @@ static  int sqlite3PagerAcquire(Pager *pPager , Pgno pgno , DbPage **ppPage , in
         goto pager_acquire_err;
       }  
       if (noContent) {
-        if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+        if ((((! id2i_sqlite_omit_builtin_test) ) )) {
           sqlite3BeginBenignMalloc();
         }  
         if ((pgno <= pPager->dbOrigSize)) {
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             (rc = sqlite3BitvecSet(pPager->pInJournal, pgno));
           }  
-          if ((((! id2i.f_sqlite_coverage_test) ) )) {
+          if ((((! id2i_sqlite_coverage_test) ) )) {
             sqlite3BitvecSet(pPager->pInJournal, pgno);
           }  
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if ((rc == 7)) {
               sqlite3Coverage(43929);
             }  
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           (rc = addToSavepointBitvecs(pPager, pgno));
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           addToSavepointBitvecs(pPager, pgno);
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((rc == 7)) {
             sqlite3Coverage(43932);
           }  
         }  
-        if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+        if ((((! id2i_sqlite_omit_builtin_test) ) )) {
           sqlite3EndBenignMalloc();
         }  
       }  
       memset(pPg->pData, 0, pPager->pageSize);
-      if (((id2i.f_sqlite_enable_iotrace ) )) {
+      if (((id2i_sqlite_enable_iotrace ) )) {
         if (_1280_sqlite3IoTrace) {
           _1280_sqlite3IoTrace("ZERO %p %d\n", pPager, pgno);
         }  
@@ -15339,7 +15339,7 @@ static  int sqlite3PagerAcquire(Pager *pPager , Pgno pgno , DbPage **ppPage , in
         goto pager_acquire_err;
       }  
     }
-    if (((id2i.f_sqlite_check_pages ) )) {
+    if (((id2i_sqlite_check_pages ) )) {
       pager_set_pagehash(pPg);
     }  
   }
@@ -15380,12 +15380,12 @@ static  int pager_open_journal(Pager *pPager )  {
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return pPager->errCode;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pPager->errCode) {
       return pPager->errCode;
     }  
@@ -15430,7 +15430,7 @@ static  int sqlite3PagerBegin(Pager *pPager , int exFlag , int subjInMemory )  {
   }  
   ((void ) 0);
   (pPager->subjInMemory = ((u8 ) subjInMemory));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       ((void ) 0);
       if (pagerUseWal(pPager)) {
@@ -15461,7 +15461,7 @@ static  int sqlite3PagerBegin(Pager *pPager , int exFlag , int subjInMemory )  {
       ((void ) 0);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pPager->eState == 1)) {
       ((void ) 0);
       if (pagerUseWal(pPager)) {
@@ -15500,27 +15500,27 @@ static  int pager_write(PgHdr *pPg )  {
   int rc =  0;
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return pPager->errCode;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pPager->errCode) {
       return pPager->errCode;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return 3;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pPager->readOnly) {
       return 3;
     }  
   }  
-  if (((id2i.f_sqlite_check_pages ) )) {
+  if (((id2i_sqlite_check_pages ) )) {
     checkPage(pPg);
   }  
   if ((pPager->eState == 2)) {
@@ -15559,7 +15559,7 @@ static  int pager_write(PgHdr *pPg )  {
         if ((rc != 0)) {
           return rc;
         }  
-        if (((id2i.f_sqlite_enable_iotrace ) )) {
+        if (((id2i_sqlite_enable_iotrace ) )) {
           if (_1280_sqlite3IoTrace) {
             _1280_sqlite3IoTrace("JOUT %p %d %lld %d\n", pPager, pPg->pgno, pPager->journalOff, pPager->pageSize);
           }  
@@ -15568,7 +15568,7 @@ static  int pager_write(PgHdr *pPg )  {
         pPager->nRec++;
         ((void ) 0);
         (rc = sqlite3BitvecSet(pPager->pInJournal, pPg->pgno));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((rc == 7)) {
             sqlite3Coverage(44280);
           }  
@@ -15670,13 +15670,13 @@ static  int sqlite3PagerWrite(DbPage *pDbPage )  {
 static  void sqlite3PagerDontWrite(PgHdr *pPg )  {
   Pager *pPager =  pPg->pPager;
   if (((pPg->flags & 0x002) && (pPager->nSavepoint == 0))) {
-    if (((id2i.f_sqlite_enable_iotrace ) )) {
+    if (((id2i_sqlite_enable_iotrace ) )) {
       if (_1280_sqlite3IoTrace) {
         _1280_sqlite3IoTrace("CLEAN %p %d\n", pPager, pPg->pgno);
       }  
     }  
     (pPg->flags |= 0x020);
-    if (((id2i.f_sqlite_check_pages ) )) {
+    if (((id2i_sqlite_check_pages ) )) {
       pager_set_pagehash(pPg);
     }  
   }  
@@ -15687,7 +15687,7 @@ static  int pager_incr_changecounter(Pager *pPager , int isDirectMode )  {
   ((void ) 0);
   ((void ) 0);
   ((void ) isDirectMode);
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((! pPager->changeCountDone) && (pPager->dbSize > 0))) {
       PgHdr *pPgHdr;
       ((void ) 0);
@@ -15719,7 +15719,7 @@ static  int pager_incr_changecounter(Pager *pPager , int isDirectMode )  {
       sqlite3PagerUnref(pPgHdr);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((! pPager->changeCountDone) && 1)) {
       PgHdr *pPgHdr;
       ((void ) 0);
@@ -15781,12 +15781,12 @@ static  int sqlite3PagerCommitPhaseOne(Pager *pPager , const  char *zMaster , in
   int rc =  0;
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return pPager->errCode;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pPager->errCode) {
       return pPager->errCode;
     }  
@@ -15807,12 +15807,12 @@ static  int sqlite3PagerCommitPhaseOne(Pager *pPager , const  char *zMaster , in
         (pList->pDirty = 0);
       }  
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (1) {
           (rc = pagerWalFrames(pPager, pList, pPager->dbSize, 1));
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if (pList) {
           (rc = pagerWalFrames(pPager, pList, pPager->dbSize, 1));
         }  
@@ -15852,7 +15852,7 @@ static  int sqlite3PagerCommitPhaseOne(Pager *pPager , const  char *zMaster , in
       if ((! noSync)) {
         (rc = sqlite3PagerSync(pPager));
       }  
-      if (((id2i.f_sqlite_enable_iotrace ) )) {
+      if (((id2i_sqlite_enable_iotrace ) )) {
         if (_1280_sqlite3IoTrace) {
           _1280_sqlite3IoTrace("DBSYNC %p\n", pPager);
         }  
@@ -15867,12 +15867,12 @@ static  int sqlite3PagerCommitPhaseOne(Pager *pPager , const  char *zMaster , in
 }
 static  int sqlite3PagerCommitPhaseTwo(Pager *pPager )  {
   int rc =  0;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return pPager->errCode;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pPager->errCode) {
       return pPager->errCode;
     }  
@@ -16043,7 +16043,7 @@ static  int sqlite3PagerMovepage(Pager *pPager , DbPage *pPg , Pgno pgno , int i
   if (((pPg->flags & 0x002) && subjRequiresPage(pPg) && (0 != (rc = subjournalPage(pPg))))) {
     return rc;
   }  
-  if (((id2i.f_sqlite_enable_iotrace ) )) {
+  if (((id2i_sqlite_enable_iotrace ) )) {
     if (_1280_sqlite3IoTrace) {
       _1280_sqlite3IoTrace("MOVE %p %d %d\n", pPager, pPg->pgno, pgno);
     }  
@@ -16165,12 +16165,12 @@ static  int sqlite3PagerOkToChangeJournalMode(Pager *pPager )  {
   if ((pPager->eState >= 3)) {
     return 0;
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pPager->jfd->pMethods && (pPager->journalOff > 0))) {
       return 0;
     }  
@@ -16528,17 +16528,17 @@ static  void walCleanupHash(Wal *pWal )  {
   int nByte;
   int i;
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pWal->hdr.mxFrame == ((4096 - ((((sizeof(WalIndexHdr ) * 2) + sizeof(WalCkptInfo )) + 16) / sizeof(u32 ))) - 1))) {
       sqlite3Coverage(46690);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pWal->hdr.mxFrame == (4096 - ((((sizeof(WalIndexHdr ) * 2) + sizeof(WalCkptInfo )) + 16) / sizeof(u32 ))))) {
       sqlite3Coverage(46691);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pWal->hdr.mxFrame == ((4096 - ((((sizeof(WalIndexHdr ) * 2) + sizeof(WalCkptInfo )) + 16) / sizeof(u32 ))) + 1))) {
       sqlite3Coverage(46692);
     }  
@@ -16558,7 +16558,7 @@ static  void walCleanupHash(Wal *pWal )  {
   }
   (nByte = ((int ) (((char *) aHash) - ((char *) (&aPgno[(iLimit + 1)])))));
   memset(((void *) (&aPgno[(iLimit + 1)])), 0, nByte);
-  if (((id2i.f_sqlite_enable_expensive_assert ) )) {
+  if (((id2i_sqlite_enable_expensive_assert ) )) {
     if (iLimit) {
       int i;
       int iKey;
@@ -16601,7 +16601,7 @@ static  int walIndexAppend(Wal *pWal , u32 iFrame , u32 iPage )  {
     }
     (aPgno[idx] = iPage);
     (aHash[iKey] = ((ht_slot ) idx));
-    if (((id2i.f_sqlite_enable_expensive_assert ) )) {
+    if (((id2i_sqlite_enable_expensive_assert ) )) {
       int i;
       int nEntry =  0;
       for ((i = 0); (i < (4096 * 2)); i++) {
@@ -16611,7 +16611,7 @@ static  int walIndexAppend(Wal *pWal , u32 iFrame , u32 iPage )  {
       }
       ((void ) 0);
     }  
-    if (((id2i.f_sqlite_enable_expensive_assert ) )) {
+    if (((id2i_sqlite_enable_expensive_assert ) )) {
       if (((idx & 0x3ff) == 0)) {
         int i;
         for ((i = 1); (i <= idx); i++) {
@@ -16709,12 +16709,12 @@ static  int walIndexRecover(Wal *pWal )  {
         (pWal->hdr.mxFrame = iFrame);
         (pWal->hdr.nPage = nTruncate);
         (pWal->hdr.szPage = ((u16 ) ((szPage & 0xff00) | (szPage >> 16))));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((szPage <= 32768)) {
             sqlite3Coverage(46948);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((szPage >= 65536)) {
             sqlite3Coverage(46949);
           }  
@@ -16979,12 +16979,12 @@ static  int walCheckpoint(Wal *pWal , int eMode , int ( *xBusyCall)(void * ) , v
   volatile WalCkptInfo *pInfo;
   int ( *xBusy)(void * ) =  0;
   (szPage = walPagesize(pWal));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((szPage <= 32768)) {
       sqlite3Coverage(47449);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((szPage >= 65536)) {
       sqlite3Coverage(47450);
     }  
@@ -17046,7 +17046,7 @@ static  int walCheckpoint(Wal *pWal , int eMode , int ( *xBusyCall)(void * ) , v
         break;
       }  
       (iOffset = ((iDbpage - 1) * ((i64 ) szPage)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((iOffset & (~ ((i64 ) 0xffffffff))) != 0)) {
           sqlite3Coverage(47520);
         }  
@@ -17059,7 +17059,7 @@ static  int walCheckpoint(Wal *pWal , int eMode , int ( *xBusyCall)(void * ) , v
     if ((rc == 0)) {
       if ((mxSafeFrame == walIndexHdr(pWal)->mxFrame)) {
         i64 szDb =  (pWal->hdr.nPage * ((i64 ) szPage));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (((szDb & (~ ((i64 ) 0xffffffff))) != 0)) {
             sqlite3Coverage(47529);
           }  
@@ -17098,14 +17098,14 @@ static  int walCheckpoint(Wal *pWal , int eMode , int ( *xBusyCall)(void * ) , v
 static  void walLimitSize(Wal *pWal , i64 nMax )  {
   i64 sz;
   int rx;
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     sqlite3BeginBenignMalloc();
   }  
   (rx = sqlite3OsFileSize(pWal->pWalFd, (&sz)));
   if (((rx == 0) && (sz > nMax))) {
     (rx = sqlite3OsTruncate(pWal->pWalFd, nMax));
   }  
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     sqlite3EndBenignMalloc();
   }  
   if (rx) {
@@ -17136,11 +17136,11 @@ static  int sqlite3WalClose(Wal *pWal , int sync_flags , int nBuf , u8 *zBuf )  
     walIndexClose(pWal, isDelete);
     sqlite3OsClose(pWal->pWalFd);
     if (isDelete) {
-      if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+      if ((((! id2i_sqlite_omit_builtin_test) ) )) {
         sqlite3BeginBenignMalloc();
       }  
       sqlite3OsDelete(pWal->pVfs, pWal->zWalName, 0);
-      if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+      if ((((! id2i_sqlite_omit_builtin_test) ) )) {
         sqlite3EndBenignMalloc();
       }  
     }  
@@ -17172,12 +17172,12 @@ static  int walIndexTryHdr(Wal *pWal , int *pChanged )  {
     ((*pChanged) = 1);
     memcpy((&pWal->hdr), (&h1), sizeof(WalIndexHdr ));
     (pWal->szPage = ((pWal->hdr.szPage & 0xfe00) + ((pWal->hdr.szPage & 0x0001) << 16)));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pWal->szPage <= 32768)) {
         sqlite3Coverage(47711);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pWal->szPage >= 65536)) {
         sqlite3Coverage(47712);
       }  
@@ -17325,22 +17325,22 @@ static  int sqlite3WalBeginReadTransaction(Wal *pWal , int *pChanged )  {
   do {
     (rc = walTryBeginRead(pWal, pChanged, 0, ++cnt));
   } while ((rc == (- 1)));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((rc & 0xff) == 5)) {
       sqlite3Coverage(48044);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((rc & 0xff) == 10)) {
       sqlite3Coverage(48045);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((rc == 15)) {
       sqlite3Coverage(48046);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((rc == 0)) {
       sqlite3Coverage(48047);
     }  
@@ -17385,7 +17385,7 @@ static  int sqlite3WalFindFrame(Wal *pWal , Pgno pgno , u32 *piRead )  {
       }  
     }
   }
-  if (((id2i.f_sqlite_enable_expensive_assert ) )) {
+  if (((id2i_sqlite_enable_expensive_assert ) )) {
     u32 iRead2 =  0;
     u32 iTest;
     for ((iTest = iLast); (iTest > 0); iTest--) {
@@ -17404,12 +17404,12 @@ static  int sqlite3WalReadFrame(Wal *pWal , u32 iRead , int nOut , u8 *pOut )  {
   i64 iOffset;
   (sz = pWal->hdr.szPage);
   (sz = ((sz & 0xfe00) + ((sz & 0x0001) << 16)));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((sz <= 32768)) {
       sqlite3Coverage(48180);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((sz >= 65536)) {
       sqlite3Coverage(48181);
     }  
@@ -17418,12 +17418,12 @@ static  int sqlite3WalReadFrame(Wal *pWal , u32 iRead , int nOut , u8 *pOut )  {
   return sqlite3OsRead(pWal->pWalFd, pOut, ((nOut > sz) ? sz : nOut), iOffset);
 }
 static  Pgno sqlite3WalDbsize(Wal *pWal )  {
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pWal && (pWal->readLock >= 0))) {
       return pWal->hdr.nPage;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pWal && 1)) {
       return pWal->hdr.nPage;
     }  
@@ -17458,7 +17458,7 @@ static  int sqlite3WalEndWriteTransaction(Wal *pWal )  {
 }
 static  int sqlite3WalUndo(Wal *pWal , int ( *xUndo)(void * , Pgno ) , void *pUndoCtx )  {
   int rc =  0;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       Pgno iMax =  pWal->hdr.mxFrame;
       Pgno iFrame;
@@ -17472,7 +17472,7 @@ static  int sqlite3WalUndo(Wal *pWal , int ( *xUndo)(void * , Pgno ) , void *pUn
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pWal->writeLock) {
       Pgno iMax =  pWal->hdr.mxFrame;
       Pgno iFrame;
@@ -17550,17 +17550,17 @@ static  int walRestartLog(Wal *pWal )  {
       (rc = walTryBeginRead(pWal, (&notUsed), 1, ++cnt));
     } while ((rc == (- 1)));
     ((void ) 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((rc & 0xff) == 10)) {
         sqlite3Coverage(48409);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((rc == 15)) {
         sqlite3Coverage(48410);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((rc == 0)) {
         sqlite3Coverage(48411);
       }  
@@ -17711,12 +17711,12 @@ static  int sqlite3WalFrames(Wal *pWal , int szPage , PgHdr *pList , Pgno nTrunc
   }
   if ((rc == 0)) {
     (pWal->hdr.szPage = ((u16 ) ((szPage & 0xff00) | (szPage >> 16))));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((szPage <= 32768)) {
         sqlite3Coverage(48653);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((szPage >= 65536)) {
         sqlite3Coverage(48654);
       }  
@@ -17961,10 +17961,10 @@ static  void sqlite3BtreeEnterAll(sqlite3 *db )  {
 static const char zMagicHeader[] =  "SQLite format 3";
 static BtShared *sqlite3SharedCacheList =  0;
 int sqlite3_enable_shared_cache(int enable )  {
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (_1283_sqlite3Config.sharedCacheEnabled = enable);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (_1284_sqlite3Config.sharedCacheEnabled = enable);
   }  
   return 0;
@@ -18167,7 +18167,7 @@ static  int saveAllCursors(BtShared *pBt , Pgno iRoot , BtCursor *pExcept )  {
         }  
       }  
       else {
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((p->iPage > 0)) {
             sqlite3Coverage(50484);
           }  
@@ -18232,7 +18232,7 @@ static  int sqlite3BtreeCursorHasMoved(BtCursor *pCur , int *pHasMoved )  {
     ((*pHasMoved) = 1);
     return rc;
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pCur->eState != 1) || (pCur->skipNext != 0))) {
       ((*pHasMoved) = 1);
     }  
@@ -18240,7 +18240,7 @@ static  int sqlite3BtreeCursorHasMoved(BtCursor *pCur , int *pHasMoved )  {
       ((*pHasMoved) = 0);
     }
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((pCur->eState != 1) || 0)) {
       ((*pHasMoved) = 1);
     }  
@@ -18375,12 +18375,12 @@ static  void btreeParseCellPtr(MemPage *pPage , u8 *pCell , CellInfo *pInfo )  {
   }
   (pInfo->nPayload = nPayload);
   (pInfo->nHeader = n);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nPayload == pPage->maxLocal)) {
       sqlite3Coverage(50786);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nPayload == (pPage->maxLocal + 1))) {
       sqlite3Coverage(50787);
     }  
@@ -18399,12 +18399,12 @@ static  void btreeParseCellPtr(MemPage *pPage , u8 *pCell , CellInfo *pInfo )  {
     (minLocal = pPage->minLocal);
     (maxLocal = pPage->maxLocal);
     (surplus = (minLocal + ((nPayload - minLocal) % (pPage->pBt->usableSize - 4))));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((surplus == maxLocal)) {
         sqlite3Coverage(50812);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((surplus == (maxLocal + 1))) {
         sqlite3Coverage(50813);
       }  
@@ -18441,12 +18441,12 @@ static  u16 cellSizePtr(MemPage *pPage , u8 *pCell )  {
   else {
     (pIter += ((u8 ) (((*pIter) < ((u8 ) 0x80)) ? (nSize = ((u32 ) (*pIter))), 1 : sqlite3GetVarint32(pIter, ((u32 *) (&nSize))))));
   }
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nSize == pPage->maxLocal)) {
       sqlite3Coverage(50869);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nSize == (pPage->maxLocal + 1))) {
       sqlite3Coverage(50870);
     }  
@@ -18454,12 +18454,12 @@ static  u16 cellSizePtr(MemPage *pPage , u8 *pCell )  {
   if ((nSize > pPage->maxLocal)) {
     int minLocal =  pPage->minLocal;
     (nSize = (minLocal + ((nSize - minLocal) % (pPage->pBt->usableSize - 4))));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((nSize == pPage->maxLocal)) {
         sqlite3Coverage(50874);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((nSize == (pPage->maxLocal + 1))) {
         sqlite3Coverage(50875);
       }  
@@ -18523,17 +18523,17 @@ static  int defragmentPage(MemPage *pPage )  {
     u8 *pAddr;
     (pAddr = (&data[(cellOffset + (i * 2))]));
     (pc = ((pAddr[0] << 8) | pAddr[1]));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pc == iCellFirst)) {
         sqlite3Coverage(50962);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pc == iCellLast)) {
         sqlite3Coverage(50963);
       }  
     }  
-    if ((((! id2i.f_sqlite_enable_oversize_cell_check) ) )) {
+    if ((((! id2i_sqlite_enable_oversize_cell_check) ) )) {
       if (((pc < iCellFirst) || (pc > iCellLast))) {
         return sqlite3CorruptError(50969);
       }  
@@ -18541,23 +18541,23 @@ static  int defragmentPage(MemPage *pPage )  {
     ((void ) 0);
     (size = cellSizePtr(pPage, (&temp[pc])));
     (cbrk -= size);
-    if (((id2i.f_sqlite_enable_oversize_cell_check ) )) {
+    if (((id2i_sqlite_enable_oversize_cell_check ) )) {
       if ((cbrk < iCellFirst)) {
         return sqlite3CorruptError(50977);
       }  
     }  
-    if ((((! id2i.f_sqlite_enable_oversize_cell_check) ) )) {
+    if ((((! id2i_sqlite_enable_oversize_cell_check) ) )) {
       if (((cbrk < iCellFirst) || ((pc + size) > usableSize))) {
         return sqlite3CorruptError(50981);
       }  
     }  
     ((void ) 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((cbrk + size) == usableSize)) {
         sqlite3Coverage(50985);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((pc + size) == usableSize)) {
         sqlite3Coverage(50986);
       }  
@@ -18600,17 +18600,17 @@ static  int allocateSpace(MemPage *pPage , int nByte , int *pIdx )  {
   if ((gap > top)) {
     return sqlite3CorruptError(51038);
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((gap + 2) == top)) {
       sqlite3Coverage(51039);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((gap + 1) == top)) {
       sqlite3Coverage(51040);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((gap == top)) {
       sqlite3Coverage(51041);
     }  
@@ -18632,12 +18632,12 @@ static  int allocateSpace(MemPage *pPage , int nByte , int *pIdx )  {
       (size = (((&data[(pc + 2)])[0] << 8) | (&data[(pc + 2)])[1]));
       if ((size >= nByte)) {
         int x =  (size - nByte);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((x == 4)) {
             sqlite3Coverage(51062);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((x == 3)) {
             sqlite3Coverage(51063);
           }  
@@ -18657,7 +18657,7 @@ static  int allocateSpace(MemPage *pPage , int nByte , int *pIdx )  {
       }  
     }
   } 
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((gap + 2 + nByte) == top)) {
       sqlite3Coverage(51085);
     }  
@@ -18801,14 +18801,14 @@ static  int btreeInitPage(MemPage *pPage )  {
     if ((pPage->nCell > ((pBt->pageSize - 8) / 6))) {
       return sqlite3CorruptError(51279);
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pPage->nCell == ((pBt->pageSize - 8) / 6))) {
         sqlite3Coverage(51281);
       }  
     }  
     (iCellFirst = (cellOffset + (2 * pPage->nCell)));
     (iCellLast = (usableSize - 4));
-    if (((id2i.f_sqlite_enable_oversize_cell_check ) )) {
+    if (((id2i_sqlite_enable_oversize_cell_check ) )) {
       int i;
       int sz;
       if ((! pPage->leaf)) {
@@ -18816,12 +18816,12 @@ static  int btreeInitPage(MemPage *pPage )  {
       }  
       for ((i = 0); (i < pPage->nCell); i++) {
         (pc = (((&data[(cellOffset + (i * 2))])[0] << 8) | (&data[(cellOffset + (i * 2))])[1]));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pc == iCellFirst)) {
             sqlite3Coverage(51300);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pc == iCellLast)) {
             sqlite3Coverage(51301);
           }  
@@ -18830,7 +18830,7 @@ static  int btreeInitPage(MemPage *pPage )  {
           return sqlite3CorruptError(51303);
         }  
         (sz = cellSizePtr(pPage, (&data[pc])));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (((pc + sz) == usableSize)) {
             sqlite3Coverage(51306);
           }  
@@ -18950,7 +18950,7 @@ static  int getAndInitPage(BtShared *pBt , Pgno pgno , MemPage **ppPage , int bR
       }  
     }  
   }
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pgno == 0)) {
       sqlite3Coverage(51488);
     }  
@@ -19086,7 +19086,7 @@ static  int sqlite3BtreeOpen(sqlite3_vfs *pVfs , const  char *zFilename , sqlite
     (pBt->pageSize = ((zDbHeader[16] << 8) | (zDbHeader[17] << 16)));
     if (((pBt->pageSize < 512) || (pBt->pageSize > 65536) || (((pBt->pageSize - 1) & pBt->pageSize) != 0))) {
       (pBt->pageSize = 0);
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         if ((zFilename && (! isMemdb))) {
           (pBt->_1312_autoVacuum = (0 ? 1 : 0));
           (pBt->_1312_incrVacuum = ((0 == 2) ? 1 : 0));
@@ -19097,10 +19097,10 @@ static  int sqlite3BtreeOpen(sqlite3_vfs *pVfs , const  char *zFilename , sqlite
     else {
       (nReserve = zDbHeader[20]);
       (pBt->btsFlags |= 0x0002);
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         (pBt->_1312_autoVacuum = (sqlite3Get4byte((&zDbHeader[(36 + (4 * 4))])) ? 1 : 0));
       }  
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         (pBt->_1312_incrVacuum = (sqlite3Get4byte((&zDbHeader[(36 + (7 * 4))])) ? 1 : 0));
       }  
     }
@@ -19112,7 +19112,7 @@ static  int sqlite3BtreeOpen(sqlite3_vfs *pVfs , const  char *zFilename , sqlite
     ((void ) 0);
     if (p->sharable) {
       (pBt->nRef = 1);
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         if ((0 && _1283_sqlite3Config.bCoreMutex)) {
           (pBt->mutex = ((sqlite3_mutex *) 8));
           if ((pBt->mutex == 0)) {
@@ -19122,7 +19122,7 @@ static  int sqlite3BtreeOpen(sqlite3_vfs *pVfs , const  char *zFilename , sqlite
           }  
         }  
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         if ((0 && _1284_sqlite3Config.bCoreMutex)) {
           (pBt->mutex = ((sqlite3_mutex *) 8));
           if ((pBt->mutex == 0)) {
@@ -19195,22 +19195,22 @@ static  int removeFromSharingList(BtShared *pBt )  {
     }  
     else {
       (pList = sqlite3SharedCacheList);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         while ((1 && (pList->pNext != pBt))) {
           (pList = pList->pNext);
         }
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         while ((pList && (pList->pNext != pBt))) {
           (pList = pList->pNext);
         }
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (1) {
           (pList->pNext = pBt->pNext);
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if (pList) {
           (pList->pNext = pBt->pNext);
         }  
@@ -19357,16 +19357,16 @@ static  int sqlite3BtreeSecureDelete(Btree *p , int newFlag )  {
   return b;
 }
 static  int sqlite3BtreeSetAutoVacuum(Btree *p , int autoVacuum )  {
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     return 8;
   }  
   BtShared *_1312_pBt =  p->pBt;
   int _1312_rc =  0;
   u8 _1312_av =  ((u8 ) autoVacuum);
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     sqlite3BtreeEnter(p);
   }  
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     if ((((_1312_pBt->btsFlags & 0x0002) != 0) && ((_1312_av ? 1 : 0) != _1312_pBt->_1312_autoVacuum))) {
       (_1312_rc = 8);
     }  
@@ -19375,22 +19375,22 @@ static  int sqlite3BtreeSetAutoVacuum(Btree *p , int autoVacuum )  {
       (_1312_pBt->_1312_incrVacuum = ((_1312_av == 2) ? 1 : 0));
     }
   }  
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     return _1312_rc;
   }  
 }
 static  int sqlite3BtreeGetAutoVacuum(Btree *p )  {
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     return 0;
   }  
   int _1312_rc;
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     sqlite3BtreeEnter(p);
   }  
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     (_1312_rc = ((! p->pBt->_1312_autoVacuum) ? 0 : ((! p->pBt->_1312_incrVacuum) ? 1 : 2)));
   }  
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     return _1312_rc;
   }  
 }
@@ -19467,10 +19467,10 @@ static  int lockBtree(BtShared *pBt )  {
     }  
     (pBt->pageSize = pageSize);
     (pBt->usableSize = usableSize);
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       (pBt->_1312_autoVacuum = (sqlite3Get4byte((&page1[(36 + (4 * 4))])) ? 1 : 0));
     }  
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       (pBt->_1312_incrVacuum = (sqlite3Get4byte((&page1[(36 + (7 * 4))])) ? 1 : 0));
     }  
   }  
@@ -19533,16 +19533,16 @@ static  int newDatabase(BtShared *pBt )  {
   memset((&data[24]), 0, (100 - 24));
   zeroPage(pP1, (0x01 | 0x08 | 0x04));
   (pBt->btsFlags |= 0x0002);
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     ((void ) 0);
   }  
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     ((void ) 0);
   }  
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     sqlite3Put4byte((&data[(36 + (4 * 4))]), pBt->_1312_autoVacuum);
   }  
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     sqlite3Put4byte((&data[(36 + (7 * 4))]), pBt->_1312_incrVacuum);
   }  
   (pBt->nPage = 1);
@@ -19933,7 +19933,7 @@ static  int sqlite3BtreeCommitPhaseOne(Btree *p , const  char *zMaster )  {
   if ((p->inTrans == 2)) {
     BtShared *pBt =  p->pBt;
     sqlite3BtreeEnter(p);
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (pBt->_1312_autoVacuum) {
         (rc = autoVacuumCommit(pBt));
         if ((rc != 0)) {
@@ -19941,7 +19941,7 @@ static  int sqlite3BtreeCommitPhaseOne(Btree *p , const  char *zMaster )  {
         }  
       }  
     }  
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (pBt->_1312_bDoTruncate) {
         sqlite3PagerTruncateImage(pBt->pPager, pBt->nPage);
       }  
@@ -19954,7 +19954,7 @@ static  void btreeEndTransaction(Btree *p )  {
   BtShared *pBt =  p->pBt;
   sqlite3 *db =  p->db;
   ((void ) 0);
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     (pBt->_1312_bDoTruncate = 0);
   }  
   if (((p->inTrans > 0) && (db->nVdbeRead > 1))) {
@@ -20048,7 +20048,7 @@ static  int sqlite3BtreeRollback(Btree *p , int tripCode )  {
     }  
     if ((btreeGetPage(pBt, 1, (&pPage1), 0) == 0)) {
       int nPage =  sqlite3Get4byte((28 + ((u8 *) pPage1->aData)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((nPage == 0)) {
           sqlite3Coverage(53291);
         }  
@@ -20056,7 +20056,7 @@ static  int sqlite3BtreeRollback(Btree *p , int tripCode )  {
       if ((nPage == 0)) {
         sqlite3PagerPagecount(pBt->pPager, (&nPage));
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pBt->nPage != nPage)) {
           sqlite3Coverage(53293);
         }  
@@ -20111,12 +20111,12 @@ static  int btreeCursor(Btree *p , int iTable , int wrFlag , struct  KeyInfo   *
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return 8;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((wrFlag && ((pBt->btsFlags & 0x0001) != 0))) {
       return 8;
     }  
@@ -20227,7 +20227,7 @@ static  int getOverflowPage(BtShared *pBt , Pgno ovfl , MemPage **ppPage , Pgno 
   int rc =  0;
   ((void ) 0);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     if (pBt->_1312_autoVacuum) {
       Pgno pgno;
       Pgno iGuess =  (ovfl + 1);
@@ -20295,12 +20295,12 @@ static  int accessPayload(BtCursor *pCur , u32 offset , u32 amt , unsigned  char
   }
   (aPayload = (pCur->info.pCell + pCur->info.nHeader));
   (nKey = (pPage->intKey ? 0 : ((int ) pCur->info.nKey)));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((0 || ((&aPayload[pCur->info.nLocal]) > (&pPage->aData[pBt->usableSize])))) {
       return sqlite3CorruptError(53827);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((((offset + amt) > (nKey + pCur->info.nData)) || ((&aPayload[pCur->info.nLocal]) > (&pPage->aData[pBt->usableSize])))) {
       return sqlite3CorruptError(53827);
     }  
@@ -20325,12 +20325,12 @@ static  int accessPayload(BtCursor *pCur , u32 offset , u32 amt , unsigned  char
     if ((pCur->isIncrblobHandle && (! pCur->aOverflow))) {
       int nOvfl =  ((pCur->info.nPayload - pCur->info.nLocal + ovflSize - 1) / ovflSize);
       (pCur->aOverflow = ((Pgno *) sqlite3MallocZero((sizeof(Pgno ) * nOvfl))));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((1 && (! pCur->aOverflow))) {
           (rc = 7);
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if ((nOvfl && (! pCur->aOverflow))) {
           (rc = 7);
         }  
@@ -20413,12 +20413,12 @@ static  const  unsigned  char *fetchPayload(BtCursor *pCur , int *pAmt , int ski
   ((void ) 0);
   (pPage = pCur->apPage[pCur->iPage]);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       btreeParseCell(pCur->apPage[pCur->iPage], pCur->aiIdx[pCur->iPage], (&pCur->info));
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pCur->info.nSize == 0)) {
       btreeParseCell(pCur->apPage[pCur->iPage], pCur->aiIdx[pCur->iPage], (&pCur->info));
     }  
@@ -20446,12 +20446,12 @@ static  const  void *sqlite3BtreeKeyFetch(BtCursor *pCur , int *pAmt )  {
   const void *p =  0;
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       (p = ((const  void *) fetchPayload(pCur, pAmt, 0)));
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pCur->eState == 1)) {
       (p = ((const  void *) fetchPayload(pCur, pAmt, 0)));
     }  
@@ -20462,12 +20462,12 @@ static  const  void *sqlite3BtreeDataFetch(BtCursor *pCur , int *pAmt )  {
   const void *p =  0;
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       (p = ((const  void *) fetchPayload(pCur, pAmt, 1)));
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pCur->eState == 1)) {
       (p = ((const  void *) fetchPayload(pCur, pAmt, 1)));
     }  
@@ -20505,7 +20505,7 @@ static  void moveToParent(BtCursor *pCur )  {
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pCur->aiIdx[(pCur->iPage - 1)] > pCur->apPage[(pCur->iPage - 1)]->nCell)) {
       sqlite3Coverage(54191);
     }  
@@ -20718,7 +20718,7 @@ static  int sqlite3BtreeMovetoUnpacked(BtCursor *pCur , UnpackedRecord *pIdxKey 
       else {
         int nCell =  pCell[0];
         if ((nCell <= pPage->max1bytePayload)) {
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if (((pCell + nCell + 1) == pPage->aDataEnd)) {
               sqlite3Coverage(54538);
             }  
@@ -20726,7 +20726,7 @@ static  int sqlite3BtreeMovetoUnpacked(BtCursor *pCur , UnpackedRecord *pIdxKey 
           (c = sqlite3VdbeRecordCompare(nCell, ((void *) (&pCell[1])), pIdxKey));
         } 
         else if (((! (pCell[1] & 0x80)) && ((nCell = (((nCell & 0x7f) << 7) + pCell[1])) <= pPage->maxLocal))) {
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if (((pCell + nCell + 2) == pPage->aDataEnd)) {
               sqlite3Coverage(54546);
             }  
@@ -20836,7 +20836,7 @@ static  int sqlite3BtreeNext(BtCursor *pCur , int *pRes )  {
   (pPage = pCur->apPage[pCur->iPage]);
   (idx = ++pCur->aiIdx[pCur->iPage]);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((idx > pPage->nCell)) {
       sqlite3Coverage(54677);
     }  
@@ -20887,7 +20887,7 @@ static  int sqlite3BtreePrevious(BtCursor *pCur , int *pRes )  {
   ((void ) 0);
   (pCur->atLast = 0);
   if ((pCur->eState != 1)) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (1) {
         (rc = btreeRestoreCursorPosition(pCur));
         if ((rc != 0)) {
@@ -20896,7 +20896,7 @@ static  int sqlite3BtreePrevious(BtCursor *pCur , int *pRes )  {
         }  
       }  
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if ((pCur->eState >= 3)) {
         (rc = btreeRestoreCursorPosition(pCur));
         if ((rc != 0)) {
@@ -20967,7 +20967,7 @@ static  int allocateBtreePage(BtShared *pBt , MemPage **ppPage , Pgno *pPgno , P
   (pPage1 = pBt->pPage1);
   (mxPage = btreePagecount(pBt));
   (n = sqlite3Get4byte((&pPage1->aData[36])));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((n == (mxPage - 1))) {
       sqlite3Coverage(54833);
     }  
@@ -20978,7 +20978,7 @@ static  int allocateBtreePage(BtShared *pBt , MemPage **ppPage , Pgno *pPgno , P
   if ((n > 0)) {
     Pgno iTrunk;
     u8 searchList =  0;
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if ((eMode == 1)) {
         if ((nearby <= mxPage)) {
           u8 eType;
@@ -21010,7 +21010,7 @@ static  int allocateBtreePage(BtShared *pBt , MemPage **ppPage , Pgno *pPgno , P
       else {
         (iTrunk = sqlite3Get4byte((&pPage1->aData[32])));
       }
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((iTrunk == mxPage)) {
           sqlite3Coverage(54882);
         }  
@@ -21044,7 +21044,7 @@ static  int allocateBtreePage(BtShared *pBt , MemPage **ppPage , Pgno *pPgno , P
         goto end_allocate_page;
       }
       
-      else if (((((! id2i.f_sqlite_omit_autovacuum) ) ) && (searchList && ((nearby == iTrunk) || ((iTrunk < nearby) && (eMode == 2)))))) {
+      else if (((((! id2i_sqlite_omit_autovacuum) ) ) && (searchList && ((nearby == iTrunk) || ((iTrunk < nearby) && (eMode == 2)))))) {
         ((*pPgno) = iTrunk);
         ((*ppPage) = pTrunk);
         (searchList = 0);
@@ -21071,7 +21071,7 @@ static  int allocateBtreePage(BtShared *pBt , MemPage **ppPage , Pgno *pPgno , P
             (rc = sqlite3CorruptError(54946));
             goto end_allocate_page;
           }  
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if ((iNewTrunk == mxPage)) {
               sqlite3Coverage(54949);
             }  
@@ -21136,7 +21136,7 @@ static  int allocateBtreePage(BtShared *pBt , MemPage **ppPage , Pgno *pPgno , P
           (closest = 0);
         }
         (iPage = sqlite3Get4byte((&aData[(8 + (closest * 4))])));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((iPage == mxPage)) {
             sqlite3Coverage(55009);
           }  
@@ -21145,7 +21145,7 @@ static  int allocateBtreePage(BtShared *pBt , MemPage **ppPage , Pgno *pPgno , P
           (rc = sqlite3CorruptError(55011));
           goto end_allocate_page;
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((iPage == mxPage)) {
             sqlite3Coverage(55014);
           }  
@@ -21177,7 +21177,7 @@ static  int allocateBtreePage(BtShared *pBt , MemPage **ppPage , Pgno *pPgno , P
     } while (searchList);
   }  
   else {
-    int bNoContent =  ((((! id2i.f_sqlite_omit_autovacuum) ) ) ? ((0 == pBt->_1312_bDoTruncate) ? 0x01 : 0) : ((0 == 0) ? 0x01 : 0));
+    int bNoContent =  ((((! id2i_sqlite_omit_autovacuum) ) ) ? ((0 == pBt->_1312_bDoTruncate) ? 0x01 : 0) : ((0 == 0) ? 0x01 : 0));
     (rc = sqlite3PagerWrite(pBt->pPage1->pDbPage));
     if (rc) {
       return rc;
@@ -21186,7 +21186,7 @@ static  int allocateBtreePage(BtShared *pBt , MemPage **ppPage , Pgno *pPgno , P
     if ((pBt->nPage == ((Pgno ) ((sqlite3PendingByte / pBt->pageSize) + 1)))) {
       pBt->nPage++;
     }  
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if ((pBt->_1312_autoVacuum && (ptrmapPageno(pBt, pBt->nPage) == pBt->nPage))) {
         MemPage *pPg =  0;
         ((void ) 0);
@@ -21262,7 +21262,7 @@ static  int freePage2(BtShared *pBt , MemPage *pMemPage , Pgno iPage )  {
     }  
     memset(pPage->aData, 0, pPage->pBt->pageSize);
   }  
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     if (pBt->_1312_autoVacuum) {
       ptrmapPut(pBt, iPage, 2, 0, (&rc));
       if (rc) {
@@ -21270,7 +21270,7 @@ static  int freePage2(BtShared *pBt , MemPage *pMemPage , Pgno iPage )  {
       }  
     }  
   }  
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     if (0) {
       if (rc) {
         goto freepage_out;
@@ -21411,12 +21411,12 @@ static  int fillInCell(MemPage *pPage , unsigned  char *pCell , const  void *pKe
     (nData = 0);
   }  
   else {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (0) {
         return sqlite3CorruptError(55388);
       }  
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if (((nKey > 0x7fffffff) || (pKey == 0))) {
         return sqlite3CorruptError(55388);
       }  
@@ -21432,7 +21432,7 @@ static  int fillInCell(MemPage *pPage , unsigned  char *pCell , const  void *pKe
   while ((nPayload > 0)) {
     if ((spaceLeft == 0)) {
       Pgno pgnoPtrmap =  pgnoOvfl;
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         if (pBt->_1312_autoVacuum) {
           do {
             pgnoOvfl++;
@@ -21440,7 +21440,7 @@ static  int fillInCell(MemPage *pPage , unsigned  char *pCell , const  void *pKe
         }  
       }  
       (rc = allocateBtreePage(pBt, (&pOvfl), (&pgnoOvfl), pgnoOvfl, 0));
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         if ((pBt->_1312_autoVacuum && (rc == 0))) {
           u8 eType =  (pgnoPtrmap ? 4 : 3);
           ptrmapPut(pBt, pgnoOvfl, eType, pgnoPtrmap, (&rc));
@@ -21510,12 +21510,12 @@ static  void dropCell(MemPage *pPage , int idx , int sz , int *pRC )  {
   (ptr = (&pPage->aCellIdx[(2 * idx)]));
   (pc = ((ptr[0] << 8) | ptr[1]));
   (hdr = pPage->hdrOffset);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pc == (((&data[(hdr + 5)])[0] << 8) | (&data[(hdr + 5)])[1]))) {
       sqlite3Coverage(55512);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((pc + sz) == pPage->pBt->usableSize)) {
       sqlite3Coverage(55513);
     }  
@@ -21604,7 +21604,7 @@ static  void insertCell(MemPage *pPage , int i , u8 *pCell , int sz , u8 *pTemp 
     }
     ((&data[ins])[0] = ((u8 ) (idx >> 8))), ((&data[ins])[1] = ((u8 ) idx));
     ((&data[(pPage->hdrOffset + 3)])[0] = ((u8 ) (pPage->nCell >> 8))), ((&data[(pPage->hdrOffset + 3)])[1] = ((u8 ) pPage->nCell));
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (pPage->pBt->_1312_autoVacuum) {
         ptrmapPutOvflPtr(pPage, pCell, pRC);
       }  
@@ -21659,7 +21659,7 @@ static  int balance_quick(MemPage *pParent , MemPage *pPage , u8 *pSpace )  {
     ((void ) 0);
     zeroPage(pNew, (0x01 | 0x04 | 0x08));
     assemblePage(pNew, 1, (&pCell), (&szCell));
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (pBt->_1312_autoVacuum) {
         ptrmapPut(pBt, pgnoNew, 5, pParent->pgno, (&rc));
         if ((szCell > pNew->minLocal)) {
@@ -21667,7 +21667,7 @@ static  int balance_quick(MemPage *pParent , MemPage *pPage , u8 *pSpace )  {
         }  
       }  
     }  
-    if (((id2i.f_sqlite_omit_autovacuum ) )) {
+    if (((id2i_sqlite_omit_autovacuum ) )) {
       if (0) {
         if ((szCell > pNew->minLocal)) {
           
@@ -21710,12 +21710,12 @@ static  void copyNodeContent(MemPage *pFrom , MemPage *pTo , int *pRC )  {
       ((*pRC) = rc);
       return;
     }  
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (pBt->_1312_autoVacuum) {
         ((*pRC) = setChildPtrmaps(pTo));
       }  
     }  
-    if (((id2i.f_sqlite_omit_autovacuum ) )) {
+    if (((id2i_sqlite_omit_autovacuum ) )) {
       if (0) {
         ((*pRC) = 0);
       }  
@@ -21950,7 +21950,7 @@ static  int balance_nonroot(MemPage *pParent , int iParentIdx , u8 *aOvflSpace ,
       }  
       (apNew[i] = pNew);
       nNew++;
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         if (pBt->_1312_autoVacuum) {
           ptrmapPut(pBt, pNew->pgno, 5, pParent->pgno, (&rc));
           if ((rc != 0)) {
@@ -21958,7 +21958,7 @@ static  int balance_nonroot(MemPage *pParent , int iParentIdx , u8 *aOvflSpace ,
           }  
         }  
       }  
-      if (((id2i.f_sqlite_omit_autovacuum ) )) {
+      if (((id2i_sqlite_omit_autovacuum ) )) {
         if (0) {
           if ((rc != 0)) {
             goto balance_cleanup;
@@ -22055,7 +22055,7 @@ static  int balance_nonroot(MemPage *pParent , int iParentIdx , u8 *aOvflSpace ,
     copyNodeContent(apNew[0], pParent, (&rc));
     freePage(apNew[0], (&rc));
   } 
-  else if (((((! id2i.f_sqlite_omit_autovacuum) ) ) && pBt->_1312_autoVacuum)) {
+  else if (((((! id2i_sqlite_omit_autovacuum) ) ) && pBt->_1312_autoVacuum)) {
     MemPage *pNew =  apNew[0];
     MemPage *pOld =  apCopy[0];
     int nOverflow =  pOld->nOverflow;
@@ -22110,7 +22110,7 @@ static  int balance_nonroot(MemPage *pParent , int iParentIdx , u8 *aOvflSpace ,
     }  
   }
   
-  else if ((((id2i.f_sqlite_omit_autovacuum ) ) && 0)) {
+  else if ((((id2i_sqlite_omit_autovacuum ) ) && 0)) {
     MemPage *pNew =  apNew[0];
     MemPage *pOld =  apCopy[0];
     int nOverflow =  pOld->nOverflow;
@@ -22185,12 +22185,12 @@ static  int balance_deeper(MemPage *pRoot , MemPage **ppChild )  {
   if ((rc == 0)) {
     (rc = allocateBtreePage(pBt, (&pChild), (&pgnoChild), pRoot->pgno, 0));
     copyNodeContent(pRoot, pChild, (&rc));
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (pBt->_1312_autoVacuum) {
         ptrmapPut(pBt, pgnoChild, 5, pRoot->pgno, (&rc));
       }  
     }  
-    if (((id2i.f_sqlite_omit_autovacuum ) )) {
+    if (((id2i_sqlite_omit_autovacuum ) )) {
       if (0) {
         
       }  
@@ -22368,12 +22368,12 @@ static  int sqlite3BtreeDelete(BtCursor *pCur )  {
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((0 || 0)) {
       return 1;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pCur->aiIdx[pCur->iPage] >= pCur->apPage[pCur->iPage]->nCell) || (pCur->eState != 1))) {
       return 1;
     }  
@@ -22443,15 +22443,15 @@ static  int btreeCreateTable(Btree *p , int *piTable , int createTabFlags )  {
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     (rc = allocateBtreePage(pBt, (&pRoot), (&pgnoRoot), 1, 0));
   }  
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     if (rc) {
       return rc;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     if (pBt->_1312_autoVacuum) {
       Pgno pgnoMove;
       MemPage *pPageMove;
@@ -22513,13 +22513,13 @@ static  int btreeCreateTable(Btree *p , int *piTable , int createTabFlags )  {
       }  
       ((void ) 0);
       (rc = sqlite3BtreeUpdateMeta(p, 4, pgnoRoot));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (0) {
           releasePage(pRoot);
           return rc;
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if (rc) {
           releasePage(pRoot);
           return rc;
@@ -22616,12 +22616,12 @@ static  int btreeDropTable(Btree *p , Pgno iTable , int *piMoved )  {
   BtShared *pBt =  p->pBt;
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return (6 | (1 << 8));
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pBt->pCursor) {
       return (6 | (1 << 8));
     }  
@@ -22637,13 +22637,13 @@ static  int btreeDropTable(Btree *p , Pgno iTable , int *piMoved )  {
   }  
   ((*piMoved) = 0);
   if ((iTable > 1)) {
-    if (((id2i.f_sqlite_omit_autovacuum ) )) {
+    if (((id2i_sqlite_omit_autovacuum ) )) {
       freePage(pPage, (&rc));
     }  
-    if (((id2i.f_sqlite_omit_autovacuum ) )) {
+    if (((id2i_sqlite_omit_autovacuum ) )) {
       releasePage(pPage);
     }  
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (pBt->_1312_autoVacuum) {
         Pgno maxRootPgno;
         sqlite3BtreeGetMeta(p, 4, (&maxRootPgno));
@@ -22708,7 +22708,7 @@ static  void sqlite3BtreeGetMeta(Btree *p , int idx , u32 *pMeta )  {
   ((void ) 0);
   ((void ) 0);
   ((*pMeta) = sqlite3Get4byte((&pBt->pPage1->aData[(36 + (idx * 4))])));
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     if (((idx == 4) && ((*pMeta) > 0))) {
       (pBt->btsFlags |= 0x0001);
     }  
@@ -22726,7 +22726,7 @@ static  int sqlite3BtreeUpdateMeta(Btree *p , int idx , u32 iMeta )  {
   (rc = sqlite3PagerWrite(pBt->pPage1->pDbPage));
   if ((rc == 0)) {
     sqlite3Put4byte((&pP1[(36 + (idx * 4))]), iMeta);
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if ((idx == 7)) {
         ((void ) 0);
         ((void ) 0);
@@ -22853,7 +22853,7 @@ static  void checkList(IntegrityCk *pCheck , int isFreeList , int iPage , int N 
       break;
     }  
     (pOvflData = ((unsigned  char *) sqlite3PagerGetData(pOvflPage)));
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (isFreeList) {
         int n =  sqlite3Get4byte((&pOvflData[4]));
         if (pCheck->pBt->_1312_autoVacuum) {
@@ -22881,7 +22881,7 @@ static  void checkList(IntegrityCk *pCheck , int isFreeList , int iPage , int N 
         }  
       }
     }  
-    if (((id2i.f_sqlite_omit_autovacuum ) )) {
+    if (((id2i_sqlite_omit_autovacuum ) )) {
       if (isFreeList) {
         int n =  sqlite3Get4byte((&pOvflData[4]));
         if ((n > ((((int ) pCheck->pBt->usableSize) / 4) - 2))) {
@@ -22958,7 +22958,7 @@ static  int checkTreePage(IntegrityCk *pCheck , int iPage , char *zParentContext
     if (((sz > info.nLocal) && ((&pCell[info.iOverflow]) <= (&pPage->aData[pBt->usableSize])))) {
       int nPage =  ((sz - info.nLocal + usableSize - 5) / (usableSize - 4));
       Pgno pgnoOvfl =  sqlite3Get4byte((&pCell[info.iOverflow]));
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         if (pBt->_1312_autoVacuum) {
           checkPtrmap(pCheck, pgnoOvfl, 3, iPage, zContext);
         }  
@@ -22967,7 +22967,7 @@ static  int checkTreePage(IntegrityCk *pCheck , int iPage , char *zParentContext
     }  
     if ((! pPage->leaf)) {
       (pgno = sqlite3Get4byte(pCell));
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         if (pBt->_1312_autoVacuum) {
           checkPtrmap(pCheck, pgno, 5, iPage, zContext);
         }  
@@ -22982,7 +22982,7 @@ static  int checkTreePage(IntegrityCk *pCheck , int iPage , char *zParentContext
   if ((! pPage->leaf)) {
     (pgno = sqlite3Get4byte((&pPage->aData[(pPage->hdrOffset + 8)])));
     sqlite3_snprintf(sizeof(zContext), zContext, "On page %d at right child: ", iPage);
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (pBt->_1312_autoVacuum) {
         checkPtrmap(pCheck, pgno, 5, iPage, zContext);
       }  
@@ -23107,7 +23107,7 @@ static  char *sqlite3BtreeIntegrityCheck(Btree *p , int *aRoot , int nRoot , int
     if ((aRoot[i] == 0)) {
       continue;
     }  
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if ((pBt->_1312_autoVacuum && (aRoot[i] > 1))) {
         checkPtrmap((&sCheck), aRoot[i], 1, 0, 0);
       }  
@@ -23115,28 +23115,28 @@ static  char *sqlite3BtreeIntegrityCheck(Btree *p , int *aRoot , int nRoot , int
     checkTreePage((&sCheck), aRoot[i], "List of tree roots: ", ((void *) 0), ((void *) 0));
   }
   for ((i = 1); ((i <= sCheck.nPage) && sCheck.mxErr); i++) {
-    if (((id2i.f_sqlite_omit_autovacuum ) )) {
+    if (((id2i_sqlite_omit_autovacuum ) )) {
       if ((getPageReferenced((&sCheck), i) == 0)) {
         checkAppendMsg((&sCheck), 0, "Page %d is never used", i);
       }  
     }  
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (((getPageReferenced((&sCheck), i) == 0) && ((ptrmapPageno(pBt, i) != i) || (! pBt->_1312_autoVacuum)))) {
         checkAppendMsg((&sCheck), 0, "Page %d is never used", i);
       }  
     }  
-    if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+    if ((((! id2i_sqlite_omit_autovacuum) ) )) {
       if (((getPageReferenced((&sCheck), i) != 0) && ((ptrmapPageno(pBt, i) == i) && pBt->_1312_autoVacuum))) {
         checkAppendMsg((&sCheck), 0, "Pointer map page %d is referenced", i);
       }  
     }  
   }
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       checkAppendMsg((&sCheck), 0, "Outstanding page count goes from %d to %d during this analysis", nRef, sqlite3PagerRefcount(pBt->pPager));
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((nRef != sqlite3PagerRefcount(pBt->pPager))) {
       checkAppendMsg((&sCheck), 0, "Outstanding page count goes from %d to %d during this analysis", nRef, sqlite3PagerRefcount(pBt->pPager));
     }  
@@ -23358,10 +23358,10 @@ sqlite3_backup *sqlite3_backup_init(sqlite3 *pDestDb , const  char *zDestDb , sq
   return p;
 }
 static  int isFatalError(int rc )  {
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     return ((rc != 0) && (rc != 5) && (rc != 6));
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     return ((rc != 0) && (rc != 5) && 1);
   }  
 }
@@ -23560,16 +23560,16 @@ int sqlite3_backup_step(sqlite3_backup *p , int nPage )  {
     }  
     if (bCloseTrans) {
       int _1267_rc2;
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         (_1267_rc2 = sqlite3BtreeCommitPhaseOne(p->pSrc, 0));
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         sqlite3BtreeCommitPhaseOne(p->pSrc, 0);
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         (_1267_rc2 |= sqlite3BtreeCommitPhaseTwo(p->pSrc, 0));
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         sqlite3BtreeCommitPhaseTwo(p->pSrc, 0);
       }  
       ((void ) 0);
@@ -23806,7 +23806,7 @@ static  int sqlite3VdbeMemStringify(Mem *pMem , int enc )  {
 }
 static  int sqlite3VdbeMemFinalize(Mem *pMem , FuncDef *pFunc )  {
   int rc =  0;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       sqlite3_context ctx;
       ((void ) 0);
@@ -23823,7 +23823,7 @@ static  int sqlite3VdbeMemFinalize(Mem *pMem , FuncDef *pFunc )  {
       (rc = ctx.isError);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pFunc && pFunc->xFinalize)) {
       sqlite3_context ctx;
       ((void ) 0);
@@ -23901,7 +23901,7 @@ static  i64 sqlite3VdbeIntValue(Mem *pMem )  {
   else if ((flags & (0x0002 | 0x0010))) {
     i64 value =  0;
     ((void ) 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pMem->z == 0)) {
         sqlite3Coverage(59468);
       }  
@@ -23938,12 +23938,12 @@ static  void sqlite3VdbeIntegerAffinity(Mem *pMem )  {
   ((void ) 0);
   ((void ) 0);
   (pMem->u.i = doubleToInt64(pMem->r));
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pMem->r == ((double ) pMem->u.i)) && (pMem->u.i > (((i64 ) (- 1)) - (0xffffffff | (((i64 ) 0x7fffffff) << 32)))) && (pMem->u.i < (0xffffffff | (((i64 ) 0x7fffffff) << 32))))) {
       (pMem->flags |= 0x0004);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((pMem->r == ((double ) pMem->u.i)) && (pMem->u.i > (((i64 ) (- 1)) - (0xffffffff | (((i64 ) 0x7fffffff) << 32)))) && 1)) {
       (pMem->flags |= 0x0004);
     }  
@@ -24346,12 +24346,12 @@ static  int valueFromExpr(sqlite3 *db , Expr *pExpr , u8 enc , u8 affinity , sql
     return 0;
   }  
   (op = pExpr->op);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       (op = pExpr->op2);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((op == 132)) {
       (op = pExpr->op2);
     }  
@@ -24416,7 +24416,7 @@ static  int valueFromExpr(sqlite3 *db , Expr *pExpr , u8 enc , u8 affinity , sql
     }  
   }
   
-  else if (((((! id2i.f_sqlite_omit_blob_literal) ) ) && (op == 131))) {
+  else if (((((! id2i_sqlite_omit_blob_literal) ) ) && (op == 131))) {
     int nVal;
     ((void ) 0);
     ((void ) 0);
@@ -24545,10 +24545,10 @@ static  int sqlite3VdbeAddOp3(Vdbe *p , int op , int p1 , int p2 , int p3 )  {
   (pOp->p3 = p3);
   (pOp->p4.p = 0);
   (pOp->p4type = 0);
-  if (((id2i.f_vdbe_profile ) )) {
+  if (((id2i_vdbe_profile ) )) {
     (pOp->_1269_cycles = 0);
   }  
-  if (((id2i.f_vdbe_profile ) )) {
+  if (((id2i_vdbe_profile ) )) {
     (pOp->_1269_cnt = 0);
   }  
   return i;
@@ -24703,7 +24703,7 @@ static  int sqlite3VdbeAddOpList(Vdbe *p , int nOp , VdbeOpList  const *aOp )  {
     return 0;
   }  
   (addr = p->nOp);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       int i;
       VdbeOpList const *pIn =  aOp;
@@ -24726,7 +24726,7 @@ static  int sqlite3VdbeAddOpList(Vdbe *p , int nOp , VdbeOpList  const *aOp )  {
       (p->nOp += nOp);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((nOp > 0)) {
       int i;
       VdbeOpList const *pIn =  aOp;
@@ -24777,24 +24777,24 @@ static  void sqlite3VdbeChangeP5(Vdbe *p , u8 val )  {
   }  
 }
 static  void sqlite3VdbeJumpHere(Vdbe *p , int addr )  {
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       sqlite3VdbeChangeP2(p, addr, p->nOp);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((addr >= 0)) {
       sqlite3VdbeChangeP2(p, addr, p->nOp);
     }  
   }  
 }
 static  void freeEphemeralFunction(sqlite3 *db , FuncDef *pDef )  {
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((1 && ((pDef->funcFlags & 0x010) != 0))) {
       sqlite3DbFree(db, pDef);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pDef && ((pDef->funcFlags & 0x010) != 0))) {
       sqlite3DbFree(db, pDef);
     }  
@@ -25320,7 +25320,7 @@ static  void sqlite3VdbeRewind(Vdbe *p )  {
   (p->minWriteFileFormat = 255);
   (p->iStatement = 0);
   (p->nFkConstraint = 0);
-  if (((id2i.f_vdbe_profile ) )) {
+  if (((id2i_vdbe_profile ) )) {
     for ((_1269_i = 0); (_1269_i < p->nOp); _1269_i++) {
       (p->aOp[_1269_i]._1269_cnt = 0);
       (p->aOp[_1269_i]._1269_cycles = 0);
@@ -25477,23 +25477,23 @@ static  void sqlite3VdbeSetNumCols(Vdbe *p , int nResColumn )  {
   Mem *pColName;
   int n;
   sqlite3 *db =  p->db;
-  if ((((! id2i.f_sqlite_enable_column_metadata) && (! id2i.f_sqlite_omit_decltype)) )) {
+  if ((((! id2i_sqlite_enable_column_metadata) && (! id2i_sqlite_omit_decltype)) )) {
     releaseMemArray(p->aColName, (p->nResColumn * 2));
   }  
-  if ((((! id2i.f_sqlite_enable_column_metadata) && id2i.f_sqlite_omit_decltype) )) {
+  if ((((! id2i_sqlite_enable_column_metadata) && id2i_sqlite_omit_decltype) )) {
     releaseMemArray(p->aColName, (p->nResColumn * 1));
   }  
-  if (((id2i.f_sqlite_enable_column_metadata ) )) {
+  if (((id2i_sqlite_enable_column_metadata ) )) {
     releaseMemArray(p->aColName, (p->nResColumn * 5));
   }  
   sqlite3DbFree(db, p->aColName);
-  if ((((! id2i.f_sqlite_enable_column_metadata) && (! id2i.f_sqlite_omit_decltype)) )) {
+  if ((((! id2i_sqlite_enable_column_metadata) && (! id2i_sqlite_omit_decltype)) )) {
     (n = (nResColumn * 2));
   }  
-  if ((((! id2i.f_sqlite_enable_column_metadata) && id2i.f_sqlite_omit_decltype) )) {
+  if ((((! id2i_sqlite_enable_column_metadata) && id2i_sqlite_omit_decltype) )) {
     (n = (nResColumn * 1));
   }  
-  if (((id2i.f_sqlite_enable_column_metadata ) )) {
+  if (((id2i_sqlite_enable_column_metadata ) )) {
     (n = (nResColumn * 5));
   }  
   (p->nResColumn = ((u16 ) nResColumn));
@@ -25650,7 +25650,7 @@ static  int vdbeCommit(sqlite3 *db , Vdbe *p )  {
     if (rc) {
       return rc;
     }  
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3BeginBenignMalloc();
     }  
     for ((i = 0); (i < db->nDb); i++) {
@@ -25659,7 +25659,7 @@ static  int vdbeCommit(sqlite3 *db , Vdbe *p )  {
         sqlite3BtreeCommitPhaseTwo(pBt, 1);
       }  
     }
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3EndBenignMalloc();
     }  
     sqlite3VtabCommit(db);
@@ -25750,28 +25750,28 @@ static  int sqlite3VdbeHalt(Vdbe *p )  {
       }  
     }  
     if ((p->rc == 0)) {
-      if (((id2i.f_sqlite_omit_foreign_key ) )) {
+      if (((id2i_sqlite_omit_foreign_key ) )) {
         0;
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) ) )) {
         sqlite3VdbeCheckFk(p, 0);
       }  
     }  
     if (((! ((db->nVTrans > 0) && (db->aVTrans == 0))) && db->autoCommit && (db->nVdbeWrite == (p->readOnly == 0)))) {
       if (((p->rc == 0) || ((p->errorAction == 3) && (! isSpecialError)))) {
-        if (((id2i.f_sqlite_omit_foreign_key ) )) {
+        if (((id2i_sqlite_omit_foreign_key ) )) {
           (rc = 0);
         }  
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           (rc = sqlite3VdbeCheckFk(p, 1));
         }  
         if ((rc != 0)) {
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if (0) {
               return 1;
             }  
           }  
-          if ((((! id2i.f_sqlite_coverage_test) ) )) {
+          if ((((! id2i_sqlite_coverage_test) ) )) {
             if (p->readOnly) {
               return 1;
             }  
@@ -25866,11 +25866,11 @@ static  int sqlite3VdbeTransferError(Vdbe *p )  {
   int rc =  p->rc;
   if (p->zErrMsg) {
     u8 mallocFailed =  db->mallocFailed;
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3BeginBenignMalloc();
     }  
     sqlite3ValueSetStr(db->pErr, (- 1), p->zErrMsg, 1, ((sqlite3_destructor_type ) (- 1)));
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3EndBenignMalloc();
     }  
     (db->mallocFailed = mallocFailed);
@@ -25900,7 +25900,7 @@ static  int sqlite3VdbeReset(Vdbe *p )  {
     (p->zErrMsg = 0);
   } 
   Cleanup(p);
-  if (((id2i.f_vdbe_profile ) )) {
+  if (((id2i_vdbe_profile ) )) {
     FILE *out =  fopen("vdbe_profile.out", "a");
     if (out) {
       int i;
@@ -25950,13 +25950,13 @@ static  void sqlite3VdbeClearObject(sqlite3 *db , Vdbe *p )  {
   int i;
   ((void ) 0);
   releaseMemArray(p->aVar, p->nVar);
-  if ((((! id2i.f_sqlite_enable_column_metadata) && (! id2i.f_sqlite_omit_decltype)) )) {
+  if ((((! id2i_sqlite_enable_column_metadata) && (! id2i_sqlite_omit_decltype)) )) {
     releaseMemArray(p->aColName, (p->nResColumn * 2));
   }  
-  if ((((! id2i.f_sqlite_enable_column_metadata) && id2i.f_sqlite_omit_decltype) )) {
+  if ((((! id2i_sqlite_enable_column_metadata) && id2i_sqlite_omit_decltype) )) {
     releaseMemArray(p->aColName, (p->nResColumn * 1));
   }  
-  if (((id2i.f_sqlite_enable_column_metadata ) )) {
+  if (((id2i_sqlite_enable_column_metadata ) )) {
     releaseMemArray(p->aColName, (p->nResColumn * 5));
   }  
   for ((pSub = p->pProgram); pSub; (pSub = pNext)) {
@@ -25972,21 +25972,21 @@ static  void sqlite3VdbeClearObject(sqlite3 *db , Vdbe *p )  {
   sqlite3DbFree(db, p->aColName);
   sqlite3DbFree(db, p->zSql);
   sqlite3DbFree(db, p->pFree);
-  if (((id2i.f_sqlite_enable_tree_explain ) )) {
+  if (((id2i_sqlite_enable_tree_explain ) )) {
     sqlite3DbFree(db, p->_1276_zExplain);
   }  
-  if (((id2i.f_sqlite_enable_tree_explain ) )) {
+  if (((id2i_sqlite_enable_tree_explain ) )) {
     sqlite3DbFree(db, p->_1276_pExplain);
   }  
 }
 static  void sqlite3VdbeDelete(Vdbe *p )  {
   sqlite3 *db;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((p == 0)) {
       return;
     }  
@@ -26024,7 +26024,7 @@ static  int sqlite3VdbeCursorMoveto(VdbeCursor *p )  {
     (p->deferredMoveto = 0);
     (p->cacheStatus = 0);
   } 
-  else if ((((id2i.f_sqlite_coverage_test ) ) && 1)) {
+  else if ((((id2i_sqlite_coverage_test ) ) && 1)) {
     int hasMoved;
     int rc =  sqlite3BtreeCursorHasMoved(p->pCursor, (&hasMoved));
     if (rc) {
@@ -26036,7 +26036,7 @@ static  int sqlite3VdbeCursorMoveto(VdbeCursor *p )  {
     }  
   }
   
-  else if (((((! id2i.f_sqlite_coverage_test) ) ) && p->pCursor)) {
+  else if (((((! id2i_sqlite_coverage_test) ) ) && p->pCursor)) {
     int hasMoved;
     int rc =  sqlite3BtreeCursorHasMoved(p->pCursor, (&hasMoved));
     if (rc) {
@@ -26347,12 +26347,12 @@ static  int sqlite3VdbeIdxRowid(sqlite3 *db , BtCursor *pCur , i64 *rowid )  {
     return rc;
   }  
   ((void ) ((u8 ) (((*((u8 *) m.z)) < ((u8 ) 0x80)) ? (szHdr = ((u32 ) (*((u8 *) m.z)))), 1 : sqlite3GetVarint32(((u8 *) m.z), ((u32 *) (&szHdr))))));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((szHdr == 3)) {
       sqlite3Coverage(63661);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((szHdr == m.n)) {
       sqlite3Coverage(63662);
     }  
@@ -26361,42 +26361,42 @@ static  int sqlite3VdbeIdxRowid(sqlite3 *db , BtCursor *pCur , i64 *rowid )  {
     goto idx_rowid_corruption;
   }  
   ((void ) ((u8 ) (((*((u8 *) (&m.z[(szHdr - 1)]))) < ((u8 ) 0x80)) ? (typeRowid = ((u32 ) (*((u8 *) (&m.z[(szHdr - 1)]))))), 1 : sqlite3GetVarint32(((u8 *) (&m.z[(szHdr - 1)])), ((u32 *) (&typeRowid))))));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((typeRowid == 1)) {
       sqlite3Coverage(63670);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((typeRowid == 2)) {
       sqlite3Coverage(63671);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((typeRowid == 3)) {
       sqlite3Coverage(63672);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((typeRowid == 4)) {
       sqlite3Coverage(63673);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((typeRowid == 5)) {
       sqlite3Coverage(63674);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((typeRowid == 6)) {
       sqlite3Coverage(63675);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((typeRowid == 8)) {
       sqlite3Coverage(63676);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((typeRowid == 9)) {
       sqlite3Coverage(63677);
     }  
@@ -26405,7 +26405,7 @@ static  int sqlite3VdbeIdxRowid(sqlite3 *db , BtCursor *pCur , i64 *rowid )  {
     goto idx_rowid_corruption;
   }  
   (lenRowid = sqlite3VdbeSerialTypeLen(typeRowid));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((((u32 ) m.n) == (szHdr + lenRowid))) {
       sqlite3Coverage(63682);
     }  
@@ -26418,7 +26418,7 @@ static  int sqlite3VdbeIdxRowid(sqlite3 *db , BtCursor *pCur , i64 *rowid )  {
   sqlite3VdbeMemRelease((&m));
   return 0;
   idx_rowid_corruption:
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((m.zMalloc != 0)) {
       sqlite3Coverage(63696);
     }  
@@ -26735,7 +26735,7 @@ static  int sqlite3Step(Vdbe *p )  {
     }  
     (p->pc = 0);
   }  
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     if (p->explain) {
       (rc = sqlite3VdbeList(p));
     }  
@@ -26745,7 +26745,7 @@ static  int sqlite3Step(Vdbe *p )  {
       db->nVdbeExec--;
     }
   }  
-  if (((id2i.f_sqlite_omit_explain ) )) {
+  if (((id2i_sqlite_omit_explain ) )) {
     db->nVdbeExec++;
     (rc = _1319_sqlite3VdbeExec(p));
     db->nVdbeExec--;
@@ -26790,7 +26790,7 @@ int sqlite3_step(sqlite3_stmt *pStmt )  {
     (v->doingRerun = 1);
     ((void ) 0);
   }
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((rc2 != 0) && v->isPrepareV2 && db->pErr)) {
       const char *zErr =  ((const  char *) sqlite3_value_text(db->pErr));
       sqlite3DbFree(db, v->zErrMsg);
@@ -26804,7 +26804,7 @@ int sqlite3_step(sqlite3_stmt *pStmt )  {
       }
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((rc2 != 0) && 1 && 1)) {
       const char *zErr =  ((const  char *) sqlite3_value_text(db->pErr));
       sqlite3DbFree(db, v->zErrMsg);
@@ -26853,7 +26853,7 @@ void *sqlite3_aggregate_context(sqlite3_context *p , int nByte )  {
   ((void ) 0);
   ((void ) 0);
   (pMem = p->pMem);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nByte < 0)) {
       sqlite3Coverage(64420);
     }  
@@ -26946,12 +26946,12 @@ static  Mem *columnMem(sqlite3_stmt *pStmt , int i )  {
   }  
   else {
     static const Mem nullMem =  { 0,  "",  ((double ) 0),  { 0},  0,  0x0001,  5,  0,  0,  0};
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if ((pVm && pVm->db)) {
         sqlite3Error(pVm->db, 25, 0);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pVm && 1)) {
         sqlite3Error(pVm->db, 25, 0);
       }  
@@ -27342,17 +27342,17 @@ static  char *sqlite3VdbeExpandSql(Vdbe *p , const  char *zRawSql )  {
       }  
       else {
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((zRawSql[0] == ':')) {
             sqlite3Coverage(65270);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((zRawSql[0] == '$')) {
             sqlite3Coverage(65271);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((zRawSql[0] == '@')) {
             sqlite3Coverage(65272);
           }  
@@ -27413,7 +27413,7 @@ static  char *sqlite3VdbeExpandSql(Vdbe *p , const  char *zRawSql )  {
 static  void sqlite3ExplainBegin(Vdbe *pVdbe )  {
   if (pVdbe) {
     Explain *p;
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3BeginBenignMalloc();
     }  
     (p = ((Explain *) sqlite3MallocZero(sizeof(Explain ))));
@@ -27425,7 +27425,7 @@ static  void sqlite3ExplainBegin(Vdbe *pVdbe )  {
       (p->str.useMalloc = 2);
     }  
     else {
-      if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+      if ((((! id2i_sqlite_omit_builtin_test) ) )) {
         sqlite3EndBenignMalloc();
       }  
     }
@@ -27487,7 +27487,7 @@ static  void sqlite3ExplainFinish(Vdbe *pVdbe )  {
     (pVdbe->_1276_zExplain = sqlite3StrAccumFinish((&pVdbe->_1276_pExplain->str)));
     sqlite3_free(pVdbe->_1276_pExplain);
     (pVdbe->_1276_pExplain = 0);
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3EndBenignMalloc();
     }  
   }  
@@ -28047,7 +28047,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
   if (db->u1.isInterrupted) {
     goto _1319_abort_due_to_interrupt;
   }  
-  if (((id2i.f_sqlite_enable_iotrace ) )) {
+  if (((id2i_sqlite_enable_iotrace ) )) {
     sqlite3VdbeIOTraceSql(p);
   }  
   if (db->xProgress) {
@@ -28154,13 +28154,13 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         if (pOp->p4.z) {
           ((void ) 0);
           sqlite3SetString((&p->zErrMsg), db, "%s", pOp->p4.z);
-          if (((id2i.f_sqlite_coverage_test ) )) {
-            if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
+            if ((((! id2i_sqlite_default_memstatus) ) )) {
               if ((_1283_sqlite3Config.xLog != 0)) {
                 sqlite3Coverage(66838);
               }  
             }  
-            if (((id2i.f_sqlite_default_memstatus ) )) {
+            if (((id2i_sqlite_default_memstatus ) )) {
               if ((_1284_sqlite3Config.xLog != 0)) {
                 sqlite3Coverage(66838);
               }  
@@ -28169,13 +28169,13 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
           sqlite3_log(pOp->p1, "abort at %d in [%s]: %s", pc, p->zSql, pOp->p4.z);
         } 
         else if (p->rc) {
-          if (((id2i.f_sqlite_coverage_test ) )) {
-            if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
+            if ((((! id2i_sqlite_default_memstatus) ) )) {
               if ((_1283_sqlite3Config.xLog != 0)) {
                 sqlite3Coverage(66841);
               }  
             }  
-            if (((id2i.f_sqlite_default_memstatus ) )) {
+            if (((id2i_sqlite_default_memstatus ) )) {
               if ((_1284_sqlite3Config.xLog != 0)) {
                 sqlite3Coverage(66841);
               }  
@@ -28338,14 +28338,14 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           if ((0 != (rc = sqlite3VdbeCheckFk(p, 0)))) {
             ((void ) 0);
             ((void ) 0);
             break;
           }  
         }  
-        if (((id2i.f_sqlite_omit_foreign_key ) )) {
+        if (((id2i_sqlite_omit_foreign_key ) )) {
           if ((0 != (rc = 0))) {
             ((void ) 0);
             ((void ) 0);
@@ -28354,12 +28354,12 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         }  
         ((void ) 0);
         (rc = sqlite3VdbeCloseStatement(p, 1));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (0) {
             break;
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((rc != 0)) {
             break;
           }  
@@ -28682,7 +28682,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 141:
-      if ((((! id2i.f_sqlite_omit_cast) ) )) {
+      if ((((! id2i_sqlite_omit_cast) ) )) {
         (pIn1 = (&aMem[pOp->p1]));
         if ((pIn1->flags & 0x0001)) {
           break;
@@ -28695,13 +28695,13 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         (pIn1->flags &= (~ (0x0004 | 0x0008 | 0x0010 | 0x4000)));
         break;
       }  
-      if (((id2i.f_sqlite_omit_cast ) )) {
+      if (((id2i_sqlite_omit_cast ) )) {
         if ((pOp->opcode == 141)) {
           goto id2i_label_1;
         }  
       }  
       case 142:
-      if ((((! id2i.f_sqlite_omit_cast) ) )) {
+      if ((((! id2i_sqlite_omit_cast) ) )) {
         (pIn1 = (&aMem[pOp->p1]));
         if ((pIn1->flags & 0x0001)) {
           break;
@@ -28716,18 +28716,18 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         }
         break;
       }  
-      if (((id2i.f_sqlite_omit_cast ) )) {
+      if (((id2i_sqlite_omit_cast ) )) {
         if ((pOp->opcode == 142)) {
           goto id2i_label_1;
         }  
       }  
       case 143:
-      if ((((! id2i.f_sqlite_omit_cast) ) )) {
+      if ((((! id2i_sqlite_omit_cast) ) )) {
         (pIn1 = (&aMem[pOp->p1]));
         sqlite3VdbeMemNumerify(pIn1);
         break;
       }  
-      if (((id2i.f_sqlite_omit_cast ) )) {
+      if (((id2i_sqlite_omit_cast ) )) {
         if ((pOp->opcode == 143)) {
           goto id2i_label_1;
         }  
@@ -28741,14 +28741,14 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 145:
-      if ((((! id2i.f_sqlite_omit_cast) ) )) {
+      if ((((! id2i_sqlite_omit_cast) ) )) {
         (pIn1 = (&aMem[pOp->p1]));
         if (((pIn1->flags & 0x0001) == 0)) {
           sqlite3VdbeMemRealify(pIn1);
         }  
         break;
       }  
-      if (((id2i.f_sqlite_omit_cast ) )) {
+      if (((id2i_sqlite_omit_cast ) )) {
         if ((pOp->opcode == 145)) {
           goto id2i_label_1;
         }  
@@ -29026,7 +29026,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             ((void ) 0);
           }
         } 
-        else if ((((id2i.f_sqlite_coverage_test ) ) && 1)) {
+        else if ((((id2i_sqlite_coverage_test ) ) && 1)) {
           (u.ao.pReg = (&aMem[u.ao.pC->pseudoTableReg]));
           if (u.ao.pC->multiPseudo) {
             sqlite3VdbeMemShallowCopy(u.ao.pDest, (u.ao.pReg + u.ao.p2), 0x1000);
@@ -29043,7 +29043,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
           ((void ) 0);
         }
         
-        else if (((((! id2i.f_sqlite_coverage_test) ) ) && (u.ao.pC->pseudoTableReg > 0))) {
+        else if (((((! id2i_sqlite_coverage_test) ) ) && (u.ao.pC->pseudoTableReg > 0))) {
           (u.ao.pReg = (&aMem[u.ao.pC->pseudoTableReg]));
           if (u.ao.pC->multiPseudo) {
             sqlite3VdbeMemShallowCopy(u.ao.pDest, (u.ao.pReg + u.ao.p2), 0x1000);
@@ -29280,7 +29280,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
       case 44:
       {
         (u.ar.pCrsr = p->apCsr[pOp->p1]->pCursor);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (rc = sqlite3BtreeCount(u.ar.pCrsr, (&u.ar.nEntry)));
           }  
@@ -29288,7 +29288,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             (u.ar.nEntry = 0);
           }
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if (u.ar.pCrsr) {
             (rc = sqlite3BtreeCount(u.ar.pCrsr, (&u.ar.nEntry)));
           }  
@@ -29354,12 +29354,12 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
           else {
             int isTransaction =  ((u.as.pSavepoint->pNext == 0) && db->isTransactionSavepoint);
             if ((isTransaction && (u.as.p1 == 1))) {
-              if (((id2i.f_sqlite_omit_foreign_key ) )) {
+              if (((id2i_sqlite_omit_foreign_key ) )) {
                 if (((rc = 0) != 0)) {
                   goto _1319_vdbe_return;
                 }  
               }  
-              if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+              if ((((! id2i_sqlite_omit_foreign_key) ) )) {
                 if (((rc = sqlite3VdbeCheckFk(p, 1)) != 0)) {
                   goto _1319_vdbe_return;
                 }  
@@ -29440,11 +29440,11 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             sqlite3RollbackAll(db, (4 | (2 << 8)));
             (db->autoCommit = 1);
           } 
-          else if ((((id2i.f_sqlite_omit_foreign_key ) ) && ((rc = 0) != 0))) {
+          else if ((((id2i_sqlite_omit_foreign_key ) ) && ((rc = 0) != 0))) {
             goto _1319_vdbe_return;
           }
           
-          else if (((((! id2i.f_sqlite_omit_foreign_key) ) ) && ((rc = sqlite3VdbeCheckFk(p, 1)) != 0))) {
+          else if (((((! id2i_sqlite_omit_foreign_key) ) ) && ((rc = sqlite3VdbeCheckFk(p, 1)) != 0))) {
             goto _1319_vdbe_return;
           } 
           else {
@@ -29611,13 +29611,13 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
           ((void ) 0);
           sqlite3VdbeMemIntegerify(pIn2);
           (u.ay.p2 = ((int ) pIn2->u.i));
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if (0) {
               (rc = sqlite3CorruptError(69234));
               goto _1319_abort_due_to_error;
             }  
           }  
-          if ((((! id2i.f_sqlite_coverage_test) ) )) {
+          if ((((! id2i_sqlite_coverage_test) ) )) {
             if ((u.ay.p2 < 2)) {
               (rc = sqlite3CorruptError(69234));
               goto _1319_abort_due_to_error;
@@ -29731,7 +29731,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (u.bc.oc = pOp->opcode);
             (u.bc.pC->nullRow = 0);
@@ -29848,7 +29848,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             (pc = (pOp->p2 - 1));
           }
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bc.pC->pCursor != 0)) {
             (u.bc.oc = pOp->opcode);
             (u.bc.pC->nullRow = 0);
@@ -29972,7 +29972,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         (u.bd.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             ((void ) 0);
             (u.bd.pC->nullRow = 0);
@@ -29982,7 +29982,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             (u.bd.pC->deferredMoveto = 1);
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bd.pC->pCursor != 0)) {
             ((void ) 0);
             (u.bd.pC->nullRow = 0);
@@ -30003,7 +30003,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         (u.be.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
         (pIn3 = (&aMem[pOp->p3]));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             ((void ) 0);
             if ((pOp->p4.i > 0)) {
@@ -30035,7 +30035,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             (u.be.pC->cacheStatus = 0);
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.be.pC->pCursor != 0)) {
             ((void ) 0);
             if ((pOp->p4.i > 0)) {
@@ -30127,7 +30127,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         (u.bg.pCrsr = u.bg.pC->pCursor);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (u.bg.res = 0);
             (u.bg.iKey = pIn3->u.i);
@@ -30149,7 +30149,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             (u.bg.pC->seekResult = 0);
           }
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bg.pCrsr != 0)) {
             (u.bg.res = 0);
             (u.bg.iKey = pIn3->u.i);
@@ -30187,7 +30187,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         (u.bh.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (0) {
             
           }  
@@ -30269,7 +30269,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             (u.bh.pC->cacheStatus = 0);
           }
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bh.pC->pCursor == 0)) {
             
           }  
@@ -30424,12 +30424,12 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         }  
         ((void ) 0);
         (rc = sqlite3VdbeCursorMoveto(u.bj.pC));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (0) {
             goto _1319_abort_due_to_error;
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((rc != 0)) {
             goto _1319_abort_due_to_error;
           }  
@@ -30490,12 +30490,12 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         (rc = sqlite3VdbeCursorMoveto(u.bm.pC));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (0) {
             goto _1319_abort_due_to_error;
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((rc != 0)) {
             goto _1319_abort_due_to_error;
           }  
@@ -30588,12 +30588,12 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         (u.bp.pCrsr = u.bp.pC->pCursor);
         (u.bp.res = 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (rc = sqlite3BtreeLast(u.bp.pCrsr, (&u.bp.res)));
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bp.pCrsr != 0)) {
             (rc = sqlite3BtreeLast(u.bp.pCrsr, (&u.bp.res)));
           }  
@@ -30679,7 +30679,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         (pIn2 = (&aMem[pOp->p2]));
         ((void ) 0);
         (u.bs.pCrsr = u.bs.pC->pCursor);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             ((void ) 0);
             (rc = ((pIn2->flags & 0x4000) ? sqlite3VdbeMemExpandBlob(pIn2) : 0));
@@ -30697,7 +30697,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             }  
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bs.pCrsr != 0)) {
             ((void ) 0);
             (rc = ((pIn2->flags & 0x4000) ? sqlite3VdbeMemExpandBlob(pIn2) : 0));
@@ -30725,7 +30725,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         (u.bt.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
         (u.bt.pCrsr = u.bt.pC->pCursor);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (u.bt.r.pKeyInfo = u.bt.pC->pKeyInfo);
             (u.bt.r.nField = ((u16 ) pOp->p3));
@@ -30739,7 +30739,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             (u.bt.pC->cacheStatus = 0);
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bt.pCrsr != 0)) {
             (u.bt.r.pKeyInfo = u.bt.pC->pKeyInfo);
             (u.bt.r.nField = ((u16 ) pOp->p3));
@@ -30762,7 +30762,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         (u.bu.pCrsr = u.bu.pC->pCursor);
         (pOut->flags = 0x0001);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (rc = sqlite3VdbeCursorMoveto(u.bu.pC));
             if (0) {
@@ -30780,7 +30780,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             }  
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bu.pCrsr != 0)) {
             (rc = sqlite3VdbeCursorMoveto(u.bu.pC));
             if (rc) {
@@ -30807,7 +30807,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         (u.bv.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             ((void ) 0);
             ((void ) 0);
@@ -30834,7 +30834,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             }  
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bv.pC->pCursor != 0)) {
             ((void ) 0);
             ((void ) 0);
@@ -30884,7 +30884,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
           (rc = sqlite3BtreeDropTable(db->aDb[u.bw.iDb].pBt, pOp->p1, (&u.bw.iMoved)));
           (pOut->flags = 0x0004);
           (pOut->u.i = u.bw.iMoved);
-          if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+          if ((((! id2i_sqlite_omit_autovacuum) ) )) {
             if (((rc == 0) && (u.bw.iMoved != 0))) {
               sqlite3RootPageMoved(db, u.bw.iDb, u.bw.iMoved, pOp->p1);
               ((void ) 0);
@@ -30965,12 +30965,12 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 113:
-      if ((((! id2i.f_sqlite_omit_analyze) ) )) {
+      if ((((! id2i_sqlite_omit_analyze) ) )) {
         ((void ) 0);
         (rc = sqlite3AnalysisLoad(db, pOp->p1));
         break;
       }  
-      if (((id2i.f_sqlite_omit_analyze ) )) {
+      if (((id2i_sqlite_omit_analyze ) )) {
         if ((pOp->opcode == 113)) {
           goto id2i_label_1;
         }  
@@ -31158,7 +31158,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 123:
-      if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) ) )) {
         if ((db->flags & 0x01000000)) {
           (db->nDeferredImmCons += pOp->p2);
         } 
@@ -31170,13 +31170,13 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         }
         break;
       }  
-      if (((id2i.f_sqlite_omit_foreign_key ) )) {
+      if (((id2i_sqlite_omit_foreign_key ) )) {
         if ((pOp->opcode == 123)) {
           goto id2i_label_1;
         }  
       }  
       case 124:
-      if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) ) )) {
         if (pOp->p1) {
           if (((db->nDeferredCons == 0) && (db->nDeferredImmCons == 0))) {
             (pc = (pOp->p2 - 1));
@@ -31189,7 +31189,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         }
         break;
       }  
-      if (((id2i.f_sqlite_omit_foreign_key ) )) {
+      if (((id2i_sqlite_omit_foreign_key ) )) {
         if ((pOp->opcode == 124)) {
           goto id2i_label_1;
         }  
@@ -31378,7 +31378,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 131:
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
@@ -31390,7 +31390,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         }  
         break;
       }  
-      if (((id2i.f_sqlite_omit_autovacuum ) )) {
+      if (((id2i_sqlite_omit_autovacuum ) )) {
         if ((pOp->opcode == 131)) {
           goto id2i_label_1;
         }  
@@ -31559,17 +31559,17 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((u.cq.pName->enc == 1)) {
             sqlite3Coverage(72107);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((u.cq.pName->enc == 3)) {
             sqlite3Coverage(72108);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((u.cq.pName->enc == 2)) {
             sqlite3Coverage(72109);
           }  
@@ -31590,7 +31590,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         (u.cr.pModule = ((sqlite3_module *) u.cr.pVtab->pModule));
         (u.cr.nArg = pOp->p2);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             u8 vtabOnConflict =  db->vtabOnConflict;
             (u.cr.apArg = p->apArg);
@@ -31622,7 +31622,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
             }
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if (u.cr.pModule->xUpdate) {
             u8 vtabOnConflict =  db->vtabOnConflict;
             (u.cr.apArg = p->apArg);
@@ -31657,17 +31657,17 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 146:
-      if ((((! id2i.f_sqlite_omit_pager_pragmas) ) )) {
+      if ((((! id2i_sqlite_omit_pager_pragmas) ) )) {
         (pOut->u.i = sqlite3BtreeLastPage(db->aDb[pOp->p1].pBt));
         break;
       }  
-      if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
+      if (((id2i_sqlite_omit_pager_pragmas ) )) {
         if ((pOp->opcode == 146)) {
           goto id2i_label_1;
         }  
       }  
       case 147:
-      if ((((! id2i.f_sqlite_omit_pager_pragmas) ) )) {
+      if ((((! id2i_sqlite_omit_pager_pragmas) ) )) {
         unsigned int newMax;
         Btree *pBt;
         (pBt = db->aDb[pOp->p1].pBt);
@@ -31681,7 +31681,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
         (pOut->u.i = sqlite3BtreeMaxPageCount(pBt, newMax));
         break;
       }  
-      if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
+      if (((id2i_sqlite_omit_pager_pragmas ) )) {
         if ((pOp->opcode == 147)) {
           goto id2i_label_1;
         }  
@@ -31706,13 +31706,13 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
   _1319_vdbe_error_halt:
   ((void ) 0);
   (p->rc = rc);
-  if (((id2i.f_sqlite_coverage_test ) )) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       if ((_1283_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(72329);
       }  
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       if ((_1284_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(72329);
       }  
@@ -31729,7 +31729,7 @@ static  int _1319_sqlite3VdbeExec(Vdbe *p )  {
   }  
   _1319_vdbe_return:
   (db->lastRowid = lastRowid);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nVmStep > 0)) {
       sqlite3Coverage(72344);
     }  
@@ -32213,7 +32213,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
   if (db->u1.isInterrupted) {
     goto _1269_abort_due_to_interrupt;
   }  
-  if (((id2i.f_sqlite_enable_iotrace ) )) {
+  if (((id2i_sqlite_enable_iotrace ) )) {
     sqlite3VdbeIOTraceSql(p);
   }  
   if (db->xProgress) {
@@ -32232,10 +32232,10 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
       goto _1269_no_mem;
     }  
     (origPc = pc);
-    if ((((! id2i.f_i386) && (! id2i.f___i386__) && id2i.f__m_ix86) || ((! id2i.f_i386) && id2i.f___i386__) || (id2i.f_i386 ))) {
+    if ((((! id2i_i386) && (! id2i___i386__) && id2i__m_ix86) || ((! id2i_i386) && id2i___i386__) || (id2i_i386 ))) {
       (start = _1317_sqlite3Hwtime());
     }  
-    if ((((! id2i.f_i386) && (! id2i.f___i386__) && (! id2i.f__m_ix86)) )) {
+    if ((((! id2i_i386) && (! id2i___i386__) && (! id2i__m_ix86)) )) {
       (start = _1318_sqlite3Hwtime());
     }  
     nVmStep++;
@@ -32327,13 +32327,13 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         if (pOp->p4.z) {
           ((void ) 0);
           sqlite3SetString((&p->zErrMsg), db, "%s", pOp->p4.z);
-          if (((id2i.f_sqlite_coverage_test ) )) {
-            if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
+            if ((((! id2i_sqlite_default_memstatus) ) )) {
               if ((_1283_sqlite3Config.xLog != 0)) {
                 sqlite3Coverage(66838);
               }  
             }  
-            if (((id2i.f_sqlite_default_memstatus ) )) {
+            if (((id2i_sqlite_default_memstatus ) )) {
               if ((_1284_sqlite3Config.xLog != 0)) {
                 sqlite3Coverage(66838);
               }  
@@ -32342,13 +32342,13 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
           sqlite3_log(pOp->p1, "abort at %d in [%s]: %s", pc, p->zSql, pOp->p4.z);
         } 
         else if (p->rc) {
-          if (((id2i.f_sqlite_coverage_test ) )) {
-            if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
+            if ((((! id2i_sqlite_default_memstatus) ) )) {
               if ((_1283_sqlite3Config.xLog != 0)) {
                 sqlite3Coverage(66841);
               }  
             }  
-            if (((id2i.f_sqlite_default_memstatus ) )) {
+            if (((id2i_sqlite_default_memstatus ) )) {
               if ((_1284_sqlite3Config.xLog != 0)) {
                 sqlite3Coverage(66841);
               }  
@@ -32511,14 +32511,14 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           if ((0 != (rc = sqlite3VdbeCheckFk(p, 0)))) {
             ((void ) 0);
             ((void ) 0);
             break;
           }  
         }  
-        if (((id2i.f_sqlite_omit_foreign_key ) )) {
+        if (((id2i_sqlite_omit_foreign_key ) )) {
           if ((0 != (rc = 0))) {
             ((void ) 0);
             ((void ) 0);
@@ -32527,12 +32527,12 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         }  
         ((void ) 0);
         (rc = sqlite3VdbeCloseStatement(p, 1));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (0) {
             break;
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((rc != 0)) {
             break;
           }  
@@ -32855,7 +32855,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 141:
-      if ((((! id2i.f_sqlite_omit_cast) ) )) {
+      if ((((! id2i_sqlite_omit_cast) ) )) {
         (pIn1 = (&aMem[pOp->p1]));
         if ((pIn1->flags & 0x0001)) {
           break;
@@ -32868,13 +32868,13 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         (pIn1->flags &= (~ (0x0004 | 0x0008 | 0x0010 | 0x4000)));
         break;
       }  
-      if (((id2i.f_sqlite_omit_cast ) )) {
+      if (((id2i_sqlite_omit_cast ) )) {
         if ((pOp->opcode == 141)) {
           goto id2i_label_1;
         }  
       }  
       case 142:
-      if ((((! id2i.f_sqlite_omit_cast) ) )) {
+      if ((((! id2i_sqlite_omit_cast) ) )) {
         (pIn1 = (&aMem[pOp->p1]));
         if ((pIn1->flags & 0x0001)) {
           break;
@@ -32889,18 +32889,18 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         }
         break;
       }  
-      if (((id2i.f_sqlite_omit_cast ) )) {
+      if (((id2i_sqlite_omit_cast ) )) {
         if ((pOp->opcode == 142)) {
           goto id2i_label_1;
         }  
       }  
       case 143:
-      if ((((! id2i.f_sqlite_omit_cast) ) )) {
+      if ((((! id2i_sqlite_omit_cast) ) )) {
         (pIn1 = (&aMem[pOp->p1]));
         sqlite3VdbeMemNumerify(pIn1);
         break;
       }  
-      if (((id2i.f_sqlite_omit_cast ) )) {
+      if (((id2i_sqlite_omit_cast ) )) {
         if ((pOp->opcode == 143)) {
           goto id2i_label_1;
         }  
@@ -32914,14 +32914,14 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 145:
-      if ((((! id2i.f_sqlite_omit_cast) ) )) {
+      if ((((! id2i_sqlite_omit_cast) ) )) {
         (pIn1 = (&aMem[pOp->p1]));
         if (((pIn1->flags & 0x0001) == 0)) {
           sqlite3VdbeMemRealify(pIn1);
         }  
         break;
       }  
-      if (((id2i.f_sqlite_omit_cast ) )) {
+      if (((id2i_sqlite_omit_cast ) )) {
         if ((pOp->opcode == 145)) {
           goto id2i_label_1;
         }  
@@ -33199,7 +33199,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             ((void ) 0);
           }
         } 
-        else if ((((id2i.f_sqlite_coverage_test ) ) && 1)) {
+        else if ((((id2i_sqlite_coverage_test ) ) && 1)) {
           (u.ao.pReg = (&aMem[u.ao.pC->pseudoTableReg]));
           if (u.ao.pC->multiPseudo) {
             sqlite3VdbeMemShallowCopy(u.ao.pDest, (u.ao.pReg + u.ao.p2), 0x1000);
@@ -33216,7 +33216,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
           ((void ) 0);
         }
         
-        else if (((((! id2i.f_sqlite_coverage_test) ) ) && (u.ao.pC->pseudoTableReg > 0))) {
+        else if (((((! id2i_sqlite_coverage_test) ) ) && (u.ao.pC->pseudoTableReg > 0))) {
           (u.ao.pReg = (&aMem[u.ao.pC->pseudoTableReg]));
           if (u.ao.pC->multiPseudo) {
             sqlite3VdbeMemShallowCopy(u.ao.pDest, (u.ao.pReg + u.ao.p2), 0x1000);
@@ -33453,7 +33453,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
       case 44:
       {
         (u.ar.pCrsr = p->apCsr[pOp->p1]->pCursor);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (rc = sqlite3BtreeCount(u.ar.pCrsr, (&u.ar.nEntry)));
           }  
@@ -33461,7 +33461,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             (u.ar.nEntry = 0);
           }
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if (u.ar.pCrsr) {
             (rc = sqlite3BtreeCount(u.ar.pCrsr, (&u.ar.nEntry)));
           }  
@@ -33527,12 +33527,12 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
           else {
             int isTransaction =  ((u.as.pSavepoint->pNext == 0) && db->isTransactionSavepoint);
             if ((isTransaction && (u.as.p1 == 1))) {
-              if (((id2i.f_sqlite_omit_foreign_key ) )) {
+              if (((id2i_sqlite_omit_foreign_key ) )) {
                 if (((rc = 0) != 0)) {
                   goto _1269_vdbe_return;
                 }  
               }  
-              if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+              if ((((! id2i_sqlite_omit_foreign_key) ) )) {
                 if (((rc = sqlite3VdbeCheckFk(p, 1)) != 0)) {
                   goto _1269_vdbe_return;
                 }  
@@ -33613,11 +33613,11 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             sqlite3RollbackAll(db, (4 | (2 << 8)));
             (db->autoCommit = 1);
           } 
-          else if ((((id2i.f_sqlite_omit_foreign_key ) ) && ((rc = 0) != 0))) {
+          else if ((((id2i_sqlite_omit_foreign_key ) ) && ((rc = 0) != 0))) {
             goto _1269_vdbe_return;
           }
           
-          else if (((((! id2i.f_sqlite_omit_foreign_key) ) ) && ((rc = sqlite3VdbeCheckFk(p, 1)) != 0))) {
+          else if (((((! id2i_sqlite_omit_foreign_key) ) ) && ((rc = sqlite3VdbeCheckFk(p, 1)) != 0))) {
             goto _1269_vdbe_return;
           } 
           else {
@@ -33784,13 +33784,13 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
           ((void ) 0);
           sqlite3VdbeMemIntegerify(pIn2);
           (u.ay.p2 = ((int ) pIn2->u.i));
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if (0) {
               (rc = sqlite3CorruptError(69234));
               goto _1269_abort_due_to_error;
             }  
           }  
-          if ((((! id2i.f_sqlite_coverage_test) ) )) {
+          if ((((! id2i_sqlite_coverage_test) ) )) {
             if ((u.ay.p2 < 2)) {
               (rc = sqlite3CorruptError(69234));
               goto _1269_abort_due_to_error;
@@ -33904,7 +33904,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (u.bc.oc = pOp->opcode);
             (u.bc.pC->nullRow = 0);
@@ -34021,7 +34021,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             (pc = (pOp->p2 - 1));
           }
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bc.pC->pCursor != 0)) {
             (u.bc.oc = pOp->opcode);
             (u.bc.pC->nullRow = 0);
@@ -34145,7 +34145,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         (u.bd.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             ((void ) 0);
             (u.bd.pC->nullRow = 0);
@@ -34155,7 +34155,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             (u.bd.pC->deferredMoveto = 1);
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bd.pC->pCursor != 0)) {
             ((void ) 0);
             (u.bd.pC->nullRow = 0);
@@ -34176,7 +34176,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         (u.be.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
         (pIn3 = (&aMem[pOp->p3]));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             ((void ) 0);
             if ((pOp->p4.i > 0)) {
@@ -34208,7 +34208,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             (u.be.pC->cacheStatus = 0);
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.be.pC->pCursor != 0)) {
             ((void ) 0);
             if ((pOp->p4.i > 0)) {
@@ -34300,7 +34300,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         (u.bg.pCrsr = u.bg.pC->pCursor);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (u.bg.res = 0);
             (u.bg.iKey = pIn3->u.i);
@@ -34322,7 +34322,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             (u.bg.pC->seekResult = 0);
           }
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bg.pCrsr != 0)) {
             (u.bg.res = 0);
             (u.bg.iKey = pIn3->u.i);
@@ -34360,7 +34360,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         (u.bh.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (0) {
             
           }  
@@ -34442,7 +34442,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             (u.bh.pC->cacheStatus = 0);
           }
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bh.pC->pCursor == 0)) {
             
           }  
@@ -34597,12 +34597,12 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         }  
         ((void ) 0);
         (rc = sqlite3VdbeCursorMoveto(u.bj.pC));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (0) {
             goto _1269_abort_due_to_error;
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((rc != 0)) {
             goto _1269_abort_due_to_error;
           }  
@@ -34663,12 +34663,12 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         (rc = sqlite3VdbeCursorMoveto(u.bm.pC));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (0) {
             goto _1269_abort_due_to_error;
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((rc != 0)) {
             goto _1269_abort_due_to_error;
           }  
@@ -34761,12 +34761,12 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         (u.bp.pCrsr = u.bp.pC->pCursor);
         (u.bp.res = 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (rc = sqlite3BtreeLast(u.bp.pCrsr, (&u.bp.res)));
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bp.pCrsr != 0)) {
             (rc = sqlite3BtreeLast(u.bp.pCrsr, (&u.bp.res)));
           }  
@@ -34852,7 +34852,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         (pIn2 = (&aMem[pOp->p2]));
         ((void ) 0);
         (u.bs.pCrsr = u.bs.pC->pCursor);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             ((void ) 0);
             (rc = ((pIn2->flags & 0x4000) ? sqlite3VdbeMemExpandBlob(pIn2) : 0));
@@ -34870,7 +34870,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             }  
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bs.pCrsr != 0)) {
             ((void ) 0);
             (rc = ((pIn2->flags & 0x4000) ? sqlite3VdbeMemExpandBlob(pIn2) : 0));
@@ -34898,7 +34898,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         (u.bt.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
         (u.bt.pCrsr = u.bt.pC->pCursor);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (u.bt.r.pKeyInfo = u.bt.pC->pKeyInfo);
             (u.bt.r.nField = ((u16 ) pOp->p3));
@@ -34912,7 +34912,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             (u.bt.pC->cacheStatus = 0);
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bt.pCrsr != 0)) {
             (u.bt.r.pKeyInfo = u.bt.pC->pKeyInfo);
             (u.bt.r.nField = ((u16 ) pOp->p3));
@@ -34935,7 +34935,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         (u.bu.pCrsr = u.bu.pC->pCursor);
         (pOut->flags = 0x0001);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             (rc = sqlite3VdbeCursorMoveto(u.bu.pC));
             if (0) {
@@ -34953,7 +34953,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             }  
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bu.pCrsr != 0)) {
             (rc = sqlite3VdbeCursorMoveto(u.bu.pC));
             if (rc) {
@@ -34980,7 +34980,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         (u.bv.pC = p->apCsr[pOp->p1]);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             ((void ) 0);
             ((void ) 0);
@@ -35007,7 +35007,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             }  
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if ((u.bv.pC->pCursor != 0)) {
             ((void ) 0);
             ((void ) 0);
@@ -35057,7 +35057,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
           (rc = sqlite3BtreeDropTable(db->aDb[u.bw.iDb].pBt, pOp->p1, (&u.bw.iMoved)));
           (pOut->flags = 0x0004);
           (pOut->u.i = u.bw.iMoved);
-          if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+          if ((((! id2i_sqlite_omit_autovacuum) ) )) {
             if (((rc == 0) && (u.bw.iMoved != 0))) {
               sqlite3RootPageMoved(db, u.bw.iDb, u.bw.iMoved, pOp->p1);
               ((void ) 0);
@@ -35138,12 +35138,12 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 113:
-      if ((((! id2i.f_sqlite_omit_analyze) ) )) {
+      if ((((! id2i_sqlite_omit_analyze) ) )) {
         ((void ) 0);
         (rc = sqlite3AnalysisLoad(db, pOp->p1));
         break;
       }  
-      if (((id2i.f_sqlite_omit_analyze ) )) {
+      if (((id2i_sqlite_omit_analyze ) )) {
         if ((pOp->opcode == 113)) {
           goto id2i_label_1;
         }  
@@ -35331,7 +35331,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 123:
-      if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) ) )) {
         if ((db->flags & 0x01000000)) {
           (db->nDeferredImmCons += pOp->p2);
         } 
@@ -35343,13 +35343,13 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         }
         break;
       }  
-      if (((id2i.f_sqlite_omit_foreign_key ) )) {
+      if (((id2i_sqlite_omit_foreign_key ) )) {
         if ((pOp->opcode == 123)) {
           goto id2i_label_1;
         }  
       }  
       case 124:
-      if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) ) )) {
         if (pOp->p1) {
           if (((db->nDeferredCons == 0) && (db->nDeferredImmCons == 0))) {
             (pc = (pOp->p2 - 1));
@@ -35362,7 +35362,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         }
         break;
       }  
-      if (((id2i.f_sqlite_omit_foreign_key ) )) {
+      if (((id2i_sqlite_omit_foreign_key ) )) {
         if ((pOp->opcode == 124)) {
           goto id2i_label_1;
         }  
@@ -35551,7 +35551,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 131:
-      if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+      if ((((! id2i_sqlite_omit_autovacuum) ) )) {
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
@@ -35563,7 +35563,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         }  
         break;
       }  
-      if (((id2i.f_sqlite_omit_autovacuum ) )) {
+      if (((id2i_sqlite_omit_autovacuum ) )) {
         if ((pOp->opcode == 131)) {
           goto id2i_label_1;
         }  
@@ -35732,17 +35732,17 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((u.cq.pName->enc == 1)) {
             sqlite3Coverage(72107);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((u.cq.pName->enc == 3)) {
             sqlite3Coverage(72108);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((u.cq.pName->enc == 2)) {
             sqlite3Coverage(72109);
           }  
@@ -35763,7 +35763,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         (u.cr.pModule = ((sqlite3_module *) u.cr.pVtab->pModule));
         (u.cr.nArg = pOp->p2);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (1) {
             u8 vtabOnConflict =  db->vtabOnConflict;
             (u.cr.apArg = p->apArg);
@@ -35795,7 +35795,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
             }
           }  
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if (u.cr.pModule->xUpdate) {
             u8 vtabOnConflict =  db->vtabOnConflict;
             (u.cr.apArg = p->apArg);
@@ -35830,17 +35830,17 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         break;
       }
       case 146:
-      if ((((! id2i.f_sqlite_omit_pager_pragmas) ) )) {
+      if ((((! id2i_sqlite_omit_pager_pragmas) ) )) {
         (pOut->u.i = sqlite3BtreeLastPage(db->aDb[pOp->p1].pBt));
         break;
       }  
-      if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
+      if (((id2i_sqlite_omit_pager_pragmas ) )) {
         if ((pOp->opcode == 146)) {
           goto id2i_label_1;
         }  
       }  
       case 147:
-      if ((((! id2i.f_sqlite_omit_pager_pragmas) ) )) {
+      if ((((! id2i_sqlite_omit_pager_pragmas) ) )) {
         unsigned int newMax;
         Btree *pBt;
         (pBt = db->aDb[pOp->p1].pBt);
@@ -35854,7 +35854,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
         (pOut->u.i = sqlite3BtreeMaxPageCount(pBt, newMax));
         break;
       }  
-      if (((id2i.f_sqlite_omit_pager_pragmas ) )) {
+      if (((id2i_sqlite_omit_pager_pragmas ) )) {
         if ((pOp->opcode == 147)) {
           goto id2i_label_1;
         }  
@@ -35876,7 +35876,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
       }
     }
     {
-      u64 elapsed =  ((((! id2i.f_i386) && (! id2i.f___i386__) && (! id2i.f__m_ix86)) ) ? (_1318_sqlite3Hwtime() - start) : (_1317_sqlite3Hwtime() - start));
+      u64 elapsed =  ((((! id2i_i386) && (! id2i___i386__) && (! id2i__m_ix86)) ) ? (_1318_sqlite3Hwtime() - start) : (_1317_sqlite3Hwtime() - start));
       (pOp->_1269_cycles += elapsed);
       pOp->_1269_cnt++;
     }
@@ -35884,13 +35884,13 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
   _1269_vdbe_error_halt:
   ((void ) 0);
   (p->rc = rc);
-  if (((id2i.f_sqlite_coverage_test ) )) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       if ((_1283_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(72329);
       }  
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       if ((_1284_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(72329);
       }  
@@ -35907,7 +35907,7 @@ static  int _1269_sqlite3VdbeExec(Vdbe *p )  {
   }  
   _1269_vdbe_return:
   (db->lastRowid = lastRowid);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nVmStep > 0)) {
       sqlite3Coverage(72344);
     }  
@@ -36020,7 +36020,7 @@ int sqlite3_blob_open(sqlite3 *db , const  char *zDb , const  char *zTable , con
       (pTab = 0);
       sqlite3ErrorMsg(pParse, "cannot open virtual table: %s", zTable);
     }  
-    if ((((! id2i.f_sqlite_omit_view) ) )) {
+    if ((((! id2i_sqlite_omit_view) ) )) {
       if ((pTab && pTab->pSelect)) {
         (pTab = 0);
         sqlite3ErrorMsg(pParse, "cannot open view: %s", zTable);
@@ -36049,7 +36049,7 @@ int sqlite3_blob_open(sqlite3 *db , const  char *zDb , const  char *zTable , con
     if (flags) {
       const char *zFault =  0;
       Index *pIdx;
-      if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) ) )) {
         if ((db->flags & 0x00080000)) {
           FKey *pFKey;
           for ((pFKey = pTab->pFKey); pFKey; (pFKey = pFKey->pNextFrom)) {
@@ -36597,12 +36597,12 @@ static  void fileWriterWrite(FileWriter *p , u8 *pData , int nData )  {
 }
 static  int fileWriterFinish(sqlite3 *db , FileWriter *p , i64 *piEof )  {
   int rc;
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((p->eFWErr == 0) && p->aBuffer && (p->iBufEnd > p->iBufStart))) {
       (p->eFWErr = sqlite3OsWrite(p->pFile, (&p->aBuffer[p->iBufStart]), (p->iBufEnd - p->iBufStart), (p->iWriteOff + p->iBufStart)));
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((p->eFWErr == 0) && 1 && (p->iBufEnd > p->iBufStart))) {
       (p->eFWErr = sqlite3OsWrite(p->pFile, (&p->aBuffer[p->iBufStart]), (p->iBufEnd - p->iBufStart), (p->iWriteOff + p->iBufStart)));
     }  
@@ -36864,12 +36864,12 @@ static  int memjrnlRead(sqlite3_file *pJfd , void *zBuf , int iAmt , sqlite_int6
   ((void ) 0);
   if (((p->readpoint.iOffset != iOfst) || (iOfst == 0))) {
     sqlite3_int64 iOff =  0;
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       for ((pChunk = p->pFirst); (1 && ((iOff + ((int ) (1024 - sizeof(FileChunk *)))) <= iOfst)); (pChunk = pChunk->pNext)) {
         (iOff += ((int ) (1024 - sizeof(FileChunk *))));
       }
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       for ((pChunk = p->pFirst); (pChunk && ((iOff + ((int ) (1024 - sizeof(FileChunk *)))) <= iOfst)); (pChunk = pChunk->pNext)) {
         (iOff += ((int ) (1024 - sizeof(FileChunk *))));
       }
@@ -36969,12 +36969,12 @@ static  int sqlite3WalkExpr(Walker *pWalker , Expr *pExpr )  {
   if ((pExpr == 0)) {
     return 0;
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((pExpr->flags & 0x004000) != 0)) {
       sqlite3Coverage(74453);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((pExpr->flags & 0x002000) != 0)) {
       sqlite3Coverage(74454);
     }  
@@ -37041,7 +37041,7 @@ static  int sqlite3WalkSelectFrom(Walker *pWalker , Select *p )  {
   int i;
   struct  SrcList_item   *pItem;
   (pSrc = p->pSrc);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       for ((i = pSrc->nSrc), (pItem = pSrc->a); (i > 0); i--, pItem++) {
         if (sqlite3WalkSelect(pWalker, pItem->pSelect)) {
@@ -37050,7 +37050,7 @@ static  int sqlite3WalkSelectFrom(Walker *pWalker , Select *p )  {
       }
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pSrc) {
       for ((i = pSrc->nSrc), (pItem = pSrc->a); (i > 0); i--, pItem++) {
         if (sqlite3WalkSelect(pWalker, pItem->pSelect)) {
@@ -37081,12 +37081,12 @@ static  int sqlite3WalkSelect(Walker *pWalker , Select *p )  {
     }  
     if (pWalker->bSelectDepthFirst) {
       (rc = pWalker->xSelectCallback(pWalker, p));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (0) {
           break;
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if (rc) {
           break;
         }  
@@ -37163,12 +37163,12 @@ static  int nameInUsingClause(IdList *pUsing , const  char *zCol )  {
 }
 static  int sqlite3MatchSpanName(const  char *zSpan , const  char *zCol , const  char *zTab , const  char *zDb )  {
   int n;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     for ((n = 0); (1 && (zSpan[n] != '.')); n++) {
       
     }
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     for ((n = 0); (zSpan[n] && (zSpan[n] != '.')); n++) {
       
     }
@@ -37177,12 +37177,12 @@ static  int sqlite3MatchSpanName(const  char *zSpan , const  char *zCol , const 
     return 0;
   }  
   (zSpan += (n + 1));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     for ((n = 0); (1 && (zSpan[n] != '.')); n++) {
       
     }
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     for ((n = 0); (zSpan[n] && (zSpan[n] != '.')); n++) {
       
     }
@@ -37213,12 +37213,12 @@ static  int lookupName(Parse *pParse , const  char *zDb , const  char *zTab , co
   (pExpr->iTable = (- 1));
   (pExpr->pTab = 0);
   if (zDb) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pNC->ncFlags & 0x10)) {
         sqlite3Coverage(74811);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pNC->ncFlags & 0x04)) {
         sqlite3Coverage(74812);
       }  
@@ -37332,12 +37332,12 @@ static  int lookupName(Parse *pParse , const  char *zDb , const  char *zTab , co
             (pExpr->affinity = 'd');
           } 
           else if ((pExpr->iTable == 0)) {
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if ((iCol == 31)) {
                 sqlite3Coverage(74931);
               }  
             }  
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if ((iCol == 32)) {
                 sqlite3Coverage(74932);
               }  
@@ -37345,12 +37345,12 @@ static  int lookupName(Parse *pParse , const  char *zDb , const  char *zTab , co
             (pParse->oldmask |= ((iCol >= 32) ? 0xffffffff : (((u32 ) 1) << iCol)));
           } 
           else {
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if ((iCol == 31)) {
                 sqlite3Coverage(74935);
               }  
             }  
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if ((iCol == 32)) {
                 sqlite3Coverage(74936);
               }  
@@ -37416,7 +37416,7 @@ static  int lookupName(Parse *pParse , const  char *zDb , const  char *zTab , co
   }  
   if (((pExpr->iColumn >= 0) && (pMatch != 0))) {
     int n =  pExpr->iColumn;
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((n == (((int ) (sizeof(Bitmask ) * 8)) - 1))) {
         sqlite3Coverage(75050);
       }  
@@ -37463,12 +37463,12 @@ static  Expr *sqlite3CreateColumnExpr(sqlite3 *db , SrcList *pSrc , int iSrc , i
     }  
     else {
       (p->iColumn = ((ynVar ) iCol));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((iCol == ((int ) (sizeof(Bitmask ) * 8)))) {
           sqlite3Coverage(75099);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((iCol == (((int ) (sizeof(Bitmask ) * 8)) - 1))) {
           sqlite3Coverage(75100);
         }  
@@ -37550,7 +37550,7 @@ static  int resolveExprStep(Walker *pWalker , Expr *pExpr )  {
       const char *zId;
       FuncDef *pDef;
       u8 enc =  pParse->db->aDb[0].pSchema->enc;
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 155)) {
           sqlite3Coverage(75251);
         }  
@@ -37630,25 +37630,25 @@ static  int resolveExprStep(Walker *pWalker , Expr *pExpr )  {
       return 1;
     }
     case 116:
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((pExpr->op == 116)) {
         break;
       }  
     }  
     case 20:
-    if (((id2i.f_sqlite_coverage_test && (! id2i.f_sqlite_omit_subquery)) )) {
+    if (((id2i_sqlite_coverage_test && (! id2i_sqlite_omit_subquery)) )) {
       if ((pExpr->op == 20)) {
         sqlite3Coverage(75330);
       }  
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((pExpr->op == 20)) {
         break;
       }  
     }  
     case 72:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 72)) {
           sqlite3Coverage(75333);
         }  
@@ -38064,7 +38064,7 @@ static  char sqlite3ExprAffinity(Expr *pExpr )  {
     ((void ) 0);
     return sqlite3ExprAffinity(pExpr->x.pSelect->pEList->a[0].pExpr);
   }  
-  if ((((! id2i.f_sqlite_omit_cast) ) )) {
+  if ((((! id2i_sqlite_omit_cast) ) )) {
     if ((op == 37)) {
       ((void ) 0);
       return sqlite3AffinityType(pExpr->u.zToken, 0);
@@ -38136,7 +38136,7 @@ static  CollSeq *sqlite3ExprCollSeq(Parse *pParse , Expr *pExpr )  {
       break;
     }  
     if ((p->flags & 0x000100)) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((1 && ((p->pLeft->flags & 0x000100) != 0))) {
           (p = p->pLeft);
         }  
@@ -38144,7 +38144,7 @@ static  CollSeq *sqlite3ExprCollSeq(Parse *pParse , Expr *pExpr )  {
           (p = p->pRight);
         }
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if ((p->pLeft && ((p->pLeft->flags & 0x000100) != 0))) {
           (p = p->pLeft);
         }  
@@ -38439,22 +38439,22 @@ static  void sqlite3ExprAssignVarNumber(Parse *pParse , Expr *pExpr )  {
       i64 i;
       int bOk =  (0 == sqlite3Atoi64((&z[1]), (&i), (n - 1), 1));
       (pExpr->iColumn = (x = ((ynVar ) i)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 0)) {
           sqlite3Coverage(76643);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 1)) {
           sqlite3Coverage(76644);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == (db->aLimit[9] - 1))) {
           sqlite3Coverage(76645);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == db->aLimit[9])) {
           sqlite3Coverage(76646);
         }  
@@ -38837,12 +38837,12 @@ static  void sqlite3ExprListSetSpan(Parse *pParse , ExprList *pList , ExprSpan *
 }
 static  void sqlite3ExprListCheckLength(Parse *pParse , ExprList *pEList , const  char *zObject )  {
   int mx =  pParse->db->aLimit[2];
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pEList && (pEList->nExpr == mx))) {
       sqlite3Coverage(77165);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pEList && (pEList->nExpr == (mx + 1)))) {
       sqlite3Coverage(77166);
     }  
@@ -38880,22 +38880,22 @@ static  int exprNodeIsConstant(Walker *pWalker , Expr *pExpr )  {
     case 152:
     case 153:
     case 154:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pExpr->op == 26)) {
         sqlite3Coverage(77222);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pExpr->op == 152)) {
         sqlite3Coverage(77223);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pExpr->op == 153)) {
         sqlite3Coverage(77224);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pExpr->op == 154)) {
         sqlite3Coverage(77225);
       }  
@@ -38904,12 +38904,12 @@ static  int exprNodeIsConstant(Walker *pWalker , Expr *pExpr )  {
     return 2;
     id2i_label_1:
     default:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pExpr->op == 116)) {
         sqlite3Coverage(77229);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pExpr->op == 20)) {
         sqlite3Coverage(77230);
       }  
@@ -39058,12 +39058,12 @@ static  int isCandidateForInOpt(Select *p )  {
     return 0;
   }  
   if ((p->selFlags & (0x0001 | 0x0004))) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((p->selFlags & (0x0001 | 0x0004)) == 0x0001)) {
         sqlite3Coverage(77439);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((p->selFlags & (0x0001 | 0x0004)) == 0x0004)) {
         sqlite3Coverage(77440);
       }  
@@ -39087,12 +39087,12 @@ static  int isCandidateForInOpt(Select *p )  {
     return 0;
   }  
   (pTab = pSrc->a[0].pTab);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pTab == 0)) {
       return 0;
     }  
@@ -39122,7 +39122,7 @@ static  int sqlite3FindInIndex(Parse *pParse , Expr *pX , int *prNotFound )  {
   Vdbe *v =  sqlite3GetVdbe(pParse);
   ((void ) 0);
   (p = (((pX->flags & 0x000800) != 0) ? pX->x.pSelect : 0));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((1 && isCandidateForInOpt(p))) {
       sqlite3 *db =  pParse->db;
       Table *pTab;
@@ -39170,7 +39170,7 @@ static  int sqlite3FindInIndex(Parse *pParse , Expr *pX , int *prNotFound )  {
       }
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pParse->nErr == 0) && isCandidateForInOpt(p))) {
       sqlite3 *db =  pParse->db;
       Table *pTab;
@@ -39227,7 +39227,7 @@ static  int sqlite3FindInIndex(Parse *pParse , Expr *pX , int *prNotFound )  {
       sqlite3VdbeAddOp2(v, 24, 0, (*prNotFound));
     }  
     else {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pParse->nQueryLoop > 0)) {
           sqlite3Coverage(77636);
         }  
@@ -39249,12 +39249,12 @@ static  int sqlite3CodeSubselect(Parse *pParse , Expr *pExpr , int rMayHaveNull 
   int testAddr =  (- 1);
   int rReg =  0;
   Vdbe *v =  sqlite3GetVdbe(pParse);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((v == 0)) {
       return 0;
     }  
@@ -39263,7 +39263,7 @@ static  int sqlite3CodeSubselect(Parse *pParse , Expr *pExpr , int rMayHaveNull 
   if ((! ((pExpr->flags & 0x000020) != 0))) {
     (testAddr = sqlite3CodeOnce(pParse));
   }  
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     if ((pParse->explain == 2)) {
       char *zMsg =  sqlite3MPrintf(pParse->db, "EXECUTE %s%s SUBQUERY %d", ((testAddr >= 0) ? "" : "CORRELATED "), ((pExpr->op == 72) ? "LIST" : "SCALAR"), pParse->_1272_iNextSelectId);
       sqlite3VdbeAddOp4(v, 150, pParse->_1272_iSelectId, 0, 0, zMsg, (- 1));
@@ -39294,7 +39294,7 @@ static  int sqlite3CodeSubselect(Parse *pParse , Expr *pExpr , int rMayHaveNull 
         (dest.affSdst = ((u8 ) affinity));
         ((void ) 0);
         (pExpr->x.pSelect->iLimit = 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pKeyInfo == 0)) {
             sqlite3Coverage(77766);
           }  
@@ -39309,7 +39309,7 @@ static  int sqlite3CodeSubselect(Parse *pParse , Expr *pExpr , int rMayHaveNull 
         ((void ) 0);
         (pKeyInfo->aColl[0] = sqlite3BinaryCompareCollSeq(pParse, pExpr->pLeft, pEList->a[0].pExpr));
       } 
-      else if ((((id2i.f_sqlite_coverage_test ) ) && 1)) {
+      else if ((((id2i_sqlite_coverage_test ) ) && 1)) {
         int i;
         ExprList *pList =  pExpr->x.pList;
         struct  ExprList_item   *pItem;
@@ -39350,7 +39350,7 @@ static  int sqlite3CodeSubselect(Parse *pParse , Expr *pExpr , int rMayHaveNull 
         sqlite3ReleaseTempReg(pParse, r2);
       }
       
-      else if (((((! id2i.f_sqlite_coverage_test) ) ) && (pExpr->x.pList != 0))) {
+      else if (((((! id2i_sqlite_coverage_test) ) ) && (pExpr->x.pList != 0))) {
         int i;
         ExprList *pList =  pExpr->x.pList;
         struct  ExprList_item   *pItem;
@@ -39402,12 +39402,12 @@ static  int sqlite3CodeSubselect(Parse *pParse , Expr *pExpr , int rMayHaveNull 
     {
       Select *pSel;
       SelectDest dest;
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 20)) {
           sqlite3Coverage(77852);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 116)) {
           sqlite3Coverage(77853);
         }  
@@ -39496,7 +39496,7 @@ static  char *dup8bytes(Vdbe *v , const  char *in )  {
   return out;
 }
 static  void codeReal(Vdbe *v , const  char *z , int negateFlag , int iMem )  {
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       double value;
       char *zV;
@@ -39509,7 +39509,7 @@ static  void codeReal(Vdbe *v , const  char *z , int negateFlag , int iMem )  {
       sqlite3VdbeAddOp4(v, 130, 0, iMem, 0, zV, (- 12));
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((z != 0)) {
       double value;
       char *zV;
@@ -39567,12 +39567,12 @@ static  void sqlite3ExprCacheStore(Parse *pParse , int iTab , int iCol , int iRe
   struct  yColCache   *p;
   ((void ) 0);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     if (((pParse->db->dbOptFlags & 0x0002) != 0)) {
       return;
     }  
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     if (0) {
       return;
     }  
@@ -39596,7 +39596,7 @@ static  void sqlite3ExprCacheStore(Parse *pParse , int iTab , int iCol , int iRe
       (minLru = p->lru);
     }  
   }
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       (p = (&pParse->aColCache[idxLru]));
       (p->iLevel = pParse->iCacheLevel);
@@ -39608,7 +39608,7 @@ static  void sqlite3ExprCacheStore(Parse *pParse , int iTab , int iCol , int iRe
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((idxLru >= 0)) {
       (p = (&pParse->aColCache[idxLru]));
       (p->iLevel = pParse->iCacheLevel);
@@ -39805,7 +39805,7 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       break;
     }
     case 131:
-    if ((((! id2i.f_sqlite_omit_blob_literal) ) )) {
+    if ((((! id2i_sqlite_omit_blob_literal) ) )) {
       int n;
       const char *z;
       char *zBlob;
@@ -39819,7 +39819,7 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       sqlite3VdbeAddOp4(v, 25, (n / 2), target, 0, zBlob, (- 1));
       break;
     }  
-    if (((id2i.f_sqlite_omit_blob_literal ) )) {
+    if (((id2i_sqlite_omit_blob_literal ) )) {
       if ((op == 131)) {
         goto id2i_label_1;
       }  
@@ -39847,7 +39847,7 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       break;
     }
     case 37:
-    if ((((! id2i.f_sqlite_omit_cast) ) )) {
+    if ((((! id2i_sqlite_omit_cast) ) )) {
       int aff, to_op;
       (inReg = sqlite3ExprCodeTarget(pParse, pExpr->pLeft, target));
       ((void ) 0);
@@ -39858,27 +39858,27 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       ((void ) 0);
       ((void ) 0);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((to_op == 141)) {
           sqlite3Coverage(78490);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((to_op == 142)) {
           sqlite3Coverage(78491);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((to_op == 143)) {
           sqlite3Coverage(78492);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((to_op == 144)) {
           sqlite3Coverage(78493);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((to_op == 145)) {
           sqlite3Coverage(78494);
         }  
@@ -39888,7 +39888,7 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
         (inReg = target);
       }  
       sqlite3VdbeAddOp1(v, to_op, inReg);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (usedAsColumnCache(pParse, inReg, inReg)) {
           sqlite3Coverage(78500);
         }  
@@ -39896,7 +39896,7 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       sqlite3ExprCacheAffinityChange(pParse, inReg, 1);
       break;
     }  
-    if (((id2i.f_sqlite_omit_cast ) )) {
+    if (((id2i_sqlite_omit_cast ) )) {
       if ((op == 37)) {
         goto id2i_label_1;
       }  
@@ -39914,32 +39914,32 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       ((void ) 0);
       ((void ) 0);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 79)) {
           sqlite3Coverage(78517);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 78)) {
           sqlite3Coverage(78518);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 77)) {
           sqlite3Coverage(78519);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 80)) {
           sqlite3Coverage(78520);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 76)) {
           sqlite3Coverage(78521);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 75)) {
           sqlite3Coverage(78522);
         }  
@@ -39947,12 +39947,12 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr->pLeft, (&regFree1)));
       (r2 = sqlite3ExprCodeTemp(pParse, pExpr->pRight, (&regFree2)));
       codeCompare(pParse, pExpr->pLeft, pExpr->pRight, op, r1, r2, inReg, 0x10);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(78527);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree2 == 0)) {
           sqlite3Coverage(78528);
         }  
@@ -39962,12 +39962,12 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
     case 70:
     case 146:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 70)) {
           sqlite3Coverage(78533);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 146)) {
           sqlite3Coverage(78534);
         }  
@@ -39976,12 +39976,12 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       (r2 = sqlite3ExprCodeTemp(pParse, pExpr->pRight, (&regFree2)));
       (op = ((op == 70) ? 76 : 75));
       codeCompare(pParse, pExpr->pLeft, pExpr->pRight, op, r1, r2, inReg, (0x10 | 0x80));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(78540);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree2 == 0)) {
           sqlite3Coverage(78541);
         }  
@@ -40012,57 +40012,57 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       ((void ) 0);
       ((void ) 0);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 69)) {
           sqlite3Coverage(78567);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 68)) {
           sqlite3Coverage(78568);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 86)) {
           sqlite3Coverage(78569);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 87)) {
           sqlite3Coverage(78570);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 90)) {
           sqlite3Coverage(78571);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 82)) {
           sqlite3Coverage(78572);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 83)) {
           sqlite3Coverage(78573);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 89)) {
           sqlite3Coverage(78574);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 84)) {
           sqlite3Coverage(78575);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 85)) {
           sqlite3Coverage(78576);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 91)) {
           sqlite3Coverage(78577);
         }  
@@ -40070,12 +40070,12 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr->pLeft, (&regFree1)));
       (r2 = sqlite3ExprCodeTemp(pParse, pExpr->pRight, (&regFree2)));
       sqlite3VdbeAddOp3(v, op, r2, r1, target);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(78581);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree2 == 0)) {
           sqlite3Coverage(78582);
         }  
@@ -40098,7 +40098,7 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
         sqlite3VdbeAddOp2(v, 21, 0, r1);
         (r2 = sqlite3ExprCodeTemp(pParse, pExpr->pLeft, (&regFree2)));
         sqlite3VdbeAddOp3(v, 87, r2, r1, target);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((regFree2 == 0)) {
             sqlite3Coverage(78600);
           }  
@@ -40112,18 +40112,18 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
     {
       ((void ) 0);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 93)) {
           sqlite3Coverage(78609);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 19)) {
           sqlite3Coverage(78610);
         }  
       }  
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr->pLeft, (&regFree1)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(78612);
         }  
@@ -40138,19 +40138,19 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       int addr;
       ((void ) 0);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 73)) {
           sqlite3Coverage(78622);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 74)) {
           sqlite3Coverage(78623);
         }  
       }  
       sqlite3VdbeAddOp2(v, 21, 1, target);
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr->pLeft, (&regFree1)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(78626);
         }  
@@ -40185,12 +40185,12 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       u8 enc =  db->aDb[0].pSchema->enc;
       CollSeq *pColl =  0;
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 155)) {
           sqlite3Coverage(78655);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 151)) {
           sqlite3Coverage(78656);
         }  
@@ -40239,7 +40239,7 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
           if (((exprOp == 152) || (exprOp == 154))) {
             ((void ) 0);
             ((void ) 0);
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if (((pDef->funcFlags & (~ 0x003)) == 0x040)) {
                 sqlite3Coverage(78717);
               }  
@@ -40282,19 +40282,19 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       break;
     }
     case 20:
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((op == 20)) {
         goto id2i_label_1;
       }  
     }  
     case 116:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 20)) {
           sqlite3Coverage(78770);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 116)) {
           sqlite3Coverage(78771);
         }  
@@ -40302,13 +40302,13 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       (inReg = sqlite3CodeSubselect(pParse, pExpr, 0, 0));
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((op == 116)) {
         goto id2i_label_1;
       }  
     }  
     case 72:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       int destIfFalse =  sqlite3VdbeMakeLabel(v);
       int destIfNull =  sqlite3VdbeMakeLabel(v);
       sqlite3VdbeAddOp2(v, 24, 0, target);
@@ -40319,7 +40319,7 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       sqlite3VdbeResolveLabel(v, destIfNull);
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((op == 72)) {
         goto id2i_label_1;
       }  
@@ -40331,12 +40331,12 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       Expr *pRight =  pLItem->pExpr;
       (r1 = sqlite3ExprCodeTemp(pParse, pLeft, (&regFree1)));
       (r2 = sqlite3ExprCodeTemp(pParse, pRight, (&regFree2)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(78807);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree2 == 0)) {
           sqlite3Coverage(78808);
         }  
@@ -40348,7 +40348,7 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       (pRight = pLItem->pExpr);
       sqlite3ReleaseTempReg(pParse, regFree2);
       (r2 = sqlite3ExprCodeTemp(pParse, pRight, (&regFree2)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree2 == 0)) {
           sqlite3Coverage(78817);
         }  
@@ -40401,18 +40401,18 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
       (endLabel = sqlite3VdbeMakeLabel(v));
       if (((pX = pExpr->pLeft) != 0)) {
         (cacheX = (*pX));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pX->op == 152)) {
             sqlite3Coverage(78926);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pX->op == 132)) {
             sqlite3Coverage(78927);
           }  
         }  
         exprToRegister((&cacheX), sqlite3ExprCodeTemp(pParse, pX, (&regFree1)));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((regFree1 == 0)) {
             sqlite3Coverage(78929);
           }  
@@ -40432,18 +40432,18 @@ static  int sqlite3ExprCodeTarget(Parse *pParse , Expr *pExpr , int target )  {
           (pTest = aListelem[i].pExpr);
         }
         (nextCase = sqlite3VdbeMakeLabel(v));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pTest->op == 152)) {
             sqlite3Coverage(78948);
           }  
         }  
         sqlite3ExprIfFalse(pParse, pTest, nextCase, 0x08);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((aListelem[(i + 1)].pExpr->op == 152)) {
             sqlite3Coverage(78950);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((aListelem[(i + 1)].pExpr->op == 132)) {
             sqlite3Coverage(78951);
           }  
@@ -40521,7 +40521,7 @@ static  int sqlite3ExprCodeAndCache(Parse *pParse , Expr *pExpr , int target )  
   int inReg;
   (inReg = sqlite3ExprCode(pParse, pExpr, target));
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       int iMem;
       (iMem = ++pParse->nMem);
@@ -40529,7 +40529,7 @@ static  int sqlite3ExprCodeAndCache(Parse *pParse , Expr *pExpr , int target )  
       exprToRegister(pExpr, iMem);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pExpr->op != 132)) {
       int iMem;
       (iMem = ++pParse->nMem);
@@ -40591,11 +40591,11 @@ static  void sqlite3ExplainExpr(Vdbe *pOut , Expr *pExpr )  {
       break;
     }
     case 131:
-    if ((((! id2i.f_sqlite_omit_blob_literal) ) )) {
+    if ((((! id2i_sqlite_omit_blob_literal) ) )) {
       sqlite3ExplainPrintf(pOut, "%s", pExpr->u.zToken);
       break;
     }  
-    if (((id2i.f_sqlite_omit_blob_literal ) )) {
+    if (((id2i_sqlite_omit_blob_literal ) )) {
       if ((op == 131)) {
         break;
       }  
@@ -40616,7 +40616,7 @@ static  void sqlite3ExplainExpr(Vdbe *pOut , Expr *pExpr )  {
       break;
     }
     case 37:
-    if ((((! id2i.f_sqlite_omit_cast) ) )) {
+    if ((((! id2i_sqlite_omit_cast) ) )) {
       const char *zAff =  "unk";
       switch (sqlite3AffinityType(pExpr->u.zToken, 0)) {
         case 'a':
@@ -40640,7 +40640,7 @@ static  void sqlite3ExplainExpr(Vdbe *pOut , Expr *pExpr )  {
       sqlite3ExplainPrintf(pOut, ")");
       break;
     }  
-    if (((id2i.f_sqlite_omit_cast ) )) {
+    if (((id2i_sqlite_omit_cast ) )) {
       if ((op == 37)) {
         break;
       }  
@@ -40753,31 +40753,31 @@ static  void sqlite3ExplainExpr(Vdbe *pOut , Expr *pExpr )  {
       break;
     }
     case 20:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       sqlite3ExplainPrintf(pOut, "EXISTS(");
       sqlite3ExplainSelect(pOut, pExpr->x.pSelect);
       sqlite3ExplainPrintf(pOut, ")");
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((op == 20)) {
         break;
       }  
     }  
     case 116:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       sqlite3ExplainPrintf(pOut, "(");
       sqlite3ExplainSelect(pOut, pExpr->x.pSelect);
       sqlite3ExplainPrintf(pOut, ")");
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((op == 116)) {
         break;
       }  
     }  
     case 72:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       sqlite3ExplainPrintf(pOut, "IN(");
       sqlite3ExplainExpr(pOut, pExpr->pLeft);
       sqlite3ExplainPrintf(pOut, ",");
@@ -40790,7 +40790,7 @@ static  void sqlite3ExplainExpr(Vdbe *pOut , Expr *pExpr )  {
       sqlite3ExplainPrintf(pOut, ")");
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((op == 72)) {
         break;
       }  
@@ -40897,7 +40897,7 @@ static  int isAppropriateForFactoring(Expr *p )  {
   }
   switch (p->op) {
     case 131:
-    if (((id2i.f_sqlite_omit_blob_literal ) )) {
+    if (((id2i_sqlite_omit_blob_literal ) )) {
       if ((p->op == 131)) {
         goto id2i_label_1;
       }  
@@ -40908,32 +40908,32 @@ static  int isAppropriateForFactoring(Expr *p )  {
     case 98:
     case 94:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((p->op == 131)) {
           sqlite3Coverage(79383);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((p->op == 133)) {
           sqlite3Coverage(79384);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((p->op == 129)) {
           sqlite3Coverage(79385);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((p->op == 130)) {
           sqlite3Coverage(79386);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((p->op == 98)) {
           sqlite3Coverage(79387);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((p->op == 94)) {
           sqlite3Coverage(79388);
         }  
@@ -40977,12 +40977,12 @@ static  int evalConstExpr(Walker *pWalker , Expr *pExpr )  {
         int i =  pList->nExpr;
         struct  ExprList_item   *pItem =  pList->a;
         for (; (i > 0); i--, pItem++) {
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if (1) {
               (pItem->pExpr->flags |= 0x000200);
             }  
           }  
-          if ((((! id2i.f_sqlite_coverage_test) ) )) {
+          if ((((! id2i_sqlite_coverage_test) ) )) {
             if (pItem->pExpr) {
               (pItem->pExpr->flags |= 0x000200);
             }  
@@ -41006,12 +41006,12 @@ static  void sqlite3ExprCodeConstants(Parse *pParse , Expr *pExpr )  {
   if (pParse->cookieGoto) {
     return;
   }  
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     if (((pParse->db->dbOptFlags & 0x0008) != 0)) {
       return;
     }  
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     if (0) {
       return;
     }  
@@ -41062,42 +41062,42 @@ static  void exprCodeBetween(Parse *pParse , Expr *pExpr , int dest , int jumpIf
     sqlite3ExprIfFalse(pParse, (&exprAnd), dest, jumpIfNull);
   }
   sqlite3ReleaseTempReg(pParse, regFree1);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((jumpIfTrue == 0) && (jumpIfNull == 0) && (regFree1 == 0))) {
       sqlite3Coverage(79557);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((jumpIfTrue == 0) && (jumpIfNull == 0) && (regFree1 != 0))) {
       sqlite3Coverage(79558);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((jumpIfTrue == 0) && (jumpIfNull != 0) && (regFree1 == 0))) {
       sqlite3Coverage(79559);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((jumpIfTrue == 0) && (jumpIfNull != 0) && (regFree1 != 0))) {
       sqlite3Coverage(79560);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((jumpIfTrue != 0) && (jumpIfNull == 0) && (regFree1 == 0))) {
       sqlite3Coverage(79561);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((jumpIfTrue != 0) && (jumpIfNull == 0) && (regFree1 != 0))) {
       sqlite3Coverage(79562);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((jumpIfTrue != 0) && (jumpIfNull != 0) && (regFree1 == 0))) {
       sqlite3Coverage(79563);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((jumpIfTrue != 0) && (jumpIfNull != 0) && (regFree1 != 0))) {
       sqlite3Coverage(79564);
     }  
@@ -41110,22 +41110,22 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
   int regFree2 =  0;
   int r1, r2;
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((v == 0)) {
       return;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pExpr == 0)) {
       return;
     }  
@@ -41135,7 +41135,7 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
     case 69:
     {
       int d2 =  sqlite3VdbeMakeLabel(v);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79595);
         }  
@@ -41149,7 +41149,7 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
     }
     case 68:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79604);
         }  
@@ -41160,7 +41160,7 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
     }
     case 19:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79610);
         }  
@@ -41181,37 +41181,37 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
       ((void ) 0);
       ((void ) 0);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 79)) {
           sqlite3Coverage(79626);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 78)) {
           sqlite3Coverage(79627);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 77)) {
           sqlite3Coverage(79628);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 80)) {
           sqlite3Coverage(79629);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 76)) {
           sqlite3Coverage(79630);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 75)) {
           sqlite3Coverage(79631);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79632);
         }  
@@ -41219,12 +41219,12 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr->pLeft, (&regFree1)));
       (r2 = sqlite3ExprCodeTemp(pParse, pExpr->pRight, (&regFree2)));
       codeCompare(pParse, pExpr->pLeft, pExpr->pRight, op, r1, r2, dest, jumpIfNull);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(79637);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree2 == 0)) {
           sqlite3Coverage(79638);
         }  
@@ -41234,12 +41234,12 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
     case 70:
     case 146:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 70)) {
           sqlite3Coverage(79643);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 146)) {
           sqlite3Coverage(79644);
         }  
@@ -41248,12 +41248,12 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
       (r2 = sqlite3ExprCodeTemp(pParse, pExpr->pRight, (&regFree2)));
       (op = ((op == 70) ? 76 : 75));
       codeCompare(pParse, pExpr->pLeft, pExpr->pRight, op, r1, r2, dest, 0x80);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(79650);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree2 == 0)) {
           sqlite3Coverage(79651);
         }  
@@ -41265,19 +41265,19 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
     {
       ((void ) 0);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 73)) {
           sqlite3Coverage(79658);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 74)) {
           sqlite3Coverage(79659);
         }  
       }  
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr->pLeft, (&regFree1)));
       sqlite3VdbeAddOp2(v, op, r1, dest);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(79662);
         }  
@@ -41286,7 +41286,7 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
     }
     case 71:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79666);
         }  
@@ -41295,7 +41295,7 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
       break;
     }
     case 72:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       int destIfFalse =  sqlite3VdbeMakeLabel(v);
       int destIfNull =  (jumpIfNull ? dest : destIfFalse);
       sqlite3ExprCodeIN(pParse, pExpr, destIfFalse, destIfNull);
@@ -41308,12 +41308,12 @@ static  void sqlite3ExprIfTrue(Parse *pParse , Expr *pExpr , int dest , int jump
     {
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr, (&regFree1)));
       sqlite3VdbeAddOp3(v, 39, r1, dest, (jumpIfNull != 0));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(79683);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79684);
         }  
@@ -41331,12 +41331,12 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
   int regFree2 =  0;
   int r1, r2;
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((v == 0)) {
       return;
     }  
@@ -41356,7 +41356,7 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
   switch (pExpr->op) {
     case 69:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79745);
         }  
@@ -41368,7 +41368,7 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
     case 68:
     {
       int d2 =  sqlite3VdbeMakeLabel(v);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79752);
         }  
@@ -41382,7 +41382,7 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
     }
     case 19:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79761);
         }  
@@ -41397,37 +41397,37 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
     case 75:
     case 76:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 79)) {
           sqlite3Coverage(79771);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 78)) {
           sqlite3Coverage(79772);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 77)) {
           sqlite3Coverage(79773);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 80)) {
           sqlite3Coverage(79774);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 76)) {
           sqlite3Coverage(79775);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 75)) {
           sqlite3Coverage(79776);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79777);
         }  
@@ -41435,12 +41435,12 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr->pLeft, (&regFree1)));
       (r2 = sqlite3ExprCodeTemp(pParse, pExpr->pRight, (&regFree2)));
       codeCompare(pParse, pExpr->pLeft, pExpr->pRight, op, r1, r2, dest, jumpIfNull);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(79782);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree2 == 0)) {
           sqlite3Coverage(79783);
         }  
@@ -41450,12 +41450,12 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
     case 70:
     case 146:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 70)) {
           sqlite3Coverage(79788);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 146)) {
           sqlite3Coverage(79789);
         }  
@@ -41464,12 +41464,12 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
       (r2 = sqlite3ExprCodeTemp(pParse, pExpr->pRight, (&regFree2)));
       (op = ((pExpr->op == 70) ? 75 : 76));
       codeCompare(pParse, pExpr->pLeft, pExpr->pRight, op, r1, r2, dest, 0x80);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(79795);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree2 == 0)) {
           sqlite3Coverage(79796);
         }  
@@ -41479,19 +41479,19 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
     case 73:
     case 74:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 73)) {
           sqlite3Coverage(79801);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 74)) {
           sqlite3Coverage(79802);
         }  
       }  
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr->pLeft, (&regFree1)));
       sqlite3VdbeAddOp2(v, op, r1, dest);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(79805);
         }  
@@ -41500,7 +41500,7 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
     }
     case 71:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79809);
         }  
@@ -41509,7 +41509,7 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
       break;
     }
     case 72:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       if (jumpIfNull) {
         sqlite3ExprCodeIN(pParse, pExpr, dest, dest);
       }  
@@ -41525,12 +41525,12 @@ static  void sqlite3ExprIfFalse(Parse *pParse , Expr *pExpr , int dest , int jum
     {
       (r1 = sqlite3ExprCodeTemp(pParse, pExpr, (&regFree1)));
       sqlite3VdbeAddOp3(v, 40, r1, dest, (jumpIfNull != 0));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((regFree1 == 0)) {
           sqlite3Coverage(79828);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((jumpIfNull == 0)) {
           sqlite3Coverage(79829);
         }  
@@ -41574,12 +41574,12 @@ static  int sqlite3ExprCompare(Expr *pA , Expr *pB , int iTab )  {
   if ((pA->iColumn != pB->iColumn)) {
     return 2;
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pA->iTable != pB->iTable) && (pA->op != 132) && ((pA->iTable != iTab) || (pB->iTable >= 0)))) {
       return 2;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((pA->iTable != pB->iTable) && (pA->op != 132) && ((pA->iTable != iTab) || 0))) {
       return 2;
     }  
@@ -41589,7 +41589,7 @@ static  int sqlite3ExprCompare(Expr *pA , Expr *pB , int iTab )  {
       return 2;
     }  
   } 
-  else if (((((! id2i.f_sqlite_coverage_test) ) ) && ((pA->op != 152) && (pA->op != 154) && pA->u.zToken))) {
+  else if (((((! id2i_sqlite_coverage_test) ) ) && ((pA->op != 152) && (pA->op != 154) && pA->u.zToken))) {
     if ((((pB->flags & 0x000400) != 0) || (pB->u.zToken == 0))) {
       return 2;
     }  
@@ -41598,7 +41598,7 @@ static  int sqlite3ExprCompare(Expr *pA , Expr *pB , int iTab )  {
     }  
   }
   
-  else if ((((id2i.f_sqlite_coverage_test ) ) && ((pA->op != 152) && 1 && pA->u.zToken))) {
+  else if ((((id2i_sqlite_coverage_test ) ) && ((pA->op != 152) && 1 && pA->u.zToken))) {
     if ((((pB->flags & 0x000400) != 0) || 0)) {
       return 2;
     }  
@@ -41649,7 +41649,7 @@ struct  SrcCount {
   int nOther ;
 }  ;
 static  int exprSrcCount(Walker *pWalker , Expr *pExpr )  {
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pExpr->op == 152) || (pExpr->op == 154))) {
       int i;
       struct  SrcCount   *p =  pWalker->u.pSrcCount;
@@ -41667,7 +41667,7 @@ static  int exprSrcCount(Walker *pWalker , Expr *pExpr )  {
       }
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((pExpr->op == 152) || 0)) {
       int i;
       struct  SrcCount   *p =  pWalker->u.pSrcCount;
@@ -41720,17 +41720,17 @@ static  int analyzeAggregate(Walker *pWalker , Expr *pExpr )  {
     case 154:
     case 152:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 154)) {
           sqlite3Coverage(80070);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 152)) {
           sqlite3Coverage(80071);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (1) {
           struct  SrcList_item   *pItem =  pSrcList->a;
           for ((i = 0); (i < pSrcList->nSrc); i++, pItem++) {
@@ -41777,7 +41777,7 @@ static  int analyzeAggregate(Walker *pWalker , Expr *pExpr )  {
           }
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if ((pSrcList != 0)) {
           struct  SrcList_item   *pItem =  pSrcList->a;
           for ((i = 0); (i < pSrcList->nSrc); i++, pItem++) {
@@ -42033,8 +42033,8 @@ static  void sqlite3AlterFunctions(void )  {
   static FuncDef _1278_aAlterTableFuncs[] =  { { 2,  (1 | (0 * 0x020)),  ((void *) ((long  int ) 0)),  0,  renameTableFunc,  0,  0,  "sqlite_rename_table",  0,  0},  { 2,  (1 | (0 * 0x020)),  ((void *) ((long  int ) 0)),  0,  renameTriggerFunc,  0,  0,  "sqlite_rename_trigger",  0,  0},  { 3,  (1 | (0 * 0x020)),  ((void *) ((long  int ) 0)),  0,  renameParentFunc,  0,  0,  "sqlite_rename_parent",  0,  0}};
   int i;
   FuncDefHash *pHash =  (&sqlite3GlobalFunctions);
-  FuncDef *aFunc =  ((((! id2i.f_sqlite_omit_foreign_key) ) ) ? ((FuncDef *) (&_1278_aAlterTableFuncs)) : ((FuncDef *) (&_1329_aAlterTableFuncs)));
-  for ((i = 0); ((((! id2i.f_sqlite_omit_foreign_key) ) ) ? (i < ((int ) (sizeof(_1278_aAlterTableFuncs) / sizeof(_1278_aAlterTableFuncs[0])))) : (i < ((int ) (sizeof(_1329_aAlterTableFuncs) / sizeof(_1329_aAlterTableFuncs[0]))))); i++) {
+  FuncDef *aFunc =  ((((! id2i_sqlite_omit_foreign_key) ) ) ? ((FuncDef *) (&_1278_aAlterTableFuncs)) : ((FuncDef *) (&_1329_aAlterTableFuncs)));
+  for ((i = 0); ((((! id2i_sqlite_omit_foreign_key) ) ) ? (i < ((int ) (sizeof(_1278_aAlterTableFuncs) / sizeof(_1278_aAlterTableFuncs[0])))) : (i < ((int ) (sizeof(_1329_aAlterTableFuncs) / sizeof(_1329_aAlterTableFuncs[0]))))); i++) {
     sqlite3FuncDefInsert(pHash, (&aFunc[i]));
   }
 }
@@ -42082,12 +42082,12 @@ static  void reloadTableSchema(Parse *pParse , Table *pTab , const  char *zName 
   int iDb;
   Trigger *pTrig;
   (v = sqlite3GetVdbe(pParse));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((v == 0)) {
       return;
     }  
@@ -42130,12 +42130,12 @@ static  void sqlite3AlterRenameTable(Parse *pParse , SrcList *pSrc , Token *pNam
   VTable *pVTab =  0;
   int savedDbFlags;
   (savedDbFlags = db->flags);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       goto exit_rename_table;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (db->mallocFailed) {
       goto exit_rename_table;
     }  
@@ -42163,7 +42163,7 @@ static  void sqlite3AlterRenameTable(Parse *pParse , SrcList *pSrc , Token *pNam
   if ((0 != sqlite3CheckObjectName(pParse, zName))) {
     goto exit_rename_table;
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (pTab->pSelect) {
       sqlite3ErrorMsg(pParse, "view %s may not be altered", pTab->zName);
       goto exit_rename_table;
@@ -42195,7 +42195,7 @@ static  void sqlite3AlterRenameTable(Parse *pParse , SrcList *pSrc , Token *pNam
   }  
   (zTabName = pTab->zName);
   (nTabName = sqlite3Utf8CharLen(zTabName, (- 1)));
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if ((db->flags & 0x00080000)) {
       if (((zWhere = whereForeignKeys(pParse, pTab)) != 0)) {
         sqlite3NestedParse(pParse, "UPDATE \"%w\".%s SET " "sql = sqlite_rename_parent(sql, %Q, %Q) " "WHERE %s;", zDb, (((! 0) && (iDb == 1)) ? "sqlite_temp_master" : "sqlite_master"), zTabName, zName, zWhere);
@@ -42211,7 +42211,7 @@ static  void sqlite3AlterRenameTable(Parse *pParse , SrcList *pSrc , Token *pNam
     sqlite3NestedParse(pParse, "UPDATE sqlite_temp_master SET " "sql = sqlite_rename_trigger(sql, %Q), " "tbl_name = %Q " "WHERE %s;", zName, zName, zWhere);
     sqlite3DbFree(db, zWhere);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if ((db->flags & 0x00080000)) {
       FKey *p;
       for ((p = sqlite3FkReferences(pTab)); p; (p = p->pNextTo)) {
@@ -42231,7 +42231,7 @@ static  void sqlite3AlterRenameTable(Parse *pParse , SrcList *pSrc , Token *pNam
 static  void sqlite3MinimumFileFormat(Parse *pParse , int iDb , int minFormat )  {
   Vdbe *v;
   (v = sqlite3GetVdbe(pParse));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       int r1 =  sqlite3GetTempReg(pParse);
       int r2 =  sqlite3GetTempReg(pParse);
@@ -42246,7 +42246,7 @@ static  void sqlite3MinimumFileFormat(Parse *pParse , int iDb , int minFormat ) 
       sqlite3ReleaseTempReg(pParse, r2);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (v) {
       int r1 =  sqlite3GetTempReg(pParse);
       int r2 =  sqlite3GetTempReg(pParse);
@@ -42573,12 +42573,12 @@ static  void analyzeOneTable(Parse *pParse , Table *pTab , Index *pOnlyIdx , int
   int regPrev =  iMem;
   (pParse->nMem = ((pParse->nMem > iMem) ? pParse->nMem : iMem));
   (v = sqlite3GetVdbe(pParse));
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((v == 0) || (pTab == 0))) {
       return;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((v == 0) || 0)) {
       return;
     }  
@@ -42783,12 +42783,12 @@ static  void decodeIntArray(char *zIntArray , int nOut , tRowcnt *aOut , Index *
   int c;
   int i;
   tRowcnt v;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       (z = "");
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((z == 0)) {
       (z = "");
     }  
@@ -42986,7 +42986,7 @@ static  void attachFunc(sqlite3_context *context , int NotUsed , sqlite3_value *
     (pPager = sqlite3BtreePager(aNew->pBt));
     sqlite3PagerLockingMode(pPager, db->dfltLockMode);
     sqlite3BtreeSecureDelete(aNew->pBt, sqlite3BtreeSecureDelete(db->aDb[0].pBt, (- 1)));
-    if ((((! id2i.f_sqlite_omit_attach) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_attach) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       sqlite3BtreeSetPagerFlags(aNew->pBt, (3 | (db->flags & 0x1c)));
     }  
   } 
@@ -43138,12 +43138,12 @@ static  int sqlite3FixSrcList(DbFixer *pFix , SrcList *pList )  {
   int i;
   const char *zDb;
   struct  SrcList_item   *pItem;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pList == 0)) {
       return 0;
     }  
@@ -43306,7 +43306,7 @@ static  void sqlite3AuthRead(Parse *pParse , Expr *pExpr , Schema *pSchema , Src
   }  
   else {
     ((void ) 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       for ((iSrc = 0); 1; iSrc++) {
         if ((pExpr->iTable == pTabList->a[iSrc].iCursor)) {
           (pTab = pTabList->a[iSrc].pTab);
@@ -43314,7 +43314,7 @@ static  void sqlite3AuthRead(Parse *pParse , Expr *pExpr , Schema *pSchema , Src
         }  
       }
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       for ((iSrc = 0); (iSrc < pTabList->nSrc); iSrc++) {
         if ((pExpr->iTable == pTabList->a[iSrc].iCursor)) {
           (pTab = pTabList->a[iSrc].pTab);
@@ -43324,12 +43324,12 @@ static  void sqlite3AuthRead(Parse *pParse , Expr *pExpr , Schema *pSchema , Src
     }  
   }
   (iCol = pExpr->iColumn);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pTab == 0)) {
       return;
     }  
@@ -43476,7 +43476,7 @@ static  void sqlite3FinishCoding(Parse *pParse )  {
       sqlite3VdbeAddOp2(v, 14, 0, pParse->cookieGoto);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((v && (pParse->nErr == 0) && (! db->mallocFailed))) {
       ((void ) 0);
       if (((pParse->pAinc != 0) && (pParse->nTab == 0))) {
@@ -43490,7 +43490,7 @@ static  void sqlite3FinishCoding(Parse *pParse )  {
       (pParse->rc = 1);
     }
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((v && 1 && (! db->mallocFailed))) {
       ((void ) 0);
       if (((pParse->pAinc != 0) && (pParse->nTab == 0))) {
@@ -43607,7 +43607,7 @@ static  Index *sqlite3FindIndex(sqlite3 *db , const  char *zName , const  char *
   return p;
 }
 static  void freeIndex(sqlite3 *db , Index *p )  {
-  if ((((! id2i.f_sqlite_omit_analyze) ) )) {
+  if ((((! id2i_sqlite_omit_analyze) ) )) {
     sqlite3DeleteIndexSamples(db, p);
   }  
   sqlite3ExprDelete(db, p->pPartIdxWhere);
@@ -43622,7 +43622,7 @@ static  void sqlite3UnlinkAndDeleteIndex(sqlite3 *db , int iDb , const  char *zI
   (pHash = (&db->aDb[iDb].pSchema->idxHash));
   (len = sqlite3Strlen30(zIdxName));
   (pIndex = sqlite3HashInsert(pHash, zIdxName, len, 0));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       if ((pIndex->pTable->pIndex == pIndex)) {
         (pIndex->pTable->pIndex = pIndex->pNext);
@@ -43640,7 +43640,7 @@ static  void sqlite3UnlinkAndDeleteIndex(sqlite3 *db , int iDb , const  char *zI
       freeIndex(db, pIndex);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pIndex) {
       if ((pIndex->pTable->pIndex == pIndex)) {
         (pIndex->pTable->pIndex = pIndex->pNext);
@@ -43737,7 +43737,7 @@ static  void sqlite3DeleteTable(sqlite3 *db , Table *pTable )  {
   if ((((! db) || (db->pnBytesFreed == 0)) && (--pTable->nRef > 0))) {
     return;
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (_1267_nLookaside = ((db && ((pTable->tabFlags & 0x02) == 0)) ? db->lookaside.nOut : 0));
   }  
   for ((pIndex = pTable->pIndex); pIndex; (pIndex = pNext)) {
@@ -43746,7 +43746,7 @@ static  void sqlite3DeleteTable(sqlite3 *db , Table *pTable )  {
     if (((! db) || (db->pnBytesFreed == 0))) {
       char *zName =  pIndex->zName;
       Index *_1267_pOld =  sqlite3HashInsert((&pIndex->pSchema->idxHash), zName, sqlite3Strlen30(zName), 0);
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         sqlite3HashInsert((&pIndex->pSchema->idxHash), zName, sqlite3Strlen30(zName), 0);
       }  
       ((void ) 0);
@@ -43754,7 +43754,7 @@ static  void sqlite3DeleteTable(sqlite3 *db , Table *pTable )  {
     }  
     freeIndex(db, pIndex);
   }
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     sqlite3FkDelete(db, pTable);
   }  
   sqliteDeleteColumnNames(db, pTable);
@@ -43773,7 +43773,7 @@ static  void sqlite3UnlinkAndDeleteTable(sqlite3 *db , int iDb , const  char *zT
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((zTabName[0] == 0)) {
       sqlite3Coverage(84204);
     }  
@@ -43827,7 +43827,7 @@ static  int sqlite3FindDb(sqlite3 *db , Token *pName )  {
 static  int sqlite3TwoPartName(Parse *pParse , Token *pName1 , Token *pName2 , Token **pUnqual )  {
   int iDb;
   sqlite3 *db =  pParse->db;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((1 && (pName2->n > 0))) {
       if (db->init.busy) {
         sqlite3ErrorMsg(pParse, "corrupt database");
@@ -43848,7 +43848,7 @@ static  int sqlite3TwoPartName(Parse *pParse , Token *pName1 , Token *pName2 , T
       ((*pUnqual) = pName1);
     }
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pName2 != 0) && (pName2->n > 0))) {
       if (db->init.busy) {
         sqlite3ErrorMsg(pParse, "corrupt database");
@@ -44029,14 +44029,14 @@ static  void sqlite3AddColumn(Parse *pParse , Token *pName )  {
     return;
   }  
   for ((i = 0); (i < p->nCol); i++) {
-    if ((((! id2i.f_sqlite_ebcdic) ) )) {
+    if ((((! id2i_sqlite_ebcdic) ) )) {
       if (((_1281_sqlite3UpperToLower[(*((unsigned  char *) z))] == _1281_sqlite3UpperToLower[(*((unsigned  char *) p->aCol[i].zName))]) && (sqlite3_stricmp((z + 1), (p->aCol[i].zName + 1)) == 0))) {
         sqlite3ErrorMsg(pParse, "duplicate column name: %s", z);
         sqlite3DbFree(db, z);
         return;
       }  
     }  
-    if (((id2i.f_sqlite_ebcdic ) )) {
+    if (((id2i_sqlite_ebcdic ) )) {
       if (((_1282_sqlite3UpperToLower[(*((unsigned  char *) z))] == _1282_sqlite3UpperToLower[(*((unsigned  char *) p->aCol[i].zName))]) && (sqlite3_stricmp((z + 1), (p->aCol[i].zName + 1)) == 0))) {
         sqlite3ErrorMsg(pParse, "duplicate column name: %s", z);
         sqlite3DbFree(db, z);
@@ -44063,12 +44063,12 @@ static  void sqlite3AddColumn(Parse *pParse , Token *pName )  {
 static  void sqlite3AddNotNull(Parse *pParse , int onError )  {
   Table *p;
   (p = pParse->pNewTable);
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((p == 0) || (p->nCol < 1))) {
       return;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((p == 0) || 0)) {
       return;
     }  
@@ -44083,10 +44083,10 @@ static  char sqlite3AffinityType(const  char *zIn , u8 *pszEst )  {
     return aff;
   }  
   while (zIn[0]) {
-    if ((((! id2i.f_sqlite_ebcdic) ) )) {
+    if ((((! id2i_sqlite_ebcdic) ) )) {
       (h = ((h << 8) + _1281_sqlite3UpperToLower[((*zIn) & 0xff)]));
     }  
-    if (((id2i.f_sqlite_ebcdic ) )) {
+    if (((id2i_sqlite_ebcdic ) )) {
       (h = ((h << 8) + _1282_sqlite3UpperToLower[((*zIn) & 0xff)]));
     }  
     zIn++;
@@ -44155,12 +44155,12 @@ static  void sqlite3AddColumnType(Parse *pParse , Token *pType )  {
   Table *p;
   Column *pCol;
   (p = pParse->pNewTable);
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((p == 0) || (p->nCol < 1))) {
       return;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((p == 0) || 0)) {
       return;
     }  
@@ -44382,27 +44382,27 @@ static  char *createTableStmt(sqlite3 *db , Table *p )  {
     identPut(zStmt, (&k), pCol->zName);
     ((void ) 0);
     ((void ) 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pCol->affinity == 'a')) {
         sqlite3Coverage(85089);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pCol->affinity == 'b')) {
         sqlite3Coverage(85090);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pCol->affinity == 'c')) {
         sqlite3Coverage(85091);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pCol->affinity == 'd')) {
         sqlite3Coverage(85092);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pCol->affinity == 'e')) {
         sqlite3Coverage(85093);
       }  
@@ -44470,18 +44470,18 @@ static  void sqlite3EndTable(Parse *pParse , Token *pCons , Token *pEnd , Select
     char *zType2;
     char *zStmt;
     (v = sqlite3GetVdbe(pParse));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (0) {
         return;
       }  
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if ((v == 0)) {
         return;
       }  
     }  
     sqlite3VdbeAddOp1(v, 54, 0);
-    if ((((! id2i.f_sqlite_omit_view) ) )) {
+    if ((((! id2i_sqlite_omit_view) ) )) {
       if ((p->pSelect == 0)) {
         (zType = "table");
         (zType2 = "TABLE");
@@ -44491,7 +44491,7 @@ static  void sqlite3EndTable(Parse *pParse , Token *pCons , Token *pEnd , Select
         (zType2 = "VIEW");
       }
     }  
-    if (((id2i.f_sqlite_omit_view ) )) {
+    if (((id2i_sqlite_omit_view ) )) {
       if ((p->pSelect == 0)) {
         (zType = "table");
         (zType2 = "TABLE");
@@ -44599,12 +44599,12 @@ static  void sqlite3CreateView(Parse *pParse , Token *pBegin , Token *pName1 , T
     sqlite3ViewGetColumnNames(pParse, p);
   }  
   (sEnd = pParse->sLastToken);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((1 && (sEnd.z[0] != ';'))) {
       (sEnd.z += sEnd.n);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((sEnd.z[0] != 0) && (sEnd.z[0] != ';'))) {
       (sEnd.z += sEnd.n);
     }  
@@ -44612,12 +44612,12 @@ static  void sqlite3CreateView(Parse *pParse , Token *pBegin , Token *pName1 , T
   (sEnd.n = 0);
   (n = ((int ) (sEnd.z - pBegin->z)));
   (z = pBegin->z);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     while ((1 && (sqlite3CtypeMap[((unsigned  char ) z[(n - 1)])] & 0x01))) {
       n--;
     }
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     while (((n > 0) && (sqlite3CtypeMap[((unsigned  char ) z[(n - 1)])] & 0x01))) {
       n--;
     }
@@ -44641,27 +44641,27 @@ static  int sqlite3ViewGetColumnNames(Parse *pParse , Table *pTable )  {
   if (((pTable->tabFlags & 0x10) != 0)) {
     return 0;
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if ((pTable->nCol > 0)) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if ((pTable->nCol < 0)) {
       sqlite3ErrorMsg(pParse, "view %s is circularly defined", pTable->zName);
       return 1;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     ((void ) 0);
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     ((void ) 0);
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     (pSel = sqlite3SelectDup(db, pTable->pSelect, 0));
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (pSel) {
       u8 enableLookaside =  db->lookaside.bEnabled;
       (n = pParse->nTab);
@@ -44738,7 +44738,7 @@ static  void destroyRootPage(Parse *pParse , int iTable , int iDb )  {
   int r1 =  sqlite3GetTempReg(pParse);
   sqlite3VdbeAddOp3(v, 108, iTable, r1, iDb);
   sqlite3MayAbort(pParse);
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     sqlite3NestedParse(pParse, "UPDATE %Q.%s SET rootpage=%d WHERE #%d AND rootpage=#%d", pParse->db->aDb[iDb].zName, (((! 0) && (iDb == 1)) ? "sqlite_temp_master" : "sqlite_master"), iTable, r1, r1);
   }  
   sqlite3ReleaseTempReg(pParse, r1);
@@ -44746,17 +44746,17 @@ static  void destroyRootPage(Parse *pParse , int iTable , int iDb )  {
 static  void destroyTable(Parse *pParse , Table *pTab )  {
   Index *_1332_pIdx;
   int _1332_iDb =  sqlite3SchemaToIndex(pParse->db, pTab->pSchema);
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     destroyRootPage(pParse, pTab->tnum, _1332_iDb);
   }  
-  if (((id2i.f_sqlite_omit_autovacuum ) )) {
+  if (((id2i_sqlite_omit_autovacuum ) )) {
     for ((_1332_pIdx = pTab->pIndex); _1332_pIdx; (_1332_pIdx = _1332_pIdx->pNext)) {
       destroyRootPage(pParse, _1332_pIdx->tnum, _1332_iDb);
     }
   }  
   int _1312_iTab =  pTab->tnum;
   int iDestroyed =  0;
-  if ((((! id2i.f_sqlite_omit_autovacuum) ) )) {
+  if ((((! id2i_sqlite_omit_autovacuum) ) )) {
     while (1) {
       Index *pIdx;
       int iLargest =  0;
@@ -44822,7 +44822,7 @@ static  void sqlite3CodeDropTable(Parse *pParse , Table *pTab , int iDb , int is
   }  
   sqlite3VdbeAddOp4(v, 114, iDb, 0, 0, pTab->zName, 0);
   sqlite3ChangeCookie(pParse, iDb);
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     sqliteViewResetAll(db, iDb);
   }  
 }
@@ -44893,13 +44893,13 @@ static  void sqlite3DropTable(Parse *pParse , SrcList *pName , int isView , int 
     sqlite3ErrorMsg(pParse, "table %s may not be dropped", pTab->zName);
     goto exit_drop_table;
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if ((isView && (pTab->pSelect == 0))) {
       sqlite3ErrorMsg(pParse, "use DROP TABLE to delete table %s", pTab->zName);
       goto exit_drop_table;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (((! isView) && pTab->pSelect)) {
       sqlite3ErrorMsg(pParse, "use DROP VIEW to delete view %s", pTab->zName);
       goto exit_drop_table;
@@ -44909,7 +44909,7 @@ static  void sqlite3DropTable(Parse *pParse , SrcList *pName , int isView , int 
   if (v) {
     sqlite3BeginWriteOperation(pParse, 1, iDb);
     sqlite3ClearStatTables(pParse, iDb, "tbl", pTab->zName);
-    if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+    if ((((! id2i_sqlite_omit_foreign_key) ) )) {
       sqlite3FkDropTable(pParse, pName, pTab);
     }  
     sqlite3CodeDropTable(pParse, pTab, iDb, isView);
@@ -44926,23 +44926,23 @@ static  void sqlite3CreateForeignKey(Parse *pParse , ExprList *pFromCol , Token 
   int _1278_i;
   int _1278_nCol;
   char *_1278_z;
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     ((void ) 0);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if (((_1278_p == 0) || pParse->declareVtab)) {
       goto _1278_fk_end;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if ((pFromCol == 0)) {
       int iCol =  (_1278_p->nCol - 1);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (0) {
           goto _1278_fk_end;
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if ((iCol < 0)) {
           goto _1278_fk_end;
         }  
@@ -44961,52 +44961,52 @@ static  void sqlite3CreateForeignKey(Parse *pParse , ExprList *pFromCol , Token 
       (_1278_nCol = pFromCol->nExpr);
     }
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_nByte = (sizeof((*_1278_pFKey)) + ((_1278_nCol - 1) * sizeof(_1278_pFKey->aCol[0])) + pTo->n + 1));
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if (pToCol) {
       for ((_1278_i = 0); (_1278_i < pToCol->nExpr); _1278_i++) {
         (_1278_nByte += (sqlite3Strlen30(pToCol->a[_1278_i].zName) + 1));
       }
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey = sqlite3DbMallocZero(db, _1278_nByte));
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if ((_1278_pFKey == 0)) {
       goto _1278_fk_end;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey->pFrom = _1278_p);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey->pNextFrom = _1278_p->pFKey);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_z = ((char *) (&_1278_pFKey->aCol[_1278_nCol])));
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey->zTo = _1278_z);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     memcpy(_1278_z, pTo->z, pTo->n);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_z[pTo->n] = 0);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     sqlite3Dequote(_1278_z);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_z += (pTo->n + 1));
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey->nCol = _1278_nCol);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if ((pFromCol == 0)) {
       (_1278_pFKey->aCol[0].iFrom = (_1278_p->nCol - 1));
     }  
@@ -45026,7 +45026,7 @@ static  void sqlite3CreateForeignKey(Parse *pParse , ExprList *pFromCol , Token 
       }
     }
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if (pToCol) {
       for ((_1278_i = 0); (_1278_i < _1278_nCol); _1278_i++) {
         int n =  sqlite3Strlen30(pToCol->a[_1278_i].zName);
@@ -45037,42 +45037,42 @@ static  void sqlite3CreateForeignKey(Parse *pParse , ExprList *pFromCol , Token 
       }
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey->isDeferred = 0);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey->aAction[0] = ((u8 ) (flags & 0xff)));
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey->aAction[1] = ((u8 ) ((flags >> 8) & 0xff)));
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     ((void ) 0);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pNextTo = ((FKey *) sqlite3HashInsert((&_1278_p->pSchema->fkeyHash), _1278_pFKey->zTo, sqlite3Strlen30(_1278_pFKey->zTo), ((void *) _1278_pFKey))));
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if ((_1278_pNextTo == _1278_pFKey)) {
       (db->mallocFailed = 1);
       goto _1278_fk_end;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if (_1278_pNextTo) {
       ((void ) 0);
       (_1278_pFKey->pNextTo = _1278_pNextTo);
       (_1278_pNextTo->pPrevTo = _1278_pFKey);
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_p->pFKey = _1278_pFKey);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey = 0);
   }  
   _1278_fk_end:
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     sqlite3DbFree(db, _1278_pFKey);
   }  
   sqlite3ExprListDelete(db, pFromCol);
@@ -45081,15 +45081,15 @@ static  void sqlite3CreateForeignKey(Parse *pParse , ExprList *pFromCol , Token 
 static  void sqlite3DeferForeignKey(Parse *pParse , int isDeferred )  {
   Table *_1278_pTab;
   FKey *_1278_pFKey;
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if ((((_1278_pTab = pParse->pNewTable) == 0) || ((_1278_pFKey = _1278_pTab->pFKey) == 0))) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     ((void ) 0);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (_1278_pFKey->isDeferred = ((u8 ) isDeferred));
   }  
 }
@@ -45225,7 +45225,7 @@ static  Index *sqlite3CreateIndex(Parse *pParse , Token *pName1 , Token *pName2 
     sqlite3ErrorMsg(pParse, "table %s may not be indexed", pTab->zName);
     goto exit_create_index;
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (pTab->pSelect) {
       sqlite3ErrorMsg(pParse, "views may not be indexed");
       goto exit_create_index;
@@ -45718,12 +45718,12 @@ static  SrcList *sqlite3SrcListAppendFromTerm(Parse *pParse , SrcList *p , Token
     goto append_from_error;
   }  
   (p = sqlite3SrcListAppend(db, p, pTable, pDatabase));
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((p == 0) || (p->nSrc == 0))) {
       goto append_from_error;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((p == 0) || 0)) {
       goto append_from_error;
     }  
@@ -45746,7 +45746,7 @@ static  SrcList *sqlite3SrcListAppendFromTerm(Parse *pParse , SrcList *p , Token
 }
 static  void sqlite3SrcListIndexedBy(Parse *pParse , SrcList *p , Token *pIndexedBy )  {
   ((void ) 0);
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((p && (p->nSrc > 0))) {
       struct  SrcList_item   *pItem =  (&p->a[(p->nSrc - 1)]);
       ((void ) 0);
@@ -45758,7 +45758,7 @@ static  void sqlite3SrcListIndexedBy(Parse *pParse , SrcList *p , Token *pIndexe
       }
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((p && 1)) {
       struct  SrcList_item   *pItem =  (&p->a[(p->nSrc - 1)]);
       ((void ) 0);
@@ -45975,7 +45975,7 @@ static  void sqlite3Reindex(Parse *pParse , Token *pName1 , Token *pName2 )  {
     reindexDatabases(pParse, 0);
     return;
   } 
-  else if ((((id2i.f_sqlite_coverage_test ) ) && (0 || (pName2->z == 0)))) {
+  else if ((((id2i_sqlite_coverage_test ) ) && (0 || (pName2->z == 0)))) {
     char *zColl;
     ((void ) 0);
     (zColl = sqlite3NameFromToken(pParse->db, pName1));
@@ -45991,7 +45991,7 @@ static  void sqlite3Reindex(Parse *pParse , Token *pName1 , Token *pName2 )  {
     sqlite3DbFree(db, zColl);
   }
   
-  else if (((((! id2i.f_sqlite_coverage_test) ) ) && ((pName2 == 0) || (pName2->z == 0)))) {
+  else if (((((! id2i_sqlite_coverage_test) ) ) && ((pName2 == 0) || (pName2->z == 0)))) {
     char *zColl;
     ((void ) 0);
     (zColl = sqlite3NameFromToken(pParse->db, pName1));
@@ -46194,7 +46194,7 @@ static  void sqlite3FuncDefInsert(FuncDefHash *pHash , FuncDef *pDef )  {
   FuncDef *pOther;
   int nName =  sqlite3Strlen30(pDef->zName);
   u8 c1 =  ((u8 ) pDef->zName[0]);
-  int h =  (((id2i.f_sqlite_ebcdic ) ) ? ((_1282_sqlite3UpperToLower[c1] + nName) % ((int ) (sizeof(pHash->a) / sizeof(pHash->a[0])))) : ((_1281_sqlite3UpperToLower[c1] + nName) % ((int ) (sizeof(pHash->a) / sizeof(pHash->a[0])))));
+  int h =  (((id2i_sqlite_ebcdic ) ) ? ((_1282_sqlite3UpperToLower[c1] + nName) % ((int ) (sizeof(pHash->a) / sizeof(pHash->a[0])))) : ((_1281_sqlite3UpperToLower[c1] + nName) % ((int ) (sizeof(pHash->a) / sizeof(pHash->a[0])))));
   (pOther = functionSearch(pHash, h, pDef->zName, nName));
   if (pOther) {
     ((void ) 0);
@@ -46215,10 +46215,10 @@ static  FuncDef *sqlite3FindFunction(sqlite3 *db , const  char *zName , int nNam
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_ebcdic) ) )) {
+  if ((((! id2i_sqlite_ebcdic) ) )) {
     (h = ((_1281_sqlite3UpperToLower[((u8 ) zName[0])] + nName) % ((int ) (sizeof(db->aFunc.a) / sizeof(db->aFunc.a[0])))));
   }  
-  if (((id2i.f_sqlite_ebcdic ) )) {
+  if (((id2i_sqlite_ebcdic ) )) {
     (h = ((_1282_sqlite3UpperToLower[((u8 ) zName[0])] + nName) % ((int ) (sizeof(db->aFunc.a) / sizeof(db->aFunc.a[0])))));
   }  
   (p = functionSearch((&db->aFunc), h, zName, nName));
@@ -46322,7 +46322,7 @@ static  int sqlite3IsReadOnly(Parse *pParse , Table *pTab , int viewOk )  {
     sqlite3ErrorMsg(pParse, "table %s may not be modified", pTab->zName);
     return 1;
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (((! viewOk) && pTab->pSelect)) {
       sqlite3ErrorMsg(pParse, "cannot modify %s because it is a view", pTab->zName);
       return 1;
@@ -46402,12 +46402,12 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
   for ((pIdx = pTab->pIndex); pIdx; (pIdx = pIdx->pNext)) {
     pParse->nTab++;
   }
-  if (((id2i.f_sqlite_omit_view ) )) {
+  if (((id2i_sqlite_omit_view ) )) {
     if (0) {
       sqlite3AuthContextPush(pParse, (&sContext), pTab->zName);
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (isView) {
       sqlite3AuthContextPush(pParse, (&sContext), pTab->zName);
     }  
@@ -46420,7 +46420,7 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
     sqlite3VdbeCountChanges(v);
   }  
   sqlite3BeginWriteOperation(pParse, 1, iDb);
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (isView) {
       sqlite3MaterializeView(pParse, pTab, pWhere, iCur);
     }  
@@ -46435,7 +46435,7 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
     (memCnt = ++pParse->nMem);
     sqlite3VdbeAddOp2(v, 21, 0, memCnt);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if (((rcauth == 0) && (pWhere == 0) && (! pTrigger) && (! ((pTab->tabFlags & 0x10) != 0)) && (0 == sqlite3FkRequired(pParse, pTab, 0, 0)))) {
       ((void ) 0);
       sqlite3TableLock(pParse, iDb, pTab->tnum, 1, pTab->zName);
@@ -46461,12 +46461,12 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
       }  
       sqlite3WhereEnd(pWInfo);
       (end = sqlite3VdbeMakeLabel(v));
-      if (((id2i.f_sqlite_omit_view ) )) {
+      if (((id2i_sqlite_omit_view ) )) {
         if ((! 0)) {
           sqlite3OpenTableAndIndices(pParse, pTab, iCur, 49);
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_view) ) )) {
+      if ((((! id2i_sqlite_omit_view) ) )) {
         if ((! isView)) {
           sqlite3OpenTableAndIndices(pParse, pTab, iCur, 49);
         }  
@@ -46485,7 +46485,7 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
       }
       sqlite3VdbeAddOp2(v, 14, 0, addr);
       sqlite3VdbeResolveLabel(v, end);
-      if (((id2i.f_sqlite_omit_view ) )) {
+      if (((id2i_sqlite_omit_view ) )) {
         if (((! 0) && (! ((pTab->tabFlags & 0x10) != 0)))) {
           for ((i = 1), (pIdx = pTab->pIndex); pIdx; i++, (pIdx = pIdx->pNext)) {
             sqlite3VdbeAddOp2(v, 54, (iCur + i), pIdx->tnum);
@@ -46493,7 +46493,7 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
           sqlite3VdbeAddOp1(v, 54, iCur);
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_view) ) )) {
+      if ((((! id2i_sqlite_omit_view) ) )) {
         if (((! isView) && (! ((pTab->tabFlags & 0x10) != 0)))) {
           for ((i = 1), (pIdx = pTab->pIndex); pIdx; i++, (pIdx = pIdx->pNext)) {
             sqlite3VdbeAddOp2(v, 54, (iCur + i), pIdx->tnum);
@@ -46503,7 +46503,7 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
       }  
     }
   }  
-  if (((id2i.f_sqlite_omit_foreign_key ) )) {
+  if (((id2i_sqlite_omit_foreign_key ) )) {
     if (((rcauth == 0) && (pWhere == 0) && (! pTrigger) && (! ((pTab->tabFlags & 0x10) != 0)) && (0 == 0))) {
       ((void ) 0);
       sqlite3TableLock(pParse, iDb, pTab->tnum, 1, pTab->zName);
@@ -46529,12 +46529,12 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
       }  
       sqlite3WhereEnd(pWInfo);
       (end = sqlite3VdbeMakeLabel(v));
-      if (((id2i.f_sqlite_omit_view ) )) {
+      if (((id2i_sqlite_omit_view ) )) {
         if ((! 0)) {
           sqlite3OpenTableAndIndices(pParse, pTab, iCur, 49);
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_view) ) )) {
+      if ((((! id2i_sqlite_omit_view) ) )) {
         if ((! isView)) {
           sqlite3OpenTableAndIndices(pParse, pTab, iCur, 49);
         }  
@@ -46553,7 +46553,7 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
       }
       sqlite3VdbeAddOp2(v, 14, 0, addr);
       sqlite3VdbeResolveLabel(v, end);
-      if (((id2i.f_sqlite_omit_view ) )) {
+      if (((id2i_sqlite_omit_view ) )) {
         if (((! 0) && (! ((pTab->tabFlags & 0x10) != 0)))) {
           for ((i = 1), (pIdx = pTab->pIndex); pIdx; i++, (pIdx = pIdx->pNext)) {
             sqlite3VdbeAddOp2(v, 54, (iCur + i), pIdx->tnum);
@@ -46561,7 +46561,7 @@ static  void sqlite3DeleteFrom(Parse *pParse , SrcList *pTabList , Expr *pWhere 
           sqlite3VdbeAddOp1(v, 54, iCur);
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_view) ) )) {
+      if ((((! id2i_sqlite_omit_view) ) )) {
         if (((! isView) && (! ((pTab->tabFlags & 0x10) != 0)))) {
           for ((i = 1), (pIdx = pTab->pIndex); pIdx; i++, (pIdx = pIdx->pNext)) {
             sqlite3VdbeAddOp2(v, 54, (iCur + i), pIdx->tnum);
@@ -46592,7 +46592,7 @@ static  void sqlite3GenerateRowDelete(Parse *pParse , Table *pTab , int iCur , i
   ((void ) 0);
   (iLabel = sqlite3VdbeMakeLabel(v));
   sqlite3VdbeAddOp3(v, 63, iCur, iLabel, iRowid);
-  if (((id2i.f_sqlite_omit_foreign_key ) )) {
+  if (((id2i_sqlite_omit_foreign_key ) )) {
     if ((0 || pTrigger)) {
       u32 mask;
       int iCol;
@@ -46610,7 +46610,7 @@ static  void sqlite3GenerateRowDelete(Parse *pParse , Table *pTab , int iCur , i
       sqlite3VdbeAddOp3(v, 63, iCur, iLabel, iRowid);
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if ((sqlite3FkRequired(pParse, pTab, 0, 0) || pTrigger)) {
       u32 mask;
       int iCol;
@@ -46636,7 +46636,7 @@ static  void sqlite3GenerateRowDelete(Parse *pParse , Table *pTab , int iCur , i
       sqlite3VdbeChangeP4(v, (- 1), pTab->zName, 0);
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     sqlite3FkActions(pParse, pTab, 0, iOld, 0, 0);
   }  
   sqlite3CodeRowTrigger(pParse, pTrigger, 106, 0, 2, pTab, iOld, onconf, iLabel);
@@ -46688,7 +46688,7 @@ static  int sqlite3GenerateIndexKey(Parse *pParse , Index *pIdx , int iCur , int
   }
   if (doMakeRec) {
     const char *zAff;
-    if (((id2i.f_sqlite_omit_builtin_test ) )) {
+    if (((id2i_sqlite_omit_builtin_test ) )) {
       if ((pTab->pSelect || 0)) {
         (zAff = 0);
       }  
@@ -46696,7 +46696,7 @@ static  int sqlite3GenerateIndexKey(Parse *pParse , Index *pIdx , int iCur , int
         (zAff = sqlite3IndexAffinityStr(v, pIdx));
       }
     }  
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       if ((pTab->pSelect || ((pParse->db->dbOptFlags & 0x0010) != 0))) {
         (zAff = 0);
       }  
@@ -46735,7 +46735,7 @@ static  void minmaxFunc(sqlite3_context *context , int argc , sqlite3_value **ar
       return;
     }  
     if (((sqlite3MemCompare(argv[iBest], argv[i], pColl) ^ mask) >= 0)) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((mask == 0)) {
           sqlite3Coverage(88704);
         }  
@@ -47028,12 +47028,12 @@ static  void *contextMalloc(sqlite3_context *context , i64 nByte )  {
   char *z;
   sqlite3 *db =  sqlite3_context_db_handle(context);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nByte == db->aLimit[0])) {
       sqlite3Coverage(89006);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nByte == (db->aLimit[0] + 1))) {
       sqlite3Coverage(89007);
     }  
@@ -47080,10 +47080,10 @@ static  void lowerFunc(sqlite3_context *context , int argc , sqlite3_value **arg
     (z1 = contextMalloc(context, (((i64 ) n) + 1)));
     if (z1) {
       for ((i = 0); (i < n); i++) {
-        if ((((! id2i.f_sqlite_ebcdic) ) )) {
+        if ((((! id2i_sqlite_ebcdic) ) )) {
           (z1[i] = _1281_sqlite3UpperToLower[((unsigned  char ) z2[i])]);
         }  
-        if (((id2i.f_sqlite_ebcdic ) )) {
+        if (((id2i_sqlite_ebcdic ) )) {
           (z1[i] = _1282_sqlite3UpperToLower[((unsigned  char ) z2[i])]);
         }  
       }
@@ -47148,7 +47148,7 @@ static  int patternCompare(const  u8 *zPattern , const  u8 *zString , const  str
   u8 matchSet =  pInfo->matchSet;
   u8 noCase =  pInfo->noCase;
   int prevEscape =  0;
-  if (((id2i.f_sqlite_ebcdic ) )) {
+  if (((id2i_sqlite_ebcdic ) )) {
     while (((c = (*(*(&zPattern))++)) != 0)) {
       if (((c == matchAll) && (! prevEscape))) {
         while ((((c = (*(*(&zPattern))++)) == matchAll) || (c == matchOne))) {
@@ -47266,7 +47266,7 @@ static  int patternCompare(const  u8 *zPattern , const  u8 *zString , const  str
       }
     }
   }  
-  if ((((! id2i.f_sqlite_ebcdic) ) )) {
+  if ((((! id2i_sqlite_ebcdic) ) )) {
     while (((c = sqlite3Utf8Read((&zPattern))) != 0)) {
       if (((c == matchAll) && (! prevEscape))) {
         while ((((c = sqlite3Utf8Read((&zPattern))) == matchAll) || (c == matchOne))) {
@@ -47407,12 +47407,12 @@ static  void likeFunc(sqlite3_context *context , int argc , sqlite3_value **argv
   (zB = sqlite3_value_text(argv[0]));
   (zA = sqlite3_value_text(argv[1]));
   (nPat = sqlite3_value_bytes(argv[0]));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nPat == db->aLimit[8])) {
       sqlite3Coverage(89384);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nPat == (db->aLimit[8] + 1))) {
       sqlite3Coverage(89385);
     }  
@@ -47431,10 +47431,10 @@ static  void likeFunc(sqlite3_context *context , int argc , sqlite3_value **argv
       sqlite3_result_error(context, "ESCAPE expression must be a single character", (- 1));
       return;
     }  
-    if (((id2i.f_sqlite_ebcdic ) )) {
+    if (((id2i_sqlite_ebcdic ) )) {
       (escape = (*(*(&zEsc))++));
     }  
-    if ((((! id2i.f_sqlite_ebcdic) ) )) {
+    if ((((! id2i_sqlite_ebcdic) ) )) {
       (escape = sqlite3Utf8Read((&zEsc)));
     }  
   }  
@@ -47565,10 +47565,10 @@ static  void unicodeFunc(sqlite3_context *context , int argc , sqlite3_value **a
   const unsigned char *z =  sqlite3_value_text(argv[0]);
   ((void ) argc);
   if ((z && z[0])) {
-    if ((((! id2i.f_sqlite_ebcdic) ) )) {
+    if ((((! id2i_sqlite_ebcdic) ) )) {
       sqlite3_result_int(context, sqlite3Utf8Read((&z)));
     }  
-    if (((id2i.f_sqlite_ebcdic ) )) {
+    if (((id2i_sqlite_ebcdic ) )) {
       sqlite3_result_int(context, (*(*(&z))++));
     }  
   }  
@@ -47637,12 +47637,12 @@ static  void zeroblobFunc(sqlite3_context *context , int argc , sqlite3_value **
   ((void ) 0);
   ((void ) argc);
   (n = sqlite3_value_int64(argv[0]));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((n == db->aLimit[0])) {
       sqlite3Coverage(89708);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((n == (db->aLimit[0] + 1))) {
       sqlite3Coverage(89709);
     }  
@@ -47706,12 +47706,12 @@ static  void replaceFunc(sqlite3_context *context , int argc , sqlite3_value **a
       u8 *zOld;
       sqlite3 *db =  sqlite3_context_db_handle(context);
       (nOut += (nRep - nPattern));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((nOut - 1) == db->aLimit[0])) {
           sqlite3Coverage(89776);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((nOut - 2) == db->aLimit[0])) {
           sqlite3Coverage(89777);
         }  
@@ -47905,7 +47905,7 @@ static  void countStep(sqlite3_context *context , int argc , sqlite3_value **arg
   if ((((argc == 0) || (5 != sqlite3_value_type(argv[0]))) && p)) {
     p->n++;
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) ) )) {
+  if ((((! id2i_sqlite_omit_deprecated) ) )) {
     ((void ) 0);
   }  
 }
@@ -48010,12 +48010,12 @@ static  void sqlite3RegisterBuiltinFunctions(sqlite3 *db )  {
 static  void setLikeOptFlag(sqlite3 *db , const  char *zName , u8 flagVal )  {
   FuncDef *pDef;
   (pDef = sqlite3FindFunction(db, zName, sqlite3Strlen30(zName), 2, 1, 0));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       (pDef->funcFlags |= flagVal);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pDef) {
       (pDef->funcFlags |= flagVal);
     }  
@@ -48042,12 +48042,12 @@ static  int sqlite3IsLikeFunction(sqlite3 *db , Expr *pExpr , int *pIsNocase , c
   }  
   ((void ) 0);
   (pDef = sqlite3FindFunction(db, pExpr->u.zToken, sqlite3Strlen30(pExpr->u.zToken), 2, 1, 0));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((0 || ((pDef->funcFlags & 0x004) == 0))) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pDef == 0) || ((pDef->funcFlags & 0x004) == 0))) {
       return 0;
     }  
@@ -48935,12 +48935,12 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
   }  
   ((void ) 0);
   (zTab = pTabList->a[0].zName);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       goto insert_cleanup;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((zTab == 0)) {
       goto insert_cleanup;
     }  
@@ -49071,7 +49071,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
     (regRowCount = ++pParse->nMem);
     sqlite3VdbeAddOp2(v, 21, 0, regRowCount);
   }  
-  if (((id2i.f_sqlite_omit_view ) )) {
+  if (((id2i_sqlite_omit_view ) )) {
     if ((! 0)) {
       int nIdx;
       (baseCur = pParse->nTab);
@@ -49085,7 +49085,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
       }
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if ((! isView)) {
       int nIdx;
       (baseCur = pParse->nTab);
@@ -49157,13 +49157,13 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
         sqlite3ExprCodeAndCache(pParse, pList->a[j].pExpr, (regCols + i + 1));
       }
     }
-    if (((id2i.f_sqlite_omit_view ) )) {
+    if (((id2i_sqlite_omit_view ) )) {
       if ((! 0)) {
         sqlite3VdbeAddOp2(v, 42, (regCols + 1), pTab->nCol);
         sqlite3TableAffinityStr(v, pTab);
       }  
     }  
-    if ((((! id2i.f_sqlite_omit_view) ) )) {
+    if ((((! id2i_sqlite_omit_view) ) )) {
       if ((! isView)) {
         sqlite3VdbeAddOp2(v, 42, (regCols + 1), pTab->nCol);
         sqlite3TableAffinityStr(v, pTab);
@@ -49172,7 +49172,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
     sqlite3CodeRowTrigger(pParse, pTrigger, 105, 0, 1, pTab, (regCols - pTab->nCol - 1), onError, endOfLoop);
     sqlite3ReleaseTempRange(pParse, regCols, (pTab->nCol + 1));
   }  
-  if (((id2i.f_sqlite_omit_view ) )) {
+  if (((id2i_sqlite_omit_view ) )) {
     if ((! 0)) {
       if (((pTab->tabFlags & 0x10) != 0)) {
         sqlite3VdbeAddOp2(v, 24, 0, regIns);
@@ -49188,7 +49188,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
           VdbeOp *pOp;
           sqlite3ExprCode(pParse, pList->a[keyColumn].pExpr, regRowid);
           (pOp = sqlite3VdbeGetOp(v, (- 1)));
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if ((1 && (pOp->opcode == 24) && (! ((pTab->tabFlags & 0x10) != 0)))) {
               (appendFlag = 1);
               (pOp->opcode = 65);
@@ -49197,7 +49197,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
               (pOp->p3 = regAutoinc);
             }  
           }  
-          if ((((! id2i.f_sqlite_coverage_test) ) )) {
+          if ((((! id2i_sqlite_coverage_test) ) )) {
             if ((pOp && (pOp->opcode == 24) && (! ((pTab->tabFlags & 0x10) != 0)))) {
               (appendFlag = 1);
               (pOp->opcode = 65);
@@ -49277,14 +49277,14 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
       else {
         int isReplace;
         sqlite3GenerateConstraintChecks(pParse, pTab, baseCur, regIns, aRegIdx, (keyColumn >= 0), 0, onError, endOfLoop, (&isReplace));
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           sqlite3FkCheck(pParse, pTab, 0, regIns, 0, 0);
         }  
         sqlite3CompleteInsertion(pParse, pTab, baseCur, regIns, aRegIdx, 0, appendFlag, (isReplace == 0));
       }
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if ((! isView)) {
       if (((pTab->tabFlags & 0x10) != 0)) {
         sqlite3VdbeAddOp2(v, 24, 0, regIns);
@@ -49300,7 +49300,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
           VdbeOp *pOp;
           sqlite3ExprCode(pParse, pList->a[keyColumn].pExpr, regRowid);
           (pOp = sqlite3VdbeGetOp(v, (- 1)));
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if ((1 && (pOp->opcode == 24) && (! ((pTab->tabFlags & 0x10) != 0)))) {
               (appendFlag = 1);
               (pOp->opcode = 65);
@@ -49309,7 +49309,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
               (pOp->p3 = regAutoinc);
             }  
           }  
-          if ((((! id2i.f_sqlite_coverage_test) ) )) {
+          if ((((! id2i_sqlite_coverage_test) ) )) {
             if ((pOp && (pOp->opcode == 24) && (! ((pTab->tabFlags & 0x10) != 0)))) {
               (appendFlag = 1);
               (pOp->opcode = 65);
@@ -49389,7 +49389,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
       else {
         int isReplace;
         sqlite3GenerateConstraintChecks(pParse, pTab, baseCur, regIns, aRegIdx, (keyColumn >= 0), 0, onError, endOfLoop, (&isReplace));
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           sqlite3FkCheck(pParse, pTab, 0, regIns, 0, 0);
         }  
         sqlite3CompleteInsertion(pParse, pTab, baseCur, regIns, aRegIdx, 0, appendFlag, (isReplace == 0));
@@ -49412,7 +49412,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
     sqlite3VdbeAddOp2(v, 14, 0, addrCont);
     sqlite3VdbeJumpHere(v, addrInsTop);
   } 
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (((! ((pTab->tabFlags & 0x10) != 0)) && (! isView))) {
       sqlite3VdbeAddOp1(v, 54, baseCur);
       for ((idx = 1), (pIdx = pTab->pIndex); pIdx; (pIdx = pIdx->pNext), idx++) {
@@ -49420,7 +49420,7 @@ static  void sqlite3Insert(Parse *pParse , SrcList *pTabList , ExprList *pList ,
       }
     }  
   }  
-  if (((id2i.f_sqlite_omit_view ) )) {
+  if (((id2i_sqlite_omit_view ) )) {
     if (((! ((pTab->tabFlags & 0x10) != 0)) && (! 0))) {
       sqlite3VdbeAddOp1(v, 54, baseCur);
       for ((idx = 1), (pIdx = pTab->pIndex); pIdx; (pIdx = pIdx->pNext), idx++) {
@@ -49566,7 +49566,7 @@ static  void sqlite3GenerateConstraintChecks(Parse *pParse , Table *pTab , int b
         if ((db->flags & 0x00040000)) {
           (pTrigger = sqlite3TriggersExist(pParse, pTab, 106, 0, 0));
         }  
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           if ((pTrigger || sqlite3FkRequired(pParse, pTab, 0, 0))) {
             sqlite3MultiWrite(pParse);
             sqlite3GenerateRowDelete(pParse, pTab, baseCur, regRowid, 0, pTrigger, 5);
@@ -49576,7 +49576,7 @@ static  void sqlite3GenerateConstraintChecks(Parse *pParse , Table *pTab , int b
             sqlite3GenerateRowIndexDelete(pParse, pTab, baseCur, 0);
           } 
         }  
-        if (((id2i.f_sqlite_omit_foreign_key ) )) {
+        if (((id2i_sqlite_omit_foreign_key ) )) {
           if ((pTrigger || 0)) {
             sqlite3MultiWrite(pParse);
             sqlite3GenerateRowDelete(pParse, pTab, baseCur, regRowid, 0, pTrigger, 5);
@@ -49924,7 +49924,7 @@ static  int xferOptimization(Parse *pParse , Table *pDest , Select *pSelect , in
   if ((pDest->pCheck && sqlite3ExprListCompare(pSrc->pCheck, pDest->pCheck, (- 1)))) {
     return 0;
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     if ((((pParse->db->flags & 0x00080000) != 0) && (pDest->pFKey != 0))) {
       return 0;
     }  
@@ -49971,14 +49971,14 @@ static  int xferOptimization(Parse *pParse , Table *pDest , Select *pSelect , in
   sqlite3VdbeChangeP4(v, (- 1), pDest->zName, 0);
   sqlite3VdbeAddOp2(v, 7, iSrc, addr1);
   for ((pDestIdx = pDest->pIndex); pDestIdx; (pDestIdx = pDestIdx->pNext)) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       for ((pSrcIdx = pSrc->pIndex); 1; (pSrcIdx = pSrcIdx->pNext)) {
         if (xferCompatibleIndex(pDestIdx, pSrcIdx)) {
           break;
         }  
       }
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       for ((pSrcIdx = pSrc->pIndex); pSrcIdx; (pSrcIdx = pSrcIdx->pNext)) {
         if (xferCompatibleIndex(pDestIdx, pSrcIdx)) {
           break;
@@ -50094,7 +50094,7 @@ int sqlite3_exec(sqlite3 *db , const  char *zSql , sqlite3_callback xCallback , 
   }  
   sqlite3DbFree(db, azCols);
   (rc = sqlite3ApiExit(db, rc));
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((rc != 0) && (rc == sqlite3_errcode(db)) && pzErrMsg)) {
       int nErrMsg =  (1 + sqlite3Strlen30(sqlite3_errmsg(db)));
       ((*pzErrMsg) = sqlite3Malloc(nErrMsg));
@@ -50110,7 +50110,7 @@ int sqlite3_exec(sqlite3 *db , const  char *zSql , sqlite3_callback xCallback , 
       ((*pzErrMsg) = 0);
     } 
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((rc != 0) && 1 && pzErrMsg)) {
       int nErrMsg =  (1 + sqlite3Strlen30(sqlite3_errmsg(db)));
       ((*pzErrMsg) = sqlite3Malloc(nErrMsg));
@@ -50641,79 +50641,79 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
     goto pragma_out;
   }  
   (lwr = 0);
-  if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1334_aPragmaNames) / sizeof(_1334_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1344_aPragmaNames) / sizeof(_1344_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+  if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
     (upr = (((int ) (sizeof(_1342_aPragmaNames) / sizeof(_1342_aPragmaNames[0]))) - 1));
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1338_aPragmaNames) / sizeof(_1338_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+  if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
     (upr = (((int ) (sizeof(_1339_aPragmaNames) / sizeof(_1339_aPragmaNames[0]))) - 1));
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1345_aPragmaNames) / sizeof(_1345_aPragmaNames[0]))) - 1));
-  }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1335_aPragmaNames) / sizeof(_1335_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+  if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
     (upr = (((int ) (sizeof(_1340_aPragmaNames) / sizeof(_1340_aPragmaNames[0]))) - 1));
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    (upr = (((int ) (sizeof(_1341_aPragmaNames) / sizeof(_1341_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    (upr = (((int ) (sizeof(_1337_aPragmaNames) / sizeof(_1337_aPragmaNames[0]))) - 1));
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+  if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
     (upr = (((int ) (sizeof(_1343_aPragmaNames) / sizeof(_1343_aPragmaNames[0]))) - 1));
   }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1341_aPragmaNames) / sizeof(_1341_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1335_aPragmaNames) / sizeof(_1335_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1345_aPragmaNames) / sizeof(_1345_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1338_aPragmaNames) / sizeof(_1338_aPragmaNames[0]))) - 1));
+  }  
+  if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1344_aPragmaNames) / sizeof(_1344_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+    (upr = (((int ) (sizeof(_1334_aPragmaNames) / sizeof(_1334_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
     (upr = (((int ) (sizeof(_1336_aPragmaNames) / sizeof(_1336_aPragmaNames[0]))) - 1));
+  }  
+  if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+    (upr = (((int ) (sizeof(_1337_aPragmaNames) / sizeof(_1337_aPragmaNames[0]))) - 1));
   }  
   while ((lwr <= upr)) {
     (mid = ((lwr + upr) / 2));
-    if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1334_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1344_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       (rc = sqlite3_stricmp(zLeft, _1342_aPragmaNames[mid].zName));
     }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1338_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
       (rc = sqlite3_stricmp(zLeft, _1339_aPragmaNames[mid].zName));
     }  
-    if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1345_aPragmaNames[mid].zName));
-    }  
-    if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1335_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+    if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
       (rc = sqlite3_stricmp(zLeft, _1340_aPragmaNames[mid].zName));
     }  
-    if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-      (rc = sqlite3_stricmp(zLeft, _1341_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-      (rc = sqlite3_stricmp(zLeft, _1337_aPragmaNames[mid].zName));
-    }  
-    if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       (rc = sqlite3_stricmp(zLeft, _1343_aPragmaNames[mid].zName));
     }  
-    if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1341_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1335_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1345_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1338_aPragmaNames[mid].zName));
+    }  
+    if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1344_aPragmaNames[mid].zName));
+    }  
+    if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+      (rc = sqlite3_stricmp(zLeft, _1334_aPragmaNames[mid].zName));
+    }  
+    if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
       (rc = sqlite3_stricmp(zLeft, _1336_aPragmaNames[mid].zName));
+    }  
+    if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+      (rc = sqlite3_stricmp(zLeft, _1337_aPragmaNames[mid].zName));
     }  
     if ((rc == 0)) {
       break;
@@ -50728,93 +50728,93 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
   if ((lwr > upr)) {
     goto pragma_out;
   }  
-  if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1334_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1344_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+  if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
     if (((_1342_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto pragma_out;
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1338_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+  if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
     if (((_1339_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto pragma_out;
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1345_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto pragma_out;
-      }  
-    }  
-  }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1335_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+  if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
     if (((_1340_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto pragma_out;
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-    if (((_1341_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-    if (((_1337_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
-      if (sqlite3ReadSchema(pParse)) {
-        goto pragma_out;
-      }  
-    }  
-  }  
-  if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+  if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
     if (((_1343_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto pragma_out;
       }  
     }  
   }  
-  if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+    if (((_1341_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+    if (((_1335_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+    if (((_1345_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+    if (((_1338_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto pragma_out;
+      }  
+    }  
+  }  
+  if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+    if (((_1344_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+    if (((_1334_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto pragma_out;
+      }  
+    }  
+  }  
+  if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
     if (((_1336_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
       if (sqlite3ReadSchema(pParse)) {
         goto pragma_out;
       }  
     }  
   }  
-  switch ((((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1336_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1343_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1337_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1341_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1340_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1335_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1345_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1339_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1338_aPragmaNames[mid].ePragTyp : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1342_aPragmaNames[mid].ePragTyp : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1344_aPragmaNames[mid].ePragTyp : _1334_aPragmaNames[mid].ePragTyp)))))))))))) {
+  if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+    if (((_1337_aPragmaNames[mid].mPragFlag & 0x01) != 0)) {
+      if (sqlite3ReadSchema(pParse)) {
+        goto pragma_out;
+      }  
+    }  
+  }  
+  switch ((((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1337_aPragmaNames[mid].ePragTyp : (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1336_aPragmaNames[mid].ePragTyp : (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) ) ? _1334_aPragmaNames[mid].ePragTyp : ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1344_aPragmaNames[mid].ePragTyp : ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1338_aPragmaNames[mid].ePragTyp : ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1345_aPragmaNames[mid].ePragTyp : ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) ) ? _1335_aPragmaNames[mid].ePragTyp : ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) ) ? _1341_aPragmaNames[mid].ePragTyp : (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1343_aPragmaNames[mid].ePragTyp : (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) ) ? _1340_aPragmaNames[mid].ePragTyp : ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1339_aPragmaNames[mid].ePragTyp : _1342_aPragmaNames[mid].ePragTyp)))))))))))) {
     case 10:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       static const VdbeOpList getCacheSize[] =  { { 4,  0,  0,  0},  { 45,  0,  1,  3},  { 126,  1,  8,  0},  { 21,  0,  2,  0},  { 87,  1,  2,  1},  { 126,  1,  8,  0},  { 21,  0,  1,  0},  { 149,  0,  0,  0},  { 30,  1,  1,  0}};
       int addr;
       sqlite3VdbeUsesBtree(v, iDb);
@@ -50838,79 +50838,79 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_pager_pragmas) || ((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_deprecated) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_pager_pragmas) || ((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_deprecated) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 10)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 10)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 10)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 24:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       Btree *pBt =  pDb->pBt;
       ((void ) 0);
       if ((! zRight)) {
         int _1349_size =  (pBt ? sqlite3BtreeGetPageSize(pBt) : 0);
         int _1350_size =  (1 ? sqlite3BtreeGetPageSize(pBt) : 0);
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           returnSingleInt(pParse, "page_size", _1349_size);
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           returnSingleInt(pParse, "page_size", _1350_size);
         }  
       }  
@@ -50922,70 +50922,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 24)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 24)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 24)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 25:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       Btree *pBt =  pDb->pBt;
       int b =  (- 1);
       ((void ) 0);
@@ -51002,74 +51002,74 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       returnSingleInt(pParse, "secure_delete", b);
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 25)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 25)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 25)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 22:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       int iReg;
       sqlite3CodeVerifySchema(pParse, iDb);
       (iReg = ++pParse->nMem);
-      if ((((! id2i.f_sqlite_ebcdic) ) )) {
+      if ((((! id2i_sqlite_ebcdic) ) )) {
         if ((_1281_sqlite3UpperToLower[((unsigned  char ) zLeft[0])] == 'p')) {
           sqlite3VdbeAddOp2(v, 146, iDb, iReg);
         }  
@@ -51077,7 +51077,7 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           sqlite3VdbeAddOp3(v, 147, iDb, iReg, sqlite3AbsInt32(sqlite3Atoi(zRight)));
         }
       }  
-      if (((id2i.f_sqlite_ebcdic ) )) {
+      if (((id2i_sqlite_ebcdic ) )) {
         if ((_1282_sqlite3UpperToLower[((unsigned  char ) zLeft[0])] == 'p')) {
           sqlite3VdbeAddOp2(v, 146, iDb, iReg);
         }  
@@ -51090,70 +51090,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       sqlite3VdbeSetColName(v, 0, 0, zLeft, ((sqlite3_destructor_type ) (- 1)));
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 22)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 22)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 22)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 21:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       const char *zRet =  "normal";
       int eMode =  getLockingMode(zRight);
       if (((pId2->n == 0) && (eMode == (- 1)))) {
@@ -51183,70 +51183,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       sqlite3VdbeAddOp2(v, 30, 1, 1);
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 21)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 21)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 21)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 18:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       int eMode;
       int ii;
       sqlite3VdbeSetNumCols(v, 1);
@@ -51279,70 +51279,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       sqlite3VdbeAddOp2(v, 30, 1, 1);
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 18)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 18)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 18)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 19:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       Pager *pPager =  sqlite3BtreePager(pDb->pBt);
       i64 iLimit =  (- 2);
       if (zRight) {
@@ -51355,70 +51355,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       returnSingleInt(pParse, "journal_size_limit", iLimit);
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 19)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 19)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 19)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 1:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_autovacuum)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_autovacuum)) )) {
       Btree *pBt =  pDb->pBt;
       ((void ) 0);
       if ((! zRight)) {
@@ -51443,70 +51443,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_autovacuum) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_autovacuum) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 1)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 1)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 1)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 14:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_autovacuum)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_autovacuum)) )) {
       int iLimit, addr;
       if (((zRight == 0) || (! sqlite3GetInt32(zRight, (&iLimit))) || (iLimit <= 0))) {
         (iLimit = 0x7fffffff);
@@ -51520,70 +51520,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       sqlite3VdbeJumpHere(v, addr);
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_autovacuum) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_autovacuum) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 14)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 14)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 14)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 4:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       ((void ) 0);
       if ((! zRight)) {
         returnSingleInt(pParse, "cache_size", pDb->pSchema->cache_size);
@@ -51595,70 +51595,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 4)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 4)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 4)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 23:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       sqlite3_int64 sz;
       (sz = 0);
       (rc = 0);
@@ -51671,70 +51671,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       } 
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 23)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 23)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 23)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 31:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       if ((! zRight)) {
         returnSingleInt(pParse, "temp_store", db->temp_store);
       }  
@@ -51743,70 +51743,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 31)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 31)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 31)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 32:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       if ((! zRight)) {
         if (sqlite3_temp_directory) {
           sqlite3VdbeSetNumCols(v, 1);
@@ -51837,70 +51837,70 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 32)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 32)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 32)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 29:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
       if ((! zRight)) {
         returnSingleInt(pParse, "synchronous", (pDb->safety_level - 1));
       }  
@@ -51915,64 +51915,64 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
       }
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_pager_pragmas) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_pager_pragmas) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 29)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 29)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 29)) {
           goto id2i_label_1;
         }  
       }  
@@ -51980,45 +51980,45 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
     case 2:
     {
       if ((zRight == 0)) {
-        if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1334_aPragmaNames[mid].zName, ((db->flags & _1334_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1344_aPragmaNames[mid].zName, ((db->flags & _1344_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
           returnSingleInt(pParse, _1342_aPragmaNames[mid].zName, ((db->flags & _1342_aPragmaNames[mid].iArg) != 0));
         }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1338_aPragmaNames[mid].zName, ((db->flags & _1338_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
           returnSingleInt(pParse, _1339_aPragmaNames[mid].zName, ((db->flags & _1339_aPragmaNames[mid].iArg) != 0));
         }  
-        if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1345_aPragmaNames[mid].zName, ((db->flags & _1345_aPragmaNames[mid].iArg) != 0));
-        }  
-        if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1335_aPragmaNames[mid].zName, ((db->flags & _1335_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+        if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
           returnSingleInt(pParse, _1340_aPragmaNames[mid].zName, ((db->flags & _1340_aPragmaNames[mid].iArg) != 0));
         }  
-        if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-          returnSingleInt(pParse, _1341_aPragmaNames[mid].zName, ((db->flags & _1341_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-          returnSingleInt(pParse, _1337_aPragmaNames[mid].zName, ((db->flags & _1337_aPragmaNames[mid].iArg) != 0));
-        }  
-        if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
           returnSingleInt(pParse, _1343_aPragmaNames[mid].zName, ((db->flags & _1343_aPragmaNames[mid].iArg) != 0));
         }  
-        if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1341_aPragmaNames[mid].zName, ((db->flags & _1341_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1335_aPragmaNames[mid].zName, ((db->flags & _1335_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1345_aPragmaNames[mid].zName, ((db->flags & _1345_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1338_aPragmaNames[mid].zName, ((db->flags & _1338_aPragmaNames[mid].iArg) != 0));
+        }  
+        if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1344_aPragmaNames[mid].zName, ((db->flags & _1344_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+          returnSingleInt(pParse, _1334_aPragmaNames[mid].zName, ((db->flags & _1334_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
           returnSingleInt(pParse, _1336_aPragmaNames[mid].zName, ((db->flags & _1336_aPragmaNames[mid].iArg) != 0));
+        }  
+        if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+          returnSingleInt(pParse, _1337_aPragmaNames[mid].zName, ((db->flags & _1337_aPragmaNames[mid].iArg) != 0));
         }  
       }  
       else {
-        int mask =  (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1336_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1343_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1337_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1341_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) ) ? _1340_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) ) ? _1335_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1345_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1339_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1338_aPragmaNames[mid].iArg : (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1342_aPragmaNames[mid].iArg : ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) ) ? _1344_aPragmaNames[mid].iArg : _1334_aPragmaNames[mid].iArg)))))))))));
+        int mask =  (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1337_aPragmaNames[mid].iArg : (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1336_aPragmaNames[mid].iArg : (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) ) ? _1334_aPragmaNames[mid].iArg : ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1344_aPragmaNames[mid].iArg : ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1338_aPragmaNames[mid].iArg : ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1345_aPragmaNames[mid].iArg : ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) ) ? _1335_aPragmaNames[mid].iArg : ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) ) ? _1341_aPragmaNames[mid].iArg : (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1343_aPragmaNames[mid].iArg : (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) ) ? _1340_aPragmaNames[mid].iArg : ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) ) ? _1339_aPragmaNames[mid].iArg : _1342_aPragmaNames[mid].iArg)))))))))));
         if ((db->autoCommit == 0)) {
           (mask &= (~ 0x00080000));
         }  
@@ -52032,7 +52032,7 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
           }  
         }
         sqlite3VdbeAddOp2(v, 132, 0, 0);
-        if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+        if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_pager_pragmas)) )) {
           setAllPagerFlags(db);
         }  
       }
@@ -52082,12 +52082,12 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
             (k = 1);
           } 
           else {
-            if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_coverage_test) )) {
+            if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_coverage_test) )) {
               for ((k = 1); (1 && (pPk->aiColumn[(k - 1)] != i)); k++) {
                 
               }
             }  
-            if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_coverage_test)) || (id2i.f_sqlite_omit_pragma ))) {
+            if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_coverage_test)) || (id2i_sqlite_omit_pragma ))) {
               for ((k = 1); ((k <= pTab->nCol) && (pPk->aiColumn[(k - 1)] != i)); k++) {
                 
               }
@@ -52212,7 +52212,7 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
     }
     break;
     case 13:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_foreign_key)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_foreign_key)) )) {
       if (zRight) {
         FKey *pFK;
         Table *pTab;
@@ -52256,73 +52256,73 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
         }  
       }  
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_foreign_key)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_foreign_key)) )) {
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_foreign_key) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_foreign_key) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 13)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 13)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 13)) {
           goto id2i_label_1;
         }  
       }  
     }  
     case 12:
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_foreign_key)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_foreign_key)) )) {
       FKey *pFK;
       Table *pTab;
       Table *pParent;
@@ -52445,67 +52445,67 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
         sqlite3VdbeJumpHere(v, addrTop);
       }
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && (! id2i.f_sqlite_omit_foreign_key)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && (! id2i_sqlite_omit_foreign_key)) )) {
       break;
     }  
-    if ((((! id2i.f_sqlite_omit_pragma) && id2i.f_sqlite_omit_foreign_key) || (id2i.f_sqlite_omit_pragma ))) {
-      if (((id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1334_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1344_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+    if ((((! id2i_sqlite_omit_pragma) && id2i_sqlite_omit_foreign_key) || (id2i_sqlite_omit_pragma ))) {
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1342_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1338_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1339_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_deprecated) && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1345_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1335_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_foreign_key && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
+      if (((id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
         if ((_1340_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && id2i.f_sqlite_omit_pager_pragmas) )) {
-        if ((_1341_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
-        if ((_1337_aPragmaNames[mid].ePragTyp == 12)) {
-          goto id2i_label_1;
-        }  
-      }  
-      if (((id2i.f_sqlite_omit_deprecated && (! id2i.f_sqlite_omit_foreign_key) && (! id2i.f_sqlite_omit_autovacuum) && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1343_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
-      if (((id2i.f_sqlite_omit_deprecated && id2i.f_sqlite_omit_foreign_key && id2i.f_sqlite_omit_autovacuum && (! id2i.f_sqlite_omit_pager_pragmas)) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1341_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1335_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && (! id2i_sqlite_omit_foreign_key) && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1345_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1338_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if ((((! id2i_sqlite_omit_deprecated) && id2i_sqlite_omit_foreign_key && (! id2i_sqlite_omit_autovacuum) && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1344_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && id2i_sqlite_omit_pager_pragmas) )) {
+        if ((_1334_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && id2i_sqlite_omit_foreign_key && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
         if ((_1336_aPragmaNames[mid].ePragTyp == 12)) {
+          goto id2i_label_1;
+        }  
+      }  
+      if (((id2i_sqlite_omit_deprecated && (! id2i_sqlite_omit_foreign_key) && id2i_sqlite_omit_autovacuum && (! id2i_sqlite_omit_pager_pragmas)) )) {
+        if ((_1337_aPragmaNames[mid].ePragTyp == 12)) {
           goto id2i_label_1;
         }  
       }  
@@ -52521,7 +52521,7 @@ static  void sqlite3Pragma(Parse *pParse , Token *pId1 , Token *pId2 , Token *pV
     {
       int i, j, addr, mxErr;
       static const VdbeOpList endCode[] =  { { 32,  1,  0,  0},  { 127,  1,  0,  0},  { 94,  0,  3,  0},  { 30,  3,  1,  0}};
-      int isQuick =  (((id2i.f_sqlite_ebcdic ) ) ? (_1282_sqlite3UpperToLower[((unsigned  char ) zLeft[0])] == 'q') : (_1281_sqlite3UpperToLower[((unsigned  char ) zLeft[0])] == 'q'));
+      int isQuick =  (((id2i_sqlite_ebcdic ) ) ? (_1282_sqlite3UpperToLower[((unsigned  char ) zLeft[0])] == 'q') : (_1281_sqlite3UpperToLower[((unsigned  char ) zLeft[0])] == 'q'));
       ((void ) 0);
       ((void ) 0);
       if ((pId2->z == 0)) {
@@ -52814,10 +52814,10 @@ static  int sqlite3InitCallback(void *pInit , int argc , char **argv , char **No
     (db->init.iDb = iDb);
     (db->init.newTnum = sqlite3Atoi(argv[1]));
     (db->init.orphanTrigger = 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       (rcp = sqlite3_prepare(db, argv[2], (- 1), (&pStmt), 0));
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       sqlite3_prepare(db, argv[2], (- 1), (&pStmt), 0);
     }  
     (rc = db->errCode);
@@ -52894,24 +52894,24 @@ static  int sqlite3InitOne(sqlite3 *db , int iDb , char **pzErrMsg )  {
     goto error_out;
   }  
   (pTab = sqlite3FindTable(db, zMasterName, db->aDb[iDb].zName));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       (pTab->tabFlags |= 0x01);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pTab) {
       (pTab->tabFlags |= 0x01);
     }  
   }  
   (pDb = (&db->aDb[iDb]));
   if ((pDb->pBt == 0)) {
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if (((! 0) && (iDb == 1))) {
         (db->aDb[1].pSchema->flags |= 0x0001);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((! 0) && 1)) {
         (db->aDb[1].pSchema->flags |= 0x0001);
       }  
@@ -52953,18 +52953,18 @@ static  int sqlite3InitOne(sqlite3 *db , int iDb , char **pzErrMsg )  {
   }
   (pDb->pSchema->enc = db->aDb[0].pSchema->enc);
   if ((pDb->pSchema->cache_size == 0)) {
-    if ((((! id2i.f_sqlite_omit_deprecated) ) )) {
+    if ((((! id2i_sqlite_omit_deprecated) ) )) {
       (_1263_size = sqlite3AbsInt32(meta[(3 - 1)]));
     }  
-    if ((((! id2i.f_sqlite_omit_deprecated) ) )) {
+    if ((((! id2i_sqlite_omit_deprecated) ) )) {
       if ((_1263_size == 0)) {
         (_1263_size = 2000);
       }  
     }  
-    if ((((! id2i.f_sqlite_omit_deprecated) ) )) {
+    if ((((! id2i_sqlite_omit_deprecated) ) )) {
       (pDb->pSchema->cache_size = _1263_size);
     }  
-    if (((id2i.f_sqlite_omit_deprecated ) )) {
+    if (((id2i_sqlite_omit_deprecated ) )) {
       (pDb->pSchema->cache_size = 2000);
     }  
     sqlite3BtreeSetCacheSize(pDb->pBt, pDb->pSchema->cache_size);
@@ -52996,7 +52996,7 @@ static  int sqlite3InitOne(sqlite3 *db , int iDb , char **pzErrMsg )  {
       (rc = initData.rc);
     }  
     sqlite3DbFree(db, zSql);
-    if ((((! id2i.f_sqlite_omit_analyze) ) )) {
+    if ((((! id2i_sqlite_omit_analyze) ) )) {
       if ((rc == 0)) {
         sqlite3AnalysisLoad(db, iDb);
       }  
@@ -53035,7 +53035,7 @@ static  int sqlite3Init(sqlite3 *db , char **pzErrMsg )  {
       sqlite3ResetOneSchema(db, i);
     }  
   }
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((rc == 0) && (db->nDb > 1) && (! ((db->aDb[1].pSchema->flags & 0x0001) == 0x0001)))) {
       (rc = sqlite3InitOne(db, 1, pzErrMsg));
       if (rc) {
@@ -53043,7 +53043,7 @@ static  int sqlite3Init(sqlite3 *db , char **pzErrMsg )  {
       }  
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((rc == 0) && 1 && (! ((db->aDb[1].pSchema->flags & 0x0001) == 0x0001)))) {
       (rc = sqlite3InitOne(db, 1, pzErrMsg));
       if (rc) {
@@ -53108,14 +53108,14 @@ static  int sqlite3SchemaToIndex(sqlite3 *db , Schema *pSchema )  {
   int i =  (- 1000000);
   ((void ) 0);
   if (pSchema) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       for ((i = 0); 1; i++) {
         if ((db->aDb[i].pSchema == pSchema)) {
           break;
         }  
       }
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       for ((i = 0); (i < db->nDb); i++) {
         if ((db->aDb[i].pSchema == pSchema)) {
           break;
@@ -53148,7 +53148,7 @@ static  int sqlite3Prepare(sqlite3 *db , const  char *zSql , int nBytes , int sa
       if (rc) {
         const char *zDb =  db->aDb[i].zName;
         sqlite3Error(db, rc, "database schema is locked: %s", zDb);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((db->flags & 0x0004000)) {
             sqlite3Coverage(97841);
           }  
@@ -53163,12 +53163,12 @@ static  int sqlite3Prepare(sqlite3 *db , const  char *zSql , int nBytes , int sa
   if (((nBytes >= 0) && ((nBytes == 0) || (zSql[(nBytes - 1)] != 0)))) {
     char *zSqlCopy;
     int mxLen =  db->aLimit[1];
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((nBytes == mxLen)) {
         sqlite3Coverage(97854);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((nBytes == (mxLen + 1))) {
         sqlite3Coverage(97855);
       }  
@@ -53208,7 +53208,7 @@ static  int sqlite3Prepare(sqlite3 *db , const  char *zSql , int nBytes , int sa
     ((*pzTail) = pParse->zTail);
   }  
   (rc = pParse->rc);
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     if (((rc == 0) && pParse->pVdbe && pParse->explain)) {
       static const char *const azColName[] =  { "addr",  "opcode",  "p1",  "p2",  "p3",  "p4",  "p5",  "comment",  "selectid",  "order",  "from",  "detail"};
       int iFirst, mx;
@@ -53442,7 +53442,7 @@ static  int sqlite3JoinType(Parse *pParse , Token *pA , Token *pB , Token *pC ) 
         break;
       }  
     }
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((j == 0) || (j == 1) || (j == 2) || (j == 3) || (j == 4) || (j == 5) || (j == 6))) {
         sqlite3Coverage(98290);
       }  
@@ -53532,12 +53532,12 @@ static  int sqliteProcessJoin(Parse *pParse , Select *p )  {
     Table *pLeftTab =  pLeft->pTab;
     Table *pRightTab =  pRight->pTab;
     int isOuter;
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (0) {
         continue;
       }  
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if (((pLeftTab == 0) || (pRightTab == 0))) {
         continue;
       }  
@@ -53671,12 +53671,12 @@ static  void selectInnerLoop(Parse *pParse , Select *p , ExprList *pEList , int 
   int iParm =  pDest->iSDParm;
   int nResultCol;
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((v == 0)) {
       return;
     }  
@@ -53779,12 +53779,12 @@ static  void selectInnerLoop(Parse *pParse , Select *p , ExprList *pEList , int 
     case 9:
     {
       int r1 =  sqlite3GetTempReg(pParse);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((eDest == 8)) {
           sqlite3Coverage(98826);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((eDest == 9)) {
           sqlite3Coverage(98827);
         }  
@@ -53804,7 +53804,7 @@ static  void selectInnerLoop(Parse *pParse , Select *p , ExprList *pEList , int 
       break;
     }
     case 7:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       ((void ) 0);
       (pDest->affSdst = sqlite3CompareAffinity(pEList->a[0].pExpr, pDest->affSdst));
       if (pOrderBy) {
@@ -53819,23 +53819,23 @@ static  void selectInnerLoop(Parse *pParse , Select *p , ExprList *pEList , int 
       }
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((eDest == 7)) {
         goto id2i_label_2;
       }  
     }  
     case 3:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       sqlite3VdbeAddOp2(v, 21, 1, iParm);
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((eDest == 3)) {
         goto id2i_label_2;
       }  
     }  
     case 6:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       ((void ) 0);
       if (pOrderBy) {
         pushOntoSorter(pParse, pOrderBy, p, regResult);
@@ -53845,7 +53845,7 @@ static  void selectInnerLoop(Parse *pParse , Select *p , ExprList *pEList , int 
       }
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((eDest == 6)) {
         goto id2i_label_2;
       }  
@@ -53853,12 +53853,12 @@ static  void selectInnerLoop(Parse *pParse , Select *p , ExprList *pEList , int 
     case 10:
     case 5:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((eDest == 10)) {
           sqlite3Coverage(98897);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((eDest == 5)) {
           sqlite3Coverage(98898);
         }  
@@ -53994,12 +53994,12 @@ static  void generateSortTail(Parse *pParse , Select *p , Vdbe *v , int nColumn 
     case 8:
     case 9:
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((eDest == 8)) {
           sqlite3Coverage(99129);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((eDest == 9)) {
           sqlite3Coverage(99130);
         }  
@@ -54010,20 +54010,20 @@ static  void generateSortTail(Parse *pParse , Select *p , Vdbe *v , int nColumn 
       break;
     }
     case 7:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       ((void ) 0);
       sqlite3VdbeAddOp4(v, 43, regRow, 1, regRowid, (&pDest->affSdst), 1);
       sqlite3ExprCacheAffinityChange(pParse, regRow, 1);
       sqlite3VdbeAddOp2(v, 103, iParm, regRowid);
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((eDest == 7)) {
         goto id2i_label_1;
       }  
     }  
     case 6:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       ((void ) 0);
       sqlite3ExprCodeMove(pParse, regRow, iParm, 1);
       break;
@@ -54033,12 +54033,12 @@ static  void generateSortTail(Parse *pParse , Select *p , Vdbe *v , int nColumn 
     {
       int i;
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((eDest == 5)) {
           sqlite3Coverage(99155);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((eDest == 10)) {
           sqlite3Coverage(99156);
         }  
@@ -54081,12 +54081,12 @@ static  const  char *_1316_columnTypeImpl(NameContext *pNC , Expr *pExpr , const
   char const *zType =  0;
   int j;
   u8 estWidth =  1;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((0 || (pNC->pSrcList == 0))) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pExpr == 0) || (pNC->pSrcList == 0))) {
       return 0;
     }  
@@ -54098,12 +54098,12 @@ static  const  char *_1316_columnTypeImpl(NameContext *pNC , Expr *pExpr , const
       Table *pTab =  0;
       Select *pS =  0;
       int iCol =  pExpr->iColumn;
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 154)) {
           sqlite3Coverage(99250);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 152)) {
           sqlite3Coverage(99251);
         }  
@@ -54126,7 +54126,7 @@ static  const  char *_1316_columnTypeImpl(NameContext *pNC , Expr *pExpr , const
       }  
       ((void ) 0);
       if (pS) {
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if (((iCol >= 0) && (iCol < pS->pEList->nExpr))) {
             NameContext sNC;
             Expr *p =  pS->pEList->a[iCol].pExpr;
@@ -54136,7 +54136,7 @@ static  const  char *_1316_columnTypeImpl(NameContext *pNC , Expr *pExpr , const
             (zType = _1316_columnTypeImpl((&sNC), p, (&zOrigDb), (&zOrigTab), (&zOrigCol), (&estWidth)));
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (((iCol >= 0) && 1)) {
             NameContext sNC;
             Expr *p =  pS->pEList->a[iCol].pExpr;
@@ -54147,7 +54147,7 @@ static  const  char *_1316_columnTypeImpl(NameContext *pNC , Expr *pExpr , const
           }  
         }  
       } 
-      else if ((((id2i.f_sqlite_coverage_test ) ) && 1)) {
+      else if ((((id2i_sqlite_coverage_test ) ) && 1)) {
         ((void ) 0);
         if ((iCol < 0)) {
           (iCol = pTab->iPKey);
@@ -54169,7 +54169,7 @@ static  const  char *_1316_columnTypeImpl(NameContext *pNC , Expr *pExpr , const
         }  
       }
       
-      else if (((((! id2i.f_sqlite_coverage_test) ) ) && pTab->pSchema)) {
+      else if (((((! id2i_sqlite_coverage_test) ) ) && pTab->pSchema)) {
         ((void ) 0);
         if ((iCol < 0)) {
           (iCol = pTab->iPKey);
@@ -54193,7 +54193,7 @@ static  const  char *_1316_columnTypeImpl(NameContext *pNC , Expr *pExpr , const
       break;
     }
     case 116:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       NameContext sNC;
       Select *pS =  pExpr->x.pSelect;
       Expr *p =  pS->pEList->a[0].pExpr;
@@ -54220,12 +54220,12 @@ static  const  char *_1353_columnTypeImpl(NameContext *pNC , Expr *pExpr , u8 *p
   char const *zType =  0;
   int j;
   u8 estWidth =  1;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((0 || (pNC->pSrcList == 0))) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pExpr == 0) || (pNC->pSrcList == 0))) {
       return 0;
     }  
@@ -54237,12 +54237,12 @@ static  const  char *_1353_columnTypeImpl(NameContext *pNC , Expr *pExpr , u8 *p
       Table *pTab =  0;
       Select *pS =  0;
       int iCol =  pExpr->iColumn;
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 154)) {
           sqlite3Coverage(99250);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pExpr->op == 152)) {
           sqlite3Coverage(99251);
         }  
@@ -54265,7 +54265,7 @@ static  const  char *_1353_columnTypeImpl(NameContext *pNC , Expr *pExpr , u8 *p
       }  
       ((void ) 0);
       if (pS) {
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           if (((iCol >= 0) && (iCol < pS->pEList->nExpr))) {
             NameContext sNC;
             Expr *p =  pS->pEList->a[iCol].pExpr;
@@ -54275,7 +54275,7 @@ static  const  char *_1353_columnTypeImpl(NameContext *pNC , Expr *pExpr , u8 *p
             (zType = _1353_columnTypeImpl((&sNC), p, (&estWidth)));
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (((iCol >= 0) && 1)) {
             NameContext sNC;
             Expr *p =  pS->pEList->a[iCol].pExpr;
@@ -54286,7 +54286,7 @@ static  const  char *_1353_columnTypeImpl(NameContext *pNC , Expr *pExpr , u8 *p
           }  
         }  
       } 
-      else if ((((id2i.f_sqlite_coverage_test ) ) && 1)) {
+      else if ((((id2i_sqlite_coverage_test ) ) && 1)) {
         ((void ) 0);
         if ((iCol < 0)) {
           (iCol = pTab->iPKey);
@@ -54301,7 +54301,7 @@ static  const  char *_1353_columnTypeImpl(NameContext *pNC , Expr *pExpr , u8 *p
         }
       }
       
-      else if (((((! id2i.f_sqlite_coverage_test) ) ) && pTab->pSchema)) {
+      else if (((((! id2i_sqlite_coverage_test) ) ) && pTab->pSchema)) {
         ((void ) 0);
         if ((iCol < 0)) {
           (iCol = pTab->iPKey);
@@ -54318,7 +54318,7 @@ static  const  char *_1353_columnTypeImpl(NameContext *pNC , Expr *pExpr , u8 *p
       break;
     }
     case 116:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       NameContext sNC;
       Select *pS =  pExpr->x.pSelect;
       Expr *p =  pS->pEList->a[0].pExpr;
@@ -54339,32 +54339,32 @@ static  void generateColumnTypes(Parse *pParse , SrcList *pTabList , ExprList *p
   Vdbe *_1315_v =  pParse->pVdbe;
   int _1315_i;
   NameContext _1315_sNC;
-  if ((((! id2i.f_sqlite_omit_decltype) ) )) {
+  if ((((! id2i_sqlite_omit_decltype) ) )) {
     (_1315_sNC.pSrcList = pTabList);
   }  
-  if ((((! id2i.f_sqlite_omit_decltype) ) )) {
+  if ((((! id2i_sqlite_omit_decltype) ) )) {
     (_1315_sNC.pParse = pParse);
   }  
-  if ((((! id2i.f_sqlite_omit_decltype) ) )) {
+  if ((((! id2i_sqlite_omit_decltype) ) )) {
     for ((_1315_i = 0); (_1315_i < pEList->nExpr); _1315_i++) {
       Expr *p =  pEList->a[_1315_i].pExpr;
       const char *zType;
       const char *_1354_zOrigDb =  0;
       const char *_1354_zOrigTab =  0;
       const char *_1354_zOrigCol =  0;
-      if (((id2i.f_sqlite_enable_column_metadata ) )) {
+      if (((id2i_sqlite_enable_column_metadata ) )) {
         (zType = _1316_columnTypeImpl((&_1315_sNC), p, (&_1354_zOrigDb), (&_1354_zOrigTab), (&_1354_zOrigCol), 0));
       }  
-      if (((id2i.f_sqlite_enable_column_metadata ) )) {
+      if (((id2i_sqlite_enable_column_metadata ) )) {
         sqlite3VdbeSetColName(_1315_v, _1315_i, 2, _1354_zOrigDb, ((sqlite3_destructor_type ) (- 1)));
       }  
-      if (((id2i.f_sqlite_enable_column_metadata ) )) {
+      if (((id2i_sqlite_enable_column_metadata ) )) {
         sqlite3VdbeSetColName(_1315_v, _1315_i, 3, _1354_zOrigTab, ((sqlite3_destructor_type ) (- 1)));
       }  
-      if (((id2i.f_sqlite_enable_column_metadata ) )) {
+      if (((id2i_sqlite_enable_column_metadata ) )) {
         sqlite3VdbeSetColName(_1315_v, _1315_i, 4, _1354_zOrigCol, ((sqlite3_destructor_type ) (- 1)));
       }  
-      if ((((! id2i.f_sqlite_enable_column_metadata) ) )) {
+      if ((((! id2i_sqlite_enable_column_metadata) ) )) {
         (zType = _1353_columnTypeImpl((&_1315_sNC), p, 0));
       }  
       sqlite3VdbeSetColName(_1315_v, _1315_i, 1, zType, ((sqlite3_destructor_type ) (- 1)));
@@ -54376,17 +54376,17 @@ static  void generateColumnNames(Parse *pParse , SrcList *pTabList , ExprList *p
   int i, j;
   sqlite3 *db =  pParse->db;
   int fullNames, shortNames;
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     if (pParse->explain) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pParse->colNamesSet || (v == 0) || db->mallocFailed)) {
       return;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pParse->colNamesSet || 0 || db->mallocFailed)) {
       return;
     }  
@@ -54398,12 +54398,12 @@ static  void generateColumnNames(Parse *pParse , SrcList *pTabList , ExprList *p
   for ((i = 0); (i < pEList->nExpr); i++) {
     Expr *p;
     (p = pEList->a[i].pExpr);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (0) {
         continue;
       }  
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if ((p == 0)) {
         continue;
       }  
@@ -54416,14 +54416,14 @@ static  void generateColumnNames(Parse *pParse , SrcList *pTabList , ExprList *p
       Table *pTab;
       char *zCol;
       int iCol =  p->iColumn;
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         for ((j = 0); 1; j++) {
           if ((pTabList->a[j].iCursor == p->iTable)) {
             break;
           }  
         }
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         for ((j = 0); (j < pTabList->nSrc); j++) {
           if ((pTabList->a[j].iCursor == p->iTable)) {
             break;
@@ -54472,7 +54472,7 @@ static  int selectColumnsFromExprList(Parse *pParse , ExprList *pEList , i16 *pn
   if (pEList) {
     (nCol = pEList->nExpr);
     (aCol = sqlite3DbMallocZero(db, (sizeof(aCol[0]) * nCol)));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((aCol == 0)) {
         sqlite3Coverage(99501);
       }  
@@ -54496,7 +54496,7 @@ static  int selectColumnsFromExprList(Parse *pParse , ExprList *pEList , i16 *pn
         (pColExpr = pColExpr->pRight);
         ((void ) 0);
       }
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if (((pColExpr->op == 152) && (pColExpr->pTab != 0))) {
           int iCol =  pColExpr->iColumn;
           (pTab = pColExpr->pTab);
@@ -54513,7 +54513,7 @@ static  int selectColumnsFromExprList(Parse *pParse , ExprList *pEList , i16 *pn
           (zName = sqlite3MPrintf(db, "%s", pEList->a[i].zSpan));
         }
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((pColExpr->op == 152) && 1)) {
           int iCol =  pColExpr->iColumn;
           (pTab = pColExpr->pTab);
@@ -54589,10 +54589,10 @@ static  void selectAddColumnTypeAndCollation(Parse *pParse , Table *pTab , Selec
   (a = pSelect->pEList->a);
   for ((i = 0), (pCol = pTab->aCol); (i < pTab->nCol); i++, pCol++) {
     (p = a[i].pExpr);
-    if ((((! id2i.f_sqlite_enable_column_metadata) ) )) {
+    if ((((! id2i_sqlite_enable_column_metadata) ) )) {
       (pCol->zType = sqlite3DbStrDup(db, _1353_columnTypeImpl((&sNC), p, (&pCol->szEst))));
     }  
-    if (((id2i.f_sqlite_enable_column_metadata ) )) {
+    if (((id2i_sqlite_enable_column_metadata ) )) {
       (pCol->zType = sqlite3DbStrDup(db, _1316_columnTypeImpl((&sNC), p, 0, 0, 0, (&pCol->szEst))));
     }  
     (szAll += pCol->szEst);
@@ -54662,12 +54662,12 @@ static  void computeLimitRegisters(Parse *pParse , Select *p , int iBreak )  {
   if (p->pLimit) {
     (p->iLimit = (iLimit = ++pParse->nMem));
     (v = sqlite3GetVdbe(pParse));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (0) {
         return;
       }  
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if ((v == 0)) {
         return;
       }  
@@ -54773,7 +54773,7 @@ static  int multiSelect(Parse *pParse , Select *p , SelectDest *pDest )  {
       (pPrior->iOffset = p->iOffset);
       (pPrior->pLimit = p->pLimit);
       (pPrior->pOffset = p->pOffset);
-      if ((((! id2i.f_sqlite_omit_explain) ) )) {
+      if ((((! id2i_sqlite_omit_explain) ) )) {
         (_1272_iSub1 = pParse->_1272_iNextSelectId);
       }  
       (rc = sqlite3Select(pParse, pPrior, (&dest)));
@@ -54788,11 +54788,11 @@ static  int multiSelect(Parse *pParse , Select *p , SelectDest *pDest )  {
       if (p->iLimit) {
         (addr = sqlite3VdbeAddOp1(v, 128, p->iLimit));
       }  
-      if ((((! id2i.f_sqlite_omit_explain) ) )) {
+      if ((((! id2i_sqlite_omit_explain) ) )) {
         (_1272_iSub2 = pParse->_1272_iNextSelectId);
       }  
       (rc = sqlite3Select(pParse, p, (&dest)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((rc != 0)) {
           sqlite3Coverage(99906);
         }  
@@ -54817,18 +54817,18 @@ static  int multiSelect(Parse *pParse , Select *p , SelectDest *pDest )  {
       Expr *pLimit, *pOffset;
       int addr;
       SelectDest uniondest;
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((p->op == 114)) {
           sqlite3Coverage(99930);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((p->op == 112)) {
           sqlite3Coverage(99931);
         }  
       }  
       (priorOp = 1);
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if (((dest.eDest == priorOp) && ((! p->pLimit) && (! p->pOffset)))) {
           ((void ) 0);
           ((void ) 0);
@@ -54845,7 +54845,7 @@ static  int multiSelect(Parse *pParse , Select *p , SelectDest *pDest )  {
           ((void ) 0);
         }
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((dest.eDest == priorOp) && 1)) {
           ((void ) 0);
           ((void ) 0);
@@ -54864,7 +54864,7 @@ static  int multiSelect(Parse *pParse , Select *p , SelectDest *pDest )  {
       }  
       ((void ) 0);
       sqlite3SelectDestInit((&uniondest), priorOp, unionTab);
-      if ((((! id2i.f_sqlite_omit_explain) ) )) {
+      if ((((! id2i_sqlite_omit_explain) ) )) {
         (_1272_iSub1 = pParse->_1272_iNextSelectId);
       }  
       (rc = sqlite3Select(pParse, pPrior, (&uniondest)));
@@ -54884,11 +54884,11 @@ static  int multiSelect(Parse *pParse , Select *p , SelectDest *pDest )  {
       (pOffset = p->pOffset);
       (p->pOffset = 0);
       (uniondest.eDest = op);
-      if ((((! id2i.f_sqlite_omit_explain) ) )) {
+      if ((((! id2i_sqlite_omit_explain) ) )) {
         (_1272_iSub2 = pParse->_1272_iNextSelectId);
       }  
       (rc = sqlite3Select(pParse, p, (&uniondest)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((rc != 0)) {
           sqlite3Coverage(99981);
         }  
@@ -54948,7 +54948,7 @@ static  int multiSelect(Parse *pParse , Select *p , SelectDest *pDest )  {
       (p->pRightmost->selFlags |= 0x0008);
       ((void ) 0);
       sqlite3SelectDestInit((&intersectdest), 1, tab1);
-      if ((((! id2i.f_sqlite_omit_explain) ) )) {
+      if ((((! id2i_sqlite_omit_explain) ) )) {
         (_1272_iSub1 = pParse->_1272_iNextSelectId);
       }  
       (rc = sqlite3Select(pParse, pPrior, (&intersectdest)));
@@ -54964,11 +54964,11 @@ static  int multiSelect(Parse *pParse , Select *p , SelectDest *pDest )  {
       (pOffset = p->pOffset);
       (p->pOffset = 0);
       (intersectdest.iSDParm = tab2);
-      if ((((! id2i.f_sqlite_omit_explain) ) )) {
+      if ((((! id2i_sqlite_omit_explain) ) )) {
         (_1272_iSub2 = pParse->_1272_iNextSelectId);
       }  
       (rc = sqlite3Select(pParse, p, (&intersectdest)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((rc != 0)) {
           sqlite3Coverage(100065);
         }  
@@ -55006,7 +55006,7 @@ static  int multiSelect(Parse *pParse , Select *p , SelectDest *pDest )  {
       break;
     }
   }
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     explainComposite(pParse, p->op, _1272_iSub1, _1272_iSub2, (p->op != 113));
   }  
   if ((p->selFlags & 0x0008)) {
@@ -55073,12 +55073,12 @@ static  int generateOutputSubroutine(Parse *pParse , Select *p , SelectDest *pIn
     {
       int r1 =  sqlite3GetTempReg(pParse);
       int r2 =  sqlite3GetTempReg(pParse);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pDest->eDest == 8)) {
           sqlite3Coverage(100221);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pDest->eDest == 9)) {
           sqlite3Coverage(100222);
         }  
@@ -55092,7 +55092,7 @@ static  int generateOutputSubroutine(Parse *pParse , Select *p , SelectDest *pIn
       break;
     }
     case 7:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       int r1;
       ((void ) 0);
       (pDest->affSdst = sqlite3CompareAffinity(p->pEList->a[0].pExpr, pDest->affSdst));
@@ -55103,18 +55103,18 @@ static  int generateOutputSubroutine(Parse *pParse , Select *p , SelectDest *pIn
       sqlite3ReleaseTempReg(pParse, r1);
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((pDest->eDest == 7)) {
         goto id2i_label_1;
       }  
     }  
     case 6:
-    if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+    if ((((! id2i_sqlite_omit_subquery) ) )) {
       ((void ) 0);
       sqlite3ExprCodeMove(pParse, pIn->iSdst, pDest->iSDParm, 1);
       break;
     }  
-    if (((id2i.f_sqlite_omit_subquery ) )) {
+    if (((id2i_sqlite_omit_subquery ) )) {
       if ((pDest->eDest == 6)) {
         goto id2i_label_1;
       }  
@@ -55298,7 +55298,7 @@ static  int multiSelectOrderBy(Parse *pParse , Select *p , SelectDest *pDest )  
   (j1 = sqlite3VdbeAddOp0(v, 14));
   (addrSelectA = sqlite3VdbeCurrentAddr(v));
   (pPrior->iLimit = regLimitA);
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     (_1272_iSub1 = pParse->_1272_iNextSelectId);
   }  
   sqlite3Select(pParse, pPrior, (&destA));
@@ -55309,7 +55309,7 @@ static  int multiSelectOrderBy(Parse *pParse , Select *p , SelectDest *pDest )  
   (savedOffset = p->iOffset);
   (p->iLimit = regLimitB);
   (p->iOffset = 0);
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     (_1272_iSub2 = pParse->_1272_iNextSelectId);
   }  
   sqlite3Select(pParse, p, (&destB));
@@ -55390,7 +55390,7 @@ static  int multiSelectOrderBy(Parse *pParse , Select *p , SelectDest *pDest )  
     sqlite3SelectDelete(db, p->pPrior);
   }  
   (p->pPrior = pPrior);
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     explainComposite(pParse, p->op, _1272_iSub1, _1272_iSub2, 0);
   }  
   return 0;
@@ -55450,14 +55450,14 @@ static  void substSelect(sqlite3 *db , Select *p , int iTable , ExprList *pEList
   substSelect(db, p->pPrior, iTable, pEList);
   (pSrc = p->pSrc);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       for ((i = pSrc->nSrc), (pItem = pSrc->a); (i > 0); i--, pItem++) {
         substSelect(db, pItem->pSelect, iTable, pEList);
       }
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pSrc) {
       for ((i = pSrc->nSrc), (pItem = pSrc->a); (i > 0); i--, pItem++) {
         substSelect(db, pItem->pSelect, iTable, pEList);
@@ -55480,12 +55480,12 @@ static  int flattenSubquery(Parse *pParse , Select *p , int iFrom , int isAgg , 
   sqlite3 *db =  pParse->db;
   ((void ) 0);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     if (((db->dbOptFlags & 0x0001) != 0)) {
       return 0;
     }  
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     if (0) {
       return 0;
     }  
@@ -55548,12 +55548,12 @@ static  int flattenSubquery(Parse *pParse , Select *p , int iFrom , int isAgg , 
       return 0;
     }  
     for ((pSub1 = pSub); pSub1; (pSub1 = pSub1->pPrior)) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((pSub1->selFlags & (0x0001 | 0x0004)) == 0x0001)) {
           sqlite3Coverage(101058);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((pSub1->selFlags & (0x0001 | 0x0004)) == 0x0004)) {
           sqlite3Coverage(101059);
         }  
@@ -55562,7 +55562,7 @@ static  int flattenSubquery(Parse *pParse , Select *p , int iFrom , int isAgg , 
       if ((((pSub1->selFlags & (0x0001 | 0x0004)) != 0) || (pSub1->pPrior && (pSub1->op != 113)) || (pSub1->pSrc->nSrc < 1) || (pSub->pEList->nExpr != pSub1->pEList->nExpr))) {
         return 0;
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pSub1->pSrc->nSrc > 1)) {
           sqlite3Coverage(101068);
         }  
@@ -55578,13 +55578,13 @@ static  int flattenSubquery(Parse *pParse , Select *p , int iFrom , int isAgg , 
     }  
   }  
   (pParse->zAuthContext = pSubitem->zName);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (i = sqlite3AuthCheck(pParse, 21, 0, 0, 0));
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     sqlite3AuthCheck(pParse, 21, 0, 0, 0);
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((i == 1)) {
       sqlite3Coverage(101085);
     }  
@@ -55628,7 +55628,7 @@ static  int flattenSubquery(Parse *pParse , Select *p , int iFrom , int isAgg , 
   (pSubitem->zName = 0);
   (pSubitem->zAlias = 0);
   (pSubitem->pSelect = 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       Table *pTabToDel =  pSubitem->pTab;
       if ((pTabToDel->nRef == 1)) {
@@ -55642,7 +55642,7 @@ static  int flattenSubquery(Parse *pParse , Select *p , int iFrom , int isAgg , 
       (pSubitem->pTab = 0);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pSubitem->pTab != 0)) {
       Table *pTabToDel =  pSubitem->pTab;
       if ((pTabToDel->nRef == 1)) {
@@ -55773,12 +55773,12 @@ static  Table *isSimpleCount(Select *p , AggInfo *pAggInfo )  {
   if ((pExpr->op != 153)) {
     return 0;
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pAggInfo->nFunc == 0)) {
       return 0;
     }  
@@ -55875,12 +55875,12 @@ static  int selectExpander(Walker *pWalker , Select *p )  {
   if (db->mallocFailed) {
     return 2;
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((0 || ((selFlags & 0x0010) != 0))) {
       return 1;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((p->pSrc == 0) || ((selFlags & 0x0010) != 0))) {
       return 1;
     }  
@@ -55896,44 +55896,44 @@ static  int selectExpander(Walker *pWalker , Select *p )  {
     }  
     if ((pFrom->zName == 0)) {
       Select *_1327_pSel =  pFrom->pSelect;
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         ((void ) 0);
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         ((void ) 0);
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         sqlite3WalkSelect(pWalker, _1327_pSel);
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         (pFrom->pTab = (pTab = sqlite3DbMallocZero(db, sizeof(Table ))));
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         if ((pTab == 0)) {
           return 2;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         (pTab->nRef = 1);
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         (pTab->zName = sqlite3MPrintf(db, "sqlite_sq_%p", ((void *) pTab)));
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         while (_1327_pSel->pPrior) {
           (_1327_pSel = _1327_pSel->pPrior);
         }
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         selectColumnsFromExprList(pParse, _1327_pSel->pEList, (&pTab->nCol), (&pTab->aCol));
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         (pTab->iPKey = (- 1));
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         (pTab->nRowEst = 1048576);
       }  
-      if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+      if ((((! id2i_sqlite_omit_subquery) ) )) {
         (pTab->tabFlags |= 0x02);
       }  
     }  
@@ -56073,7 +56073,7 @@ static  int selectExpander(Walker *pWalker , Select *p )  {
               struct  ExprList_item   *pX =  (&pNew->a[(pNew->nExpr - 1)]);
               if (pSub) {
                 (pX->zSpan = sqlite3DbStrDup(db, pSub->pEList->a[j].zSpan));
-                if (((id2i.f_sqlite_coverage_test ) )) {
+                if (((id2i_sqlite_coverage_test ) )) {
                   if ((pX->zSpan == 0)) {
                     sqlite3Coverage(101744);
                   }  
@@ -56081,7 +56081,7 @@ static  int selectExpander(Walker *pWalker , Select *p )  {
               }  
               else {
                 (pX->zSpan = sqlite3MPrintf(db, "%s.%s.%s", zSchemaName, zTabName, zColname));
-                if (((id2i.f_sqlite_coverage_test ) )) {
+                if (((id2i_sqlite_coverage_test ) )) {
                   if ((pX->zSpan == 0)) {
                     sqlite3Coverage(101748);
                   }  
@@ -56138,7 +56138,7 @@ static  int selectAddSubqueryTypeInfo(Walker *pWalker , Select *p )  {
     (pTabList = p->pSrc);
     for ((i = 0), (pFrom = pTabList->a); (i < pTabList->nSrc); i++, pFrom++) {
       Table *pTab =  pFrom->pTab;
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((1 && ((pTab->tabFlags & 0x02) != 0))) {
           Select *pSel =  pFrom->pSelect;
           ((void ) 0);
@@ -56148,7 +56148,7 @@ static  int selectAddSubqueryTypeInfo(Walker *pWalker , Select *p )  {
           selectAddColumnTypeAndCollation(pParse, pTab, pSel);
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if (((pTab != 0) && ((pTab->tabFlags & 0x02) != 0))) {
           Select *pSel =  pFrom->pSelect;
           ((void ) 0);
@@ -56164,33 +56164,33 @@ static  int selectAddSubqueryTypeInfo(Walker *pWalker , Select *p )  {
 }
 static  void sqlite3SelectAddTypeInfo(Parse *pParse , Select *pSelect )  {
   Walker _1327_w;
-  if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+  if ((((! id2i_sqlite_omit_subquery) ) )) {
     memset((&_1327_w), 0, sizeof(_1327_w));
   }  
-  if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+  if ((((! id2i_sqlite_omit_subquery) ) )) {
     (_1327_w.xSelectCallback = selectAddSubqueryTypeInfo);
   }  
-  if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+  if ((((! id2i_sqlite_omit_subquery) ) )) {
     (_1327_w.xExprCallback = exprWalkNoop);
   }  
-  if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+  if ((((! id2i_sqlite_omit_subquery) ) )) {
     (_1327_w.pParse = pParse);
   }  
-  if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+  if ((((! id2i_sqlite_omit_subquery) ) )) {
     (_1327_w.bSelectDepthFirst = 1);
   }  
-  if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+  if ((((! id2i_sqlite_omit_subquery) ) )) {
     sqlite3WalkSelect((&_1327_w), pSelect);
   }  
 }
 static  void sqlite3SelectPrep(Parse *pParse , Select *p , NameContext *pOuterNC )  {
   sqlite3 *db;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((p == 0)) {
       return;
     }  
@@ -56339,7 +56339,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
   int iEnd;
   sqlite3 *db;
   int iRestoreSelectId =  pParse->_1272_iSelectId;
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     (pParse->_1272_iSelectId = pParse->_1272_iNextSelectId++);
   }  
   (db = pParse->db);
@@ -56369,12 +56369,12 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
   if ((v == 0)) {
     goto select_end;
   }  
-  if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+  if ((((! id2i_sqlite_omit_subquery) ) )) {
     if (checkForMultiColumnSelectError(pParse, pDest, pEList->nExpr)) {
       goto select_end;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) || (id2i.f_sqlite_omit_view && (! id2i.f_sqlite_omit_subquery)))) {
+  if ((((! id2i_sqlite_omit_view) ) || (id2i_sqlite_omit_view && (! id2i_sqlite_omit_subquery)))) {
     for ((i = 0); ((! p->pPrior) && (i < pTabList->nSrc)); i++) {
       struct  SrcList_item   *pItem =  (&pTabList->a[i]);
       SelectDest dest;
@@ -56398,7 +56398,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
         }  
         (i = (- 1));
       } 
-      else if ((((id2i.f_sqlite_omit_builtin_test ) ) && ((pTabList->nSrc == 1) && ((p->selFlags & 0x0100) == 0) && 1))) {
+      else if ((((id2i_sqlite_omit_builtin_test ) ) && ((pTabList->nSrc == 1) && ((p->selFlags & 0x0100) == 0) && 1))) {
         int addrTop;
         int addrEof;
         (pItem->regReturn = ++pParse->nMem);
@@ -56411,7 +56411,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
         sqlite3VdbeAddOp2(v, 21, 0, addrEof);
         sqlite3VdbeChangeP5(v, 1);
         sqlite3SelectDestInit((&dest), 10, pItem->regReturn);
-        if ((((! id2i.f_sqlite_omit_explain) ) )) {
+        if ((((! id2i_sqlite_omit_explain) ) )) {
           (pItem->_1272_iSelectId = ((u8 ) pParse->_1272_iNextSelectId));
         }  
         sqlite3Select(pParse, pSub, (&dest));
@@ -56425,7 +56425,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
         sqlite3ClearTempRegCache(pParse);
       }
       
-      else if (((((! id2i.f_sqlite_omit_builtin_test) ) ) && ((pTabList->nSrc == 1) && ((p->selFlags & 0x0100) == 0) && ((db->dbOptFlags & 0x0100) == 0)))) {
+      else if (((((! id2i_sqlite_omit_builtin_test) ) ) && ((pTabList->nSrc == 1) && ((p->selFlags & 0x0100) == 0) && ((db->dbOptFlags & 0x0100) == 0)))) {
         int addrTop;
         int addrEof;
         (pItem->regReturn = ++pParse->nMem);
@@ -56438,7 +56438,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
         sqlite3VdbeAddOp2(v, 21, 0, addrEof);
         sqlite3VdbeChangeP5(v, 1);
         sqlite3SelectDestInit((&dest), 10, pItem->regReturn);
-        if ((((! id2i.f_sqlite_omit_explain) ) )) {
+        if ((((! id2i_sqlite_omit_explain) ) )) {
           (pItem->_1272_iSelectId = ((u8 ) pParse->_1272_iNextSelectId));
         }  
         sqlite3Select(pParse, pSub, (&dest));
@@ -56463,7 +56463,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
           (onceAddr = sqlite3CodeOnce(pParse));
         }  
         sqlite3SelectDestInit((&dest), 9, pItem->iCursor);
-        if ((((! id2i.f_sqlite_omit_explain) ) )) {
+        if ((((! id2i_sqlite_omit_explain) ) )) {
           (pItem->_1272_iSelectId = ((u8 ) pParse->_1272_iNextSelectId));
         }  
         sqlite3Select(pParse, pSub, (&dest));
@@ -56485,7 +56485,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
       }  
     }
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) || (id2i.f_sqlite_omit_view && (! id2i.f_sqlite_omit_subquery)))) {
+  if ((((! id2i_sqlite_omit_view) ) || (id2i_sqlite_omit_view && (! id2i_sqlite_omit_subquery)))) {
     (pEList = p->pEList);
   }  
   (pWhere = p->pWhere);
@@ -56509,17 +56509,17 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
       }  
     }  
     (rc = multiSelect(pParse, p, pDest));
-    if ((((! id2i.f_sqlite_omit_explain) ) )) {
+    if ((((! id2i_sqlite_omit_explain) ) )) {
       (pParse->_1272_iSelectId = iRestoreSelectId);
     }  
     return rc;
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     if (((sqlite3ExprListCompare(p->pGroupBy, pOrderBy, (- 1)) == 0) && 1)) {
       (pOrderBy = 0);
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     if (((sqlite3ExprListCompare(p->pGroupBy, pOrderBy, (- 1)) == 0) && ((db->dbOptFlags & 0x0004) == 0))) {
       (pOrderBy = 0);
     }  
@@ -56668,7 +56668,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
         int regRecord;
         int nCol;
         int nGroupBy;
-        if ((((! id2i.f_sqlite_omit_explain) ) )) {
+        if ((((! id2i_sqlite_omit_explain) ) )) {
           explainTempTable(pParse, ((sDistinct.isTnct && ((p->selFlags & 0x0001) == 0)) ? "DISTINCT" : "GROUP BY"));
         }  
         (groupBySort = 1);
@@ -56789,7 +56789,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
         }  
         sqlite3VdbeAddOp2(v, 44, iCsr, sAggInfo.aFunc[0].iMem);
         sqlite3VdbeAddOp1(v, 54, iCsr);
-        if ((((! id2i.f_sqlite_omit_explain) ) )) {
+        if ((((! id2i_sqlite_omit_explain) ) )) {
           explainSimpleCount(pParse, pTab, pBest);
         }  
       }  
@@ -56832,12 +56832,12 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
     sqlite3VdbeResolveLabel(v, addrEnd);
   }
   if ((sDistinct.eTnctType == 3)) {
-    if ((((! id2i.f_sqlite_omit_explain) ) )) {
+    if ((((! id2i_sqlite_omit_explain) ) )) {
       explainTempTable(pParse, "DISTINCT");
     }  
   }  
   if (pOrderBy) {
-    if ((((! id2i.f_sqlite_omit_explain) ) )) {
+    if ((((! id2i_sqlite_omit_explain) ) )) {
       explainTempTable(pParse, "ORDER BY");
     }  
     generateSortTail(pParse, p, v, pEList->nExpr, pDest);
@@ -56845,7 +56845,7 @@ static  int sqlite3Select(Parse *pParse , Select *p , SelectDest *pDest )  {
   sqlite3VdbeResolveLabel(v, iEnd);
   (rc = 0);
   select_end:
-  if ((((! id2i.f_sqlite_omit_explain) ) )) {
+  if ((((! id2i_sqlite_omit_explain) ) )) {
     (pParse->_1272_iSelectId = iRestoreSelectId);
   }  
   if (((rc == 0) && (pDest->eDest == 5))) {
@@ -57261,12 +57261,12 @@ static  void sqlite3FinishTrigger(Parse *pParse , TriggerStep *pStepList , Token
   int iDb;
   Token nameToken;
   (pParse->pNewTrigger = 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((0 || (! pTrig))) {
       goto triggerfinish_cleanup;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pParse->nErr || (! pTrig))) {
       goto triggerfinish_cleanup;
     }  
@@ -57485,7 +57485,7 @@ static  void sqlite3UnlinkAndDeleteTrigger(sqlite3 *db , int iDb , const  char *
   ((void ) 0);
   (pHash = (&db->aDb[iDb].pSchema->trigHash));
   (pTrigger = sqlite3HashInsert(pHash, zName, sqlite3Strlen30(zName), 0));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       if ((pTrigger->pSchema == pTrigger->pTabSchema)) {
         Table *pTab =  tableOfTrigger(pTrigger);
@@ -57499,7 +57499,7 @@ static  void sqlite3UnlinkAndDeleteTrigger(sqlite3 *db , int iDb , const  char *
       (db->flags |= 0x00000002);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pTrigger) {
       if ((pTrigger->pSchema == pTrigger->pTabSchema)) {
         Table *pTab =  tableOfTrigger(pTrigger);
@@ -57516,12 +57516,12 @@ static  void sqlite3UnlinkAndDeleteTrigger(sqlite3 *db , int iDb , const  char *
 }
 static  int checkColumnOverlap(IdList *pIdList , ExprList *pEList )  {
   int e;
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pIdList == 0) || (pEList == 0))) {
       return 1;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((pIdList == 0) || 0)) {
       return 1;
     }  
@@ -57868,10 +57868,10 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
       } 
     }
   }
-  if (((id2i.f_sqlite_omit_foreign_key ) )) {
+  if (((id2i_sqlite_omit_foreign_key ) )) {
     (hasFK = 0);
   }  
-  if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+  if ((((! id2i_sqlite_omit_foreign_key) ) )) {
     (hasFK = sqlite3FkRequired(pParse, pTab, aXRef, chngRowid));
   }  
   for ((nIdx = 0), (pIdx = pTab->pIndex); pIdx; (pIdx = pIdx->pNext), nIdx++) {
@@ -57924,17 +57924,17 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
   }  
   (regNew = (pParse->nMem + 1));
   (pParse->nMem += pTab->nCol);
-  if (((id2i.f_sqlite_omit_view ) )) {
+  if (((id2i_sqlite_omit_view ) )) {
     if (0) {
       sqlite3AuthContextPush(pParse, (&sContext), pTab->zName);
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (isView) {
       sqlite3AuthContextPush(pParse, (&sContext), pTab->zName);
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if (isView) {
       sqlite3MaterializeView(pParse, pTab, pWhere, iCur);
     }  
@@ -57957,7 +57957,7 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
     (regRowCount = ++pParse->nMem);
     sqlite3VdbeAddOp2(v, 21, 0, regRowCount);
   }  
-  if (((id2i.f_sqlite_omit_view ) )) {
+  if (((id2i_sqlite_omit_view ) )) {
     if ((! 0)) {
       if ((! okOnePass)) {
         sqlite3OpenTable(pParse, iCur, iDb, pTab, 49);
@@ -57984,7 +57984,7 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
       }
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if ((! isView)) {
       if ((! okOnePass)) {
         sqlite3OpenTable(pParse, iCur, iDb, pTab, 49);
@@ -58028,14 +58028,14 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
   if ((hasFK || pTrigger)) {
     u32 _1278_oldmask =  (hasFK ? sqlite3FkOldmask(pParse, pTab) : 0);
     u32 _1329_oldmask =  (hasFK ? 0 : 0);
-    if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+    if ((((! id2i_sqlite_omit_foreign_key) ) )) {
       (_1278_oldmask |= sqlite3TriggerColmask(pParse, pTrigger, pChanges, 0, (1 | 2), pTab, onError));
     }  
-    if (((id2i.f_sqlite_omit_foreign_key ) )) {
+    if (((id2i_sqlite_omit_foreign_key ) )) {
       (_1329_oldmask |= sqlite3TriggerColmask(pParse, pTrigger, pChanges, 0, (1 | 2), pTab, onError));
     }  
     for ((i = 0); (i < pTab->nCol); i++) {
-      if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+      if ((((! id2i_sqlite_omit_foreign_key) ) )) {
         if (((aXRef[i] < 0) || (_1278_oldmask == 0xffffffff) || ((i < 32) && (_1278_oldmask & (1 << i))))) {
           sqlite3ExprCodeGetColumnOfTable(v, pTab, iCur, i, (regOld + i));
         }  
@@ -58043,7 +58043,7 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
           sqlite3VdbeAddOp2(v, 24, 0, (regOld + i));
         }
       }  
-      if (((id2i.f_sqlite_omit_foreign_key ) )) {
+      if (((id2i_sqlite_omit_foreign_key ) )) {
         if (((aXRef[i] < 0) || (_1329_oldmask == 0xffffffff) || ((i < 32) && (_1329_oldmask & (1 << i))))) {
           sqlite3ExprCodeGetColumnOfTable(v, pTab, iCur, i, (regOld + i));
         }  
@@ -58068,12 +58068,12 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
         sqlite3ExprCode(pParse, pChanges->a[j].pExpr, (regNew + i));
       } 
       else if (((0 == (tmask & 1)) || (i > 31) || (newmask & (1 << i)))) {
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((i == 31)) {
             sqlite3Coverage(104789);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((i == 32)) {
             sqlite3Coverage(104790);
           }  
@@ -58095,12 +58095,12 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
       }  
     }
   }  
-  if (((id2i.f_sqlite_omit_view ) )) {
+  if (((id2i_sqlite_omit_view ) )) {
     if ((! 0)) {
       int j1;
       sqlite3GenerateConstraintChecks(pParse, pTab, iCur, regNewRowid, aRegIdx, (chngRowid ? regOldRowid : 0), 1, onError, addr, 0);
       if (hasFK) {
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           sqlite3FkCheck(pParse, pTab, regOldRowid, 0, aXRef, chngRowid);
         }  
       }  
@@ -58111,24 +58111,24 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
       }  
       sqlite3VdbeJumpHere(v, j1);
       if (hasFK) {
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           sqlite3FkCheck(pParse, pTab, 0, regNewRowid, aXRef, chngRowid);
         }  
       }  
       sqlite3CompleteInsertion(pParse, pTab, iCur, regNewRowid, aRegIdx, 1, 0, 0);
       if (hasFK) {
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           sqlite3FkActions(pParse, pTab, pChanges, regOldRowid, aXRef, chngRowid);
         }  
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_view) ) )) {
+  if ((((! id2i_sqlite_omit_view) ) )) {
     if ((! isView)) {
       int j1;
       sqlite3GenerateConstraintChecks(pParse, pTab, iCur, regNewRowid, aRegIdx, (chngRowid ? regOldRowid : 0), 1, onError, addr, 0);
       if (hasFK) {
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           sqlite3FkCheck(pParse, pTab, regOldRowid, 0, aXRef, chngRowid);
         }  
       }  
@@ -58139,13 +58139,13 @@ static  void sqlite3Update(Parse *pParse , SrcList *pTabList , ExprList *pChange
       }  
       sqlite3VdbeJumpHere(v, j1);
       if (hasFK) {
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           sqlite3FkCheck(pParse, pTab, 0, regNewRowid, aXRef, chngRowid);
         }  
       }  
       sqlite3CompleteInsertion(pParse, pTab, iCur, regNewRowid, aRegIdx, 1, 0, 0);
       if (hasFK) {
-        if ((((! id2i.f_sqlite_omit_foreign_key) ) )) {
+        if ((((! id2i_sqlite_omit_foreign_key) ) )) {
           sqlite3FkActions(pParse, pTab, pChanges, regOldRowid, aXRef, chngRowid);
         }  
       }  
@@ -58339,19 +58339,19 @@ static  int sqlite3RunVacuum(char **pzErrMsg , sqlite3 *db )  {
   if ((sqlite3PagerGetJournalMode(sqlite3BtreePager(pMain)) == 5)) {
     (db->nextPagesize = 0);
   }  
-  if ((((! id2i.f_sqlite_omit_attach) && (! id2i.f_sqlite_omit_vacuum) && (! id2i.f_sqlite_coverage_test)) || ((! id2i.f_sqlite_omit_attach) && id2i.f_sqlite_omit_vacuum) || (id2i.f_sqlite_omit_attach ))) {
+  if ((((! id2i_sqlite_omit_attach) && (! id2i_sqlite_omit_vacuum) && (! id2i_sqlite_coverage_test)) || ((! id2i_sqlite_omit_attach) && id2i_sqlite_omit_vacuum) || (id2i_sqlite_omit_attach ))) {
     if ((sqlite3BtreeSetPageSize(pTemp, sqlite3BtreeGetPageSize(pMain), nRes, 0) || ((! isMemDb) && sqlite3BtreeSetPageSize(pTemp, db->nextPagesize, nRes, 0)) || db->mallocFailed)) {
       (rc = 7);
       goto end_of_vacuum;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_attach) && (! id2i.f_sqlite_omit_vacuum) && id2i.f_sqlite_coverage_test) )) {
+  if ((((! id2i_sqlite_omit_attach) && (! id2i_sqlite_omit_vacuum) && id2i_sqlite_coverage_test) )) {
     if ((sqlite3BtreeSetPageSize(pTemp, sqlite3BtreeGetPageSize(pMain), nRes, 0) || ((! isMemDb) && sqlite3BtreeSetPageSize(pTemp, db->nextPagesize, nRes, 0)) || 0)) {
       (rc = 7);
       goto end_of_vacuum;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_attach) && (! id2i.f_sqlite_omit_vacuum) && (! id2i.f_sqlite_omit_autovacuum)) )) {
+  if ((((! id2i_sqlite_omit_attach) && (! id2i_sqlite_omit_vacuum) && (! id2i_sqlite_omit_autovacuum)) )) {
     sqlite3BtreeSetAutoVacuum(pTemp, ((db->nextAutovac >= 0) ? db->nextAutovac : sqlite3BtreeGetAutoVacuum(pMain)));
   }  
   (rc = execExecSql(db, pzErrMsg, "SELECT 'CREATE TABLE vacuum_db.' || substr(sql,14) " "  FROM sqlite_master WHERE type='table' AND name!='sqlite_sequence'" "   AND rootpage>0"));
@@ -58391,12 +58391,12 @@ static  int sqlite3RunVacuum(char **pzErrMsg , sqlite3 *db )  {
     for ((i = 0); (i < ((int ) (sizeof(aCopy) / sizeof(aCopy[0])))); (i += 2)) {
       sqlite3BtreeGetMeta(pMain, aCopy[i], (&meta));
       (rc = sqlite3BtreeUpdateMeta(pTemp, aCopy[i], (meta + aCopy[(i + 1)])));
-      if ((((! id2i.f_sqlite_omit_attach) && (! id2i.f_sqlite_omit_vacuum) && id2i.f_sqlite_coverage_test) )) {
+      if ((((! id2i_sqlite_omit_attach) && (! id2i_sqlite_omit_vacuum) && id2i_sqlite_coverage_test) )) {
         if (0) {
           goto end_of_vacuum;
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_attach) && (! id2i.f_sqlite_omit_vacuum) && (! id2i.f_sqlite_coverage_test)) || ((! id2i.f_sqlite_omit_attach) && id2i.f_sqlite_omit_vacuum) || (id2i.f_sqlite_omit_attach ))) {
+      if ((((! id2i_sqlite_omit_attach) && (! id2i_sqlite_omit_vacuum) && (! id2i_sqlite_coverage_test)) || ((! id2i_sqlite_omit_attach) && id2i_sqlite_omit_vacuum) || (id2i_sqlite_omit_attach ))) {
         if ((rc != 0)) {
           goto end_of_vacuum;
         }  
@@ -58410,7 +58410,7 @@ static  int sqlite3RunVacuum(char **pzErrMsg , sqlite3 *db )  {
     if ((rc != 0)) {
       goto end_of_vacuum;
     }  
-    if ((((! id2i.f_sqlite_omit_attach) && (! id2i.f_sqlite_omit_vacuum) && (! id2i.f_sqlite_omit_autovacuum)) )) {
+    if ((((! id2i_sqlite_omit_attach) && (! id2i_sqlite_omit_vacuum) && (! id2i_sqlite_omit_autovacuum)) )) {
       sqlite3BtreeSetAutoVacuum(pMain, sqlite3BtreeGetAutoVacuum(pTemp));
     }  
   }
@@ -58717,7 +58717,7 @@ static  int vtabCallConstructor(sqlite3 *db , Table *pTab , Module *pMod , int (
     }
     sqlite3DbFree(db, pVTable);
   } 
-  else if ((((id2i.f_sqlite_coverage_test ) ) && 1)) {
+  else if ((((id2i_sqlite_coverage_test ) ) && 1)) {
     (pVTable->pVtab->pModule = pMod->pModule);
     (pVTable->nRef = 1);
     if (sCtx.pTab) {
@@ -58762,7 +58762,7 @@ static  int vtabCallConstructor(sqlite3 *db , Table *pTab , Module *pMod , int (
     }
   }
   
-  else if (((((! id2i.f_sqlite_coverage_test) ) ) && pVTable->pVtab)) {
+  else if (((((! id2i_sqlite_coverage_test) ) ) && pVTable->pVtab)) {
     (pVTable->pVtab->pModule = pMod->pModule);
     (pVTable->nRef = 1);
     if (sCtx.pTab) {
@@ -58869,7 +58869,7 @@ static  int sqlite3VtabCallCreate(sqlite3 *db , int iDb , const  char *zTab , ch
   else {
     (rc = vtabCallConstructor(db, pTab, pMod, pMod->pModule->xCreate, pzErr));
   }
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((rc == 0) && sqlite3GetVTable(db, pTab))) {
       (rc = growVTrans(db));
       if ((rc == 0)) {
@@ -58877,7 +58877,7 @@ static  int sqlite3VtabCallCreate(sqlite3 *db , int iDb , const  char *zTab , ch
       }  
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((rc == 0) && 1)) {
       (rc = growVTrans(db));
       if ((rc == 0)) {
@@ -58934,7 +58934,7 @@ static  int sqlite3VtabCallDestroy(sqlite3 *db , int iDb , const  char *zTab )  
   int rc =  0;
   Table *pTab;
   (pTab = sqlite3FindTable(db, zTab, db->aDb[iDb].zName));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       VTable *p =  vtabDisconnectAll(db, pTab);
       ((void ) 0);
@@ -58947,7 +58947,7 @@ static  int sqlite3VtabCallDestroy(sqlite3 *db , int iDb , const  char *zTab )  
       }  
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((pTab != 0) && (pTab->pVTable != 0))) {
       VTable *p =  vtabDisconnectAll(db, pTab);
       ((void ) 0);
@@ -59076,12 +59076,12 @@ static  FuncDef *sqlite3VtabOverloadFunction(sqlite3 *db , FuncDef *pDef , int n
   int rc =  0;
   char *zLowerName;
   unsigned char *z;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return pDef;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pExpr == 0)) {
       return pDef;
     }  
@@ -59090,12 +59090,12 @@ static  FuncDef *sqlite3VtabOverloadFunction(sqlite3 *db , FuncDef *pDef , int n
     return pDef;
   }  
   (pTab = pExpr->pTab);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return pDef;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pTab == 0)) {
       return pDef;
     }  
@@ -59113,10 +59113,10 @@ static  FuncDef *sqlite3VtabOverloadFunction(sqlite3 *db , FuncDef *pDef , int n
   (zLowerName = sqlite3DbStrDup(db, pDef->zName));
   if (zLowerName) {
     for ((z = ((unsigned  char *) zLowerName)); (*z); z++) {
-      if ((((! id2i.f_sqlite_ebcdic) ) )) {
+      if ((((! id2i_sqlite_ebcdic) ) )) {
         ((*z) = _1281_sqlite3UpperToLower[(*z)]);
       }  
-      if (((id2i.f_sqlite_ebcdic ) )) {
+      if (((id2i_sqlite_ebcdic ) )) {
         ((*z) = _1282_sqlite3UpperToLower[(*z)]);
       }  
     }
@@ -59416,16 +59416,16 @@ static  void whereClauseInit(WhereClause *pWC , WhereInfo *pWInfo )  {
   (pWC->pWInfo = pWInfo);
   (pWC->pOuter = 0);
   (pWC->nTerm = 0);
-  if (((id2i.f_sqlite_small_stack ) )) {
+  if (((id2i_sqlite_small_stack ) )) {
     (pWC->nSlot = ((int ) (sizeof(pWC->_1356_aStatic) / sizeof(pWC->_1356_aStatic[0]))));
   }  
-  if ((((! id2i.f_sqlite_small_stack) ) )) {
+  if ((((! id2i_sqlite_small_stack) ) )) {
     (pWC->nSlot = ((int ) (sizeof(pWC->_1357_aStatic) / sizeof(pWC->_1357_aStatic[0]))));
   }  
-  if (((id2i.f_sqlite_small_stack ) )) {
+  if (((id2i_sqlite_small_stack ) )) {
     (pWC->a = pWC->_1356_aStatic);
   }  
-  if ((((! id2i.f_sqlite_small_stack) ) )) {
+  if ((((! id2i_sqlite_small_stack) ) )) {
     (pWC->a = pWC->_1357_aStatic);
   }  
 }
@@ -59453,12 +59453,12 @@ static  void whereClauseClear(WhereClause *pWC )  {
       whereAndInfoDelete(db, a->u.pAndInfo);
     } 
   }
-  if (((id2i.f_sqlite_small_stack ) )) {
+  if (((id2i_sqlite_small_stack ) )) {
     if ((pWC->a != pWC->_1356_aStatic)) {
       sqlite3DbFree(db, pWC->a);
     }  
   }  
-  if ((((! id2i.f_sqlite_small_stack) ) )) {
+  if ((((! id2i_sqlite_small_stack) ) )) {
     if ((pWC->a != pWC->_1357_aStatic)) {
       sqlite3DbFree(db, pWC->a);
     }  
@@ -59467,7 +59467,7 @@ static  void whereClauseClear(WhereClause *pWC )  {
 static  int whereClauseInsert(WhereClause *pWC , Expr *p , u8 wtFlags )  {
   WhereTerm *pTerm;
   int idx;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((wtFlags & 0x02)) {
       sqlite3Coverage(107125);
     }  
@@ -59484,12 +59484,12 @@ static  int whereClauseInsert(WhereClause *pWC , Expr *p , u8 wtFlags )  {
       return 0;
     }  
     memcpy(pWC->a, pOld, (sizeof(pWC->a[0]) * pWC->nTerm));
-    if (((id2i.f_sqlite_small_stack ) )) {
+    if (((id2i_sqlite_small_stack ) )) {
       if ((pOld != pWC->_1356_aStatic)) {
         sqlite3DbFree(db, pOld);
       }  
     }  
-    if ((((! id2i.f_sqlite_small_stack) ) )) {
+    if ((((! id2i_sqlite_small_stack) ) )) {
       if ((pOld != pWC->_1357_aStatic)) {
         sqlite3DbFree(db, pOld);
       }  
@@ -59576,7 +59576,7 @@ static  Bitmask exprSelectTableUsage(WhereMaskSet *pMaskSet , Select *pS )  {
     (mask |= exprListTableUsage(pMaskSet, pS->pOrderBy));
     (mask |= exprTableUsage(pMaskSet, pS->pWhere));
     (mask |= exprTableUsage(pMaskSet, pS->pHaving));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (1) {
         int i;
         for ((i = 0); (i < pSrc->nSrc); i++) {
@@ -59585,7 +59585,7 @@ static  Bitmask exprSelectTableUsage(WhereMaskSet *pMaskSet , Select *pS )  {
         }
       }  
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if ((pSrc != 0)) {
         int i;
         for ((i = 0); (i < pSrc->nSrc); i++) {
@@ -59722,12 +59722,12 @@ static  WhereTerm *whereScanInit(WhereScan *pScan , WhereClause *pWC , int iCur 
   if ((pIdx && (iColumn >= 0))) {
     (pScan->idxaff = pIdx->pTable->aCol[iColumn].affinity);
     for ((j = 0); (pIdx->aiColumn[j] != iColumn); j++) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (0) {
           return 0;
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if ((j >= pIdx->nColumn)) {
           return 0;
         }  
@@ -59785,7 +59785,7 @@ static  int isLikeOrGlob(Parse *pParse , Expr *pExpr , Expr **ppPrefix , int *pi
   if ((! sqlite3IsLikeFunction(db, pExpr, pnoCase, wc))) {
     return 0;
   }  
-  if (((id2i.f_sqlite_ebcdic ) )) {
+  if (((id2i_sqlite_ebcdic ) )) {
     if ((*pnoCase)) {
       return 0;
     }  
@@ -59916,7 +59916,7 @@ static  void exprAnalyzeOrTerm(SrcList *pSrc , WhereClause *pWC , int idxTerm ) 
         whereSplit(pAndWC, pOrTerm->pExpr, 69);
         exprAnalyzeAll(pSrc, pAndWC);
         (pAndWC->pOuter = pWC);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (db->mallocFailed) {
             sqlite3Coverage(107816);
           }  
@@ -59968,12 +59968,12 @@ static  void exprAnalyzeOrTerm(SrcList *pSrc , WhereClause *pWC , int idxTerm ) 
           continue;
         }  
         if (((chngToIN & getMask((&pWInfo->sMaskSet), pOrTerm->leftCursor)) == 0)) {
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if ((pOrTerm->wtFlags & 0x08)) {
               sqlite3Coverage(107902);
             }  
           }  
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if ((pOrTerm->wtFlags & 0x02)) {
               sqlite3Coverage(107903);
             }  
@@ -59991,7 +59991,7 @@ static  void exprAnalyzeOrTerm(SrcList *pSrc , WhereClause *pWC , int idxTerm ) 
         ((void ) 0);
         break;
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((j == 1)) {
           sqlite3Coverage(107919);
         }  
@@ -60043,7 +60043,7 @@ static  void exprAnalyzeOrTerm(SrcList *pSrc , WhereClause *pWC , int idxTerm ) 
         ((void ) 0);
         (pNew->x.pList = pList);
         (idxNew = whereClauseInsert(pWC, pNew, (0x02 | 0x01)));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((idxNew == 0)) {
             sqlite3Coverage(107975);
           }  
@@ -60137,13 +60137,13 @@ static  void exprAnalyze(SrcList *pSrc , WhereClause *pWC , int idxTerm )  {
         (pTerm = (&pWC->a[idxTerm]));
         (pTerm->nChild = 1);
         (pTerm->wtFlags |= 0x08);
-        if (((id2i.f_sqlite_omit_builtin_test ) )) {
+        if (((id2i_sqlite_omit_builtin_test ) )) {
           if (((pExpr->op == 76) && (! ((pExpr->flags & 0x000001) != 0)) && 1)) {
             (pTerm->eOperator |= 0x400);
             (eExtraOp = 0x400);
           }  
         }  
-        if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+        if ((((! id2i_sqlite_omit_builtin_test) ) )) {
           if (((pExpr->op == 76) && (! ((pExpr->flags & 0x000001) != 0)) && ((db->dbOptFlags & 0x0200) == 0))) {
             (pTerm->eOperator |= 0x400);
             (eExtraOp = 0x400);
@@ -60158,7 +60158,7 @@ static  void exprAnalyze(SrcList *pSrc , WhereClause *pWC , int idxTerm )  {
       (pLeft = sqlite3ExprSkipCollate(pDup->pLeft));
       (pNew->leftCursor = pLeft->iTable);
       (pNew->u.leftColumn = pLeft->iColumn);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((prereqLeft | extraRight) != prereqLeft)) {
           sqlite3Coverage(108100);
         }  
@@ -60180,7 +60180,7 @@ static  void exprAnalyze(SrcList *pSrc , WhereClause *pWC , int idxTerm )  {
       (pNewExpr = sqlite3PExpr(pParse, ops[i], sqlite3ExprDup(db, pExpr->pLeft, 0), sqlite3ExprDup(db, pList->a[i].pExpr, 0), 0));
       transferJoinMarkings(pNewExpr, pExpr);
       (idxNew = whereClauseInsert(pWC, pNewExpr, (0x02 | 0x01)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((idxNew == 0)) {
           sqlite3Coverage(108137);
         }  
@@ -60192,7 +60192,7 @@ static  void exprAnalyze(SrcList *pSrc , WhereClause *pWC , int idxTerm )  {
     (pTerm->nChild = 2);
   }
   
-  else if (((((! id2i.f_sqlite_omit_subquery) && (! id2i.f_sqlite_omit_or_optimization)) ) && (pExpr->op == 68))) {
+  else if (((((! id2i_sqlite_omit_subquery) && (! id2i_sqlite_omit_or_optimization)) ) && (pExpr->op == 68))) {
     ((void ) 0);
     exprAnalyzeOrTerm(pSrc, pWC, idxTerm);
     (pTerm = (&pWC->a[idxTerm]));
@@ -60215,10 +60215,10 @@ static  void exprAnalyze(SrcList *pSrc , WhereClause *pWC , int idxTerm )  {
         if ((c == ('A' - 1))) {
           (isComplete = 0);
         }  
-        if ((((! id2i.f_sqlite_ebcdic) ) )) {
+        if ((((! id2i_sqlite_ebcdic) ) )) {
           (c = _1281_sqlite3UpperToLower[c]);
         }  
-        if (((id2i.f_sqlite_ebcdic ) )) {
+        if (((id2i_sqlite_ebcdic ) )) {
           (c = _1282_sqlite3UpperToLower[c]);
         }  
       }  
@@ -60230,7 +60230,7 @@ static  void exprAnalyze(SrcList *pSrc , WhereClause *pWC , int idxTerm )  {
     (pNewExpr1 = sqlite3PExpr(pParse, 80, sqlite3ExprAddCollateToken(pParse, pNewExpr1, (&sCollSeqName)), pStr1, 0));
     transferJoinMarkings(pNewExpr1, pExpr);
     (idxNew1 = whereClauseInsert(pWC, pNewExpr1, (0x02 | 0x01)));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((idxNew1 == 0)) {
         sqlite3Coverage(108205);
       }  
@@ -60240,7 +60240,7 @@ static  void exprAnalyze(SrcList *pSrc , WhereClause *pWC , int idxTerm )  {
     (pNewExpr2 = sqlite3PExpr(pParse, 79, sqlite3ExprAddCollateToken(pParse, pNewExpr2, (&sCollSeqName)), pStr2, 0));
     transferJoinMarkings(pNewExpr2, pExpr);
     (idxNew2 = whereClauseInsert(pWC, pNewExpr2, (0x02 | 0x01)));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((idxNew2 == 0)) {
         sqlite3Coverage(108213);
       }  
@@ -60266,7 +60266,7 @@ static  void exprAnalyze(SrcList *pSrc , WhereClause *pWC , int idxTerm )  {
       Expr *pNewExpr;
       (pNewExpr = sqlite3PExpr(pParse, 50, 0, sqlite3ExprDup(db, pRight, 0), 0));
       (idxNew = whereClauseInsert(pWC, pNewExpr, (0x02 | 0x01)));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((idxNew == 0)) {
           sqlite3Coverage(108246);
         }  
@@ -60292,12 +60292,12 @@ static  int findIndexCol(Parse *pParse , ExprList *pList , int iBase , Index *pI
     Expr *p =  sqlite3ExprSkipCollate(pList->a[i].pExpr);
     if (((p->op == 152) && (p->iColumn == pIdx->aiColumn[iCol]) && (p->iTable == iBase))) {
       CollSeq *pColl =  sqlite3ExprCollSeq(pParse, pList->a[i].pExpr);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((1 && (0 == sqlite3_stricmp(pColl->zName, zColl)))) {
           return i;
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if ((pColl && (0 == sqlite3_stricmp(pColl->zName, zColl)))) {
           return i;
         }  
@@ -60397,12 +60397,12 @@ static  void constructAutomaticIndex(Parse *pParse , WhereClause *pWC , struct  
     if (termCanDriveIndex(pTerm, pSrc, notReady)) {
       int iCol =  pTerm->u.leftColumn;
       Bitmask cMask =  ((iCol >= ((int ) (sizeof(Bitmask ) * 8))) ? (((Bitmask ) 1) << (((int ) (sizeof(Bitmask ) * 8)) - 1)) : (((Bitmask ) 1) << iCol));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((iCol == ((int ) (sizeof(Bitmask ) * 8)))) {
           sqlite3Coverage(108535);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((iCol == (((int ) (sizeof(Bitmask ) * 8)) - 1))) {
           sqlite3Coverage(108536);
         }  
@@ -60425,12 +60425,12 @@ static  void constructAutomaticIndex(Parse *pParse , WhereClause *pWC , struct  
   (pLoop->wsFlags = (0x00000001 | 0x00000040 | 0x00000200 | 0x00004000));
   (extraCols = (pSrc->colUsed & ((~ idxCols) | (((Bitmask ) 1) << (((int ) (sizeof(Bitmask ) * 8)) - 1)))));
   (mxBitCol = ((pTable->nCol >= (((int ) (sizeof(Bitmask ) * 8)) - 1)) ? (((int ) (sizeof(Bitmask ) * 8)) - 1) : pTable->nCol));
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pTable->nCol == (((int ) (sizeof(Bitmask ) * 8)) - 1))) {
       sqlite3Coverage(108565);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pTable->nCol == (((int ) (sizeof(Bitmask ) * 8)) - 2))) {
       sqlite3Coverage(108566);
     }  
@@ -60465,12 +60465,12 @@ static  void constructAutomaticIndex(Parse *pParse , WhereClause *pWC , struct  
     if (termCanDriveIndex(pTerm, pSrc, notReady)) {
       int iCol =  pTerm->u.leftColumn;
       Bitmask cMask =  ((iCol >= ((int ) (sizeof(Bitmask ) * 8))) ? (((Bitmask ) 1) << (((int ) (sizeof(Bitmask ) * 8)) - 1)) : (((Bitmask ) 1) << iCol));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((iCol == (((int ) (sizeof(Bitmask ) * 8)) - 1))) {
           sqlite3Coverage(108595);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((iCol == ((int ) (sizeof(Bitmask ) * 8)))) {
           sqlite3Coverage(108596);
         }  
@@ -60480,10 +60480,10 @@ static  void constructAutomaticIndex(Parse *pParse , WhereClause *pWC , struct  
         (idxCols |= cMask);
         (pIdx->aiColumn[n] = pTerm->u.leftColumn);
         (pColl = sqlite3BinaryCompareCollSeq(pParse, pX->pLeft, pX->pRight));
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           (pIdx->azColl[n] = (1 ? pColl->zName : "BINARY"));
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           (pIdx->azColl[n] = (pColl ? pColl->zName : "BINARY"));
         }  
         n++;
@@ -60535,12 +60535,12 @@ static  sqlite3_index_info *allocateIndexInfo(Parse *pParse , WhereClause *pWC ,
       continue;
     }  
     ((void ) 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pTerm->eOperator & 0x001)) {
         sqlite3Coverage(108677);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pTerm->eOperator & 0x080)) {
         sqlite3Coverage(108678);
       }  
@@ -60585,12 +60585,12 @@ static  sqlite3_index_info *allocateIndexInfo(Parse *pParse , WhereClause *pWC ,
       continue;
     }  
     ((void ) 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pTerm->eOperator & 0x001)) {
         sqlite3Coverage(108729);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pTerm->eOperator & 0x080)) {
         sqlite3Coverage(108730);
       }  
@@ -60713,7 +60713,7 @@ static  int codeEqualityTerm(Parse *pParse , WhereTerm *pTerm , WhereLevel *pLev
   Vdbe *v =  pParse->pVdbe;
   int iReg;
   ((void ) 0);
-  if ((((! id2i.f_sqlite_omit_subquery) ) )) {
+  if ((((! id2i_sqlite_omit_subquery) ) )) {
     if ((pX->op == 76)) {
       (iReg = sqlite3ExprCodeTarget(pParse, pX->pRight, iTarget));
     } 
@@ -60727,12 +60727,12 @@ static  int codeEqualityTerm(Parse *pParse , WhereTerm *pTerm , WhereLevel *pLev
       struct  InLoop   *pIn;
       WhereLoop *pLoop =  pLevel->pWLoop;
       if ((((pLoop->wsFlags & 0x00000400) == 0) && (pLoop->u.btree.pIndex != 0) && pLoop->u.btree.pIndex->aSortOrder[iEq])) {
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((iEq == 0)) {
             sqlite3Coverage(109303);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (bRev) {
             sqlite3Coverage(109304);
           }  
@@ -60743,7 +60743,7 @@ static  int codeEqualityTerm(Parse *pParse , WhereTerm *pTerm , WhereLevel *pLev
       (iReg = iTarget);
       (eType = sqlite3FindInIndex(pParse, pX, 0));
       if ((eType == 4)) {
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if (bRev) {
             sqlite3Coverage(109311);
           }  
@@ -60777,7 +60777,7 @@ static  int codeEqualityTerm(Parse *pParse , WhereTerm *pTerm , WhereLevel *pLev
       }
     }
   }  
-  if (((id2i.f_sqlite_omit_subquery ) )) {
+  if (((id2i_sqlite_omit_subquery ) )) {
     if ((pX->op == 76)) {
       (iReg = sqlite3ExprCodeTarget(pParse, pX->pRight, iTarget));
     } 
@@ -60816,12 +60816,12 @@ static  int codeAllEqualityTerms(Parse *pParse , WhereLevel *pLevel , int bRev ,
     int r1;
     (pTerm = pLoop->aLTerm[j]);
     ((void ) 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((pTerm->wtFlags & 0x04) != 0)) {
         sqlite3Coverage(109428);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pTerm->wtFlags & 0x02)) {
         sqlite3Coverage(109429);
       }  
@@ -60836,12 +60836,12 @@ static  int codeAllEqualityTerms(Parse *pParse , WhereLevel *pLevel , int bRev ,
         sqlite3VdbeAddOp2(v, 29, r1, (regBase + j));
       }
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pTerm->eOperator & 0x080)) {
         sqlite3Coverage(109439);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pTerm->eOperator & 0x001)) {
         sqlite3Coverage(109440);
       }  
@@ -60925,7 +60925,7 @@ static  void explainOneScan(Parse *pParse , SrcList *pTabList , WhereLevel *pLev
     if (pItem->zAlias) {
       (zMsg = sqlite3MAppendf(db, zMsg, "%s AS %s", zMsg, pItem->zAlias));
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       if ((((flags & (0x00000100 | 0x00000400)) == 0) && (pLoop->u.btree.pIndex != 0))) {
         char *zWhere =  explainIndexRange(db, pLoop, pItem->pTab);
         (zMsg = sqlite3MAppendf(db, zMsg, ((flags & 0x00004000) ? "%s USING AUTOMATIC %sINDEX%.0s%s" : "%s USING %sINDEX %s%s"), zMsg, ((flags & 0x00000040) ? "COVERING " : ""), pLoop->u.btree.pIndex->zName, zWhere));
@@ -60953,7 +60953,7 @@ static  void explainOneScan(Parse *pParse , SrcList *pTabList , WhereLevel *pLev
         (zMsg = sqlite3MAppendf(db, zMsg, "%s VIRTUAL TABLE INDEX %d:%s", zMsg, pLoop->u.vtab.idxNum, pLoop->u.vtab.idxStr));
       } 
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((((flags & (0x00000100 | 0x00000400)) == 0) && 1)) {
         char *zWhere =  explainIndexRange(db, pLoop, pItem->pTab);
         (zMsg = sqlite3MAppendf(db, zMsg, ((flags & 0x00004000) ? "%s USING AUTOMATIC %sINDEX%.0s%s" : "%s USING %sINDEX %s%s"), zMsg, ((flags & 0x00000040) ? "COVERING " : ""), pLoop->u.btree.pIndex->zName, zWhere));
@@ -61020,7 +61020,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
     (pLevel->iLeftJoin = ++pParse->nMem);
     sqlite3VdbeAddOp2(v, 21, 0, pLevel->iLeftJoin);
   }  
-  if ((((! id2i.f_sqlite_omit_or_optimization) ) )) {
+  if ((((! id2i_sqlite_omit_or_optimization) ) )) {
     if (pTabItem->viaCoroutine) {
       int regYield =  pTabItem->regReturn;
       sqlite3VdbeAddOp2(v, 21, (pTabItem->addrFillSub - 1), regYield);
@@ -61072,7 +61072,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
       ((void ) 0);
       ((void ) 0);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pTerm->wtFlags & 0x02)) {
           sqlite3Coverage(109741);
         }  
@@ -61114,14 +61114,14 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pStart->wtFlags & 0x02)) {
             sqlite3Coverage(109789);
           }  
         }  
         (pX = pStart->pExpr);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pStart->leftCursor != iCur)) {
             sqlite3Coverage(109792);
           }  
@@ -61140,12 +61140,12 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
         (pX = pEnd->pExpr);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pEnd->leftCursor != iCur)) {
             sqlite3Coverage(109807);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pEnd->wtFlags & 0x02)) {
             sqlite3Coverage(109808);
           }  
@@ -61218,22 +61218,22 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
           (pRangeStart = t);
         }
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pRangeStart && ((pRangeStart->eOperator & (0x002 << (78 - 76))) != 0))) {
           sqlite3Coverage(109946);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pRangeStart && ((pRangeStart->eOperator & (0x002 << (80 - 76))) != 0))) {
           sqlite3Coverage(109947);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pRangeEnd && ((pRangeEnd->eOperator & (0x002 << (78 - 76))) != 0))) {
           sqlite3Coverage(109948);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pRangeEnd && ((pRangeEnd->eOperator & (0x002 << (80 - 76))) != 0))) {
           sqlite3Coverage(109949);
         }  
@@ -61257,7 +61257,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
           }  
         }  
         nConstraint++;
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pRangeStart->wtFlags & 0x02)) {
             sqlite3Coverage(109974);
           }  
@@ -61272,32 +61272,32 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
       codeApplyAffinity(pParse, regBase, nConstraint, zStartAff);
       (op = aStartOp[((start_constraints << 2) + (startEq << 1) + bRev)]);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 101)) {
           sqlite3Coverage(109984);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 98)) {
           sqlite3Coverage(109985);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 58)) {
           sqlite3Coverage(109986);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 57)) {
           sqlite3Coverage(109987);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 56)) {
           sqlite3Coverage(109988);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 55)) {
           sqlite3Coverage(109989);
         }  
@@ -61321,7 +61321,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
         }  
         codeApplyAffinity(pParse, regBase, (nEq + 1), zEndAff);
         nConstraint++;
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pRangeEnd->wtFlags & 0x02)) {
             sqlite3Coverage(110016);
           }  
@@ -61331,17 +61331,17 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
       sqlite3DbFree(db, zEndAff);
       (pLevel->p2 = sqlite3VdbeCurrentAddr(v));
       (op = aEndOp[((pRangeEnd || nEq) * (1 + bRev))]);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 149)) {
           sqlite3Coverage(110026);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 107)) {
           sqlite3Coverage(110027);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 106)) {
           sqlite3Coverage(110028);
         }  
@@ -61351,12 +61351,12 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
         sqlite3VdbeChangeP5(v, ((endEq != bRev) ? 1 : 0));
       }  
       (r1 = sqlite3GetTempReg(pParse));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pLoop->wsFlags & 0x00000020)) {
           sqlite3Coverage(110039);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pLoop->wsFlags & 0x00000010)) {
           sqlite3Coverage(110040);
         }  
@@ -61473,7 +61473,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
           ((void ) 0);
           if (pSubWInfo) {
             WhereLoop *pSubLoop;
-            if ((((! id2i.f_sqlite_omit_explain) ) )) {
+            if ((((! id2i_sqlite_omit_explain) ) )) {
               explainOneScan(pParse, pOrTab, (&pSubWInfo->a[0]), iLevel, pLevel->iFrom, 0);
             }  
             if (((pWInfo->wctrlFlags & 0x0008) == 0)) {
@@ -61527,7 +61527,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
       (pLevel->p5 = 1);
     }
   }  
-  if (((id2i.f_sqlite_omit_or_optimization ) )) {
+  if (((id2i_sqlite_omit_or_optimization ) )) {
     if (pTabItem->viaCoroutine) {
       int regYield =  pTabItem->regReturn;
       sqlite3VdbeAddOp2(v, 21, (pTabItem->addrFillSub - 1), regYield);
@@ -61579,7 +61579,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
       ((void ) 0);
       ((void ) 0);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pTerm->wtFlags & 0x02)) {
           sqlite3Coverage(109741);
         }  
@@ -61621,14 +61621,14 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
         ((void ) 0);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pStart->wtFlags & 0x02)) {
             sqlite3Coverage(109789);
           }  
         }  
         (pX = pStart->pExpr);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pStart->leftCursor != iCur)) {
             sqlite3Coverage(109792);
           }  
@@ -61647,12 +61647,12 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
         (pX = pEnd->pExpr);
         ((void ) 0);
         ((void ) 0);
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pEnd->leftCursor != iCur)) {
             sqlite3Coverage(109807);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pEnd->wtFlags & 0x02)) {
             sqlite3Coverage(109808);
           }  
@@ -61725,22 +61725,22 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
           (pRangeStart = t);
         }
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pRangeStart && ((pRangeStart->eOperator & (0x002 << (78 - 76))) != 0))) {
           sqlite3Coverage(109946);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pRangeStart && ((pRangeStart->eOperator & (0x002 << (80 - 76))) != 0))) {
           sqlite3Coverage(109947);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pRangeEnd && ((pRangeEnd->eOperator & (0x002 << (78 - 76))) != 0))) {
           sqlite3Coverage(109948);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pRangeEnd && ((pRangeEnd->eOperator & (0x002 << (80 - 76))) != 0))) {
           sqlite3Coverage(109949);
         }  
@@ -61764,7 +61764,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
           }  
         }  
         nConstraint++;
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pRangeStart->wtFlags & 0x02)) {
             sqlite3Coverage(109974);
           }  
@@ -61779,32 +61779,32 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
       codeApplyAffinity(pParse, regBase, nConstraint, zStartAff);
       (op = aStartOp[((start_constraints << 2) + (startEq << 1) + bRev)]);
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 101)) {
           sqlite3Coverage(109984);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 98)) {
           sqlite3Coverage(109985);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 58)) {
           sqlite3Coverage(109986);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 57)) {
           sqlite3Coverage(109987);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 56)) {
           sqlite3Coverage(109988);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 55)) {
           sqlite3Coverage(109989);
         }  
@@ -61828,7 +61828,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
         }  
         codeApplyAffinity(pParse, regBase, (nEq + 1), zEndAff);
         nConstraint++;
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((pRangeEnd->wtFlags & 0x02)) {
             sqlite3Coverage(110016);
           }  
@@ -61838,17 +61838,17 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
       sqlite3DbFree(db, zEndAff);
       (pLevel->p2 = sqlite3VdbeCurrentAddr(v));
       (op = aEndOp[((pRangeEnd || nEq) * (1 + bRev))]);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 149)) {
           sqlite3Coverage(110026);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 107)) {
           sqlite3Coverage(110027);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((op == 106)) {
           sqlite3Coverage(110028);
         }  
@@ -61858,12 +61858,12 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
         sqlite3VdbeChangeP5(v, ((endEq != bRev) ? 1 : 0));
       }  
       (r1 = sqlite3GetTempReg(pParse));
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pLoop->wsFlags & 0x00000020)) {
           sqlite3Coverage(110039);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pLoop->wsFlags & 0x00000010)) {
           sqlite3Coverage(110040);
         }  
@@ -61910,12 +61910,12 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
   }  
   for ((pTerm = pWC->a), (j = pWC->nTerm); (j > 0); j--, pTerm++) {
     Expr *pE;
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pTerm->wtFlags & 0x02)) {
         sqlite3Coverage(110305);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pTerm->wtFlags & 0x04)) {
         sqlite3Coverage(110306);
       }  
@@ -61924,7 +61924,7 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
       continue;
     }  
     if (((pTerm->prereqAll & pLevel->notReady) != 0)) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((pWInfo->untestedTerms == 0) && ((pWInfo->wctrlFlags & 0x0040) != 0))) {
           sqlite3Coverage(110310);
         }  
@@ -61965,12 +61965,12 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
     if ((pAlt->wtFlags & 0x04)) {
       continue;
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pAlt->eOperator & 0x002)) {
         sqlite3Coverage(110344);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((pAlt->eOperator & 0x001)) {
         sqlite3Coverage(110345);
       }  
@@ -61988,12 +61988,12 @@ static  Bitmask codeOneLoopStart(WhereInfo *pWInfo , int iLevel , Bitmask notRea
     sqlite3VdbeAddOp2(v, 21, 1, pLevel->iLeftJoin);
     sqlite3ExprCacheClear(pParse);
     for ((pTerm = pWC->a), (j = 0); (j < pWC->nTerm); j++, pTerm++) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pTerm->wtFlags & 0x02)) {
           sqlite3Coverage(110365);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pTerm->wtFlags & 0x04)) {
           sqlite3Coverage(110366);
         }  
@@ -62079,7 +62079,7 @@ static  void whereLoopDelete(sqlite3 *db , WhereLoop *p )  {
   sqlite3DbFree(db, p);
 }
 static  void whereInfoFree(sqlite3 *db , WhereInfo *pWInfo )  {
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (1) {
       whereClauseClear((&pWInfo->sWC));
       while (pWInfo->pLoops) {
@@ -62090,7 +62090,7 @@ static  void whereInfoFree(sqlite3 *db , WhereInfo *pWInfo )  {
       sqlite3DbFree(db, pWInfo);
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (pWInfo) {
       whereClauseClear((&pWInfo->sWC));
       while (pWInfo->pLoops) {
@@ -62156,12 +62156,12 @@ static  void whereLoopOutputAdjust(WhereClause *pWC , WhereLoop *pLoop )  {
   WhereTerm *pTerm, *pX;
   Bitmask notAllowed =  (~ (pLoop->prereq | pLoop->maskSelf));
   int i, j;
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     if ((! ((pWC->pWInfo->pParse->db->dbOptFlags & 0x1000) == 0))) {
       return;
     }  
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     if ((! 1)) {
       return;
     }  
@@ -62271,11 +62271,11 @@ static  int whereLoopAddBtreeIndex(WhereLoopBuilder *pBuilder , struct  SrcList_
         (nIn = 46);
         ((void ) 0);
       } 
-      else if ((((id2i.f_sqlite_coverage_test ) ) && 1)) {
+      else if ((((id2i_sqlite_coverage_test ) ) && 1)) {
         (nIn = sqlite3LogEst(pExpr->x.pList->nExpr));
       }
       
-      else if (((((! id2i.f_sqlite_coverage_test) ) ) && (pExpr->x.pList && pExpr->x.pList->nExpr))) {
+      else if (((((! id2i_sqlite_coverage_test) ) ) && (pExpr->x.pList && pExpr->x.pList->nExpr))) {
         (nIn = sqlite3LogEst(pExpr->x.pList->nExpr));
       } 
       (pNew->rRun += nIn);
@@ -62302,12 +62302,12 @@ static  int whereLoopAddBtreeIndex(WhereLoopBuilder *pBuilder , struct  SrcList_
     }
     
     else if ((pTerm->eOperator & ((0x002 << (77 - 76)) | (0x002 << (80 - 76))))) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pTerm->eOperator & (0x002 << (77 - 76)))) {
           sqlite3Coverage(110816);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pTerm->eOperator & (0x002 << (80 - 76)))) {
           sqlite3Coverage(110817);
         }  
@@ -62318,12 +62318,12 @@ static  int whereLoopAddBtreeIndex(WhereLoopBuilder *pBuilder , struct  SrcList_
     } 
     else {
       ((void ) 0);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pTerm->eOperator & (0x002 << (79 - 76)))) {
           sqlite3Coverage(110823);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((pTerm->eOperator & (0x002 << (78 - 76)))) {
           sqlite3Coverage(110824);
         }  
@@ -62384,12 +62384,12 @@ static  Bitmask columnsInIndex(Index *pIdx )  {
   for ((j = (pIdx->nColumn - 1)); (j >= 0); j--) {
     int x =  pIdx->aiColumn[j];
     ((void ) 0);
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((x == (((int ) (sizeof(Bitmask ) * 8)) - 1))) {
         sqlite3Coverage(110925);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((x == (((int ) (sizeof(Bitmask ) * 8)) - 2))) {
         sqlite3Coverage(110926);
       }  
@@ -62504,7 +62504,7 @@ static  int whereLoopAddBtree(WhereLoopBuilder *pBuilder , Bitmask mExtra )  {
     else {
       Bitmask m =  (pSrc->colUsed & (~ columnsInIndex(pProbe)));
       (pNew->wsFlags = ((m == 0) ? (0x00000040 | 0x00000200) : 0x00000200));
-      if (((id2i.f_sqlite_omit_builtin_test && (! id2i.f_sqlite_default_memstatus)) )) {
+      if (((id2i_sqlite_omit_builtin_test && (! id2i_sqlite_default_memstatus)) )) {
         if ((b || ((m == 0) && (pProbe->bUnordered == 0) && (pProbe->szIdxRow < pTab->szTabRow) && ((pWInfo->wctrlFlags & 0x0004) == 0) && _1283_sqlite3Config.bUseCis && 1))) {
           (pNew->iSortIdx = (b ? iSortIdx : 0));
           if ((m == 0)) {
@@ -62522,7 +62522,7 @@ static  int whereLoopAddBtree(WhereLoopBuilder *pBuilder , Bitmask mExtra )  {
           }  
         }  
       }  
-      if (((id2i.f_sqlite_omit_builtin_test && id2i.f_sqlite_default_memstatus) )) {
+      if (((id2i_sqlite_omit_builtin_test && id2i_sqlite_default_memstatus) )) {
         if ((b || ((m == 0) && (pProbe->bUnordered == 0) && (pProbe->szIdxRow < pTab->szTabRow) && ((pWInfo->wctrlFlags & 0x0004) == 0) && _1284_sqlite3Config.bUseCis && 1))) {
           (pNew->iSortIdx = (b ? iSortIdx : 0));
           if ((m == 0)) {
@@ -62540,7 +62540,7 @@ static  int whereLoopAddBtree(WhereLoopBuilder *pBuilder , Bitmask mExtra )  {
           }  
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_builtin_test) && (! id2i.f_sqlite_default_memstatus)) )) {
+      if ((((! id2i_sqlite_omit_builtin_test) && (! id2i_sqlite_default_memstatus)) )) {
         if ((b || ((m == 0) && (pProbe->bUnordered == 0) && (pProbe->szIdxRow < pTab->szTabRow) && ((pWInfo->wctrlFlags & 0x0004) == 0) && _1283_sqlite3Config.bUseCis && ((pWInfo->pParse->db->dbOptFlags & 0x0040) == 0)))) {
           (pNew->iSortIdx = (b ? iSortIdx : 0));
           if ((m == 0)) {
@@ -62558,7 +62558,7 @@ static  int whereLoopAddBtree(WhereLoopBuilder *pBuilder , Bitmask mExtra )  {
           }  
         }  
       }  
-      if ((((! id2i.f_sqlite_omit_builtin_test) && id2i.f_sqlite_default_memstatus) )) {
+      if ((((! id2i_sqlite_omit_builtin_test) && id2i_sqlite_default_memstatus) )) {
         if ((b || ((m == 0) && (pProbe->bUnordered == 0) && (pProbe->szIdxRow < pTab->szTabRow) && ((pWInfo->wctrlFlags & 0x0004) == 0) && _1284_sqlite3Config.bUseCis && ((pWInfo->pParse->db->dbOptFlags & 0x0040) == 0)))) {
           (pNew->iSortIdx = (b ? iSortIdx : 0));
           if ((m == 0)) {
@@ -62697,17 +62697,17 @@ static  int whereLoopAddVirtual(WhereLoopBuilder *pBuilder )  {
           sqlite3ErrorMsg(pParse, "%s.xBestIndex() malfunction", pTab->zName);
           goto whereLoopAddVtab_exit;
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((iTerm == (nConstraint - 1))) {
             sqlite3Coverage(111235);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((j == 0)) {
             sqlite3Coverage(111236);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((j == (pWC->nTerm - 1))) {
             sqlite3Coverage(111237);
           }  
@@ -62719,12 +62719,12 @@ static  int whereLoopAddVirtual(WhereLoopBuilder *pBuilder )  {
         if ((iTerm > mxTerm)) {
           (mxTerm = iTerm);
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((iTerm == 15)) {
             sqlite3Coverage(111243);
           }  
         }  
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((iTerm == 16)) {
             sqlite3Coverage(111244);
           }  
@@ -62919,25 +62919,25 @@ static  int wherePathSatisfiesOrderBy(WhereInfo *pWInfo , ExprList *pOrderBy , W
   Bitmask ready;
   ((void ) 0);
   if ((pLast->wsFlags & 0x00000400)) {
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((nLoop > 0)) {
         sqlite3Coverage(111506);
       }  
     }  
     return pLast->u.vtab.isOrdered;
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     if ((nLoop && 0)) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     if ((nLoop && ((db->dbOptFlags & 0x0080) != 0))) {
       return 0;
     }  
   }  
   (nOrderBy = pOrderBy->nExpr);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((nOrderBy == (((int ) (sizeof(Bitmask ) * 8)) - 1))) {
       sqlite3Coverage(111513);
     }  
@@ -63007,7 +63007,7 @@ static  int wherePathSatisfiesOrderBy(WhereInfo *pWInfo , ExprList *pOrderBy , W
         u8 bOnce;
         if (((j < pLoop->u.btree.nEq) && (((i = pLoop->aLTerm[j]->eOperator) & (0x002 | 0x080)) != 0))) {
           if ((i & 0x080)) {
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if (isOrderDistinct) {
                 sqlite3Coverage(111575);
               }  
@@ -63038,12 +63038,12 @@ static  int wherePathSatisfiesOrderBy(WhereInfo *pWInfo , ExprList *pOrderBy , W
             continue;
           }  
           (pOBExpr = sqlite3ExprSkipCollate(pOrderBy->a[i].pExpr));
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if ((wctrlFlags & 0x0100)) {
               sqlite3Coverage(111615);
             }  
           }  
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if ((wctrlFlags & 0x0200)) {
               sqlite3Coverage(111616);
             }  
@@ -63074,7 +63074,7 @@ static  int wherePathSatisfiesOrderBy(WhereInfo *pWInfo , ExprList *pOrderBy , W
         }
         if (isMatch) {
           if ((iColumn < 0)) {
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if ((distinctColumns == 0)) {
                 sqlite3Coverage(111631);
               }  
@@ -63099,7 +63099,7 @@ static  int wherePathSatisfiesOrderBy(WhereInfo *pWInfo , ExprList *pOrderBy , W
         }  
         else {
           if (((j == 0) || (j < nColumn))) {
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if ((isOrderDistinct != 0)) {
                 sqlite3Coverage(111649);
               }  
@@ -63110,7 +63110,7 @@ static  int wherePathSatisfiesOrderBy(WhereInfo *pWInfo , ExprList *pOrderBy , W
         }
       }
       if (distinctColumns) {
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           if ((isOrderDistinct == 0)) {
             sqlite3Coverage(111656);
           }  
@@ -63227,7 +63227,7 @@ static  int wherePathSolver(WhereInfo *pWInfo , LogEst nRowEst )  {
         }
         for ((jj = 0), (pTo = aTo); (jj < nTo); jj++, pTo++) {
           if (((pTo->maskLoop == maskNew) && (pTo->isOrderedValid == isOrderedValid) && (((pTo->rCost <= rCost) && (pTo->nRow <= nOut)) || ((pTo->rCost >= rCost) && (pTo->nRow >= nOut))))) {
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if ((jj == (nTo - 1))) {
                 sqlite3Coverage(111815);
               }  
@@ -63249,14 +63249,14 @@ static  int wherePathSolver(WhereInfo *pWInfo , LogEst nRowEst )  {
         }  
         else {
           if (((pTo->rCost <= rCost) && (pTo->nRow <= nOut))) {
-            if (((id2i.f_sqlite_coverage_test ) )) {
+            if (((id2i_sqlite_coverage_test ) )) {
               if ((pTo->rCost == rCost)) {
                 sqlite3Coverage(111859);
               }  
             }  
             continue;
           }  
-          if (((id2i.f_sqlite_coverage_test ) )) {
+          if (((id2i_sqlite_coverage_test ) )) {
             if ((pTo->rCost == (rCost + 1))) {
               sqlite3Coverage(111862);
             }  
@@ -63422,17 +63422,17 @@ static  WhereInfo *sqlite3WhereBegin(Parse *pParse , SrcList *pTabList , Expr *p
   (db = pParse->db);
   memset((&sWLB), 0, sizeof(sWLB));
   (sWLB.pOrderBy = pOrderBy);
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     if (((db->dbOptFlags & 0x0020) != 0)) {
       (wctrlFlags &= (~ 0x0400));
     }  
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     if (0) {
       (wctrlFlags &= (~ 0x0400));
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pTabList->nSrc == ((int ) (sizeof(Bitmask ) * 8)))) {
       sqlite3Coverage(112169);
     }  
@@ -63527,17 +63527,17 @@ static  WhereInfo *sqlite3WhereBegin(Parse *pParse , SrcList *pTabList , Expr *p
   if (((pWInfo->pOrderBy == 0) && ((db->flags & 0x00020000) != 0))) {
     (pWInfo->revMask = ((Bitmask ) (- 1)));
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pParse->nErr || db->mallocFailed)) {
       goto whereBeginError;
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((pParse->nErr || 0)) {
       goto whereBeginError;
     }  
   }  
-  if (((id2i.f_sqlite_omit_builtin_test ) )) {
+  if (((id2i_sqlite_omit_builtin_test ) )) {
     if (((pWInfo->nLevel >= 2) && (pResultSet != 0) && 1)) {
       Bitmask tabUsed =  exprListTableUsage(pMaskSet, pResultSet);
       if (sWLB.pOrderBy) {
@@ -63569,7 +63569,7 @@ static  WhereInfo *sqlite3WhereBegin(Parse *pParse , SrcList *pTabList , Expr *p
       }
     }  
   }  
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     if (((pWInfo->nLevel >= 2) && (pResultSet != 0) && ((db->dbOptFlags & 0x0400) == 0))) {
       Bitmask tabUsed =  exprListTableUsage(pMaskSet, pResultSet);
       if (sWLB.pOrderBy) {
@@ -63632,12 +63632,12 @@ static  WhereInfo *sqlite3WhereBegin(Parse *pParse , SrcList *pTabList , Expr *p
     else if ((((pLoop->wsFlags & 0x00000040) == 0) && ((wctrlFlags & 0x0010) == 0))) {
       int op =  (pWInfo->okOnePass ? 49 : 48);
       sqlite3OpenTable(pParse, pTabItem->iCursor, iDb, pTab, op);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((! pWInfo->okOnePass) && (pTab->nCol == (((int ) (sizeof(Bitmask ) * 8)) - 1)))) {
           sqlite3Coverage(112442);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (((! pWInfo->okOnePass) && (pTab->nCol == ((int ) (sizeof(Bitmask ) * 8))))) {
           sqlite3Coverage(112443);
         }  
@@ -63679,7 +63679,7 @@ static  WhereInfo *sqlite3WhereBegin(Parse *pParse , SrcList *pTabList , Expr *p
         goto whereBeginError;
       }  
     }  
-    if ((((! id2i.f_sqlite_omit_explain) ) )) {
+    if ((((! id2i_sqlite_omit_explain) ) )) {
       explainOneScan(pParse, pTabList, pLevel, ii, pLevel->iFrom, wctrlFlags);
     }  
     (pLevel->addrBody = sqlite3VdbeCurrentAddr(v));
@@ -63979,12 +63979,12 @@ static  void yy_destructor(yyParser *yypParser , unsigned  char yymajor , YYMINO
 static  int yy_pop_parser_stack(yyParser *pParser )  {
   unsigned char yymajor;
   yyStackEntry *yytos =  (&pParser->yystack[pParser->yyidx]);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pParser->yyidx < 0)) {
       return 0;
     }  
@@ -63996,12 +63996,12 @@ static  int yy_pop_parser_stack(yyParser *pParser )  {
 }
 static  void sqlite3ParserFree(void *p , void ( *freeProc)(void * ) )  {
   yyParser *pParser =  ((yyParser *) p);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (0) {
       return;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if ((pParser == 0)) {
       return;
     }  
@@ -64118,25 +64118,25 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 14:
     case 15:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 15)) {
         sqlite3Coverage(114745);
       }  
     }  
     case 16:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 16)) {
         sqlite3Coverage(114746);
       }  
     }  
     case 115:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 115)) {
         sqlite3Coverage(114747);
       }  
     }  
     case 117:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 117)) {
         sqlite3Coverage(114748);
       }  
@@ -64147,7 +64147,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 17:
     case 18:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 18)) {
         sqlite3Coverage(114752);
       }  
@@ -64189,55 +64189,55 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 28:
     case 31:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 31)) {
         sqlite3Coverage(114785);
       }  
     }  
     case 69:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 69)) {
         sqlite3Coverage(114786);
       }  
     }  
     case 82:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 82)) {
         sqlite3Coverage(114787);
       }  
     }  
     case 84:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 84)) {
         sqlite3Coverage(114788);
       }  
     }  
     case 86:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 86)) {
         sqlite3Coverage(114789);
       }  
     }  
     case 98:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 98)) {
         sqlite3Coverage(114790);
       }  
     }  
     case 109:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 109)) {
         sqlite3Coverage(114791);
       }  
     }  
     case 221:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 221)) {
         sqlite3Coverage(114792);
       }  
     }  
     case 224:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 224)) {
         sqlite3Coverage(114793);
       }  
@@ -64248,37 +64248,37 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 29:
     case 30:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 30)) {
         sqlite3Coverage(114797);
       }  
     }  
     case 70:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 70)) {
         sqlite3Coverage(114798);
       }  
     }  
     case 85:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 85)) {
         sqlite3Coverage(114799);
       }  
     }  
     case 108:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 108)) {
         sqlite3Coverage(114800);
       }  
     }  
     case 222:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 222)) {
         sqlite3Coverage(114801);
       }  
     }  
     case 225:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 225)) {
         sqlite3Coverage(114802);
       }  
@@ -64313,133 +64313,133 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 38:
     case 39:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 39)) {
         sqlite3Coverage(114830);
       }  
     }  
     case 40:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 40)) {
         sqlite3Coverage(114831);
       }  
     }  
     case 41:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 41)) {
         sqlite3Coverage(114832);
       }  
     }  
     case 42:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 42)) {
         sqlite3Coverage(114833);
       }  
     }  
     case 43:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 43)) {
         sqlite3Coverage(114834);
       }  
     }  
     case 46:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 46)) {
         sqlite3Coverage(114835);
       }  
     }  
     case 49:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 49)) {
         sqlite3Coverage(114836);
       }  
     }  
     case 127:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 127)) {
         sqlite3Coverage(114837);
       }  
     }  
     case 128:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 128)) {
         sqlite3Coverage(114838);
       }  
     }  
     case 138:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 138)) {
         sqlite3Coverage(114839);
       }  
     }  
     case 147:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 147)) {
         sqlite3Coverage(114840);
       }  
     }  
     case 250:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 250)) {
         sqlite3Coverage(114841);
       }  
     }  
     case 259:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 259)) {
         sqlite3Coverage(114842);
       }  
     }  
     case 260:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 260)) {
         sqlite3Coverage(114843);
       }  
     }  
     case 261:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 261)) {
         sqlite3Coverage(114844);
       }  
     }  
     case 262:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 262)) {
         sqlite3Coverage(114845);
       }  
     }  
     case 263:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 263)) {
         sqlite3Coverage(114846);
       }  
     }  
     case 264:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 264)) {
         sqlite3Coverage(114847);
       }  
     }  
     case 265:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 265)) {
         sqlite3Coverage(114848);
       }  
     }  
     case 266:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 266)) {
         sqlite3Coverage(114849);
       }  
     }  
     case 267:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 267)) {
         sqlite3Coverage(114850);
       }  
     }  
     case 283:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 283)) {
         sqlite3Coverage(114851);
       }  
@@ -64473,7 +64473,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 55:
     case 93:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 93)) {
         sqlite3Coverage(114873);
       }  
@@ -64484,7 +64484,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 56:
     case 58:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 58)) {
         sqlite3Coverage(114877);
       }  
@@ -64561,7 +64561,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 73:
     case 74:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 74)) {
         sqlite3Coverage(114927);
       }  
@@ -64610,19 +64610,19 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 83:
     case 99:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 99)) {
         sqlite3Coverage(114952);
       }  
     }  
     case 101:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 101)) {
         sqlite3Coverage(114953);
       }  
     }  
     case 104:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 104)) {
         sqlite3Coverage(114954);
       }  
@@ -64712,13 +64712,13 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     {
       SelectDest dest =  { 5,  0,  0,  0,  0};
       sqlite3Select(pParse, yymsp[0].minor.yy159, (&dest));
-      if (((id2i.f_sqlite_enable_tree_explain ) )) {
+      if (((id2i_sqlite_enable_tree_explain ) )) {
         sqlite3ExplainBegin(pParse->pVdbe);
       }  
-      if (((id2i.f_sqlite_enable_tree_explain ) )) {
+      if (((id2i_sqlite_enable_tree_explain ) )) {
         sqlite3ExplainSelect(pParse->pVdbe, yymsp[0].minor.yy159);
       }  
-      if (((id2i.f_sqlite_enable_tree_explain ) )) {
+      if (((id2i_sqlite_enable_tree_explain ) )) {
         sqlite3ExplainFinish(pParse->pVdbe);
       }  
       sqlite3SelectDelete(pParse->db, yymsp[0].minor.yy159);
@@ -64761,7 +64761,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 120:
     case 121:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 121)) {
         sqlite3Coverage(115048);
       }  
@@ -64772,7 +64772,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 122:
     case 246:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 246)) {
         sqlite3Coverage(115052);
       }  
@@ -64783,25 +64783,25 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 123:
     case 151:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 151)) {
         sqlite3Coverage(115056);
       }  
     }  
     case 158:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 158)) {
         sqlite3Coverage(115057);
       }  
     }  
     case 239:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 239)) {
         sqlite3Coverage(115058);
       }  
     }  
     case 245:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 245)) {
         sqlite3Coverage(115059);
       }  
@@ -64852,12 +64852,12 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     case 132:
     {
       (yygotominor.yy347 = yymsp[(- 1)].minor.yy347);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if (1) {
           (yygotominor.yy347->a[(yygotominor.yy347->nSrc - 1)].jointype = ((u8 ) yymsp[0].minor.yy392));
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if ((yygotominor.yy347 && (yygotominor.yy347->nSrc > 0))) {
           (yygotominor.yy347->a[(yygotominor.yy347->nSrc - 1)].jointype = ((u8 ) yymsp[0].minor.yy392));
         }  
@@ -64908,7 +64908,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 137:
     case 146:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 146)) {
         sqlite3Coverage(115140);
       }  
@@ -64945,25 +64945,25 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 144:
     case 161:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 161)) {
         sqlite3Coverage(115159);
       }  
     }  
     case 168:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 168)) {
         sqlite3Coverage(115160);
       }  
     }  
     case 234:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 234)) {
         sqlite3Coverage(115161);
       }  
     }  
     case 236:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 236)) {
         sqlite3Coverage(115162);
       }  
@@ -64974,25 +64974,25 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 145:
     case 160:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 160)) {
         sqlite3Coverage(115166);
       }  
     }  
     case 167:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 167)) {
         sqlite3Coverage(115167);
       }  
     }  
     case 235:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 235)) {
         sqlite3Coverage(115168);
       }  
     }  
     case 237:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 237)) {
         sqlite3Coverage(115169);
       }  
@@ -65009,7 +65009,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 149:
     case 180:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 180)) {
         sqlite3Coverage(115176);
       }  
@@ -65020,7 +65020,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 150:
     case 179:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 179)) {
         sqlite3Coverage(115180);
       }  
@@ -65031,13 +65031,13 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 152:
     case 159:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 159)) {
         sqlite3Coverage(115184);
       }  
     }  
     case 238:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 238)) {
         sqlite3Coverage(115185);
       }  
@@ -65057,12 +65057,12 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     case 154:
     {
       (yygotominor.yy442 = sqlite3ExprListAppend(pParse, 0, yymsp[(- 1)].minor.yy342.pExpr));
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if ((yygotominor.yy442 && yygotominor.yy442->a)) {
           (yygotominor.yy442->a[0].sortOrder = ((u8 ) yymsp[0].minor.yy392));
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((yygotominor.yy442 && 1)) {
           (yygotominor.yy442->a[0].sortOrder = ((u8 ) yymsp[0].minor.yy392));
         }  
@@ -65071,7 +65071,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 155:
     case 157:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 157)) {
         sqlite3Coverage(115201);
       }  
@@ -65210,13 +65210,13 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 185:
     case 190:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 190)) {
         sqlite3Coverage(115299);
       }  
     }  
     case 191:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 191)) {
         sqlite3Coverage(115300);
       }  
@@ -65227,7 +65227,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 186:
     case 187:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 187)) {
         sqlite3Coverage(115304);
       }  
@@ -65318,43 +65318,43 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 199:
     case 200:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 200)) {
         sqlite3Coverage(115390);
       }  
     }  
     case 201:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 201)) {
         sqlite3Coverage(115391);
       }  
     }  
     case 202:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 202)) {
         sqlite3Coverage(115392);
       }  
     }  
     case 203:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 203)) {
         sqlite3Coverage(115393);
       }  
     }  
     case 204:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 204)) {
         sqlite3Coverage(115394);
       }  
     }  
     case 205:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 205)) {
         sqlite3Coverage(115395);
       }  
     }  
     case 206:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 206)) {
         sqlite3Coverage(115396);
       }  
@@ -65365,7 +65365,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 207:
     case 209:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 209)) {
         sqlite3Coverage(115400);
       }  
@@ -65377,7 +65377,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 208:
     case 210:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 210)) {
         sqlite3Coverage(115404);
       }  
@@ -65444,7 +65444,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 217:
     case 218:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 218)) {
         sqlite3Coverage(115451);
       }  
@@ -65615,7 +65615,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 243:
     case 296:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 296)) {
         sqlite3Coverage(115601);
       }  
@@ -65664,7 +65664,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 252:
     case 253:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 253)) {
         sqlite3Coverage(115632);
       }  
@@ -65714,7 +65714,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 270:
     case 273:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 273)) {
         sqlite3Coverage(115665);
       }  
@@ -65735,7 +65735,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 274:
     case 275:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 275)) {
         sqlite3Coverage(115675);
       }  
@@ -65753,7 +65753,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 279:
     case 301:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 301)) {
         sqlite3Coverage(115682);
       }  
@@ -65764,7 +65764,7 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 280:
     case 302:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 302)) {
         sqlite3Coverage(115686);
       }  
@@ -65932,13 +65932,13 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     case 321:
     case 322:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 322)) {
         sqlite3Coverage(115825);
       }  
     }  
     case 323:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 323)) {
         sqlite3Coverage(115826);
       }  
@@ -65949,177 +65949,177 @@ static  void yy_reduce(yyParser *yypParser , int yyruleno )  {
     break;
     id2i_label_1:
     default:
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 0)) {
         sqlite3Coverage(115830);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 1)) {
         sqlite3Coverage(115831);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 2)) {
         sqlite3Coverage(115832);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 3)) {
         sqlite3Coverage(115833);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 4)) {
         sqlite3Coverage(115834);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 10)) {
         sqlite3Coverage(115835);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 11)) {
         sqlite3Coverage(115836);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 12)) {
         sqlite3Coverage(115837);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 20)) {
         sqlite3Coverage(115838);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 21)) {
         sqlite3Coverage(115839);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 25)) {
         sqlite3Coverage(115840);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 34)) {
         sqlite3Coverage(115841);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 35)) {
         sqlite3Coverage(115842);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 44)) {
         sqlite3Coverage(115843);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 51)) {
         sqlite3Coverage(115844);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 52)) {
         sqlite3Coverage(115845);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 53)) {
         sqlite3Coverage(115846);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 54)) {
         sqlite3Coverage(115847);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 61)) {
         sqlite3Coverage(115848);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 89)) {
         sqlite3Coverage(115849);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 90)) {
         sqlite3Coverage(115850);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 92)) {
         sqlite3Coverage(115851);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 277)) {
         sqlite3Coverage(115852);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 278)) {
         sqlite3Coverage(115853);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 285)) {
         sqlite3Coverage(115854);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 303)) {
         sqlite3Coverage(115855);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 304)) {
         sqlite3Coverage(115856);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 312)) {
         sqlite3Coverage(115857);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 313)) {
         sqlite3Coverage(115858);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 317)) {
         sqlite3Coverage(115859);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 318)) {
         sqlite3Coverage(115860);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 320)) {
         sqlite3Coverage(115861);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 324)) {
         sqlite3Coverage(115862);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 325)) {
         sqlite3Coverage(115863);
       }  
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if ((yyruleno == 326)) {
         sqlite3Coverage(115864);
       }  
@@ -66206,615 +66206,615 @@ static  int keywordCode(const  char *z , int n )  {
   if ((n < 2)) {
     return 26;
   }  
-  if ((((! id2i.f_sqlite_ebcdic) ) )) {
+  if ((((! id2i_sqlite_ebcdic) ) )) {
     (h = (((_1281_sqlite3UpperToLower[((unsigned  char ) z[0])] * 4) ^ (_1281_sqlite3UpperToLower[((unsigned  char ) z[(n - 1)])] * 3) ^ n) % 127));
   }  
-  if (((id2i.f_sqlite_ebcdic ) )) {
+  if (((id2i_sqlite_ebcdic ) )) {
     (h = (((ebcdicToAscii[((unsigned  char ) z[0])] * 4) ^ (ebcdicToAscii[((unsigned  char ) z[(n - 1)])] * 3) ^ n) % 127));
   }  
   for ((i = (((int ) aHash[h]) - 1)); (i >= 0); (i = (((int ) aNext[i]) - 1))) {
     if (((aLen[i] == n) && (sqlite3_strnicmp((&zText[aOffset[i]]), z, n) == 0))) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 0)) {
           sqlite3Coverage(116330);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 1)) {
           sqlite3Coverage(116331);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 2)) {
           sqlite3Coverage(116332);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 3)) {
           sqlite3Coverage(116333);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 4)) {
           sqlite3Coverage(116334);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 5)) {
           sqlite3Coverage(116335);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 6)) {
           sqlite3Coverage(116336);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 7)) {
           sqlite3Coverage(116337);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 8)) {
           sqlite3Coverage(116338);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 9)) {
           sqlite3Coverage(116339);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 10)) {
           sqlite3Coverage(116340);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 11)) {
           sqlite3Coverage(116341);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 12)) {
           sqlite3Coverage(116342);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 13)) {
           sqlite3Coverage(116343);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 14)) {
           sqlite3Coverage(116344);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 15)) {
           sqlite3Coverage(116345);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 16)) {
           sqlite3Coverage(116346);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 17)) {
           sqlite3Coverage(116347);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 18)) {
           sqlite3Coverage(116348);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 19)) {
           sqlite3Coverage(116349);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 20)) {
           sqlite3Coverage(116350);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 21)) {
           sqlite3Coverage(116351);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 22)) {
           sqlite3Coverage(116352);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 23)) {
           sqlite3Coverage(116353);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 24)) {
           sqlite3Coverage(116354);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 25)) {
           sqlite3Coverage(116355);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 26)) {
           sqlite3Coverage(116356);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 27)) {
           sqlite3Coverage(116357);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 28)) {
           sqlite3Coverage(116358);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 29)) {
           sqlite3Coverage(116359);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 30)) {
           sqlite3Coverage(116360);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 31)) {
           sqlite3Coverage(116361);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 32)) {
           sqlite3Coverage(116362);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 33)) {
           sqlite3Coverage(116363);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 34)) {
           sqlite3Coverage(116364);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 35)) {
           sqlite3Coverage(116365);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 36)) {
           sqlite3Coverage(116366);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 37)) {
           sqlite3Coverage(116367);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 38)) {
           sqlite3Coverage(116368);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 39)) {
           sqlite3Coverage(116369);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 40)) {
           sqlite3Coverage(116370);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 41)) {
           sqlite3Coverage(116371);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 42)) {
           sqlite3Coverage(116372);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 43)) {
           sqlite3Coverage(116373);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 44)) {
           sqlite3Coverage(116374);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 45)) {
           sqlite3Coverage(116375);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 46)) {
           sqlite3Coverage(116376);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 47)) {
           sqlite3Coverage(116377);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 48)) {
           sqlite3Coverage(116378);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 49)) {
           sqlite3Coverage(116379);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 50)) {
           sqlite3Coverage(116380);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 51)) {
           sqlite3Coverage(116381);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 52)) {
           sqlite3Coverage(116382);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 53)) {
           sqlite3Coverage(116383);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 54)) {
           sqlite3Coverage(116384);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 55)) {
           sqlite3Coverage(116385);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 56)) {
           sqlite3Coverage(116386);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 57)) {
           sqlite3Coverage(116387);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 58)) {
           sqlite3Coverage(116388);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 59)) {
           sqlite3Coverage(116389);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 60)) {
           sqlite3Coverage(116390);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 61)) {
           sqlite3Coverage(116391);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 62)) {
           sqlite3Coverage(116392);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 63)) {
           sqlite3Coverage(116393);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 64)) {
           sqlite3Coverage(116394);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 65)) {
           sqlite3Coverage(116395);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 66)) {
           sqlite3Coverage(116396);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 67)) {
           sqlite3Coverage(116397);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 68)) {
           sqlite3Coverage(116398);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 69)) {
           sqlite3Coverage(116399);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 70)) {
           sqlite3Coverage(116400);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 71)) {
           sqlite3Coverage(116401);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 72)) {
           sqlite3Coverage(116402);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 73)) {
           sqlite3Coverage(116403);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 74)) {
           sqlite3Coverage(116404);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 75)) {
           sqlite3Coverage(116405);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 76)) {
           sqlite3Coverage(116406);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 77)) {
           sqlite3Coverage(116407);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 78)) {
           sqlite3Coverage(116408);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 79)) {
           sqlite3Coverage(116409);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 80)) {
           sqlite3Coverage(116410);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 81)) {
           sqlite3Coverage(116411);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 82)) {
           sqlite3Coverage(116412);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 83)) {
           sqlite3Coverage(116413);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 84)) {
           sqlite3Coverage(116414);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 85)) {
           sqlite3Coverage(116415);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 86)) {
           sqlite3Coverage(116416);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 87)) {
           sqlite3Coverage(116417);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 88)) {
           sqlite3Coverage(116418);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 89)) {
           sqlite3Coverage(116419);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 90)) {
           sqlite3Coverage(116420);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 91)) {
           sqlite3Coverage(116421);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 92)) {
           sqlite3Coverage(116422);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 93)) {
           sqlite3Coverage(116423);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 94)) {
           sqlite3Coverage(116424);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 95)) {
           sqlite3Coverage(116425);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 96)) {
           sqlite3Coverage(116426);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 97)) {
           sqlite3Coverage(116427);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 98)) {
           sqlite3Coverage(116428);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 99)) {
           sqlite3Coverage(116429);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 100)) {
           sqlite3Coverage(116430);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 101)) {
           sqlite3Coverage(116431);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 102)) {
           sqlite3Coverage(116432);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 103)) {
           sqlite3Coverage(116433);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 104)) {
           sqlite3Coverage(116434);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 105)) {
           sqlite3Coverage(116435);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 106)) {
           sqlite3Coverage(116436);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 107)) {
           sqlite3Coverage(116437);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 108)) {
           sqlite3Coverage(116438);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 109)) {
           sqlite3Coverage(116439);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 110)) {
           sqlite3Coverage(116440);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 111)) {
           sqlite3Coverage(116441);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 112)) {
           sqlite3Coverage(116442);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 113)) {
           sqlite3Coverage(116443);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 114)) {
           sqlite3Coverage(116444);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 115)) {
           sqlite3Coverage(116445);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 116)) {
           sqlite3Coverage(116446);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 117)) {
           sqlite3Coverage(116447);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 118)) {
           sqlite3Coverage(116448);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 119)) {
           sqlite3Coverage(116449);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((i == 120)) {
           sqlite3Coverage(116450);
         }  
@@ -66837,27 +66837,27 @@ static  int sqlite3GetToken(const  unsigned  char *z , int *tokenType )  {
     case '\f':
     case '\r':
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == ' ')) {
           sqlite3Coverage(116512);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '\t')) {
           sqlite3Coverage(116513);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '\n')) {
           sqlite3Coverage(116514);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '\f')) {
           sqlite3Coverage(116515);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '\r')) {
           sqlite3Coverage(116516);
         }  
@@ -67007,17 +67007,17 @@ static  int sqlite3GetToken(const  unsigned  char *z , int *tokenType )  {
     case '"':
     {
       int delim =  z[0];
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((delim == '`')) {
           sqlite3Coverage(116629);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((delim == '\'')) {
           sqlite3Coverage(116630);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((delim == '"')) {
           sqlite3Coverage(116631);
         }  
@@ -67063,52 +67063,52 @@ static  int sqlite3GetToken(const  unsigned  char *z , int *tokenType )  {
     case '8':
     case '9':
     {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '0')) {
           sqlite3Coverage(116665);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '1')) {
           sqlite3Coverage(116665);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '2')) {
           sqlite3Coverage(116665);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '3')) {
           sqlite3Coverage(116666);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '4')) {
           sqlite3Coverage(116666);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '5')) {
           sqlite3Coverage(116666);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '6')) {
           sqlite3Coverage(116667);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '7')) {
           sqlite3Coverage(116667);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '8')) {
           sqlite3Coverage(116667);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '9')) {
           sqlite3Coverage(116668);
         }  
@@ -67131,13 +67131,13 @@ static  int sqlite3GetToken(const  unsigned  char *z , int *tokenType )  {
         }
         ((*tokenType) = 130);
       }  
-      if ((((! id2i.f_sqlite_ebcdic) ) )) {
+      if ((((! id2i_sqlite_ebcdic) ) )) {
         while (((sqlite3CtypeMap[((unsigned  char ) z[i])] & 0x46) != 0)) {
           ((*tokenType) = 148);
           i++;
         }
       }  
-      if (((id2i.f_sqlite_ebcdic ) )) {
+      if (((id2i_sqlite_ebcdic ) )) {
         while ((((c = z[i]) >= 0x42) && sqlite3IsEbcdicIdChar[(c - 0x40)])) {
           ((*tokenType) = 148);
           i++;
@@ -67176,24 +67176,24 @@ static  int sqlite3GetToken(const  unsigned  char *z , int *tokenType )  {
     case ':':
     {
       int n =  0;
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '$')) {
           sqlite3Coverage(116720);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == '@')) {
           sqlite3Coverage(116720);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == ':')) {
           sqlite3Coverage(116720);
         }  
       }  
       ((*tokenType) = 133);
       for ((i = 1); ((c = z[i]) != 0); i++) {
-        if ((((! id2i.f_sqlite_ebcdic) ) )) {
+        if ((((! id2i_sqlite_ebcdic) ) )) {
           if (((sqlite3CtypeMap[((unsigned  char ) c)] & 0x46) != 0)) {
             n++;
           } 
@@ -67217,7 +67217,7 @@ static  int sqlite3GetToken(const  unsigned  char *z , int *tokenType )  {
             break;
           }
         }  
-        if (((id2i.f_sqlite_ebcdic ) )) {
+        if (((id2i_sqlite_ebcdic ) )) {
           if ((((c = c) >= 0x42) && sqlite3IsEbcdicIdChar[(c - 0x40)])) {
             n++;
           } 
@@ -67248,19 +67248,19 @@ static  int sqlite3GetToken(const  unsigned  char *z , int *tokenType )  {
       return i;
     }
     case 'x':
-    if (((id2i.f_sqlite_omit_blob_literal ) )) {
+    if (((id2i_sqlite_omit_blob_literal ) )) {
       if (((*z) == 'x')) {
         goto id2i_label_1;
       }  
     }  
     case 'X':
-    if ((((! id2i.f_sqlite_omit_blob_literal) ) )) {
-      if (((id2i.f_sqlite_coverage_test ) )) {
+    if ((((! id2i_sqlite_omit_blob_literal) ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == 'x')) {
           sqlite3Coverage(116748);
         }  
       }  
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((z[0] == 'X')) {
           sqlite3Coverage(116748);
         }  
@@ -67285,22 +67285,22 @@ static  int sqlite3GetToken(const  unsigned  char *z , int *tokenType )  {
     id2i_label_1:
     default:
     {
-      if ((((! id2i.f_sqlite_ebcdic) ) )) {
+      if ((((! id2i_sqlite_ebcdic) ) )) {
         if ((! ((sqlite3CtypeMap[((unsigned  char ) (*z))] & 0x46) != 0))) {
           break;
         }  
       }  
-      if (((id2i.f_sqlite_ebcdic ) )) {
+      if (((id2i_sqlite_ebcdic ) )) {
         if ((! (((c = (*z)) >= 0x42) && sqlite3IsEbcdicIdChar[(c - 0x40)]))) {
           break;
         }  
       }  
-      if ((((! id2i.f_sqlite_ebcdic) ) )) {
+      if ((((! id2i_sqlite_ebcdic) ) )) {
         for ((i = 1); ((sqlite3CtypeMap[((unsigned  char ) z[i])] & 0x46) != 0); i++) {
           
         }
       }  
-      if (((id2i.f_sqlite_ebcdic ) )) {
+      if (((id2i_sqlite_ebcdic ) )) {
         for ((i = 1); (((c = z[i]) >= 0x42) && sqlite3IsEbcdicIdChar[(c - 0x40)]); i++) {
           
         }
@@ -67525,7 +67525,7 @@ int sqlite3_complete(const  char *zSql )  {
       default:
       {
         unsigned char _1282_c;
-        if ((((! id2i.f_sqlite_ebcdic) ) )) {
+        if ((((! id2i_sqlite_ebcdic) ) )) {
           if (((sqlite3CtypeMap[((unsigned  char ) ((u8 ) (*zSql)))] & 0x46) != 0)) {
             int nId;
             for ((nId = 1); ((sqlite3CtypeMap[((unsigned  char ) zSql[nId])] & 0x46) != 0); nId++) {
@@ -67564,7 +67564,7 @@ int sqlite3_complete(const  char *zSql )  {
               case 'e':
               case 'E':
               {
-                if ((((! id2i.f_sqlite_omit_explain) ) )) {
+                if ((((! id2i_sqlite_omit_explain) ) )) {
                   if (((nId == 3) && (sqlite3_strnicmp(zSql, "end", 3) == 0))) {
                     (token = 7);
                   } 
@@ -67575,7 +67575,7 @@ int sqlite3_complete(const  char *zSql )  {
                     (token = 2);
                   }
                 }  
-                if (((id2i.f_sqlite_omit_explain ) )) {
+                if (((id2i_sqlite_omit_explain ) )) {
                   if (((nId == 3) && (sqlite3_strnicmp(zSql, "end", 3) == 0))) {
                     (token = 7);
                   }  
@@ -67598,7 +67598,7 @@ int sqlite3_complete(const  char *zSql )  {
             (token = 2);
           }
         }  
-        if (((id2i.f_sqlite_ebcdic ) )) {
+        if (((id2i_sqlite_ebcdic ) )) {
           if ((((_1282_c = ((u8 ) (*zSql))) >= 0x42) && sqlite3IsEbcdicIdChar[(_1282_c - 0x40)])) {
             int nId;
             for ((nId = 1); (((_1282_c = zSql[nId]) >= 0x42) && sqlite3IsEbcdicIdChar[(_1282_c - 0x40)]); nId++) {
@@ -67637,7 +67637,7 @@ int sqlite3_complete(const  char *zSql )  {
               case 'e':
               case 'E':
               {
-                if ((((! id2i.f_sqlite_omit_explain) ) )) {
+                if ((((! id2i_sqlite_omit_explain) ) )) {
                   if (((nId == 3) && (sqlite3_strnicmp(zSql, "end", 3) == 0))) {
                     (token = 7);
                   } 
@@ -67648,7 +67648,7 @@ int sqlite3_complete(const  char *zSql )  {
                     (token = 2);
                   }
                 }  
-                if (((id2i.f_sqlite_omit_explain ) )) {
+                if (((id2i_sqlite_omit_explain ) )) {
                   if (((nId == 3) && (sqlite3_strnicmp(zSql, "end", 3) == 0))) {
                     (token = 7);
                   }  
@@ -67718,12 +67718,12 @@ char *sqlite3_data_directory =  0;
 int sqlite3_initialize(void )  {
   init_azCompileOpt();
   int rc;
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.isInit) {
       return 0;
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.isInit) {
       return 0;
     }  
@@ -67732,30 +67732,30 @@ int sqlite3_initialize(void )  {
   if (rc) {
     return rc;
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (_1283_sqlite3Config.isMutexInit = 1);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (_1284_sqlite3Config.isMutexInit = 1);
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((! _1283_sqlite3Config.isMallocInit)) {
       (rc = sqlite3MallocInit());
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((! _1284_sqlite3Config.isMallocInit)) {
       (rc = sqlite3MallocInit());
     }  
   }  
   if ((rc == 0)) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       (_1283_sqlite3Config.isMallocInit = 1);
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       (_1284_sqlite3Config.isMallocInit = 1);
     }  
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       if ((! _1283_sqlite3Config.pInitMutex)) {
         (_1283_sqlite3Config.pInitMutex = ((sqlite3_mutex *) 8));
         if ((_1283_sqlite3Config.bCoreMutex && (! _1283_sqlite3Config.pInitMutex))) {
@@ -67763,7 +67763,7 @@ int sqlite3_initialize(void )  {
         }  
       }  
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       if ((! _1284_sqlite3Config.pInitMutex)) {
         (_1284_sqlite3Config.pInitMutex = ((sqlite3_mutex *) 8));
         if ((_1284_sqlite3Config.bCoreMutex && (! _1284_sqlite3Config.pInitMutex))) {
@@ -67773,17 +67773,17 @@ int sqlite3_initialize(void )  {
     }  
   }  
   if ((rc == 0)) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       _1283_sqlite3Config.nRefInitMutex++;
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       _1284_sqlite3Config.nRefInitMutex++;
     }  
   }  
   if ((rc != 0)) {
     return rc;
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (((_1283_sqlite3Config.isInit == 0) && (_1283_sqlite3Config.inProgress == 0))) {
       FuncDefHash *pHash =  (&sqlite3GlobalFunctions);
       (_1283_sqlite3Config.inProgress = 1);
@@ -67803,7 +67803,7 @@ int sqlite3_initialize(void )  {
       (_1283_sqlite3Config.inProgress = 0);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (((_1284_sqlite3Config.isInit == 0) && (_1284_sqlite3Config.inProgress == 0))) {
       FuncDefHash *pHash =  (&sqlite3GlobalFunctions);
       (_1284_sqlite3Config.inProgress = 1);
@@ -67823,19 +67823,19 @@ int sqlite3_initialize(void )  {
       (_1284_sqlite3Config.inProgress = 0);
     }  
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     _1283_sqlite3Config.nRefInitMutex--;
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     _1284_sqlite3Config.nRefInitMutex--;
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((_1283_sqlite3Config.nRefInitMutex <= 0)) {
       ((void ) 0);
       (_1283_sqlite3Config.pInitMutex = 0);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((_1284_sqlite3Config.nRefInitMutex <= 0)) {
       ((void ) 0);
       (_1284_sqlite3Config.pInitMutex = 0);
@@ -67844,33 +67844,33 @@ int sqlite3_initialize(void )  {
   return rc;
 }
 int sqlite3_shutdown(void )  {
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.isInit) {
       sqlite3_os_end();
       sqlite3_reset_auto_extension();
       (_1283_sqlite3Config.isInit = 0);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.isInit) {
       sqlite3_os_end();
       sqlite3_reset_auto_extension();
       (_1284_sqlite3Config.isInit = 0);
     }  
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.isPCacheInit) {
       sqlite3PcacheShutdown();
       (_1283_sqlite3Config.isPCacheInit = 0);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.isPCacheInit) {
       sqlite3PcacheShutdown();
       (_1284_sqlite3Config.isPCacheInit = 0);
     }  
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.isMallocInit) {
       sqlite3MallocEnd();
       (_1283_sqlite3Config.isMallocInit = 0);
@@ -67878,7 +67878,7 @@ int sqlite3_shutdown(void )  {
       (sqlite3_temp_directory = 0);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.isMallocInit) {
       sqlite3MallocEnd();
       (_1284_sqlite3Config.isMallocInit = 0);
@@ -67886,12 +67886,12 @@ int sqlite3_shutdown(void )  {
       (sqlite3_temp_directory = 0);
     }  
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.isMutexInit) {
       (_1283_sqlite3Config.isMutexInit = 0);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.isMutexInit) {
       (_1284_sqlite3Config.isMutexInit = 0);
     }  
@@ -67901,12 +67901,12 @@ int sqlite3_shutdown(void )  {
 int sqlite3_config(int op , ...)  {
   va_list ap;
   int rc =  0;
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if (_1283_sqlite3Config.isInit) {
       return sqlite3MisuseError(117632);
     }  
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if (_1284_sqlite3Config.isInit) {
       return sqlite3MisuseError(117632);
     }  
@@ -67915,84 +67915,84 @@ int sqlite3_config(int op , ...)  {
   switch (op) {
     case 4:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.m = (*__builtin_va_arg(ap, sqlite3_mem_methods *)));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.m = (*__builtin_va_arg(ap, sqlite3_mem_methods *)));
       }  
       break;
     }
     case 5:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         if ((_1283_sqlite3Config.m.xMalloc == 0)) {
           sqlite3MemSetDefault();
         }  
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         if ((_1284_sqlite3Config.m.xMalloc == 0)) {
           sqlite3MemSetDefault();
         }  
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         ((*__builtin_va_arg(ap, sqlite3_mem_methods *)) = _1283_sqlite3Config.m);
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         ((*__builtin_va_arg(ap, sqlite3_mem_methods *)) = _1284_sqlite3Config.m);
       }  
       break;
     }
     case 9:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.bMemstat = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.bMemstat = __builtin_va_arg(ap, int ));
       }  
       break;
     }
     case 6:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.pScratch = __builtin_va_arg(ap, void *));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.pScratch = __builtin_va_arg(ap, void *));
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.szScratch = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.szScratch = __builtin_va_arg(ap, int ));
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.nScratch = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.nScratch = __builtin_va_arg(ap, int ));
       }  
       break;
     }
     case 7:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.pPage = __builtin_va_arg(ap, void *));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.pPage = __builtin_va_arg(ap, void *));
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.szPage = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.szPage = __builtin_va_arg(ap, int ));
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.nPage = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.nPage = __builtin_va_arg(ap, int ));
       }  
       break;
@@ -68008,55 +68008,55 @@ int sqlite3_config(int op , ...)  {
     }
     case 18:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.pcache2 = (*__builtin_va_arg(ap, sqlite3_pcache_methods2 *)));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.pcache2 = (*__builtin_va_arg(ap, sqlite3_pcache_methods2 *)));
       }  
       break;
     }
     case 19:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         if ((_1283_sqlite3Config.pcache2.xInit == 0)) {
           sqlite3PCacheSetDefault();
         }  
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         if ((_1284_sqlite3Config.pcache2.xInit == 0)) {
           sqlite3PCacheSetDefault();
         }  
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         ((*__builtin_va_arg(ap, sqlite3_pcache_methods2 *)) = _1283_sqlite3Config.pcache2);
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         ((*__builtin_va_arg(ap, sqlite3_pcache_methods2 *)) = _1284_sqlite3Config.pcache2);
       }  
       break;
     }
     case 8:
-    if ((((! id2i.f_sqlite_enable_memsys3) && id2i.f_sqlite_enable_memsys5) || (id2i.f_sqlite_enable_memsys3 ))) {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+    if ((((! id2i_sqlite_enable_memsys3) && id2i_sqlite_enable_memsys5) || (id2i_sqlite_enable_memsys3 ))) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.pHeap = __builtin_va_arg(ap, void *));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.pHeap = __builtin_va_arg(ap, void *));
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.nHeap = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.nHeap = __builtin_va_arg(ap, int ));
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.mnReq = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.mnReq = __builtin_va_arg(ap, int ));
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         if ((_1283_sqlite3Config.mnReq < 1)) {
           (_1283_sqlite3Config.mnReq = 1);
         } 
@@ -68064,7 +68064,7 @@ int sqlite3_config(int op , ...)  {
           (_1283_sqlite3Config.mnReq = (1 << 12));
         } 
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         if ((_1284_sqlite3Config.mnReq < 1)) {
           (_1284_sqlite3Config.mnReq = 1);
         } 
@@ -68072,51 +68072,51 @@ int sqlite3_config(int op , ...)  {
           (_1284_sqlite3Config.mnReq = (1 << 12));
         } 
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         if ((_1283_sqlite3Config.pHeap == 0)) {
           memset((&_1283_sqlite3Config.m), 0, sizeof(_1283_sqlite3Config.m));
         }  
         else {
-          if (((id2i.f_sqlite_enable_memsys3 ) )) {
+          if (((id2i_sqlite_enable_memsys3 ) )) {
             (_1283_sqlite3Config.m = (*sqlite3MemGetMemsys3()));
           }  
-          if (((id2i.f_sqlite_enable_memsys5 ) )) {
+          if (((id2i_sqlite_enable_memsys5 ) )) {
             (_1283_sqlite3Config.m = (*sqlite3MemGetMemsys5()));
           }  
         }
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         if ((_1284_sqlite3Config.pHeap == 0)) {
           memset((&_1284_sqlite3Config.m), 0, sizeof(_1284_sqlite3Config.m));
         }  
         else {
-          if (((id2i.f_sqlite_enable_memsys3 ) )) {
+          if (((id2i_sqlite_enable_memsys3 ) )) {
             (_1284_sqlite3Config.m = (*sqlite3MemGetMemsys3()));
           }  
-          if (((id2i.f_sqlite_enable_memsys5 ) )) {
+          if (((id2i_sqlite_enable_memsys5 ) )) {
             (_1284_sqlite3Config.m = (*sqlite3MemGetMemsys5()));
           }  
         }
       }  
       break;
     }  
-    if ((((! id2i.f_sqlite_enable_memsys3) && (! id2i.f_sqlite_enable_memsys5)) )) {
+    if ((((! id2i_sqlite_enable_memsys3) && (! id2i_sqlite_enable_memsys5)) )) {
       if ((op == 8)) {
         goto id2i_label_1;
       }  
     }  
     case 13:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.szLookaside = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.szLookaside = __builtin_va_arg(ap, int ));
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.nLookaside = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.nLookaside = __builtin_va_arg(ap, int ));
       }  
       break;
@@ -68124,36 +68124,36 @@ int sqlite3_config(int op , ...)  {
     case 16:
     {
       typedef void ( *LOGFUNC_t)(void * , int , const  char * );
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.xLog = __builtin_va_arg(ap, LOGFUNC_t ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.xLog = __builtin_va_arg(ap, LOGFUNC_t ));
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.pLogArg = __builtin_va_arg(ap, void *));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.pLogArg = __builtin_va_arg(ap, void *));
       }  
       break;
     }
     case 17:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.bOpenUri = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.bOpenUri = __builtin_va_arg(ap, int ));
       }  
       break;
     }
     case 20:
     {
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.bUseCis = __builtin_va_arg(ap, int ));
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.bUseCis = __builtin_va_arg(ap, int ));
       }  
       break;
@@ -68165,10 +68165,10 @@ int sqlite3_config(int op , ...)  {
       if (((mxMmap < 0) || (mxMmap > 0))) {
         (mxMmap = 0);
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.mxMmap = mxMmap);
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.mxMmap = mxMmap);
       }  
       if ((szMmap < 0)) {
@@ -68177,10 +68177,10 @@ int sqlite3_config(int op , ...)  {
       if ((szMmap > mxMmap)) {
         (szMmap = mxMmap);
       }  
-      if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+      if ((((! id2i_sqlite_default_memstatus) ) )) {
         (_1283_sqlite3Config.szMmap = szMmap);
       }  
-      if (((id2i.f_sqlite_default_memstatus ) )) {
+      if (((id2i_sqlite_default_memstatus ) )) {
         (_1284_sqlite3Config.szMmap = szMmap);
       }  
       break;
@@ -68215,11 +68215,11 @@ static  int setupLookaside(sqlite3 *db , void *pBuf , int sz , int cnt )  {
     (pStart = 0);
   } 
   else if ((pBuf == 0)) {
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3BeginBenignMalloc();
     }  
     (pStart = sqlite3Malloc((sz * cnt)));
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3EndBenignMalloc();
     }  
     if (pStart) {
@@ -68499,7 +68499,7 @@ static  void sqlite3RollbackAll(sqlite3 *db , int tripCode )  {
   int i;
   int inTrans =  0;
   ((void ) 0);
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     sqlite3BeginBenignMalloc();
   }  
   sqlite3BtreeEnterAll(db);
@@ -68513,7 +68513,7 @@ static  void sqlite3RollbackAll(sqlite3 *db , int tripCode )  {
     }  
   }
   sqlite3VtabRollback(db);
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     sqlite3EndBenignMalloc();
   }  
   if ((((db->flags & 0x00000002) != 0) && (db->init.busy == 0))) {
@@ -68540,12 +68540,12 @@ static  const  char *sqlite3ErrStr(int rc )  {
     default:
     {
       (rc &= 0xff);
-      if (((id2i.f_sqlite_coverage_test ) )) {
+      if (((id2i_sqlite_coverage_test ) )) {
         if ((1 && (rc < ((int ) (sizeof(aMsg) / sizeof(aMsg[0])))) && (aMsg[rc] != 0))) {
           (zErr = aMsg[rc]);
         }  
       }  
-      if ((((! id2i.f_sqlite_coverage_test) ) )) {
+      if ((((! id2i_sqlite_coverage_test) ) )) {
         if (((rc >= 0) && (rc < ((int ) (sizeof(aMsg) / sizeof(aMsg[0])))) && (aMsg[rc] != 0))) {
           (zErr = aMsg[rc]);
         }  
@@ -68566,12 +68566,12 @@ static  int sqliteDefaultBusyCallback(void *ptr , int count )  {
 }
 static  int sqlite3InvokeBusyHandler(BusyHandler *p )  {
   int rc;
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((0 || (p->xFunc == 0) || (p->nBusy < 0))) {
       return 0;
     }  
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     if (((p == 0) || (p->xFunc == 0) || (p->nBusy < 0))) {
       return 0;
     }  
@@ -68748,11 +68748,11 @@ void *sqlite3_rollback_hook(sqlite3 *db , void ( *xCallback)(void * ) , void *pA
 }
 static  int sqlite3WalDefaultHook(void *pClientData , sqlite3 *db , const  char *zDb , int nFrame )  {
   if ((nFrame >= ((int ) ((long  int ) pClientData)))) {
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3BeginBenignMalloc();
     }  
     sqlite3_wal_checkpoint(db, zDb);
-    if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+    if ((((! id2i_sqlite_omit_builtin_test) ) )) {
       sqlite3EndBenignMalloc();
     }  
   }  
@@ -68899,12 +68899,12 @@ static  int createCollation(sqlite3 *db , const  char *zName , u8 enc , void *pC
   int nName =  sqlite3Strlen30(zName);
   ((void ) 0);
   (enc2 = enc);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((enc2 == 4)) {
       sqlite3Coverage(119275);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if ((enc2 == 8)) {
       sqlite3Coverage(119276);
     }  
@@ -68982,7 +68982,7 @@ static  int sqlite3ParseUri(const  char *zDefaultVfs , const  char *zUri , unsig
   char c;
   int nUri =  sqlite3Strlen30(zUri);
   ((void ) 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((((flags & 0x00000040) || _1283_sqlite3Config.bOpenUri) && (nUri >= 5) && (memcmp(zUri, "file:", 5) == 0))) {
       char *zOpt;
       int eState;
@@ -69118,7 +69118,7 @@ static  int sqlite3ParseUri(const  char *zDefaultVfs , const  char *zUri , unsig
       (flags &= (~ 0x00000040));
     }
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((((flags & 0x00000040) || _1284_sqlite3Config.bOpenUri) && (nUri >= 5) && (memcmp(zUri, "file:", 5) == 0))) {
       char *zOpt;
       int eState;
@@ -69282,17 +69282,17 @@ static  int openDatabase(const  char *zFilename , sqlite3 **ppDb , unsigned  int
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((1 << (flags & 7)) == 0x02)) {
       sqlite3Coverage(119699);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((1 << (flags & 7)) == 0x04)) {
       sqlite3Coverage(119700);
     }  
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (((1 << (flags & 7)) == 0x40)) {
       sqlite3Coverage(119701);
     }  
@@ -69300,7 +69300,7 @@ static  int openDatabase(const  char *zFilename , sqlite3 **ppDb , unsigned  int
   if ((((1 << (flags & 7)) & 0x46) == 0)) {
     return sqlite3MisuseError(119702);
   }  
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     if ((_1283_sqlite3Config.bCoreMutex == 0)) {
       (isThreadsafe = 0);
     } 
@@ -69315,7 +69315,7 @@ static  int openDatabase(const  char *zFilename , sqlite3 **ppDb , unsigned  int
       (isThreadsafe = _1283_sqlite3Config.bFullMutex);
     }
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     if ((_1284_sqlite3Config.bCoreMutex == 0)) {
       (isThreadsafe = 0);
     } 
@@ -69333,11 +69333,11 @@ static  int openDatabase(const  char *zFilename , sqlite3 **ppDb , unsigned  int
   if ((flags & 0x00040000)) {
     (flags &= (~ 0x00020000));
   } 
-  else if (((((! id2i.f_sqlite_default_memstatus) ) ) && _1283_sqlite3Config.sharedCacheEnabled)) {
+  else if (((((! id2i_sqlite_default_memstatus) ) ) && _1283_sqlite3Config.sharedCacheEnabled)) {
     (flags |= 0x00020000);
   }
   
-  else if ((((id2i.f_sqlite_default_memstatus ) ) && _1284_sqlite3Config.sharedCacheEnabled)) {
+  else if ((((id2i_sqlite_default_memstatus ) ) && _1284_sqlite3Config.sharedCacheEnabled)) {
     (flags |= 0x00020000);
   } 
   (flags &= (~ (0x00000008 | 0x00000010 | 0x00000100 | 0x00000200 | 0x00000400 | 0x00000800 | 0x00001000 | 0x00002000 | 0x00004000 | 0x00008000 | 0x00010000 | 0x00080000)));
@@ -69361,10 +69361,10 @@ static  int openDatabase(const  char *zFilename , sqlite3 **ppDb , unsigned  int
   memcpy(db->aLimit, aHardLimit, sizeof(db->aLimit));
   (db->autoCommit = 1);
   (db->nextAutovac = (- 1));
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     (db->szMmap = _1283_sqlite3Config.szMmap);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     (db->szMmap = _1284_sqlite3Config.szMmap);
   }  
   (db->nextPagesize = 0);
@@ -69419,16 +69419,16 @@ static  int openDatabase(const  char *zFilename , sqlite3 **ppDb , unsigned  int
       goto opendb_out;
     }  
   }  
-  if ((((! id2i.f_sqlite_enable_fts4) && id2i.f_sqlite_enable_fts3) || (id2i.f_sqlite_enable_fts4 ))) {
+  if ((((! id2i_sqlite_enable_fts4) && id2i_sqlite_enable_fts3) || (id2i_sqlite_enable_fts4 ))) {
     if (((! db->mallocFailed) && (rc == 0))) {
       (rc = sqlite3Fts3Init(db));
     }  
   }  
   sqlite3Error(db, rc, 0);
-  if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if ((((! id2i_sqlite_default_memstatus) ) )) {
     setupLookaside(db, 0, _1283_sqlite3Config.szLookaside, _1283_sqlite3Config.nLookaside);
   }  
-  if (((id2i.f_sqlite_default_memstatus ) )) {
+  if (((id2i_sqlite_default_memstatus ) )) {
     setupLookaside(db, 0, _1284_sqlite3Config.szLookaside, _1284_sqlite3Config.nLookaside);
   }  
   sqlite3_wal_autocheckpoint(db, 1000);
@@ -69527,13 +69527,13 @@ int sqlite3_get_autocommit(sqlite3 *db )  {
   return db->autoCommit;
 }
 static  int sqlite3CorruptError(int lineno )  {
-  if (((id2i.f_sqlite_coverage_test ) )) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       if ((_1283_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(120125);
       }  
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       if ((_1284_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(120125);
       }  
@@ -69543,13 +69543,13 @@ static  int sqlite3CorruptError(int lineno )  {
   return 11;
 }
 static  int sqlite3MisuseError(int lineno )  {
-  if (((id2i.f_sqlite_coverage_test ) )) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       if ((_1283_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(120132);
       }  
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       if ((_1284_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(120132);
       }  
@@ -69559,13 +69559,13 @@ static  int sqlite3MisuseError(int lineno )  {
   return 21;
 }
 static  int sqlite3CantopenError(int lineno )  {
-  if (((id2i.f_sqlite_coverage_test ) )) {
-    if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
+    if ((((! id2i_sqlite_default_memstatus) ) )) {
       if ((_1283_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(120139);
       }  
     }  
-    if (((id2i.f_sqlite_default_memstatus ) )) {
+    if (((id2i_sqlite_default_memstatus ) )) {
       if ((_1284_sqlite3Config.xLog != 0)) {
         sqlite3Coverage(120139);
       }  
@@ -69698,10 +69698,10 @@ int sqlite3_file_control(sqlite3 *db , const  char *zDbName , int op , void *pAr
 int sqlite3_test_control(int op , ...)  {
   int rc =  0;
   va_list _1279_ap;
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     __builtin_va_start(_1279_ap, op);
   }  
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     switch (op) {
       case 5:
       {
@@ -69756,10 +69756,10 @@ int sqlite3_test_control(int op , ...)  {
       case 13:
       {
         int x =  __builtin_va_arg(_1279_ap, int );
-        if (((id2i.f_sqlite_coverage_test ) )) {
+        if (((id2i_sqlite_coverage_test ) )) {
           (rc = 1);
         }  
-        if ((((! id2i.f_sqlite_coverage_test) ) )) {
+        if ((((! id2i_sqlite_coverage_test) ) )) {
           (rc = x);
         }  
         break;
@@ -69799,16 +69799,16 @@ int sqlite3_test_control(int op , ...)  {
       }
       case 18:
       {
-        if ((((! id2i.f_sqlite_default_memstatus) ) )) {
+        if ((((! id2i_sqlite_default_memstatus) ) )) {
           (_1283_sqlite3Config.bLocaltimeFault = __builtin_va_arg(_1279_ap, int ));
         }  
-        if (((id2i.f_sqlite_default_memstatus ) )) {
+        if (((id2i_sqlite_default_memstatus ) )) {
           (_1284_sqlite3Config.bLocaltimeFault = __builtin_va_arg(_1279_ap, int ));
         }  
         break;
       }
       case 19:
-      if (((id2i.f_sqlite_enable_tree_explain ) )) {
+      if (((id2i_sqlite_enable_tree_explain ) )) {
         sqlite3_stmt *pStmt =  __builtin_va_arg(_1279_ap, sqlite3_stmt *);
         const char **pzRet =  __builtin_va_arg(_1279_ap, const  char **);
         ((*pzRet) = sqlite3VdbeExplanation(((Vdbe *) pStmt)));
@@ -69816,7 +69816,7 @@ int sqlite3_test_control(int op , ...)  {
       }  
     }
   }  
-  if ((((! id2i.f_sqlite_omit_builtin_test) ) )) {
+  if ((((! id2i_sqlite_omit_builtin_test) ) )) {
     __builtin_va_end(_1279_ap);
   }  
   return rc;
@@ -70143,7 +70143,7 @@ static  void sqlite3Fts3Dequote(char *z )  {
     if ((quote == '[')) {
       (quote = ']');
     }  
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       while (1) {
         if ((z[iIn] == quote)) {
           if ((z[(iIn + 1)] != quote)) {
@@ -70157,7 +70157,7 @@ static  void sqlite3Fts3Dequote(char *z )  {
         }
       }
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       while (z[iIn]) {
         if ((z[iIn] == quote)) {
           if ((z[(iIn + 1)] != quote)) {
@@ -70722,10 +70722,10 @@ static  int fts3InitVtab(int isCreate , sqlite3 *db , void *pAux , int argc , co
   (p->zLanguageid = zLanguageid);
   (zContent = 0);
   (zLanguageid = 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (p->_1366_inTransaction = (- 1));
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (p->_1366_mxSavepoint = (- 1));
   }  
   (p->aIndex = ((struct  Fts3Index   *) (&p->azColumn[nCol])));
@@ -71063,7 +71063,7 @@ static  void fts3PoslistCopy(char **pp , char **ppPoslist )  {
   char c =  0;
   while (((*pEnd) | c)) {
     (c = ((*pEnd++) & 0x80));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((c != 0) && ((*pEnd) == 0))) {
         sqlite3Coverage(123738);
       }  
@@ -71084,7 +71084,7 @@ static  void fts3ColumnlistCopy(char **pp , char **ppPoslist )  {
   char c =  0;
   while ((0xFE & ((*pEnd) | c))) {
     (c = ((*pEnd++) & 0x80));
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       if (((c != 0) && (((*pEnd) & 0xfe) == 0))) {
         sqlite3Coverage(123778);
       }  
@@ -71878,10 +71878,10 @@ static  int fts3BeginMethod(sqlite3_vtab *pVtab )  {
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (p->_1366_inTransaction = 1);
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (p->_1366_mxSavepoint = (- 1));
   }  
   (p->nLeafAdd = 0);
@@ -71893,10 +71893,10 @@ static  int fts3CommitMethod(sqlite3_vtab *pVtab )  {
   ((void ) 0);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (_1366_p->_1366_inTransaction = 0);
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (_1366_p->_1366_mxSavepoint = (- 1));
   }  
   return 0;
@@ -71905,10 +71905,10 @@ static  int fts3RollbackMethod(sqlite3_vtab *pVtab )  {
   _1273_Fts3Table *p =  ((_1273_Fts3Table *) pVtab);
   sqlite3Fts3PendingTermsClear(p);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (p->_1366_inTransaction = 0);
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (p->_1366_mxSavepoint = (- 1));
   }  
   return 0;
@@ -72065,7 +72065,7 @@ static  int fts3SavepointMethod(sqlite3_vtab *pVtab , int iSavepoint )  {
   ((void ) iSavepoint);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (((_1273_Fts3Table *) pVtab)->_1366_mxSavepoint = iSavepoint);
   }  
   if ((((_1273_Fts3Table *) pVtab)->bIgnoreSavepoint == 0)) {
@@ -72079,7 +72079,7 @@ static  int fts3ReleaseMethod(sqlite3_vtab *pVtab , int iSavepoint )  {
   ((void ) pVtab);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (_1366_p->_1366_mxSavepoint = (iSavepoint - 1));
   }  
   return 0;
@@ -72089,7 +72089,7 @@ static  int fts3RollbackToMethod(sqlite3_vtab *pVtab , int iSavepoint )  {
   ((void ) iSavepoint);
   ((void ) 0);
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     (p->_1366_mxSavepoint = iSavepoint);
   }  
   sqlite3Fts3PendingTermsClear(p);
@@ -72110,7 +72110,7 @@ static  int sqlite3Fts3Init(sqlite3 *db )  {
   const _1273_sqlite3_tokenizer_module *pSimple =  0;
   const _1273_sqlite3_tokenizer_module *pPorter =  0;
   const _1273_sqlite3_tokenizer_module *pUnicode =  0;
-  if (((id2i.f_sqlite_enable_fts4_unicode61 ) )) {
+  if (((id2i_sqlite_enable_fts4_unicode61 ) )) {
     sqlite3Fts3UnicodeTokenizer((&pUnicode));
   }  
   (rc = sqlite3Fts3InitAux(db));
@@ -72127,12 +72127,12 @@ static  int sqlite3Fts3Init(sqlite3 *db )  {
     sqlite3Fts3HashInit(pHash, 1, 1);
   }
   if ((rc == 0)) {
-    if ((((! id2i.f_sqlite_enable_fts4_unicode61) ) )) {
+    if ((((! id2i_sqlite_enable_fts4_unicode61) ) )) {
       if ((sqlite3Fts3HashInsert(pHash, "simple", 7, ((void *) pSimple)) || sqlite3Fts3HashInsert(pHash, "porter", 7, ((void *) pPorter)))) {
         (rc = 7);
       }  
     }  
-    if (((id2i.f_sqlite_enable_fts4_unicode61 ) )) {
+    if (((id2i_sqlite_enable_fts4_unicode61 ) )) {
       if ((sqlite3Fts3HashInsert(pHash, "simple", 7, ((void *) pSimple)) || sqlite3Fts3HashInsert(pHash, "porter", 7, ((void *) pPorter)) || sqlite3Fts3HashInsert(pHash, "unicode61", 10, ((void *) pUnicode)))) {
         (rc = 7);
       }  
@@ -73592,7 +73592,7 @@ static  int fts3auxFilterMethod(sqlite3_vtab_cursor *pCursor , int idxNum , cons
   if ((iNext < nVal)) {
     (iLangid = iNext++);
   }  
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     if (pCsr->filter.zTerm) {
       sqlite3Coverage(127973);
     }  
@@ -77518,7 +77518,7 @@ static  int fts3IncrmergePush(_1273_Fts3Table *p , _1273_IncrmergeWriter *pWrite
   sqlite3_int64 iPtr =  pWriter->aNodeWriter[0].iBlock;
   int iLayer;
   ((void ) 0);
-  if (((id2i.f_sqlite_coverage_test ) )) {
+  if (((id2i_sqlite_coverage_test ) )) {
     for ((iLayer = 1); 1; iLayer++) {
       sqlite3_int64 iNextPtr =  0;
       _1273_NodeWriter *pNode =  (&pWriter->aNodeWriter[iLayer]);
@@ -77567,7 +77567,7 @@ static  int fts3IncrmergePush(_1273_Fts3Table *p , _1273_IncrmergeWriter *pWrite
       (iPtr = iNextPtr);
     }
   }  
-  if ((((! id2i.f_sqlite_coverage_test) ) )) {
+  if ((((! id2i_sqlite_coverage_test) ) )) {
     for ((iLayer = 1); (iLayer < 16); iLayer++) {
       sqlite3_int64 iNextPtr =  0;
       _1273_NodeWriter *pNode =  (&pWriter->aNodeWriter[iLayer]);
@@ -78080,7 +78080,7 @@ static  int fts3IncrmergeChomp(_1273_Fts3Table *p , sqlite3_int64 iAbsLevel , _1
   for ((i = (pCsr->nSegment - 1)); ((i >= 0) && (rc == 0)); i--) {
     _1273_Fts3SegReader *pSeg =  0;
     int j;
-    if (((id2i.f_sqlite_coverage_test ) )) {
+    if (((id2i_sqlite_coverage_test ) )) {
       for ((j = 0); 1; j++) {
         (pSeg = pCsr->apSegment[j]);
         if ((pSeg->iIdx == i)) {
@@ -78088,7 +78088,7 @@ static  int fts3IncrmergeChomp(_1273_Fts3Table *p , sqlite3_int64 iAbsLevel , _1
         }  
       }
     }  
-    if ((((! id2i.f_sqlite_coverage_test) ) )) {
+    if ((((! id2i_sqlite_coverage_test) ) )) {
       for ((j = 0); (j < pCsr->nSegment); j++) {
         (pSeg = pCsr->apSegment[j]);
         if ((pSeg->iIdx == i)) {

@@ -21,5 +21,5 @@ if [ ! -d TypeChef-SQLiteIfdeftoif ]; then
     cp -r ~/TH3 .
 else
     # update SQLITE
-    cd TypeChef-SQLiteIfdeftoif/ && git pull -q && cd -
+    cd TypeChef-SQLiteIfdeftoif/ && git pull && cd -
 fi

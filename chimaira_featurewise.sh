@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -o /home/garbe/chimaira/logfile_featurewise-%j.txt
+#SBATCH -o /home/garbe/chimaira/featurewise-%a.txt
 #SBATCH --job-name=hercules-sqlite
 #SBATCH -p chimaira
 #SBATCH -A spl
@@ -7,7 +7,7 @@
 #SBATCH --ntasks 1
 #SBATCH --array=0-6551
 
-#SBATCH --time=00:05:00 # 5 minutes max
+#SBATCH --time=00:30:00 # 5 minutes max
 
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 

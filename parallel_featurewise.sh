@@ -1,5 +1,7 @@
 #!/bin/bash
 
+th3IfdeftoifDir=/home/garbe/th3_generated_ifdeftoif
+
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" | wc -l)
 IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | wc -l)
@@ -8,6 +10,7 @@ TOTAL=$(( $TESTDIRS * $CFGFILES * $IFCONFIGS))
 TESTDIRNO=$(( ($1 / ($CFGFILES * $IFCONFIGS)) + 1 ))
 TH3CFGNO=$(( (($1 / $IFCONFIGS) % $CFGFILES)  + 1 ))
 IFCONFIGNO=$(( ($1 % $IFCONFIGS) + 1 ))
+TH3IFDEFNO=$(( $1 / $IFCONFIGS ))
 
 if [ $1 -lt $TOTAL ]; then
     cd ..
@@ -26,11 +29,6 @@ if [ $1 -lt $TOTAL ]; then
     cd ../TH3
     ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > ../tmp_$1/th3_generated_test.c
     cd ../tmp_$1
-    cp th3_generated_test.c th3_generated_test_ifdeftoif.c
-    #insert /* Alex: added initialization of our version of the azCompileOpt array */ init_azCompileOpt();
-    sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\/* Alex: added initialization of our version of the azCompileOpt array *\/\n  init_azCompileOpt()\;/' \
-        th3_generated_test_ifdeftoif.c
-    #better never touch this sed again
 
     #sed filters everything but the number of the configuration
     configID=$(basename $IFCONFIG | sed 's/id2i_optionstruct_//' | sed 's/.h//')
@@ -38,7 +36,7 @@ if [ $1 -lt $TOTAL ]; then
 
     # Copy files used for compilation into temporary directory
     cp $IFCONFIG id2i_optionstruct.h
-    cp ../TypeChef-SQLiteIfdeftoif/sqlite3_parallel_ifdeftoif.c sqlite3_ifdeftoif.c
+    cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
     # Test normal sqlite
@@ -56,7 +54,7 @@ if [ $1 -lt $TOTAL ]; then
 
         # Test ifdeftoif sqlite
         ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-            sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c 2>&1)
+            sqlite3_ifdeftoif.c 2>&1)
         # If gcc returns errors don't start testing the ifdeftoif variant
         if [ $? != 0 ]
         then

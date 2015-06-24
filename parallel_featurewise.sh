@@ -28,8 +28,7 @@ if [ $1 -lt $TOTAL ]; then
     cd ../tmp_$1
     cp th3_generated_test.c th3_generated_test_ifdeftoif.c
     #insert /* Alex: added initialization of our version of the azCompileOpt array */ init_azCompileOpt();
-    sed -i \
-        's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\/* Alex: added initialization of our version of the azCompileOpt array *\/ init_azCompileOpt()\;/' \
+    sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\/* Alex: added initialization of our version of the azCompileOpt array *\/\n  init_azCompileOpt()\;/' \
         th3_generated_test_ifdeftoif.c
     #better never touch this sed again
 

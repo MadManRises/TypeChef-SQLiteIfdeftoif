@@ -5,7 +5,7 @@
 #SBATCH -A spl
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
-#SBATCH --array=0-6551
+#SBATCH --array=0-5849
 
 #SBATCH --time=00:30:00 # 5 minutes max
 

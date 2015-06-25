@@ -1,7 +1,7 @@
 #!/bin/bash
 
 homeDir=/home/garbe
-localDir=/local/garbe/TypeChef
+localDir=/local/garbe
 sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif
 herculesDir=$localDir/Hercules
 

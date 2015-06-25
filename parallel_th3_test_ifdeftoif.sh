@@ -68,5 +68,5 @@ if [ $1 -lt $TOTAL ]; then
     sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_modified_ifdeftoif.c
     mv sqlite3_modified_ifdeftoif.c ../sqlite3_ifdeftoif_$1.c
     cd ..
-    # rm -rf tmp_$1
+    rm -rf tmp_$1
 fi

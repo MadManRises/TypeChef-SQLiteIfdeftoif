@@ -1,6 +1,6 @@
 #!/bin/bash
 
-th3IfdeftoifDir=/home/garbe/th3_generated_ifdeftoif
+th3IfdeftoifDir=/home/$USER/th3_generated_ifdeftoif
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" | wc -l)
@@ -14,6 +14,7 @@ TH3IFDEFNO=$(( $1 / $IFCONFIGS ))
 
 if [ $1 -lt $TOTAL ]; then
     cd ..
+    rm -rf tmp_$1
     mkdir tmp_$1
     cd tmp_$1
 

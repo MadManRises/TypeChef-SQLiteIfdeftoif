@@ -5,7 +5,7 @@
 #SBATCH -A spl
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
-#SBATCH --array=0-5849
+#SBATCH --array=0-6499
 
 #SBATCH --time=00:30:00 # 5 minutes max
 
@@ -14,12 +14,13 @@
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
 ##SBATCH --exclusive        #remove for easier apps experiment
 
-# 6552 different test scenarios
+# 25 sqlite cfgs; 26 test cfgs; 10 test folders
+# 25*26*10 = 6500 different test scenarios
 
 taskName="hercules-sqlite-featurewise"
 localDir=/local/garbe
 resultDir=~/sqlite
-lastJobNo=5849
+lastJobNo=6499
 
 # Call this script as follows:
 # sbatch slurm_featurewise.sh

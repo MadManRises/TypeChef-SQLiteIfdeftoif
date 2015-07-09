@@ -5,6 +5,13 @@ localDir=/local/garbe
 sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif
 herculesDir=$localDir/Hercules
 
+if [ $USER == "flo" ]; then
+    homeDir=/home/flo
+    localDir=/home/flo/TypeChef
+    sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif
+    herculesDir=$localDir/Hercules
+fi
+
 TESTDIRS=$(find $localDir/TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find $localDir/TH3/cfg/ -name "*.cfg" | wc -l)
 TOTAL=$(( $TESTDIRS * $CFGFILES ))
@@ -16,6 +23,7 @@ if [ $1 -lt $TOTAL ]; then
     cd $homeDir
     mkdir th3_generated_ifdeftoif 2>/dev/null
     cd th3_generated_ifdeftoif
+    rm -rf tmp_$1
     mkdir tmp_$1
     cd tmp_$1
     workingDir=$homeDir/th3_generated_ifdeftoif/tmp_$1

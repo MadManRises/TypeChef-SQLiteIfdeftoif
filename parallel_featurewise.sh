@@ -37,61 +37,61 @@ if [ $1 -lt $TOTAL ]; then
 
     # Copy files used for compilation into temporary directory
     cp $IFCONFIG id2i_optionstruct.h
-    cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
+    if cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c; then
 
-    # Test normal sqlite
-    originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-        -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
-        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
-    # If gcc returns errors skip the testing
-    if [ $? != 0 ]
-    then
-        echo -e "TH3 test can't compile original, skipping test; original GCC error:\n$originalGCC\n\n"
-    else
-        expectedTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
-        expectedOutputValue=$?
-        rm -f a.out
-
-        # Test ifdeftoif sqlite
-        ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-            sqlite3_ifdeftoif.c 2>&1)
-        # If gcc returns errors don't start testing the ifdeftoif variant
+        # Test normal sqlite
+        originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+            -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
+            ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
+        # If gcc returns errors skip the testing
         if [ $? != 0 ]
         then
-            echo -e "TH3 test can't compile ifdeftoif; expected: $expectedOutputValue\nExpected test output:"
-            echo -e "$expectedTestResult" | tail -n 10
-            echo -e "\nIfdeftoif GCC error:"
-            echo -e "$ifdeftoifGCC"
-            echo -e "\n"
+            echo -e "TH3 test can't compile original, skipping test; original GCC error:\n$originalGCC\n\n"
         else
-            ifdeftoifTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
-            testOutputValue=$?
-            if [ $testOutputValue -eq $expectedOutputValue ] ; then
-                echo -e "Test successful, exit Codes: $testOutputValue;\n\n"
-            else 
-                if [ $expectedOutputValue -eq 0 ] ; then
-                    echo -e "TH3 succeeds, ifdeftoif does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nIfdeftoif test output:"
-                    echo -e "$ifdeftoifTestResult" | tail -n 10
-                    echo -e "\n"
-                else
-                    if [ $testOutputValue -eq 0 ] ; then
-                        echo -e "Ifdeftoif succeeds, TH3 does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:"
-                        echo -e "$expectedTestResult" | tail -n 10
-                        echo -e "\n"
-                    else
-                        echo -e "TH3 test differs; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:"
-                        echo -e "$expectedTestResult" | tail -n 10
-                        echo -e "\nIfdeftoif test output:"
+            expectedTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
+            expectedOutputValue=$?
+            rm -f a.out
+
+            # Test ifdeftoif sqlite
+            ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+                sqlite3_ifdeftoif.c 2>&1)
+            # If gcc returns errors don't start testing the ifdeftoif variant
+            if [ $? != 0 ]
+            then
+                echo -e "TH3 test can't compile ifdeftoif; expected: $expectedOutputValue\nExpected test output:"
+                echo -e "$expectedTestResult" | tail -n 10
+                echo -e "\nIfdeftoif GCC error:"
+                echo -e "$ifdeftoifGCC"
+                echo -e "\n"
+            else
+                ifdeftoifTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
+                testOutputValue=$?
+                if [ $testOutputValue -eq $expectedOutputValue ] ; then
+                    echo -e "Test successful, exit Codes: $testOutputValue;\n\n"
+                else 
+                    if [ $expectedOutputValue -eq 0 ] ; then
+                        echo -e "TH3 succeeds, ifdeftoif does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nIfdeftoif test output:"
                         echo -e "$ifdeftoifTestResult" | tail -n 10
                         echo -e "\n"
-                    fi
-                fi 
+                    else
+                        if [ $testOutputValue -eq 0 ] ; then
+                            echo -e "Ifdeftoif succeeds, TH3 does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:"
+                            echo -e "$expectedTestResult" | tail -n 10
+                            echo -e "\n"
+                        else
+                            echo -e "TH3 test differs; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:"
+                            echo -e "$expectedTestResult" | tail -n 10
+                            echo -e "\nIfdeftoif test output:"
+                            echo -e "$ifdeftoifTestResult" | tail -n 10
+                            echo -e "\n"
+                        fi
+                    fi 
+                fi
+                rm -f a.out
             fi
-            rm -f a.out
         fi
     fi
-
     cd ..
     rm -rf tmp_$1
 fi

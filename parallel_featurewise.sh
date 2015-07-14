@@ -38,7 +38,7 @@ if [ $1 -lt $TOTAL ]; then
     cp $IFCONFIG id2i_optionstruct.h
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
     if cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c; then
-        echo "featurewise testing: jobid $1 #ifConfig $IFCONFIG on .test files in $TESTDIR with th3Config $TH3CFG at $(date +"%T")"
+        echo "featurewise testing: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIG on .test files in $TESTDIR with th3Config $TH3CFG at $(date +"%T")"
 
         # Test normal sqlite
         originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -o /home/garbe/logs/featurewise-%a.txt
-#SBATCH --job-name=hercules-sqlite
+#SBATCH --job-name=sqlite-featurewis
 #SBATCH -p chimaira
 #SBATCH -A spl
 #SBATCH --get-user-env

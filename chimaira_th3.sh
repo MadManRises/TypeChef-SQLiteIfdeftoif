@@ -1,20 +1,21 @@
 #!/bin/bash
 #SBATCH -o /home/garbe/logs/th3-%a.txt
-#SBATCH --job-name=hercules-sqlite
+#SBATCH --job-name=sqlite-th3
 #SBATCH -p chimaira
 #SBATCH -A spl
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
-#SBATCH --array=0-233
+#SBATCH --mem=13000
+#SBATCH --array=0-259
 
-#SBATCH --time=00:30:00 # 30 minutes max
+#SBATCH --time=01:15:00 # 30 minutes max
 
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
 ##SBATCH --exclusive        #remove for easier apps experiment
 
-# 6552 different test scenarios
+# 259 different test scenarios
 
 taskName="hercules-sqlite-th3"
 localDir=/local/garbe

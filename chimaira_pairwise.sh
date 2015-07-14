@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -o /home/garbe/logs/pairwise-%a.txt
-#SBATCH --job-name=hercules-sqlite
+#SBATCH --job-name=sqlite-pairwise
 #SBATCH -p chimaira
 #SBATCH -A spl
 #SBATCH --get-user-env

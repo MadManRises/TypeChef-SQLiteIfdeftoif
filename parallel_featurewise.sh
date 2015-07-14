@@ -33,12 +33,12 @@ if [ $1 -lt $TOTAL ]; then
 
     #sed filters everything but the number of the configuration
     configID=$(basename $IFCONFIG | sed 's/id2i_optionstruct_//' | sed 's/.h//')
-    echo "featurewise testing: jobid $1 #ifConfig $IFCONFIG on .test files in $TESTDIR with th3Config $TH3CFG at $(date +"%T")"
 
     # Copy files used for compilation into temporary directory
     cp $IFCONFIG id2i_optionstruct.h
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
     if cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c; then
+        echo "featurewise testing: jobid $1 #ifConfig $IFCONFIG on .test files in $TESTDIR with th3Config $TH3CFG at $(date +"%T")"
 
         # Test normal sqlite
         originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \

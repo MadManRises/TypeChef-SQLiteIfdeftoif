@@ -114,8 +114,6 @@ int id2i_use_pread;
 int id2i_use_pread64;
 int id2i_vdbe_profile;
 void id2i_init()  {
-  (id2i_sqlite_omit_load_extension = 1);
-  (id2i_vdbe_profile = 1);
   (id2i___cygwin__ = 0);
   (id2i___i386__ = 0);
   (id2i___mingw32__ = 0);
@@ -219,6 +217,7 @@ void id2i_init()  {
   (id2i_sqlite_omit_deprecated = 0);
   (id2i_sqlite_omit_explain = 0);
   (id2i_sqlite_omit_foreign_key = 0);
+  (id2i_sqlite_omit_load_extension = 1);
   (id2i_sqlite_omit_or_optimization = 0);
   (id2i_sqlite_omit_pager_pragmas = 0);
   (id2i_sqlite_omit_pragma = 0);
@@ -229,4 +228,5 @@ void id2i_init()  {
   (id2i_sqlite_small_stack = 0);
   (id2i_use_pread = 0);
   (id2i_use_pread64 = 0);
+  (id2i_vdbe_profile = 1);
 }

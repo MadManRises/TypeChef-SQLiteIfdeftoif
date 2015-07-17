@@ -6,10 +6,16 @@ sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif
 herculesDir=$localDir/Hercules
 
 if [ $USER == "flo" ]; then
-    homeDir=/home/flo
-    localDir=/home/flo/TypeChef
-    sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif
+    homeDir=/home/flo # th3_generated_ifdeftoif here; contains the generated SQLite ifdeftoif files
+    localDir=/home/flo/TypeChef	# TH3 here
+    sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif 
     herculesDir=$localDir/Hercules
+fi
+if [ $USER == "rhein" ]; then
+    homeDir=/home/garbe # th3_generated_ifdeftoif here; contains the generated SQLite ifdeftoif files
+    localDir=/local/ifdeftoif/	# TH3 here
+    sqliteDir=/local/ifdeftoif/TypeChef-SQLiteIfdeftoif
+    herculesDir=/local/ifdeftoif/Hercules
 fi
 
 TESTDIRS=$(find $localDir/TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)

@@ -1,6 +1,9 @@
 #!/bin/bash
 
 th3IfdeftoifDir=/home/$USER/th3_generated_ifdeftoif
+if [ $USER == "rhein" ]; then
+	th3IfdeftoifDir=/home/garbe/th3_generated_ifdeftoif
+fi
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" | wc -l)

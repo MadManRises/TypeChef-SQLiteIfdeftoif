@@ -23,12 +23,15 @@ if [ $1 -lt $TOTAL ]; then
 
     # find $1'th sub directory containing .test files, excluding stress folder
     TESTDIR=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
+    TESTDIRBASE=$(basename $TESTDIR)
 
     # find $2'th optionstruct
     IFCONFIG=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | sort | head -n $IFCONFIGNO | tail -n 1)
+    IFCONFIGBASE=$(basename $IFCONFIG)
 
     # find $3'th .cfg
     TH3CFG=$(find ../TH3/cfg/ -name "*.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
+    TH3CFGBASE=$(basename $TH3CFG)
 
     cd ../TH3
     ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > ../tmp_$1/th3_generated_test.c
@@ -41,7 +44,7 @@ if [ $1 -lt $TOTAL ]; then
     cp $IFCONFIG id2i_optionstruct.h
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
     if cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c; then
-        echo "featurewise testing: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIG on .test files in $TESTDIR with th3Config $TH3CFG at $(date +"%T")"
+        echo "featurewise testing: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 
         # Test normal sqlite
         originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \

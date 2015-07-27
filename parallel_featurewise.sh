@@ -66,7 +66,7 @@ if [ $1 -lt $TOTAL ]; then
             if [ $? != 0 ]
             then
                 echo -e "TH3 test can't compile ifdeftoif; expected: $expectedOutputValue\nExpected test output:"
-                echo -e "$expectedTestResult" | tail -n 10
+                echo -e "$expectedTestResult"
                 echo -e "\nIfdeftoif GCC error:"
                 echo -e "$ifdeftoifGCC"
                 echo -e "\n"
@@ -78,18 +78,18 @@ if [ $1 -lt $TOTAL ]; then
                 else 
                     if [ $expectedOutputValue -eq 0 ] ; then
                         echo -e "TH3 succeeds, ifdeftoif does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nIfdeftoif test output:"
-                        echo -e "$ifdeftoifTestResult" | tail -n 10
+                        echo -e "$ifdeftoifTestResult"
                         echo -e "\n"
                     else
                         if [ $testOutputValue -eq 0 ] ; then
                             echo -e "Ifdeftoif succeeds, TH3 does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:"
-                            echo -e "$expectedTestResult" | tail -n 10
+                            echo -e "$expectedTestResult"
                             echo -e "\n"
                         else
                             echo -e "TH3 test differs; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:"
-                            echo -e "$expectedTestResult" | tail -n 10
+                            echo -e "$expectedTestResult"
                             echo -e "\nIfdeftoif test output:"
-                            echo -e "$ifdeftoifTestResult" | tail -n 10
+                            echo -e "$ifdeftoifTestResult"
                             echo -e "\n"
                         fi
                     fi 

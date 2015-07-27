@@ -46,7 +46,7 @@ if [ $1 -lt $TOTAL ]; then
     if cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c; then
         echo "pairwise testing: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 
-        # Test normal sqlite
+        # Compile normal sqlite
         originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
             -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
             ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
@@ -55,11 +55,15 @@ if [ $1 -lt $TOTAL ]; then
         then
             echo -e "TH3 test can't compile original, skipping test; original GCC error:\n$originalGCC\n\n"
         else
+            # Run normal binary
+            originalStart=$(date +%s.%N)
             expectedTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
             expectedOutputValue=$?
+            originalEnd=$(date +%s.%N)
+            originalTime=$(echo "$originalEnd - $originalStart" | bc)
             rm -f a.out
 
-            # Test ifdeftoif sqlite
+            # Compile ifdeftoif sqlite
             ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
                 sqlite3_ifdeftoif.c 2>&1)
             # If gcc returns errors don't start testing the ifdeftoif variant
@@ -71,8 +75,13 @@ if [ $1 -lt $TOTAL ]; then
                 echo -e "$ifdeftoifGCC"
                 echo -e "\n"
             else
+                # Run ifdeftoif binary
+                ifdeftoifStart=$(date +%s.%N)
                 ifdeftoifTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
                 testOutputValue=$?
+                ifdeftoifEnd=$(date +%s.%N)
+                ifdeftoifTime=$(echo "$ifdeftoifEnd - $ifdeftoifStart" | bc)
+                echo "Original time: $originalTime; Ifdeftoif time: $ifdeftoifTime"
                 if [ $testOutputValue -eq $expectedOutputValue ] ; then
                     echo -e "Test successful, exit Codes: $testOutputValue;\n\n"
                 else 

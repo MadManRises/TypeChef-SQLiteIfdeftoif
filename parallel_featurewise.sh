@@ -1,8 +1,10 @@
 #!/bin/bash
 
 th3IfdeftoifDir=/home/$USER/th3_generated_ifdeftoif
+resultDir=~/sqlite
+jobExportDir=$resultDir/ft_$1
 if [ $USER == "rhein" ]; then
-	th3IfdeftoifDir=/home/garbe/th3_generated_ifdeftoif
+    th3IfdeftoifDir=/home/garbe/th3_generated_ifdeftoif
 fi
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
@@ -33,6 +35,9 @@ if [ $1 -lt $TOTAL ]; then
     TH3CFG=$(find ../TH3/cfg/ -name "*.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
     TH3CFGBASE=$(basename $TH3CFG)
 
+    # count .test files
+    TESTFILES=$(find $TESTDIR -name "*.test" | wc -l)
+
     cd ../TH3
     ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > ../tmp_$1/th3_generated_test.c
     cd ../tmp_$1
@@ -44,7 +49,7 @@ if [ $1 -lt $TOTAL ]; then
     cp $IFCONFIG id2i_optionstruct.h
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
     if cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c; then
-        echo "featurewise testing: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
+        echo "featurewise testing: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILES .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 
         # Compile normal sqlite
         originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
@@ -53,14 +58,13 @@ if [ $1 -lt $TOTAL ]; then
         # If gcc returns errors skip the testing
         if [ $? != 0 ]
         then
+            echo -e "Variant can't be compiled for: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE with th3Config $TH3CFGBASE on $TESTFILES .test files in $TESTDIRBASE" > $jobExportDir/CompErrVar.txt
             echo -e "TH3 test can't compile original, skipping test; original GCC error:\n$originalGCC\n\n"
         else
+            rm -rf $jobExportDir
+            mkdir -p $jobExportDir
             # Run normal binary
-            originalStart=$(date +%s.%N)
-            expectedTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
-            expectedOutputValue=$?
-            originalEnd=$(date +%s.%N)
-            originalTime=$(echo "$originalEnd - $originalStart" | bc)
+            /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_variant_$1.txt bash -c ./a.out &> chf_variant_$1.txt; expectedOutputValue=$?
             rm -f a.out
 
             # Compile ifdeftoif sqlite
@@ -69,37 +73,22 @@ if [ $1 -lt $TOTAL ]; then
             # If gcc returns errors don't start testing the ifdeftoif variant
             if [ $? != 0 ]
             then
-                echo -e "TH3 test can't compile ifdeftoif; expected: $expectedOutputValue\nExpected test output:"
-                echo -e "$expectedTestResult"
-                echo -e "\nIfdeftoif GCC error:"
-                echo -e "$ifdeftoifGCC"
-                echo -e "\n"
+                echo -e "Simulator can't be compiled for: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE with th3Config $TH3CFGBASE on $TESTFILES .test files in $TESTDIRBASE" > $jobExportDir/CompErrSim.txt
+                echo -e "TH3 test can't compile ifdeftoif; expected: $expectedOutputValue\n; ifdeftoif GCC error:\n$ifdeftoifGCC\n\n"
             else
                 # Run ifdeftoif binary
-                ifdeftoifStart=$(date +%s.%N)
-                ifdeftoifTestResult=$(bash -c '(./a.out); exit $?' 2>&1)
-                testOutputValue=$?
-                ifdeftoifEnd=$(date +%s.%N)
-                ifdeftoifTime=$(echo "$ifdeftoifEnd - $ifdeftoifStart" | bc)
-                echo "Original time: $originalTime; Ifdeftoif time: $ifdeftoifTime"
+                /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_simulator_$1.txt bash -c ./a.out &> chf_simulator_$1.txt; testOutputValue=$?
+                python ../TypeChef-SQLiteIfdeftoif/TH3LogCompare/log_compare.py chf_simulator_$1.txt chf_variant_$1.txt $jobExportDir
                 if [ $testOutputValue -eq $expectedOutputValue ] ; then
                     echo -e "Test successful, exit Codes: $testOutputValue;\n\n"
                 else 
                     if [ $expectedOutputValue -eq 0 ] ; then
-                        echo -e "TH3 succeeds, ifdeftoif does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nIfdeftoif test output:"
-                        echo -e "$ifdeftoifTestResult"
-                        echo -e "\n"
+                        echo -e "TH3 succeeds, ifdeftoif does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\n\n"
                     else
                         if [ $testOutputValue -eq 0 ] ; then
-                            echo -e "Ifdeftoif succeeds, TH3 does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:"
-                            echo -e "$expectedTestResult"
-                            echo -e "\n"
+                            echo -e "Ifdeftoif succeeds, TH3 does not; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\n\n"
                         else
-                            echo -e "TH3 test differs; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\nExpected test output:"
-                            echo -e "$expectedTestResult"
-                            echo -e "\nIfdeftoif test output:"
-                            echo -e "$ifdeftoifTestResult"
-                            echo -e "\n"
+                            echo -e "TH3 test differs; ifdeftoif: $testOutputValue ; expected: $expectedOutputValue\n\n"
                         fi
                     fi 
                 fi

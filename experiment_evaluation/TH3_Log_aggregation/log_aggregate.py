@@ -47,8 +47,8 @@ def main():
                 # test case checked the same stuff (executed same code?)
                 stimeFile = open(dirPath+ [fn for fn in os.listdir(dirPath) if fn.startswith(timeSimPrefix)][0] , 'r')
                 vtimeFile = open(dirPath+  [fn for fn in os.listdir(dirPath) if fn.startswith(timeVarPrefix)][0], 'r')
-                sTimeLine= stimeFile.readline()
-                vTimeLine= vtimeFile.readline()
+                sTimeLine= stimeFile.readlines()[-1]
+                vTimeLine= vtimeFile.readlines()[-1]
                 stimeFile.close()
                 vtimeFile.close()
                 sTimeLine=re.sub(r"TH3execTime:sys:", "", sTimeLine)

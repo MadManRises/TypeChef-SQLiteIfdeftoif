@@ -78,7 +78,7 @@ if [ $1 -lt $TOTAL ]; then
             else
                 # Run ifdeftoif binary
                 /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_simulator_$1.txt bash -c ./a.out &> chf_simulator_$1.txt; testOutputValue=$?
-                python ../TypeChef-SQLiteIfdeftoif/TH3LogCompare/log_compare.py chf_simulator_$1.txt chf_variant_$1.txt $jobExportDir
+                python ../TypeChef-SQLiteIfdeftoif/experiment_evaluation/TH3LogCompare/log_compare.py chf_simulator_$1.txt chf_variant_$1.txt $jobExportDir
                 if [ $testOutputValue -eq $expectedOutputValue ] ; then
                     echo -e "Test successful, exit Codes: $testOutputValue;\n\n"
                 else 

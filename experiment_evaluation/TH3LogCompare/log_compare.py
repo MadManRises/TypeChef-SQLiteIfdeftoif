@@ -39,11 +39,11 @@ def saveDictToFile (dct, fileName):
     for x in dct.keys():
         f.write(x + '->\n') # python will convert \n to os.linesep
         item=dct[x]
-        if isinstance(item, string):
+        if isinstance(item, str):
             f.write('\t' + dct[x].replace('\n', '\n\t') + '\n') 
         else: # assume that item is a tuple of strings
             f.write('\tsimulatorResult:\n') 
-            f.write('\t\t' + item[1].replace('\n', '\n\t') + '\n') 
+            f.write('\t\t' + item[0].replace('\n', '\n\t') + '\n') 
             f.write('\tvariantResult:\n') 
             f.write('\t\t' + item[1].replace('\n', '\n\t') + '\n') 
     f.close()

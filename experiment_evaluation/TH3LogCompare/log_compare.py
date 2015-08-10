@@ -13,7 +13,9 @@ def parseTH3Log( logFileName ):
                 # the misuse statements come from  specific TH3 tests:
                 #cov1/main14.test, cov1/main23.test, and cov1/util02.test
                 # they interfere with the normal begin/end tags
-            if line.startswith("Begin ") :
+            if line.startswith("Exit Code: ") :
+                resultsDict["Exit Code"] = line[11:-1]
+            elif line.startswith("Begin ") :
                 #rstrip() removes ALL whitespaces on the right side, including '\n'
                 taskName = line.rstrip()[len("Begin "):] # line without "Begin "
                 taskResult=""
@@ -56,7 +58,10 @@ def main():
     simulatorResults = parseTH3Log(sys.argv[1])
     variantResults = parseTH3Log(sys.argv[2])
     
-    
+    simulatorExitCode = simulatorResults["Exit Code"]
+    variantExitCode = variantResults["Exit Code"]
+    del simulatorResults["Exit Code"]
+    del variantResults["Exit Code"]
     keySet = set(simulatorResults.keys()).union(set(variantResults.keys()))
     onlyInSim = dict() # test present only in simulator log
     onlyInVar = dict() # test present only in variant log
@@ -99,6 +104,9 @@ def main():
     if not os.path.exists(outDir):
         os.makedirs(outDir)
     
+    f = open(outDir + "/ExitCodes.txt",'w')
+    f.write('Var: ' + variantExitCode + '\nSim: ' + simulatorExitCode)
+    f.close()
     saveDictToFile(onlyInSim, outDir + "/TestOnlyInSim.txt")
     saveDictToFile(onlyInVar, outDir + "/TestOnlyInVar.txt")
     saveListToFile(okInBoth, outDir + "/OkInBoth.txt")

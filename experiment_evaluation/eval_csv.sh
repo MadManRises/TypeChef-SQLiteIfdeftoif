@@ -13,7 +13,7 @@ CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" | wc -l)
 IFCONFIGSFT=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | wc -l)
 IFCONFIGSPR=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
 
-Header=JobId,DiffErrors,ErrOnlyInSim,ErrOnlyInVar,OkInBoth,SameErrors,TestOnlyInSim,TestOnlyInVar,VarTime,SimTime,TestDir,TestCfg,ProgramCfg,IfdefJobId
+Header=JobId,IfdefJobId,SimExitCode,VarExitCode,DiffErrors,ErrOnlyInSim,ErrOnlyInVar,OkInBoth,SameErrors,TestOnlyInSim,TestOnlyInVar,VarTime,SimTime,TestDir,TestCfg,ProgramCfg
 # featurewise
 rm -rf $sqliteResultDir/featurewise.csv
 if [ $FeaturewiseDirectories -gt 0 ]; then
@@ -26,6 +26,8 @@ if [ $FeaturewiseDirectories -gt 0 ]; then
         IFCONFIGNO=$(( ($JobId % $IFCONFIGSFT) + 1 )); IFCONFIG=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | sort | head -n $IFCONFIGNO | tail -n 1); IFCONFIGBASE=$(basename $IFCONFIG)
         TH3IFDEFNO=$(( $JobId / $IFCONFIGSFT ))
 
+        SimExitCode=666; if [ -a $dir/ExitCodes.txt ]; then SimExitCode=$(sed -nr 's/Sim: ([0-9]+)/\1/p' $dir/ExitCodes.txt); fi
+        VarExitCode=666; if [ -a $dir/ExitCodes.txt ]; then VarExitCode=$(sed -nr 's/Var: ([0-9]+)/\1/p' $dir/ExitCodes.txt); fi
         DiffErrors=0; if [ -a $dir/DiffErrors.txt ]; then DiffErrors=$(grep -P "^[^\s]" $dir/DiffErrors.txt | wc -l); fi
         ErrOnlyInSim=0; if [ -a $dir/ErrOnlyInSim.txt ]; then ErrOnlyInSim=$(grep -P "^[^\s]" $dir/ErrOnlyInSim.txt | wc -l); fi
         ErrOnlyInVar=0; if [ -a $dir/ErrOnlyInVar.txt ]; then ErrOnlyInVar=$(grep -P "^[^\s]" $dir/ErrOnlyInVar.txt | wc -l); fi
@@ -35,7 +37,7 @@ if [ $FeaturewiseDirectories -gt 0 ]; then
         TestOnlyInVar=0; if [ -a $dir/TestOnlyInVar.txt ]; then TestOnlyInVar=$(grep -P "^[^\s]" $dir/TestOnlyInVar.txt | wc -l); fi
         SimTime=$(sed -nr 's/.*real:([0-9]?[0-9]:[0-9][0-9]:[0-9][0-9]|[0-9]?[0-9]:[0-9][0-9]\.[0-9][0-9]).*/\1/p' $dir/time_simulator.txt)
         VarTime=$(sed -nr 's/.*real:([0-9]?[0-9]:[0-9][0-9]:[0-9][0-9]|[0-9]?[0-9]:[0-9][0-9]\.[0-9][0-9]).*/\1/p' $dir/time_variant.txt)
-        echo -e "$JobId,$DiffErrors,$ErrOnlyInSim,$ErrOnlyInVar,$OkInBoth,$SameErrors,$TestOnlyInSim,$TestOnlyInVar,$VarTime,$SimTime,$TESTDIRBASE,$TH3CFGBASE,$IFCONFIGBASE,$TH3IFDEFNO" >> $sqliteResultDir/featurewise.csv
+        echo -e "$JobId,$TH3IFDEFNO,$SimExitCode,$VarExitCode,$DiffErrors,$ErrOnlyInSim,$ErrOnlyInVar,$OkInBoth,$SameErrors,$TestOnlyInSim,$TestOnlyInVar,$VarTime,$SimTime,$TESTDIRBASE,$TH3CFGBASE,$IFCONFIGBASE" >> $sqliteResultDir/featurewise.csv
     done
 fi
 

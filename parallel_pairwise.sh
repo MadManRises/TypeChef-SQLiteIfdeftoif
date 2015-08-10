@@ -19,9 +19,9 @@ TH3IFDEFNO=$(( $1 / $IFCONFIGS ))
 
 if [ $1 -lt $TOTAL ]; then
     cd ..
-    rm -rf tmp_$1
-    mkdir tmp_$1
-    cd tmp_$1
+    rm -rf tmppr_$1
+    mkdir tmppr_$1
+    cd tmppr_$1
 
     # find $1'th sub directory containing .test files, excluding stress folder
     TESTDIR=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
@@ -39,8 +39,8 @@ if [ $1 -lt $TOTAL ]; then
     TESTFILES=$(find $TESTDIR -name "*.test" | wc -l)
 
     cd ../TH3
-    ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > ../tmp_$1/th3_generated_test.c
-    cd ../tmp_$1
+    ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > ../tmppr_$1/th3_generated_test.c
+    cd ../tmppr_$1
 
     #sed filters everything but the number of the configuration
     configID=$(basename $IFCONFIG | sed 's/id2i_optionstruct_//' | sed 's/.h//')
@@ -64,7 +64,7 @@ if [ $1 -lt $TOTAL ]; then
             rm -rf $jobExportDir
             mkdir -p $jobExportDir
             # Run normal binary
-            /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_variant_$1.txt bash -c ./a.out &> chf_variant_$1.txt; expectedOutputValue=$?
+            /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_variant.txt bash -c ./a.out &> chp_variant_$1.txt; expectedOutputValue=$?
             rm -f a.out
 
             # Compile ifdeftoif sqlite
@@ -77,8 +77,8 @@ if [ $1 -lt $TOTAL ]; then
                 echo -e "TH3 test can't compile ifdeftoif; expected: $expectedOutputValue\n; ifdeftoif GCC error:\n$ifdeftoifGCC\n\n"
             else
                 # Run ifdeftoif binary
-                /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_simulator_$1.txt bash -c ./a.out &> chf_simulator_$1.txt; testOutputValue=$?
-                python ../TypeChef-SQLiteIfdeftoif/experiment_evaluation/TH3LogCompare/log_compare.py chf_simulator_$1.txt chf_variant_$1.txt $jobExportDir
+                /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_simulator.txt bash -c ./a.out &> chp_simulator_$1.txt; testOutputValue=$?
+                python ../TypeChef-SQLiteIfdeftoif/experiment_evaluation/TH3LogCompare/log_compare.py chp_simulator_$1.txt chp_variant_$1.txt $jobExportDir
                 if [ $testOutputValue -eq $expectedOutputValue ] ; then
                     echo -e "Test successful, exit Codes: $testOutputValue;\n\n"
                 else 
@@ -97,5 +97,5 @@ if [ $1 -lt $TOTAL ]; then
         fi
     fi
     cd ..
-    rm -rf tmp_$1
+    rm -rf tmppr_$1
 fi

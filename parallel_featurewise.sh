@@ -19,9 +19,9 @@ TH3IFDEFNO=$(( $1 / $IFCONFIGS ))
 
 if [ $1 -lt $TOTAL ]; then
     cd ..
-    rm -rf tmp_$1
-    mkdir tmp_$1
-    cd tmp_$1
+    rm -rf tmpft_$1
+    mkdir tmpft_$1
+    cd tmpft_$1
 
     # find $1'th sub directory containing .test files, excluding stress folder
     TESTDIR=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
@@ -39,8 +39,8 @@ if [ $1 -lt $TOTAL ]; then
     TESTFILES=$(find $TESTDIR -name "*.test" | wc -l)
 
     cd ../TH3
-    ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > ../tmp_$1/th3_generated_test.c
-    cd ../tmp_$1
+    ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > ../tmpft_$1/th3_generated_test.c
+    cd ../tmpft_$1
 
     #sed filters everything but the number of the configuration
     configID=$(basename $IFCONFIG | sed 's/id2i_optionstruct_//' | sed 's/.h//')
@@ -97,5 +97,5 @@ if [ $1 -lt $TOTAL ]; then
         fi
     fi
     cd ..
-    rm -rf tmp_$1
+    rm -rf tmpft_$1
 fi

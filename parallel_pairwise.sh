@@ -65,6 +65,7 @@ if [ $1 -lt $TOTAL ]; then
             mkdir -p $jobExportDir
             # Run normal binary
             /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_variant.txt bash -c ./a.out &> chp_variant_$1.txt; expectedOutputValue=$?
+            echo -e "\nExit Code: $expectedOutputValue" >> chp_variant_$1.txt;
             rm -f a.out
 
             # Compile ifdeftoif sqlite
@@ -78,6 +79,7 @@ if [ $1 -lt $TOTAL ]; then
             else
                 # Run ifdeftoif binary
                 /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_simulator.txt bash -c ./a.out &> chp_simulator_$1.txt; testOutputValue=$?
+                echo -e "\nExit Code: $testOutputValue" >> chp_simulator_$1.txt
                 python ../TypeChef-SQLiteIfdeftoif/experiment_evaluation/TH3LogCompare/log_compare.py chp_simulator_$1.txt chp_variant_$1.txt $jobExportDir
                 if [ $testOutputValue -eq $expectedOutputValue ] ; then
                     echo -e "Test successful, exit Codes: $testOutputValue;\n\n"
@@ -97,5 +99,5 @@ if [ $1 -lt $TOTAL ]; then
         fi
     fi
     cd ..
-    rm -rf tmppr_$1
+    #rm -rf tmppr_$1
 fi

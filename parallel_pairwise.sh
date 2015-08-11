@@ -99,5 +99,5 @@ if [ $1 -lt $TOTAL ]; then
         fi
     fi
     cd ..
-    #rm -rf tmppr_$1
+    rm -rf tmppr_$1
 fi

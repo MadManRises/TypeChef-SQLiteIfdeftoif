@@ -1,6 +1,6 @@
 rm -r generated
 mkdir generated
-./generatePairwiseConfigs_SPLCATool.sh > splca_output.txt 2>&1
+./pairwiseConfigs_SPLCATool.sh > splca_output.txt 2>&1
 python generateHeaders.py
 ./cppHeadersToId2iConfigs.sh
 #replace SQLITE_OS_UNIX with SQLITE_OS_UNIX 1

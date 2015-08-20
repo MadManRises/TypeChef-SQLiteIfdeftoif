@@ -9,7 +9,7 @@
 
 // since we want to build sqlite for linux, turn all other os off
 #define OS_VXWORKS 0
-#define SQLITE_OTHER_OS 0
+#define SQLITE_OS_OTHER 0
 #define __OpenBSD__ 0
 #define SQLITE_OS_UNIX 1
 

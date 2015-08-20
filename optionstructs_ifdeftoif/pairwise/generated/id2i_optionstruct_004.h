@@ -209,7 +209,7 @@ void id2i_init()  {
   (id2i_sqlite_no_sync = 0);
   (id2i_sqlite_omit_analyze = 0);
   (id2i_sqlite_omit_attach = 0);
-  (id2i_sqlite_omit_autovacuum = 0);
+  (id2i_sqlite_omit_autovacuum = 1);
   (id2i_sqlite_omit_blob_literal = 0);
   (id2i_sqlite_omit_builtin_test = 1);
   (id2i_sqlite_omit_cast = 1);

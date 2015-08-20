@@ -54,6 +54,7 @@ if [ $1 -lt $TOTAL ]; then
         # Compile normal sqlite
         originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
             -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
+            -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
             ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
         # If gcc returns errors skip the testing
         if [ $? != 0 ]

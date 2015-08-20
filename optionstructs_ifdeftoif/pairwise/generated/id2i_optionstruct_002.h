@@ -215,7 +215,7 @@ void id2i_init()  {
   (id2i_sqlite_omit_cast = 0);
   (id2i_sqlite_omit_decltype = 0);
   (id2i_sqlite_omit_deprecated = 1);
-  (id2i_sqlite_omit_explain = 0);
+  (id2i_sqlite_omit_explain = 1);
   (id2i_sqlite_omit_foreign_key = 1);
   (id2i_sqlite_omit_load_extension = 1);
   (id2i_sqlite_omit_or_optimization = 1);

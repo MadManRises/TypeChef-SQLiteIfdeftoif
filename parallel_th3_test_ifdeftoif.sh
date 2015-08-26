@@ -40,7 +40,7 @@ if [ $1 -lt $TOTAL ]; then
 
     # find $3'th .cfg
     TH3CFG=$(find $localDir/TH3/cfg/ -name "*.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
-    TH3CFGBASE=$(basname $TH3CFG)
+    TH3CFGBASE=$(basename $TH3CFG)
 
     echo "Generating ifdeftoif test file for testdir #$TESTDIRNO $TESTDIRBASE and th3 config #$TH3CFGNO $TH3CFGBASE"
     cd $localDir/TH3

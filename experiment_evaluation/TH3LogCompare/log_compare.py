@@ -13,7 +13,9 @@ def parseTH3Log( logFileName ):
                 # the misuse statements come from  specific TH3 tests:
                 #cov1/main14.test, cov1/main23.test, and cov1/util02.test
                 # they interfere with the normal begin/end tags
-            if line.startswith("Exit Code: ") :
+            if line.startswith("Number of .test modules: ") :
+                resultsDict["Test Modules"] = line[25:-1]
+            elif line.startswith("Exit Code: ") :
                 resultsDict["Exit Code"] = line[11:-1]
             elif line.startswith("Begin ") :
                 #rstrip() removes ALL whitespaces on the right side, including '\n'
@@ -58,10 +60,13 @@ def main():
     simulatorResults = parseTH3Log(sys.argv[1])
     variantResults = parseTH3Log(sys.argv[2])
     
+    numberOfTestModules = int(variantResults["Test Modules"])
     simulatorExitCode = simulatorResults["Exit Code"]
     variantExitCode = variantResults["Exit Code"]
     del simulatorResults["Exit Code"]
     del variantResults["Exit Code"]
+    del simulatorResults["Test Modules"]
+    del variantResults["Test Modules"]
     keySet = set(simulatorResults.keys()).union(set(variantResults.keys()))
     onlyInSim = dict() # test present only in simulator log
     onlyInVar = dict() # test present only in variant log
@@ -89,17 +94,33 @@ def main():
                 errInSim[key] = simResult
             else:
                 diffErrors[key] = (simResult, varResult)
-                
-    print "Test only in simLog: " + str(len(onlyInSim))
-    print "Test only in varLog: " + str(len(onlyInVar))
-    print "bothOK:              " + str(len(okInBoth))
-    print "sameErrors:          " + str(len(sameErrors))
-    print "differentErrors:     " + str(len(diffErrors))
-    print "ErrorOnlyInSim:      " + str(len(errInSim))
-    print "ErrorOnlyInVar:      " + str(len(errInVar))
+    testOnlyInSim = len(onlyInSim)
+    testOnlyInVar = len(onlyInVar)
+    testOkInBoth = len(okInBoth)
+    testSameErrors = len(sameErrors)
+    testDiffErrors = len(diffErrors)
+    testErrInSim = len(errInSim)
+    testErrInVar = len(errInVar)
+    testsCovered = len(keySet)
+    print "bothOK:              " + str(testOkInBoth)
+    print "sameErrors:          " + str(testSameErrors)
+    print "differentErrors:     " + str(testDiffErrors)
+    print "Test only in simLog: " + str(testOnlyInSim)
+    print "Test only in varLog: " + str(testOnlyInVar)
+    print "ErrorOnlyInSim:      " + str(testErrInSim)
+    print "ErrorOnlyInVar:      " + str(testErrInVar)
     print "                     ------"
-    print "Total tests:         " + str(len(keySet))
-    
+    print "Tests covered:       " + str(testsCovered)
+    print "Test modules:        " + str(numberOfTestModules)
+
+    if (testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar == 0 and testsCovered == numberOfTestModules) :
+        print "Test successful."
+    elif (testOnlyInSim+testOnlyInVar+testErrInSim+testErrInVar == 0 and testsCovered == numberOfTestModules) :
+        print "Full coverage, but different errors."
+    elif testsCovered > numberOfTestModules :
+        print "Too many tests covered."
+    else:
+        print "Coverage error."
     outDir = sys.argv[3]
     if not os.path.exists(outDir):
         os.makedirs(outDir)

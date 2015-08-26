@@ -36,11 +36,13 @@ if [ $1 -lt $TOTAL ]; then
 
     # find $1'th sub directory containing .test files, excluding stress folder
     TESTDIR=$(find $localDir/TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
+    TESTDIRBASE=$(basename $TESTDIR)
 
     # find $3'th .cfg
     TH3CFG=$(find $localDir/TH3/cfg/ -name "*.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
+    TH3CFGBASE=$(basname $TH3CFG)
 
-    echo "Generating ifdeftoif test file for testdir #$TESTDIRNO $TESTDIR and th3 config #$TH3CFGNO $TH3CFG"
+    echo "Generating ifdeftoif test file for testdir #$TESTDIRNO $TESTDIRBASE and th3 config #$TH3CFGNO $TH3CFGBASE"
     cd $localDir/TH3
     ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > $workingDir/th3_generated_test.c
     cd $workingDir

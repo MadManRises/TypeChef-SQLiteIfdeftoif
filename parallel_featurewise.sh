@@ -53,6 +53,11 @@ if [ $1 -lt $TOTAL ]; then
 
         # Compile normal sqlite
         originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+            -I /usr/local/include \
+            -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
+            -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
+            -I /usr/include/x86_64-linux-gnu \
+            -I /usr/include \
             -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
             -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
             ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)

@@ -5,9 +5,9 @@
 #SBATCH -A spl
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
-#SBATCH --array=0-2599
+#SBATCH --array=0-3119
 
-#SBATCH --time=00:05:00 # 5 minutes max
+#SBATCH --time=04:00:00 # 4 hours max
 
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 
@@ -15,12 +15,12 @@
 ##SBATCH --exclusive        #remove for easier apps experiment
 
 # 10 sqlite cfgs; 26 test cfgs; 10 test folders
-# 10*26*10 = 2600 different test scenarios
+# 10*26*12 = 3120 different test scenarios
 
 taskName="hercules-sqlite-pairwise"
 localDir=/local/garbe
 resultDir=~/sqlite
-lastJobNo=2599
+lastJobNo=3119
 
 # Call this script as follows:
 # sbatch slurm_pairwise.sh
@@ -34,7 +34,7 @@ echo =================================================================
 cd $localDir
 
 cd TypeChef-SQLiteIfdeftoif
-./parallel_pairwise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chf_${SLURM_ARRAY_TASK_ID}.txt 2>&1
+./parallel_pairwise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chp_${SLURM_ARRAY_TASK_ID}.txt 2>&1
 
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then

@@ -1,13 +1,14 @@
 #!/bin/bash
 #SBATCH -o /home/garbe/logs/featurewise-%a.txt
-#SBATCH --job-name=sqlite-featurewis
+#SBATCH --job-name=sqlite-featurewise
 #SBATCH -p chimaira
 #SBATCH -A spl
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
-#SBATCH --array=0-6499
+#SBATCH --mem=10000
+#SBATCH --array=0-7799
 
-#SBATCH --time=00:30:00 # 5 minutes max
+#SBATCH --time=04:00:00 # 4h max
 
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 
@@ -15,12 +16,12 @@
 ##SBATCH --exclusive        #remove for easier apps experiment
 
 # 25 sqlite cfgs; 26 test cfgs; 10 test folders
-# 25*26*10 = 6500 different test scenarios
+# 25*26*12 = 7800 different test scenarios
 
 taskName="hercules-sqlite-featurewise"
 localDir=/local/garbe
 resultDir=~/sqlite
-lastJobNo=6499
+lastJobNo=7799
 
 # Call this script as follows:
 # sbatch slurm_featurewise.sh

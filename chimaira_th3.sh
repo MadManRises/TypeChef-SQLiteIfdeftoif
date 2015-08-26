@@ -6,16 +6,17 @@
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=13000
-#SBATCH --array=0-259
+#SBATCH --array=0-311
 
-#SBATCH --time=01:15:00 # 30 minutes max
+#SBATCH --time=01:30:00 # 1h30m max
 
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
 ##SBATCH --exclusive        #remove for easier apps experiment
 
-# 259 different test scenarios
+# 26 test cfgs; 12 test folders
+# 26*12 = 312 different test scenarios
 
 taskName="hercules-sqlite-th3"
 localDir=/local/garbe

@@ -113,8 +113,10 @@ def main():
     print "Tests covered:       " + str(testsCovered)
     print "Test modules:        " + str(numberOfTestModules)
 
-    if (testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar == 0 and testsCovered == numberOfTestModules) :
-        print "Test successful."
+    if (testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar+testSameErrors == 0 and testsCovered == numberOfTestModules) :
+        print "Test successful without errors."
+    elif (testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar == 0 and testsCovered == numberOfTestModules) :
+        print "Test successful with same errors."
     elif (testOnlyInSim+testOnlyInVar+testErrInSim+testErrInVar == 0 and testsCovered == numberOfTestModules) :
         print "Full coverage, but different errors."
     elif testsCovered > numberOfTestModules :

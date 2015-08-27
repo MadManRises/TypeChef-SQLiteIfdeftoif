@@ -12,7 +12,7 @@ if [ $USER == "flo" ]; then
     herculesDir=$localDir/Hercules
 fi
 if [ $USER == "rhein" ]; then
-    homeDir=/home/garbe # th3_generated_ifdeftoif here; contains the generated SQLite ifdeftoif files
+    homeDir=/local/ifdeftoif/ # th3_generated_ifdeftoif here; contains the generated SQLite ifdeftoif files
     localDir=/local/ifdeftoif/	# TH3 here
     sqliteDir=/local/ifdeftoif/TypeChef-SQLiteIfdeftoif
     herculesDir=/local/ifdeftoif/Hercules

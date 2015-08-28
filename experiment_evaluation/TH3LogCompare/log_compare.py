@@ -60,13 +60,17 @@ def main():
     simulatorResults = parseTH3Log(sys.argv[1])
     variantResults = parseTH3Log(sys.argv[2])
     
-    numberOfTestModules = int(variantResults["Test Modules"])
+    numberOfTestModules = 0
+    if "Test Modules" in variantResults:
+        numberOfTestModules = int(variantResults["Test Modules"])
     simulatorExitCode = simulatorResults["Exit Code"]
     variantExitCode = variantResults["Exit Code"]
     del simulatorResults["Exit Code"]
     del variantResults["Exit Code"]
-    del simulatorResults["Test Modules"]
-    del variantResults["Test Modules"]
+    if "Test Modules" in simulatorResults:
+        del simulatorResults["Test Modules"]
+    if "Test Modules" in variantResults:
+        del variantResults["Test Modules"]
     keySet = set(simulatorResults.keys()).union(set(variantResults.keys()))
     onlyInSim = dict() # test present only in simulator log
     onlyInVar = dict() # test present only in variant log

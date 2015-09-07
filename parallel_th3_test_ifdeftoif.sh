@@ -19,7 +19,7 @@ if [ $USER == "rhein" ]; then
 fi
 
 TESTDIRS=$(find $localDir/TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
-CFGFILES=$(find $localDir/TH3/cfg/ -name "*.cfg" | wc -l)
+CFGFILES=$(find $localDir/TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
 TOTAL=$(( $TESTDIRS * $CFGFILES ))
 
 TESTDIRNO=$(( ($1 / $CFGFILES) + 1 ))
@@ -39,7 +39,7 @@ if [ $1 -lt $TOTAL ]; then
     TESTDIRBASE=$(basename $TESTDIR)
 
     # find $3'th .cfg
-    TH3CFG=$(find $localDir/TH3/cfg/ -name "*.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
+    TH3CFG=$(find $localDir/TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
     TH3CFGBASE=$(basename $TH3CFG)
 
     echo "Generating ifdeftoif test file for testdir #$TESTDIRNO $TESTDIRBASE and th3 config #$TH3CFGNO $TH3CFGBASE"

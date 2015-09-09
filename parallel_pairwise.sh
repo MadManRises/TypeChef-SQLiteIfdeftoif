@@ -7,7 +7,7 @@ if [ $USER == "rhein" ]; then
     th3IfdeftoifDir=/home/garbe/th3_generated_ifdeftoif
 fi
 
-TESTDIRS=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
+TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
 IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
 TOTAL=$(( $TESTDIRS * $CFGFILES * $IFCONFIGS))
@@ -24,7 +24,7 @@ if [ $1 -lt $TOTAL ]; then
     cd tmppr_$1
 
     # find $1'th sub directory containing .test files, excluding stress folder
-    TESTDIR=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
+    TESTDIR=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
     TESTDIRBASE=$(basename $TESTDIR)
 
     # find $2'th optionstruct

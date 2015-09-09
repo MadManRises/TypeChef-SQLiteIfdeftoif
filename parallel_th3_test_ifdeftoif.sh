@@ -18,7 +18,7 @@ if [ $USER == "rhein" ]; then
     herculesDir=/local/ifdeftoif/Hercules
 fi
 
-TESTDIRS=$(find $localDir/TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
+TESTDIRS=$(find $localDir/TH3 -name '*test' ! -path "$localDir/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find $localDir/TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
 TOTAL=$(( $TESTDIRS * $CFGFILES ))
 

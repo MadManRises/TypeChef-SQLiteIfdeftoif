@@ -8,7 +8,7 @@ if [ $USER == "rhein" ]; then
 fi
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
-CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" | wc -l)
+CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
 IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | wc -l)
 TOTAL=$(( $TESTDIRS * $CFGFILES * $IFCONFIGS))
 
@@ -32,7 +32,7 @@ if [ $1 -lt $TOTAL ]; then
     IFCONFIGBASE=$(basename $IFCONFIG)
 
     # find $3'th .cfg
-    TH3CFG=$(find ../TH3/cfg/ -name "*.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
+    TH3CFG=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
     TH3CFGBASE=$(basename $TH3CFG)
 
     # count .test files

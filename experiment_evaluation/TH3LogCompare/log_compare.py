@@ -72,6 +72,8 @@ def main():
     if "Test Modules" in variantResults:
         del variantResults["Test Modules"]
     keySet = set(simulatorResults.keys()).union(set(variantResults.keys()))
+    print simulatorResults.keys()
+    print variantResults.keys()
     onlyInSim = dict() # test present only in simulator log
     onlyInVar = dict() # test present only in variant log
     okInBoth = set()   # empty result in both logs
@@ -117,16 +119,24 @@ def main():
     print "Tests covered:       " + str(testsCovered)
     print "Test modules:        " + str(numberOfTestModules)
 
-    if (testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar+testSameErrors == 0 and testsCovered == numberOfTestModules) :
-        print "Test successful without errors."
-    elif (testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar == 0 and testsCovered == numberOfTestModules) :
-        print "Test successful with same errors."
-    elif (testOnlyInSim+testOnlyInVar+testErrInSim+testErrInVar == 0 and testsCovered == numberOfTestModules) :
-        print "Full coverage, but different errors."
+    if testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar+testSameErrors == 0 :
+        if testsCovered == numberOfTestModules :
+            print "Test successful without errors and full coverage."
+        else:
+            print "Test successful without errors but no full coverage."
+    elif testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar == 0 :
+        if testsCovered == numberOfTestModules :
+            print "Test successful with same errors and full coverage."
+        else:
+            print "Test successful with same errors but no full coverage."
+    elif (testOnlyInSim+testOnlyInVar == 0 and testErrInSim == testErrInVar and testsCovered == numberOfTestModules) :
+        print "Full coverage, but different errors in the same tests."
+    elif (testsCovered == numberOfTestModules) :
+        print "Full coverage, but different results."
     elif testsCovered > numberOfTestModules :
         print "Too many tests covered."
     else:
-        print "Coverage error."
+        print "Test results differ."
     outDir = sys.argv[3]
     if not os.path.exists(outDir):
         os.makedirs(outDir)

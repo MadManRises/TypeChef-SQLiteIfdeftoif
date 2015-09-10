@@ -36,10 +36,11 @@ if [ $1 -lt $TOTAL ]; then
     TH3CFGBASE=$(basename $TH3CFG)
 
     # count .test files
-    TESTFILES=$(find $TESTDIR -name "*.test" | wc -l)
+    TESTFILENO=$(find $TESTDIR -name "*.test" | wc -l)
 
     cd ../TH3
-    ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > ../debugft_$1/th3_generated_test.c
+    TESTFILES=$(find $TESTDIR -name "*.test" ! -name "ctime03.test")
+    ./mkth3.tcl $TESTFILES "$TH3CFG" > ../debugft_$1/th3_generated_test.c
     cd ../debugft_$1
 
     #sed filters everything but the number of the configuration
@@ -52,7 +53,7 @@ if [ $1 -lt $TOTAL ]; then
     cp ../TypeChef-SQLiteIfdeftoif/partial_configuration.h .
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c .
     if cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c; then
-        echo "featurewise debugging: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILES .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
+        echo "featurewise debugging: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
     else
         echo "could not find sqlite3_ifdeftoif_$TH3IFDEFNO.c"
     fi

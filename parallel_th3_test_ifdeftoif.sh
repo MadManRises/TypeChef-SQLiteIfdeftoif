@@ -44,7 +44,8 @@ if [ $1 -lt $TOTAL ]; then
 
     echo "Generating ifdeftoif test file for testdir #$TESTDIRNO $TESTDIRBASE and th3 config #$TH3CFGNO $TH3CFGBASE"
     cd $localDir/TH3
-    ./mkth3.tcl $TESTDIR/*.test "$TH3CFG" > $workingDir/th3_generated_test.c
+    TESTFILES=$(find $TESTDIR -name "*.test" ! -name "ctime03.test" | sort)
+    ./mkth3.tcl $TESTFILES "$TH3CFG" > $workingDir/th3_generated_test.c
     cd $workingDir
 
     # Copy files used for compilation into temporary directory

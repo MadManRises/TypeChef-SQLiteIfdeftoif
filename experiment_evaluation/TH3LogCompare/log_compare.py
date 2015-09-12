@@ -72,8 +72,6 @@ def main():
     if "Test Modules" in variantResults:
         del variantResults["Test Modules"]
     keySet = set(simulatorResults.keys()).union(set(variantResults.keys()))
-    print simulatorResults.keys()
-    print variantResults.keys()
     onlyInSim = dict() # test present only in simulator log
     onlyInVar = dict() # test present only in variant log
     okInBoth = set()   # empty result in both logs

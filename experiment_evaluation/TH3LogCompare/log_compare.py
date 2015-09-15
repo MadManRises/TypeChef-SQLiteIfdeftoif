@@ -61,8 +61,11 @@ def main():
     variantResults = parseTH3Log(sys.argv[2])
     
     numberOfTestModules = 0
+    numberOfSimTestModules = 0
     if "Test Modules" in variantResults:
         numberOfTestModules = int(variantResults["Test Modules"])
+    if "Test Modules" in simulatorResults:
+        numberOfSimTestModules = int(variantResults["Test Modules"])
     simulatorExitCode = simulatorResults["Exit Code"]
     variantExitCode = variantResults["Exit Code"]
     del simulatorResults["Exit Code"]
@@ -118,23 +121,23 @@ def main():
     print "Test modules:        " + str(numberOfTestModules)
 
     if testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar+testSameErrors == 0 :
-        if testsCovered == numberOfTestModules :
+        if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
             print "Test successful without errors and full coverage."
         else:
             print "Test successful without errors but no full coverage."
     elif testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar == 0 :
-        if testsCovered == numberOfTestModules :
+        if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
             print "Test successful with same errors and full coverage."
         else:
             print "Test successful with same errors but no full coverage."
     elif (testOnlyInSim+testOnlyInVar == 0 and testErrInSim == testErrInVar and testsCovered == numberOfTestModules) :
         print "Full coverage, but different errors in the same tests."
-    elif (testsCovered == numberOfTestModules) :
+    elif (testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered) :
         print "Full coverage, but different results."
     elif testsCovered > numberOfTestModules :
         print "Too many tests covered."
     else:
-        print "Test results differ."
+        print "No full coverage and different test results."
     outDir = sys.argv[3]
     if not os.path.exists(outDir):
         os.makedirs(outDir)

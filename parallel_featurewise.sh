@@ -40,7 +40,8 @@ if [ $1 -lt $TOTAL ]; then
 
     cd ../TH3
     # Ignore ctime03.test since it features a very large struct loaded with 100 different #ifdefs & #elses
-    TESTFILES=$(find $TESTDIR -name "*.test" ! -name "ctime03.test" | sort)
+    # Ignore date2.test since it returns the systems local time; this makes string differences in test results impossible
+    TESTFILES=$(find $TESTDIR -name "*.test" ! -name "ctime03.test" ! -name "date2.test" | sort)
     ./mkth3.tcl $TESTFILES "$TH3CFG" > ../tmpft_$1/th3_generated_test.c
     cd ../tmpft_$1
 

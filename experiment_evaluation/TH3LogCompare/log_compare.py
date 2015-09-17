@@ -122,22 +122,26 @@ def main():
 
     if testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar+testSameErrors == 0 :
         if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
-            print "Test successful without errors and full coverage."
+            print "Same behaviour, no errors, full coverage."
         else:
-            print "Test successful without errors but no full coverage."
+            print "Same behaviour, no errors, no full coverage."
     elif testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar == 0 :
         if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
-            print "Test successful with same errors and full coverage."
+            print "Same behaviour, with errors, full coverage."
         else:
-            print "Test successful with same errors but no full coverage."
-    elif (testOnlyInSim+testOnlyInVar == 0 and testErrInSim == testErrInVar and testsCovered == numberOfTestModules) :
-        print "Full coverage, but different errors in the same tests."
-    elif (testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered) :
-        print "Full coverage, but different results."
+            print "Same behaviour, with errors, no full coverage."
+    elif (testOnlyInSim+testOnlyInVar == 0 and testErrInSim == testErrInVar) :
+        if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
+            print "Different behaviour, different errors in the same tests, full coverage."
+        else
+            print "Different behaviour, different errors in the same tests, no full coverage."
     elif testsCovered > numberOfTestModules :
         print "Too many tests covered."
     else:
-        print "No full coverage and different test results."
+        if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
+            print "Different behaviour, different errors in different tests, full coverage."
+        else
+            print "Different behaviour, different errors in different tests, no full coverage."
     outDir = sys.argv[3]
     if not os.path.exists(outDir):
         os.makedirs(outDir)

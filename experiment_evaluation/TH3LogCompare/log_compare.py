@@ -62,10 +62,10 @@ def main():
     
     numberOfTestModules = 0
     numberOfSimTestModules = 0
-    if "Test Modules" in variantResults:
-        numberOfTestModules = int(variantResults["Test Modules"])
-    if "Test Modules" in simulatorResults:
-        numberOfSimTestModules = int(variantResults["Test Modules"])
+    #if "Test Modules" in variantResults:
+    #    numberOfTestModules = int(variantResults["Test Modules"])
+    #if "Test Modules" in simulatorResults:
+    #    numberOfSimTestModules = int(variantResults["Test Modules"])
     simulatorExitCode = simulatorResults["Exit Code"]
     variantExitCode = variantResults["Exit Code"]
     del simulatorResults["Exit Code"]
@@ -74,6 +74,8 @@ def main():
         del simulatorResults["Test Modules"]
     if "Test Modules" in variantResults:
         del variantResults["Test Modules"]
+    numberOfTestModules = len(simulatorResults)
+    numberOfSimTestModules = len(variantResults)
     keySet = set(simulatorResults.keys()).union(set(variantResults.keys()))
     onlyInSim = dict() # test present only in simulator log
     onlyInVar = dict() # test present only in variant log
@@ -117,7 +119,6 @@ def main():
     print "ErrorOnlyInSim:      " + str(testErrInSim)
     print "ErrorOnlyInVar:      " + str(testErrInVar)
     print "                     ------"
-    print "Tests covered:       " + str(testsCovered)
     print "Test modules:        " + str(numberOfTestModules)
 
     if testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar+testSameErrors == 0 :

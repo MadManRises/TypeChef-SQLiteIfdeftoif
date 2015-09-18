@@ -62,8 +62,9 @@ def main():
     
     numberOfTestModules = 0
     numberOfSimTestModules = 0
-    #if "Test Modules" in variantResults:
-    #    numberOfTestModules = int(variantResults["Test Modules"])
+    numberOfVarTestModules = 0
+    if "Test Modules" in variantResults:
+        numberOfTestModules = int(variantResults["Test Modules"])
     #if "Test Modules" in simulatorResults:
     #    numberOfSimTestModules = int(variantResults["Test Modules"])
     simulatorExitCode = simulatorResults["Exit Code"]
@@ -74,7 +75,7 @@ def main():
         del simulatorResults["Test Modules"]
     if "Test Modules" in variantResults:
         del variantResults["Test Modules"]
-    numberOfTestModules = len(simulatorResults)
+    numberOfVarTestModules = len(simulatorResults)
     numberOfSimTestModules = len(variantResults)
     keySet = set(simulatorResults.keys()).union(set(variantResults.keys()))
     onlyInSim = dict() # test present only in simulator log
@@ -122,24 +123,24 @@ def main():
     print "Test modules:        " + str(numberOfTestModules)
 
     if testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar+testSameErrors == 0 :
-        if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
+        if testsCovered == numberOfVarTestModules and numberOfSimTestModules == testsCovered :
             print "Same behaviour, no errors, full coverage."
         else:
             print "Same behaviour, no errors, no full coverage."
     elif testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar == 0 :
-        if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
+        if testsCovered == numberOfVarTestModules and numberOfSimTestModules == testsCovered :
             print "Same behaviour, with errors, full coverage."
         else:
             print "Same behaviour, with errors, no full coverage."
     elif (testOnlyInSim+testOnlyInVar == 0 and testErrInSim == testErrInVar) :
-        if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
+        if testsCovered == numberOfVarTestModules and numberOfSimTestModules == testsCovered :
             print "Different behaviour, different errors in the same tests, full coverage."
         else:
             print "Different behaviour, different errors in the same tests, no full coverage."
-    elif testsCovered > numberOfTestModules :
+    elif testsCovered > numberOfVarTestModules :
         print "Too many tests covered."
     else:
-        if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
+        if testsCovered == numberOfVarTestModules and numberOfSimTestModules == testsCovered :
             print "Different behaviour, different errors in different tests, full coverage."
         else:
             print "Different behaviour, different errors in different tests, no full coverage."

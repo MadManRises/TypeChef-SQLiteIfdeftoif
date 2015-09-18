@@ -1,5 +1,6 @@
 int id2i___i386__;
 int id2i__m_ix86;
+int id2i__win32_wce;
 int id2i_have_stdint_h;
 int id2i_i386;
 int id2i_no_gettod;
@@ -46,6 +47,7 @@ int id2i_vdbe_profile;
 void id2i_init()  {
   (id2i___i386__ = 0);
   (id2i__m_ix86 = 0);
+  (id2i__win32_wce = 0);
   (id2i_have_stdint_h = 0);
   (id2i_i386 = 0);
   (id2i_no_gettod = 0);

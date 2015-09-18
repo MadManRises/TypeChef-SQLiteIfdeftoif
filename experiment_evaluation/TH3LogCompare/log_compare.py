@@ -133,14 +133,14 @@ def main():
     elif (testOnlyInSim+testOnlyInVar == 0 and testErrInSim == testErrInVar) :
         if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
             print "Different behaviour, different errors in the same tests, full coverage."
-        else
+        else:
             print "Different behaviour, different errors in the same tests, no full coverage."
     elif testsCovered > numberOfTestModules :
         print "Too many tests covered."
     else:
         if testsCovered == numberOfTestModules and numberOfSimTestModules == testsCovered :
             print "Different behaviour, different errors in different tests, full coverage."
-        else
+        else:
             print "Different behaviour, different errors in different tests, no full coverage."
     outDir = sys.argv[3]
     if not os.path.exists(outDir):

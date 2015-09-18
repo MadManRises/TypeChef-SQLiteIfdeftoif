@@ -15,7 +15,6 @@ with open("featurewise.ca2.csv") as f:
         reader.next() ## Python 2.x uses next
     for row in reader:
         for (i,v) in enumerate(row):
-            print(v)
             columns[i].append(v)
 i = 0
 j = 0

@@ -76,8 +76,9 @@ if [ $1 -lt $TOTAL ]; then
             /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_variant.txt bash -c ./a.out &> chf_variant_$1.txt; expectedOutputValue=$?
             echo -e "\nExit Code: $expectedOutputValue" >> chf_variant_$1.txt;
             # Clear temporary variant files
-            rm -f *.out
-            rm -f *.db
+            rm -rf *.out
+            rm -rf *.db
+            rm -rf *.lock
 
             # Compile ifdeftoif sqlite
             ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
@@ -106,8 +107,9 @@ if [ $1 -lt $TOTAL ]; then
                     fi 
                 fi
                 # Clear temporary simulator files
-                rm -f *.db
-                rm -f *.out
+                rm -rf *.db
+                rm -rf *.out
+                rm -rf *.lock
             fi
         fi
     fi

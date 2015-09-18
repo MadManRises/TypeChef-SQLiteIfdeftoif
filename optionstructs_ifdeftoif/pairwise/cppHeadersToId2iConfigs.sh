@@ -4,7 +4,7 @@
 mkdir generated/tmp
 for f in ./generated/Prod*.h;
 do
-    sed 's/#define \([A-Z_]*\)$/\1=y/g' $f > generated/tmp/$(basename $f .h).config
+    sed 's/#define \([A-Z_0-9]*\)$/\1=y/g' $f > generated/tmp/$(basename $f .h).config
 done
 
 cd ../../

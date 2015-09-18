@@ -2,7 +2,7 @@ SPL Covering Array Tool v0.3 (SPLC 2012) (ICPL edition)
 http://heim.ifi.uio.no/martifag/splc2012/
 Args: {limit=100%, fm=../../sqlite_extended.dimacs, hideUnderscoreVariables=, moreConstraints=moreConstraints.dimacs, t=t_wise, s=2, a=ICPL, o=generatedConfigs.ca2.csv, focusVariables=focusVariables.txt}
 Loading dimacs: ../../sqlite_extended.dimacs
-CNF: Given p and c: 131 and 40
+CNF: Given p and c: 131 and 42
 loading additional constraints: moreConstraints.dimacs
 CNF: Given p and c: 12 and 12
 Successfully loaded and converted the model:
@@ -25,35 +25,38 @@ Round complete
 Additionally covered 496
 Uncovered: 1075, progress: 45% with solutions: 1
 Round complete
-Additionally covered 391
-Uncovered: 684, progress: 65% with solutions: 2
+Additionally covered 405
+Uncovered: 670, progress: 66% with solutions: 2
 Round complete
-Additionally covered 292
-Uncovered: 392, progress: 80% with solutions: 3
+Additionally covered 276
+Uncovered: 394, progress: 80% with solutions: 3
 Round complete
-Additionally covered 182
-Uncovered: 210, progress: 89% with solutions: 4
+Additionally covered 206
+Uncovered: 188, progress: 90% with solutions: 4
 Round complete
-Additionally covered 74
+Additionally covered 52
 Removing invalid
 Threads for this task: 8
-Invalid: 0
-Uncovered: 136, progress: 93% with solutions: 5
+Invalid: 2
+Uncovered: 134, progress: 93% with solutions: 5
 Round complete
-Additionally covered 54
-Uncovered: 82, progress: 95% with solutions: 6
+Additionally covered 40
+Uncovered: 94, progress: 95% with solutions: 6
 Round complete
-Additionally covered 44
-Uncovered: 38, progress: 98% with solutions: 7
+Additionally covered 36
+Uncovered: 58, progress: 97% with solutions: 7
 Round complete
-Additionally covered 21
-Uncovered: 17, progress: 99% with solutions: 8
+Additionally covered 26
+Uncovered: 32, progress: 98% with solutions: 8
 Round complete
-Additionally covered 11
-Uncovered: 6, progress: 99% with solutions: 9
+Additionally covered 18
+Uncovered: 14, progress: 99% with solutions: 9
+Round complete
+Additionally covered 8
+Uncovered: 6, progress: 99% with solutions: 10
 Round complete
 Additionally covered 6
-Uncovered: 0, progress: 100% with solutions: 10
-2-wise done, solutions: 10, invalid: 413
-Done. Size: 10, time: 188 milliseconds
+Uncovered: 0, progress: 100% with solutions: 11
+2-wise done, solutions: 11, invalid: 413
+Done. Size: 11, time: 170 milliseconds
 Wrote result to generatedConfigs.ca2.csv

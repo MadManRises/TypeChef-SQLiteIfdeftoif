@@ -4,7 +4,7 @@
 mkdir feature-wise/tmp
 for f in ./feature-wise/id2i_include*.h;
 do
-    sed 's/#define \([A-Z_]*\)$/\1=y/g' $f > feature-wise/tmp/$(basename $f .h).config
+    sed 's/#define \([A-Z_0-9]*\)$/\1=y/g' $f > feature-wise/tmp/$(basename $f .h).config
 done
 
 cd ../

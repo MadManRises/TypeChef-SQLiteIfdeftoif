@@ -53,7 +53,7 @@ void id2i_init()  {
   (id2i_sqlite_coverage_test = 0);
   (id2i_sqlite_default_memstatus = 0);
   (id2i_sqlite_ebcdic = 0);
-  (id2i_sqlite_enable_column_metadata = 1);
+  (id2i_sqlite_enable_column_metadata = 0);
   (id2i_sqlite_enable_expensive_assert = 0);
   (id2i_sqlite_enable_fts3 = 0);
   (id2i_sqlite_enable_fts4 = 0);

@@ -30,7 +30,7 @@ if [ -d $localDir ]; then
         if [ $pull != "Already up-to-date." ] && [ $pull != *"fatal:"* ]; then
             ./publish.sh
         else
-            echo "Skipping publish."
+            echo "Skipping TypeChef ./publish.sh"
         fi
         cd $OLDPWD
     fi
@@ -42,8 +42,10 @@ if [ -d $localDir ]; then
     else
         # update Hercules
         cd Hercules
-        if [ "$(git pull)" != "Already up-to-date." ]; then
-        ./mkrun.sh
+        if [ $pull != "Already up-to-date." ] && [ $pull != *"fatal:"* ]; then
+            ./mkrun.sh
+        else
+            echo "Skipping Hercules ./mkrun.sh"
         fi
         cd $OLDPWD
     fi

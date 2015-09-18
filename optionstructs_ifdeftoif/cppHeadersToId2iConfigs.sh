@@ -8,6 +8,11 @@ do
 done
 
 cd ../
+
+# Move list of all SQLite and TH3 test features into ifdeftoif folder
+mv ../ifdeftoif/featureSet.txt ../ifdeftoif/featureSetTMP.txt
+mv featureSet.txt ../ifdefotif/featureSet.txt
+
 for c in ./optionstructs_ifdeftoif/feature-wise/tmp/id2i_include*.config;
 do
      # Start Hercules; only struct generation with the .config files
@@ -17,3 +22,6 @@ do
     rm $c
 done
 rm -rf ../ifdeftoif/id2i_optionstruct.h optionstructs_ifdeftoif/feature-wise/tmp
+
+# Move feature list back
+mv ../ifdeftoif/featureSetTMP.txt ../ifdeftoif/featureSet.txt

@@ -11,7 +11,7 @@ cd ../
 
 # Move list of all SQLite and TH3 test features into ifdeftoif folder
 mv ../ifdeftoif/featureSet.txt ../ifdeftoif/featureSetTMP.txt
-mv featureSet.txt ../ifdefotif/featureSet.txt
+cp featureSet.txt ../ifdeftoif
 
 for c in ./optionstructs_ifdeftoif/feature-wise/tmp/id2i_include*.config;
 do

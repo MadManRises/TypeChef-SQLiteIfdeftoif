@@ -216,9 +216,9 @@ void id2i_init()  {
   (id2i_sqlite_omit_decltype = 0);
   (id2i_sqlite_omit_deprecated = 0);
   (id2i_sqlite_omit_diskio = 0);
-  (id2i_sqlite_omit_explain = 1);
+  (id2i_sqlite_omit_explain = 0);
   (id2i_sqlite_omit_floating_point = 0);
-  (id2i_sqlite_omit_foreign_key = 0);
+  (id2i_sqlite_omit_foreign_key = 1);
   (id2i_sqlite_omit_load_extension = 1);
   (id2i_sqlite_omit_or_optimization = 0);
   (id2i_sqlite_omit_pager_pragmas = 0);

@@ -211,10 +211,10 @@ void id2i_init()  {
   (id2i_sqlite_omit_autovacuum = 0);
   (id2i_sqlite_omit_blob_literal = 0);
   (id2i_sqlite_omit_builtin_test = 0);
-  (id2i_sqlite_omit_cast = 1);
+  (id2i_sqlite_omit_cast = 0);
   (id2i_sqlite_omit_compound_select = 0);
   (id2i_sqlite_omit_decltype = 0);
-  (id2i_sqlite_omit_deprecated = 0);
+  (id2i_sqlite_omit_deprecated = 1);
   (id2i_sqlite_omit_diskio = 0);
   (id2i_sqlite_omit_explain = 0);
   (id2i_sqlite_omit_floating_point = 0);

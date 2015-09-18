@@ -238,7 +238,7 @@ void id2i_init()  {
   (id2i_sqlite_os_winnt = 1);
   (id2i_sqlite_os_winrt = 0);
   (id2i_sqlite_rtree_int_only = 0);
-  (id2i_sqlite_small_stack = 1);
+  (id2i_sqlite_small_stack = 0);
   (id2i_sqlite_system_malloc = 1);
   (id2i_sqlite_tcl = 0);
   (id2i_sqlite_test = 0);

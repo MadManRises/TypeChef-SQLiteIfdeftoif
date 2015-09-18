@@ -220,8 +220,8 @@ void id2i_init()  {
   (id2i_sqlite_omit_floating_point = 0);
   (id2i_sqlite_omit_foreign_key = 0);
   (id2i_sqlite_omit_load_extension = 1);
-  (id2i_sqlite_omit_or_optimization = 1);
-  (id2i_sqlite_omit_pager_pragmas = 0);
+  (id2i_sqlite_omit_or_optimization = 0);
+  (id2i_sqlite_omit_pager_pragmas = 1);
   (id2i_sqlite_omit_pragma = 0);
   (id2i_sqlite_omit_shared_cache = 0);
   (id2i_sqlite_omit_subquery = 0);

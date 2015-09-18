@@ -2,4 +2,4 @@ SPL Covering Array Tool v0.3 (SPLC 2012) (ICPL edition)
 http://heim.ifi.uio.no/martifag/splc2012/
 Args: {limit=100%, fm=../../sqlite_extended.dimacs, hideUnderscoreVariables=, moreConstraints=moreConstraints.dimacs, t=t_wise, s=2, a=ICPL, o=generatedConfigs.ca2.csv, focusVariables=focusVariables.txt}
 Loading dimacs: ../../sqlite_extended.dimacs
-Given p and c not equal with actual p and c: 131 and 42 vs 131 and 41
+Given p and c not equal with actual p and c: 131 and 44 vs 131 and 43

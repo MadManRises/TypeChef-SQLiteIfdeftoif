@@ -123,24 +123,24 @@ def main():
     print "Test modules:        " + str(numberOfTestModules)
 
     if testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar+testSameErrors == 0 :
-        if testsCovered == numberOfVarTestModules and numberOfSimTestModules == testsCovered :
+        if numberOfTestModules == numberOfVarTestModules and numberOfSimTestModules == numberOfTestModules :
             print "Same behaviour, no errors, full coverage."
         else:
             print "Same behaviour, no errors, no full coverage."
     elif testOnlyInSim+testOnlyInVar+testDiffErrors+testErrInSim+testErrInVar == 0 :
-        if testsCovered == numberOfVarTestModules and numberOfSimTestModules == testsCovered :
+        if numberOfTestModules == numberOfVarTestModules and numberOfSimTestModules == numberOfTestModules :
             print "Same behaviour, with errors, full coverage."
         else:
             print "Same behaviour, with errors, no full coverage."
     elif (testOnlyInSim+testOnlyInVar == 0 and testErrInSim == testErrInVar) :
-        if testsCovered == numberOfVarTestModules and numberOfSimTestModules == testsCovered :
+        if numberOfTestModules == numberOfVarTestModules and numberOfSimTestModules == numberOfTestModules :
             print "Different behaviour, different errors in the same tests, full coverage."
         else:
             print "Different behaviour, different errors in the same tests, no full coverage."
-    elif testsCovered > numberOfVarTestModules :
+    elif testsCovered > numberOfTestModules :
         print "Too many tests covered."
     else:
-        if testsCovered == numberOfVarTestModules and numberOfSimTestModules == testsCovered :
+        if numberOfTestModules == numberOfVarTestModules and numberOfSimTestModules == numberOfTestModules :
             print "Different behaviour, different errors in different tests, full coverage."
         else:
             print "Different behaviour, different errors in different tests, no full coverage."

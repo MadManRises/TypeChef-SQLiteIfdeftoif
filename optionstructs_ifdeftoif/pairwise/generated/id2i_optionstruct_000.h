@@ -190,7 +190,7 @@ void id2i_init()  {
   (id2i_sqlite_enable_locking_style = 1);
   (id2i_sqlite_enable_memory_management = 0);
   (id2i_sqlite_enable_memsys3 = 0);
-  (id2i_sqlite_enable_memsys5 = 1);
+  (id2i_sqlite_enable_memsys5 = 0);
   (id2i_sqlite_enable_oversize_cell_check = 0);
   (id2i_sqlite_enable_rtree = 0);
   (id2i_sqlite_enable_sqllog = 0);

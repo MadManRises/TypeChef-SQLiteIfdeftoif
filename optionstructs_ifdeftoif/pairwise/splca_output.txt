@@ -2,4 +2,58 @@ SPL Covering Array Tool v0.3 (SPLC 2012) (ICPL edition)
 http://heim.ifi.uio.no/martifag/splc2012/
 Args: {limit=100%, fm=../../sqlite_extended.dimacs, hideUnderscoreVariables=, moreConstraints=moreConstraints.dimacs, t=t_wise, s=2, a=ICPL, o=generatedConfigs.ca2.csv, focusVariables=focusVariables.txt}
 Loading dimacs: ../../sqlite_extended.dimacs
-Given p and c not equal with actual p and c: 131 and 44 vs 131 and 43
+CNF: Given p and c: 131 and 43
+loading additional constraints: moreConstraints.dimacs
+CNF: Given p and c: 14 and 14
+Successfully loaded and converted the model:
+Features: 131
+Constraints: 131
+Focus on 30 variables.
+Generating 2-wise covering array with algorithm: ICPL
+Running algorithm: ICPL
+Covering 100%
+--- 1-wise ---
+Threads for this task: 8
+Mandatory features: 1
+Dead features: 6
+Total uncovered: 46
+Total uncovered after first removal: 1
+1-wise done, solutions: 3, invalid: 7
+--- 2-wise ---
+Uncovered pairs left: 1355, invalid: 385
+Round complete
+Additionally covered 435
+Uncovered: 920, progress: 47% with solutions: 1
+Round complete
+Additionally covered 369
+Uncovered: 551, progress: 68% with solutions: 2
+Round complete
+Additionally covered 215
+Uncovered: 336, progress: 80% with solutions: 3
+Round complete
+Additionally covered 147
+Uncovered: 189, progress: 89% with solutions: 4
+Round complete
+Additionally covered 66
+Removing invalid
+Threads for this task: 8
+Invalid: 1
+Uncovered: 122, progress: 92% with solutions: 5
+Round complete
+Additionally covered 49
+Uncovered: 73, progress: 95% with solutions: 6
+Round complete
+Additionally covered 37
+Uncovered: 36, progress: 97% with solutions: 7
+Round complete
+Additionally covered 25
+Uncovered: 11, progress: 99% with solutions: 8
+Round complete
+Additionally covered 6
+Uncovered: 5, progress: 99% with solutions: 9
+Round complete
+Additionally covered 5
+Uncovered: 0, progress: 100% with solutions: 10
+2-wise done, solutions: 10, invalid: 385
+Done. Size: 10, time: 149 milliseconds
+Wrote result to generatedConfigs.ca2.csv

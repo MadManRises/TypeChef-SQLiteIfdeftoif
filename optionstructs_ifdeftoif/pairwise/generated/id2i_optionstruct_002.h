@@ -181,7 +181,7 @@ void id2i_init()  {
   (id2i_sqlite_ebcdic = 0);
   (id2i_sqlite_enable_cerod = 0);
   (id2i_sqlite_enable_column_metadata = 1);
-  (id2i_sqlite_enable_expensive_assert = 1);
+  (id2i_sqlite_enable_expensive_assert = 0);
   (id2i_sqlite_enable_fts3 = 0);
   (id2i_sqlite_enable_fts4 = 0);
   (id2i_sqlite_enable_fts4_unicode61 = 0);

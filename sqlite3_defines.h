@@ -1,0 +1,251 @@
+#ifndef FILE_ATTRIBUTE_MASK
+# define FILE_ATTRIBUTE_MASK     (0x0003FFF7)
+#endif
+#ifndef FILE_FLAG_MASK
+# define FILE_FLAG_MASK          (0xFF3C0000)
+#endif
+#ifndef _GNU_SOURCE
+# define _GNU_SOURCE
+#endif
+#ifndef INTERFACE
+# define INTERFACE 1
+#endif
+#ifndef INVALID_FILE_ATTRIBUTES
+# define INVALID_FILE_ATTRIBUTES ((DWORD)-1) 
+#endif
+#ifndef INVALID_SET_FILE_POINTER
+# define INVALID_SET_FILE_POINTER ((DWORD)-1)
+#endif
+#ifndef LOCKFILE_EXCLUSIVE_LOCK
+# define LOCKFILE_EXCLUSIVE_LOCK 2
+#endif
+#ifndef LOCKFILE_FAIL_IMMEDIATELY
+# define LOCKFILE_FAIL_IMMEDIATELY 1
+#endif
+#ifndef LONGDOUBLE_TYPE
+# define LONGDOUBLE_TYPE long double
+#endif
+#ifndef MAX
+# define MAX(x,y) ((x)>(y)?(x):(y))
+#endif
+#ifndef MIN
+# define MIN(x,y) ((x)<(y)?(x):(y))
+#endif
+#ifndef NTDDI_WIN8
+#  define NTDDI_WIN8                        0x06020000
+#endif
+#ifndef O_BINARY
+# define O_BINARY 0
+#endif
+#ifndef offsetof
+#define offsetof(STRUCTURE,FIELD) ((int)((char*)&((STRUCTURE*)0)->FIELD))
+#endif
+#ifndef O_LARGEFILE
+# define O_LARGEFILE 0
+#endif
+#ifndef O_NOFOLLOW
+# define O_NOFOLLOW 0
+#endif
+#ifndef osAreFileApisANSI
+#define osAreFileApisANSI ((BOOL(WINAPI*)(VOID))aSyscall[0].pCurrent)
+#endif
+#ifndef SET_FULLSYNC
+# define SET_FULLSYNC(x,y)
+#endif
+#ifndef SQLITE_ALLOW_COVERING_INDEX_SCAN
+# define SQLITE_ALLOW_COVERING_INDEX_SCAN 1
+#endif
+#ifndef SQLITE_API
+# define SQLITE_API
+#endif
+# ifndef SQLITE_BIG_DBL
+#   define SQLITE_BIG_DBL (((sqlite3_int64)1)<<50)
+# endif
+#ifndef SQLITE_CORE
+  #define SQLITE_CORE 1  /* Disable the API redefinition in sqlite3ext.h */
+#endif
+#ifndef SQLITE_DEFAULT_AUTOVACUUM
+  #define SQLITE_DEFAULT_AUTOVACUUM 0
+#endif
+#ifndef SQLITE_DEFAULT_CACHE_SIZE
+# define SQLITE_DEFAULT_CACHE_SIZE  2000
+#endif
+#ifndef SQLITE_DEFAULT_FILE_FORMAT
+# define SQLITE_DEFAULT_FILE_FORMAT 4
+#endif
+#ifndef SQLITE_DEFAULT_FILE_PERMISSIONS
+# define SQLITE_DEFAULT_FILE_PERMISSIONS 0644
+#endif
+#ifndef SQLITE_DEFAULT_JOURNAL_SIZE_LIMIT
+  #define SQLITE_DEFAULT_JOURNAL_SIZE_LIMIT -1
+#endif
+#ifndef SQLITE_DEFAULT_MMAP_SIZE
+# define SQLITE_DEFAULT_MMAP_SIZE 0
+# define SQLITE_DEFAULT_MMAP_SIZE_xc 1  /* Exclude from ctime.c */
+#endif
+#ifndef SQLITE_DEFAULT_PAGE_SIZE
+# define SQLITE_DEFAULT_PAGE_SIZE 1024
+#endif
+#ifndef SQLITE_DEFAULT_PROXYDIR_PERMISSIONS
+# define SQLITE_DEFAULT_PROXYDIR_PERMISSIONS 0755
+#endif
+#ifndef SQLITE_DEFAULT_RECURSIVE_TRIGGERS
+# define SQLITE_DEFAULT_RECURSIVE_TRIGGERS 0
+#endif
+#ifndef SQLITE_DEFAULT_SECTOR_SIZE
+# define SQLITE_DEFAULT_SECTOR_SIZE 4096
+#endif
+#ifndef SQLITE_DEFAULT_TEMP_CACHE_SIZE
+# define SQLITE_DEFAULT_TEMP_CACHE_SIZE  500
+#endif
+#ifndef SQLITE_DEFAULT_WAL_AUTOCHECKPOINT
+# define SQLITE_DEFAULT_WAL_AUTOCHECKPOINT  1000
+#endif
+#ifndef SQLITE_EXTERN
+# define SQLITE_EXTERN extern
+#endif
+#ifndef SQLITE_FILE_HEADER /* 123456789 123456 */
+#  define SQLITE_FILE_HEADER "SQLite format 3"
+#endif
+#ifndef SQLITE_FTS3_MAX_EXPR_DEPTH
+# define SQLITE_FTS3_MAX_EXPR_DEPTH 12
+#endif
+#ifndef SQLITE_INTEGRITY_CHECK_ERROR_MAX
+# define SQLITE_INTEGRITY_CHECK_ERROR_MAX 100
+#endif
+#ifndef SQLITE_LOCKFILEEX_FLAGS
+# define SQLITE_LOCKFILEEX_FLAGS (LOCKFILE_FAIL_IMMEDIATELY)
+#endif
+# ifndef SQLITE_MALLOCSIZE
+#  define SQLITE_MALLOCSIZE(x) malloc_usable_size(x)
+# endif
+#ifndef SQLITE_MAX_ATTACHED
+# define SQLITE_MAX_ATTACHED 10
+#endif
+#ifndef SQLITE_MAX_COLUMN
+# define SQLITE_MAX_COLUMN 2000
+#endif
+#ifndef SQLITE_MAX_COMPOUND_SELECT
+# define SQLITE_MAX_COMPOUND_SELECT 500
+#endif
+#ifndef SQLITE_MAX_DEFAULT_PAGE_SIZE
+# define SQLITE_MAX_DEFAULT_PAGE_SIZE 8192
+#endif
+#ifndef SQLITE_MAX_EXPR_DEPTH
+# define SQLITE_MAX_EXPR_DEPTH 1000
+#endif
+#ifndef SQLITE_MAX_FUNCTION_ARG
+# define SQLITE_MAX_FUNCTION_ARG 127
+#endif
+#ifndef SQLITE_MAX_LENGTH
+# define SQLITE_MAX_LENGTH 1000000000
+#endif
+#ifndef SQLITE_MAX_LIKE_PATTERN_LENGTH
+# define SQLITE_MAX_LIKE_PATTERN_LENGTH 50000
+#endif
+#ifndef SQLITE_MAX_PAGE_COUNT
+# define SQLITE_MAX_PAGE_COUNT 1073741823
+#endif
+#ifndef SQLITE_MAX_SCHEMA_RETRY
+# define SQLITE_MAX_SCHEMA_RETRY 50
+#endif
+#ifndef SQLITE_MAX_SQL_LENGTH
+# define SQLITE_MAX_SQL_LENGTH 1000000000
+#endif
+#ifndef SQLITE_MAX_TRIGGER_DEPTH
+# define SQLITE_MAX_TRIGGER_DEPTH 1000
+#endif
+#ifndef SQLITE_MAX_VARIABLE_NUMBER
+# define SQLITE_MAX_VARIABLE_NUMBER 999
+#endif
+#ifndef SQLITE_MAX_VDBE_OP
+# define SQLITE_MAX_VDBE_OP 25000
+#endif
+#ifndef SQLITE_MINIMUM_FILE_DESCRIPTOR
+# define SQLITE_MINIMUM_FILE_DESCRIPTOR 3
+#endif
+#ifndef SQLITE_N_COLCACHE
+# define SQLITE_N_COLCACHE 10
+#endif
+#ifndef SQLITE_POWERSAFE_OVERWRITE
+# define SQLITE_POWERSAFE_OVERWRITE 1
+#endif
+#ifndef SQLITE_PRINT_BUF_SIZE
+# define SQLITE_PRINT_BUF_SIZE 70
+#endif
+#ifndef SQLITE_PRIVATE
+# define SQLITE_PRIVATE static
+#endif
+#ifndef SQLITE_STAT4_SAMPLES
+# define SQLITE_STAT4_SAMPLES 24
+#endif
+#ifndef SQLITE_TEMP_FILE_PREFIX
+# define SQLITE_TEMP_FILE_PREFIX "etilqs_"
+#endif
+#ifndef SQLITE_TEMP_STORE
+# define SQLITE_TEMP_STORE 1
+# define SQLITE_TEMP_STORE_xc 1  /* Exclude from ctime.c */
+#endif
+#ifndef SQLITE_WIN32_DATA_DIRECTORY_TYPE
+#  define SQLITE_WIN32_DATA_DIRECTORY_TYPE (1)
+#endif
+#ifndef SQLITE_WIN32_DBG_BUF_SIZE
+#  define SQLITE_WIN32_DBG_BUF_SIZE   ((int)(4096-sizeof(DWORD)))
+#endif
+#ifndef SQLITE_WIN32_HEAP_CREATE
+#  define SQLITE_WIN32_HEAP_CREATE    (TRUE)
+#endif
+#ifndef SQLITE_WIN32_HEAP_FLAGS
+#  define SQLITE_WIN32_HEAP_FLAGS     (0)
+#endif
+#ifndef SQLITE_WIN32_HEAP_MAX_SIZE
+#  define SQLITE_WIN32_HEAP_MAX_SIZE  (0)
+#endif
+#ifndef SQLITE_WIN32_IOERR_RETRY
+# define SQLITE_WIN32_IOERR_RETRY 10
+#endif
+#ifndef SQLITE_WIN32_IOERR_RETRY_DELAY
+# define SQLITE_WIN32_IOERR_RETRY_DELAY 25
+#endif
+#ifndef SQLITE_WIN32_MAX_ERRMSG_CHARS
+#  define SQLITE_WIN32_MAX_ERRMSG_CHARS (1024)
+#endif
+#ifndef SQLITE_WIN32_MAX_PATH_BYTES
+#  define SQLITE_WIN32_MAX_PATH_BYTES   (SQLITE_WIN32_MAX_PATH_CHARS*4)
+#endif
+#ifndef SQLITE_WIN32_MAX_PATH_CHARS
+#  define SQLITE_WIN32_MAX_PATH_CHARS   (MAX_PATH)
+#endif
+#ifndef SQLITE_WIN32_TEMP_DIRECTORY_TYPE
+#  define SQLITE_WIN32_TEMP_DIRECTORY_TYPE (2)
+#endif
+#ifndef SQLITE_WINNT_MAX_PATH_CHARS
+#  define SQLITE_WINNT_MAX_PATH_CHARS   (32767)
+#endif
+#ifndef SYSCALL
+#  define SYSCALL sqlite3_syscall_ptr
+#endif
+#ifndef testcase
+# define testcase(X)
+#endif
+#ifndef UNUSED_PARAMETER
+# define UNUSED_PARAMETER(x) (void)(x)
+#endif
+#ifndef UNUSED_VARIABLE_VALUE
+#  define UNUSED_VARIABLE_VALUE(x) (void)(x)
+#endif
+#ifndef winIsDirSep
+#  define winIsDirSep(a)                (((a) == '/') || ((a) == '\\'))
+#endif
+#ifndef YYSTACKDEPTH
+#define YYSTACKDEPTH 100
+#endif
+#ifndef yytestcase
+# define yytestcase(X)
+#endif
+# ifndef SQLITE_DEBUG_OS_TRACE
+#   define SQLITE_DEBUG_OS_TRACE 0
+# endif
+# ifndef SQLITE_OS_WIN
+#  define SQLITE_OS_WIN 0
+# endif

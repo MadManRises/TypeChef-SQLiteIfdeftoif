@@ -53,6 +53,7 @@ if [ $1 -lt $TOTAL ]; then
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
     cp ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h id2i_include.h
     cp ../TypeChef-SQLiteIfdeftoif/partial_configuration.h .
+    cp ../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h .
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c .
     if cp $th3IfdeftoifDir/sqlite3_ifdeftoif_$TH3IFDEFNO.c sqlite3_ifdeftoif.c; then
         echo "featurewise debugging: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"

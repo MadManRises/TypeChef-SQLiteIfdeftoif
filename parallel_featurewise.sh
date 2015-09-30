@@ -63,6 +63,7 @@ if [ $1 -lt $TOTAL ]; then
             -I /usr/include \
             -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
             -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
+            -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
             ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
         # If gcc returns errors skip the testing
         if [ $? != 0 ]
@@ -93,6 +94,10 @@ if [ $1 -lt $TOTAL ]; then
                 /usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M -o $jobExportDir/time_simulator.txt bash -c ./a.out &> chf_simulator_$1.txt; testOutputValue=$?
                 echo -e "\nExit Code: $testOutputValue" >> chf_simulator_$1.txt
                 python ../TypeChef-SQLiteIfdeftoif/experiment_evaluation/TH3LogCompare/log_compare.py chf_simulator_$1.txt chf_variant_$1.txt $jobExportDir
+                SimTime=$(sed -nr 's/.*real:([0-9]?[0-9]:[0-9][0-9]:[0-9][0-9]|[0-9]?[0-9]:[0-9][0-9]\.[0-9][0-9]).*/\1/p' $jobExportDir/time_simulator.txt)
+                VarTime=$(sed -nr 's/.*real:([0-9]?[0-9]:[0-9][0-9]:[0-9][0-9]|[0-9]?[0-9]:[0-9][0-9]\.[0-9][0-9]).*/\1/p' $jobExportDir/time_variant.txt)
+                echo -e "Sim time: $SimTime"
+                echo -e "Var time: $VarTime"
                 if [ $testOutputValue -eq $expectedOutputValue ] ; then
                     echo -e "Test successful, exit Codes: $testOutputValue;\n\n"
                 else 

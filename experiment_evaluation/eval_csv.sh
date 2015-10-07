@@ -85,6 +85,29 @@ if [ $PairwiseDirectories -gt 0 ]; then
         TestOnlyInVar=0; if [ -a $dir/TestOnlyInVar.txt ]; then TestOnlyInVar=$(grep -P "^[^\s]" $dir/TestOnlyInVar.txt | wc -l); fi
         SimTime=$(sed -nr 's/.*real:([0-9]?[0-9]:[0-9][0-9]:[0-9][0-9]|[0-9]?[0-9]:[0-9][0-9]\.[0-9][0-9]).*/\1/p' $dir/time_simulator.txt)
         VarTime=$(sed -nr 's/.*real:([0-9]?[0-9]:[0-9][0-9]:[0-9][0-9]|[0-9]?[0-9]:[0-9][0-9]\.[0-9][0-9]).*/\1/p' $dir/time_variant.txt)
+        SimHours=0; VarHours=0; SimMin=0; VarMin=0; SimSec=0; VarSec=0; SimHSec=".00"; VarHSec=".00"
+        if [[ $SimTime == *"."* ]]; then
+            SimMin=$(echo $SimTime | sed -r 's/([0-9]?[0-9]):[0-9][0-9]\.[0-9][0-9]/\1/')
+            SimSec=$(echo $SimTime | sed -r 's/[0-9]?[0-9]:([0-9][0-9])\.[0-9][0-9]/\1/')
+            SimHSec=$(echo $SimTime | sed -r 's/[0-9]?[0-9]:[0-9][0-9](\.[0-9][0-9])/\1/')
+        else
+            SimHours=$(echo $SimTime | sed -r 's/([0-9]?[0-9]):[0-9][0-9]:[0-9][0-9]/\1/')
+            SimMin=$(echo $SimTime | sed -r 's/[0-9]?[0-9]:([0-9][0-9]):[0-9][0-9]/\1/')
+            SimSec=$(echo $SimTime | sed -r 's/[0-9]?[0-9]:[0-9][0-9]:([0-9][0-9])/\1/')
+        fi
+        SimTimeSecOnly=$(( 3600*$SimHours + 60*$SimMin + $SimSec ))
+        SimTime=$SimTimeSecOnly$SimHSec
+        if [[ $VarTime == *"."* ]]; then
+            VarMin=$(echo $VarTime | sed -r 's/([0-9]?[0-9]):[0-9][0-9]\.[0-9][0-9]/\1/')
+            VarSec=$(echo $VarTime | sed -r 's/[0-9]?[0-9]:([0-9][0-9])\.[0-9][0-9]/\1/')
+            VarHSec=$(echo $VarTime | sed -r 's/[0-9]?[0-9]:[0-9][0-9](\.[0-9][0-9])/\1/')
+        else
+            VarHours=$(echo $VarTime | sed -r 's/([0-9]?[0-9]):[0-9][0-9]:[0-9][0-9]/\1/')
+            VarMin=$(echo $VarTime | sed -r 's/[0-9]?[0-9]:([0-9][0-9]):[0-9][0-9]/\1/')
+            VarSec=$(echo $VarTime | sed -r 's/[0-9]?[0-9]:[0-9][0-9]:([0-9][0-9])/\1/')
+        fi
+        VarTimeSecOnly=$(( 3600*$VarHours + 60*$VarMin + $VarSec ))
+        VarTime=$VarTimeSecOnly$VarHSec
         echo -e "$JobId,$DiffErrors,$ErrOnlyInSim,$ErrOnlyInVar,$OkInBoth,$SameErrors,$TestOnlyInSim,$TestOnlyInVar,$VarTime,$SimTime,$TESTDIRBASE,$TH3CFGBASE,$IFCONFIGBASE,$TH3IFDEFNO" >> $sqliteResultDir/pairwise.csv
     done
 fi

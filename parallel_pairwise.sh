@@ -63,7 +63,7 @@ if [ $1 -lt $TOTAL ]; then
             -I /usr/include \
             -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/Prod$configID.h" \
             -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
-            -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h.h" \
+            -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
             ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
         # If gcc returns errors skip the testing
         if [ $? != 0 ]

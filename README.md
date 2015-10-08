@@ -15,7 +15,7 @@ See project [Hercules](https://github.com/joliebig/Hercules) to install both `Ty
 
 3. Run `parallel_featurewise.sh` to start the evaluation on featurewise configurations and `parallel_pairwise.sh` to start the evaluation on pairwise configurations.
 
-Notes (this repository
+Notes
 -----------
 - openfeatures.txt has been extracted based on #ifdefs in sqlite3.c
 - several lexer errors have been fixed and are documented in partial_configuration.h

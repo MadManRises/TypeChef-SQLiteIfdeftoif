@@ -1,0 +1,27 @@
+14218a14219
+>   th3print(p, " general failure method triggered\n");
+14541a14543
+>   th3print(p, " covImp failure method triggered\n");
+16491a16494
+>     th3print(p, " version number failure method triggered\n");
+16498a16502
+>     th3print(p, " change counter failure method 1 triggered\n");
+16503a16508
+>     th3print(p, " change counter failure method 2 triggered\n");
+16517a16523
+>       th3print(p, " db size failure method triggered\n");
+20788a20795
+>   th3print(th3oom, " OOM failure method triggered\n");
+22411a22419
+>           th3print(p, " table cmd failure method triggered\n");
+22429a22438
+>           th3print(p, " run cmd failure method triggered\n");
+158938,158939c158947,158951
+<   sqlite3_snprintf(sizeof(zTxt), zTxt, "Config-end %s. TH3 memory used: %d\n",
+<                    p->config.zConfigName, p->mxMem);
+---
+>   //sqlite3_snprintf(sizeof(zTxt), zTxt, "Config-end %s. TH3 memory used: %d\n",
+>   //                 p->config.zConfigName, p->mxMem);
+>   // Alex: Avoid memory used because it colludes diff 
+>   sqlite3_snprintf(sizeof(zTxt), zTxt, "Config-end %s. TH3 memory used: <hidden>\n",
+>                    p->config.zConfigName);

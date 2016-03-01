@@ -23,8 +23,9 @@ outTime="$outBase.time"
 # this causes the limitations to be used in parsing _and_ typechecking/fullFM (--featureModelFExpr influences only parsing/smallFM)
 cp $ABSPATH/ifdeftoif_helpers/custom_limitations.txt $ABSPATH/$BNAME.pc
 
-../Hercules/ifdeftoif.sh \
-        --bdd --serializeAST --interface --debugInterface\
+cd ../Hercules
+./ifdeftoif.sh \
+        --bdd --interface --debugInterface\
         -I /usr/local/include \
         -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
         -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
@@ -36,14 +37,16 @@ cp $ABSPATH/ifdeftoif_helpers/custom_limitations.txt $ABSPATH/$BNAME.pc
         --typeSystemFeatureModelDimacs $ABSPATH/sqlite.dimacs \
         --include $ABSPATH/partial_configuration.h \
         --parserstatistics \
-        --writePI --ifdeftoifstatistics \
+        --writePI --ifdeftoifstatistics --simpleSwitch \
         -U WIN32 -U _WIN32 \
+        -U __CYGWIN__ -U __MINGW32__ \
         --simpleSwitch \
-	$FNAME \
+	$ABSPATH/$FNAME \
 	#-U NDEBUG \
 	
 	#option --featureModelDimacs must be before option --featureModelFExpr
 	#undefined WIN32 and _WIN32 because i cannot compile/test them here anyway
+cd $ABSPATH
 
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 echo "$(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"

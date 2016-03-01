@@ -42,7 +42,7 @@ if [ $1 -lt $TOTAL ]; then
     TH3CFG=$(find $localDir/TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
     TH3CFGBASE=$(basename $TH3CFG)
 
-    echo "Generating ifdeftoif test file for testdir #$TESTDIRNO $TESTDIRBASE and th3 config #$TH3CFGNO $TH3CFGBASE"
+    echo "Generating performance test file for testdir #$TESTDIRNO $TESTDIRBASE and th3 config #$TH3CFGNO $TH3CFGBASE"
     cd $localDir/TH3
     # Ignore ctime03.test since it features a very large struct loaded with 100 different #ifdefs & #elses
     # Ignore date2.test since it returns the systems local time; this makes string differences in test results impossible
@@ -87,5 +87,5 @@ if [ $1 -lt $TOTAL ]; then
     sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_modified_performance.c
     mv sqlite3_modified_performance.c ../sqlite3_performance_$1.c
     cd ..
-    #rm -rf tmp_$1
+    rm -rf tmp_$1
 fi

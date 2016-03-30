@@ -51,7 +51,7 @@ if [ $1 -lt $TOTAL ]; then
     cp $IFCONFIG id2i_optionstruct.h
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
-    if ! cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
+    if ! cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c &> /dev/null ; then
         ./../TypeChef-SQLiteIfdeftoif/parallel_th3_test_performance.sh $1
     fi
     if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
@@ -75,6 +75,7 @@ if [ $1 -lt $TOTAL ]; then
                 echo -e "\n\ncan not compile original gcc file"
             else
                 # Run normal binary
+                echo -e "-= Original Binary =-\n"
                 ./a.out
                 # Clear temporary variant files
                 rm -rf *.out
@@ -87,6 +88,7 @@ if [ $1 -lt $TOTAL ]; then
                     echo "can not compile performance file"
                 else
                     # Run ifdeftoif binary
+                    echo -e "\n\n-= Hercules Performance =-\n"
                     ./a.out
                 fi
         fi

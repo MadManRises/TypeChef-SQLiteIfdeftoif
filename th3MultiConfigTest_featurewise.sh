@@ -25,7 +25,7 @@ do
 				th3_generated_test_ifdeftoif.c
 			#better never touch this sed again
 			
-			for f in ./optionstructs_ifdeftoif/feature-wise/id2i_optionstruct*.h;
+			for f in ./optionstructs_ifdeftoif/featurewise/generated/id2i_optionstruct*.h;
 			do
 				#sed filters everything but the number of the configuration
 				configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
@@ -33,7 +33,7 @@ do
 				
 				# Test normal sqlite
 				originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-					-include "./optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
+					-include "./optionstructs_ifdeftoif/featurewise/generated/id2i_include_$configID.h" \
 					sqlite3_original.c th3_generated_test.c 2>&1)
 				# If gcc returns errors skip the testing
 				if [ $? != 0 ]

@@ -17,7 +17,7 @@ do
 		count=`ls -1 $dir/*.test 2>/dev/null | wc -l`
 		if [ $count != 0 -a $dir != "stress/" ]
 		then 			
-			for f in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_optionstruct*.h;
+			for f in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/id2i_optionstruct*.h;
 			do
 				#sed filters everything but the number of the configuration
                 configID=$(basename $f | sed 's/id2i_optionstruct_//' | sed 's/.h//')
@@ -46,7 +46,7 @@ do
 				
 				# Test normal sqlite
 				originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-					-include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
+					-include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/id2i_include_$configID.h" \
 					../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
 				# If gcc returns errors skip the testing
 				if [ $? != 0 ]

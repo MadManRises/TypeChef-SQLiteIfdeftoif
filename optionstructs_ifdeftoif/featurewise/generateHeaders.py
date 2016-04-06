@@ -31,7 +31,7 @@ for col in columns:
         if prod != "":
             final_list.append(prod)
             current_index = i-1
-            file = open("feature-wise/id2i_include_" + str("%03d" % current_index) + ".h", "w")
+            file = open("generated/id2i_include_" + str("%03d" % current_index) + ".h", "w")
             file.write(prod)
             file.close
             exported_files += 1

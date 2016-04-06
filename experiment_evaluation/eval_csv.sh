@@ -10,7 +10,7 @@ PairwiseDirectories=$(find $sqliteResultDir -type d -name "pr_*" | wc -l)
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg"  ! -name "cG.cfg" | wc -l)
-IFCONFIGSFT=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | wc -l)
+IFCONFIGSFT=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
 IFCONFIGSPR=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
 
 Header=JobId,IfdefJobId,SimExitCode,VarExitCode,DiffErrors,ErrOnlyInSim,ErrOnlyInVar,OkInBoth,SameErrors,TestOnlyInSim,TestOnlyInVar,VarTime,SimTime,TestDir,TestCfg,ProgramCfg
@@ -23,7 +23,7 @@ if [ $FeaturewiseDirectories -gt 0 ]; then
         JobId=$(basename $dir | sed 's/ft_//')
         TESTDIRNO=$(( ($JobId / ($CFGFILES * $IFCONFIGSFT)) + 1 )); TESTDIR=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1); TESTDIRBASE=$(basename $TESTDIR)
         TH3CFGNO=$(( (($JobId / $IFCONFIGSFT) % $CFGFILES)  + 1 )); TH3CFG=$(find ../TH3/cfg/ -name "*.cfg"  ! -name "cG.cfg" | sort | head -n $TH3CFGNO | tail -n 1); TH3CFGBASE=$(basename $TH3CFG)
-        IFCONFIGNO=$(( ($JobId % $IFCONFIGSFT) + 1 )); IFCONFIG=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | sort | head -n $IFCONFIGNO | tail -n 1); IFCONFIGBASE=$(basename $IFCONFIG)
+        IFCONFIGNO=$(( ($JobId % $IFCONFIGSFT) + 1 )); IFCONFIG=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/ -name "id2i_optionstruct_*.h" | sort | head -n $IFCONFIGNO | tail -n 1); IFCONFIGBASE=$(basename $IFCONFIG)
         TH3IFDEFNO=$(( $JobId / $IFCONFIGSFT ))
 
         SimExitCode=666; if [ -a $dir/ExitCodes.txt ]; then SimExitCode=$(sed -nr 's/Sim: ([0-9]+)/\1/p' $dir/ExitCodes.txt); fi

@@ -2,9 +2,14 @@
 
 # Alter the given .h file to match the format of a .config file
 mkdir -p generated/tmp
-for f in ./generated/Prod*.h;
+for f in ./generated/id2i_include*.h;
 do
     sed 's/#define \([A-Z_0-9]*\)$/\1=y/g' $f > generated/tmp/$(basename $f .h).config
+done
+
+for f in ./generated/id2i_include*.h;
+do
+    comm -3 ../alwayson.txt <(sed 's/#define \([A-Z_0-9]*\)$/\1/g' $f) > generated/$(basename $f .h).info
 done
 
 cd ../../
@@ -13,15 +18,15 @@ cd ../../
 mv ../ifdeftoif/featureSet.txt ../ifdeftoif/featureSetTMP.txt
 cp featureSet.txt ../ifdeftoif
 
-for c in ./optionstructs_ifdeftoif/pairwise/generated/tmp/Prod*.config;
+for c in ./optionstructs_ifdeftoif/featurewise/generated/tmp/id2i_include*.config;
 do
      # Start Hercules; only struct generation with the .config files
     ./../Hercules/ifdeftoif.sh --featureConfig $c
-    configID=$(basename $c | sed 's/Prod//' | sed 's/.config//')
-    mv ../ifdeftoif/id2i_optionstruct.h optionstructs_ifdeftoif/pairwise/generated/id2i_optionstruct_$configID.h
+    configID=$(basename $c | sed 's/id2i_include_//' | sed 's/.config//')
+    mv ../ifdeftoif/id2i_optionstruct.h optionstructs_ifdeftoif/featurewise/generated/id2i_optionstruct_$configID.h
     rm $c
 done
-rm -rf ../ifdeftoif/id2i_optionstruct.h optionstructs_ifdeftoif/pairwise/generated/tmp
+rm -rf ../ifdeftoif/id2i_optionstruct.h optionstructs_ifdeftoif/featurewise/generated/tmp
 
 # Move feature list back
 mv ../ifdeftoif/featureSetTMP.txt ../ifdeftoif/featureSet.txt

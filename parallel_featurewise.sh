@@ -9,7 +9,7 @@ fi
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
-IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | wc -l)
+IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
 TOTAL=$(( $TESTDIRS * $CFGFILES * $IFCONFIGS))
 
 TESTDIRNO=$(( ($1 / ($CFGFILES * $IFCONFIGS)) + 1 ))
@@ -28,7 +28,7 @@ if [ $1 -lt $TOTAL ]; then
     TESTDIRBASE=$(basename $TESTDIR)
 
     # find $2'th optionstruct
-    IFCONFIG=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | sort | head -n $IFCONFIGNO | tail -n 1)
+    IFCONFIG=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/ -name "id2i_optionstruct_*.h" | sort | head -n $IFCONFIGNO | tail -n 1)
     IFCONFIGBASE=$(basename $IFCONFIG)
 
     # find $3'th .cfg
@@ -61,7 +61,7 @@ if [ $1 -lt $TOTAL ]; then
             -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
             -I /usr/include/x86_64-linux-gnu \
             -I /usr/include \
-            -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_include_$configID.h" \
+            -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/id2i_include_$configID.h" \
             -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
             -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
             ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)

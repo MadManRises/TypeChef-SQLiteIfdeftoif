@@ -1,5 +1,5 @@
-rm -r feature-wise
-mkdir feature-wise
+rm -r generated
+mkdir generated
 python generateHeaders.py
 ./cppHeadersToId2iConfigs.sh
 #replace SQLITE_OS_UNIX with SQLITE_OS_UNIX 1

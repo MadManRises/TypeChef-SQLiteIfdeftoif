@@ -9,7 +9,7 @@ fi
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
-#IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/ -name "id2i_optionstruct_*.h" | wc -l)
+#IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
 TOTAL=$(( $TESTDIRS * $CFGFILES ))
 
 TESTDIRNO=$(( ($1 / $CFGFILES) + 1 ))
@@ -45,7 +45,7 @@ if [ $1 -lt $TOTAL ]; then
         ./../TypeChef-SQLiteIfdeftoif/parallel_th3_test_performance.sh $1
     fi
 
-    for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/feature-wise/id2i_optionstruct_*.h ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/id2i_optionstruct_*.h; do
+    for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/id2i_optionstruct_*.h ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/id2i_optionstruct_*.h; do
         # find $2'th optionstruct
         IFCONFIG=$config
         IFCONFIGBASE=$(basename $IFCONFIG)

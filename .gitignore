@@ -16,6 +16,8 @@ th3_featurewise.txt
 th3_pairwise.txt
 *.db
 *_performance_*.c
+*_performance.c
+*_ifdeftoif.c
 sqlite3_fixed.tunit
 sqlite3_fixed.pc
 sqlite3_fixed.pi

@@ -1,3 +1,4 @@
+#define HAVE_FDATASYNC
 #define HAVE_MALLOC_H
 #define HAVE_MALLOC_USABLE_SIZE
 #define OS_VXWORKS
@@ -10,4 +11,3 @@
 #define SQLITE_OS_WIN
 #define SQLITE_OS_WINNT
 #define SQLITE_SYSTEM_MALLOC
-#define HAVE_FDATASYNC

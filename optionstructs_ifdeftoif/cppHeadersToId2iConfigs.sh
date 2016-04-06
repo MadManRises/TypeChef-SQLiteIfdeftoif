@@ -7,6 +7,11 @@ do
     sed 's/#define \([A-Z_0-9]*\)$/\1=y/g' $f > feature-wise/tmp/$(basename $f .h).config
 done
 
+for f in ./feature-wise/id2i_include*.h;
+do
+    comm -3 alwayson.txt <(sed 's/#define \([A-Z_0-9]*\)$/\1/g' $f) > feature-wise/$(basename $f .h).info
+done
+
 cd ../
 
 # Move list of all SQLite and TH3 test features into ifdeftoif folder

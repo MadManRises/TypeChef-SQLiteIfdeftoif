@@ -7,10 +7,10 @@ do
     sed 's/#define \([A-Z_0-9]*\)$/\1=y/g' $f > generated/tmp/$(basename $f .h).config
 done
 
-for f in ./generated/id2i_include*.h;
-do
-    comm -3 ../alwayson.txt <(sed 's/#define \([A-Z_0-9]*\)$/\1/g' $f) > generated/$(basename $f .h).info
-done
+#for f in ./generated/id2i_include*.h;
+#do
+#    comm -3 ../alwayson.txt <(sed 's/#define \([A-Z_0-9]*\)$/\1/g' $f) > generated/$(basename $f .h).info
+#done
 
 cd ../../
 

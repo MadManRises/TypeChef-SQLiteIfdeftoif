@@ -6,6 +6,7 @@ from collections import defaultdict
 columns = defaultdict(list)
 final_list = []
 define = "#define "
+undefine = "#undef "
 
 with open("featurewise.ca2.csv") as f:
     reader = csv.reader(f,delimiter=';')
@@ -25,6 +26,8 @@ for col in columns:
         for val in columns[i]:
             if val == 'X':
                 prod = prod + define + columns[0][j] + "\n"
+            else:
+                prod = prod + undefine + columns[0][j] + "\n"
             j += 1
         j = 0
         # Check if we actually turned on at least one option in this column

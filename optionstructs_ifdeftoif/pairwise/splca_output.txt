@@ -1,6 +1,6 @@
 SPL Covering Array Tool v0.3 (SPLC 2012) (ICPL edition)
 http://heim.ifi.uio.no/martifag/splc2012/
-Args: {limit=100%, fm=../../sqlite_extended.dimacs, hideUnderscoreVariables=, moreConstraints=moreConstraints.dimacs, t=t_wise, s=2, a=ICPL, o=generatedConfigs.ca2.csv, focusVariables=focusVariables.txt}
+Args: {a=ICPL, s=2, focusVariables=focusVariables.txt, t=t_wise, fm=../../sqlite_extended.dimacs, limit=100%, moreConstraints=moreConstraints.dimacs, o=generatedConfigs.ca2.csv, hideUnderscoreVariables=}
 Loading dimacs: ../../sqlite_extended.dimacs
 CNF: Given p and c: 131 and 44
 loading additional constraints: moreConstraints.dimacs
@@ -28,28 +28,28 @@ Round complete
 Additionally covered 418
 Uncovered: 548, progress: 72% with solutions: 2
 Round complete
-Additionally covered 206
-Uncovered: 342, progress: 82% with solutions: 3
+Additionally covered 180
+Uncovered: 368, progress: 81% with solutions: 3
 Round complete
-Additionally covered 141
-Uncovered: 201, progress: 89% with solutions: 4
+Additionally covered 148
+Uncovered: 220, progress: 88% with solutions: 4
 Round complete
-Additionally covered 69
+Additionally covered 71
 Removing invalid
 Threads for this task: 8
 Invalid: 2
-Uncovered: 130, progress: 93% with solutions: 5
+Uncovered: 147, progress: 92% with solutions: 5
 Round complete
-Additionally covered 55
-Uncovered: 75, progress: 96% with solutions: 6
+Additionally covered 67
+Uncovered: 80, progress: 95% with solutions: 6
 Round complete
-Additionally covered 31
-Uncovered: 44, progress: 97% with solutions: 7
+Additionally covered 30
+Uncovered: 50, progress: 97% with solutions: 7
 Round complete
-Additionally covered 23
-Uncovered: 21, progress: 98% with solutions: 8
+Additionally covered 27
+Uncovered: 23, progress: 98% with solutions: 8
 Round complete
-Additionally covered 8
+Additionally covered 10
 Uncovered: 13, progress: 99% with solutions: 9
 Round complete
 Additionally covered 9
@@ -58,5 +58,5 @@ Round complete
 Additionally covered 4
 Uncovered: 0, progress: 100% with solutions: 11
 2-wise done, solutions: 11, invalid: 522
-Done. Size: 11, time: 166 milliseconds
+Done. Size: 11, time: 121 milliseconds
 Wrote result to generatedConfigs.ca2.csv

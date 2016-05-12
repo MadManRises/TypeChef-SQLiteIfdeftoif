@@ -28,9 +28,10 @@ outTime="$outBase.time"
         -I /usr/include/x86_64-linux-gnu \
         -I /usr/include \
         --platfromHeader $ABSPATH/platform.h \
+        --dimacsFeaturePrefix "SQLITE_" \
         --openFeat $ABSPATH/openfeatures.txt \
+        --smallFeatureModelDimacs $ABSPATH/sqlite.dimacs \
         --featureModelFExpr $ABSPATH/fm.txt \
-        --typeSystemFeatureModelDimacs $ABSPATH/sqlite.dimacs \
         --featureModelFExpr ifdeftoif_helpers/custom_limitations.txt \
         --include $ABSPATH/partial_configuration.h \
         --parserstatistics \

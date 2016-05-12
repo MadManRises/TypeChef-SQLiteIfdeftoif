@@ -39,6 +39,12 @@ if [ $1 -lt $TOTAL ]; then
     TESTFILES=$(find $TESTDIR -name "*.test" ! -name "ctime03.test" ! -name "date2.test" | sort)
     ./mkth3.tcl $TESTFILES "$TH3CFG" > ../tmppfpredict_$1/th3_generated_test.c
     cd ../tmppfpredict_$1
+
+    #insert performance function at the start and end of the main function
+    sed -i '1s/^/#include "\.\.\/Hercules\/performance\/noincludes.c"\n#include "\.\.\/Hercules\/performance\/perf_measuring\.c"\n/' th3_generated_test.c
+    sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\n  id2iperf_time_start()\;/' th3_generated_test.c
+    sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
+
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
     if ! cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c &> /dev/null ; then
@@ -59,45 +65,19 @@ if [ $1 -lt $TOTAL ]; then
         if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
             echo "performance testing: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 
-            # Compile normal sqlite
-            originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-                -I /usr/local/include \
-                -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
-                -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
-                -I /usr/include/x86_64-linux-gnu \
-                -I /usr/include \
-                -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h" \
-                -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
-                -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
-                ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
-
-            if [ $? != 0 ]
-                then
-                    echo -e $originalGCC
-                    echo -e "\n\ncan not compile original gcc file"
-                else
-                    # Run normal binary
-                    echo -e "-= Original Binary =-\n"
-                    ./a.out > /dev/null 2>&1
-                    # Clear temporary variant files
-                    rm -rf *.out
-                    rm -rf *.db
-                    rm -rf *.lock
-
-                    performanceGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c 2>&1)
-                    # gcc returns errors
-                    if [ $? != 0 ]; then
-                        echo "can not compile performance file"
-                    else
-                        # Run ifdeftoif binary
-                        echo -e "\n\n-= Hercules Performance =-\n"
-                        ./a.out > tmp_res_$configID.txt 2>&1
-                    fi
+            performanceGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c 2>&1)
+            # gcc returns errors
+            if [ $? != 0 ]; then
+                echo "can not compile performance file"
+            else
+                # Run ifdeftoif binary
+                #echo -e "\n\n-= Hercules Performance =-\n"
+                ./a.out > tmp_res_$configID.txt 2>&1
+                # Clear temporary simulator files
+                rm -rf *.db
+                rm -rf *.out
+                rm -rf *.lock
             fi
-            # Clear temporary simulator files
-            rm -rf *.db
-            rm -rf *.out
-            rm -rf *.lock
         fi
     done
 
@@ -114,11 +94,53 @@ if [ $1 -lt $TOTAL ]; then
             cat $configResult >> aggregated_$i.txt
         done
     done
-    for configResult in ./aggregated_*.txt; do
+    for configResult in `ls -v ./aggregated_*.txt`; do
         #sed filters everything but the number of the configuration
         configID=$(basename $configResult | sed 's/tmp_res_//' | sed 's/.txt//' | printf "%03d")
-        java -jar ../Hercules/performance/PerfTimes.jar $configResult ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/id2i_include_$configID.h
+        java -jar ../Hercules/performance/PerfTimes.jar $configResult ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h
     done
+
+    originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+    -I /usr/local/include \
+    -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
+    -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
+    -I /usr/include/x86_64-linux-gnu \
+    -I /usr/include \
+    -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h" \
+    -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
+    -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
+    ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
+
+    if [ $? != 0 ]
+    then
+        echo -e $originalGCC
+        echo -e "\n\ncan not compile original gcc file"
+    else
+        # Run normal binary
+        echo -e "-= Original Binary =-"
+        result=$(./a.out 2>&1 | grep "Total time:")
+        echo -e $result
+        # Clear temporary variant files
+        rm -rf *.out
+        rm -rf *.db
+        rm -rf *.lock
+    fi
+
+    cp ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h id2i_optionstruct.h
+    performanceGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c 2>&1)
+    # gcc returns errors
+    if [ $? != 0 ]; then
+        echo "can not compile performance file"
+    else
+        # Run ifdeftoif binary
+        echo -e "-= Hercules Performance =-"
+        result=$(./a.out 2>&1 | grep "Total time:")
+        echo -e $result
+        # Clear temporary simulator files
+        rm -rf *.db
+        rm -rf *.out
+        rm -rf *.lock
+    fi
 
     cd ..
     #rm -rf tmppfpredict_$1

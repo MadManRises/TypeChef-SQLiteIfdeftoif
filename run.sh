@@ -23,7 +23,7 @@ outTime="$outBase.time"
 	--platfromHeader $ABSPATH/platform.h \
 	--openFeat $ABSPATH/openfeatures.txt \
 	--featureModelFExpr $ABSPATH/fm.txt \
-	--typeSystemFeatureModelDimacs $ABSPATH/sqlite.dimacs \
+	--smallFeatureModelDimacs $ABSPATH/sqlite.dimacs \
 	--include $ABSPATH/partial_configuration.h \
 	--parserstatistics \
 	--writePI \

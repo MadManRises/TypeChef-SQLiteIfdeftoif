@@ -75,7 +75,7 @@ if [ $1 -lt $TOTAL ]; then
         --platfromHeader $sqliteDir/platform.h \
         --openFeat $sqliteDir/openfeatures.txt \
         --featureModelFExpr $sqliteDir/fm.txt \
-        --typeSystemFeatureModelDimacs $sqliteDir/sqlite.dimacs \
+        --smallFeatureModelDimacs $sqliteDir/sqlite.dimacs \
         --include $sqliteDir/partial_configuration.h \
         --ifdeftoif --simpleSwitch \
         -U WIN32 -U _WIN32 \

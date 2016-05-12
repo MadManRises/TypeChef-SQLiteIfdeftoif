@@ -38,7 +38,14 @@ if [ $1 -lt $TOTAL ]; then
     # Ignore date2.test since it returns the systems local time; this makes string differences in test results impossible
     TESTFILES=$(find $TESTDIR -name "*.test" ! -name "ctime03.test" ! -name "date2.test" | sort)
     ./mkth3.tcl $TESTFILES "$TH3CFG" > ../tmppfeval_$1/th3_generated_test.c
+
     cd ../tmppfeval_$1
+
+    #insert performance function at the start and end of the main function
+    sed -i '1s/^/#include "\.\.\/Hercules\/performance\/noincludes.c"\n#include "\.\.\/Hercules\/performance\/perf_measuring\.c"\n/' th3_generated_test.c
+    sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\n  id2iperf_time_start()\;/' th3_generated_test.c
+    sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
+    
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
     if ! cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c &> /dev/null ; then

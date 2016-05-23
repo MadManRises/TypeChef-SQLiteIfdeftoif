@@ -18,7 +18,7 @@
 # 26 test cfgs; 12 test folders
 # 26*12 = 312 different test scenarios
 
-taskName="hercules-sqlite-th3"
+taskName="hercules-sqlite-ifdeftoif"
 localDir=/local/garbe
 resultDir=~/sqlite
 lastJobNo=233

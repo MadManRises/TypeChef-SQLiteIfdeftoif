@@ -1,10 +1,15 @@
 #!/bin/bash
 
 th3IfdeftoifDir=/home/$USER/th3_generated_performance
+resultDirectory=$th3IfdeftoifDir/results
 resultDir=~/sqlite
 jobExportDir=$resultDir/pf_$1
 if [ $USER == "rhein" ]; then
     th3IfdeftoifDir=/home/garbe/th3_generated_performance
+fi
+
+if [ ! -d $resultDirectory ]; then
+    mkdir -p $resultDirectory
 fi
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
@@ -19,6 +24,9 @@ TH3IFDEFNO=$1
 if [ $1 -lt $TOTAL ]; then
     cd ..
     rm -rf tmppfpredict_$1
+    rm -rf resultDirectory/predict_$1.csv
+    rm -rf resultDirectory/predict_$1.txt
+
     mkdir tmppfpredict_$1
     cd tmppfpredict_$1
 
@@ -83,7 +91,7 @@ if [ $1 -lt $TOTAL ]; then
 
     lastNO=$(( $(find . -name "tmp_res_*.txt" | wc -l) - 1))
     lastID=$(printf "%03d" $lastNO)
-    for configResult in ./tmp_res_*.txt; do
+    for configResult in `ls -v ./tmp_res_*.txt`; do
         #sed filters everything but the number of the configuration
         configID=$(basename $configResult | sed 's/tmp_res_//' | sed 's/.txt//')
         configNO=$(echo $configID | sed 's/^0*//')
@@ -97,7 +105,7 @@ if [ $1 -lt $TOTAL ]; then
     for configResult in `ls -v ./aggregated_*.txt`; do
         #sed filters everything but the number of the configuration
         configID=$(basename $configResult | sed 's/tmp_res_//' | sed 's/.txt//' | printf "%03d")
-        java -jar ../Hercules/performance/PerfTimes.jar $configResult ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h
+        java -jar ../Hercules/performance/PerfTimes.jar $configResult ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h | tee -a results.txt
     done
 
     originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
@@ -118,8 +126,7 @@ if [ $1 -lt $TOTAL ]; then
     else
         # Run normal binary
         echo -e "-= Original Binary =-"
-        result=$(./a.out 2>&1 | grep "Total time:")
-        echo -e $result
+        ./a.out 2>&1 | grep "Total time:" | tee -a $resultDirectory/predict_$1.txt
         # Clear temporary variant files
         rm -rf *.out
         rm -rf *.db
@@ -134,14 +141,18 @@ if [ $1 -lt $TOTAL ]; then
     else
         # Run ifdeftoif binary
         echo -e "-= Hercules Performance =-"
-        result=$(./a.out 2>&1 | grep "Total time:")
-        echo -e $result
+        ./a.out 2>&1 | grep "Total time:" | tee -a $resultDirectory/predict_$1.txt
         # Clear temporary simulator files
         rm -rf *.db
         rm -rf *.out
         rm -rf *.lock
     fi
 
+    # Export data from results.txt into results.csv
+    grep -o -E '^Predicted: [0-9.]+ ms' $resultDirectory/predict_$1.txt  | grep -o '[0-9.]*' | paste -sd, >> $resultDirectory/predict_$1.csv
+    grep -o -E '± [0-9.]+ ms' results.txt  | grep -o '[0-9.]*' | paste -sd, >> results.csv
+    grep -o -E 'Total time: [0-9.]+ ms' $resultDirectory/predict_$1.txt  | grep -o '[0-9.]*' | paste -sd, >> $resultDirectory/predict_$1.csv
+
     cd ..
-    #rm -rf tmppfpredict_$1
+    rm -rf tmppfpredict_$1
 fi

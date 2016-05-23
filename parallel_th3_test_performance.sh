@@ -6,13 +6,13 @@ sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif
 herculesDir=$localDir/Hercules
 
 if [ $USER == "flo" ]; then
-    homeDir=/home/flo # th3_generated_performance here; contains the generated SQLite ifdeftoif files
+    homeDir=/home/flo # th3_generated_ifdeftoif here; contains the generated SQLite ifdeftoif files
     localDir=/home/flo/TypeChef	# TH3 here
     sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif 
     herculesDir=$localDir/Hercules
 fi
 if [ $USER == "rhein" ]; then
-    homeDir=/local/ifdeftoif/ # th3_generated_performance here; contains the generated SQLite ifdeftoif files
+    homeDir=/local/ifdeftoif/ # th3_generated_ifdeftoif here; contains the generated SQLite ifdeftoif files
     localDir=/local/ifdeftoif/	# TH3 here
     sqliteDir=/local/ifdeftoif/TypeChef-SQLiteIfdeftoif
     herculesDir=/local/ifdeftoif/Hercules
@@ -27,12 +27,12 @@ TH3CFGNO=$(( ($1 % $CFGFILES) + 1 ))
 
 if [ $1 -lt $TOTAL ]; then
     cd $homeDir
-    mkdir th3_generated_performance 2>/dev/null
-    cd th3_generated_performance
+    mkdir th3_generated_ifdeftoif 2>/dev/null
+    cd th3_generated_ifdeftoif
     rm -rf tmp_$1
     mkdir tmp_$1
     cd tmp_$1
-    workingDir=$homeDir/th3_generated_performance/tmp_$1
+    workingDir=$homeDir/th3_generated_ifdeftoif/tmp_$1
 
     # find $1'th sub directory containing .test files, excluding stress folder
     TESTDIR=$(find $localDir/TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
@@ -42,7 +42,7 @@ if [ $1 -lt $TOTAL ]; then
     TH3CFG=$(find $localDir/TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
     TH3CFGBASE=$(basename $TH3CFG)
 
-    echo "Generating performance test file for testdir #$TESTDIRNO $TESTDIRBASE and th3 config #$TH3CFGNO $TH3CFGBASE"
+    echo "Generating ifdeftoif test file for testdir #$TESTDIRNO $TESTDIRBASE and th3 config #$TH3CFGNO $TH3CFGBASE"
     cd $localDir/TH3
     # Ignore ctime03.test since it features a very large struct loaded with 100 different #ifdefs & #elses
     # Ignore date2.test since it returns the systems local time; this makes string differences in test results impossible
@@ -66,7 +66,7 @@ if [ $1 -lt $TOTAL ]; then
     # start ifdeftoif
     cd $herculesDir
     ./ifdeftoif.sh  \
-        --bdd --interface --debugInterface\
+        --bdd --performance --debugInterface\
         -I /usr/local/include \
         -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
         -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
@@ -77,15 +77,15 @@ if [ $1 -lt $TOTAL ]; then
         --featureModelFExpr $sqliteDir/fm.txt \
         --smallFeatureModelDimacs $sqliteDir/sqlite.dimacs \
         --include $sqliteDir/partial_configuration.h \
-        --performance --simpleSwitch \
+        --ifdeftoif --simpleSwitch \
         -U WIN32 -U _WIN32 \
         -U __CYGWIN__ -U __MINGW32__ \
         $workingDir/sqlite3_modified.c > $workingDir/../log_$1.txt 2>&1
     cd $workingDir
 
     # Change optionstruct path in the first line of the transformed file
-    sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_modified_performance.c
-    mv sqlite3_modified_performance.c ../sqlite3_performance_$1.c
+    sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_modified_ifdeftoif.c
+    mv sqlite3_modified_ifdeftoif.c ../sqlite3_ifdeftoif_$1.c
     cd ..
     rm -rf tmp_$1
 fi

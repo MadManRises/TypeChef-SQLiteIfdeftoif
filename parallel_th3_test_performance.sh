@@ -84,8 +84,8 @@ if [ $1 -lt $TOTAL ]; then
     cd $workingDir
 
     # Change optionstruct path in the first line of the transformed file
-    sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_modified_ifdeftoif.c
-    mv sqlite3_modified_ifdeftoif.c ../sqlite3_ifdeftoif_$1.c
+    sed -i 's/#include ".*id2i_optionstruct\.h"/#include "id2i_optionstruct.h"/' sqlite3_modified_performance.c
+    mv sqlite3_modified_performance.c ../sqlite3_performance_$1.c
     cd ..
     rm -rf tmp_$1
 fi

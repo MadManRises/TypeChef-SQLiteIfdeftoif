@@ -6,13 +6,13 @@ sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif
 herculesDir=$localDir/Hercules
 
 if [ $USER == "flo" ]; then
-    homeDir=/home/flo # th3_generated_ifdeftoif here; contains the generated SQLite ifdeftoif files
+    homeDir=/home/flo # th3_generated_performance here; contains the generated SQLite ifdeftoif files
     localDir=/home/flo/TypeChef	# TH3 here
     sqliteDir=$localDir/TypeChef-SQLiteIfdeftoif 
     herculesDir=$localDir/Hercules
 fi
 if [ $USER == "rhein" ]; then
-    homeDir=/local/ifdeftoif/ # th3_generated_ifdeftoif here; contains the generated SQLite ifdeftoif files
+    homeDir=/local/ifdeftoif/ # th3_generated_performance here; contains the generated SQLite ifdeftoif files
     localDir=/local/ifdeftoif/	# TH3 here
     sqliteDir=/local/ifdeftoif/TypeChef-SQLiteIfdeftoif
     herculesDir=/local/ifdeftoif/Hercules
@@ -27,12 +27,12 @@ TH3CFGNO=$(( ($1 % $CFGFILES) + 1 ))
 
 if [ $1 -lt $TOTAL ]; then
     cd $homeDir
-    mkdir th3_generated_ifdeftoif 2>/dev/null
-    cd th3_generated_ifdeftoif
+    mkdir th3_generated_performance 2>/dev/null
+    cd th3_generated_performance
     rm -rf tmp_$1
     mkdir tmp_$1
     cd tmp_$1
-    workingDir=$homeDir/th3_generated_ifdeftoif/tmp_$1
+    workingDir=$homeDir/th3_generated_performance/tmp_$1
 
     # find $1'th sub directory containing .test files, excluding stress folder
     TESTDIR=$(find $localDir/TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)

@@ -77,6 +77,8 @@ if [ $1 -lt $TOTAL ]; then
             # gcc returns errors
             if [ $? != 0 ]; then
                 echo "can not compile performance file"
+                echo -e $performanceGCC
+                exit
             else
                 # Run ifdeftoif binary
                 #echo -e "\n\n-= Hercules Performance =-\n"

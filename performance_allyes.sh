@@ -1,10 +1,14 @@
 #!/bin/bash
 
 th3IfdeftoifDir=/home/$USER/th3_generated_performance
-resultDir=~/sqlite
-jobExportDir=$resultDir/pf_$1
+resultDirectory=$th3IfdeftoifDir/../performance_results
+resultDir=$resultDirectory/allyes
 if [ $USER == "rhein" ]; then
     th3IfdeftoifDir=/home/garbe/th3_generated_performance
+fi
+
+if [ ! -d $resultDirectory ]; then
+    mkdir -p $resultDirectory
 fi
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
@@ -18,17 +22,19 @@ TH3IFDEFNO=$1
 
 if [ $1 -lt $TOTAL ]; then
     cd ..
-    rm -rf tmppf_$1
-    mkdir tmppf_$1
-    cd tmppf_$1
+    tmpDir=tmp_ay_$1
+    rm -rf $tmpDir
+    rm -rf $resultDir/perf_ay_$1.txt
+    rm -rf $resultDir/var_ay_$1.txt
+    rm -rf $resultDir/sim_ay_$1.txt
+
+    mkdir $tmpDir
+    mkdir -p $resultDir
+    cd $tmpDir
 
     # find $1'th sub directory containing .test files, excluding stress folder
     TESTDIR=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
     TESTDIRBASE=$(basename $TESTDIR)
-
-    # find $2'th optionstruct
-    IFCONFIG=../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h
-    IFCONFIGBASE=$(basename $IFCONFIG)
 
     # find $3'th .cfg
     TH3CFG=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
@@ -41,68 +47,101 @@ if [ $1 -lt $TOTAL ]; then
     # Ignore ctime03.test since it features a very large struct loaded with 100 different #ifdefs & #elses
     # Ignore date2.test since it returns the systems local time; this makes string differences in test results impossible
     TESTFILES=$(find $TESTDIR -name "*.test" ! -name "ctime03.test" ! -name "date2.test" | sort)
-    ./mkth3.tcl $TESTFILES "$TH3CFG" > ../tmppf_$1/th3_generated_test.c
-    cd ../tmppf_$1
 
-    #sed filters everything but the number of the configuration
-    configID=$(basename $IFCONFIG | sed 's/id2i_optionstruct_//' | sed 's/.h//')
+    ./mkth3.tcl $TESTFILES "$TH3CFG" > ../$tmpDir/th3_generated_test.c
+    cd ../$tmpDir
 
-    # Copy files used for compilation into temporary directory
-    cp $IFCONFIG id2i_optionstruct.h
+    # insert performance function at the start and end of the main function
+    sed -i '1s/^/#include "\.\.\/Hercules\/performance\/noincludes.c"\n#include "\.\.\/Hercules\/performance\/perf_measuring\.c"\n/' th3_generated_test.c
+    sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\n  id2iperf_time_start()\;/' th3_generated_test.c
+    sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
+
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
-    if ! cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c &> /dev/null ; then
-        ./../TypeChef-SQLiteIfdeftoif/parallel_th3_test_performance.sh $1
-    fi
-    if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
-        echo "performance testing: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 
-        #insert performance function at the start and end of the main function
-        sed -i '1s/^/#include "\.\.\/Hercules\/performance\/noincludes.c"\n#include "\.\.\/Hercules\/performance\/perf_measuring\.c"\n/' th3_generated_test.c
-        sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\n  id2iperf_time_start()\;/' th3_generated_test.c
-        sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
-        # Compile normal sqlite
-        originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
-            -I /usr/local/include \
-            -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
-            -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
-            -I /usr/include/x86_64-linux-gnu \
-            -I /usr/include \
-            -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h" \
-            -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
-            -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
-            ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
+    # Test allyes variant
+    echo "performance testing allyes variant: jobid $1 ifdeftoif $TH3IFDEFNO on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
+    originalGCC=$(bash -c 'gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+        -I /usr/local/include \
+        -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
+        -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
+        -I /usr/include/x86_64-linux-gnu \
+        -I /usr/include \
+        -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h" \
+        -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
+        -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
+        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c; exit $?' 2>&1)
+    originalGCCexit=$?
 
-        if [ $? != 0 ]
-            then
-                echo -e $originalGCC
-                echo -e "\n\ncan not compile original gcc file"
-            else
-                # Run normal binary
-                echo -e "-= Original Binary =-\n"
-                #/usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M bash -c ./a.out
-                ./a.out
-                # Clear temporary variant files
-                rm -rf *.out
-                rm -rf *.db
-                rm -rf *.lock
-
-                performanceGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c 2>&1)
-                # gcc returns errors
-                if [ $? != 0 ]; then
-                    echo "can not compile performance file"
-                else
-                    # Run ifdeftoif binary
-                    echo -e "\n\n-= Hercules Performance =-\n"
-                    #/usr/bin/time -f TH3execTime:sys:%S,usr:%U,real:%E,mem:%M bash -c ./a.out
-                    ./a.out
-                fi
-        fi
-        # Clear temporary simulator files
-        rm -rf *.db
+    if [ $originalGCCexit != 0 ]
+    then
+        echo -e "can not compile allyes variant"
+    else
+        # Run normal binary
+        ./a.out > $resultDir/var_ay_$1.txt
+        # Clear temporary variant files
         rm -rf *.out
+        rm -rf *.db
         rm -rf *.lock
     fi
+
+    # Test allyes performance simulation
+    config=../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h
+    cp $config id2i_optionstruct.h
+    if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
+        echo "performance testing allyes performance: jobid $1 ifdeftoif $TH3IFDEFNO on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
+
+        performanceGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c 2>&1)
+        # gcc returns errors
+        if [ $? != 0 ]; then
+            echo "can not compile allyes performance"
+            echo -e $performanceGCC
+            exit
+        else
+            # Run ifdeftoif binary
+            # echo -e "\n\n-= Hercules Performance =-\n"
+            ./a.out > $resultDir/perf_ay_$1.txt 2>&1
+            # delete files where the performance prediction has stack inconsistencies
+            if ! grep -q "Remaining stack size: 0" $resultDir/perf_ay_$1.txt; then
+                # rm -rf $resultDir/perf_ft_$configID.txt
+                echo -e "Stack inconsistencies for config $configID"
+            fi
+            # Clear temporary simulator files
+            rm -rf *.db
+            rm -rf *.out
+            rm -rf *.lock
+        fi
+    fi
+
+    # Test allyes performance simulator
+    config=../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h
+    cp $config id2i_optionstruct.h
+    if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_simulator.c; then
+        echo "performance testing allyes simulator: jobid $1 ifdeftoif $TH3IFDEFNO on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
+        # replace include directive to perf_nomeasuring.c
+        sed -i '0,/perf_measuring.c/ s//perf_nomeasuring.c/' sqlite3_simulator.c
+        performanceGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_simulator.c 2>&1)
+        # gcc returns errors
+        if [ $? != 0 ]; then
+            echo "can not compile allyes simulator"
+            echo -e $performanceGCC
+            exit
+        else
+            # Run ifdeftoif binary
+            # echo -e "\n\n-= Hercules Performance =-\n"
+            ./a.out > $resultDir/perf_sim_$1.txt 2>&1
+            # delete files where the performance prediction has stack inconsistencies
+            if ! grep -q "Remaining stack size: 0" $resultDir/sim_ay_$1.txt; then
+                # rm -rf $resultDir/perf_ft_$configID.txt
+                echo -e "Stack inconsistencies for config $configID"
+            fi
+            # Clear temporary simulator files
+            rm -rf *.db
+            rm -rf *.out
+            rm -rf *.lock
+        fi
+    fi
+
     cd ..
-    #rm -rf tmppf_$1
+    #rm -rf $tmpDir
 fi

@@ -24,8 +24,7 @@ if [ $1 -lt $TOTAL ]; then
     cd ..
     tmpDir=tmp_perf_ft_$1
     rm -rf $tmpDir
-    rm -rf $resultDirectory/predict_$1.csv
-    rm -rf $resultDirectory/predict_$1.txt
+    rm -rf $resultDir/perf_ft_*.txt
 
     mkdir $tmpDir
     mkdir -p $resultDir

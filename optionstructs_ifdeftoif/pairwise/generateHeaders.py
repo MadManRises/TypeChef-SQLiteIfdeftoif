@@ -23,15 +23,17 @@ exported_files = 0
 for col in columns:
     if i > 0:
         prod = ""
+        is_empty = ""
         for val in columns[i]:
             if val == 'X':
                 prod = prod + define + columns[0][j] + "\n"
+                is_empty = is_empty + define + "\n"
             else:
                 prod = prod + undefine + columns[0][j] + "\n"
             j += 1
         j = 0
         # Check if we actually turned on at least one option in this column
-        if prod != "":
+        if is_empty != "":
             final_list.append(prod)
             current_index = i-1
             file = open("generated/Prod" + str("%03d" % current_index) + ".h", "w")

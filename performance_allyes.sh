@@ -85,7 +85,7 @@ if [ $1 -lt $TOTAL ]; then
         rm -rf *.lock
     fi
 
-    # Test allyes performance simulation
+    # Test allyes performance simulation with time measurements
     config=../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h
     cp $config id2i_optionstruct.h
     if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
@@ -113,7 +113,7 @@ if [ $1 -lt $TOTAL ]; then
         fi
     fi
 
-    # Test allyes performance simulator
+    # Test allyes performance simulation without time measurements
     config=../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h
     cp $config id2i_optionstruct.h
     if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_simulator.c; then
@@ -129,7 +129,7 @@ if [ $1 -lt $TOTAL ]; then
         else
             # Run ifdeftoif binary
             # echo -e "\n\n-= Hercules Performance =-\n"
-            ./a.out > $resultDir/perf_sim_$1.txt 2>&1
+            ./a.out > $resultDir/sim_ay_$1.txt 2>&1
             # delete files where the performance prediction has stack inconsistencies
             if ! grep -q "Remaining stack size: 0" $resultDir/sim_ay_$1.txt; then
                 # rm -rf $resultDir/perf_ft_$configID.txt
@@ -143,5 +143,5 @@ if [ $1 -lt $TOTAL ]; then
     fi
 
     cd ..
-    #rm -rf $tmpDir
+    rm -rf $tmpDir
 fi

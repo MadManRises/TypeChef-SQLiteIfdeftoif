@@ -2,7 +2,7 @@
 
 th3IfdeftoifDir=/home/$USER/th3_generated_performance
 resultDirectory=$th3IfdeftoifDir/../performance_results
-resultDir=$resultDirectory/pr_$1
+resultDir=$resultDirectory/$1
 if [ $USER == "rhein" ]; then
     th3IfdeftoifDir=/home/garbe/th3_generated_performance
 fi
@@ -24,8 +24,7 @@ if [ $1 -lt $TOTAL ]; then
     cd ..
     tmpDir=tmp_perf_pr_$1
     rm -rf $tmpDir
-    rm -rf $resultDirectory/predict_$1.csv
-    rm -rf $resultDirectory/predict_$1.txt
+    rm -rf $resultDir/perf_pr_*.txt
 
     mkdir $tmpDir
     mkdir -p $resultDir

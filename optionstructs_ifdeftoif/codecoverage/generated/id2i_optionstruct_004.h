@@ -187,7 +187,7 @@ void id2i_init()  {
   (id2i_sqlite_enable_fts4_unicode61 = 0);
   (id2i_sqlite_enable_icu = 0);
   (id2i_sqlite_enable_iotrace = 0);
-  (id2i_sqlite_enable_locking_style = 1);
+  (id2i_sqlite_enable_locking_style = 0);
   (id2i_sqlite_enable_memory_management = 0);
   (id2i_sqlite_enable_memsys3 = 0);
   (id2i_sqlite_enable_memsys5 = 0);

@@ -209,7 +209,7 @@ void id2i_init()  {
   (id2i_sqlite_omit_analyze = 0);
   (id2i_sqlite_omit_attach = 0);
   (id2i_sqlite_omit_autovacuum = 0);
-  (id2i_sqlite_omit_blob_literal = 1);
+  (id2i_sqlite_omit_blob_literal = 0);
   (id2i_sqlite_omit_builtin_test = 0);
   (id2i_sqlite_omit_cast = 0);
   (id2i_sqlite_omit_compound_select = 0);
@@ -221,7 +221,7 @@ void id2i_init()  {
   (id2i_sqlite_omit_foreign_key = 0);
   (id2i_sqlite_omit_load_extension = 0);
   (id2i_sqlite_omit_or_optimization = 0);
-  (id2i_sqlite_omit_pager_pragmas = 0);
+  (id2i_sqlite_omit_pager_pragmas = 1);
   (id2i_sqlite_omit_pragma = 0);
   (id2i_sqlite_omit_shared_cache = 0);
   (id2i_sqlite_omit_subquery = 0);

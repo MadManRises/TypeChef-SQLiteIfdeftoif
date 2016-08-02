@@ -174,7 +174,7 @@ void id2i_init()  {
   (id2i_sqlite_ascii = 0);
   (id2i_sqlite_check_pages = 0);
   (id2i_sqlite_core = 0);
-  (id2i_sqlite_coverage_test = 0);
+  (id2i_sqlite_coverage_test = 1);
   (id2i_sqlite_debug = 0);
   (id2i_sqlite_default_foreign_keys = 0);
   (id2i_sqlite_default_memstatus = 0);
@@ -198,7 +198,7 @@ void id2i_init()  {
   (id2i_sqlite_enable_update_delete_limit = 0);
   (id2i_sqlite_enable_wheretrace = 0);
   (id2i_sqlite_has_codec = 0);
-  (id2i_sqlite_have_isnan = 1);
+  (id2i_sqlite_have_isnan = 0);
   (id2i_sqlite_homegrown_recursive_mutex = 0);
   (id2i_sqlite_malloc_soft_limit = 0);
   (id2i_sqlite_memdebug = 0);

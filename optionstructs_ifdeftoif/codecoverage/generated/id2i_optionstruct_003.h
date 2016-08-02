@@ -174,13 +174,13 @@ void id2i_init()  {
   (id2i_sqlite_ascii = 0);
   (id2i_sqlite_check_pages = 0);
   (id2i_sqlite_core = 0);
-  (id2i_sqlite_coverage_test = 1);
+  (id2i_sqlite_coverage_test = 0);
   (id2i_sqlite_debug = 0);
   (id2i_sqlite_default_foreign_keys = 0);
   (id2i_sqlite_default_memstatus = 0);
   (id2i_sqlite_ebcdic = 0);
   (id2i_sqlite_enable_cerod = 0);
-  (id2i_sqlite_enable_column_metadata = 1);
+  (id2i_sqlite_enable_column_metadata = 0);
   (id2i_sqlite_enable_expensive_assert = 0);
   (id2i_sqlite_enable_fts3 = 0);
   (id2i_sqlite_enable_fts4 = 0);
@@ -190,7 +190,7 @@ void id2i_init()  {
   (id2i_sqlite_enable_locking_style = 0);
   (id2i_sqlite_enable_memory_management = 0);
   (id2i_sqlite_enable_memsys3 = 0);
-  (id2i_sqlite_enable_memsys5 = 1);
+  (id2i_sqlite_enable_memsys5 = 0);
   (id2i_sqlite_enable_oversize_cell_check = 0);
   (id2i_sqlite_enable_rtree = 0);
   (id2i_sqlite_enable_sqllog = 0);
@@ -257,7 +257,7 @@ void id2i_init()  {
   (id2i_translate_trace = 0);
   (id2i_use_pread = 0);
   (id2i_use_pread64 = 0);
-  (id2i_vdbe_profile = 0);
+  (id2i_vdbe_profile = 1);
   (id2i_win32 = 0);
   (id2i_yyerrorsymbol = 0);
   (id2i_yynoerrorrecovery = 0);

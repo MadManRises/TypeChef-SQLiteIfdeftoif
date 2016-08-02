@@ -2,7 +2,7 @@
 
 th3IfdeftoifDir=/home/$USER/th3_generated_performance
 resultDirectory=$th3IfdeftoifDir/../performance_results
-resultDir=$resultDirectory/allyes
+resultDir=$resultDirectory/$1
 if [ $USER == "rhein" ]; then
     th3IfdeftoifDir=/home/garbe/th3_generated_performance
 fi
@@ -24,9 +24,9 @@ if [ $1 -lt $TOTAL ]; then
     cd ..
     tmpDir=tmp_ay_$1
     rm -rf $tmpDir
-    rm -rf $resultDir/perf_ay_$1.txt
-    rm -rf $resultDir/var_ay_$1.txt
-    rm -rf $resultDir/sim_ay_$1.txt
+    rm -rf $resultDir/perf_ay.txt
+    rm -rf $resultDir/var_ay.txt
+    rm -rf $resultDir/sim_ay.txt
 
     mkdir $tmpDir
     mkdir -p $resultDir
@@ -78,7 +78,7 @@ if [ $1 -lt $TOTAL ]; then
         echo -e "can not compile allyes variant"
     else
         # Run normal binary
-        ./a.out > $resultDir/var_ay_$1.txt
+        ./a.out > $resultDir/var_ay.txt
         # Clear temporary variant files
         rm -rf *.out
         rm -rf *.db
@@ -100,9 +100,9 @@ if [ $1 -lt $TOTAL ]; then
         else
             # Run ifdeftoif binary
             # echo -e "\n\n-= Hercules Performance =-\n"
-            ./a.out > $resultDir/perf_ay_$1.txt 2>&1
+            ./a.out > $resultDir/perf_ay.txt 2>&1
             # delete files where the performance prediction has stack inconsistencies
-            if ! grep -q "Remaining stack size: 0" $resultDir/perf_ay_$1.txt; then
+            if ! grep -q "Remaining stack size: 0" $resultDir/perf_ay.txt; then
                 # rm -rf $resultDir/perf_ft_$configID.txt
                 echo -e "Stack inconsistencies for config $configID"
             fi
@@ -129,9 +129,9 @@ if [ $1 -lt $TOTAL ]; then
         else
             # Run ifdeftoif binary
             # echo -e "\n\n-= Hercules Performance =-\n"
-            ./a.out > $resultDir/sim_ay_$1.txt 2>&1
+            ./a.out > $resultDir/sim_ay.txt 2>&1
             # delete files where the performance prediction has stack inconsistencies
-            if ! grep -q "Remaining stack size: 0" $resultDir/sim_ay_$1.txt; then
+            if ! grep -q "Remaining stack size: 0" $resultDir/sim_ay.txt; then
                 # rm -rf $resultDir/perf_ft_$configID.txt
                 echo -e "Stack inconsistencies for config $configID"
             fi

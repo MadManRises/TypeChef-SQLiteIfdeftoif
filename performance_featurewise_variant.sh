@@ -22,7 +22,7 @@ TH3IFDEFNO=$1
 
 if [ $1 -lt $TOTAL ]; then
     cd ..
-    tmpDir=tmp_perf_ft_$1
+    tmpDir=tmp_var_ft_$1
     rm -rf $tmpDir
     rm -rf $resultDir/var_ft_*.txt
     rm -rf $resultDir/sim_ft_*.txt

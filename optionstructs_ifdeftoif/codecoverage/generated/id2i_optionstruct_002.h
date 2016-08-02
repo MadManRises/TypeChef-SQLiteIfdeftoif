@@ -163,7 +163,7 @@ void id2i_init()  {
   (id2i_have_malloc_usable_size = 0);
   (id2i_have_posix_fallocate = 0);
   (id2i_have_stdint_h = 0);
-  (id2i_have_strerror_r = 1);
+  (id2i_have_strerror_r = 0);
   (id2i_have_usleep = 0);
   (id2i_i386 = 0);
   (id2i_ndebug = 0);
@@ -218,7 +218,7 @@ void id2i_init()  {
   (id2i_sqlite_omit_diskio = 0);
   (id2i_sqlite_omit_explain = 0);
   (id2i_sqlite_omit_floating_point = 0);
-  (id2i_sqlite_omit_foreign_key = 0);
+  (id2i_sqlite_omit_foreign_key = 1);
   (id2i_sqlite_omit_load_extension = 0);
   (id2i_sqlite_omit_or_optimization = 0);
   (id2i_sqlite_omit_pager_pragmas = 0);

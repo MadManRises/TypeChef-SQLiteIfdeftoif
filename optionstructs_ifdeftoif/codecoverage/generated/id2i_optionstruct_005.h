@@ -206,7 +206,7 @@ void id2i_init()  {
   (id2i_sqlite_mutex_noop = 0);
   (id2i_sqlite_mutex_omit = 0);
   (id2i_sqlite_no_sync = 0);
-  (id2i_sqlite_omit_analyze = 1);
+  (id2i_sqlite_omit_analyze = 0);
   (id2i_sqlite_omit_attach = 0);
   (id2i_sqlite_omit_autovacuum = 0);
   (id2i_sqlite_omit_blob_literal = 0);
@@ -256,7 +256,7 @@ void id2i_init()  {
   (id2i_threadsafe = 0);
   (id2i_translate_trace = 0);
   (id2i_use_pread = 0);
-  (id2i_use_pread64 = 0);
+  (id2i_use_pread64 = 1);
   (id2i_vdbe_profile = 0);
   (id2i_win32 = 0);
   (id2i_yyerrorsymbol = 0);

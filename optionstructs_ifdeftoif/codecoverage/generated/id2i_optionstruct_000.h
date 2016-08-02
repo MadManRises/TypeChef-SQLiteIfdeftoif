@@ -227,7 +227,7 @@ void id2i_init()  {
   (id2i_sqlite_omit_subquery = 0);
   (id2i_sqlite_omit_trace = 0);
   (id2i_sqlite_omit_trigger = 0);
-  (id2i_sqlite_omit_vacuum = 1);
+  (id2i_sqlite_omit_vacuum = 0);
   (id2i_sqlite_omit_view = 0);
   (id2i_sqlite_omit_virtualtable = 0);
   (id2i_sqlite_omit_wal = 0);

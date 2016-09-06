@@ -1,0 +1,1 @@
+Whitelist=("./fts/fts3paren0.test" "./fts/fts3paren1.test" "./fts/fts3paren2.test" "./fts/fts3paren3.test" "./fts/fts3paren4.test")

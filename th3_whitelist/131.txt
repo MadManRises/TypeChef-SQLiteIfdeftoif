@@ -1,0 +1,1 @@
+Whitelist=("./dev_partition_1/select0103.test" "./dev_partition_1/select0104.test")

@@ -47,6 +47,11 @@ if [ $1 -lt $TOTAL ]; then
     # Ignore ctime03.test since it features a very large struct loaded with 100 different #ifdefs & #elses
     # Ignore date2.test since it returns the systems local time; this makes string differences in test results impossible
     TESTFILES=$(find $TESTDIR -name "*.test" ! -name "ctime03.test" ! -name "date2.test" | sort)
+    # Use whitelist for tests if it exists
+    if [ -f ../TypeChef-SQLiteIfdeftoif/th3_whitelist/$1.txt ]; then
+        source ../TypeChef-SQLiteIfdeftoif/th3_whitelist/$1.txt
+        TESTFILES=$Whitelist
+    fi
 
     ./mkth3.tcl $TESTFILES "$TH3CFG" > ../$tmpDir/th3_generated_test.c
     cd ../$tmpDir

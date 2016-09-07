@@ -1,7 +1,7 @@
 #!/bin/bash
 
 th3IfdeftoifDir=/home/$USER/th3_generated_performance
-resultDirectory=$th3IfdeftoifDir/../performance_results
+resultDirectory=$th3IfdeftoifDir/../performance_results_pairwise
 resultDir=~/sqlite
 jobExportDir=$resultDir/pf_$1
 if [ $USER == "rhein" ]; then
@@ -96,7 +96,7 @@ if [ $1 -lt $TOTAL ]; then
         rm -rf *.lock
     fi
 
-    for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/id2i_optionstruct_*.h; do
+    for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/id2i_optionstruct_*.h; do
         # find $2'th optionstruct
         IFCONFIG=$config
         IFCONFIGBASE=$(basename $IFCONFIG)
@@ -135,18 +135,15 @@ if [ $1 -lt $TOTAL ]; then
 
     lastNO=$(( $(find . -name "tmp_res_*.txt" | wc -l) - 1))
     lastID=$(printf "%03d" $lastNO)
-    for configResult in `ls -v ./tmp_res_*.txt | head -n -1`; do
-#    for configResult in `ls -v ./tmp_res_*.txt`; do
+    for configResult in `ls -v ./tmp_res_*.txt`; do
         #sed filters everything but the number of the configuration
         configID=$(basename $configResult | sed 's/tmp_res_//' | sed 's/.txt//')
         configNO=$(echo $configID | sed 's/^0*//')
         if [ "$configID" == "000" ]; then
             configNO="0"
         fi
-        for aggregations in `ls -v ./aggregated_*.txt`; do
-            cat $configResult >> aggregated_$aggregations.txt
-        #for i in $(seq $configNO $lastNO); do
-            #cat $configResult >> aggregated_$i.txt
+        for i in $(seq $configNO $lastNO); do
+            cat $configResult >> aggregated_$i.txt
         done
     done
     for configResult in `ls -v ./aggregated_*.txt`; do

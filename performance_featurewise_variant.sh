@@ -50,7 +50,7 @@ if [ $1 -lt $TOTAL ]; then
     # Use whitelist for tests if it exists
     if [ -f ../TypeChef-SQLiteIfdeftoif/th3_whitelist/$1.txt ]; then
         source ../TypeChef-SQLiteIfdeftoif/th3_whitelist/$1.txt
-        TESTFILES=$Whitelist
+        TESTFILES=${Whitelist[@]]}
     fi
     
     ./mkth3.tcl $TESTFILES "$TH3CFG" > ../$tmpDir/th3_generated_test.c

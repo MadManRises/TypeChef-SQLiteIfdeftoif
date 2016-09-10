@@ -50,7 +50,7 @@ if [ $1 -lt $TOTAL ]; then
     # Use whitelist for tests if it exists
     if [ -f ../TypeChef-SQLiteIfdeftoif/th3_whitelist/$1.txt ]; then
         source ../TypeChef-SQLiteIfdeftoif/th3_whitelist/$1.txt
-        TESTFILES=$Whitelist
+        TESTFILES=${Whitelist[@]]}
     fi
     echo "performance prediction: $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 

@@ -40,7 +40,7 @@ for dir in `seq 0 299`; do
         if [ -f $FULLTESTFILEPATH ]; then
             res="$res\"${completePrefix}$var$suffix\""
         else
-         echo "Can't find $FULLTESTFILEPATH"
+         echo "Can't find $FULLTESTFILEPATH in iteration $dir"
         fi
         
     done

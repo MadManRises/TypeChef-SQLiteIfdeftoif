@@ -1,13 +1,13 @@
-whitelistDir=./th3_whitelist
+currentDir=$(pwd)
+whitelistDir=$currentDir/th3_whitelist
 TH3Dir=/home/$USER/TypeChef/TH3
 resultDir=/home/$USER/perf_results_chimaira
 TESTDIRS=$(find $TH3Dir -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find $TH3Dir/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
 
 mkdir -p $whitelistDir
-
 cd $resultDir
-OLDDIR=""
+OLDDIR=$(find $TH3Dir -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | head -n 1 | tail -n 1 | xargs basename)
 for dir in `seq 0 299`; do
     cd $dir
     list=()
@@ -46,7 +46,7 @@ for dir in `seq 0 299`; do
     done
     res="$res)"
     echo $res > $whitelistDir/$dir.txt
-    if [ ! $OLDDIR = "" ] && [ ! $OLDDIR = $TESTDIR ]; then echo "$TESTDIR done"; fi
+    if [ ! $OLDDIR = $TESTDIR ]; then echo "$OLDDIR done"; fi
     cd ..
     OLDDIR=$TESTDIR
 done

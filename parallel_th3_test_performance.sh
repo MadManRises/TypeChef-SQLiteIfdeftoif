@@ -87,6 +87,7 @@ if [ $1 -lt $TOTAL ]; then
         --ifdeftoif --simpleSwitch \
         -U WIN32 -U _WIN32 \
         -U __CYGWIN__ -U __MINGW32__ \
+        -U SQLITE_HAVE_ISNAN \
         $workingDir/sqlite3_modified.c > $workingDir/../log_$1.txt 2>&1
     cd $workingDir
 

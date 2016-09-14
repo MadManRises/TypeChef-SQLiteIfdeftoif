@@ -7,6 +7,12 @@ if [ $USER == "rhein" ]; then
     th3IfdeftoifDir=/home/garbe/th3_generated_performance
 fi
 
+# Use gcc version 4.8 if possible
+GCC="gcc"
+if [ -z $(command -v gcc-4.8) ]; then
+    GCC="gcc-4.8"
+fi
+
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
 #IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
@@ -62,7 +68,7 @@ if [ $1 -lt $TOTAL ]; then
         sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\n  id2iperf_time_start()\;/' th3_generated_test.c
         sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
         # Compile normal sqlite
-        originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+        originalGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
             -I /usr/local/include \
             -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
             -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \

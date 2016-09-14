@@ -7,6 +7,12 @@ if [ $USER == "rhein" ]; then
     th3IfdeftoifDir=/home/garbe/th3_generated_ifdeftoif
 fi
 
+# Use gcc version 4.8 if possible
+GCC="gcc"
+if [ -z $(command -v gcc-4.8) ]; then
+    GCC="gcc-4.8"
+fi
+
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
 IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
@@ -55,7 +61,7 @@ if [ $1 -lt $TOTAL ]; then
         echo "pairwise testing: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 
         # Compile normal sqlite
-        originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+        originalGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
             -I /usr/local/include \
             -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
             -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
@@ -82,7 +88,7 @@ if [ $1 -lt $TOTAL ]; then
             rm -rf *.lock
 
             # Compile ifdeftoif sqlite
-            ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+            ifdeftoifGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
                 sqlite3_ifdeftoif.c 2>&1)
             # If gcc returns errors don't start testing the ifdeftoif variant
             if [ $? != 0 ]

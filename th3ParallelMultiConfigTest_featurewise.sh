@@ -2,6 +2,13 @@
 
 trap "kill 0" SIGINT
 
+
+# Use gcc version 4.8 if possible
+GCC="gcc"
+if [ -z $(command -v gcc-4.8) ]; then
+    GCC="gcc-4.8"
+fi
+
 rm -f featurewise_*.txt
 ./ifdeftoifParallel_fixed.sh
 
@@ -45,7 +52,7 @@ do
 				echo "testing #ifConfig $f on .test files in $dir with th3Config $th3configFile at $(date +"%T")"
 				
 				# Test normal sqlite
-				originalGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+				originalGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
 					-include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/id2i_include_$configID.h" \
 					../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c 2>&1)
 				# If gcc returns errors skip the testing
@@ -58,7 +65,7 @@ do
 					rm -f a.out
 
 					# Test ifdeftoif sqlite
-					ifdeftoifGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+					ifdeftoifGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
 						sqlite3_ifdeftoif.c th3_generated_test_ifdeftoif.c 2>&1)
 					# If gcc returns errors don't start testing the ifdeftoif variant
 					if [ $? != 0 ]

@@ -11,6 +11,12 @@ if [ ! -d $resultDirectory ]; then
     mkdir -p $resultDirectory
 fi
 
+# Use gcc version 4.8 if possible
+GCC="gcc"
+if [ -z $(command -v gcc-4.8) ]; then
+    GCC="gcc-4.8"
+fi
+
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
 #IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
@@ -76,7 +82,7 @@ if [ $1 -lt $TOTAL ]; then
         cp $IFCONFIG id2i_optionstruct.h
 
         echo "performance testing variant: jobid $1; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
-        originalGCC=$(bash -c 'gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
+        originalGCC=$(bash -c '$1 -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
         -I /usr/local/include \
         -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
         -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
@@ -85,7 +91,7 @@ if [ $1 -lt $TOTAL ]; then
         -include $0 \
         -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
         -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
-        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c; exit $?' $config 2>&1)
+        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c; exit $?' $config $GCC 2>&1)
         originalGCCexit=$?
 
         if [ $originalGCCexit != 0 ]
@@ -120,7 +126,7 @@ if [ $1 -lt $TOTAL ]; then
             echo "performance testing simulator: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
             # replace include directive to perf_nomeasuring.c
             sed -i '0,/perf_measuring.c/ s//perf_nomeasuring.c/' sqlite3_simulator.c
-            performanceGCC=$(gcc -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_simulator.c 2>&1)
+            performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_simulator.c 2>&1)
             # gcc returns errors
             if [ $? != 0 ]; then
                 echo "can not compile performance file"

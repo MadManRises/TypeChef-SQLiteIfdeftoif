@@ -4,7 +4,7 @@ trap "kill 0" SIGINT
 
 # Use gcc version 4.8 if possible
 GCC="gcc"
-if [ -z $(command -v gcc-4.8) ]; then
+if [ ! -z "$(command -v gcc-4.8)" ]; then
     GCC="gcc-4.8"
 fi
 

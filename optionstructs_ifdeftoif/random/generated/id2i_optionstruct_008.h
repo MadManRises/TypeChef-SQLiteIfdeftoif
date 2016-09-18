@@ -180,11 +180,11 @@ void id2i_init()  {
   (id2i_sqlite_default_memstatus = 0);
   (id2i_sqlite_ebcdic = 0);
   (id2i_sqlite_enable_cerod = 0);
-  (id2i_sqlite_enable_column_metadata = 1);
-  (id2i_sqlite_enable_expensive_assert = 0);
+  (id2i_sqlite_enable_column_metadata = 0);
+  (id2i_sqlite_enable_expensive_assert = 1);
   (id2i_sqlite_enable_fts3 = 1);
-  (id2i_sqlite_enable_fts4 = 1);
-  (id2i_sqlite_enable_fts4_unicode61 = 1);
+  (id2i_sqlite_enable_fts4 = 0);
+  (id2i_sqlite_enable_fts4_unicode61 = 0);
   (id2i_sqlite_enable_icu = 0);
   (id2i_sqlite_enable_iotrace = 1);
   (id2i_sqlite_enable_locking_style = 1);
@@ -194,7 +194,7 @@ void id2i_init()  {
   (id2i_sqlite_enable_oversize_cell_check = 0);
   (id2i_sqlite_enable_rtree = 0);
   (id2i_sqlite_enable_sqllog = 0);
-  (id2i_sqlite_enable_tree_explain = 0);
+  (id2i_sqlite_enable_tree_explain = 1);
   (id2i_sqlite_enable_update_delete_limit = 0);
   (id2i_sqlite_enable_wheretrace = 0);
   (id2i_sqlite_has_codec = 0);
@@ -208,8 +208,8 @@ void id2i_init()  {
   (id2i_sqlite_no_sync = 1);
   (id2i_sqlite_omit_analyze = 0);
   (id2i_sqlite_omit_attach = 0);
-  (id2i_sqlite_omit_autovacuum = 1);
-  (id2i_sqlite_omit_blob_literal = 0);
+  (id2i_sqlite_omit_autovacuum = 0);
+  (id2i_sqlite_omit_blob_literal = 1);
   (id2i_sqlite_omit_builtin_test = 1);
   (id2i_sqlite_omit_cast = 0);
   (id2i_sqlite_omit_compound_select = 0);
@@ -218,10 +218,10 @@ void id2i_init()  {
   (id2i_sqlite_omit_diskio = 0);
   (id2i_sqlite_omit_explain = 0);
   (id2i_sqlite_omit_floating_point = 0);
-  (id2i_sqlite_omit_foreign_key = 1);
+  (id2i_sqlite_omit_foreign_key = 0);
   (id2i_sqlite_omit_load_extension = 1);
   (id2i_sqlite_omit_or_optimization = 1);
-  (id2i_sqlite_omit_pager_pragmas = 0);
+  (id2i_sqlite_omit_pager_pragmas = 1);
   (id2i_sqlite_omit_pragma = 0);
   (id2i_sqlite_omit_shared_cache = 0);
   (id2i_sqlite_omit_subquery = 0);
@@ -257,7 +257,7 @@ void id2i_init()  {
   (id2i_translate_trace = 0);
   (id2i_use_pread = 0);
   (id2i_use_pread64 = 0);
-  (id2i_vdbe_profile = 0);
+  (id2i_vdbe_profile = 1);
   (id2i_win32 = 0);
   (id2i_yyerrorsymbol = 0);
   (id2i_yynoerrorrecovery = 0);

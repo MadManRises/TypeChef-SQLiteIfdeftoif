@@ -81,7 +81,7 @@ if [ $1 -lt $TOTAL ]; then
         # Copy files used for compilation into temporary directory
         cp $IFCONFIG id2i_optionstruct.h
 
-        echo "performance testing variant: jobid $1; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
+        echo "performance pairwise variant: jobid $1; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
         originalGCC=$(bash -c '$1 -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
         -I /usr/local/include \
         -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
@@ -123,7 +123,7 @@ if [ $1 -lt $TOTAL ]; then
         cp $IFCONFIG id2i_optionstruct.h
 
         if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_simulator.c; then
-            echo "performance testing simulator: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
+            echo "performance pairwise simulator: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
             # replace include directive to perf_nomeasuring.c
             sed -i '0,/perf_measuring.c/ s//perf_nomeasuring.c/' sqlite3_simulator.c
             performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_simulator.c 2>&1)

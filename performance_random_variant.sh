@@ -19,7 +19,7 @@ fi
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
 CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
-#IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
+#IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/random/generated/ -name "id2i_optionstruct_*.h" | wc -l)
 TOTAL=$(( $TESTDIRS * $CFGFILES ))
 
 TESTDIRNO=$(( ($1 / $CFGFILES) + 1 ))
@@ -28,10 +28,10 @@ TH3IFDEFNO=$1
 
 if [ $1 -lt $TOTAL ]; then
     cd ..
-    tmpDir=tmp_var_ft_$1
+    tmpDir=tmp_var_rnd_$1
     rm -rf $tmpDir
-    rm -rf $resultDir/var_ft_*.txt
-    rm -rf $resultDir/sim_ft_*.txt
+    rm -rf $resultDir/var_rnd_*.txt
+    rm -rf $resultDir/sim_rnd_*.txt
 
     mkdir $tmpDir
     mkdir -p $resultDir
@@ -58,7 +58,7 @@ if [ $1 -lt $TOTAL ]; then
         source ../TypeChef-SQLiteIfdeftoif/th3_whitelist/$1.txt
         TESTFILES=${Whitelist[@]]}
     fi
-    
+
     ./mkth3.tcl $TESTFILES "$TH3CFG" > ../$tmpDir/th3_generated_test.c
     cd ../$tmpDir
 
@@ -69,19 +69,19 @@ if [ $1 -lt $TOTAL ]; then
 
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
 
-    # test featurewise config variant
-    for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/id2i_include_*.h; do
+    # test random config variant
+    for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/random/generated/id2i_include_*.h; do
         # find $2'th optionstruct
         IFCONFIG=$config
         IFCONFIGBASE=$(basename $IFCONFIG)
 
         #sed filters everything but the number of the configuration
-        configID=$(basename $IFCONFIG | sed 's/id2i_include_//' | sed 's/.h//')
+        configID=$(basename $IFCONFIG | sed 's/Prod//' | sed 's/.h//')
 
         # Copy files used for compilation into temporary directory
         cp $IFCONFIG id2i_optionstruct.h
 
-        echo "performance featurewise variant: jobid $1; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
+        echo "performance random variant: jobid $1; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
         originalGCC=$(bash -c '$1 -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 \
         -I /usr/local/include \
         -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed \
@@ -101,7 +101,7 @@ if [ $1 -lt $TOTAL ]; then
             exit
         else
             # Run normal binary
-            ./a.out > $resultDir/var_ft_$configID.txt 2>&1
+            ./a.out > $resultDir/var_rnd_$configID.txt 2>&1
 
             # Clear temporary test files
             rm -rf *.out
@@ -111,7 +111,7 @@ if [ $1 -lt $TOTAL ]; then
     done
 
     # test allyes performance simulation without time measurements
-    for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/id2i_optionstruct_*.h; do
+    for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/random/generated/id2i_optionstruct_*.h; do
         # find $2'th optionstruct
         IFCONFIG=$config
         IFCONFIGBASE=$(basename $IFCONFIG)
@@ -123,7 +123,7 @@ if [ $1 -lt $TOTAL ]; then
         cp $IFCONFIG id2i_optionstruct.h
 
         if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_simulator.c; then
-            echo "performance featurewise simulator: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
+            echo "performance random simulator: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
             # replace include directive to perf_nomeasuring.c
             sed -i '0,/perf_measuring.c/ s//perf_nomeasuring.c/' sqlite3_simulator.c
             performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_simulator.c 2>&1)
@@ -135,10 +135,10 @@ if [ $1 -lt $TOTAL ]; then
             else
                 # Run ifdeftoif binary
                 # echo -e "\n\n-= Hercules Performance =-\n"
-                ./a.out > $resultDir/sim_ft_$configID.txt 2>&1
+                ./a.out > $resultDir/sim_rnd_$configID.txt 2>&1
                 # delete files where the performance prediction has stack inconsistencies
-                if ! grep -q "Remaining stack size: 0" $resultDir/sim_ft_$configID.txt; then
-                    # rm -rf $resultDir/perf_ft_$configID.txt
+                if ! grep -q "Remaining stack size: 0" $resultDir/sim_rnd_$configID.txt; then
+                    # rm -rf $resultDir/perf_rnd_$configID.txt
                     echo -e "Stack inconsistencies for config $configID"
                 fi
                 # Clear temporary simulator files

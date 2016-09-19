@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH -o /home/garbe/logs/perf-ft-%a.txt
-#SBATCH --job-name=ft-perf-sqlite
+#SBATCH --job-name=sqlite-perf-featurewise
 #SBATCH -p chimaira
 #SBATCH -A spl
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=10000
-#SBATCH --array=0-299
+#SBATCH --array=100,151,152,162,167-171
 
 #SBATCH --time=24:00:00 # 4h max
 

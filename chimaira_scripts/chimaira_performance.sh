@@ -8,7 +8,7 @@
 #SBATCH --mem=13000
 #SBATCH --array=0-299
 
-#SBATCH --time=01:30:00 # 1h30m max
+#SBATCH --time=02:00:00 # 1h30m max
 
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 
@@ -21,7 +21,7 @@
 taskName="hercules-sqlite-th3"
 localDir=/local/garbe
 resultDir=~/sqlite
-lastJobNo=170
+lastJobNo=300
 
 # Call this script as follows:
 # sbatch slurm_featurewise.sh

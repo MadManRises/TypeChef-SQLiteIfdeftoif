@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -o /home/garbe/logs/perf-ft-%a.txt
-#SBATCH --job-name=ft-perf-sqlite
+#SBATCH -o /home/garbe/logs/var-ft-%a.txt
+#SBATCH --job-name=ft-var-sqlite
 #SBATCH -p chimaira
 #SBATCH -A spl
 #SBATCH --get-user-env
@@ -35,7 +35,7 @@ echo =================================================================
 cd $localDir
 
 cd TypeChef-SQLiteIfdeftoif
-./performance_featurewise.sh ${SLURM_ARRAY_TASK_ID}
+./performance_featurewise_variant.sh ${SLURM_ARRAY_TASK_ID}
 
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then

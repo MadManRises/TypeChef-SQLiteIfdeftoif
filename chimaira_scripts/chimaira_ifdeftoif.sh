@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH -o /home/garbe/logs/th3-%a.txt
-#SBATCH --job-name=sqlite-th3
+#SBATCH -o /home/garbe/logs/simgen-%a.txt
+#SBATCH --job-name=generate_sqlite_simulators
 #SBATCH -p chimaira
 #SBATCH -A spl
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=13000
-#SBATCH --array=0-311
+#SBATCH --array=0-299
 
 #SBATCH --time=01:30:00 # 1h30m max
 
@@ -15,13 +15,13 @@
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
 ##SBATCH --exclusive        #remove for easier apps experiment
 
-# 26 test cfgs; 12 test folders
-# 26*12 = 312 different test scenarios
+# 25 test cfgs; 12 test folders
+# 25*12 = 300 different test scenarios
 
-taskName="hercules-sqlite-ifdeftoif"
+taskName="hercules-sqlite-th3"
 localDir=/local/garbe
 resultDir=~/sqlite
-lastJobNo=233
+lastJobNo=300
 
 # Call this script as follows:
 # sbatch slurm_featurewise.sh

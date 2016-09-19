@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -o /home/garbe/logs/perf-ft-%a.txt
-#SBATCH --job-name=ft-perf-sqlite
+#SBATCH -o /home/garbe/logs/var-pr-%a.txt
+#SBATCH --job-name=pr-var-sqlite
 #SBATCH -p chimaira
 #SBATCH -A spl
 #SBATCH --get-user-env
@@ -13,12 +13,12 @@
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
-#SBATCH --exclusive        #remove for easier apps experiment
+SBATCH --exclusive        #remove for easier apps experiment
 
 # 25 sqlite cfgs; 26 test cfgs; 10 test folders
 # 25*26*12 = 7800 different test scenarios
 
-taskName="hercules-sqlite-perf-featurewise"
+taskName="hercules-sqlite-perf-pairwise"
 localDir=/local/garbe
 resultDir=~/sqlite
 lastJobNo=7799
@@ -35,7 +35,7 @@ echo =================================================================
 cd $localDir
 
 cd TypeChef-SQLiteIfdeftoif
-./performance_featurewise.sh ${SLURM_ARRAY_TASK_ID}
+./performance_pairwise_variant.sh ${SLURM_ARRAY_TASK_ID}
 
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then

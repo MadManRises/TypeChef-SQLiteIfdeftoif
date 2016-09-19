@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -o /home/garbe/logs/perf-pr-%a.txt
-#SBATCH --job-name=sqlite-perf-pairwise
+#SBATCH --job-name=pr-perf-sqlite
 #SBATCH -p chimaira
 #SBATCH -A spl
 #SBATCH --get-user-env
@@ -8,12 +8,12 @@
 #SBATCH --mem=10000
 #SBATCH --array=0-299
 
-#SBATCH --time=04:00:00 # 4h max
+#SBATCH --time=24:00:00 # 4h max
 
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
-##SBATCH --exclusive        #remove for easier apps experiment
+SBATCH --exclusive        #remove for easier apps experiment
 
 # 25 sqlite cfgs; 26 test cfgs; 10 test folders
 # 25*26*12 = 7800 different test scenarios

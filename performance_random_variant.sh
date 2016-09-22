@@ -76,7 +76,7 @@ if [ $1 -lt $TOTAL ]; then
         IFCONFIGBASE=$(basename $IFCONFIG)
 
         #sed filters everything but the number of the configuration
-        configID=$(basename $IFCONFIG | sed 's/Prod//' | sed 's/.h//')
+        configID=$(basename $IFCONFIG | sed 's/id2i_include_//' | sed 's/.h//')
 
         # Copy files used for compilation into temporary directory
         cp $IFCONFIG id2i_optionstruct.h

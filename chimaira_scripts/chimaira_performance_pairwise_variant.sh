@@ -6,7 +6,7 @@
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=10000
-#SBATCH --array=0-299
+#SBATCH --array=0-24,75-174,225-249
 
 #SBATCH --time=24:00:00 # 4h max
 
@@ -35,7 +35,7 @@ echo =================================================================
 cd $localDir
 
 cd TypeChef-SQLiteIfdeftoif
-./performance_pairwise_variant.sh ${SLURM_ARRAY_TASK_ID}
+./performance_pairwise_variant.sh ${SLURM_ARRAY_TASK_ID} $1
 
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then

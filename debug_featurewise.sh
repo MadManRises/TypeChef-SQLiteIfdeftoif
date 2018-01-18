@@ -4,7 +4,7 @@ th3IfdeftoifDir=/home/$USER/th3_generated_ifdeftoif
 resultDir=~/sqlite
 jobExportDir=$resultDir/ft_$1
 if [ $USER == "rhein" ]; then
-    th3IfdeftoifDir=/home/garbe/th3_generated_ifdeftoif
+    th3IfdeftoifDir=/home/schuetz/th3_generated_ifdeftoif
 fi
 
 TESTDIRS=$(find ../TH3 -name '*test' ! -path "./TH3/stress/*" -printf '%h\n' | sort -u | wc -l)

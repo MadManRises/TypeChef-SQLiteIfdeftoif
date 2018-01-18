@@ -4,7 +4,7 @@ th3IfdeftoifDir=/home/$USER/th3_generated_performance
 resultDir=~/sqlite
 jobExportDir=$resultDir/pf_$1
 if [ $USER == "rhein" ]; then
-    th3IfdeftoifDir=/home/garbe/th3_generated_performance
+    th3IfdeftoifDir=/home/schuetz/th3_generated_performance
 fi
 
 # Use gcc version 4.8 if possible

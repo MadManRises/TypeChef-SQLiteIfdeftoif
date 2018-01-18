@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -o /home/garbe/logs/pairwise-%a.txt
+#SBATCH -o /home/schuetz/logs/pairwise-%a.txt
 #SBATCH --job-name=sqlite-pairwise
 #SBATCH -p chimaira
-#SBATCH -A spl
+#SBATCH -A schuetz
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --array=0-3299
@@ -18,7 +18,7 @@
 # 11*25*12 = 3000 different test scenarios
 
 taskName="hercules-sqlite-pairwise"
-localDir=/local/garbe
+localDir=/local/schuetz
 resultDir=~/sqlite
 lastJobNo=3299
 
@@ -37,5 +37,5 @@ cd TypeChef-SQLiteIfdeftoif
 ./parallel_pairwise.sh ${SLURM_ARRAY_TASK_ID} > $resultDir/chp_${SLURM_ARRAY_TASK_ID}.txt 2>&1
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then
-    echo "Stop slacking off." | mail -s "Chimaira pairwise job finished." fgarbe@fim.uni-passau.de
+    echo "Stop slacking off." | mail -s "Chimaira pairwise job finished." schuetzo-martin@web.de
 fi

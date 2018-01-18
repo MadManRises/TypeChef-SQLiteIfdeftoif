@@ -14,7 +14,7 @@ rm -rf ${collectionDir}/TestOnlyInVar.txt
 rm -rf ${collectionDir}/time_sim.txt
 rm -rf ${collectionDir}/time_var.txt
 
-for t in /home/garbe/sqlite/* ; do
+for t in /home/schuetz/sqlite/* ; do
 	if [ -d $t ]
 	then
 		cat ${t}/DiffErrors.txt    >> ${collectionDir}/DiffErrors.txt

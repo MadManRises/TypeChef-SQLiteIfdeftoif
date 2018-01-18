@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -o /home/garbe/logs/perf-%a.txt
+#SBATCH -o /home/schuetz/logs/perf-%a.txt
 #SBATCH --job-name=sqlite-th3
 #SBATCH -p chimaira
-#SBATCH -A spl
+#SBATCH -A schuetz
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=13000
@@ -19,7 +19,7 @@
 # 25*12 = 300 different test scenarios
 
 taskName="hercules-sqlite-th3"
-localDir=/local/garbe
+localDir=/local/schuetz
 resultDir=~/sqlite
 lastJobNo=300
 
@@ -40,5 +40,5 @@ export PATH=/usr/lib/jvm/jdk-8-oracle-x64/bin/:$PATH
 
  #send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then
-    echo "Stop slacking off." | mail -s "Chimaira TH3 job finished." fgarbe@fim.uni-passau.de
+    echo "Stop slacking off." | mail -s "Chimaira TH3 job finished." schuetzo-martin@web.de
 fi

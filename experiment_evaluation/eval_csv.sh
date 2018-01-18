@@ -1,4 +1,4 @@
-sqliteResultDir=/home/garbe/sqlite
+sqliteResultDir=/home/schuetz/sqlite
 if [ $USER == "flo" ]; then
     sqliteResultDir=/home/flo/sqlite
 fi

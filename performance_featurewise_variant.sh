@@ -4,9 +4,9 @@ th3IfdeftoifDir=/home/$USER/th3_generated_performance
 resultDirectory=$th3IfdeftoifDir/../performance_results
 resultDir=$resultDirectory/$1
 if [ $USER == "rhein" ]; then
-    th3IfdeftoifDir=/home/garbe/th3_generated_performance
+    th3IfdeftoifDir=/home/schuetz/th3_generated_performance
 fi
-scratchDir=/scratch/garbe
+scratchDir=/scratch/schuetz
 if [ "$#" -eq 2 ] && [ -d $scratchDir ] ; then
     resultDirectory="$scratchDir/Run_$2"
     resultDir=$resultDirectory/$1

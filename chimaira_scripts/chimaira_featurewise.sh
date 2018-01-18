@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -o /home/garbe/logs/featurewise-%a.txt
+#SBATCH -o /home/schuetz/logs/featurewise-%a.txt
 #SBATCH --job-name=sqlite-featurewise
 #SBATCH -p chimaira
-#SBATCH -A spl
+#SBATCH -A schuetz
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=10000
@@ -19,7 +19,7 @@
 # 23*25*12 = 7500 different test scenarios
 
 taskName="hercules-sqlite-featurewise"
-localDir=/local/garbe
+localDir=/local/schuetz
 resultDir=~/sqlite
 lastJobNo=7899
 
@@ -39,5 +39,5 @@ cd TypeChef-SQLiteIfdeftoif
 
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then
-    echo "Stop slacking off." | mail -s "Chimaira featurewise job finished." fgarbe@fim.uni-passau.de
+    echo "Stop slacking off." | mail -s "Chimaira featurewise job finished." schuetzo-martin@web.de
 fi

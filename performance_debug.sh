@@ -4,7 +4,7 @@ th3IfdeftoifDir=/home/$USER/th3_generated_performance
 resultDirectory=$th3IfdeftoifDir/../performance_results
 resultDir=$resultDirectory/$1
 if [ $USER == "rhein" ]; then
-    th3IfdeftoifDir=/home/garbe/th3_generated_performance
+    th3IfdeftoifDir=/home/schuetz/th3_generated_performance
 fi
 
 if [ ! -d $resultDirectory ]; then

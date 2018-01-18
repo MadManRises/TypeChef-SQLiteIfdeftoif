@@ -3,7 +3,7 @@ import sys
 import os
 
 
-logDirectory="/home/garbe/sqlite/"
+logDirectory="/home/schuetz/sqlite/"
 diffFN = "DiffErrors.txt"
 SerrFN = "ErrOnlyInSim.txt" 
 VerrFN = "ErrOnlyInVar.txt"

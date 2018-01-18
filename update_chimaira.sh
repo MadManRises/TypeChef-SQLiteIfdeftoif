@@ -1,7 +1,7 @@
 #!/bin/bash
 
 taskName="hercules-sqlite-update"
-localDir=/local/garbe
+localDir=/local/schuetz
 
 # Call this script as follows:
 # chimaira_update.sh
@@ -52,7 +52,7 @@ if [ -d $localDir ]; then
 
     if [ ! -d TypeChef-SQLiteIfdeftoif ]; then
         # get SQLITE
-        git clone https://github.com/fgarbe/TypeChef-SQLiteIfdeftoif
+        git clone https://github.com/fschuetz/TypeChef-SQLiteIfdeftoif
     else
         # update SQLITE
         cd TypeChef-SQLiteIfdeftoif/ && git pull && cd $OLDPWD

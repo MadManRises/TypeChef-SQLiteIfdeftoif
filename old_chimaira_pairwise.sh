@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -o /home/garbe/chimaira/pairwise-%a.txt
+#SBATCH -o /home/schuetz/chimaira/pairwise-%a.txt
 #SBATCH --job-name=hercules-sqlite
 #SBATCH -p chimaira
-#SBATCH -A spl
+#SBATCH -A schuetz
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --array=0-2339
@@ -17,7 +17,7 @@
 # 2340 different test scenarios
 
 taskName="hercules-sqlite"
-localDir=/local/garbe
+localDir=/local/schuetz
 resultDir=~/sqlite
 lastJobNo=2339
 
@@ -37,5 +37,5 @@ cd TypeChef-SQLiteIfdeftoif
 
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then
-    echo "Stop slacking off." | mail -s "Chimaira job finished." fgarbe@fim.uni-passau.de
+    echo "Stop slacking off." | mail -s "Chimaira job finished." schuetzo-martin@web.de
 fi

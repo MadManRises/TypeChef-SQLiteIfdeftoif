@@ -23,14 +23,14 @@ if [ -d $localDir ]; then
         # get TypeChef
         git clone https://github.com/aJanker/TypeChef.git
         cd TypeChef
-        java ./sbt-launch.jar update compile
+        java -jar ./sbt-launch.jar update compile
         cd $OLDPWD
     else
         # update TypeChef
         cd TypeChef
 	    pull=$(git pull 2>&1)
         if [ $pull != "Already up-to-date." ] && [ $pull != *"fatal:"* ]; then
-            java ./sbt-launch.jar update compile
+            java -jar ./sbt-launch.jar update compile
         else
             echo "Skipping TypeChef ./publish.sh"
         fi

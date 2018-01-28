@@ -22,13 +22,13 @@ if [ -d $localDir ]; then
     if [ ! -d TypeChef ]; then
         # get TypeChef
         git clone https://github.com/aJanker/TypeChef.git
-        ./TypeChef/publish.sh
+        java ./TypeChef/sbt-launch.jar update compile
     else
         # update TypeChef
         cd TypeChef
 	    pull=$(git pull 2>&1)
         if [ $pull != "Already up-to-date." ] && [ $pull != *"fatal:"* ]; then
-            ./publish.sh
+            java ./sbt-launch.jar update compile
         else
             echo "Skipping TypeChef ./publish.sh"
         fi
@@ -52,7 +52,7 @@ if [ -d $localDir ]; then
 
     if [ ! -d TypeChef-SQLiteIfdeftoif ]; then
         # get SQLITE
-        git clone https://github.com/fschuetz/TypeChef-SQLiteIfdeftoif
+        git clone https://github.com/madmanrises/TypeChef-SQLiteIfdeftoif
     else
         # update SQLITE
         cd TypeChef-SQLiteIfdeftoif/ && git pull && cd $OLDPWD

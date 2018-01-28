@@ -52,7 +52,7 @@ if [ -d $localDir ]; then
 
     if [ ! -d TypeChef-SQLiteIfdeftoif ]; then
         # get SQLITE
-        git clone https://github.com/madmanrises/TypeChef-SQLiteIfdeftoif
+        git clone https://github.com/MadManRises/TypeChef-SQLiteIfdeftoif.git
     else
         # update SQLITE
         cd TypeChef-SQLiteIfdeftoif/ && git pull && cd $OLDPWD

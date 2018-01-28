@@ -22,7 +22,9 @@ if [ -d $localDir ]; then
     if [ ! -d TypeChef ]; then
         # get TypeChef
         git clone https://github.com/aJanker/TypeChef.git
+        cd TypeChef
         java ./TypeChef/sbt-launch.jar update compile
+        cd $OLDPWD
     else
         # update TypeChef
         cd TypeChef

@@ -39,11 +39,12 @@ if [ -d $localDir ]; then
 
     if [ ! -d Hercules ]; then
         # get Hercules
-        git clone https://github.com/joliebig/Hercules.git
+        git clone https://github.com/MadManRises/Hercules.git
         ./Hercules/mkrun.sh
     else
         # update Hercules
         cd Hercules
+        pull=$(git pull 2>&1)
         if [ $pull != "Already up-to-date." ] && [ $pull != *"fatal:"* ]; then
             ./mkrun.sh
         else
@@ -59,6 +60,28 @@ if [ -d $localDir ]; then
         # update SQLITE
         cd TypeChef-SQLiteIfdeftoif/ && git pull && cd $OLDPWD
     fi
+    
+    if [ ! -d PerfInst ]; then
+        # get PerfInst
+        git clone https://github.com/vulder/PerfInst.git
+        cd PerfInst
+        mkdir build
+        cd build
+        cmake ..
+        make
+        cd $localDir
+    else
+        # update PerfInst
+        cd PerfInst
+        pull=$(git pull 2>&1)
+        if [ $pull != "Already up-to-date." ] && [ $pull != *"fatal:"* ]; then
+            make
+        else
+            echo "Skipping PerfInst make"
+        fi
+        cd $OLDPWD
+    fi
+    
 else
     echo "Wrong machine? Script cancelled"
 fi

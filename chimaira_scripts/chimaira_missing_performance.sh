@@ -1,12 +1,13 @@
 #!/bin/bash
 #SBATCH -o /home/schuetz/logs/perf-%a.txt
 #SBATCH --job-name=sqlite-th3
-#SBATCH -p chimaira
-#SBATCH -A schuetz
+#SBATCH -p anywhere
+#SBATCH -A anywhere
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=13000
-#SBATCH --array=8
+#SBATCH --array=4,18,32,46
+#SBATCH --constrain=chimaira
 
 #SBATCH --time=01:30:00 # 1h30m max
 
@@ -21,7 +22,7 @@
 taskName="hercules-sqlite-th3"
 localDir=/local/schuetz
 resultDir=~/sqlite
-lastJobNo=233
+lastJobNo=300
 
 # Call this script as follows:
 # sbatch slurm_featurewise.sh

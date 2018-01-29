@@ -1,12 +1,13 @@
 #!/bin/bash
 #SBATCH -o /home/schuetz/logs/perf-%a.txt
 #SBATCH --job-name=sqlite-th3
-#SBATCH -p chimaira
-#SBATCH -A schuetz
+#SBATCH -p anywhere
+#SBATCH -A anywhere
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=13000
 #SBATCH --array=0-299
+#SBATCH --constrain=chimaira
 
 #SBATCH --time=02:00:00 # 1h30m max
 

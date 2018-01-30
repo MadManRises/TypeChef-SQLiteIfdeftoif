@@ -86,7 +86,7 @@ if [ $1 -lt $TOTAL ]; then
         -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h" \
         -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
         -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
-        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c; exit $?' $GCC 2>&1)
+        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c; exit $?' $GCC)
     originalGCCexit=$?
 
     if [ $originalGCCexit != 0 ]
@@ -107,7 +107,7 @@ if [ $1 -lt $TOTAL ]; then
     if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
         echo "performance testing allyes performance: jobid $1 ifdeftoif $TH3IFDEFNO on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 
-        performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c /local/schuetz/PerfInst/build/libPerfInst.a 2>&1)
+        performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c /local/schuetz/PerfInst/build/libPerfInst.a)
         # gcc returns errors
         if [ $? != 0 ]; then
             echo "can not compile allyes performance"
@@ -136,7 +136,7 @@ if [ $1 -lt $TOTAL ]; then
         echo "performance testing allyes simulator: jobid $1 ifdeftoif $TH3IFDEFNO on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
         # replace include directive to perf_nomeasuring.c
         sed -i '0,/perf_measuring.c/ s//perf_nomeasuring.c/' sqlite3_simulator.c
-        performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_simulator.c 2>&1)
+        performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_simulator.c)
         # gcc returns errors
         if [ $? != 0 ]; then
             echo "can not compile allyes simulator"

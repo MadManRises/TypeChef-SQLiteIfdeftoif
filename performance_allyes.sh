@@ -107,7 +107,7 @@ if [ $1 -lt $TOTAL ]; then
     if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
         echo "performance testing allyes performance: jobid $1 ifdeftoif $TH3IFDEFNO on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 
-        performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c /local/schuetz/PerfInst/build/libPerfInst.a)
+        performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c /local/schuetz/PerfInst/build/libPerfInst.so)
         # gcc returns errors
         if [ $? != 0 ]; then
             echo "can not compile allyes performance"

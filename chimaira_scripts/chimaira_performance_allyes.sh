@@ -1,12 +1,13 @@
 #!/bin/bash
 #SBATCH -o /home/schuetz/logs/perf-ay-%a.txt
 #SBATCH --job-name=ay-sqlite
-#SBATCH -p chimaira
-#SBATCH -A schuetz
+#SBATCH -p anywhere
+#SBATCH -A anywhere
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=10000
 #SBATCH --array=0-24,75-174,225-249
+#SBATCH --constrain=chimaira
 
 #SBATCH --time=24:00:00 # 4h max
 

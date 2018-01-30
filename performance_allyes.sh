@@ -150,7 +150,6 @@ if [ $1 -lt $TOTAL ]; then
             if ! grep -q "Remaining stack size: 0" $resultDir/sim_ay.txt; then
                 # rm -rf $resultDir/perf_ft_$configID.txt
                 echo -e "Stack inconsistencies for config $configID"
-                exit
             fi
             # Clear temporary simulator files
             rm -rf *.db

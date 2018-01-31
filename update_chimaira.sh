@@ -45,7 +45,7 @@ if [ -d $localDir ]; then
         # update Hercules
         cd Hercules
         pull=$(git pull 2>&1)
-        if [ $pull != "Already up-to-date." ] && [ $pull != *"fatal:"* ]; then
+        if [ "$pull" != "Already up-to-date." ] && [ "$pull" != *"fatal:"* ]; then
             ./mkrun.sh
         else
             echo "Skipping Hercules ./mkrun.sh"
@@ -74,7 +74,7 @@ if [ -d $localDir ]; then
         # update PerfInst
         cd PerfInst
         pull=$(git pull 2>&1)
-        if [ $pull != "Already up-to-date." ] && [ $pull != *"fatal:"* ]; then
+        if [ "$pull" != "Already up-to-date." ] && [ "$pull" != *"fatal:"* ]; then
             make
         else
             echo "Skipping PerfInst make"

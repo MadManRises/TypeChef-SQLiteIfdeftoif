@@ -95,7 +95,7 @@ if [ $1 -lt $TOTAL ]; then
         echo -e "can not compile allyes variant"
     else
         # Run normal binary
-        ./a.out > $resultDir/var_ay.txt
+        LD_LIBRARY_PATH=. ./a.out > $resultDir/var_ay.txt
         # Clear temporary variant files
         rm -rf *.out
         rm -rf *.db
@@ -117,7 +117,7 @@ if [ $1 -lt $TOTAL ]; then
         else
             # Run ifdeftoif binary
             # echo -e "\n\n-= Hercules Performance =-\n"
-            ./a.out > $resultDir/perf_ay.txt 2>&1
+            LD_LIBRARY_PATH=. ./a.out > $resultDir/perf_ay.txt 2>&1
             # delete files where the performance prediction has stack inconsistencies
             if ! grep -q "Remaining stack size: 0" $resultDir/perf_ay.txt; then
                 # rm -rf $resultDir/perf_ft_$configID.txt
@@ -146,7 +146,7 @@ if [ $1 -lt $TOTAL ]; then
         else
             # Run ifdeftoif binary
             # echo -e "\n\n-= Hercules Performance =-\n"
-            ./a.out > $resultDir/sim_ay.txt 2>&1
+            LD_LIBRARY_PATH=. ./a.out > $resultDir/sim_ay.txt 2>&1
             # delete files where the performance prediction has stack inconsistencies
             if ! grep -q "Remaining stack size: 0" $resultDir/sim_ay.txt; then
                 # rm -rf $resultDir/perf_ft_$configID.txt

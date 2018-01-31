@@ -74,12 +74,10 @@ if [ -d $localDir ]; then
         # update PerfInst
         cd PerfInst
         pull=$(git pull 2>&1)
-        if [ "$pull" != "Already up-to-date." ] && [ "$pull" != *"fatal:"* ]; then
-            cd build
-            make
-        else
-            echo "Skipping PerfInst make"
-        fi
+        
+        cd build
+        make
+        
         cd $localDir
     fi
     

@@ -56,6 +56,7 @@ if [ $1 -lt $TOTAL ]; then
     # Copy files used for compilation into temporary directory
     cp $IFCONFIG id2i_optionstruct.h
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
+    cp /local/schuetz/PerfInst/build/libPerfInst.so libPerfInst.so
 
     if ! cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c &> /dev/null ; then
         ./../TypeChef-SQLiteIfdeftoif/parallel_th3_test_performance.sh $1

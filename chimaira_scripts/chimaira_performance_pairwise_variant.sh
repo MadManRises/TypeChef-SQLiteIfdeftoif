@@ -1,8 +1,9 @@
 #!/bin/bash
 #SBATCH -o /home/schuetz/logs/var-pr-%a.txt
 #SBATCH --job-name=pr-var-sqlite
-#SBATCH -p chimaira
-#SBATCH -A schuetz
+#SBATCH -p anywhere
+#SBATCH -A anywhere
+#SBATCH --constrain=chimaira
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=10000
@@ -13,7 +14,7 @@
 #SBATCH --cpus-per-task 1   # 1 for easier apps experiment
 
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
-SBATCH --exclusive        #remove for easier apps experiment
+#SBATCH --exclusive        #remove for easier apps experiment
 
 # 25 sqlite cfgs; 26 test cfgs; 10 test folders
 # 25*26*12 = 7800 different test scenarios

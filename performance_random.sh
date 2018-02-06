@@ -72,6 +72,7 @@ if [ $1 -lt $TOTAL ]; then
     sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
 
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
+    cp /local/schuetz/PerfInst/build/libPerfInst.so libPerfInst.so
 
     for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/random/generated/id2i_optionstruct_*.h; do
         # find $2'th optionstruct
@@ -87,7 +88,7 @@ if [ $1 -lt $TOTAL ]; then
         if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
             echo "performance random: jobid $1 ifdeftoif $TH3IFDEFNO; #ifConfig $IFCONFIGBASE on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
 
-            performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c 2>&1)
+            performanceGCC=$($GCC -w -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_THREADSAFE=0 sqlite3_performance.c libPerfInst.so 2>&1)
             # gcc returns errors
             if [ $? != 0 ]; then
                 echo "can not compile performance file"

@@ -1,8 +1,9 @@
 #!/bin/bash
 #SBATCH -o /home/schuetz/logs/perf-rnd-%a.txt
 #SBATCH --job-name=rnd-perf-sqlite
-#SBATCH -p chimaira
-#SBATCH -A schuetz
+#SBATCH -p anywhere
+#SBATCH -A anywhere
+#SBATCH --constrain=chimaira
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=10000

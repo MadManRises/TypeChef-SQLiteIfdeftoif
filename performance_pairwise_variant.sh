@@ -73,6 +73,7 @@ if [ $1 -lt $TOTAL ]; then
     sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
 
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
+    cp /local/schuetz/PerfInst/build/libPerfInst.so libPerfInst.so
 
     # test pairwise config variant
     for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/pairwise/generated/Prod*.h; do
@@ -96,7 +97,7 @@ if [ $1 -lt $TOTAL ]; then
         -include $0 \
         -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
         -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
-        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c; exit $?' $config $GCC 2>&1)
+        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c libPerfInst.so; exit $?' $config $GCC 2>&1)
         originalGCCexit=$?
 
         if [ $originalGCCexit != 0 ]

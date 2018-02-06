@@ -72,7 +72,7 @@ if [ $1 -lt $TOTAL ]; then
     sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
 
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
-    cp /local/schuetz/PerfInst/build/libPerfInst.so .
+    cp /local/schuetz/PerfInst/build/libPerfInst.so libPerfInst.so
 
     for config in ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/random/generated/id2i_optionstruct_*.h; do
         # find $2'th optionstruct
@@ -97,7 +97,7 @@ if [ $1 -lt $TOTAL ]; then
             else
                 # Run ifdeftoif binary
                 # echo -e "\n\n-= Hercules Performance =-\n"
-                ./a.out > $resultDir/perf_rnd_$configID.txt 2>&1
+                LD_LIBRARY_PATH=. ./a.out > $resultDir/perf_rnd_$configID.txt 2>&1
                 # delete files where the performance prediction has stack inconsistencies
                 if ! grep -q "Remaining stack size: 0" $resultDir/perf_rnd_$configID.txt; then
                     # rm -rf $resultDir/perf_rnd_$configID.txt

@@ -103,7 +103,7 @@ if [ $1 -lt $TOTAL ]; then
             exit
         else
             # Run normal binary
-            ./a.out > $resultDir/var_ft_$configID.txt 2>&1
+            LD_LIBRARY_PATH=. ./a.out > $resultDir/var_ft_$configID.txt 2>&1
 
             # Clear temporary test files
             rm -rf *.out
@@ -136,7 +136,7 @@ if [ $1 -lt $TOTAL ]; then
             else
                 # Run ifdeftoif binary
                 # echo -e "\n\n-= Hercules Performance =-\n"
-                ./a.out > $resultDir/perf_ft_$configID.txt 2>&1
+                LD_LIBRARY_PATH=. ./a.out > $resultDir/perf_ft_$configID.txt 2>&1
                 # delete files where the performance prediction has stack inconsistencies
                 if ! grep -q "Remaining stack size: 0" $resultDir/perf_ft_$configID.txt; then
                     # rm -rf $resultDir/perf_ft_$configID.txt

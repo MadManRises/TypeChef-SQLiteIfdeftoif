@@ -107,7 +107,7 @@ if [ $1 -lt $TOTAL ]; then
             exit
         else
             # Run normal binary
-            ./a.out > $resultDir/var_ft_$configID.txt 2>&1
+            LD_LIBRARY_PATH=. ./a.out > $resultDir/var_ft_$configID.txt 2>&1
 
             # Clear temporary test files
             rm -rf *.out

@@ -68,9 +68,9 @@ if [ $1 -lt $TOTAL ]; then
     cd ../$tmpDir
 
     #insert performance function at the start and end of the main function
-    #sed -i '1s/^/#include "\.\.\/Hercules\/performance\/noincludes.c"\n#include "\.\.\/Hercules\/performance\/perf_measuring\.c"\n/' th3_generated_test.c
-    #sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\n  id2iperf_time_start()\;/' th3_generated_test.c
-    #sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
+    sed -i '1s/^/#include "\.\.\/Hercules\/performance\/noincludes.c"\n#include "\.\.\/Hercules\/performance\/perf_measuring\.c"\n/' th3_generated_test.c
+    sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\n  id2iperf_time_start()\;/' th3_generated_test.c
+    sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
 
     cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
     cp /local/schuetz/PerfInst/build/libPerfInst.so libPerfInst.so
@@ -97,7 +97,7 @@ if [ $1 -lt $TOTAL ]; then
         -include $0 \
         -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
         -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
-        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c; exit $?' $config $GCC 2>&1)
+        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c libPerfInst.so; exit $?' $config $GCC 2>&1)
         originalGCCexit=$?
 
         if [ $originalGCCexit != 0 ]

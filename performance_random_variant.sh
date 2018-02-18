@@ -97,7 +97,7 @@ if [ $1 -lt $TOTAL ]; then
         -include $0 \
         -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
         -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
-        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c libPerfInst.so; exit $?' $config $GCC 2>&1)
+        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c; exit $?' $config $GCC 2>&1)
         originalGCCexit=$?
 
         if [ $originalGCCexit != 0 ]

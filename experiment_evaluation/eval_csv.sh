@@ -19,6 +19,7 @@ header="RunID,InputMode,PredictMode,ConfigID,PredictedTime,Variance,PerfTime,Sim
 times_header="ID,CfgID,Mode,Measurements,Time,Overhead,SimTime,VarTime"
 echo $times_header >> $timesFile
 
+rm -rf $resultFile
 results_header="id,InputMode,PredictMode,PercentageError,PercentageErrorInclVariance,VariancePercentage,MPTimePredicition,MPTimeResult,MPSharedFeatureDeviation"
 echo $results_header >> $resultFile
 
@@ -61,6 +62,7 @@ for i in `seq 0 299`; do
     MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
 
     resultLine="$i,pairwise,featurewise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+    echo $resultLine >> $resultFile
 
 done
 

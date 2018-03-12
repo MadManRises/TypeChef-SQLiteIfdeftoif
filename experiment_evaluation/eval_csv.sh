@@ -53,12 +53,12 @@ for i in `seq 0 299`; do
 
     done < <(echo $prediction | grep -o -E 'Predicted: [0-9.]+ ms ± [0-9.]+ ms')
 
-    percError=$(grep -o -E 'Absolute mean percentage error: [0-9.]+%' $prediction | grep -o '[0-9.]*')
-    percErrorInclVar=$(grep -o -E 'Absolute mean percentage error incl variance: [0-9.]+%' $prediction | grep -o '[0-9.]*')
-    varPerc=$(grep -o -E 'Variance percentage: [0-9.]+%' $prediction | grep -o '[0-9.]*')
-    MPTimePredicition=$(grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' $prediction | grep -o '[0-9.]*')
-    MPTimeResult=$(grep -o -E 'Mean percentage of time only in result: [0-9.]+%' $prediction | grep -o '[0-9.]*')
-    MPSharedFeatureDeviation=$(grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' $prediction | grep -o '[0-9.]*')
+    percError=$(echo $prediction | grep -o -E 'Absolute mean percentage error: [0-9.]+%' | grep -o '[0-9.]*')
+    percErrorInclVar=$(echo $prediction | grep -o -E 'Absolute mean percentage error incl variance: [0-9.]+%' | grep -o '[0-9.]*')
+    varPerc=$(echo $prediction | grep -o -E 'Variance percentage: [0-9.]+%' | grep -o '[0-9.]*')
+    MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
+    MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
+    MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
 
     resultLine="$i,pairwise,featurewise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
 

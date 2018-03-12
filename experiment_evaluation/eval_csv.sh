@@ -41,7 +41,6 @@ for i in `seq 0 299`; do
         predictedTime=$(echo $line | grep -o -E 'Predicted: [0-9.]+' | grep -o '[0-9.]*')
         predictedVariance=$(echo $line | grep -o -E '± [0-9.]+ ms' | grep -o '[0-9.]*')
         csvLine="$i,pr,ft,$counter,$predictedTime,$predictedVariance,$perfTime,$simTime,$varTime"
-        counter=$(( $counter + 1))
         echo $csvLine >> $resultDirectory/pairwisePredictsFeaturewise.csv
 
 	    measurements=$(grep -o -E 'Measurement counter: [0-9]+' $resultDirectory/$i/perf_ft_$paddedCounter.txt | grep -o '[0-9]*')

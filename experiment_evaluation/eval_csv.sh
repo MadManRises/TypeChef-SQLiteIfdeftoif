@@ -20,7 +20,7 @@ times_header="ID,CfgID,Mode,Measurements,Time,Overhead,SimTime,VarTime"
 echo $times_header >> $timesFile
 
 rm -rf $resultFile
-results_header="id,InputMode,PredictMode,PercentageError,PercentageErrorInclVariance,VariancePercentage,MPTimePredicition,MPTimeResult,MPSharedFeatureDeviation"
+results_header="id,InputMode,PredictMode,PercentageError,PercentageErrorInclVariance,VariancePercentage,MPTimePredicition,MPTimeResult,MPSharedFeatureDeviation,MPSharedFeatureDeviationInclVariance"
 echo $results_header >> $resultFile
 
 
@@ -61,8 +61,10 @@ for i in `seq 0 299`; do
         MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
         MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
         MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,pairwise,featurewise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+
+        resultLine="$i,pairwise,featurewise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
 
     fi
@@ -99,8 +101,9 @@ for i in `seq 0 299`; do
         MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
         MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
         MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,random,featurewise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+        resultLine="$i,random,featurewise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
     fi
 done
@@ -129,14 +132,15 @@ for i in `seq 0 299`; do
 
         done < <(echo $prediction | grep -o -E 'Predicted: [0-9.]+ ms ± [0-9.]+ ms')
 
-            percError=$(echo $prediction | grep -o -E 'Absolute mean percentage error: [0-9.]+%' | grep -o '[0-9.]*')
+        percError=$(echo $prediction | grep -o -E 'Absolute mean percentage error: [0-9.]+%' | grep -o '[0-9.]*')
         percErrorInclVar=$(echo $prediction | grep -o -E 'Absolute mean percentage error incl variance: [0-9.]+%' | grep -o '[0-9.]*')
         varPerc=$(echo $prediction | grep -o -E 'Variance percentage: [0-9.]+%' | tail -1 | grep -o '[0-9.]*')
         MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
         MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
         MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,allyes,featurewise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+        resultLine="$i,allyes,featurewise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
      fi
 
@@ -178,8 +182,9 @@ for i in `seq 0 299`; do
         MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
         MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
         MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,featurewise,pairwise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+        resultLine="$i,featurewise,pairwise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
     fi
 
@@ -215,8 +220,9 @@ for i in `seq 0 299`; do
         MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
         MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
         MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,random,pairwise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+        resultLine="$i,random,pairwise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
     fi
 
@@ -252,8 +258,9 @@ for i in `seq 0 299`; do
         MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
         MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
         MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,allyes,pairwise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+        resultLine="$i,allyes,pairwise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
     fi
 
@@ -295,8 +302,9 @@ for i in `seq 0 299`; do
         MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
         MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
         MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,allyes,random,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+        resultLine="$i,allyes,random,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
     fi
 
@@ -326,13 +334,14 @@ for i in `seq 0 299`; do
 	    echo $timesLine >> $timesFile
 
 	    percError=$(echo $prediction | grep -o -E 'Absolute mean percentage error: [0-9.]+%' | grep -o '[0-9.]*')
-        percErrorInclVar=$(echo $prediction | grep -o -E 'Absolute mean percentage error incl variance: [0-9.]+%' | grep -o '[0-9.]*')
-        varPerc=$(echo $prediction | grep -o -E 'Variance percentage: [0-9.]+%' | tail -1 | grep -o '[0-9.]*')
-        MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
-        MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
-        MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+      percErrorInclVar=$(echo $prediction | grep -o -E 'Absolute mean percentage error incl variance: [0-9.]+%' | grep -o '[0-9.]*')
+      varPerc=$(echo $prediction | grep -o -E 'Variance percentage: [0-9.]+%' | tail -1 | grep -o '[0-9.]*')
+      MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
+      MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
+      MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+      MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,featurewise,allyes,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+        resultLine="$i,featurewise,allyes,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
 
     fi
@@ -360,8 +369,9 @@ for i in `seq 0 299`; do
         MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
         MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
         MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,pairwise,allyes,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+        resultLine="$i,pairwise,allyes,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
     fi
 
@@ -389,8 +399,9 @@ for i in `seq 0 299`; do
         MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
         MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
         MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
 
-        resultLine="$i,random,allyes,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+        resultLine="$i,random,allyes,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
         echo $resultLine >> $resultFile
     fi
 

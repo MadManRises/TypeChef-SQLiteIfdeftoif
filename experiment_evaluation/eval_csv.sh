@@ -20,7 +20,7 @@ times_header="ID,CfgID,Mode,Measurements,Time,Overhead,SimTime,VarTime"
 echo $times_header >> $timesFile
 
 rm -rf $resultFile
-results_header="id,InputMode,PredictMode,PercentageError,PercentageErrorInclVariance,VariancePercentage,MPTimePredicition,MPTimeResult,MPSharedFeatureDeviation,MPSharedFeatureDeviationInclVariance"
+results_header="id,InputMode,PredictMode,PercentageError,PercentageErrorInclVariance,VariancePercentage,MPTimePrediction,MPTimeResult,MPSharedFeatureDeviation,MPSharedFeatureDeviationInclVariance"
 echo $results_header >> $resultFile
 
 

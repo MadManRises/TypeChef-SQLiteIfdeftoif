@@ -56,7 +56,7 @@ for i in `seq 0 299`; do
 
     percError=$(echo $prediction | grep -o -E 'Absolute mean percentage error: [0-9.]+%' | grep -o '[0-9.]*')
     percErrorInclVar=$(echo $prediction | grep -o -E 'Absolute mean percentage error incl variance: [0-9.]+%' | grep -o '[0-9.]*')
-    varPerc=$(echo $prediction | grep -o -E 'Variance percentage: [0-9.]+%' | grep -o '[0-9.]*')
+    varPerc=$(echo $prediction | grep -o -E 'Variance percentage: [0-9.]+%' | tail -1 | grep -o '[0-9.]*')
     MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
     MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
     MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')

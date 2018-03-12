@@ -8,7 +8,8 @@
 
 resultDirectory=/home/$USER/performance_results
 herculesDir=/home/$USER/Hercules/performance
-resultFile=$resultDirectory/times_measurements.csv
+timesFile=$resultDirectory/times_measurements.csv
+resultFile=$resultDirectory/results_sorted.csv
 
 cd $herculesDir
 
@@ -16,8 +17,11 @@ cd $herculesDir
 header="RunID,InputMode,PredictMode,ConfigID,PredictedTime,Variance,PerfTime,SimTime,VarTime,AccPerf,AccVar"
 
 times_header="ID,CfgID,Mode,Measurements,Time,Overhead,SimTime,VarTime"
+echo $times_header >> $timesFile
 
-echo $times_header >> $resultFile
+results_header="id,InputMode,PredictMode,PercentageError,PercentageErrorInclVariance,VariancePercentage,MPTimePredicition,MPTimeResult,MPSharedFeatureDeviation"
+echo $results_header >> $resultFile
+
 
 
 # pairwise predicts featurewise
@@ -44,11 +48,21 @@ for i in `seq 0 299`; do
 	    overhead=$(grep -o -E 'overhead: [0-9.]+' $resultDirectory/$i/perf_ft_$paddedCounter.txt | grep -o '[0-9.]*')
 
 	    timesLine="$i,$counter,featurewise,$measurements,$perfTime,$overhead,$simTime,$varTime"
-	    echo $timesLine >> $resultFile
+	    echo $timesLine >> $timesFile
 
-
+        counter=$(( $counter + 1))
 
     done < <(echo $prediction | grep -o -E 'Predicted: [0-9.]+ ms ± [0-9.]+ ms')
+
+    percError=$(grep -o -E 'Absolute mean percentage error: [0-9.]+%' $prediction | grep -o '[0-9.]*')
+    percErrorInclVar=$(grep -o -E 'Absolute mean percentage error incl variance: [0-9.]+%' $prediction | grep -o '[0-9.]*')
+    varPerc=$(grep -o -E 'Variance percentage: [0-9.]+%' $prediction | grep -o '[0-9.]*')
+    MPTimePredicition=$(grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' $prediction | grep -o '[0-9.]*')
+    MPTimeResult=$(grep -o -E 'Mean percentage of time only in result: [0-9.]+%' $prediction | grep -o '[0-9.]*')
+    MPSharedFeatureDeviation=$(grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' $prediction | grep -o '[0-9.]*')
+
+    resultLine="$i,pairwise,featurewise,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation"
+
 done
 
 #random predicts featurewise
@@ -116,16 +130,15 @@ for i in `seq 0 299`; do
         predictedTime=$(echo $line | grep -o -E 'Predicted: [0-9.]+' | grep -o '[0-9.]*')
         predictedVariance=$(echo $line | grep -o -E '± [0-9.]+ ms' | grep -o '[0-9.]*')
         csvLine="$i,ft,pr,$counter,$predictedTime,$predictedVariance,$perfTime,$simTime,$varTime"
-        counter=$(( $counter + 1))
         echo $csvLine >> $resultDirectory/featurewisePredictsPairwise.csv
 
 	    measurements=$(grep -o -E 'Measurement counter: [0-9]+' $resultDirectory/$i/perf_pr_$paddedCounter.txt | grep -o '[0-9]*')
 	    overhead=$(grep -o -E 'overhead: [0-9.]+' $resultDirectory/$i/perf_pr_$paddedCounter.txt | grep -o '[0-9.]*')
 
 	    timesLine="$i,$counter,pairwise,$measurements,$perfTime,$overhead,$simTime,$varTime"
-	    echo $timesLine >> $resultFile
+	    echo $timesLine >> $timesFile
 
-
+        counter=$(( $counter + 1))
 
     done < <(echo $prediction | grep -o -E 'Predicted: [0-9.]+ ms ± [0-9.]+ ms')
 done
@@ -195,14 +208,15 @@ for i in `seq 0 299`; do
         predictedTime=$(echo $line | grep -o -E 'Predicted: [0-9.]+' | grep -o '[0-9.]*')
         predictedVariance=$(echo $line | grep -o -E '± [0-9.]+ ms' | grep -o '[0-9.]*')
         csvLine="$i,ay,rnd,$counter,$predictedTime,$predictedVariance,$perfTime,$simTime,$varTime"
-        counter=$(( $counter + 1))
         echo $csvLine >> $resultDirectory/allyesPredictsRandom.csv
 
 	    measurements=$(grep -o -E 'Measurement counter: [0-9]+' $resultDirectory/$i/perf_rnd_$paddedCounter.txt | grep -o '[0-9]*')
 	    overhead=$(grep -o -E 'overhead: [0-9.]+' $resultDirectory/$i/perf_rnd_$paddedCounter.txt | grep -o '[0-9.]*')
 
 	    timesLine="$i,$counter,random,$measurements,$perfTime,$overhead,$simTime,$varTime"
-	    echo $timesLine >> $resultFile
+	    echo $timesLine >> $timesFile
+
+	    counter=$(( $counter + 1))
 
     done < <(echo $prediction | grep -o -E 'Predicted: [0-9.]+ ms ± [0-9.]+ ms')
 done
@@ -228,7 +242,7 @@ for i in `seq 0 299`; do
 	    overhead=$(grep -o -E 'overhead: [0-9.]+' $resultDirectory/$i/perf_ay.txt | grep -o '[0-9.]*')
 
 	    timesLine="$i,49,allyes,$measurements,$perfTimeAy,$overhead,$simTimeAy,$varTimeAy"
-	    echo $timesLine >> $resultFile
+	    echo $timesLine >> $timesFile
 
     fi
 done

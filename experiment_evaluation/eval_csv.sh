@@ -16,6 +16,7 @@ cd $herculesDir
 #rm -rf $resultDirectory/*.csv
 header="RunID,InputMode,PredictMode,ConfigID,PredictedTime,Variance,PerfTime,SimTime,VarTime,AccPerf,AccVar"
 
+rm -rf $timesFile
 times_header="ID,CfgID,Mode,Measurements,Time,Overhead,SimTime,VarTime"
 echo $times_header >> $timesFile
 

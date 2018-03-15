@@ -266,6 +266,83 @@ for i in `seq 0 299`; do
 
 done
 
+#featurewise predicts random
+echo "featurewise predicts random"
+rm -rf $resultDirectory/featurewisePredictsRandom.csv
+echo $header >> $resultDirectory/featurewisePredictsRandom.csv
+for i in `seq 0 299`; do
+    if [ -d "$resultDirectory/$i/" ]; then
+        prediction=$(java -jar $herculesDir/PerfTimes.jar -cs sqlite -im featurewise -pm random -f $resultDirectory/$i/)
+        counter=0
+        while read -r line
+        do
+            paddedCounter=$(printf %03d $counter)
+            simTime=$(grep -o -E 'Total time: [0-9.]+ ms' $resultDirectory/$i/sim_rnd_$paddedCounter.txt | grep -o '[0-9.]*')
+            varTime=$(grep -o -E 'Total time: [0-9.]+ ms' $resultDirectory/$i/var_rnd_$paddedCounter.txt | grep -o '[0-9.]*')
+            perfTime=$(grep -o -E 'Total time: [0-9.]+ ms' $resultDirectory/$i/perf_rnd_$paddedCounter.txt | grep -o '[0-9.]*')
+
+            predictedTime=$(echo $line | grep -o -E 'Predicted: [0-9.]+' | grep -o '[0-9.]*')
+            predictedVariance=$(echo $line | grep -o -E '± [0-9.]+ ms' | grep -o '[0-9.]*')
+            csvLine="$i,ft,rnd,$counter,$predictedTime,$predictedVariance,$perfTime,$simTime,$varTime"
+            counter=$(( $counter + 1))
+            echo $csvLine >> $resultDirectory/featurewisePredictsRandom.csv
+
+
+        done < <(echo $prediction | grep -o -E 'Predicted: [0-9.]+ ms ± [0-9.]+ ms')
+
+        percError=$(echo $prediction | grep -o -E 'Absolute mean percentage error: [0-9.]+%' | grep -o '[0-9.]*')
+        percErrorInclVar=$(echo $prediction | grep -o -E 'Absolute mean percentage error incl variance: [0-9.]+%' | grep -o '[0-9.]*')
+        varPerc=$(echo $prediction | grep -o -E 'Variance percentage: [0-9.]+%' | tail -1 | grep -o '[0-9.]*')
+        MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
+        MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
+
+        resultLine="$i,featurewise,random,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
+        echo $resultLine >> $resultFile
+    fi
+
+done
+
+#pairwise predicts random
+echo "pairwise predicts random"
+rm -rf $resultDirectory/pairwisePredictsRandom.csv
+echo $header >> $resultDirectory/pairwisePredictsRandom.csv
+for i in `seq 0 299`; do
+    if [ -d "$resultDirectory/$i/" ]; then
+        prediction=$(java -jar $herculesDir/PerfTimes.jar -cs sqlite -im pairwise -pm random -f $resultDirectory/$i/)
+        counter=0
+        while read -r line
+        do
+            paddedCounter=$(printf %03d $counter)
+            simTime=$(grep -o -E 'Total time: [0-9.]+ ms' $resultDirectory/$i/sim_rnd_$paddedCounter.txt | grep -o '[0-9.]*')
+            varTime=$(grep -o -E 'Total time: [0-9.]+ ms' $resultDirectory/$i/var_rnd_$paddedCounter.txt | grep -o '[0-9.]*')
+            perfTime=$(grep -o -E 'Total time: [0-9.]+ ms' $resultDirectory/$i/perf_rnd_$paddedCounter.txt | grep -o '[0-9.]*')
+
+            predictedTime=$(echo $line | grep -o -E 'Predicted: [0-9.]+' | grep -o '[0-9.]*')
+            predictedVariance=$(echo $line | grep -o -E '± [0-9.]+ ms' | grep -o '[0-9.]*')
+            csvLine="$i,pr,rnd,$counter,$predictedTime,$predictedVariance,$perfTime,$simTime,$varTime"
+            counter=$(( $counter + 1))
+            echo $csvLine >> $resultDirectory/pairwisePredictsRandom.csv
+
+
+        done < <(echo $prediction | grep -o -E 'Predicted: [0-9.]+ ms ± [0-9.]+ ms')
+
+        percError=$(echo $prediction | grep -o -E 'Absolute mean percentage error: [0-9.]+%' | grep -o '[0-9.]*')
+        percErrorInclVar=$(echo $prediction | grep -o -E 'Absolute mean percentage error incl variance: [0-9.]+%' | grep -o '[0-9.]*')
+        varPerc=$(echo $prediction | grep -o -E 'Variance percentage: [0-9.]+%' | tail -1 | grep -o '[0-9.]*')
+        MPTimePredicition=$(echo $prediction | grep -o -E 'Mean percentage of time only in prediction: [0-9.]+%' | grep -o '[0-9.]*')
+        MPTimeResult=$(echo $prediction | grep -o -E 'Mean percentage of time only in result: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviation=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation: [0-9.]+%' | grep -o '[0-9.]*')
+        MPSharedFeatureDeviationInclVar=$(echo $prediction | grep -o -E 'Mean percentage of shared feature deviation incl variance: [0-9.]+%' | grep -o '[0-9.]*')
+
+        resultLine="$i,pairwise,random,$percError,$percErrorInclVar,$varPerc,$MPTimePredicition,$MPTimeResult,$MPSharedFeatureDeviation,$MPSharedFeatureDeviationInclVar"
+        echo $resultLine >> $resultFile
+    fi
+
+done
+
+
 #allyes predicts random
 echo "allyes predicts random"
 rm -rf $resultDirectory/allyesPredictsRandom.csv

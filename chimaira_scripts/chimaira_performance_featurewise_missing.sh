@@ -7,7 +7,7 @@
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=10000
-#SBATCH --array=100,151,152,162,167-171
+#SBATCH --array=163-174,225-249
 
 #SBATCH --time=24:00:00 # 4h max
 

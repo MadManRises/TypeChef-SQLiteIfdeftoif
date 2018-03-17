@@ -12,8 +12,6 @@ csvData$OverheadPercent = csvData$Overhead / csvData$Time
 csvData$VarPercent = abs(csvData$VarTime - csvData$Time) / csvData$VarTime
 csvData$SimPercent = abs(csvData$SimTime - csvData$Time) / csvData$SimTime
 csvData$SimVarPercent = abs(csvData$SimTime - csvData$VarTime) / csvData$VarTime
-csvData$MissingOverhead = csvData$Time - csvData$SimTime
-csvData$MissingOverheadPerMeasurement = csvData$MissingOverhead / csvData$Measurements
 
 csvData$Th3ConfigNo <- as.numeric(paste(csvData$ID %%  25))
 
@@ -34,11 +32,6 @@ options(scipen=6)
 
 fun_mean <- function(x){
   return(data.frame(y=mean(x),label=mean(x,na.rm=T)))}
-
-csvData.m <- melt(csvData, measure.vars='MissingOverheadPerMeasurement')
-csvData.m$MissingOverheadPerMeasurement <- csvData$MissingOverheadPerMeasurement
-p <- ggplot(csvData.m,aes(x=factor(0),MissingOverheadPerMeasurement)) + geom_boxplot() + theme(axis.title.y=element_blank(),axis.text.y=element_blank(),axis.ticks.y=element_blank()) + labs(y="", x="") + coord_flip()
-ggsave("timesf_missing_overhead_per_measurement.pdf",width=6, height=2)
 
 csvData.m <- melt(csvData, measure.vars='Measurements')
 csvData.m$Measurements <- csvData$Measurements

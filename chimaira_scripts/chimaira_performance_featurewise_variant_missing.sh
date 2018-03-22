@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH -o /home/schuetz/logs/var-rnd-%a.txt
-#SBATCH --job-name=rnd-var-sqlite
+#SBATCH -o /home/schuetz/logs/var-ft-%a.txt
+#SBATCH --job-name=ft-var-sqlite
 #SBATCH -p anywhere
 #SBATCH -A anywhere
 #SBATCH --constrain=chimaira
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=10000
-#SBATCH --array=241-249
+#SBATCH --array=152,167,168,169,170,171
 
 #SBATCH --time=24:00:00 # 4h max
 
@@ -36,7 +36,7 @@ echo =================================================================
 cd $localDir
 
 cd TypeChef-SQLiteIfdeftoif
-./performance_random_variant.sh ${SLURM_ARRAY_TASK_ID} $1
+./performance_featurewise_variant.sh ${SLURM_ARRAY_TASK_ID} $1
 
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then

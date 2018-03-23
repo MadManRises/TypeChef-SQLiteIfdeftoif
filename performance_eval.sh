@@ -1,6 +1,6 @@
 #!/bin/bash
 
-th3IfdeftoifDir=/home/$USER/th3_generated_performance
+th3IfdeftoifDir=/scratch/$USER/th3_generated_performance
 resultDir=~/sqlite
 jobExportDir=$resultDir/pf_$1
 if [ $USER == "rhein" ]; then

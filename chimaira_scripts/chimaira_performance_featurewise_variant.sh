@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -o /home/schuetz/logs/var-ft-%a.txt
+#SBATCH -o /scratch/schuetz/logs/var-ft-%a.txt
 #SBATCH --job-name=ft-var-sqlite
 #SBATCH -p anywhere
 #SBATCH -A anywhere
@@ -15,6 +15,9 @@
 
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
 #SBATCH --exclusive        #remove for easier apps experiment
+
+#SBATCH --cpu-freq=Performance
+#SBATCH --pstate-turbo=off
 
 # 25 sqlite cfgs; 26 test cfgs; 10 test folders
 # 25*26*12 = 7800 different test scenarios

@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH -o /scratch/schuetz/logs/var-rnd-%a.txt
-#SBATCH --job-name=rnd-var-sqlite
+#SBATCH -o /home/schuetz/logs/perf-rnd-%a.txt
+#SBATCH --job-name=rnd-perf-sqlite
 #SBATCH -p anywhere
 #SBATCH -A anywhere
 #SBATCH --constrain=chimaira
 #SBATCH --get-user-env
 #SBATCH --ntasks 1
 #SBATCH --mem=10000
-#SBATCH --array=241-249
+#SBATCH --array=151,152,162,167-174
 
 #SBATCH --time=24:00:00 # 4h max
 
@@ -15,9 +15,6 @@
 
 ##SBATCH --cpus-per-task 10     #set to 10 for full chimaira core per apk (60 GB ram)
 #SBATCH --exclusive        #remove for easier apps experiment
-
-#SBATCH --cpu-freq=Performance
-#SBATCH --pstate-turbo=off
 
 # 25 sqlite cfgs; 26 test cfgs; 10 test folders
 # 25*26*12 = 7800 different test scenarios
@@ -39,7 +36,7 @@ echo =================================================================
 cd $localDir
 
 cd TypeChef-SQLiteIfdeftoif
-./performance_random_variant.sh ${SLURM_ARRAY_TASK_ID} $1
+./performance_random.sh ${SLURM_ARRAY_TASK_ID} $1
 
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then

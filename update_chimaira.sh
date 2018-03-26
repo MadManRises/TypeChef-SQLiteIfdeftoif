@@ -17,7 +17,7 @@ if [ -d $localDir ]; then
 
     # get TH3
     rm -rf TH3/
-    cp -r ~/TH3 .
+    cp -r /scratch/TH3 .
 
     if [ ! -d TypeChef ]; then
         # get TypeChef

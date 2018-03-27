@@ -68,7 +68,8 @@ if [ -d $localDir ]; then
         # update SQLITE
     #    cd TypeChef-SQLiteIfdeftoif/ && git pull && cd $OLDPWD
     #fi
-    
+   
+    rm -rf PerfInst
     cp -rf /scratch/schuetz/PerfInst .
     
     #if [ ! -d PerfInst ]; then

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-rm -r /local/schuetz/TypeChef
-rm -r /local/schuetz/Hercules
-rm -r /local/schuetz/PerfInst
+rm -rf /local/schuetz/TypeChef
+rm -rf /local/schuetz/Hercules
+rm -rf /local/schuetz/PerfInst

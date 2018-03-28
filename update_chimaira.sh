@@ -3,6 +3,8 @@
 taskName="hercules-sqlite-update"
 localDir=/local/schuetz
 
+source ./reset_local.sh
+
 # Call this script as follows:
 # chimaira_update.sh
 if [ -d $localDir ]; then

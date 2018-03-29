@@ -23,7 +23,7 @@
 # 25*26*12 = 7800 different test scenarios
 
 taskName="hercules-sqlite-perf-featurewise"
-localDir=/local/schuetz
+localDir=/scratch/schuetz
 resultDir=~/sqlite
 lastJobNo=7799
 

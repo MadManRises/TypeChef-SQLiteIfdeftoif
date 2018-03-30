@@ -38,7 +38,7 @@ echo =================================================================
 
 cd $localDir
 
-/scratch/schuetz/performance_featurewise.sh ${SLURM_ARRAY_TASK_ID}
+/scratch/schuetz/TypeChef-SQLiteIfdeftoif/performance_featurewise.sh ${SLURM_ARRAY_TASK_ID}
 
 # send mail notification for last job
 if [ ${SLURM_ARRAY_TASK_ID} -eq $lastJobNo ]; then

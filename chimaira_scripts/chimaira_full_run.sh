@@ -1,4 +1,4 @@
-cd ~/TypeChef-SQLiteIfdeftoif/
+cd /scratch/schuetz/TypeChef-SQLiteIfdeftoif/
 sbatch chimaira_scripts/chimaira_performance_allyes.sh $1
 sbatch chimaira_scripts/chimaira_performance_featurewise.sh $1
 sbatch chimaira_scripts/chimaira_performance_featurewise_variant.sh $1

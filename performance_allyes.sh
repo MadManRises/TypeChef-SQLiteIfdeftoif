@@ -22,8 +22,8 @@ if [ ! -d $resultDirectory ]; then
     mkdir -p $resultDirectory
 fi
 
-TESTDIRS=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
-CFGFILES=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
+TESTDIRS=$(find $scratchDir/TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | wc -l)
+CFGFILES=$(find $scratchDir/TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | wc -l)
 #IFCONFIGS=$(find ../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/featurewise/generated/ -name "id2i_optionstruct_*.h" | wc -l)
 TOTAL=$(( $TESTDIRS * $CFGFILES ))
 
@@ -32,7 +32,6 @@ TH3CFGNO=$(( ($1 % $CFGFILES)  + 1 ))
 TH3IFDEFNO=$1
 
 if [ $1 -lt $TOTAL ]; then
-    cd ..
     tmpDir=tmp_ay_$1
     rm -rf $tmpDir
     rm -rf $resultDir/perf_ay.txt
@@ -44,17 +43,17 @@ if [ $1 -lt $TOTAL ]; then
     cd $tmpDir
 
     # find $1'th sub directory containing .test files, excluding stress folder
-    TESTDIR=$(find ../TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
+    TESTDIR=$(find $scratchDir/TH3 -name '*test' ! -path "*/TH3/stress/*" -printf '%h\n' | sort -u | head -n $TESTDIRNO | tail -n 1)
     TESTDIRBASE=$(basename $TESTDIR)
 
     # find $3'th .cfg
-    TH3CFG=$(find ../TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
+    TH3CFG=$(find $scratchDir/TH3/cfg/ -name "*.cfg" ! -name "cG.cfg" | sort | head -n $TH3CFGNO | tail -n 1)
     TH3CFGBASE=$(basename $TH3CFG)
 
     # count .test files
     TESTFILENO=$(find $TESTDIR -name "*.test" | wc -l)
 
-    cd ../TH3
+    cd $scratchDir/TH3
     # Ignore ctime03.test since it features a very large struct loaded with 100 different #ifdefs & #elses
     # Ignore date2.test since it returns the systems local time; this makes string differences in test results impossible
     TESTFILES=$(find $TESTDIR -name "*.test" ! -name "ctime03.test" ! -name "date2.test" | sort)
@@ -64,15 +63,15 @@ if [ $1 -lt $TOTAL ]; then
         TESTFILES=${Whitelist[@]]}
     fi
 
-    ./mkth3.tcl $TESTFILES "$TH3CFG" > ../$tmpDir/th3_generated_test.c
-    cd ../$tmpDir
+    ./mkth3.tcl $TESTFILES "$TH3CFG" > /local/schuetz/$tmpDir/th3_generated_test.c
+    cd /local/schuetz/$tmpDir
 
     # insert performance function at the start and end of the main function
-    sed -i '1s/^/#include "\.\.\/Hercules\/performance\/noincludes.c"\n#include "\.\.\/Hercules\/performance\/perf_measuring\.c"\n/' th3_generated_test.c
+    sed -i '1s/^/#include "\/scratch\/schuetz\/Hercules\/performance\/noincludes.c"\n#include "\/scratch\/schuetz\/Hercules\/performance\/perf_measuring\.c"\n/' th3_generated_test.c
     sed -i 's/int main(int argc, char \*\*argv){/int main(int argc, char \*\*argv){\n  id2iperf_time_start()\;/' th3_generated_test.c
     sed -i 's/return nFail\;/id2iperf_time_end()\;\n  return nFail\;/' th3_generated_test.c
 
-    cp ../TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
+    cp $scratchDir/TypeChef-SQLiteIfdeftoif/sqlite3.h sqlite3.h
     cp /scratch/schuetz/PerfInst/build/libPerfInst.so libPerfInst.so
 
 
@@ -84,10 +83,10 @@ if [ $1 -lt $TOTAL ]; then
         -I /usr/lib/gcc/x86_64-linux-gnu/4.8/include \
         -I /usr/include/x86_64-linux-gnu \
         -I /usr/include \
-        -include "../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h" \
-        -include "../TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
-        -include "../TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
-        ../TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c libPerfInst.so; exit $?' $GCC)
+        -include "$1/TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_include.h" \
+        -include "$1/TypeChef-SQLiteIfdeftoif/partial_configuration.h" \
+        -include "$1/TypeChef-SQLiteIfdeftoif/sqlite3_defines.h" \
+        $1/TypeChef-SQLiteIfdeftoif/sqlite3_original.c th3_generated_test.c libPerfInst.so; exit $?' $GCC $scratchDir)
     originalGCCexit=$?
 
     if [ $originalGCCexit != 0 ]
@@ -103,7 +102,7 @@ if [ $1 -lt $TOTAL ]; then
     fi
 
     # Test allyes performance simulation with time measurements
-    config=../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h
+    config=$scratchDir/TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h
     cp $config id2i_optionstruct.h
     if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_performance.c; then
         echo "performance testing allyes performance: jobid $1 ifdeftoif $TH3IFDEFNO on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"
@@ -131,7 +130,7 @@ if [ $1 -lt $TOTAL ]; then
     fi
 
     # Test allyes performance simulation without time measurements
-    config=../TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h
+    config=$scratchDir/TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/performance/allyes_optionstruct.h
     cp $config id2i_optionstruct.h
     if cp $th3IfdeftoifDir/sqlite3_performance_$TH3IFDEFNO.c sqlite3_simulator.c; then
         echo "performance testing allyes simulator: jobid $1 ifdeftoif $TH3IFDEFNO on $TESTFILENO .test files in $TESTDIRBASE with th3Config $TH3CFGBASE at $(date +"%T")"

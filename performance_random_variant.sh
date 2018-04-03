@@ -117,7 +117,7 @@ if [ $1 -lt $TOTAL ]; then
     done
 
     # test allyes performance simulation without time measurements
-    for config in $scratch/TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/random/generated/id2i_optionstruct_*.h; do
+    for config in $scratchDir/TypeChef-SQLiteIfdeftoif/optionstructs_ifdeftoif/random/generated/id2i_optionstruct_*.h; do
         # find $2'th optionstruct
         IFCONFIG=$config
         IFCONFIGBASE=$(basename $IFCONFIG)

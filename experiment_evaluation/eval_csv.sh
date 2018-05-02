@@ -6,7 +6,7 @@
 
 #csvFile=$(echo $1 | sed 's/.txt/.csv/g')
 
-resultDirectory=/scratch/$USER/Run_1
+resultDirectory=/scratch/$USER/Run_$1
 herculesDir=/scratch/$USER/Hercules/performance
 timesFile=$resultDirectory/times_measurements.csv
 resultFile=$resultDirectory/results_sorted.csv

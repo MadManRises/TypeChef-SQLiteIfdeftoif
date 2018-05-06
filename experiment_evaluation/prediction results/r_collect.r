@@ -1,6 +1,5 @@
 library(data.table)
 
-args = commandArgs(trailingOnly=TRUE)
 
 multmerge = function(mypath){
     filenames=list.files(path=mypath, full.names=TRUE)

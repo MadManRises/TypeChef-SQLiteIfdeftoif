@@ -22,11 +22,11 @@ solarizeColors <- c(
     
 )
 
-csvData$source <- rep('new',nrow(csvData))
+csvData$source <- rep('improved',nrow(csvData))
 
 oldData <- read.csv(file=args[2],head=TRUE, sep=",", na.strings=c("","NA"), colClasses=c("id"="numeric", "PercentageError"="numeric", "PercentageErrorInclVariance"="numeric", "VariancePercentage"="numeric", "MPTimePrediction"="numeric", "MPTimeResult"="numeric", "MPSharedFeatureDeviation"="numeric", "MPSharedFeatureDeviationInclVariance"="numeric"))
 
-oldData$source <- rep('old',nrow(oldData))
+oldData$source <- rep('baseline',nrow(oldData))
 
 csvData <- rbind(csvData, oldData)
 

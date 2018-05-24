@@ -8,11 +8,11 @@ args<-commandArgs(TRUE)
 #options(width=180)
 csvData <- read.csv(file=args[1],head=TRUE, sep=",", na.strings=c("","NA"), colClasses=c("ID"="numeric", "CfgID"="numeric", "Measurements"="numeric", "Time"="numeric", "Overhead"="numeric", "SimTime"="numeric", "VarTime"="numeric"))
 
-csvData$source <- rep('new',nrow(csvData))
+csvData$source <- rep('improved',nrow(csvData))
 
 oldData <- read.csv(file=args[2],head=TRUE, sep=",", na.strings=c("","NA"), colClasses=c("ID"="numeric", "CfgID"="numeric", "Measurements"="numeric", "Time"="numeric", "Overhead"="numeric", "SimTime"="numeric", "VarTime"="numeric"))
 
-oldData$source <- rep('old',nrow(oldData))
+oldData$source <- rep('baseline',nrow(oldData))
 
 csvData <- rbind(csvData, oldData)
 

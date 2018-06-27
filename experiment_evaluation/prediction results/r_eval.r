@@ -59,6 +59,14 @@ p <- ggplot(csvData) + geom_boxplot(aes(x=source, y=PercentageError),position = 
 print(paste0("Mean percent error: ",mean(csvData$PercentageError)))
 ggsave("prediction_results.pdf", width=6, height=2)
 
+results_no_allyes <- csvData[ which(csvData$InputMode!='allyes'), ]
+p <- ggplot(results_no_allyes) + geom_boxplot(aes(x=source, y=PercentageError),position = position_dodge(1)) + labs(x="", y="Percent Error") + scale_y_continuous(labels = percent) + expand_limits(y=c(0, 1.62)) + coord_flip() + theme(axis.title.y=element_blank())# + scale_x_discrete(label=abbreviate) # label=function(x) strtrim(x, 12) or label=abbreviate
+#p + facet_wrap( ~ Mode, scales="free_x", ncol=3)
+print(paste0("Mean percent error (/wo allyes): ",mean(results_no_allyes$PercentageError)))
+ggsave("prediction_results_no_allyes.pdf", width=6, height=2)
+
+ 
+
 p <- ggplot(csvData) + geom_boxplot(aes(x=source, y=PercentageErrorInclVariance),position = position_dodge(1)) + labs(y="Percent Error") + scale_y_continuous(labels = percent) + expand_limits(y=c(0, 1.62)) + coord_flip() + theme(axis.title.y=element_blank())# + scale_x_discrete(label=abbreviate) # label=function(x) strtrim(x, 12) or label=abbreviate
 #p + facet_wrap( ~ Mode, scales="free_x", ncol=3)
 print(paste0("Mean percent error incl deviation: ",mean(csvData$PercentageErrorInclVariance)))

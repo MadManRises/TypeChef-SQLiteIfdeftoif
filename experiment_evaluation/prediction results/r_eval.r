@@ -5,6 +5,7 @@ draft = F
 #if (draft) dev.off()
 args<-commandArgs(TRUE)
 
+
 #options(width=180)
 csvData <- read.csv(file=args[1],head=TRUE, sep=",", na.strings=c("","NA"), colClasses=c("id"="numeric", "PercentageError"="numeric", "PercentageErrorInclVariance"="numeric", "VariancePercentage"="numeric", "MPTimePrediction"="numeric", "MPTimeResult"="numeric", "MPSharedFeatureDeviation"="numeric", "MPSharedFeatureDeviationInclVariance"="numeric"))
 folders <- c("bugs","cov1","cov1_p1","cov1_p2","dev","dev_p1","extra1","fts","hlr1","req1","session","speed")
